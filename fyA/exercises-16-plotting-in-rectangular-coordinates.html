@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Exercises 16 (Plotting in rectangular coordinates) | Lecture notes - Maths A - Foundation year</title>
+  <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Exercises 16 (Plotting in rectangular coordinates) | Lecture notes - Maths A - Foundation year" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Exercises 16 (Plotting in rectangular coordinates) | Lecture notes - Maths A - Foundation year" />
+  
+  <meta name="twitter:description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
+  
+
+<meta name="author" content="Ján Špakula" />
+
+
+<meta name="date" content="2021-01-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="rectangular-cartesian-coordinates.html"/>
+<link rel="next" href="parametric-representation.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front Matter</a></li>
+<li class="chapter" data-level="1" data-path="simeq.html"><a href="simeq.html"><i class="fa fa-check"></i><b>1</b> Simultaneous equations</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="simeq.html"><a href="simeq.html#linear-equations"><i class="fa fa-check"></i><b>1.1</b> Linear equations</a></li>
+<li class="chapter" data-level="1.2" data-path="simeq.html"><a href="simeq.html#solving-a-pair-of-linear-equations-in-two-variables"><i class="fa fa-check"></i><b>1.2</b> Solving a pair of linear equations in two variables</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="simeq.html"><a href="simeq.html#by-substitution"><i class="fa fa-check"></i><b>1.2.1</b> By substitution</a></li>
+<li class="chapter" data-level="1.2.2" data-path="simeq.html"><a href="simeq.html#by-elimination"><i class="fa fa-check"></i><b>1.2.2</b> By elimination</a></li>
+<li class="chapter" data-level="1.2.3" data-path="simeq.html"><a href="simeq.html#graphical-illustration"><i class="fa fa-check"></i><b>1.2.3</b> Graphical illustration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-1-simultaneous-equations.html"><a href="exercises-1-simultaneous-equations.html"><i class="fa fa-check"></i>Exercises 1 (Simultaneous Equations)</a></li>
+<li class="chapter" data-level="2" data-path="factorising.html"><a href="factorising.html"><i class="fa fa-check"></i><b>2</b> Factorising</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="factorising.html"><a href="factorising.html#multiplying-out-brackets"><i class="fa fa-check"></i><b>2.1</b> Multiplying out brackets</a></li>
+<li class="chapter" data-level="2.2" data-path="factorising.html"><a href="factorising.html#factorising-1"><i class="fa fa-check"></i><b>2.2</b> Factorising</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-2-factorising.html"><a href="exercises-2-factorising.html"><i class="fa fa-check"></i>Exercises 2 (Factorising)</a></li>
+<li class="chapter" data-level="3" data-path="quadratic-equations.html"><a href="quadratic-equations.html"><i class="fa fa-check"></i><b>3</b> Quadratic equations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="quadratic-equations.html"><a href="quadratic-equations.html#general-formula-for-roots-of-ax2bxc"><i class="fa fa-check"></i><b>3.1</b> General formula for roots of <span class="math inline">\(ax^2+bx+c\)</span></a></li>
+<li class="chapter" data-level="3.2" data-path="quadratic-equations.html"><a href="quadratic-equations.html#deriving-the-quadratic-formula"><i class="fa fa-check"></i><b>3.2</b> Deriving the quadratic formula</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-3-quadratic-equations.html"><a href="exercises-3-quadratic-equations.html"><i class="fa fa-check"></i>Exercises 3 (Quadratic equations)</a></li>
+<li class="chapter" data-level="4" data-path="inequalities.html"><a href="inequalities.html"><i class="fa fa-check"></i><b>4</b> Inequalities</a></li>
+<li class="chapter" data-level="" data-path="exercises-4-inequalities.html"><a href="exercises-4-inequalities.html"><i class="fa fa-check"></i>Exercises 4 (Inequalities)</a></li>
+<li class="chapter" data-level="5" data-path="indices.html"><a href="indices.html"><i class="fa fa-check"></i><b>5</b> Indices</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="indices.html"><a href="indices.html#exponents"><i class="fa fa-check"></i><b>5.1</b> Exponents</a></li>
+<li class="chapter" data-level="5.2" data-path="indices.html"><a href="indices.html#laws-of-exponents"><i class="fa fa-check"></i><b>5.2</b> Laws of exponents</a></li>
+<li class="chapter" data-level="5.3" data-path="indices.html"><a href="indices.html#scientific-notation-of-numbers"><i class="fa fa-check"></i><b>5.3</b> Scientific notation of numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-5-indices.html"><a href="exercises-5-indices.html"><i class="fa fa-check"></i>Exercises 5 (Indices)</a></li>
+<li class="chapter" data-level="6" data-path="logarithms.html"><a href="logarithms.html"><i class="fa fa-check"></i><b>6</b> Logarithms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="logarithms.html"><a href="logarithms.html#laws-of-logarithms"><i class="fa fa-check"></i><b>6.1</b> Laws of logarithms</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-6-logarithms.html"><a href="exercises-6-logarithms.html"><i class="fa fa-check"></i>Exercises 6 (Logarithms)</a></li>
+<li class="chapter" data-level="7" data-path="exponential-functions.html"><a href="exponential-functions.html"><i class="fa fa-check"></i><b>7</b> Exponential functions</a></li>
+<li class="chapter" data-level="" data-path="exercises-7-exponential-functions.html"><a href="exercises-7-exponential-functions.html"><i class="fa fa-check"></i>Exercises 7 (Exponential functions)</a></li>
+<li class="chapter" data-level="8" data-path="long-division-and-factorisation.html"><a href="long-division-and-factorisation.html"><i class="fa fa-check"></i><b>8</b> Long division and factorisation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="long-division-and-factorisation.html"><a href="long-division-and-factorisation.html#polynomials-and-long-division"><i class="fa fa-check"></i><b>8.1</b> Polynomials and long division</a></li>
+<li class="chapter" data-level="8.2" data-path="long-division-and-factorisation.html"><a href="long-division-and-factorisation.html#obtaining-the-factorisation-of-a-polynomial"><i class="fa fa-check"></i><b>8.2</b> Obtaining the factorisation of a polynomial</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-8-long-division-and-the-remainder-theorem.html"><a href="exercises-8-long-division-and-the-remainder-theorem.html"><i class="fa fa-check"></i>Exercises 8 (Long division and the Remainder theorem)</a></li>
+<li class="chapter" data-level="9" data-path="partial-fractions.html"><a href="partial-fractions.html"><i class="fa fa-check"></i><b>9</b> Partial fractions</a></li>
+<li class="chapter" data-level="" data-path="exercises-9-partial-fractions.html"><a href="exercises-9-partial-fractions.html"><i class="fa fa-check"></i>Exercises 9 (Partial fractions)</a></li>
+<li class="chapter" data-level="10" data-path="arithmetic-and-geometric-progressions.html"><a href="arithmetic-and-geometric-progressions.html"><i class="fa fa-check"></i><b>10</b> Arithmetic and geometric progressions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="arithmetic-and-geometric-progressions.html"><a href="arithmetic-and-geometric-progressions.html#arithmetic-progressions"><i class="fa fa-check"></i><b>10.1</b> Arithmetic progressions</a></li>
+<li class="chapter" data-level="10.2" data-path="arithmetic-and-geometric-progressions.html"><a href="arithmetic-and-geometric-progressions.html#geometric-progressions"><i class="fa fa-check"></i><b>10.2</b> Geometric progressions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-10-arithmetic-and-geometric-progressions.html"><a href="exercises-10-arithmetic-and-geometric-progressions.html"><i class="fa fa-check"></i>Exercises 10 (Arithmetic and geometric progressions)</a></li>
+<li class="chapter" data-level="11" data-path="binomial-theorem.html"><a href="binomial-theorem.html"><i class="fa fa-check"></i><b>11</b> Binomial Theorem</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="binomial-theorem.html"><a href="binomial-theorem.html#pascals-triangle"><i class="fa fa-check"></i><b>11.1</b> Pascal’s triangle</a></li>
+<li class="chapter" data-level="11.2" data-path="binomial-theorem.html"><a href="binomial-theorem.html#binomial-coefficients"><i class="fa fa-check"></i><b>11.2</b> Binomial coefficients</a></li>
+<li class="chapter" data-level="11.3" data-path="binomial-theorem.html"><a href="binomial-theorem.html#binomial-approximation"><i class="fa fa-check"></i><b>11.3</b> Binomial approximation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-11-binomial-expansion.html"><a href="exercises-11-binomial-expansion.html"><i class="fa fa-check"></i>Exercises 11 (Binomial expansion)</a></li>
+<li class="chapter" data-level="12" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html"><i class="fa fa-check"></i><b>12</b> Matrices and Determinants</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#terminology"><i class="fa fa-check"></i><b>12.1</b> Terminology</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#multiplying-matrices"><i class="fa fa-check"></i><b>12.1.1</b> Multiplying matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#determinants"><i class="fa fa-check"></i><b>12.2</b> Determinants</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#determinants-formulas-for-small-sizes"><i class="fa fa-check"></i><b>12.2.1</b> Determinants: formulas for small sizes</a></li>
+<li class="chapter" data-level="12.2.2" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#determinants-terminology-required-for-the-general-formula"><i class="fa fa-check"></i><b>12.2.2</b> Determinants: terminology required for the general formula</a></li>
+<li class="chapter" data-level="12.2.3" data-path="matrices-and-determinants.html"><a href="matrices-and-determinants.html#determinants-general-definition"><i class="fa fa-check"></i><b>12.2.3</b> Determinants: general definition</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-12-matrices-and-determinants.html"><a href="exercises-12-matrices-and-determinants.html"><i class="fa fa-check"></i>Exercises 12 (Matrices and determinants)</a></li>
+<li class="chapter" data-level="13" data-path="inverse-matrix-method-and-cramers-rule.html"><a href="inverse-matrix-method-and-cramers-rule.html"><i class="fa fa-check"></i><b>13</b> Inverse matrix method and Cramer’s rule</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="inverse-matrix-method-and-cramers-rule.html"><a href="inverse-matrix-method-and-cramers-rule.html#inverse-matrices"><i class="fa fa-check"></i><b>13.1</b> Inverse matrices</a></li>
+<li class="chapter" data-level="13.2" data-path="inverse-matrix-method-and-cramers-rule.html"><a href="inverse-matrix-method-and-cramers-rule.html#inverse-matrix-method-for-simultaneous-equations"><i class="fa fa-check"></i><b>13.2</b> Inverse matrix method for simultaneous equations</a></li>
+<li class="chapter" data-level="13.3" data-path="inverse-matrix-method-and-cramers-rule.html"><a href="inverse-matrix-method-and-cramers-rule.html#cramers-rule-explained-for-2times-2-only"><i class="fa fa-check"></i><b>13.3</b> Cramer’s rule (explained for <span class="math inline">\(2\times 2\)</span> only)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-13-inverse-matrix-method-and-cramers-rule.html"><a href="exercises-13-inverse-matrix-method-and-cramers-rule.html"><i class="fa fa-check"></i>Exercises 13 (Inverse matrix method and Cramer’s rule)</a></li>
+<li class="chapter" data-level="14" data-path="circular-measure.html"><a href="circular-measure.html"><i class="fa fa-check"></i><b>14</b> Circular measure</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="circular-measure.html"><a href="circular-measure.html#radians-and-degrees"><i class="fa fa-check"></i><b>14.1</b> Radians and degrees</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="circular-measure.html"><a href="circular-measure.html#converting-degrees-to-radians"><i class="fa fa-check"></i><b>14.1.1</b> Converting degrees to radians</a></li>
+<li class="chapter" data-level="14.1.2" data-path="circular-measure.html"><a href="circular-measure.html#converting-radians-to-degrees"><i class="fa fa-check"></i><b>14.1.2</b> Converting radians to degrees</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="circular-measure.html"><a href="circular-measure.html#arc-and-sector"><i class="fa fa-check"></i><b>14.2</b> Arc and sector</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="circular-measure.html"><a href="circular-measure.html#length-of-an-arc"><i class="fa fa-check"></i><b>14.2.1</b> Length of an arc</a></li>
+<li class="chapter" data-level="14.2.2" data-path="circular-measure.html"><a href="circular-measure.html#area-of-a-sector"><i class="fa fa-check"></i><b>14.2.2</b> Area of a sector</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-14-length-of-an-arc-and-area-of-a-sector.html"><a href="exercises-14-length-of-an-arc-and-area-of-a-sector.html"><i class="fa fa-check"></i>Exercises 14 (Length of an arc and area of a sector)</a></li>
+<li class="chapter" data-level="15" data-path="trigonometric-functions.html"><a href="trigonometric-functions.html"><i class="fa fa-check"></i><b>15</b> Trigonometric functions</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="trigonometric-functions.html"><a href="trigonometric-functions.html#from-right-triangles"><i class="fa fa-check"></i><b>15.1</b> From right triangles</a></li>
+<li class="chapter" data-level="15.2" data-path="trigonometric-functions.html"><a href="trigonometric-functions.html#as-functions"><i class="fa fa-check"></i><b>15.2</b> As functions</a></li>
+<li class="chapter" data-level="15.3" data-path="trigonometric-functions.html"><a href="trigonometric-functions.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>15.3</b> Inverse trigonometric functions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-15-trigonometric-functions-and-equations.html"><a href="exercises-15-trigonometric-functions-and-equations.html"><i class="fa fa-check"></i>Exercises 15 (Trigonometric functions and equations)</a></li>
+<li class="chapter" data-level="16" data-path="rectangular-cartesian-coordinates.html"><a href="rectangular-cartesian-coordinates.html"><i class="fa fa-check"></i><b>16</b> Rectangular (Cartesian) coordinates</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="rectangular-cartesian-coordinates.html"><a href="rectangular-cartesian-coordinates.html#guessing-a-law-from-an-experiment"><i class="fa fa-check"></i><b>16.1</b> Guessing a law from an experiment</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-16-plotting-in-rectangular-coordinates.html"><a href="exercises-16-plotting-in-rectangular-coordinates.html"><i class="fa fa-check"></i>Exercises 16 (Plotting in rectangular coordinates)</a></li>
+<li class="chapter" data-level="17" data-path="parametric-representation.html"><a href="parametric-representation.html"><i class="fa fa-check"></i><b>17</b> Parametric representation</a></li>
+<li class="chapter" data-level="" data-path="exercises-17-parametric-representation.html"><a href="exercises-17-parametric-representation.html"><i class="fa fa-check"></i>Exercises 17 (Parametric representation)</a></li>
+<li class="chapter" data-level="18" data-path="polar-coordinates.html"><a href="polar-coordinates.html"><i class="fa fa-check"></i><b>18</b> Polar coordinates</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="polar-coordinates.html"><a href="polar-coordinates.html#converting-polar-to-cartesian-coordinates"><i class="fa fa-check"></i><b>18.1</b> Converting polar to Cartesian coordinates</a></li>
+<li class="chapter" data-level="18.2" data-path="polar-coordinates.html"><a href="polar-coordinates.html#converting-cartesian-to-polar-coordinates"><i class="fa fa-check"></i><b>18.2</b> Converting Cartesian to polar coordinates</a></li>
+<li class="chapter" data-level="18.3" data-path="polar-coordinates.html"><a href="polar-coordinates.html#curves-in-polar-coordinates"><i class="fa fa-check"></i><b>18.3</b> Curves in polar coordinates</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-18-polar-coordinates.html"><a href="exercises-18-polar-coordinates.html"><i class="fa fa-check"></i>Exercises 18 (Polar coordinates)</a></li>
+<li class="chapter" data-level="19" data-path="sine-and-cosine-rules.html"><a href="sine-and-cosine-rules.html"><i class="fa fa-check"></i><b>19</b> Sine and cosine rules</a></li>
+<li class="chapter" data-level="" data-path="exercises-19-sine-and-cosine-rules.html"><a href="exercises-19-sine-and-cosine-rules.html"><i class="fa fa-check"></i>Exercises 19 (Sine and cosine rules)</a></li>
+<li class="chapter" data-level="20" data-path="compound-and-multiple-angles.html"><a href="compound-and-multiple-angles.html"><i class="fa fa-check"></i><b>20</b> Compound and multiple angles</a></li>
+<li class="chapter" data-level="" data-path="exercises-20-compound-and-multiple-angles.html"><a href="exercises-20-compound-and-multiple-angles.html"><i class="fa fa-check"></i>Exercises 20 (Compound and multiple angles)</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Lecture notes - Maths A - Foundation year</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercises-16-plotting-in-rectangular-coordinates" class="section level1 unnumbered">
+<h1>Exercises 16 (Plotting in rectangular coordinates)</h1>
+<ol style="list-style-type: decimal">
+<li>The strain <span class="math inline">\(\varepsilon\)</span> induced in a wire when subjected to a series of stress <span class="math inline">\(\sigma\)</span> values produced the following results:</li>
+</ol>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span> (M Pa)</td>
+<td><span class="math inline">\(10.8\)</span></td>
+<td><span class="math inline">\(21.6\)</span></td>
+<td><span class="math inline">\(33.3\)</span></td>
+<td><span class="math inline">\(37.8\)</span></td>
+<td><span class="math inline">\(45.9\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\varepsilon\)</span> (<span class="math inline">\(\times 10^{-5}\)</span>)</td>
+<td><span class="math inline">\(12\)</span></td>
+<td><span class="math inline">\(24\)</span></td>
+<td><span class="math inline">\(37\)</span></td>
+<td><span class="math inline">\(42\)</span></td>
+<td><span class="math inline">\(51\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Show that the stress is related to the strain by a law of the form <span class="math inline">\(\sigma=E\varepsilon\)</span>, where <span class="math inline">\(E\)</span> is a constant.
+Determine the law for the wire under test.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>During a test on a simple lifting machine, the following results were obtained showing the
+applied force, <span class="math inline">\(F\)</span>, for the load, <span class="math inline">\(L\)</span>, lifted:</li>
+</ol>
+<table style="width:99%;">
+<colgroup>
+<col width="16%" />
+<col width="12%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(F\)</span> (N)</td>
+<td><span class="math inline">\(19\)</span></td>
+<td><span class="math inline">\(37\)</span></td>
+<td><span class="math inline">\(50\)</span></td>
+<td><span class="math inline">\(93\)</span></td>
+<td><span class="math inline">\(125\)</span></td>
+<td><span class="math inline">\(149\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L\)</span> (N)</td>
+<td><span class="math inline">\(40\)</span></td>
+<td><span class="math inline">\(120\)</span></td>
+<td><span class="math inline">\(230\)</span></td>
+<td><span class="math inline">\(410\)</span></td>
+<td><span class="math inline">\(540\)</span></td>
+<td><span class="math inline">\(680\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>It is thought that the equation relating <span class="math inline">\(F\)</span> and <span class="math inline">\(L\)</span> is of the form <span class="math inline">\(F = kL + c\)</span> where both <span class="math inline">\(k\)</span> and <span class="math inline">\(c\)</span> are constants. Assuming that the law holds true, find the force necessary to lift a load of <span class="math inline">\(1\,\mathrm{kN}\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>The variation in pressure, <span class="math inline">\(p\)</span>, within a vessel at a temperature, <span class="math inline">\(T\)</span>, follows a law of the form <span class="math inline">\(p = aT + b\)</span>. Verify that the data below relates the data by this law and determine the law.</li>
+</ol>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p\)</span> (kPa)</td>
+<td><span class="math inline">\(248\)</span></td>
+<td><span class="math inline">\(253\)</span></td>
+<td><span class="math inline">\(257\)</span></td>
+<td><span class="math inline">\(262\)</span></td>
+<td><span class="math inline">\(266\)</span></td>
+<td><span class="math inline">\(270\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T\)</span> (K)</td>
+<td><span class="math inline">\(273\)</span></td>
+<td><span class="math inline">\(278\)</span></td>
+<td><span class="math inline">\(283\)</span></td>
+<td><span class="math inline">\(288\)</span></td>
+<td><span class="math inline">\(293\)</span></td>
+<td><span class="math inline">\(298\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Determine graphically the solution to the simultaneous equations:
+<span class="math display">\[\begin{align*}
+2.5x + 0.45 - 3y &amp;= 0\\
+1.6x + 0.8y - 0.8 &amp;= 0
+\end{align*}\]</span></p></li>
+<li><p>Plot graphs of:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(y = 2x^2\)</span></li>
+<li><span class="math inline">\(y = 2x^2 - 4\)</span></li>
+<li><span class="math inline">\(y = 2x^2 - 2x + 0.5\)</span></li>
+<li><span class="math inline">\(y = 2x^2 + x - 6\)</span></li>
+</ol></li>
+<li><p>Plot the graph of <span class="math inline">\(y = 4x^3 - 4x^2 - 15x + 18\)</span> for values of <span class="math inline">\(x\)</span> from <span class="math inline">\(-3\)</span> to <span class="math inline">\(+3\)</span> and using the graph, determine the roots of the polynomial.</p></li>
+<li><p>On the same axes and to the same scale plot the equations <span class="math inline">\(y = 1.5e^{-1.18x}\)</span> and <span class="math inline">\(y = 1.1(1 - e^{-2.3x})\)</span>. Determine the solution to the equations from your graph.</p></li>
+</ol>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rectangular-cartesian-coordinates.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parametric-representation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": "github"
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

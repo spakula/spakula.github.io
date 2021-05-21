@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Coursework Sheets | MATH1049 Linear Algebra II lecture notes</title>
+  <meta name="description" content="Chapter 7 Coursework Sheets | MATH1049 Linear Algebra II lecture notes" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Coursework Sheets | MATH1049 Linear Algebra II lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Coursework Sheets | MATH1049 Linear Algebra II lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Ján Špakula" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="diag.html"/>
+
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js"],
+    equationNumbers: { autoNumber: "AMS" }
+  }
+  });
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgement"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="groups.html"><a href="groups.html"><i class="fa fa-check"></i><b>1</b> Groups</a></li>
+<li class="chapter" data-level="2" data-path="vss.html"><a href="vss.html"><i class="fa fa-check"></i><b>2</b> Fields and Vector Spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vss.html"><a href="vss.html#ss-fields"><i class="fa fa-check"></i><b>2.1</b> Fields</a></li>
+<li class="chapter" data-level="2.2" data-path="vss.html"><a href="vss.html#ss-vector-spaces"><i class="fa fa-check"></i><b>2.2</b> Vector spaces</a></li>
+<li class="chapter" data-level="2.3" data-path="vss.html"><a href="vss.html#ss-subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bases.html"><a href="bases.html"><i class="fa fa-check"></i><b>3</b> Bases</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bases.html"><a href="bases.html#ss-spanning"><i class="fa fa-check"></i><b>3.1</b> Spanning</a></li>
+<li class="chapter" data-level="3.2" data-path="bases.html"><a href="bases.html#ss-lin-indep"><i class="fa fa-check"></i><b>3.2</b> Linear independence</a></li>
+<li class="chapter" data-level="3.3" data-path="bases.html"><a href="bases.html#ss-bases"><i class="fa fa-check"></i><b>3.3</b> Bases</a></li>
+<li class="chapter" data-level="3.4" data-path="bases.html"><a href="bases.html#ss-dimension"><i class="fa fa-check"></i><b>3.4</b> Dimension</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lt.html"><a href="lt.html"><i class="fa fa-check"></i><b>4</b> Linear Transformations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lt.html"><a href="lt.html#ss-matrep-1"><i class="fa fa-check"></i><b>4.1</b> Matrix representation I</a></li>
+<li class="chapter" data-level="4.2" data-path="lt.html"><a href="lt.html#ss-kernel-and-image"><i class="fa fa-check"></i><b>4.2</b> Kernel and image</a></li>
+<li class="chapter" data-level="4.3" data-path="lt.html"><a href="lt.html#ss-isomorphism"><i class="fa fa-check"></i><b>4.3</b> Isomorphism</a></li>
+<li class="chapter" data-level="4.4" data-path="lt.html"><a href="lt.html#ss-dimthm"><i class="fa fa-check"></i><b>4.4</b> Dimension Theorem</a></li>
+<li class="chapter" data-level="4.5" data-path="lt.html"><a href="lt.html#ss-matrep-2"><i class="fa fa-check"></i><b>4.5</b> Matrix representation II</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="det.html"><a href="det.html"><i class="fa fa-check"></i><b>5</b> Determinants</a></li>
+<li class="chapter" data-level="6" data-path="diag.html"><a href="diag.html"><i class="fa fa-check"></i><b>6</b> Diagonalisability</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="diag.html"><a href="diag.html#ss-eigenthings"><i class="fa fa-check"></i><b>6.1</b> Eigen-things</a></li>
+<li class="chapter" data-level="6.2" data-path="diag.html"><a href="diag.html#ss-diag-defn"><i class="fa fa-check"></i><b>6.2</b> Diagonalisability</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="diag.html"><a href="diag.html#sss-diag-v1"><i class="fa fa-check"></i><b>6.2.1</b> Diagonalisability (version 1)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="diag.html"><a href="diag.html#sss-diag-v2"><i class="fa fa-check"></i><b>6.2.2</b> Diagonalisability (version 2)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="diag.html"><a href="diag.html#sss-diag-v3"><i class="fa fa-check"></i><b>6.2.3</b> Diagonalisability (version 3)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="diag.html"><a href="diag.html#ss-cayley-hamilton"><i class="fa fa-check"></i><b>6.3</b> Cayley–Hamilton Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="courseworks.html"><a href="courseworks.html"><i class="fa fa-check"></i><b>7</b> Coursework Sheets</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-0-not-marked"><i class="fa fa-check"></i><b>7.1</b> Coursework Sheet 0 — not marked</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-assessed"><i class="fa fa-check"></i>Extra question (not assessed)</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#challenge-question-not-assessed"><i class="fa fa-check"></i>Challenge question (not assessed)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-1"><i class="fa fa-check"></i><b>7.2</b> Coursework Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-1"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-assessed-no-need-to-submit"><i class="fa fa-check"></i>Extra question (not assessed — no need to submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-2"><i class="fa fa-check"></i><b>7.3</b> Coursework Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-1"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-5"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-items-for-exercise-5-not-assessed-do-not-submit"><i class="fa fa-check"></i>Extra items for Exercise 5 (not assessed, do not submit):</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-problems-to-think-about-do-not-submit"><i class="fa fa-check"></i>Extra problems to think about (do not submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-3"><i class="fa fa-check"></i><b>7.4</b> Coursework Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-3"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-3"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-2"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-4"><i class="fa fa-check"></i><b>7.5</b> Coursework Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-4"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-4"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-4"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-optional-not-marked"><i class="fa fa-check"></i>Exercise 4 (optional, not marked)</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-marked-do-not-submit"><i class="fa fa-check"></i>Extra question (not marked, do not submit)</a></li>
+<li><a href="courseworks.html#verification-of-the-first-condition-of-being-a-subspace-for-v-from-exercise-4">Verification of the first condition of being a subspace, for <span class="math inline">\(V^*\)</span> from Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-5"><i class="fa fa-check"></i><b>7.6</b> Coursework Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-5"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-5"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-5"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-3"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-exercise-not-marked-do-not-submit"><i class="fa fa-check"></i>Extra exercise (not marked, do not submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-6"><i class="fa fa-check"></i><b>7.7</b> Coursework Sheet 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-6"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-7"><i class="fa fa-check"></i><b>7.8</b> Coursework Sheet 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-7"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-7"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-7"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-5"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-8"><i class="fa fa-check"></i><b>7.9</b> Coursework Sheet 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-8"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-8"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-8"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-6"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1049 Linear Algebra II lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="courseworks" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Coursework Sheets</h1>
+<hr />
+<div id="coursework-sheet-0-not-marked" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Coursework Sheet 0 — not marked</h2>
+<p><strong>Do NOT submit, not marked.</strong></p>
+<div id="exercise-1" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Consider the matrix <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\ 3&amp;1&amp;0\\ 2&amp;0&amp;-1\end{pmatrix}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Show that the equation <span class="math inline">\(A\mathbf{x}=\begin{pmatrix}1\\2\\3\end{pmatrix}\)</span> has no solution in <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+<li><p>Find two linearly independent vectors <span class="math inline">\(\mathbf{y}\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span> such that the equation <span class="math inline">\(A\mathbf{x}=\mathbf{y}\)</span> has a solution in <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+</ol>
+</div>
+<div id="exercise-2" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<ol style="list-style-type: lower-alpha">
+<li><p>Let <span class="math inline">\(w,z\)</span> be complex numbers. Solve the linear equation <span class="math inline">\(wx=z\)</span>; in other
+words, find all <span class="math inline">\(x\in\mathbb{C}\)</span> such that <span class="math inline">\(wx=z\)</span>. (<em>Hint: You need to
+distinguish three cases.</em>)</p></li>
+<li><p>Solve the following system of linear equations: <span class="math display">\[\begin{align*} (5i)x_1 +
+3x_2 &amp;= 12+i\\ x_1 - (2i)x_2 &amp;= 3-i. \end{align*}\]</span></p></li>
+</ol>
+</div>
+<div id="exercise-3" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(A\)</span> be a real <span class="math inline">\(m\times n\)</span> matrix. Recall that its <em>nullspace</em> is the
+following set of vectors: <span class="math inline">\(N(A) = \{ \mathbf{u}\in \mathbb{R}^n \mid A\mathbf{u} = \mathbf{0} \in \mathbb{R}^m\} \subseteq \mathbb{R}^n\)</span>. Prove that
+<span class="math inline">\(N(A)\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+</div>
+<div id="extra-question-not-assessed" class="section level3 unnumbered">
+<h3>Extra question (not assessed)</h3>
+<p>Multiplication of complex numbers defines a binary operation on
+<span class="math inline">\(\mathbb{C}^\times := \mathbb{C}\setminus\{0\}\)</span>. Show that <span class="math inline">\(\mathbb{C}^\times\)</span>
+together with this operation is an abelian group. (<em>Here we consider the
+multiplication of complex numbers defined like so: if <span class="math inline">\(a+bi\)</span> and <span class="math inline">\(c+di\)</span>
+(<span class="math inline">\(a,b,c,d\in\mathbb{R}\)</span>) are complex numbers, their product is</em> declared <em>to be
+the complex number <span class="math inline">\((ac-bd) + (ad+bc)i\)</span>. In your arguments, you may without
+further discussion use the usual laws of algebra for <span class="math inline">\(\mathbb{R}\)</span>. such as
+associativity for addition and multiplication of real numbers.</em>)</p>
+</div>
+<div id="challenge-question-not-assessed" class="section level3 unnumbered">
+<h3>Challenge question (not assessed)</h3>
+<p>Let <span class="math inline">\(G\)</span> be a group such that for all <span class="math inline">\(a\in G\)</span> we have <span class="math inline">\(a*a=e\)</span>. Show that <span class="math inline">\(G\)</span> is
+abelian.</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-1" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Coursework Sheet 1</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 15 February 2021, 17:00.</p>
+<div id="exercise-1-1" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Let <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> be groups with binary operations <span class="math inline">\(\boxplus\)</span> and
+<span class="math inline">\(\odot\)</span>, respectively. We define a binary operation <span class="math inline">\(\ast\)</span>
+on the cartesian product <span class="math inline">\(G \times H\)</span> by
+<span class="math display">\[(a,b) \ast (a&#39;,b&#39;) := (a \boxplus a&#39;, b \odot b&#39;) \quad (\textrm{for }
+a,a&#39; \in G \textrm{ and } b,b&#39; \in H).\]</span> Show that <span class="math inline">\(G\times H\)</span>
+together with this operation is a group.</p>
+</div>
+<div id="exercise-2-1" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>For <span class="math inline">\(a, b \in \mathbb{R}\)</span> we define <span class="math inline">\(a \ast b := a+b+ab \in \mathbb{R}\)</span>.
+Furthermore let <span class="math inline">\(G:= \mathbb{R} \backslash \{-1\}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Show that <span class="math inline">\(a \ast b \in G\)</span> for all <span class="math inline">\(a, b \in G\)</span>.</p></li>
+<li><p>Show that <span class="math inline">\(G\)</span> together with the binary operation <span class="math inline">\(G \times G \rightarrow G\)</span>, <span class="math inline">\((a, b) \mapsto a \ast b\)</span>, is a group.</p></li>
+</ol>
+</div>
+<div id="exercise-3-1" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(G=\{s,t,u,v\}\)</span> be a group with <span class="math inline">\(s\ast u = u\)</span> and <span class="math inline">\(t\ast t = v\)</span>. Determine the group table of <span class="math inline">\(G\)</span>. (<em>There is only one way of completing
+the group table for <span class="math inline">\(G\)</span>. Give a reason for each step.</em>)</p>
+</div>
+<div id="exercise-4" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Write down the group tables for the groups <span class="math inline">\(C_4\)</span> and <span class="math inline">\(C_2 \times C_2\)</span> (cf. Exercise 1). For every element <span class="math inline">\(a\)</span> in <span class="math inline">\(C_4\)</span>
+and <span class="math inline">\(C_2 \times C_2\)</span> determine the smallest positive integer
+<span class="math inline">\(m\)</span> such that <span class="math inline">\(ma\)</span> equals the identity element.</p>
+</div>
+<div id="extra-question-not-assessed-no-need-to-submit" class="section level3 unnumbered">
+<h3>Extra question (not assessed — no need to submit)</h3>
+<p>Let <span class="math inline">\(G\)</span> be a group whose binary operation is written additively,
+i.e. <span class="math inline">\(G \times G \to G\)</span>, <span class="math inline">\((a,b) \mapsto a+b\)</span>. Show that <span class="math inline">\(m(n a) = (m n) a\)</span> for all <span class="math inline">\(a \in G\)</span> and <span class="math inline">\(m,n \in \mathbb{Z}\)</span>. (<em>Hint: You need to
+distinguish up to 9 cases.</em>) Write down the other two
+exponential laws in additive notation as well. (<em>Formulate
+these laws as complete mathematical statements including all
+quantifiers. No proofs are required.</em>)</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-2" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Coursework Sheet 2</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 22 February 2021, 17:00.</p>
+<div id="exercise-1-2" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Write down the group table for the permutation group <span class="math inline">\(S_3\)</span> and show that <span class="math inline">\(S_3\)</span>
+is not abelian.
+(<em>You may find it more convenient to write all elements of <span class="math inline">\(S_3\)</span> in cycle
+notation.</em>)</p>
+</div>
+<div id="exercise-2-2" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p><span class="math display">\[\textrm{Let}\quad \sigma:=
+\left(\begin{array}{ccccccccc}1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7&amp;8&amp;9\\3&amp;7&amp;6&amp;1&amp;8&amp;9&amp;4&amp;2&amp;5\end{array}\right)
+\in S_9, \qquad \tau :=
+\left(\begin{array}{cccccc}1&amp;2&amp;3&amp;4&amp;5&amp;6\\4&amp;2&amp;5&amp;6&amp;3&amp;1\end{array}\right)
+\in S_6\]</span>
+<span class="math display">\[\textrm{and} \quad \eta := \left(\begin{array}{ccccc}1&amp; 2&amp; \ldots &amp; n-1 &amp; n \\n&amp;
+n-1&amp; \ldots &amp; 2 &amp; 1\end{array}\right) \in S_n \quad (\textrm{for
+any even } n \in \mathbb{N}).\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Determine the sign of <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(\tau\)</span> and <span class="math inline">\(\eta\)</span>.</p></li>
+<li><p>Write <span class="math inline">\(\sigma^2\)</span>, <span class="math inline">\(\sigma^{-1}\)</span>, <span class="math inline">\(\tau^2\)</span>, <span class="math inline">\(\tau^{-1}\)</span>,
+<span class="math inline">\(\eta^2\)</span> and <span class="math inline">\(\eta^{-1}\)</span> as a composition of cycles.</p></li>
+<li><p>Determine the sign of <span class="math inline">\(\sigma^2\)</span>, <span class="math inline">\(\tau^2\)</span> and <span class="math inline">\(\eta^2\)</span> in
+two ways, firstly using (b) and secondly using (a) and
+Theorem 1.10 (b).</p></li>
+</ol>
+</div>
+<div id="exercise-3-2" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(n \ge 1\)</span>. Let <span class="math inline">\(\langle a_1, \ldots, a_s \rangle \in S_n\)</span>
+be a cycle and let <span class="math inline">\(\sigma \in S_n\)</span> be arbitrary. Show that
+<span class="math display">\[\sigma \circ \langle a_1, \ldots, a_s\rangle \circ \sigma^{-1} =
+\langle \sigma(a_1), \ldots, \sigma(a_s)\rangle \textrm{ in }
+S_n.\]</span> (<em>Note this is an equality between maps. Hence, in
+order to show this equality you need to show that both sides
+are equal after applying them to an arbitrary element <span class="math inline">\(b\)</span> of
+<span class="math inline">\(\{1, 2, \ldots, n\}\)</span>. To do so you will need to distinguish
+whether <span class="math inline">\(b\)</span> belongs to <span class="math inline">\(\{\sigma(a_1), \ldots, \sigma(a_s)\}\)</span>
+or not.</em>)</p>
+</div>
+<div id="exercise-4-1" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Let <span class="math inline">\(\mathbb{Q}(\sqrt{5})\)</span> denote the set of real numbers <span class="math inline">\(z\)</span> of the
+form <span class="math inline">\(z= a + b \sqrt{5}\)</span> where <span class="math inline">\(a, b \in \mathbb{Q}\)</span>. Show that
+<span class="math inline">\(\mathbb{Q}(\sqrt{5})\)</span> together with the usual addition and
+multiplication of real numbers is a field. (<em>Hint: You need
+to show that for any <span class="math inline">\(w,z \in \mathbb{Q}(\sqrt{5})\)</span> also <span class="math inline">\(w+z, wz, -z\)</span>
+and <span class="math inline">\(z^{-1}\)</span> (if <span class="math inline">\(z \not= 0\)</span>) are in <span class="math inline">\(\mathbb{Q}(\sqrt{5})\)</span> and that
+<span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> are in <span class="math inline">\(\mathbb{Q}(\sqrt{5})\)</span>. Distributivity,
+commutativity and associativity for addition and multiplication
+hold in <span class="math inline">\(\mathbb{Q}(\sqrt{5})\)</span> because they hold in <span class="math inline">\(\mathbb{R}\)</span>.</em>)</p>
+</div>
+<div id="exercise-5" class="section level3 unnumbered">
+<h3>Exercise 5</h3>
+<p>Let <span class="math inline">\(F\)</span> be a field. For any <span class="math inline">\(a, b \in F\)</span>, <span class="math inline">\(b \not= 0\)</span>, we write
+<span class="math inline">\(\frac{a}{b}\)</span> for <span class="math inline">\(ab^{-1}\)</span>. Prove the following statements for
+any <span class="math inline">\(a, a&#39; \in F\)</span> and <span class="math inline">\(b,b&#39; \in F\backslash \{0\}\)</span>:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(\displaystyle{\frac{a}{b} + \frac{a&#39;}{b&#39;} = \frac{ab&#39;+a&#39;b}{bb&#39;}}\)</span>;
+ (ii) <span class="math inline">\(\displaystyle{\frac{a}{b}\frac{a&#39;}{b&#39;} = \frac{aa&#39;}{bb&#39;}}\)</span>.</li>
+</ol>
+</div>
+<div id="extra-items-for-exercise-5-not-assessed-do-not-submit" class="section level3 unnumbered">
+<h3>Extra items for Exercise 5 (not assessed, do not submit):</h3>
+<ol start="3" style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\displaystyle{\frac{a}{b} = \frac{a&#39;}{b&#39;}}\)</span> if and only if <span class="math inline">\(ab&#39; = a&#39;b\)</span>;</p></li>
+<li><p><span class="math inline">\(\displaystyle{\frac{\frac{a}{b}}{\frac{a&#39;}{b&#39;}} = \frac{ab&#39;}{a&#39;b}}\)</span> (if
+in addition <span class="math inline">\(a&#39; \not= 0\)</span>).</p></li>
+</ol>
+</div>
+<div id="extra-problems-to-think-about-do-not-submit" class="section level3 unnumbered">
+<h3>Extra problems to think about (do not submit)</h3>
+<p>The solutions for this will not be provided (but possible to find in a book or
+google). Not necessary for the rest of the module at all. Feel free to ignore.</p>
+<p><strong>Task 1.</strong> The aim is to prove Thm 1.10 from the notes, about the sign
+function on the symmetric groups <span class="math inline">\(S_n\)</span>. Here’s one possible path to a proof.</p>
+<ul>
+<li>Every cycle of length <span class="math inline">\(k\)</span> can be written as a product of <span class="math inline">\(k-1\)</span>
+transpositions.</li>
+<li>Thus, every permutation can be written as a product of transpositions.</li>
+<li>Let <span class="math inline">\(\sigma\)</span> be a permutation, and write it as a product of transpositions.
+Define the number <span class="math inline">\(\mathrm{nsgn}(\sigma)\)</span> (for ``new sign’’) to be equal to
+<span class="math inline">\(1\)</span> if the number of transpositions is even, and <span class="math inline">\(-1\)</span> if the number of
+transpositions is odd. Again, apriori <span class="math inline">\(\mathrm{nsgn}\)</span> depends on <em>how</em>
+do we write <span class="math inline">\(\sigma\)</span> as a product of transpositions. However, by the first
+point above, <span class="math inline">\(\mathrm{nsgn}(\sigma)=\mathrm{sgn}(\sigma)\)</span>, since every
+cycle decomposition of <span class="math inline">\(\sigma\)</span> gives also a way to write <span class="math inline">\(\sigma\)</span> as a
+product of transpositions. So the goal now is to prove that <span class="math inline">\(\mathrm{nsgn}\)</span>
+is well defined, and that it’s multiplicative.</li>
+<li>A way to prove the above is to find a way to characterise <span class="math inline">\(\mathrm{nsgn}\)</span>
+to be something <em>intrinsic</em> to a permutation. Here’s such a thing:
+Given a permutation <span class="math inline">\(\sigma\in S_n\)</span>, we say that <span class="math inline">\(\sigma\)</span> <em>reverses
+the pair <span class="math inline">\((i,j)\)</span></em>, if <span class="math inline">\(i,j\in\{1,\dots,n\}\)</span>, <span class="math inline">\(i&lt;j\)</span> and
+<span class="math inline">\(\sigma(i)&gt;\sigma(j)\)</span>. Let <span class="math inline">\(\mathrm{isgn}(\sigma)\)</span> be <span class="math inline">\(1\)</span> if <span class="math inline">\(\sigma\)</span>
+reverses even number of pairs, and <span class="math inline">\(-1\)</span> if <span class="math inline">\(\sigma\)</span> reverses odd number of
+pairs.</li>
+<li>Prove that if <span class="math inline">\(\sigma\)</span> is a permutation and <span class="math inline">\(\tau\)</span> is a transposition, then
+<span class="math inline">\(\mathrm{isgn}(\sigma\circ\tau)=-\mathrm{isgn}(\sigma)=\mathrm{isgn}(\tau\circ\sigma)\)</span>.</li>
+<li>From the previous point, conclude that
+<span class="math inline">\(\mathrm{isgn}(\sigma)=\mathrm{nsgn}(\sigma)\)</span> (thus the sign is well
+defined).</li>
+<li>From the definition of <span class="math inline">\(\mathrm{nsgn}\)</span>, show that
+<span class="math inline">\(\mathrm{nsgn}(\sigma\circ\tau)=\mathrm{nsgn}(\sigma)\mathrm{nsgn}(\tau)\)</span>
+for any two permutations <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(\tau\)</span>.</li>
+</ul>
+<p><strong>Task 2.</strong> Prove that the number of elements of <span class="math inline">\(S_n\)</span> (i.e. the order of the
+symmetric group <span class="math inline">\(S_n\)</span>) is <span class="math inline">\(n!\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-3" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Coursework Sheet 3</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 1 March 2021, 17:00.</p>
+<div id="exercise-1-3" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>The set <span class="math inline">\(\mathbb{R}^2\)</span> together with the usual vector addition forms an abelian
+group. For <span class="math inline">\(a \in \mathbb{R}\)</span> and <span class="math inline">\(\mathbf{x} = \left(\begin{array}{c}x_1\\x_2\end{array}\right) \in \mathbb{R}^2\)</span> we
+put
+<span class="math inline">\(a \otimes \mathbf{x} := \left(\begin{array}{c} ax_1\\ 0\end{array}\right) \in \mathbb{R}^2\)</span>;
+
+this defines a scalar multiplication
+<span class="math display">\[\mathbb{R} \times \mathbb{R}^2 \rightarrow \mathbb{R}^2, \quad (a, \mathbf{x}) \mapsto a
+\otimes \mathbf{x},\]</span> of the field <span class="math inline">\(\mathbb{R}\)</span> on <span class="math inline">\(\mathbb{R}^2\)</span>. Determine
+which of the axioms defining a vector space hold for the
+abelian group <span class="math inline">\(\mathbb{R}^2\)</span> with this scalar multiplication.
+(<em>Proofs or counterexamples are required.</em>)</p>
+</div>
+<div id="exercise-2-3" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>The set <span class="math inline">\(\mathbb{R}_{&gt;0}\)</span> of positive real numbers together with
+multiplication forms an abelian group. Let <span class="math inline">\(\mathbb{R}_{&gt;0}^n\)</span> denote
+the <span class="math inline">\(n\)</span>-fold cartesian product of <span class="math inline">\(\mathbb{R}_{&gt;0}\)</span> with itself (cf.
+Exercise 1 on Sheet 2). (<em>You may find it convenient to use
+the symbol <span class="math inline">\(\oplus\)</span> for the binary operation in the abelian
+group <span class="math inline">\(\mathbb{R}_{&gt;0}^n\)</span>, that is <span class="math inline">\((b_1, \ldots, b_n) \oplus (c_1, \ldots, c_n) = (b_1 c_1, \ldots, b_n c_n)\)</span> for <span class="math inline">\(b_1, \ldots, b_n, c_1, \ldots, c_n \in \mathbb{R}_{&gt;0}\)</span>.</em>) Furthermore, for <span class="math inline">\(a \in \mathbb{Q}\)</span> and <span class="math inline">\(\mathbf{b} = (b_1, \ldots, b_n) \in \mathbb{R}_{&gt;0}^n\)</span> we put
+<span class="math inline">\(a \otimes \mathbf{b} := (b_1^a, \dots, b_n^a)\)</span>. Show that the
+abelian group <span class="math inline">\(\mathbb{R}_{&gt;0}^n\)</span> together with the scalar multiplication
+<span class="math display">\[\mathbb{Q} \times \mathbb{R}_{&gt;0}^n \rightarrow
+\mathbb{R}_{&gt;0}^n, \quad (a, \mathbf{b}) \mapsto a \otimes \mathbf{b},\]</span> is a
+vector space over <span class="math inline">\(\mathbb{Q}\)</span>.</p>
+</div>
+<div id="exercise-3-3" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(V\)</span> be a vector space over the field <span class="math inline">\(F\)</span> and let <span class="math inline">\(a\in F\)</span>
+and <span class="math inline">\(x,y \in V\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Show that <span class="math inline">\(a(x-y) = ax-ay\)</span> in <span class="math inline">\(V\)</span>.</p></li>
+<li><p>If <span class="math inline">\(ax=0_V\)</span> show that <span class="math inline">\(a=0_F\)</span> or <span class="math inline">\(x=0_V\)</span>.</p></li>
+</ol>
+<p>(<em>Remember to give a reason for each step.</em>)</p>
+</div>
+<div id="exercise-4-2" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Let <span class="math inline">\(S\)</span> be a set and let <span class="math inline">\(V\)</span> be a vector space over a field
+<span class="math inline">\(F\)</span>. Let <span class="math inline">\(V^S\)</span> denote the set of all maps from <span class="math inline">\(S\)</span> to <span class="math inline">\(V\)</span>. We
+define an addition on <span class="math inline">\(V^S\)</span> and a scalar multiplication of <span class="math inline">\(F\)</span>
+on <span class="math inline">\(V^S\)</span> as follows: let <span class="math inline">\(f,g \in V^S\)</span> and let <span class="math inline">\(a \in F\)</span>; then
+<span class="math display">\[(f+g)(s) := f(s) + g(s) \textrm{ and } (af)(s) := a\, (f(s))
+\textrm{ (for any } s \in S).\]</span> Show that <span class="math inline">\(V^S\)</span> is a vector
+space over <span class="math inline">\(F\)</span>. (<em>For a complete proof many axioms need to be checked. In order
+to save you some writing, your solution will be considered complete, if you
+check that there exists an additive identity element in <span class="math inline">\(V^S\)</span>, that every
+element in <span class="math inline">\(V^S\)</span> has an additive inverse and that the second distributivity law
+holds.</em>)</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-4" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Coursework Sheet 4</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 15 March 2021, 17:00.</p>
+<div id="exercise-1-4" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Let <span class="math inline">\(n \ge 2\)</span>. Which of the conditions defining a subspace are
+satisfied for the following subsets of the vector space
+<span class="math inline">\(M_{n\times n}(\mathbb{R})\)</span> of real <span class="math inline">\((n\times n)\)</span>-matrices?
+(<em>Proofs or counterexamples are required.</em>)
+<span class="math display">\[\begin{eqnarray*}
+U&amp; := &amp;\{A \in M_{n \times n}(\mathbb{R})\, | \,\textrm{rank}(A) \le 1\}\\
+V&amp; := &amp; \{A \in M_{n \times n}(\mathbb{R})\, | \,\det(A) = 0\}\\
+W&amp; := &amp; \{A \in M_{n \times n}(\mathbb{R})\, |\, \textrm{trace}(A) = 0\}
+\end{eqnarray*}\]</span>
+(<em>Recall that <span class="math inline">\(\textrm{rank}(A)\)</span> denotes the number of non-zero rows in a
+row-echelon form of <span class="math inline">\(A\)</span> and <span class="math inline">\(\textrm{trace}(A)\)</span> denotes the sum <span class="math inline">\(\sum_{i=1}^n a_{ii}\)</span> of the diagonal elements of the matrix <span class="math inline">\(A = (a_{ij})\)</span>.</em>)</p>
+</div>
+<div id="exercise-2-4" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>Which of the following subsets of the vector space <span class="math inline">\(\mathbb{R}^{\mathbb{R}}\)</span>
+of all functions from <span class="math inline">\(\mathbb{R}\)</span> to <span class="math inline">\(\mathbb{R}\)</span> are subspaces?
+(<em>Proofs or counterexamples are required.</em>)
+
+<span class="math display">\[\begin{eqnarray*}
+U&amp; := &amp; \{f \in \mathbb{R}^{\mathbb{R}}\, | \,f \textrm{ is differentiable and } f&#39;(-5)=0\}\\
+V&amp;:= &amp; \{f \in \mathbb{R}^\mathbb{R} \,|\, f \textrm{ is polynomial of the form } f = at^2 \textrm{ for some } a \in [0,\infty)\}\\ &amp;= &amp;\{f \in \mathbb{R}^\mathbb{R} \,|\, \exists a \in [0,\infty] : \forall s \in \mathbb{R} : f(s) = a s^2\}\\
+W&amp;:= &amp; \{f \in \mathbb{R}^\mathbb{R} \,| \,f \textrm{ is polynomial of the form } f = a t^3 \textrm{ or } f = at^5 \textrm{ for some } a \in \mathbb{R}\}\\ &amp; = &amp;\{f \in \mathbb{R}^\mathbb{R}\, | \,\exists i \in \{3,5\}\; \exists a \in \mathbb{R} : \forall s \in \mathbb{R} : f(s) = a s^i\}\\
+X&amp; := &amp; \{f \in \mathbb{R}^\mathbb{R} \,|\, f \textrm{ is even}\}\\
+\end{eqnarray*}\]</span>
+(<em>Recall that a function <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span> is called</em> even <em>if <span class="math inline">\(f(-s) = f(s)\)</span> for all <span class="math inline">\(s \in \mathbb{R}\)</span>.</em>)</p>
+</div>
+<div id="exercise-3-4" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(\mathbb{F}_2 = \{0, 1\}\)</span> denote the field with 2 elements.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Let <span class="math inline">\(V\)</span> be a vector space over <span class="math inline">\(\mathbb{F}_2\)</span>. Show that every
+non-empty subset <span class="math inline">\(W\)</span> of <span class="math inline">\(V\)</span> which is closed under addition is a
+subspace of <span class="math inline">\(V\)</span>.</li>
+</ol>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Show that <span class="math inline">\(\{(0,0), (1,0)\}\)</span> is a subspace of the vector
+space <span class="math inline">\(\mathbb{F}_2^2\)</span> over <span class="math inline">\(\mathbb{F}_2\)</span>.</p></li>
+<li><p>Write down all subsets of <span class="math inline">\(\mathbb{F}_2^2\)</span> and underline those
+subsets which are subspaces. (<em>No explanations are
+required.</em>)</p></li>
+</ol>
+</div>
+<div id="exercise-4-optional-not-marked" class="section level3 unnumbered">
+<h3>Exercise 4 (optional, not marked)</h3>
+<p>Let <span class="math inline">\(V\)</span> be a vector space over a field <span class="math inline">\(F\)</span>. Putting <span class="math inline">\(S=V\)</span> in
+Example 2.7 we obtain the vector space <span class="math inline">\(F^V\)</span> consisting of
+<em>all</em> functions from <span class="math inline">\(V\)</span> to <span class="math inline">\(F\)</span>. Consider the subset
+<span class="math display">\[V^*:=\{L:V \rightarrow F \;|\; L \textrm{ is a linear
+transformation}\},\]</span> consisting of all linear transformations
+from the vector space <span class="math inline">\(V\)</span> to the (one-dimensional) vector space
+<span class="math inline">\(F\)</span>. Show that <span class="math inline">\(V^{*}\)</span> is a subspace of <span class="math inline">\(F^{V}\)</span>.
+(<em>To get you started, at the end of this sheet you’ll find a detailed
+proof of the first of the three conditions that need to be verified for a
+subspace.</em>)</p>
+</div>
+<div id="extra-question-not-marked-do-not-submit" class="section level3 unnumbered">
+<h3>Extra question (not marked, do not submit)</h3>
+<p>Let <span class="math inline">\(V\)</span> be a vector space over a field <span class="math inline">\(F\)</span> and let <span class="math inline">\(X, Y\)</span> and <span class="math inline">\(Z\)</span> be subspaces
+of <span class="math inline">\(V\)</span>, such that <span class="math inline">\(X\subseteq Y\)</span>. Show that <span class="math inline">\(Y\cap(X+Z) = X+(Y\cap Z)\)</span>.
+(<em>Note: this is an equality of sets, so you need to show that every vector
+in the LHS also belongs to RHS, and vice versa.</em>)</p>
+</div>
+<div id="verification-of-the-first-condition-of-being-a-subspace-for-v-from-exercise-4" class="section level3 unnumbered">
+<h3>Verification of the first condition of being a subspace, for <span class="math inline">\(V^*\)</span> from Exercise 4</h3>
+<p>(You don’t need to reproduce this in your solution, just say that the first condition is proved.)</p>
+<p>The first condition for a subspace asserts that the zero vector of the “big”
+vector space <span class="math inline">\(F^V\)</span> belongs to set <span class="math inline">\(V^*\)</span> that we are showing to be a subspace.</p>
+<p>The zero vector ( = the additive identity element for vector addition) of <span class="math inline">\(F^V\)</span>
+is the zero function <span class="math inline">\(\underline{0}:V\to F\)</span>, defined by <span class="math inline">\(\underline{0}(v)=0_F\)</span> for
+all <span class="math inline">\(v\in V\)</span>, that is, it maps <em>every</em> vector <span class="math inline">\(v\)</span> from <span class="math inline">\(V\)</span> to the additive
+identity element <span class="math inline">\(0_F\)</span> in the field <span class="math inline">\(F\)</span>.</p>
+<p>We need to show that this function <span class="math inline">\(\underline{0}\)</span> belongs to the set <span class="math inline">\(V^*\)</span>, in
+other words, that it is a linear transformation from <span class="math inline">\(V\)</span> to <span class="math inline">\(F\)</span>. This entails
+checking two conditions:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\underline0\)</span> is compatible with addition: take arbitrary vectors <span class="math inline">\(x,y\in V\)</span>. We need to check that <span class="math inline">\(\underline0(x+y)=\underline0(x)+\underline0(y)\)</span> in <span class="math inline">\(F\)</span>:<br />
+LHS <span class="math inline">\(= 0_F\)</span> (by definition of <span class="math inline">\(\underline0\)</span>)<br />
+RHS <span class="math inline">\(= 0_F+0_F = 0_F\)</span> (by definition of <span class="math inline">\(\underline0\)</span> and the field axioms)<br />
+So LHS = RHS.</p></li>
+<li><p><span class="math inline">\(\underline0\)</span> is compatible with scalar multiplication: take a vector <span class="math inline">\(x\in V\)</span> and a scalar <span class="math inline">\(a\in F\)</span>. We need to check that <span class="math inline">\(\underline0(ax)=a(\underline{0}(x))\)</span> in <span class="math inline">\(F\)</span>:<br />
+LHS <span class="math inline">\(= 0_F\)</span> (by definition of <span class="math inline">\(\underline{0}\)</span>)<br />
+RHS <span class="math inline">\(= a0_F = 0_F\)</span> (by definition of <span class="math inline">\(\underline0\)</span> and Prop. 2.3(a))<br />
+So again LHS = RHS.</p></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-5" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> Coursework Sheet 5</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 12 April 2021, 17:00.</p>
+<div id="exercise-1-5" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Which of the following are spanning sets for the vector space
+<span class="math inline">\(\mathbb{P}_2\)</span> of polynomial functions of degree at most <span class="math inline">\(2\)</span>? (<em>Give
+reasons for your answers.</em>)</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\frac12\)</span>, <span class="math inline">\(t^2+t\)</span>, <span class="math inline">\(t^2-1\)</span></p></li>
+<li><p><span class="math inline">\(1\)</span>, <span class="math inline">\(2t\)</span>, <span class="math inline">\(t^2\)</span>, <span class="math inline">\(3t^2+5\)</span></p></li>
+<li><p><span class="math inline">\(t+1\)</span>, <span class="math inline">\(t^2+t\)</span></p></li>
+</ol>
+</div>
+<div id="exercise-2-5" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>Determine whether the following are linearly independent sets of
+vectors in the vector space <span class="math inline">\(\mathbb{R}^\mathbb{R}\)</span> of all functions from <span class="math inline">\(\mathbb{R}\)</span>
+to <span class="math inline">\(\mathbb{R}\)</span>. (<em>Give reasons for your answers.</em>)</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(1+t\)</span>, <span class="math inline">\(1+t+t^2\)</span>, <span class="math inline">\(1+t+t^2+t^3\)</span>, <span class="math inline">\(1+t+t^2+t^4\)</span></p></li>
+<li><p><span class="math inline">\(\sin, \cos^2, \sin^3\)</span></p></li>
+</ol>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(1, \sin^2, \cos^2\)</span></li>
+</ol>
+<p>(<em>Here for example <span class="math inline">\(\sin^2\)</span> denotes the function <span class="math inline">\(\mathbb{R} \rightarrow \mathbb{R}, s \mapsto (\sin(s))^2\)</span>.</em>)</p>
+</div>
+<div id="exercise-3-5" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Find a basis of the null space <span class="math inline">\(N(A) \subset \mathbb{R}^5\)</span> of the matrix
+
+<span class="math display">\[
+A=\left(\begin{array}{ccccc}
+ 1 &amp; -3 &amp;  3 &amp; -1 &amp; -1 \\
+-2 &amp;  6 &amp; -1 &amp; -3 &amp; -8 \\
+ 3 &amp; -9 &amp; 10 &amp; -4 &amp; -5
+\end{array}\right) \in M_{3\times 5}(\mathbb{R})
+\]</span>
+and hence determine its dimension.</p>
+</div>
+<div id="exercise-4-3" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<ol style="list-style-type: lower-alpha">
+<li>Determine whether the following <span class="math inline">\((2 \times 2)\)</span>-matrices
+form a basis of the vector space <span class="math inline">\(M_{2 \times 2}(\mathbb{R})\)</span> of all
+<span class="math inline">\((2 \times 2)\)</span>-matrices over <span class="math inline">\(\mathbb{R}\)</span>:</li>
+</ol>
+<p><span class="math display">\[A_1 = \left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0 \end{array}\right),
+\quad A_2 = \left(\begin{array}{cc} 2 &amp; 1 \\ 0 &amp; 0
+\end{array}\right), \quad A_3 = \left(\begin{array}{cc} 3 &amp; 2 \\ 1 &amp;
+0 \end{array}\right), \quad A_4 = \left(\begin{array}{cc} 4 &amp; 3 \\
+2 &amp; 1 \end{array}\right).\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Find a basis of the subspace <span class="math inline">\(W:= \{A \in M_{2 \times 2}(\mathbb{R}) \mid \textrm{trace}(A) = 0\}\)</span> of the vector space <span class="math inline">\(M_{2 \times 2}(\mathbb{R})\)</span> and hence determine the dimension of <span class="math inline">\(W\)</span> (see
+Exercise 1 on Coursework Sheet 4 for the definition of trace).</li>
+</ol>
+</div>
+<div id="extra-exercise-not-marked-do-not-submit" class="section level3 unnumbered">
+<h3>Extra exercise (not marked, do not submit)</h3>
+<p>We view <span class="math inline">\(\mathbb{C}^2 = \left\{\left(\begin{array}{c} w \\ z \end{array}\right): w, z \in \mathbb{C}\right\}\)</span> as a vector space
+over <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{R}\)</span> and <span class="math inline">\(\mathbb{Q}\)</span> (cf. Example 3.16 (b)). Let
+<span class="math inline">\({\bf x}_1:= \left(\begin{array}{c} i \\ 0 \end{array}\right)\)</span>,
+<span class="math inline">\({\bf x}_2:= \left(\begin{array}{c} \sqrt{2} \\ \sqrt{5} \end{array}\right)\)</span>,
+<span class="math inline">\({\bf x}_3:= \left(\begin{array}{c} 0 \\ 1 \end{array}\right)\)</span>,
+<span class="math inline">\({\bf x}_4:= \left(\begin{array}{c} i\sqrt{3} \\ \sqrt{3} \end{array}\right)\)</span>,
+<span class="math inline">\({\bf x}_5:= \left(\begin{array}{c} 1 \\ 3 \end{array}\right) \in \mathbb{C}^2\)</span>.
+
+Determine
+<span class="math inline">\(\textrm{dim}_F(\textrm{Span}_F({\bf x}_1, {\bf x}_2, {\bf x}_3, {\bf x}_4, {\bf x}_5))\)</span> for <span class="math inline">\(F= \mathbb{C}\)</span>, <span class="math inline">\(\mathbb{R}\)</span> and <span class="math inline">\(\mathbb{Q}\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-6" class="section level2" number="7.7">
+<h2><span class="header-section-number">7.7</span> Coursework Sheet 6</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 19 April 2021, 17:00.</p>
+<div id="exercise-1-6" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Determine whether the following maps are linear transformations. (For a matrix
+<span class="math inline">\(A\)</span>, <span class="math inline">\(A^\mathrm{T}\)</span> denotes its transpose, see Section 2.3 in L.A.I.) (<em>Proofs or
+counterexamples are required.</em>)</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(L: \mathbb{R}^2 \rightarrow \mathbb{R}^3, \quad \left(\begin{array}{c} x_1 \\ x_2 \end{array}\right) \mapsto \left(\begin{array}{c}x_2\\ x_1 + 2x_2 \\ x_1-x_2\end{array}\right)\)</span> <span class="math inline">\(\qquad\)</span> (b) <span class="math inline">\(L: \mathbb{R}^2 \rightarrow \mathbb{R}, \quad \left(\begin{array}{c}x_1 \\ x_2 \end{array}\right) \mapsto x_1^2 + x_1x_2\)</span></li>
+</ol>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(L: M_{n \times n}(\mathbb{R}) \rightarrow M_{n \times n}(\mathbb{R}), \quad A \mapsto A^\mathrm{T} - A\)</span> <span class="math inline">\(\qquad\)</span> (d) <span class="math inline">\(L: \mathbb{P}_3 \rightarrow \mathbb{P}_2, \quad f \mapsto 2f&#39; + (f(3))t^2\)</span></li>
+</ol>
+</div>
+<div id="exercise-2-6" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>Consider the linear transformation <span class="math inline">\(\mathbb{R}^3 \rightarrow \mathbb{R}^4\)</span>
+given by <span class="math inline">\(L(\mathbf{x}) = A\mathbf{x}\)</span> where <span class="math inline">\(A\)</span> is the matrix
+<span class="math display">\[A=\left(\begin{array}{ccc} 1 &amp; 0 &amp; 3\\ 2 &amp; 1 &amp; 2 \\ 1&amp; 2 &amp; -5\\ 2 &amp; 1 &amp; 1 \end{array}\right) \in M_{4 \times 3}(\mathbb{R}).\]</span>
+Find a basis of the image of <span class="math inline">\(L\)</span>. Using the Dimension Theorem show that <span class="math inline">\(L\)</span> is injective.</p>
+</div>
+<div id="exercise-3-6" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(F\)</span> be a field.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Let <span class="math inline">\(A \in M_{n \times n}(F)\)</span> be an invertible matrix. Show
+that the linear transformation
+<span class="math display">\[L_A: F^n \rightarrow F^n, \quad \mathbf{x} \mapsto A\mathbf{x},\]</span>
+(cf. Example 4.3(a)) is an isomorphism.</p></li>
+<li><p>Let <span class="math inline">\(L: V \rightarrow W\)</span> be an isomorphism between vector
+spaces over <span class="math inline">\(F\)</span>. Show that the inverse map <span class="math inline">\(L^{-1}:W \rightarrow V\)</span> is a linear transformation (and hence an isomorphism as well).</p></li>
+</ol>
+</div>
+<div id="exercise-4-4" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>For <span class="math inline">\(\mathbf{y} \in \mathbb{R}^n\)</span> let <span class="math inline">\(L_{\mathbf{y}}: \mathbb{R}^n \to \mathbb{R}\)</span> denote
+the map given by <span class="math inline">\(\mathbf{x} \mapsto L_{\mathbf{y}}(\mathbf{x}) = \mathbf{x} \cdot \mathbf{y}\)</span> where <span class="math inline">\(\mathbf{x} \cdot \mathbf{y}\)</span> denotes the dot
+product of <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(\mathbf{y}\)</span> introduced in Linear Algebra I.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>For each <span class="math inline">\(\mathbf{y} \in \mathbb{R}^n\)</span> show that <span class="math inline">\(L_\mathbf{y}\)</span> is a linear
+transformation and compute <span class="math inline">\(\dim_{\mathbb{R}}(\textrm{ker}(L_\mathbf{y}))\)</span>.</p></li>
+<li><p>(optional, not marked) Let <span class="math inline">\((\mathbb{R}^n)^*\)</span> denote the vector space introduced in
+Coursework 4/Exercise 4. Show that the map <span class="math inline">\(L: \mathbb{R}^n \to (\mathbb{R}^n)^*\)</span>, <span class="math inline">\(\mathbf{y} \mapsto L_\mathbf{y}\)</span>, is an isomorphism.
+(<em>Hint: For surjectivity use Proposition 4.4.</em>)</p></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-7" class="section level2" number="7.8">
+<h2><span class="header-section-number">7.8</span> Coursework Sheet 7</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Tuesday, 4 May 2021, 17:00.</p>
+<div id="exercise-1-7" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>From Calculus we know that for any polynomial function <span class="math inline">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> of degree at most <span class="math inline">\(n\)</span>, the function <span class="math inline">\(I(f): \mathbb{R} \rightarrow \mathbb{R}\)</span>, <span class="math inline">\(s \mapsto \int_0^s f(u)\, du\)</span>, is a polynomial
+function of degree at most <span class="math inline">\(n+1\)</span>. Show that the map
+<span class="math display">\[I: \mathbb{P}_n \rightarrow \mathbb{P}_{n+1}, \quad f \mapsto I(f),\]</span>
+is an injective linear transformation, determine a basis of the
+image of <span class="math inline">\(I\)</span> and find the matrix <span class="math inline">\(M\in M_{(n+2)\times(n+1)}(\mathbb{R})\)</span>
+that represents <span class="math inline">\(I\)</span> with respect to the basis <span class="math inline">\(1, t, \ldots, t^n\)</span>
+of <span class="math inline">\(\mathbb{P}_n\)</span> and the basis <span class="math inline">\(1, t, \ldots, t^{n+1}\)</span> of <span class="math inline">\(\mathbb{P}_{n+1}\)</span>.</p>
+</div>
+<div id="exercise-2-7" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<ol style="list-style-type: lower-alpha">
+<li><p>Let <span class="math inline">\(\alpha \in \mathbb{C}\)</span> and <span class="math inline">\(A:= \left(\begin{array}{ccc} 1-i &amp; \alpha &amp; i \\ i-\alpha &amp; 1 - \alpha &amp; \alpha -i \\ 1- \alpha &amp; 1 &amp; 2+ \alpha \end{array}\right) \in M_{3 \times 3}(\mathbb{C})\)</span>. Compute
+<span class="math inline">\(\det(A) \in \mathbb{C}\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(F\)</span> be a field, <span class="math inline">\(n\)</span> be even and let <span class="math inline">\(c_1, \ldots, c_n \in F\)</span>. Follow
+the blueprint of the proof of Example 5.2(d) and use Exercise 2(a) on
+Coursework Sheet 2 to compute the determinant of the matrix
+<span class="math display">\[B:= \left(\begin{array}{cccc} 0 &amp;
+\ldots &amp; 0 &amp; c_1 \\ \vdots &amp; ⋰ &amp; ⋰ &amp; 0 \\ 0 &amp; ⋰
+&amp; ⋰ &amp; \vdots \\ c_n &amp; 0 &amp; \ldots &amp; 0 \end{array}\right)
+\in M_{n \times n}(F).\]</span></p></li>
+</ol>
+</div>
+<div id="exercise-3-7" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Let <span class="math inline">\(F\)</span> be a field, let <span class="math inline">\(n\ge 1\)</span> and let <span class="math inline">\(a, b \in F\)</span>.
+Furthermore let
+<span class="math display">\[A:= \left(\begin{array}{ccccc} b &amp; a &amp; a &amp; \ldots &amp; a \\
+a &amp; b&amp; a &amp; \ldots &amp; a \\ a&amp; a &amp; b &amp; \ldots &amp; a\\ \vdots &amp; \vdots &amp; \vdots &amp;&amp; \vdots \\
+a&amp; a&amp; a&amp; \ldots &amp; b \end{array}\right) \in M_{n\times n}(F).\]</span>
+Show that <span class="math inline">\(\textrm{det}(A) = (b + (n-1)a)(b-a)^{n-1}\)</span>.
+(<em>Hint: Begin with <span class="math inline">\(R_1 \mapsto R_1 + R_2 + \ldots + R_n\)</span>, apply
+Theorem 5.3(b) and use further row operations to arrive at an upper
+triangular matrix.</em>)</p>
+</div>
+<div id="exercise-4-5" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Let <span class="math inline">\(A = \left(\begin{array}{ccc} 1+i &amp; 1-i &amp; 2 \\ 3 &amp; i &amp; -i \\ 1 &amp; 2-i &amp; 2+i \end{array}\right) \in M_{3 \times 3}(\mathbb{C}) \textrm{ and } B = \left(\begin{array}{ccc} 2 &amp; 3+i &amp; 2i \\ 1 &amp; 2-i &amp; 2+2i \\ 1-i &amp; i &amp; 3 \end{array}\right) \in M_{3 \times 3}(\mathbb{C}).\)</span></p>
+<p>Compute <span class="math inline">\(\det(A)\)</span>, <span class="math inline">\(\det(B)\)</span>, <span class="math inline">\(\det(AB)\)</span> and <span class="math inline">\(\det(A^3)\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="coursework-sheet-8" class="section level2" number="7.9">
+<h2><span class="header-section-number">7.9</span> Coursework Sheet 8</h2>
+<p><strong>Submit</strong> a single pdf with scans of your work to Blackboard by Monday, 10 May 2021, 17:00.</p>
+<div id="exercise-1-8" class="section level3 unnumbered">
+<h3>Exercise 1</h3>
+<p>Let <span class="math inline">\(F\)</span> be a field and let <span class="math inline">\(A \in M_{n\times n}(F)\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If <span class="math inline">\(n=2\)</span> show that <span class="math inline">\(p_A(\lambda) = \lambda^2 - \textrm{trace}(A) \lambda + \det(A)\)</span>. (<em>See
+Exercise 1 on Coursework Sheet 4 for the definition of <span class="math inline">\(\textrm{trace}(A)\)</span>.</em>)</p></li>
+<li><p>Let <span class="math inline">\(k \ge 1\)</span>. Show that if <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A\)</span>
+then <span class="math inline">\(\lambda^k\)</span> is an eigenvalue of <span class="math inline">\(A^k\)</span>.</p></li>
+<li><p>Suppose that <span class="math inline">\(F = \mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{C}\)</span> and that <span class="math inline">\(A^2 = I_n\)</span>.
+Show that if <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A\)</span> then <span class="math inline">\(\lambda = 1\)</span>
+or <span class="math inline">\(\lambda = -1\)</span>.
+Show that <span class="math inline">\(\textrm{ker}(L_{I_n +A}) = E_{-1}(A)\)</span> and that <span class="math inline">\(\textrm{im}(L_{I_n+A}) = E_1(A)\)</span>.</p>
+<p>(<em>Note: The notation “<span class="math inline">\(L_{\mathrm{matrix}}\)</span>” is from Example 4.3 (a).</em>)</p></li>
+</ol>
+</div>
+<div id="exercise-2-8" class="section level3 unnumbered">
+<h3>Exercise 2</h3>
+<p>Let <span class="math inline">\(F\)</span> be a field and let <span class="math inline">\(A \in M_{n\times n}(F)\)</span> be a
+diagonalizable matrix.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Let <span class="math inline">\(k\ge 1\)</span>. Show that <span class="math inline">\(A^k\)</span> is diagonalizable.</p></li>
+<li><p>Show that the transpose <span class="math inline">\(A^T\)</span> of <span class="math inline">\(A\)</span> is diagonalizable.</p></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> is invertible then <span class="math inline">\(A^{-1}\)</span> is
+diagonalizable.</p></li>
+</ol>
+</div>
+<div id="exercise-3-8" class="section level3 unnumbered">
+<h3>Exercise 3</h3>
+<p>Find the eigenvalues of each of the following matrices and
+determine a basis of the eigenspace for each eigenvalue. Determine
+which of these matrices are diagonalizable; if so, write down a
+diagonalizing matrix.</p>
+<p><span class="math display">\[A= \left(\begin{array}{ccc} 2 &amp; 2 &amp; 1\\ 1&amp;3&amp;1\\1&amp;2&amp;2
+\end{array}\right) \in M_{3 \times 3}(\mathbb{R}), \quad B=
+\left(\begin{array}{cc}3&amp;-1\\1&amp;5\end{array}\right) \in M_{2 \times
+2}(\mathbb{R}),\]</span>
+<span class="math display">\[C=\left(\begin{array}{ccc}1&amp;0&amp;0\\1&amp;-1&amp;2\\1&amp;-1&amp;1\end{array}\right)
+\textrm{ as element of } M_{3 \times 3}(\mathbb{R}) \textrm{ and as
+element of } M_{3 \times 3}(\mathbb{C}).\]</span> Compute <span class="math inline">\(C^{2020}\)</span>.</p>
+</div>
+<div id="exercise-4-6" class="section level3 unnumbered">
+<h3>Exercise 4</h3>
+<p>Let <span class="math inline">\(V\)</span> be a vector space over a field <span class="math inline">\(F\)</span> and let <span class="math inline">\(L, M\)</span> be two
+linear transformations from <span class="math inline">\(V\)</span> to itself.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Suppose that <span class="math inline">\(L \circ M = M \circ L\)</span>. Show that
+<span class="math inline">\(L(E_\lambda(M)) \subseteq E_\lambda(M)\)</span> for all <span class="math inline">\(\lambda \in F\)</span>.</p></li>
+<li><p>Suppose that <span class="math inline">\(V\)</span> is of finite dimension. Show that <span class="math inline">\(L\)</span> is
+injective if and only if it is surjective.</p></li>
+</ol>
+<hr />
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="diag.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["la2.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

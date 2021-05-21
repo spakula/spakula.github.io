@@ -1,0 +1,105 @@
+html {
+  color: black;
+  background-color: #EEEEEE;
+  font-size: 1em;
+  margin: 0; }
+
+/* general parts */
+body {
+  font-family: "CMUSerifRoman", "CMUConcreteRoman", "CMUTypewriterTextRegular", "Georgia", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  /* when loading fonts from outside... */
+  /* font-family: 'SourceSerifProRegular','Droid Serif','Ubuntu',serif; */
+  font-weight: normal;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: white;
+  padding: 0; }
+
+#content {
+  padding: 20px;
+    padding-top: 10px;
+  /*  max-width: 40em; */ }
+
+#postamble {
+  background-color: #EEEEEE;
+  padding-top: 5px; }
+#postamble p {
+  padding: 0; }
+
+/* styling general elements */
+p {
+  margin: 5px 40px;
+  padding: 5px; }
+
+ul {
+  margin: 4px; }
+
+li {
+  margin: 2px; }
+
+a {
+  color: #0000cc;
+  text-decoration: underline; }
+  a:visited {
+    color: #0066ff; }
+  a:hover {
+    color: #cc0000; }
+
+/* headings */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin: 0; }
+
+h1, h2, h3 {
+  color: #0000cc;
+  font-size: medium; }
+  h1:before, h2:before, h3:before {
+    content: ":: "; }
+  h1:after, h2:after, h3:after {
+    content: " ::"; }
+
+h1 {
+  padding-top: 10px;
+  padding-bottom: 0; }
+
+h2 {
+  padding-bottom: 0;
+  padding-top: 10px; }
+
+h3 {
+  font-size: medium; }
+
+h4 {
+  margin-left: 1em; }
+
+/* comment classes */
+.rights {
+  float: right;
+  font-size: smaller;
+  color: #999999;
+  margin: 10px; }
+  .rights a {
+    color: #999999; }
+
+.status {
+  font-size: smaller;
+  color: #999999; }
+  .status a {
+    color: #999999; }
+
+/* specific portions of the page */
+.navigation-list {
+  display: none; }
+
+.cat {
+  float: right;
+  margin-right: -40px;
+  margin-top: -5px; }
+.cath {
+  float: right;
+  margin-right: -40px;
+  margin-top: -35px; }
+
+#address h2 {
+  display: none; }

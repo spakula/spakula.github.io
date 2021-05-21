@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Determinants | MATH1049 Linear Algebra II lecture notes</title>
+  <meta name="description" content="Chapter 5 Determinants | MATH1049 Linear Algebra II lecture notes" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Determinants | MATH1049 Linear Algebra II lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Determinants | MATH1049 Linear Algebra II lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Ján Špakula" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lt.html"/>
+<link rel="next" href="diag.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js"],
+    equationNumbers: { autoNumber: "AMS" }
+  }
+  });
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgement"><i class="fa fa-check"></i>Acknowledgement</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="groups.html"><a href="groups.html"><i class="fa fa-check"></i><b>1</b> Groups</a></li>
+<li class="chapter" data-level="2" data-path="vss.html"><a href="vss.html"><i class="fa fa-check"></i><b>2</b> Fields and Vector Spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vss.html"><a href="vss.html#ss-fields"><i class="fa fa-check"></i><b>2.1</b> Fields</a></li>
+<li class="chapter" data-level="2.2" data-path="vss.html"><a href="vss.html#ss-vector-spaces"><i class="fa fa-check"></i><b>2.2</b> Vector spaces</a></li>
+<li class="chapter" data-level="2.3" data-path="vss.html"><a href="vss.html#ss-subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bases.html"><a href="bases.html"><i class="fa fa-check"></i><b>3</b> Bases</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bases.html"><a href="bases.html#ss-spanning"><i class="fa fa-check"></i><b>3.1</b> Spanning</a></li>
+<li class="chapter" data-level="3.2" data-path="bases.html"><a href="bases.html#ss-lin-indep"><i class="fa fa-check"></i><b>3.2</b> Linear independence</a></li>
+<li class="chapter" data-level="3.3" data-path="bases.html"><a href="bases.html#ss-bases"><i class="fa fa-check"></i><b>3.3</b> Bases</a></li>
+<li class="chapter" data-level="3.4" data-path="bases.html"><a href="bases.html#ss-dimension"><i class="fa fa-check"></i><b>3.4</b> Dimension</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lt.html"><a href="lt.html"><i class="fa fa-check"></i><b>4</b> Linear Transformations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lt.html"><a href="lt.html#ss-matrep-1"><i class="fa fa-check"></i><b>4.1</b> Matrix representation I</a></li>
+<li class="chapter" data-level="4.2" data-path="lt.html"><a href="lt.html#ss-kernel-and-image"><i class="fa fa-check"></i><b>4.2</b> Kernel and image</a></li>
+<li class="chapter" data-level="4.3" data-path="lt.html"><a href="lt.html#ss-isomorphism"><i class="fa fa-check"></i><b>4.3</b> Isomorphism</a></li>
+<li class="chapter" data-level="4.4" data-path="lt.html"><a href="lt.html#ss-dimthm"><i class="fa fa-check"></i><b>4.4</b> Dimension Theorem</a></li>
+<li class="chapter" data-level="4.5" data-path="lt.html"><a href="lt.html#ss-matrep-2"><i class="fa fa-check"></i><b>4.5</b> Matrix representation II</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="det.html"><a href="det.html"><i class="fa fa-check"></i><b>5</b> Determinants</a></li>
+<li class="chapter" data-level="6" data-path="diag.html"><a href="diag.html"><i class="fa fa-check"></i><b>6</b> Diagonalisability</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="diag.html"><a href="diag.html#ss-eigenthings"><i class="fa fa-check"></i><b>6.1</b> Eigen-things</a></li>
+<li class="chapter" data-level="6.2" data-path="diag.html"><a href="diag.html#ss-diag-defn"><i class="fa fa-check"></i><b>6.2</b> Diagonalisability</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="diag.html"><a href="diag.html#sss-diag-v1"><i class="fa fa-check"></i><b>6.2.1</b> Diagonalisability (version 1)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="diag.html"><a href="diag.html#sss-diag-v2"><i class="fa fa-check"></i><b>6.2.2</b> Diagonalisability (version 2)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="diag.html"><a href="diag.html#sss-diag-v3"><i class="fa fa-check"></i><b>6.2.3</b> Diagonalisability (version 3)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="diag.html"><a href="diag.html#ss-cayley-hamilton"><i class="fa fa-check"></i><b>6.3</b> Cayley–Hamilton Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="courseworks.html"><a href="courseworks.html"><i class="fa fa-check"></i><b>7</b> Coursework Sheets</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-0-not-marked"><i class="fa fa-check"></i><b>7.1</b> Coursework Sheet 0 — not marked</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-assessed"><i class="fa fa-check"></i>Extra question (not assessed)</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#challenge-question-not-assessed"><i class="fa fa-check"></i>Challenge question (not assessed)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-1"><i class="fa fa-check"></i><b>7.2</b> Coursework Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-1"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-assessed-no-need-to-submit"><i class="fa fa-check"></i>Extra question (not assessed — no need to submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-2"><i class="fa fa-check"></i><b>7.3</b> Coursework Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-1"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-5"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-items-for-exercise-5-not-assessed-do-not-submit"><i class="fa fa-check"></i>Extra items for Exercise 5 (not assessed, do not submit):</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-problems-to-think-about-do-not-submit"><i class="fa fa-check"></i>Extra problems to think about (do not submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-3"><i class="fa fa-check"></i><b>7.4</b> Coursework Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-3"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-3"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-2"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-4"><i class="fa fa-check"></i><b>7.5</b> Coursework Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-4"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-4"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-4"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-3"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-question-not-marked-do-not-submit"><i class="fa fa-check"></i>Extra question (not marked, do not submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-5"><i class="fa fa-check"></i><b>7.6</b> Coursework Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-5"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-5"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-5"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#extra-exercise-not-marked-do-not-submit"><i class="fa fa-check"></i>Extra exercise (not marked, do not submit)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-6"><i class="fa fa-check"></i><b>7.7</b> Coursework Sheet 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-6"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-5"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-5-1"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li><a href="courseworks.html#verification-of-the-first-condition-of-being-a-subspace-for-v-from-exercise-4">Verification of the first condition of being a subspace, for <span class="math inline">\(V^*\)</span> from Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-7"><i class="fa fa-check"></i><b>7.8</b> Coursework Sheet 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-7"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-7"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-7"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-6"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="courseworks.html"><a href="courseworks.html#coursework-sheet-8"><i class="fa fa-check"></i><b>7.9</b> Coursework Sheet 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-1-8"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-2-8"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-3-8"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="courseworks.html"><a href="courseworks.html#exercise-4-7"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1049 Linear Algebra II lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="det" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Determinants</h1>
+<p>In Linear Algebra I the determinant of a square matrix has been defined axiomatically (cf. Theorem <a href="det.html#cnj:thm-weierstrass">5.3</a> here). Here we begin with the following closed formula.</p>
+<div class="definition">
+<p>
+<span id="cnj:defn-leibniz" class="definition"><strong>Definition 5.1 </strong></span>
+<span style="color: blue;">(Leibniz’ definition of determinant)</span>
+Let <span class="math inline">\(F\)</span> be a field. Let <span class="math inline">\(n \geq 1\)</span> and <span class="math inline">\(A = (a_{ij})_{i,j=1, \dots,n} \in M_{n \times n}(F)\)</span>. Then
+<span class="math display">\[
+{\color{red}{\mathrm{det}(A)}} := \sum_{\sigma \in S_{n}} \mathrm{sgn}(\sigma) \prod_{i=1}^{n} a_{i, \sigma(i)} \in F
+\]</span>
+is called the <span style="color: red;">determinant of <span class="math inline">\(A\)</span></span>. We also write <span style="color: red;"><span class="math inline">\(|A|\)</span></span> for <span class="math inline">\(\mathrm{det}(A)\)</span>.
+</p>
+</div>
+<div class="example">
+<p>
+<p><span id="cnj:expl-det" class="example"><strong>Example 5.2 </strong></span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Let <span class="math inline">\(n=1\)</span> and <span class="math inline">\(A=(a_{11}) \in M_{1 \times 1}(F)\)</span>.<br />
+We have <span class="math inline">\(S_{1} = \{ \mathrm{id} \}\)</span> and
+<span class="math display">\[
+\mathrm{det}(A) = \mathrm{sgn}(\mathrm{id}) a_{11} = a_{11}.
+\]</span></li>
+<li>Let <span class="math inline">\(n=2\)</span> and <span class="math inline">\(A = \begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix} \in M_{2 \times 2}(F)\)</span>.<br />
+We have <span class="math inline">\(S_{2} = \{\mathrm{id}, \langle 1, 2 \rangle \}\)</span> and
+<span class="math display">\[
+\mathrm{det}(A) = \mathrm{sgn}(\mathrm{id}) a_{11} a_{22} + \mathrm{sgn}(\langle 1,2 \rangle) a_{12} a_{21} = a_{11} a_{22} - a_{12} a_{21}.
+\]</span>
+For example: if <span class="math inline">\(A = \begin{pmatrix} 1+2i &amp; 3 +4i \\ 1-2i &amp; 2-i \end{pmatrix} \in M_{2 \times 2}(\mathbb{C})\)</span> then<br />
+<span class="math inline">\(\mathrm{det}(A) = (1 + 2i)(2 - i) - (3+4i)(1-2i)\)</span>
+<span class="math inline">\(= (2 + 2 + 4i - i) - (3 + 8 + 4i - 6i)\)</span>
+<span class="math inline">\(= -7 + 5i\)</span>.</li>
+<li>Let <span class="math inline">\(n=3\)</span> and <span class="math inline">\(A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix} \in M_{3 \times 3}(F)\)</span>.<br />
+We have <span class="math inline">\(S_{3} = \{\mathrm{id}, \langle 1,2,3 \rangle, \langle 1,3,2 \rangle, \langle 1,3 \rangle, \langle 2,3 \rangle, \langle 1,2 \rangle \}\)</span> and
+<span class="math display">\[\begin{align*}
+\mathrm{det}(A) &amp;= \underbrace{\mathrm{sgn}(\mathrm{id})}_{= +1} a_{11}a_{22}a_{33} + \underbrace{\mathrm{sgn}( \langle 1,2,3 \rangle )}_{= +1} a_{12}a_{23}a_{31} + \underbrace{\mathrm{sgn}( \langle 1,3,2 \rangle )}_{= +1} a_{13}a_{21}a_{32} \\
+&amp; + \underbrace{\mathrm{sgn}( \langle 1,3 \rangle )}_{= -1} a_{13}a_{22}a_{31} + \underbrace{\mathrm{sgn}( \langle 2,3 \rangle )}_{= -1} a_{11}a_{23}a_{32} + \underbrace{\mathrm{sgn}(\langle 1,2 \rangle )}_{= -1} a_{12}a_{21}a_{33}.
+\end{align*}\]</span>
+Trick to memorise: <span class="math inline">\(\begin{array}{ c c c c c c c c c c} a_{11} &amp; &amp; a_{12} &amp; &amp; a_{13} &amp; &amp; a_{11} &amp; &amp; a_{12} \\ &amp; \diagdown &amp; &amp; \times &amp; &amp; \times &amp; &amp; \diagup &amp; \\ a_{21} &amp; &amp; a_{22} &amp; &amp; a_{23} &amp; &amp; a_{21} &amp; &amp; a_{22} \\ &amp; \diagup &amp; &amp; \times &amp; &amp; \times &amp; &amp; \diagdown &amp; \\ a_{31} &amp; &amp; a_{32} &amp; &amp; a_{33} &amp; &amp; a_{31} &amp; &amp; a_{32} \end{array}\)</span><br />
+<span style="color: blue;">(Rule of Sarrus)</span><br />
+For example, let <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0 \end{pmatrix} \in M_{3 \times 3}(\mathbb{F}_{2})\)</span>.<br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(\mathrm{det}(A) = (0+0+0) - (1+0+0) = 1\)</span> (because <span class="math inline">\(-1=1\)</span> in <span class="math inline">\(\mathbb{F}_{2}\)</span>).</li>
+<li>Let <span class="math inline">\(A = (a_{ij})\)</span> be an upper (or lower) triangular matrix. So <span class="math inline">\(A\)</span> is of the form <span class="math inline">\(\begin{pmatrix} a_{11} &amp; \ldots &amp; \ldots &amp; a_{1n} \\ 0 &amp; \ddots &amp; &amp; \vdots \\ \vdots &amp; \ddots &amp; \ddots &amp; \vdots \\ 0 &amp; \ldots &amp; 0 &amp; a_{nn} \end{pmatrix}\)</span>. In other words, we have <span class="math inline">\(a_{ij} = 0\)</span> if <span class="math inline">\(i &gt; j\)</span>.<br />
+Then <span class="math inline">\(\mathrm{det}(A) = a_{11} a_{22} \cdots a_{nn}\)</span>, i.e. <span class="math inline">\(\mathrm{det}(A)\)</span> is the product of the entries on the main diagonal. For example, <span class="math inline">\(\mathrm{det}(I_{n})= 1\)</span>.</li>
+</ol>
+</p>
+</div>
+<p><em>Proof</em>:<br />
+Let <span class="math inline">\(\sigma \in S_{n}, \sigma \neq \mathrm{id} \implies \exists i_{0} \in \{ 1, \ldots , n \}\)</span> such that <span class="math inline">\(i_{0} &gt; \sigma(i_{0})\)</span>;<br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(a_{i_{0}, \sigma(i_{0})} = 0 \implies \prod_{i=1}^{n} a_{i, \sigma(i)} = 0\)</span>.<br />
+<span class="math inline">\(\implies \mathrm{det}(A) = \mathrm{sgn}(\mathrm{id}) \prod_{i=1}^{n} a_{i, \mathrm{id}(i)} = a_{11} a_{22} \cdots a_{nn}\)</span>.
+ <span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+<div class="theorem">
+<p>
+<p><span id="cnj:thm-weierstrass" class="theorem"><strong>Theorem 5.3 </strong></span>
+<span style="color: blue;">(Weierstrass’ axiomatic description of the determinant map)</span>
+<span style="color: green;">See Defn 4.1 of L.A.I.</span>
+Let <span class="math inline">\(F\)</span> be a field. Let <span class="math inline">\(n \geq 1\)</span>. The map
+<span class="math display">\[\mathrm{det}: \ M_{n \times n}(F) \rightarrow F, A \mapsto \mathrm{det}(A),\]</span>
+has the following properties and is uniquely determined by these properties:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\mathrm{det}\)</span> is linear in each column:<br />
+<span class="math inline">\(\mathrm{det} \begin{pmatrix} &amp; a_{1s} + b_{1s} &amp; \\ C &amp; \vdots &amp; D \\ &amp; a_{ns} + b_{ns} &amp; \end{pmatrix} = \mathrm{ det} \begin{pmatrix} &amp; a_{1s} &amp; \\ C &amp; \vdots &amp; D \\ &amp; a_{ns} &amp; \end{pmatrix} + \mathrm{det} \begin{pmatrix} &amp; b_{1s} &amp; \\ C &amp; \vdots &amp; D \\ &amp; b_{ns} &amp; \end{pmatrix}\)</span>.</p></li>
+<li><p>Multiplying any column of a matrix <span class="math inline">\(A \in M_{n \times n}(F)\)</span> with a scalar <span class="math inline">\(\lambda \in F\)</span> changes <span class="math inline">\(\mathrm{det}(A)\)</span> by the factor <span class="math inline">\(\lambda\)</span>:<br />
+<span class="math inline">\(\mathrm{det} \begin{pmatrix} &amp; \lambda a_{1s} &amp; \\ C &amp; \vdots &amp; D \\ &amp; \lambda a_{ns} &amp; \end{pmatrix} = \lambda \cdot \mathrm{det} \begin{pmatrix} &amp; a_{1s} &amp; \\ C &amp; \vdots &amp; D \\ &amp; a_{ns} &amp; \end{pmatrix}\)</span>.</p></li>
+<li><p>If two columns of <span class="math inline">\(A \in M_{n \times n}(F)\)</span> are equal, then <span class="math inline">\(\mathrm{det}(A) = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathrm{det}(I_{n}) = 1\)</span>.</p></li>
+</ol>
+</p>
+</div>
+<p><em>Proof</em>: Omitted here (please see the extended notes).</p>
+<div class="remark">
+<p>
+<span id="cnj:rmrk-weier" class="remark"><strong>Remark 5.4 </strong></span>
+Theorem <a href="det.html#cnj:thm-weierstrass">5.3</a> and the following Corollary <a href="det.html#cnj:coro-weierstrass">5.5</a> also hold when “columns” are replaced with “rows” (similar proofs).
+</p>
+</div>
+<div class="corollary">
+<p>
+<p><span id="cnj:coro-weierstrass" class="corollary"><strong>Corollary 5.5 </strong></span>
+Let <span class="math inline">\(F\)</span> be a field. Let <span class="math inline">\(A \in M_{n \times n}(F)\)</span>. Then:</p>
+<ol style="list-style-type: lower-alpha">
+<li>For all <span class="math inline">\(\lambda \in F\)</span> we have <span class="math inline">\(\mathrm{det}(\lambda A) = \lambda^{n}\mathrm{det}(A)\)</span>.</li>
+<li>If a column of <span class="math inline">\(A\)</span> is the zero column then <span class="math inline">\(\mathrm{det}(A) = 0\)</span>.</li>
+<li>Let <span class="math inline">\(B\)</span> be obtained from <span class="math inline">\(A\)</span> by swapping two columns of <span class="math inline">\(A\)</span>. Then <span class="math inline">\(\mathrm{det}(B) = -\mathrm{det}(A)\)</span>.</li>
+<li>Let <span class="math inline">\(\lambda \in F\)</span> and let <span class="math inline">\(B\)</span> be obtained from <span class="math inline">\(A\)</span> by adding the <span class="math inline">\(\lambda\)</span>-multiple of the <span class="math inline">\(j^{th}\)</span> column of <span class="math inline">\(A\)</span> to the <span class="math inline">\(i^{th}\)</span> column of <span class="math inline">\(A\)</span>   <span class="math inline">\((i \neq j)\)</span>. Then <span class="math inline">\(\mathrm{det}(B) = \mathrm{det}(A)\)</span>.</li>
+</ol>
+</p>
+</div>
+<p><em>Proof</em>:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Apply Theorem <a href="det.html#cnj:thm-weierstrass">5.3</a>(b) <span class="math inline">\(n\)</span> times.</p></li>
+<li><p>Apply Theorem <a href="det.html#cnj:thm-weierstrass">5.3</a>(b) with <span class="math inline">\(\lambda = 0\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(\underline{a}\)</span>, <span class="math inline">\(\underline{b}\)</span> denote the two columns of <span class="math inline">\(A\)</span> to be swapped.<br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(\mathrm{det}(A) + \mathrm{det}(B) = \mathrm{det}(\ldots \underline{a} \ldots \underline{b} \ldots) + \mathrm{det}(\ldots \underline{b} \ldots \underline{a} \ldots)\)</span><br />
+            <span class="math inline">\(= \mathrm{det}(\ldots \underline{a} \ldots \underline{b} \ldots) + \mathrm{det}(\dots \underline{b} \ldots \underline{a} \ldots)\)</span><br />
+                 <span class="math inline">\(+ \underbrace{\mathrm{det}(\ldots \underline{a} \ldots \underline{a} \ldots)}_{=0} + \underbrace{\mathrm{det}(\ldots \underline{b} \ldots \underline{b} \ldots)}_{=0}\)</span>  <span style="float:right">(using <a href="det.html#cnj:thm-weierstrass">5.3</a>(c))</span><br />
+            <span class="math inline">\(= \mathrm{det}(\ldots \underline{a} \ldots \underline{a}+\underline{b} \ldots) + \mathrm{det}(\ldots \underline{b} \ldots \underline{a} + \underline{b} \ldots)\)</span>  <span style="float:right">(by <a href="det.html#cnj:thm-weierstrass">5.3</a>(a))</span><br />
+            <span class="math inline">\(= \mathrm{det}(\ldots \underline{a} + \underline{b} \ldots \underline{a}+\underline{b} \ldots)\)</span>  <span style="float:right">(by <a href="det.html#cnj:thm-weierstrass">5.3</a>(a))</span><br />
+            <span class="math inline">\(= 0\)</span>  <span style="float:right">(by <a href="det.html#cnj:thm-weierstrass">5.3</a>(c))</span></p></li>
+<li><p><span class="math inline">\(\mathrm{det}(B) = \mathrm{det}(\ldots \underline{a} + \lambda \underline{b} \ldots \underline{b} \ldots)\)</span><br />
+<span class="math inline">\(= \mathrm{det}(\ldots \underline{a} \ldots \underline{b} \ldots) + \lambda\, \underbrace{\mathrm{det}(\ldots \underline{b} \ldots \underline{b} \ldots)}_{=0}\)</span>  <span style="float:right">(by <a href="det.html#cnj:thm-weierstrass">5.3</a>(a),(b))</span><br />
+<span class="math inline">\(= \mathrm{det}(A)\)</span>.  <span style="float:right">(by <a href="det.html#cnj:thm-weierstrass">5.3</a>(c))<span class="math inline">\(\square\)</span></span></p></li>
+</ol>
+<div class="theorem">
+<p>
+<p><span id="cnj:thm-detiff" class="theorem"><strong>Theorem 5.6 </strong></span>
+Let <span class="math inline">\(F\)</span> be a field. Let <span class="math inline">\(A \in M_{n \times n}(F)\)</span>. Then the following are equivalent:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(A\)</span> is invertible.</li>
+<li>The columns of <span class="math inline">\(A\)</span> span <span class="math inline">\(F^{n}\)</span>.</li>
+<li><span class="math inline">\(N(A) = \{ \underline{0} \}\)</span>.</li>
+<li><span class="math inline">\(\mathrm{det}(A) \neq 0\)</span>.</li>
+</ol>
+</p>
+</div>
+<p><span style="color: green;">For (a) <span class="math inline">\(\iff\)</span> (d), compare Thm 4.14 of L.A.I.</span></p>
+<p>Before the proof, recall that we denote the standard basis vectors of <span class="math inline">\(F^n\)</span> as <span class="math inline">\(\underline{e}_{1} = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \dots , \underline{e}_n = \begin{pmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}\)</span>. So, in particular, <span class="math inline">\(I_n=(\underline{e}_{1}, \dots , \underline{e}_{n})\)</span>.</p>
+<div style="page-break-after: always;"></div>
+<p><em>Proof</em>:</p>
+<p>“(a) <span class="math inline">\(\implies\)</span> (b)”: We’ll prove the following more precise statement:<br />
+<span class="math inline">\((\star)\)</span> <span class="math inline">\(\exists B \in M_{n \times n}(F)\)</span> such that <span class="math inline">\(AB = I_{n}\)</span> <span class="math inline">\(\iff\)</span> The columns of A span <span class="math inline">\(F^n\)</span>.<br />
+<em>Proof of (<span class="math inline">\(\star\)</span>)</em>: Let <span class="math inline">\(\underline{a}_{1}\ \ldots , \underline{a}_{n}\)</span> denote the columns of <span class="math inline">\(A\)</span>. Then:<br />
+LHS <span class="math inline">\(\iff \exists \underline{b}_{1}, \ldots, \underline{b}_{n} \in F^{n}\)</span> such that <span class="math inline">\(A \underline{b}_{i} = \underline{e}_{i}\)</span> for all <span class="math inline">\(i=1, \dots, n\)</span><br />
+  <span style="float:right">(we can use the columns of <span class="math inline">\(B=(\underline{b}_{1}, \dots, \underline{b}_{n})\)</span>)</span><br />
+<span class="math inline">\(\iff\)</span> <span class="math inline">\(\exists \underline{b}_{1}, \ldots , \underline{b}_{n} \in F^{n}\)</span> such that <span class="math inline">\(\underline{a}_{1}b_{i1} + \dots + \underline{a}_{n}b_{in} = \underline{e}_{i}\)</span> for all <span class="math inline">\(i=1, \dots, n\)</span><br />
+<span class="math inline">\(\iff\)</span> <span class="math inline">\(\underline{e}_{1}, \dots, \underline{e}_{n} \in \mathrm{Span}(\underline{a}_{1}, \dots, \underline{a}_{n})\)</span><br />
+<span class="math inline">\(\iff\)</span> RHS.</p>
+<p>“(b) <span class="math inline">\(\iff\)</span> (c)”: The columns of <span class="math inline">\(A\)</span> span <span class="math inline">\(F^{n}\)</span><br />
+<span class="math inline">\(\iff\)</span> The columns of <span class="math inline">\(A\)</span> form a basis of <span class="math inline">\(F^{n}\)</span>  <span style="float:right">(by <a href="bases.html#cnj:coro-two-out-of-three">3.15</a>)</span><br />
+<span class="math inline">\(\iff\)</span> The columns of <span class="math inline">\(A\)</span> are linearly independent  <span style="float:right">(by <a href="bases.html#cnj:coro-two-out-of-three">3.15</a>)</span><br />
+<span class="math inline">\(\iff\)</span> <span class="math inline">\(N(A)= \{ \underline{0} \}\)</span>  <span style="float:right">(by definition of <span class="math inline">\(N(A)\)</span>)</span></p>
+<p>“(b) <span class="math inline">\(\implies\)</span> (a)”: <span class="math inline">\(\exists B \in M_{n \times n}(F)\)</span> such that <span class="math inline">\(AB = I_{n}\)</span>  <span style="float:right">(by <span class="math inline">\((\star)\)</span>)</span><br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(A(BA) = (AB)A = I_{n}A = A = A I_{n}\)</span><br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(A(BA - I_{n}) = \underline{0}\)</span><br />
+<span class="math inline">\(\implies\)</span> Every column of <span class="math inline">\(BA - I_{n}\)</span> belongs to <span class="math inline">\(N(A)\)</span><br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(BA - I_{n} = \underline{0}\)</span>  <span style="float:right">(because <span class="math inline">\(N(A) = \{ \underline{0} \}\)</span> by (b) <span class="math inline">\(\iff\)</span> (c))</span><br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(BA = I_{n}\)</span><br />
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(A\)</span> is invertible  <span style="float:right">(as both <span class="math inline">\(AB = I_{n}\)</span> and <span class="math inline">\(BA = I_{n}\)</span>)</span></p>
+<p>“(b) <span class="math inline">\(\iff\)</span> (d)”: We apply column operations to the matrix <span class="math inline">\(A\)</span> until we arrive at a lower triangular matrix <span class="math inline">\(C\)</span>. Then:<br />
+The columns of <span class="math inline">\(A\)</span> span <span class="math inline">\(F^{n}\)</span><br />
+<span class="math inline">\(\iff\)</span> the columns of <span class="math inline">\(C\)</span> span <span class="math inline">\(F^{n}\)</span>  <span style="float:right">(by <a href="bases.html#cnj:prop-spans">3.3</a>(b))</span><br />
+<span class="math inline">\(\iff\)</span> all the diagonal elements of <span class="math inline">\(C\)</span> are non-zero  <span style="float:right">(because <span class="math inline">\(C\)</span> is triangular)</span><br />
+<span class="math inline">\(\iff\)</span> <span class="math inline">\(\mathrm{det}(C) \neq 0\)</span>  <span style="float:right">(by <a href="det.html#cnj:expl-det">5.2</a>(d))</span><br />
+<span class="math inline">\(\iff\)</span> <span class="math inline">\(\mathrm{det}(A) \neq 0\)</span>  <span style="float:right">(because <span class="math inline">\(\mathrm{det}(C) = \lambda \mathrm{det}(A)\)</span> for some non-zero <span class="math inline">\(\lambda \in F\)</span> by <a href="det.html#cnj:coro-weierstrass">5.5</a>)<span class="math inline">\(\square\)</span></span></p>
+<div class="theorem">
+<p>
+<span id="cnj:thm-detprod" class="theorem"><strong>Theorem 5.7 </strong></span>
+<span style="color: green;">(See also Thm 4.21 of L.A.I.)</span>
+Let <span class="math inline">\(F\)</span> be a field. Let <span class="math inline">\(A, B \in M_{n \times n}(F)\)</span>. Then:
+<span class="math display">\[
+\mathrm{det}(AB) = \mathrm{det}(A) \cdot \mathrm{det}(B)
+\]</span>
+</p>
+</div>
+<p><em>Proof</em>: Omitted. <span style="color: green;">(See the proof of Thm 4.21 in L.A.I., it works for any field <span class="math inline">\(F\)</span>.)</span>
+ <span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+<div class="example">
+<p>
+<span id="cnj:expl-detprod" class="example"><strong>Example 5.8 </strong></span>
+For each <span class="math inline">\(m \in \mathbb{N}\)</span> compute <span class="math inline">\(\mathrm{det}(A^{m}) \in \mathbb{C}\)</span>,
+here <span class="math inline">\(A = \begin{pmatrix} 1 + 4i &amp; 1 \\ 5 + i &amp; 1 - i \end{pmatrix} \in M_{2 \times 2}(\mathbb{C})\)</span>.
+</p>
+</div>
+<p><em>Solution</em>: <span class="math inline">\(\mathrm{det}(A) = (1+4i)(1-i) - (5+i) = (1+4+4i-i) - (5+i) = 2i\)</span>.<br />
+<span class="math inline">\(\implies \mathrm{det}(A^{m}) = \mathrm{det}(A)^{m}\)</span> <span class="math inline">\(= (2i)^{m} = \begin{cases} 2^{m} &amp; \text{if } m \text{ is of the form } 4k; \\ 2^{m}i &amp; \text{if } m \text{ is of the form } 4k+1; \\ -(2^{m}) &amp; \text{if } m \text{ is of the form } 4k+2; \\ -(2^{m})i &amp; \text{if } m \text{ is of the form } 4k+3. \end{cases}\)</span>
+ <span style="float:right">(by <a href="det.html#cnj:thm-detprod">5.7</a>)</span></p>
+
+<div style="page-break-after: always;"></div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lt.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diag.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["la2.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

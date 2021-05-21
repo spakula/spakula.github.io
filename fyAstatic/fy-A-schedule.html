@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GENG0001 Weekly schedule</title>
+  <style>
+    details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .75em .75em 0;
+    }
+
+    summary {
+        font-weight: bold;
+        margin: -.75em -.75em 0;
+        padding: .75em;
+        background-color: steelblue;
+        color: white;
+    }
+
+    details[open] {
+        padding: .75em;
+    }
+
+    details[open] summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: .75em;
+    }
+  </style>
+  <script>
+    function getWeekNumber(d) {
+      // Copy date so don't modify original
+      d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      // Set to nearest Thursday: current date + 4 - current day number
+      // Make Sunday's day number 7
+      d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+      // Get first day of year
+      var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+      // Calculate full weeks to nearest Thursday
+      var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+      // Return array of year and week number
+      return [d.getUTCFullYear(), weekNo];
+    }
+    var curr_week = getWeekNumber(new Date())[1];
+    if(curr_week < 20) { curr_week = curr_week+50; }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elt = document.getElementById("week"+(curr_week-40));
+        if(elt!=null) { elt.open = true; }
+
+        document.getElementById("btn-open-all").addEventListener("click", function() {
+            var i,elt;
+            for(i=1; i<=12; i++) {
+                elt = document.getElementById("week"+i);
+                if(elt!=null) { elt.open = true; }
+            }
+        });
+        document.getElementById("btn-close-all").addEventListener("click", function() {
+            var i;
+            for(i=1; i<=12; i++) {
+                elt = document.getElementById("week"+i);
+                if(elt!=null) { elt.open = false; }
+            }
+        });
+    }, false);
+  </script>
+</head>
+<body>
+  <h2>Weekly Schedule for GENG0001 Mathematics A (fall 2020)</h2>
+
+  <details id='week1'>
+    <summary>Week 2 (5 Oct - 9 Oct)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=24462227-d591-4699-915c-ac4100fb42c6' target='_blank'>Welcome video</a> </li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d99e07b3-efb3-435c-8a28-ac4a01157526' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 1: Simultaneous equations</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/simeq.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-1-simultaneous-equations.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=38d47bf8-b0ab-4ba1-9600-ac430075b14c' target='_blank'>video 1-1 (What do I mean by 'Equation' and 'Function')</a> (5 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=771fca20-9c5d-44ea-89fe-ac430075921a' target='_blank'>video 1-2 (Linear equations with 1 or 2 variables)</a> (14 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=df170c1c-c513-4f2f-bc79-ac4300759052' target='_blank'>video 1-3 (A pair of linear eqns with 2 variables)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5484eca8-8c11-43e1-9b14-ac4401013204' target='_blank'>video 1-4 (Recap and discussion)</a> (2 min)</li>
+    </ul>
+    <h3>Topic 2: Factorising</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/factorising.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-2-factorising.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=66b8374f-edf6-4f69-aa4b-ac4300759171' target='_blank'>video 2-1 (Multiplying out brackets)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3a9f6e92-c35e-497b-99ca-ac430075b0d2' target='_blank'>video 2-2 (Factorisation - theory)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3d8ac2af-7de0-48c1-9759-ac430075a446' target='_blank'>video 2-3 (Factorising - examples)</a> (15 min)</li>
+    </ul>
+    <h3>Topic 3: Quadratic equations (first part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/quadratic-equations.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-3-quadratic-equations.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b94f79ae-52f9-408b-b543-ac430075a5d0' target='_blank'>video 3-1 (Terminology and graphs)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=64edbe2a-2b39-4486-aec9-ac4300758fbc' target='_blank'>video 3-2 (Quadratic equations by factorisation)</a> (17 min)</li>
+    </ul>
+  </details>
+  <details id='week2'>
+    <summary>Week 3 (12 Oct - 16 Oct)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=32d1d830-90c9-4a72-9192-ac5100e958d3' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 3: Quadratic equations (second part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/quadratic-equations.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-3-quadratic-equations.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0ddf6f15-2d12-4cb2-9073-ac430075b03c' target='_blank'>video 3-3 (Quadratic equations by formula)</a> (9 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aff4d58f-c011-49b6-ba6d-ac430075a259' target='_blank'>video 3-4 <u>optional</u> (Proof of quadratic formula)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=972a9b42-779b-4341-a57f-ac430075afd5' target='_blank'>video 3-5 (Simultaneous equations: linear and quadratic)</a> (6 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=580a3775-8271-409a-9896-ac430075ae4f' target='_blank'>video 3-6 (Sketching a graph of a quadratic function)</a> (10 min)</li>
+    </ul>
+    <h3>Topic 4: Inequalities</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/inequalities.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-4-inequalities.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=909e91d4-5b6a-4cb2-9587-ac43007590fb' target='_blank'>video 4-1 (Terminology)</a> (15 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de037473-7499-44fa-b81d-ac430075add5' target='_blank'>video 4-2 (Examples)</a> (16 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=68b2b99e-093e-4557-b203-ac430075a380' target='_blank'>video 4-3 (More examples (with fractions) + recap)</a> (25 min)</li>
+    </ul>
+  </details>
+  <details id='week3'>
+    <summary>Week 4 (19 Oct - 23 Oct)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea9f7a0b-8a9a-4188-b67d-ac5800de1cae' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 5: Indices</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/indices.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-5-indices.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4dda1272-7d23-4491-82ea-ac430075a2ef' target='_blank'>video 5-1 (Indices - terminology and definitions)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=da7fb70f-66ec-49a8-a307-ac430075a1e8' target='_blank'>video 5-2 (Laws of indices)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa07e885-f732-4eda-9592-ac430075ad27' target='_blank'>video 5-3 (Examples (to positive indices))</a> (3 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=44443ca6-0076-4062-af98-ac430075a564' target='_blank'>video 5-4 (Examples (to single index))</a> (6 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=63faa6d4-00ce-435a-8a7d-ac430075a4c9' target='_blank'>video 5-5 (Example (simplifying))</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e00573fa-ab76-415b-a6ed-ac430075a107' target='_blank'>video 5-6 (Scientific notation of numbers)</a> (13 min)</li>
+    </ul>
+    <h3>Topic 6: Logarithms</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/logarithms.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-6-logarithms.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e404ace6-257a-471f-a744-ac4300759f7f' target='_blank'>video 6-1 (Definition and graph)</a> (15 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b143eadf-fad5-4939-81bc-ac4300759ac9' target='_blank'>video 6-2 (Laws of logarithms)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb6d44a3-063e-40c1-9699-ac4300758f2b' target='_blank'>video 6-3 (Examples and equations)</a> (13 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=847765ad-0252-4fd5-861e-ac430075a07a' target='_blank'>video 6-4 <u>optional</u> (Proofs of laws of logarithms)</a> (4 min)</li>
+    </ul>
+  </details>
+  <details id='week4'>
+    <summary>Week 5 (26 Oct - 30 Oct)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd5a0bd0-450e-4845-80a6-ac6001276598' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 7: Exponential functions</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/exponential-functions.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-7-exponential-functions.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c47caa33-9a4f-4909-966a-ac4300758ebf' target='_blank'>video 7-1 (Definition and graph)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7ee15bcd-bd31-4b87-bb78-ac4300758e37' target='_blank'>video 7-2 (Example)</a> (12 min)</li>
+    </ul>
+    <h3>Topic 8: Long division and factorisation</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/long-division-and-factorisation.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-8-long-division-and-the-remainder-theorem.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3780d966-e35d-43ad-b90b-ac4300759a4a' target='_blank'>video 8-1 (Polynomials)</a> (3 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2a973fa6-b583-4783-8670-ac430075898f' target='_blank'>video 8-2 (Dividing numbers)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=31e7a172-7c94-4cd8-a03f-ac4300759f09' target='_blank'>video 8-3 (Long division of polynomials - procedure)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=378bdaa5-18a9-4c97-8885-ac430075888c' target='_blank'>video 8-4 (Long division - more examples)</a> (6 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1748bc21-790e-4327-990b-ac4300758aa4' target='_blank'>video 8-5 (Remainder Theorem and factorising polynomials)</a> (11 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8b9d7c89-0fa7-4f21-b9c4-ac430075ac88' target='_blank'>video 8-6 (Factorising polynomials - procedure summary)</a> (6 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3a0e56e6-aa7b-4e2b-a69d-ac43007587f4' target='_blank'>video 8-7 (Factorising polynomials - example)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=701af2e9-a9fa-4264-87d9-ac4300759997' target='_blank'>video 8-8 (Factorising polymonials - longer 'word' problem)</a> (12 min)</li>
+    </ul>
+  </details>
+  <details id='week5'>
+    <summary>Week 6 (2 Nov - 6 Nov)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c54a35f8-e944-4a90-a4ab-ac6700968b45' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 9: Partial fractions</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/partial-fractions.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-9-partial-fractions.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1f654dc7-d701-4b58-a107-ac430075abed' target='_blank'>video 9-1 (General explanation)</a> (17 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10d7d17f-00b9-440f-8505-ac4300759e65' target='_blank'>video 9-2 (Examples)</a> (18 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0c0ad5e9-5770-45a5-bc80-ac430075992b' target='_blank'>video 9-3 (Example)</a> (9 min)</li>
+    </ul>
+    <h3>Topic 10: Arithmetic and geometric progressions</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/arithmetic-and-geometric-progressions.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-10-arithmetic-and-geometric-progressions.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=97fc3fdb-aaa6-4190-b285-ac430075b372' target='_blank'>video 10-1 (Arithmetic progressions - definitions and formulas)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1ea96e1-ef94-46e2-af08-ac430075b2f8' target='_blank'>video 10-2 (Arithmetic progressions - examples)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3a1a6f94-a853-4ada-9f12-ac430075b1d9' target='_blank'>video 10-3 (Geometric progressions - definitions and formulas)</a> (13 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5ce4a075-83e5-4d79-b93b-ac430075b241' target='_blank'>video 10-4 (Geometric progressions - examples)</a> (4 min)</li>
+    </ul>
+  </details>
+  <details id='week6'>
+    <summary>Week 7 (9 Nov - 13 Nov)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ddffff60-3dd8-4001-8771-ac6d012d031f' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 11: Binomial Theorem</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/binomial-theorem.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-11-binomial-expansion.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3200f7f4-522f-42e8-89e2-ac4300758d1d' target='_blank'>video 11-1 (Binomial theorem and Pascal's triangle)</a> (16 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00615b3c-ebf5-4f2b-929d-ac4300758db3' target='_blank'>video 11-2 (Example: expand power of a number)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa6ec3c0-14f7-46c3-b61a-ac4300758791' target='_blank'>video 11-3 (Binomial coefficients and 2nd version of Bin.Th.)</a> (24 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=27910bcc-88a6-4e12-96c9-ac4300759829' target='_blank'>video 11-4 (Examples: expanding to series in powers of x)</a> (15 min)</li>
+    </ul>
+    <h3>Topic 12: Matrices and Determinants (first part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/matrices-and-determinants.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-12-matrices-and-determinants.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1fa9f0bf-38bd-4f03-8a78-ac4300758a12' target='_blank'>video 12-1 (Matrices - terminology)</a> (18 min)</li>
+    </ul>
+  </details>
+  <details id='week7'>
+    <summary>Week 8 (16 Nov - 20 Nov)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aaf77489-5509-4c02-9b27-ac75009eee6b' target='_blank'>Weekly video summary</a> </li>
+    </ul>
+    <h3>Topic 12: Matrices and Determinants (second part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/matrices-and-determinants.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-12-matrices-and-determinants.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5847d9e0-6f81-4bd6-b6fe-ac43007586d1' target='_blank'>video 12-2 (Multiplying matrices)</a> (17 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f80e9218-a161-4e0d-bc03-ac43007588fd' target='_blank'>video 12-3 (Determinants - formulas for small sizes)</a> (11 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2236e613-dcc7-421c-b335-ac43007597b4' target='_blank'>video 12-4 (Determinants - general formula)</a> (21 min)</li>
+    </ul>
+    <h3>Topic 13: Inverse Matrix Method and Cramer's rule (first part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/inverse-matrix-method-and-cramers-rule.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-13-inverse-matrix-method-and-cramers-rule.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fb56fa66-7ef9-4672-a8db-ac4300758643' target='_blank'>video 13-1 (Definition and formula)</a> (14 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e42a5d44-4785-45d9-b287-ac4300759de2' target='_blank'>video 13-2 (Example)</a> (7 min)</li>
+    </ul>
+  </details>
+  <details id='week8'>
+    <summary>Week 9 (23 Nov - 27 Nov)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7989a240-31e1-42e3-a35c-ac7c00a0ad15' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 13: Inverse Matrix Method and Cramer's rule (second part)</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/inverse-matrix-method-and-cramers-rule.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-13-inverse-matrix-method-and-cramers-rule.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8bb1a725-947e-4a49-ad25-ac43007596e1' target='_blank'>video 13-3 (Example)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1739ffd-bf15-47ec-b7b8-ac4300759d05' target='_blank'>video 13-4 (Theory of the Inverse matrix method for linear systems)</a> (13 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ee6bdd09-136f-41a8-b343-ac4300758588' target='_blank'>video 13-5 (Example (2x2))</a> (5 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8f223acb-256e-40c7-9a5c-ac4300759654' target='_blank'>video 13-6 (Example (3x3))</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9ed45f83-5013-4efc-bc21-ac430075850e' target='_blank'>video 13-7 (Cramer's rule)</a> (8 min)</li>
+    </ul>
+    <h3>Topic 14: Circular measure</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/circular-measure.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-14-length-of-an-arc-and-area-of-a-sector.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=88946f72-0ac4-4763-b625-ac43007595af' target='_blank'>video 14-1 (Circular measure (degrees and radians))</a> (12 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ce04bfd6-7005-47ae-89e8-ac4300759c74' target='_blank'>video 14-2 (Length of an arc and area of a sector)</a> (11 min)</li>
+    </ul>
+  </details>
+  <details id='week9'>
+    <summary>Week 10 (30 Nov - 4 Dec)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d973e2bf-cc33-4df1-9c0f-ac8300ad4dfb' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 15: Trigonometric functions</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/trigonometric-functions.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-15-trigonometric-functions-and-equations.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01daa7af-7a71-40d1-bf41-ac4300758c87' target='_blank'>video 15-1 (Pythagoras's theorem)</a> (9 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2b0dd02f-c6d0-446f-b00f-ac430075952c' target='_blank'>video 15-2 (Trig via triangles, Pythagoras's identity, example)</a> (12 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c1d8f897-d297-47e1-b15a-ac430075ab5d' target='_blank'>video 15-3 (Trig manipulation example)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=637ce973-3aee-4b11-a4b7-ac430075aa78' target='_blank'>video 15-4 (Table of commonly used values of trig functions)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d1a3bc2-b305-4f9c-bbd5-ac43007582a8' target='_blank'>video 15-5 (Trig functions via unit circle; graphs)</a> (16 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c75c85e9-778a-493e-8025-ac430075a9f4' target='_blank'>video 15-6 (Inverse trigonometric functions)</a> (25 min)</li>
+    </ul>
+  </details>
+  <details id='week10'>
+    <summary>Week 11 (7 Dec - 11 Dec)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=55486b32-8a32-4f2d-a7ae-ac8a00d88ac5' target='_blank'>Weekly summary video</a> </li>
+    </ul>
+    <h3>Topic 16: Rectangular (Cartesian) coordinates</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/rectangular-cartesian-coordinates.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-16-plotting-in-rectangular-coordinates.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=40a60c76-0718-4871-99a3-ac430075a8cc' target='_blank'>video 16-1 (Cartesian coordinates)</a> (5 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aa98a6af-0b56-4f92-815c-ac4300758bf1' target='_blank'>video 16-2 (Guessing a law from an experiment - theory)</a> (9 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=11c0975c-dcf5-40bf-a919-ac4300758b89' target='_blank'>video 16-3 (Guessing a law from an experiment - example)</a> (7 min)</li>
+    </ul>
+    <h3>Topic 17: Parametric representation</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/parametric-representation.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-17-parametric-representation.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1bf0d653-6bee-49a7-863b-ac430075a92f' target='_blank'>video 17-1 (Example)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=eb0b0584-e48e-40b1-b3cf-ac4300759467' target='_blank'>video 17-2 (Example)</a> (5 min)</li>
+    </ul>
+    <h3>Topic 18: Polar coordinates</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/polar-coordinates.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-18-polar-coordinates.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7ff0024e-b387-4d05-bd9f-ac4300758461' target='_blank'>video 18-1 (Theory)</a> (10 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3ec6d235-0919-4ab9-a3c4-ac4300759383' target='_blank'>video 18-2 (Converting: polar <-> Cartesian)</a> (20 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f6d3be2f-1547-4370-ab98-ac430075815f' target='_blank'>video 18-3 (Example with holes in polar coords)</a> (16 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6bb653a2-34fb-45d2-9d66-ac430075a824' target='_blank'>video 18-4 (Curves in polar coordinates)</a> (11 min)</li>
+    </ul>
+  </details>
+  <details id='week11'>
+    <summary>Week 12 (4 Jan - 8 Jan)</summary>
+    <ul>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2e9e3431-c6ca-49d8-b508-aca6009abfb0' target='_blank'>Weekly summary video</a> </li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59824157-e7dc-46ba-887d-aca800b3814a' target='_blank'>Final Assessment Information video</a> </li>
+    </ul>
+    <h3>Topic 19: Sine and cosine rules</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/sine-and-cosine-rules.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-19-sine-and-cosine-rules.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c5b10a6d-f72e-43ca-82aa-ac430075a79b' target='_blank'>video 19-1 (Formulas)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2b7438e8-ae76-4910-8af9-ac430075a6ee' target='_blank'>video 19-2 <u>optional</u> (Proofs of the formulas)</a> (14 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fd41fd98-1252-49c5-ba32-ac4300759bd9' target='_blank'>video 19-3 (Prep for examples)</a> (3 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6af126e5-b923-4aea-af1b-ac43007583ae' target='_blank'>video 19-4 (Triangle - example)</a> (12 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=54c8d32e-b4ea-4a90-b729-ac430075a678' target='_blank'>video 19-5 (Triangle - example)</a> (9 min)</li>
+    </ul>
+    <h3>Topic 20: Compound and multiple angles</h3>
+    <ul>
+      <li><a href='https://www.personal.soton.ac.uk/js2m12/fyA/compound-and-multiple-angles.html' target='_blank'>lecture notes</a> | <a href='https://www.personal.soton.ac.uk/js2m12/fyA/exercises-20-compound-and-multiple-angles.html' target='_blank'>exercise sheet</a></li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7a49b07f-f8e5-4778-9fd7-ac4300758b06' target='_blank'>video 20-1 (Formulas)</a> (8 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=012b36ab-6a99-4e80-8169-ac43007580cd' target='_blank'>video 20-2 (Examples)</a> (7 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=10eeb72c-5232-420e-8d5c-ac4300758208' target='_blank'>video 20-3 (Changing + into * - formulas and examples)</a> (18 min)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e815dfd1-0a72-4825-833e-ac4300759b68' target='_blank'>video 20-4 <u>optional</u> (Proof of compound angle formulas)</a> (12 min)</li>
+    </ul>
+  </details>
+  <details id='week12'>
+    <summary>Week 13 (11 Jan - 15 Jan)</summary>
+    <ul>
+      <li>Revision: </li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59824157-e7dc-46ba-887d-aca800b3814a' target='_blank'>Final Assessment Information video</a> (the same video as posted last week)</li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=77f8665a-314a-4fd2-968a-aca8012842d7' target='_blank'>Exam 2019/20 workthrough - Q1 to Q10</a> </li>
+      <li><a href='https://southampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9915f58c-dcb8-47dc-a73b-aca900e37159' target='_blank'>Exam 2019/20 workthrough - Q11 to Q14</a> </li>
+    </ul>
+  </details>
+
+  <button id="btn-open-all">Open all weeks</button> <button id="btn-close-all">Close all weeks</button>
+  <a href="fy-A-summary-schedule.html">(Printable summary)</a>
+  <div style="text-align:right; font-size:smaller; color:grey;">(c) 2020 Jan Spakula</div>
+</body>
+</html>
+
