@@ -7,8 +7,8 @@
   oneside]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -74,13 +74,13 @@
 \usepackage{libertine}
 %\usepackage{unicode-math}
 %\setmathfont[Scale=MatchUppercase]{Libertinus Math}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
 \title{Lecture notes - Maths A - Foundation year}
 \author{Ján Špakula}
-\date{2021-01-05}
+\date{2021-07-26}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -94,6 +94,8 @@
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -196,12 +198,12 @@ x+2y &= -2
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.42}}@{}}
 \toprule
 \endhead
-1 & Express \(x\) from (A): & \(x=-2-2y\) \\ \addlinespace
-2 & Substitute into (B): & \(2(-2-2y)+3y=1\) \\ \addlinespace
-3 & Multiply out: & \(-4-4y+3y=1\) \\ \addlinespace
-4 & Rearrange: & \(y=-5\) \\ \addlinespace
-5 & Substitute back into (A): & \(x + 2(-5)=-2\) \\ \addlinespace
-6 & Rearrange: & \(x=8\) \\ \addlinespace
+1 & Express \(x\) from (A): & \(x=-2-2y\) \\
+2 & Substitute into (B): & \(2(-2-2y)+3y=1\) \\
+3 & Multiply out: & \(-4-4y+3y=1\) \\
+4 & Rearrange: & \(y=-5\) \\
+5 & Substitute back into (A): & \(x + 2(-5)=-2\) \\
+6 & Rearrange: & \(x=8\) \\
 \bottomrule
 \end{longtable}
 
@@ -215,10 +217,10 @@ x+2y &= -2
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.20}}@{}}
 \toprule
 \endhead
-1 & Multiply (A) by 2: & \(2x+4y=-4\) & Call this (A') \\ \addlinespace
-2 & Subtract (A') from (B): & \(-y = 5\) & \\ \addlinespace
-3 & Rearrange: & \(y=-5\) & \\ \addlinespace
-4 & Substitute into (A) (as above) & \(x=8\) & \\ \addlinespace
+1 & Multiply (A) by 2: & \(2x+4y=-4\) & Call this (A') \\
+2 & Subtract (A') from (B): & \(-y = 5\) & \\
+3 & Rearrange: & \(y=-5\) & \\
+4 & Substitute into (A) (as above) & \(x=8\) & \\
 \bottomrule
 \end{longtable}
 
@@ -403,16 +405,31 @@ Solve by substitution:
 \textbf{General rules}: \(a(b+c)=ab+ac\) and \(a(b-c) = ab-ac\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-9}{}{\label{exm:unnamed-chunk-9} }\(4(6x-2)=4\cdot 6x - 4\cdot 2 = 24x-12\).
+\protect\hypertarget{exm:unlabeled-div-1}{}\label{exm:unlabeled-div-1}
+
+\(4(6x-2)=4\cdot 6x - 4\cdot 2 = 24x-12\).
+
 \end{example}
+
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-10}{}{\label{exm:unnamed-chunk-10} }\((x+2y)(y-1)=(x+2y)\cdot y - (x+2y)\cdot 1\) \(= xy+2y\cdot y - x -2y\) \(= xy-2y^2-x-2y\).
+\protect\hypertarget{exm:unlabeled-div-2}{}\label{exm:unlabeled-div-2}
+
+\((x+2y)(y-1)=(x+2y)\cdot y - (x+2y)\cdot 1\) \(= xy+2y\cdot y - x -2y\) \(= xy-2y^2-x-2y\).
+
 \end{example}
+
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-11}{}{\label{exm:unnamed-chunk-11} }\((a-b+3)(4a+2)=(a-b+3)\cdot4a + (a-b+3)\cdot 2\) \(=a\cdot 4a - b\cdot 4a + 3\cdot 4a + a\cdot 2 - b\cdot 2 + 3\cdot 2\) \(= 4a^2 - 4ab + 14a - 2b+6\).
+\protect\hypertarget{exm:unlabeled-div-3}{}\label{exm:unlabeled-div-3}
+
+\((a-b+3)(4a+2)=(a-b+3)\cdot4a + (a-b+3)\cdot 2\) \(=a\cdot 4a - b\cdot 4a + 3\cdot 4a + a\cdot 2 - b\cdot 2 + 3\cdot 2\) \(= 4a^2 - 4ab + 14a - 2b+6\).
+
 \end{example}
+
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-12}{}{\label{exm:unnamed-chunk-12} }\((3x+1)(y-2)(x+y)=(3x+1)\cdot(y-2)\cdot x + (3x+1)\cdot(y-2)\cdot y\) \(=(3x+1)\cdot(yx-2x) + (3x+1)\cdot(y^2-2y)\) \(= (3x+1)\cdot yx - (3x+1)\cdot 2x + (3x+1)\cdot y^2 - (3x+1)\cdot 2y\) \(= 3x^2y + xy - 6x^2 - 2x + 3xy^2 + y^2 - 6xy - 2y\).
+\protect\hypertarget{exm:unlabeled-div-4}{}\label{exm:unlabeled-div-4}
+
+\((3x+1)(y-2)(x+y)=(3x+1)\cdot(y-2)\cdot x + (3x+1)\cdot(y-2)\cdot y\) \(=(3x+1)\cdot(yx-2x) + (3x+1)\cdot(y^2-2y)\) \(= (3x+1)\cdot yx - (3x+1)\cdot 2x + (3x+1)\cdot y^2 - (3x+1)\cdot 2y\) \(= 3x^2y + xy - 6x^2 - 2x + 3xy^2 + y^2 - 6xy - 2y\).
+
 \end{example}
 
 \hypertarget{factorising-1}{%
@@ -441,46 +458,82 @@ A positive whole number \(p\neq1\) is called a \textbf{prime number} if it does 
 First prime numbers: \(2,3,5,7,11,13,17,19,23,29,\dots\)
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-13}{}{\label{exm:unnamed-chunk-13} }Factorise \(27+81\).
+\protect\hypertarget{exm:unlabeled-div-5}{}\label{exm:unlabeled-div-5}
+
+Factorise \(27+81\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(27+81 = 27(1+3)=27\cdot 4 = 3\cdot3\cdot3\cdot2\cdot2\).
+
+\(27+81 = 27(1+3)=27\cdot 4 = 3\cdot3\cdot3\cdot2\cdot2\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-15}{}{\label{exm:unnamed-chunk-15} }Factorise \(x^3-3x^2y\).
+\protect\hypertarget{exm:unlabeled-div-7}{}\label{exm:unlabeled-div-7}
+
+Factorise \(x^3-3x^2y\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(x^3-3x^2y = x^2(x-3y)\).
+
+\(x^3-3x^2y = x^2(x-3y)\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17} }Factorise \(6ax+3ay+2bx+by\).
+\protect\hypertarget{exm:unlabeled-div-9}{}\label{exm:unlabeled-div-9}
+
+Factorise \(6ax+3ay+2bx+by\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\((6ax+3ay)+(2bx+by) = 3a(2x+y)+b(2x+y)\) \(=(3a+b)(2x+y)\).
+
+\((6ax+3ay)+(2bx+by) = 3a(2x+y)+b(2x+y)\) \(=(3a+b)(2x+y)\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-19}{}{\label{exm:unnamed-chunk-19} }Factorise \(3x^2-5xy-2y^2\).
+\protect\hypertarget{exm:unlabeled-div-11}{}\label{exm:unlabeled-div-11}
+
+Factorise \(3x^2-5xy-2y^2\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Note: \(-5=1\cdot 1-2\cdot 3\).
+
+Note: \(-5=1\cdot 1-2\cdot 3\).
 So \(3x^2-5xy-2y^2\) \(=3x^2- 6xy + xy-2y^2\) \(=3x(x-2y)+y(x-2y)\) \(=(3x+y)(x-2y)\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-21}{}{\label{exm:unnamed-chunk-21} }Factorise \(25x^2y^2-30xy+9\).
+\protect\hypertarget{exm:unlabeled-div-13}{}\label{exm:unlabeled-div-13}
+
+Factorise \(25x^2y^2-30xy+9\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(25x^2y^2-30xy+9\) \(=25x^2y^2 -15xy -15xy +9\) \(=5xy(5xy-3)-3(5xy-3)\) \(=(5xy-3)(5xy-3)\).
+
+\(25x^2y^2-30xy+9\) \(=25x^2y^2 -15xy -15xy +9\) \(=5xy(5xy-3)-3(5xy-3)\) \(=(5xy-3)(5xy-3)\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-23}{}{\label{exm:unnamed-chunk-23} }Factorise \(10a^2+ab-21b^2\).
+\protect\hypertarget{exm:unlabeled-div-15}{}\label{exm:unlabeled-div-15}
+
+Factorise \(10a^2+ab-21b^2\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(10a^2+ab-21b^2\) \(=10a^2 +15ab - 14ab -21b^2\) \(=(2a+3b)(5a-7b)\).
+
+\(10a^2+ab-21b^2\) \(=10a^2 +15ab - 14ab -21b^2\) \(=(2a+3b)(5a-7b)\).
+
 \end{solution}
 
 \emph{Notes:}
@@ -643,27 +696,45 @@ Any value of \(x\) that makes the equation \(ax^2+bx+c=0\) hold true is called a
 \end{figure}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-27}{}{\label{exm:unnamed-chunk-27} }Find the roots of \(2x^2-x-6\).
+\protect\hypertarget{exm:unlabeled-div-17}{}\label{exm:unlabeled-div-17}
+
+Find the roots of \(2x^2-x-6\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}First factorise: \(2x^2-x-6 = (2x+3)(x-2)\).\\
+
+First factorise: \(2x^2-x-6 = (2x+3)(x-2)\).\\
 Thus the roots are \(x_1=-\frac{3}{2}\) and \(x_2=2\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-29}{}{\label{exm:unnamed-chunk-29} }Find the roots of \(4x^2+4x+1\).
+\protect\hypertarget{exm:unlabeled-div-19}{}\label{exm:unlabeled-div-19}
+
+Find the roots of \(4x^2+4x+1\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Factorise: \(4x^2+4x+1=(2x+1)(2x+1)=(2x+1)^2\).\\
+
+Factorise: \(4x^2+4x+1=(2x+1)(2x+1)=(2x+1)^2\).\\
 Hence the only root is \(x_1=-\frac{1}{2}\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-31}{}{\label{exm:unnamed-chunk-31} }Find the roots of \(x^2-2x+2\).
+\protect\hypertarget{exm:unlabeled-div-21}{}\label{exm:unlabeled-div-21}
+
+Find the roots of \(x^2-2x+2\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}We can rewrite \(x^2-2x+2=(x-1)^2+1\).\\
+
+We can rewrite \(x^2-2x+2=(x-1)^2+1\).\\
 This is positive for all real numbers \(x\), thus there are no roots.
+
 \end{solution}
 
 \hypertarget{general-formula-for-roots-of-ax2bxc}{%
@@ -693,40 +764,64 @@ Remarks:
 \end{itemize}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33} }Find the roots of \(x^2+3x+1\).
+\protect\hypertarget{exm:unlabeled-div-23}{}\label{exm:unlabeled-div-23}
+
+Find the roots of \(x^2+3x+1\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(x_{1,2}=\dfrac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot 1}\) \(\dfrac{-3\pm\sqrt{9-4}}{2}\) \(=-\dfrac{3}{2}\pm\dfrac{1}{2}\sqrt{5}\).
+
+\(x_{1,2}=\dfrac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot 1}\) \(\dfrac{-3\pm\sqrt{9-4}}{2}\) \(=-\dfrac{3}{2}\pm\dfrac{1}{2}\sqrt{5}\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35} }Find the roots of \(x^2-9\).
+\protect\hypertarget{exm:unlabeled-div-25}{}\label{exm:unlabeled-div-25}
+
+Find the roots of \(x^2-9\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(x_{1,2}=\dfrac{-0\pm\sqrt{0-4\cdot1\cdot(-9)}}{2\cdot1}\) \(=\pm\dfrac{36}{2}=\pm 3\).
+
+\(x_{1,2}=\dfrac{-0\pm\sqrt{0-4\cdot1\cdot(-9)}}{2\cdot1}\) \(=\pm\dfrac{36}{2}=\pm 3\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37} }Find the roots of \(4x^2-4x+1\).
+\protect\hypertarget{exm:unlabeled-div-27}{}\label{exm:unlabeled-div-27}
+
+Find the roots of \(4x^2-4x+1\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(x_{1,2}=\dfrac{-4\pm\sqrt{(-4)^2-4\cdot 4\cdot 1}}{2\cdot 8}\) \(=\dfrac{4\pm\sqrt{0}}{8}=\dfrac{1}{2}\) (only one solution).
+
+\(x_{1,2}=\dfrac{-4\pm\sqrt{(-4)^2-4\cdot 4\cdot 1}}{2\cdot 8}\) \(=\dfrac{4\pm\sqrt{0}}{8}=\dfrac{1}{2}\) (only one solution).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39} }Solve the simultaneous equations
+\protect\hypertarget{exm:unlabeled-div-29}{}\label{exm:unlabeled-div-29}
+
+Solve the simultaneous equations
 \begin{align*}
 y &= -x^2+2x+2 \tag{A}\\
 x+y-2 &=0 \tag{B}
 \end{align*}
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Make \(x\) the subject of (B): \(x=-y+2\).\\
+
+Make \(x\) the subject of (B): \(x=-y+2\).\\
 Substitute into (A): \(y=-(-y+2)^2+2(-y+2)+2\).\\
 Rearrange: \(y^2-y-2=0\).\\
 Solve the quadratic: \(y_{1,2}=\dfrac{-(-1)\pm\sqrt{(-1)^2-4\cdot1\cdot(-2)}}{2\cdot1} = \dfrac{1\pm\sqrt{9}}{2}\)\\
 \(\implies\) ~ \(y_1=2\), ~~ \(y_2=-1\).\\
 Substitute back into (B): ~ \(x_1=0\), ~~ \(x_2=3\).
+
 \end{solution}
 
 \begin{figure}
@@ -971,19 +1066,30 @@ The notation \(\{x: x<-1 \text{ or } x\geq2\}\) can be depicted as
 For example: \(2<3\) \(\iff\) \(-2>-3\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-50}{}{\label{exm:unnamed-chunk-50} }Solve \(3x+5>17\).
+\protect\hypertarget{exm:unlabeled-div-31}{}\label{exm:unlabeled-div-31}
+
+Solve \(3x+5>17\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(3x+5>17\)\\
+
+\(3x+5>17\)\\
 \(\iff\) \(3x>12\) \hfill~{(subtract \(5\))}\\
 \(\iff\) \(x>4\) \hfill~{(multiply by \(1/3\))}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-52}{}{\label{exm:unnamed-chunk-52} }Determine the set \(\{x: 2x-x^2<3x-12\}\).
+\protect\hypertarget{exm:unlabeled-div-33}{}\label{exm:unlabeled-div-33}
+
+Determine the set \(\{x: 2x-x^2<3x-12\}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(2x-x^2<3x-12\)\\
+
+\(2x-x^2<3x-12\)\\
 \(\iff\) \(2x-x^2-3x+12<0\) \hfill~{(subtract \(3x-12\))}\\
 \(\iff\) \(-x^2-x+12<0\) \hfill~{(rearrange LHS)}\\
 \(\iff\) \(x^2+x-12>0\) \hfill~{(multiply by \(-1\))}\\
@@ -992,27 +1098,40 @@ For example: \(2<3\) \(\iff\) \(-2>-3\).
 \(\iff\) \(\big( x>-4\) and \(x>3\big)\) or \(\big(x<-4\) and \(x<3\big)\)\\
 \(\iff\) \(x>3\) or \(x<-4\)\\
 Answer: \(\{x: x>3\text{ or }x<-4\}\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-54}{}{\label{exm:unnamed-chunk-54} }Solve \(\dfrac{x-1}{x-2}<0\).
+\protect\hypertarget{exm:unlabeled-div-35}{}\label{exm:unlabeled-div-35}
+
+Solve \(\dfrac{x-1}{x-2}<0\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(\frac{x-1}{x-2}<0\)\\
+
+\(\frac{x-1}{x-2}<0\)\\
 \(\iff\) \((x-1)(x-2)<0\) \hfill~{(multiply by \((x-1)^2\geq 0\))}\\
 \(\iff\) \(\big( x<1\) and \(x>2\big)\) or \(\big(x>1\) and \(x<2\big)\)\\
 \(\iff\) \(1<x<2\)
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-56}{}{\label{exm:unnamed-chunk-56} }Solve \(\dfrac{3x-2}{1+x}\leq 1\).
+\protect\hypertarget{exm:unlabeled-div-37}{}\label{exm:unlabeled-div-37}
+
+Solve \(\dfrac{3x-2}{1+x}\leq 1\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(\frac{3x-2}{1+x}\leq1\)\\
+
+\(\frac{3x-2}{1+x}\leq1\)\\
 \(\iff\) \(\frac{(3x-2)-(1+x)}{1+x}\leq0\)\\
 \(\iff\) \(\frac{2x-3}{1+x}\leq0\)\\
 \(\iff\) \(\big( x\leq\frac{3}{2}\) and \(x>-1\big)\) or \(\big(x\geq \frac{3}{2}\) and \(x<-1\big)\)\\
 \(\iff\) \(-1<x\leq\frac{3}{2}\)
+
 \end{solution}
 
 \hypertarget{exercises-4-inequalities}{%
@@ -1144,32 +1263,62 @@ Deriving 4: \(\frac{a^r}{a^s} = a^r\cdot \frac{1}{a^s} = a^r\cdot a^{-s} \stackr
 Deriving 5: \(\left(\sqrt[n]{a}\right)^m = \left(a^{\frac{1}{n}}\right)^m \stackrel{3.}{=} a^{\frac{1}{n}\cdot m} = a^\frac{m}{n}\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-60}{}{\label{exm:unnamed-chunk-60} }Write the following expressions using only positive indices: \(x^{-4}\),~ \(3x^{-4}\),~ \((3x)^{-4}\) ~ and \(\frac{2}{y^{-3}}\).
+\protect\hypertarget{exm:unlabeled-div-39}{}\label{exm:unlabeled-div-39}
+
+Write the following expressions using only positive indices: \(x^{-4}\),~ \(3x^{-4}\),~ \((3x)^{-4}\) ~ and \(\frac{2}{y^{-3}}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}
+
+Calculate
+
+\begin{itemize}
+\tightlist
+\item
+  \(x^{-4}=\frac{1}{x^4}\)
+\item
+  \(3x^{-4}=3\cdot\frac{1}{x^4}=\frac{3}{x^4}\)
+\item
+  \((3x)^{-4} = \frac{1}{(3x)^4} = \frac{1}{3^4\cdot x^4}=\frac{1}{81x^4}\)
+\item
+  \(\frac{2}{y^{-3}}=\frac{2}{\frac{1}{y^3}}=2y^3\)
+\end{itemize}
+
 \end{solution}
-- \(x^{-4}=\frac{1}{x^4}\)
-- \(3x^{-4}=3\cdot\frac{1}{x^4}=\frac{3}{x^4}\)
-- \((3x)^{-4} = \frac{1}{(3x)^4} = \frac{1}{3^4\cdot x^4}=\frac{1}{81x^4}\)
-- \(\frac{2}{y^{-3}}=\frac{2}{\frac{1}{y^3}}=2y^3\)
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-62}{}{\label{exm:unnamed-chunk-62} }Write the following expressions using only single index: \(\left(x^2\right)^{-3}\), ~ \(\left((-x)^{-2}\right)^{-3}\), ~ \(\left(\frac{t}{t^{-2}}\right)^{4}\).
+\protect\hypertarget{exm:unlabeled-div-41}{}\label{exm:unlabeled-div-41}
+
+Write the following expressions using only single index: \(\left(x^2\right)^{-3}\), ~ \(\left((-x)^{-2}\right)^{-3}\), ~ \(\left(\frac{t}{t^{-2}}\right)^{4}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}
+
+Calculate
+
+\begin{itemize}
+\tightlist
+\item
+  \(\left(x^2\right)^{-3} = x^{2\cdot(-3)}=x^{-6}\)
+\item
+  \(\left((-x)^{-2}\right)^{-3} = (-x)^{(-2)\cdot(-3)}=(-x)^{6}=\left((-1)\cdot x\right)^6=(-1)^6\cdot x^6=x^6\)
+\item
+  \(\left(\frac{t}{t^{-2}}\right)^{4}=\frac{t^4}{(t^{-2})^4}=\frac{t^4}{t^{-8}}=t^{4-(-8)}=t^{12}\)
+\end{itemize}
+
 \end{solution}
-- \(\left(x^2\right)^{-3} = x^{2\cdot(-3)}=x^{-6}\)
-- \(\left((-x)^{-2}\right)^{-3} = (-x)^{(-2)\cdot(-3)}=(-x)^{6}=\left((-1)\cdot x\right)^6=(-1)^6\cdot x^6=x^6\)
-- \(\left(\frac{t}{t^{-2}}\right)^{4}=\frac{t^4}{(t^{-2})^4}=\frac{t^4}{t^{-8}}=t^{4-(-8)}=t^{12}\)
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-64}{}{\label{exm:unnamed-chunk-64} }Simplify the expression \(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}\div\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\) so that it uses only positive indices.
+\protect\hypertarget{exm:unlabeled-div-43}{}\label{exm:unlabeled-div-43}
+
+Simplify the expression \(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}\div\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\) so that it uses only positive indices.
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}
-\end{solution}
+
 \begin{align*}
 A&= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^{\frac{1}{2}}\sqrt[3]{y}}\\
 &=\frac{x^{-6}y^{\frac{3}{2}}w^2x^3y^3w^{-\frac12}}{x^{-3}w^3x^{\frac12}y^{\frac13}}\\
@@ -1177,6 +1326,8 @@ A&= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^{\fr
 &=x^{-\frac12}\,y^{\frac{25}{6}}\,w^{-\frac32}\\
 &=\frac{y^{\frac{25}{6}}}{x^{\frac12}\,w^{\frac32}}.
 \end{align*}
+
+\end{solution}
 
 \hypertarget{scientific-notation-of-numbers}{%
 \section{Scientific notation of numbers}\label{scientific-notation-of-numbers}}
@@ -1200,14 +1351,20 @@ The ``\(a\)'' is called \textbf{mantissa}, the ``\(n\)'' is called \textbf{expon
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}@{}}
 \toprule
-Decimal expansion & Standard notation & Engineering notation \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\centering
+Decimal expansion
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Standard notation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Engineering notation
+\end{minipage} \\
 \midrule
 \endhead
-\(17\) & \(1.7\cdot 10^1\) & \(17\) \\ \addlinespace
-\(620\) & \(6.2\cdot 10^2\) & \(620\) \\ \addlinespace
-\(342567\) & \(3.42567\cdot 10^5\) & \(342.567\cdot 10^3\) \\ \addlinespace
-\(0.0001\) & \(1\cdot 10^{-4}\) & \(100\cdot 10^{-6}\) \\ \addlinespace
-\(0.00005\) & \(5\cdot 10^{-5}\) & \(50\cdot 10^{-6}\) \\ \addlinespace
+\(17\) & \(1.7\cdot 10^1\) & \(17\) \\
+\(620\) & \(6.2\cdot 10^2\) & \(620\) \\
+\(342567\) & \(3.42567\cdot 10^5\) & \(342.567\cdot 10^3\) \\
+\(0.0001\) & \(1\cdot 10^{-4}\) & \(100\cdot 10^{-6}\) \\
+\(0.00005\) & \(5\cdot 10^{-5}\) & \(50\cdot 10^{-6}\) \\
 \bottomrule
 \end{longtable}
 
@@ -1525,37 +1682,58 @@ From 1. and 2. we can derive two more laws:
 \end{enumerate}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-68}{}{\label{exm:unnamed-chunk-68} }\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)
+\protect\hypertarget{exm:unlabeled-div-45}{}\label{exm:unlabeled-div-45}
+
+\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-69}{}{\label{exm:unnamed-chunk-69} }Solve \(2^x =5\).
+\protect\hypertarget{exm:unlabeled-div-46}{}\label{exm:unlabeled-div-46}
+
+Solve \(2^x =5\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)
+
+\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-71}{}{\label{exm:unnamed-chunk-71} }Solve \(3^{x+1}=2^{2x-3}\).
+\protect\hypertarget{exm:unlabeled-div-48}{}\label{exm:unlabeled-div-48}
+
+Solve \(3^{x+1}=2^{2x-3}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Applying \(\log_{10}\) on both sides: \(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\).\\
+
+Applying \(\log_{10}\) on both sides: \(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\).\\
 \(\implies\) \((x+1)\log_{10}(3) = (2x-3)\log_{10}(2)\)\\
 \(\implies\) \(x\left(\log_{10}(3)-2\log_{10}(2)\right) = -3\log_{10}(2)-\log_{10}(3)\)\\
 \(\implies\) \(x=\dfrac{-3\log_{10}(2)-\log_{10}(3)}{\log_{10}(3)-2\log_{10}(2)}\approx 11.0471\)
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-73}{}{\label{exm:unnamed-chunk-73} }Solve \(2^{2x}-2^{x+1}-15=0\).
+\protect\hypertarget{exm:unlabeled-div-50}{}\label{exm:unlabeled-div-50}
+
+Solve \(2^{2x}-2^{x+1}-15=0\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(2^{2x}-2^{x+1}-15=0\)\\
+
+\(2^{2x}-2^{x+1}-15=0\)\\
 \(\iff\) \(\left(2^x\right)^2-2\cdot\left(2^x\right)-15=0\) \hfill~{(by laws of exponents)}\\
 \(\iff\) \(y^2 -2y-15=0\) \hfill~{(where \(y=2^x\))}\\
 \(\iff\) \((y-5)(y+3)=0\) \hfill~{(factorising)}\\
 \(\iff\) \(y=5\) or \(y=-3\)\\
 \(\iff\) \(x=\log_2(5)\approx 2.322\),\\
 and \(2^x=-3\) is not possible (so no solution)
+
 \end{solution}
 
 \hypertarget{exercises-6-logarithms}{%
@@ -1678,12 +1856,17 @@ The notation for the most often encountered exponential function is \(\exp(x):= 
 \end{figure}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-77}{}{\label{exm:unnamed-chunk-77} }In a circuit containing a capacitor, the \emph{instantaneous voltage} across the capacitor is given by the equation
+\protect\hypertarget{exm:unlabeled-div-52}{}\label{exm:unlabeled-div-52}
+
+In a circuit containing a capacitor, the \emph{instantaneous voltage} across the capacitor is given by the equation
 \[\nu = V\left(1-e^{\frac{-t}{RC}}\right),\]
 where \(V\) is the initial supply voltage, \(R\) is the resistance, \(C\) is the capacitance and \(t\) is the time since the initial connection of the supply voltage. If \(V=200\,\mathrm{V}\), \(R=10\,\mathrm{k}\Omega\) and \(C=20\,\mu\mathrm{F}\), calculate the time when the voltage reaches \(\nu =100\,\mathrm{V}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}We want to make \(t\) the subject of the formula above:
+
+We want to make \(t\) the subject of the formula above:
 \begin{align*}
 \frac{\nu}{V} &=1-e^{\frac{-t}{RC}}\\
 e^{\frac{-t}{RC}} &= 1-\frac{\nu}{V}\\
@@ -1697,6 +1880,7 @@ t&=-10\,\mathrm{k}\Omega\cdot 20\,\mu\mathrm{F}\cdot \ln\left(1-\frac{100\,\math
 &= 138.6 \,\mathrm{ms}
 \end{align*}
 (since \(\Omega\mathrm{F} = \mathrm{s}\)).
+
 \end{solution}
 
 \hypertarget{exercises-7-exponential-functions}{%
@@ -1799,13 +1983,19 @@ The low--degree polynomials have special names:
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.18}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.32}}@{}}
 \toprule
-example polynomial & its degree & also called \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\centering
+example polynomial
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+its degree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+also called
+\end{minipage} \\
 \midrule
 \endhead
-\(x-7\) & 1 & linear polynomial \\ \addlinespace
-\(3x^2+2\) & 2 & quadratic polynomial \\ \addlinespace
-\(4x^3+5x^2-3x\) & 3 & cubic polynomial \\ \addlinespace
-\(-x^4+x^2-2\) & 4 & quartic polynomial \\ \addlinespace
+\(x-7\) & 1 & linear polynomial \\
+\(3x^2+2\) & 2 & quadratic polynomial \\
+\(4x^3+5x^2-3x\) & 3 & cubic polynomial \\
+\(-x^4+x^2-2\) & 4 & quartic polynomial \\
 \bottomrule
 \end{longtable}
 
@@ -1860,18 +2050,29 @@ p(x) = q(x)\cdot(x-1) + 3.
 This holds for any \(x\), so in particular for \(x=1\) we get \(p(1) = q(1)\cdot0+3=3\).
 
 \begin{theorem}[Remainder Theorem]
-\protect\hypertarget{thm:unnamed-chunk-82}{}{\label{thm:unnamed-chunk-82} \iffalse (Remainder Theorem) \fi{} }The remainder left when a polynomial \(p(x)\) is divided by \(x-a\) is equal to \(p(a)\). In particular, \(x-a\) is a factor of \(p(x)\) if an only if \(p(a)=0\).
+\protect\hypertarget{thm:unlabeled-div-54}{}\label{thm:unlabeled-div-54}
+
+The remainder left when a polynomial \(p(x)\) is divided by \(x-a\) is equal to \(p(a)\). In particular, \(x-a\) is a factor of \(p(x)\) if an only if \(p(a)=0\).
+
 \end{theorem}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-83}{}{\label{exm:unnamed-chunk-83} }Determine the remainder when \(p(x)=5x^3+2x^2-6\) is divided by \(x-2\).
+\protect\hypertarget{exm:unlabeled-div-55}{}\label{exm:unlabeled-div-55}
+
+Determine the remainder when \(p(x)=5x^3+2x^2-6\) is divided by \(x-2\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}The remainder is \(p(2) = 5\cdot8+2\cdot4-6=42\).
+
+The remainder is \(p(2) = 5\cdot8+2\cdot4-6=42\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-85}{}{\label{exm:unnamed-chunk-85} }Divide \(3x^3-16x^2+15x+18\) by \(x-3\):
+\protect\hypertarget{exm:unlabeled-div-57}{}\label{exm:unlabeled-div-57}
+
+Divide \(3x^3-16x^2+15x+18\) by \(x-3\):
 \[
 \begin{array}{rl}
 (3x^3-16x^2+15x+18) &\div \,\,\,(x-3) = 3x^2-7x-6\\
@@ -1887,6 +2088,7 @@ Thus \(3x^3-16x^2+15x+18 = (3x^2-7x-6)(x-3)\).\\
 Using a quadratic formula or by inspection, we can further factorise the quadratic as \(3x^2-7x-6 = (x-3)(3x+2)\).\\
 Altogether, we obtain complete factorisation
 \[3x^3-16x^2+15x+18=(x-3)^2(3x+2).\]
+
 \end{example}
 
 \hypertarget{obtaining-the-factorisation-of-a-polynomial}{%
@@ -1909,10 +2111,15 @@ Note that \(q(x)\) has degree one less than the degree of \(p(x)\), so eventuall
 we end up with a linear polynomial, and so we are done.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-86}{}{\label{exm:unnamed-chunk-86} }Factorise \(p(x)=x^4-x^3+x^2-3x+2\).
+\protect\hypertarget{exm:unlabeled-div-58}{}\label{exm:unlabeled-div-58}
+
+Factorise \(p(x)=x^4-x^3+x^2-3x+2\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(p(1)=1-1+1-3+2=0\) \(\implies\) \(x-1\) is a factor of \(p(x)\). Next, we perform long division:
+
+\(p(1)=1-1+1-3+2=0\) \(\implies\) \(x-1\) is a factor of \(p(x)\). Next, we perform long division:
 \[
 \begin{array}{rl}
 (x^4-x^3+x^2-3x+2) & \div \,\,\,(x-1) = x^3+x-2 =: q(x)\\
@@ -1939,10 +2146,13 @@ Next, we now look for a root of \(q(x)\).\\
 \]
 We now try to continue by further factorising \(x^2+x+1\). However the discriminant of this quadratic is \(1-4\cdot2=-7<0\), so it can not be further factorised.\\
 \emph{Answer:} \(p(x)=(x-1)^2(x^2+x+1)\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-88}{}{\label{exm:unnamed-chunk-88} }\[
+\protect\hypertarget{exm:unlabeled-div-60}{}\label{exm:unlabeled-div-60}
+
+\[
 \begin{array}{rl}
 (x^3+5x^2-7x+3) &\div\,\,\,(x^2+2x+1) = x+3\quad\text{ rem. }-14x\\
 \underline{-(x^3+2x^2+\phantom{7}x)}\phantom{+3)}\\
@@ -1951,10 +2161,13 @@ We now try to continue by further factorising \(x^2+x+1\). However the discrimin
 -14x\phantom{+3m}
 \end{array}
 \]
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-89}{}{\label{exm:unnamed-chunk-89} }The polynomial \(p(x)=6x^3-23x^2+ax+b\) leaves remainder \(11\) when divided by \(x-3\) and remainder \(-21\) when divided by \(x+1\).
+\protect\hypertarget{exm:unlabeled-div-61}{}\label{exm:unlabeled-div-61}
+
+The polynomial \(p(x)=6x^3-23x^2+ax+b\) leaves remainder \(11\) when divided by \(x-3\) and remainder \(-21\) when divided by \(x+1\).
 
 \begin{enumerate}
 \def\labelenumi{(\roman{enumi})}
@@ -1970,6 +2183,7 @@ We now try to continue by further factorising \(x^2+x+1\). However the discrimin
 \item
   Determine the roots of \(p(x)\).
 \end{enumerate}
+
 \end{example}
 
 \begin{enumerate}
@@ -2180,21 +2394,25 @@ into \textbf{partial fractions} as given in the right--hand column:
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.50}}@{}}
 \toprule
 \endhead
-Type I & \(\dfrac{Px+Q}{(ax+b)(cx+d)}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{cx+d}\) \\ \addlinespace
-Type II & \(\dfrac{Px+Q}{(ax+b)^2}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}\) \\ \addlinespace
-Type III & \(\dfrac{Px^2+Qx+R}{(ax+b)^2(cx+d)}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}+\dfrac{C}{cx+d}\) \\ \addlinespace
-Type IV & \(\dfrac{Px^2+Qx+R}{(ax^2+bx+c)(dx+e)}\) & = & \(\dfrac{Ax+B}{ax^2+bx+c}+\dfrac{C}{dx+e}\) \\ \addlinespace
+Type I & \(\dfrac{Px+Q}{(ax+b)(cx+d)}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{cx+d}\) \\
+Type II & \(\dfrac{Px+Q}{(ax+b)^2}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}\) \\
+Type III & \(\dfrac{Px^2+Qx+R}{(ax+b)^2(cx+d)}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}+\dfrac{C}{cx+d}\) \\
+Type IV & \(\dfrac{Px^2+Qx+R}{(ax^2+bx+c)(dx+e)}\) & = & \(\dfrac{Ax+B}{ax^2+bx+c}+\dfrac{C}{dx+e}\) \\
 \bottomrule
 \end{longtable}
 
 Note: It is a Theorem that the above actually works --- these are equations which work for all values of \(x\) simultaneously! It is not proved here though.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-92}{}{\label{exm:unnamed-chunk-92} }Split \(\dfrac{-4x+15}{(x+2)(x-1)}\) into partial fractions.
+\protect\hypertarget{exm:unlabeled-div-62}{}\label{exm:unlabeled-div-62}
+
+Split \(\dfrac{-4x+15}{(x+2)(x-1)}\) into partial fractions.
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.
+
+First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.
 
 Second, the denominator is already factored as much as possible (into linear factors). We see that it is ``Type I'', so we want to find \(A\) and \(B\) such that
 \[
@@ -2206,14 +2424,19 @@ Let \(x=1\). Then \(-4+15 = A\cdot 0+B\cdot 3\) \(\implies\) \(B=\frac{11}{3}\).
 Let \(x=-2\). Then \(8+15=A(-3)+B\cdot 0\) \(\implies\) \(A=-\frac{23}{3}\).\\
 \emph{Answer:}
 \(\dfrac{-4x+15}{(x+2)(x-1)} = -\dfrac{23}{3(x+2)}+\dfrac{11}{3(x-1)}.\)
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-94}{}{\label{exm:unnamed-chunk-94} }Split \(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}\) into partial fractions.
+\protect\hypertarget{exm:unlabeled-div-64}{}\label{exm:unlabeled-div-64}
+
+Split \(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}\) into partial fractions.
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}(Type III.) We want to find \(A,B,C\) such that
+
+(Type III.) We want to find \(A,B,C\) such that
 \[
 \frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.
 \]
@@ -2223,14 +2446,19 @@ Let \(x=3\). Then \(5\cdot 9-3\cdot 3+2 = B\cdot 5\) \(\implies\) \(B=\frac{38}{
 Equating coefficients of \(x^2\) gives \(5=A+C\) \(\implies\) \(A=5-C=5-\frac{28}{25}=\frac{97}{25}\).\\
 \emph{Answer:}
 \(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}=\dfrac{97}{25(x-3)}+\dfrac{38}{5(x-3)^2}+\dfrac{28}{25(x+2)}.\)
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-96}{}{\label{exm:unnamed-chunk-96} }Split \(\dfrac{2x+5}{(x^2+x+1)(x+3)}\) into partial fractions.
+\protect\hypertarget{exm:unlabeled-div-66}{}\label{exm:unlabeled-div-66}
+
+Split \(\dfrac{2x+5}{(x^2+x+1)(x+3)}\) into partial fractions.
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}(Type IV.) We want to find \(A,B,C\) such that
+
+(Type IV.) We want to find \(A,B,C\) such that
 \[\dfrac{2x+5}{(x^2+x+1)(x+3)}=\dfrac{Ax+B}{x^2+x+1}+\dfrac{C}{x+3}.\]
 \(\iff\) \(2x+5=(Ax+B)(x+3)+C(x^2+x+1)\).\\
 Let \(x=-3\). Then \(2\cdot(-3)+5=C\cdot(9-3+1)\) \(\implies\) \(C=-\frac17\).\\
@@ -2238,6 +2466,7 @@ Equating coefficients of \(x^2\) gives \(0=A+C\) \(\implies\) \(A=\frac17\).\\
 Equating constant coefficients gives \(5=3B+C\) \(\implies\) \(B=\frac{5-C}{3}=\frac{12}7\).\\
 \emph{Answer:}
 \(\dfrac{2x+5}{(x^2+x+1)(x+3)}=\dfrac{x+12}{7(x^2+x+1)}-\dfrac{1}{7(x+3)}.\)
+
 \end{solution}
 
 \hypertarget{exercises-9-partial-fractions}{%
@@ -2331,10 +2560,13 @@ We have
 In general: \fbox{\(a_n = a+(n-1)d\)} where \(a=a_1\).
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-100}{}{\label{thm:unnamed-chunk-100} }The sum \(S_n\) of the first \(n\) terms of an AP with the first term \(a\) and the common difference \(d\) is given by
+\protect\hypertarget{thm:unlabeled-div-68}{}\label{thm:unlabeled-div-68}
+
+The sum \(S_n\) of the first \(n\) terms of an AP with the first term \(a\) and the common difference \(d\) is given by
 \[
 \boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}
 \]
+
 \end{theorem}
 
 \emph{Proof (non-examinable):}
@@ -2352,38 +2584,55 @@ The ``\(\implies\)'' step is by summing the two previous equations ``vertically'
 Hence \(S_n = \frac{n}{2}(2a+(n-1)d)\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-101}{}{\label{exm:unnamed-chunk-101} }Determine the sum \(S_{20}\) of the first \(20\) terms of the arithmetic progression: \(10, 6, 2, -2, \dots\).
+\protect\hypertarget{exm:unlabeled-div-69}{}\label{exm:unlabeled-div-69}
+
+Determine the sum \(S_{20}\) of the first \(20\) terms of the arithmetic progression: \(10, 6, 2, -2, \dots\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(a=10\), \(d=-4\), \(n=20\)\\
+
+\(a=10\), \(d=-4\), \(n=20\)\\
 \(\implies\) \(S_{20}=\frac{20}{2}(2\cdot 10+ 19\cdot(-4))\) \(=10(20-76)=-560\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-103}{}{\label{exm:unnamed-chunk-103} }The sum \(S_8\) of the first \(8\) terms of an AP is \(90\), and its first term is \(6\). What is the common difference?
+\protect\hypertarget{exm:unlabeled-div-71}{}\label{exm:unlabeled-div-71}
+
+The sum \(S_8\) of the first \(8\) terms of an AP is \(90\), and its first term is \(6\). What is the common difference?
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(90=S_8=\frac{8}{2}(2\cdot 6 + 7\cdot d)\)\\
+
+\(90=S_8=\frac{8}{2}(2\cdot 6 + 7\cdot d)\)\\
 \(\implies\) \(90=4(12+7d)\)\\
 \(\implies\) \(\frac{90}{4}-12=7d\)\\
 \(\implies\) \(d=\frac{42}{28}=\frac32=1.5\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-105}{}{\label{exm:unnamed-chunk-105} }How many terms of the AP \(3,6,9,\dots\) must be taken so that their sum is \(135\)?
+\protect\hypertarget{exm:unlabeled-div-73}{}\label{exm:unlabeled-div-73}
+
+How many terms of the AP \(3,6,9,\dots\) must be taken so that their sum is \(135\)?
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(a=3\), \(d=3\), \(S_n=135\), \(n=?\)\\
+
+\(a=3\), \(d=3\), \(S_n=135\), \(n=?\)\\
 \(\implies\) \(135 = S_n = \frac{n}{2}(2\cdot 3+(n-1)\cdot 3)\)\\
 \(\implies\) \(270 = 3n^2 + 3n\)\\
 \(\implies\) \(n^2+n-90 = 0\)\\
 \(\implies\) \((n+10)(n-9)=0\)\\
 \(\implies\) \(n=9\) (since \(n\) must be positive).
+
 \end{solution}
-\#\# Geometric progressions
+
+\hypertarget{geometric-progressions}{%
+\section{Geometric progressions}\label{geometric-progressions}}
 
 A \textbf{geometric progression (GP)} is a (finite or infinite) sequence of numbers
 \[
@@ -2408,12 +2657,15 @@ We have: \(a_2=a_1r\), ~ \(a_3=a_2r = a_1r^2\), ~ \(a_4=a_3r=a_1r^3\), \dots
 In general: \fbox{\(a_n=a\cdot r^{n-1}\)} where \(a=a_1\).
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-107}{}{\label{thm:unnamed-chunk-107} }The sum \(S_n\) of the first \(n\) terms of a GP with the first
+\protect\hypertarget{thm:unlabeled-div-75}{}\label{thm:unlabeled-div-75}
+
+The sum \(S_n\) of the first \(n\) terms of a GP with the first
 term \(a\) and the common ratio \(r\) is given by
 \[
 \boxed{S_n = a\cdot \frac{1-r^n}{1-r}}
 \]
 In particular, if \(-1<r<1\), then the sum \(S_\infty\) of all (infinitely many) terms is \(S_\infty = a\cdot\dfrac{1}{1-r}\). (The sum of an infinite GP is also called \textbf{geometric series}.)
+
 \end{theorem}
 
 \emph{Proof (non--examinable):}
@@ -2426,21 +2678,31 @@ Thus \(S_n = a\frac{1-r^n}{1-r}\).\\
 Now if \(-1<r<1\), then \(\lim_{n\to\infty}r^n=0\). So \(S_\infty=\lim_{n\to\infty}S_n = a\frac{1}{1-r}\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-108}{}{\label{exm:unnamed-chunk-108} }Determine the sum \(S_7\) of the first \(7\) terms of the geometric progession \(4,-8,16,\dots\)
+\protect\hypertarget{exm:unlabeled-div-76}{}\label{exm:unlabeled-div-76}
+
+Determine the sum \(S_7\) of the first \(7\) terms of the geometric progession \(4,-8,16,\dots\)
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(a=4\), \(r=-2\), \(n=7\)\\
+
+\(a=4\), \(r=-2\), \(n=7\)\\
 \(\implies\) \(S_7=4\dfrac{1-(-2)^7}{1-(-2)}=4\cdot\dfrac{129}3 = 172\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-110}{}{\label{exm:unnamed-chunk-110} }A GP is given by \(\dfrac14,\dfrac1{16},\dfrac1{64},\dots\). Determine \(S_\infty\).
+\protect\hypertarget{exm:unlabeled-div-78}{}\label{exm:unlabeled-div-78}
+
+A GP is given by \(\dfrac14,\dfrac1{16},\dfrac1{64},\dots\). Determine \(S_\infty\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(a=\frac14\), \(r=\frac14\)\\
+
+\(a=\frac14\), \(r=\frac14\)\\
 \(\implies\) \(S_\infty = \dfrac{1}{4}\cdot\dfrac{1}{1-\frac14}= \dfrac{1}{4}\cdot\dfrac{1}{\frac{3}{4}}=\dfrac{1}{3}\).
+
 \end{solution}
 
 \hypertarget{exercises-10-arithmetic-and-geometric-progressions}{%
@@ -2538,25 +2800,31 @@ The two rules: \(C_{n,0}=C_{n,n}=1\) and \(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\) are t
     &  &  &  &  &  &  &\vdots&  &  &  &  &  &   \\
 \end{array}
 \]
-\begin{example}
-\protect\hypertarget{exm:unnamed-chunk-114}{}{\label{exm:unnamed-chunk-114} }\((a+b)^6 = a^6 + 6 a^5b + 15 a^4b^2 + 20 a^3b^3 + 15 a^2b^4 + 6 ab^5 + b^6\).
-\end{example}
-\begin{example}
-\protect\hypertarget{exm:unnamed-chunk-115}{}{\label{exm:unnamed-chunk-115} }\begin{align*}(a+2x)^4 &= a^4 + 4a^3(2x) + 6a^2(2x)^2 + 4a(2x)^3+(2x)^4\\
+::: \{.example\}
+\((a+b)^6 = a^6 + 6 a^5b + 15 a^4b^2 + 20 a^3b^3 + 15 a^2b^4 + 6 ab^5 + b^6\).
+:::
+::: \{.example\}
+\begin{align*}(a+2x)^4 &= a^4 + 4a^3(2x) + 6a^2(2x)^2 + 4a(2x)^3+(2x)^4\\
 &= a^4 +8a^3x+24a^2x^2+32ax^3+16x^4.
 \end{align*}
-\end{example}
+:::
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-116}{}{\label{exm:unnamed-chunk-116} }Expand \((1.005)^4\) to four decimal places (4 d.p).
+\protect\hypertarget{exm:unlabeled-div-80}{}\label{exm:unlabeled-div-80}
+
+Expand \((1.005)^4\) to four decimal places (4 d.p).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 (1.005)^4 &= (1+0.005)^4\\
 &= 1+ 4\cdot 0.005 + 6\cdot (0.005)^2 + \underbrace{4\cdot(0.005)^3 + (0.005)^4}_{\text{do not contribute to 4 d.p.}}\\
 &= 1+0.02 + 0.00015 + \dots \\
 &\approx 1.0202\quad\quad\text{(to 4 d.p.)}
 \end{align*}
+
 \end{solution}
 
 \hypertarget{binomial-coefficients}{%
@@ -2567,7 +2835,10 @@ For a positive integer \(m\), define \textbf{\(m\) factorial}, denoted ``\(m!\)'
 and declare that \(0!=1\).
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-118}{}{\label{thm:unnamed-chunk-118} }\(\boxed{C_{n,k} = \dfrac{n!}{k!\cdot (n-k)!}}\)
+\protect\hypertarget{thm:unlabeled-div-82}{}\label{thm:unlabeled-div-82}
+
+\(\boxed{C_{n,k} = \dfrac{n!}{k!\cdot (n-k)!}}\)
+
 \end{theorem}
 
 \emph{Note:} The number \(C_{n,k}\) is also denoted by \(\displaystyle{n\choose k}\), read ``\(n\) choose \(k\)'\,'\footnote{This is because it also computes the number of ways one can choose \(k\) objects out of \(n\).}.
@@ -2591,44 +2862,65 @@ Let us analyse the formula: observe that \(C_{n,k} = \dfrac{n(n-1)(n-2)\cdots(n-
 We will use this expression as a \emph{definition} for \(C_{n,k}\) when \(n\) is negative or a fraction.
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-119}{}{\label{thm:unnamed-chunk-119} }If \(-1<x<1\), then the right hand side of
+\protect\hypertarget{thm:unlabeled-div-83}{}\label{thm:unlabeled-div-83}
+
+If \(-1<x<1\), then the right hand side of
 \begin{align*}
     (1+x)^n &= C_{n,0}+C_{n,1}x+C_{n,2}x^2 + C_{n,3}x^3 + \dots\\
             &= 1+ nx + \frac{n(n-1)}{2}x^2 + \frac{n(n-1)(n-2)}{6} x^3 + \dots
 \end{align*}
 converges\footnote{``Converges'' is a mathematical term that you will learn more precisely later on; the meaning here is roughly that ``for each \(x\), the infinite sum \emph{does} describe a well-defined and unique number, and we get better and better approximations to it by adding up more and more terms of the infinite series''.} and this equality is valid also when \(n\) is negative or a fraction.
+
 \end{theorem}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-120}{}{\label{exm:unnamed-chunk-120} }\(\dfrac{1}{1+x} = (1+x)^{-1}\) \(=1-x+x^2-x^3+x^4 \mp\cdots\)
+\protect\hypertarget{exm:unlabeled-div-84}{}\label{exm:unlabeled-div-84}
+
+\(\dfrac{1}{1+x} = (1+x)^{-1}\) \(=1-x+x^2-x^3+x^4 \mp\cdots\)
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-121}{}{\label{exm:unnamed-chunk-121} }\(\dfrac{1}{1-x} = (1-x)^{-1} = 1+x+x^2+x^3+\dots\)
+\protect\hypertarget{exm:unlabeled-div-85}{}\label{exm:unlabeled-div-85}
+
+\(\dfrac{1}{1-x} = (1-x)^{-1} = 1+x+x^2+x^3+\dots\)
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-122}{}{\label{exm:unnamed-chunk-122} }Expand \(\dfrac{1}{(1+x)^3}\) up to the term in \(x^4\).
+\protect\hypertarget{exm:unlabeled-div-86}{}\label{exm:unlabeled-div-86}
+
+Expand \(\dfrac{1}{(1+x)^3}\) up to the term in \(x^4\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \frac{1}{(1+x)^3} &= (1+x)^{-3}\\
 &= 1+(-3)x+\frac{(-3)(-4)}{1\cdot 2}x^2 + \frac{(-3)(-4)(-5)}{1\cdot 2\cdot 3}x^3 + \frac{(-3)(-4)(-5)(-6)}{1\cdot 2\cdot 3\cdot 4}x^4 + \cdots\\
 &=1-3x+6x^2-10x^3+15x^4 \mp \cdots
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-124}{}{\label{exm:unnamed-chunk-124} }Expand \((3-x)^{-4}\) up to the term in \(x^3\).
+\protect\hypertarget{exm:unlabeled-div-88}{}\label{exm:unlabeled-div-88}
+
+Expand \((3-x)^{-4}\) up to the term in \(x^3\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 (3-x)^4 &= 3^{-4}(1-\frac{x}{3})^{-4}\\
 &= 3^{-4}\left(1+(-4)\left(-\frac{x}{3}\right)
 +\frac{(-4)(-5)}{1\cdot 2}\left(-\frac{x}{3}\right)^2 + \frac{(-4)(-5)(-6)}{1\cdot 2\cdot 3}\left(-\frac{x}{3}\right)^3+\cdots\right)\\
 &= \frac{1}{81}\left(1+\frac{4}{3}x+\frac{10}{9}x^2+\frac{20}{27}x^3+\cdots\right)
 \end{align*}
 converges and equality is valid for \(-1<\frac{x}{3}<1\) \(\iff\) \(-3<x<3\).
+
 \end{solution}
 
 \hypertarget{binomial-approximation}{%
@@ -2637,11 +2929,16 @@ converges and equality is valid for \(-1<\frac{x}{3}<1\) \(\iff\) \(-3<x<3\).
 \emph{Binomial approximation:} If \(-1<x<1\), then \((1+x)^n \approx 1+nx\) (for arbitrary \(n\)).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-126}{}{\label{exm:unnamed-chunk-126} }Approximate \(\sqrt{1.05}\).
+\protect\hypertarget{exm:unlabeled-div-90}{}\label{exm:unlabeled-div-90}
+
+Approximate \(\sqrt{1.05}\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(\sqrt{1.05} = (1+0.05)^{\frac12} \approx 1+\frac12\cdot0.05 = 1.025\).
+
+\(\sqrt{1.05} = (1+0.05)^{\frac12} \approx 1+\frac12\cdot0.05 = 1.025\).
+
 \end{solution}
 
 \hypertarget{exercises-11-binomial-expansion}{%
@@ -2814,7 +3111,7 @@ If the size of a matrix is \(n\times n\), we call such a matrix a \textbf{square
 If every entry of a matrix is \(0\), we call that matrix a \textbf{zero matrix}.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-130}{}{\label{exm:unnamed-chunk-130} }\(\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix}\), \(\begin{pmatrix} 0 & 0 & 0\\ 0 & 0 & 0\end{pmatrix}\).
+\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37} }\(\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix}\), \(\begin{pmatrix} 0 & 0 & 0\\ 0 & 0 & 0\end{pmatrix}\).
 \end{example}
 
 The \textbf{identity} or \textbf{unit matrix}, denoted \(I_n\), is the \(n\times n\) square matrix
@@ -2842,13 +3139,13 @@ The \textbf{transpose} of the \(m\times n\) matrix \(A=(a_{ij})\) is the \(n\tim
 In other words, transposing turns rows into columns and vice versa.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-131}{}{\label{exm:unnamed-chunk-131} }\(\begin{pmatrix}1 & 2 & 5 \\ 0 & -6 & 7\end{pmatrix}^T = \begin{pmatrix}1&0\\2&-6\\5&7\end{pmatrix}\).
+\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38} }\(\begin{pmatrix}1 & 2 & 5 \\ 0 & -6 & 7\end{pmatrix}^T = \begin{pmatrix}1&0\\2&-6\\5&7\end{pmatrix}\).
 \end{example}
 
 The \textbf{sum} (resp. \textbf{difference}) of two matrices \(A=(a_{ij})\) and \(B=(b_{ij})\) of the \emph{same size} \(m\times n\) is the \(m\times n\) matrix \(C=(c_{ij})\) where \(c_{ij}=a_{ij} + b_{ij}\) (resp. \(c_{ij}=a_{ij}-b_{ij}\)).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-132}{}{\label{exm:unnamed-chunk-132} }\(\begin{pmatrix}1 & 3 & 1\\ 1 & 0 & 0\end{pmatrix}+ \begin{pmatrix}0 & 0 & 5\\ 7 & -3 & 0\end{pmatrix}\)
+\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39} }\(\begin{pmatrix}1 & 3 & 1\\ 1 & 0 & 0\end{pmatrix}+ \begin{pmatrix}0 & 0 & 5\\ 7 & -3 & 0\end{pmatrix}\)
 \(=\begin{pmatrix}1+0&3+0&1+5\\1+7&0+5&0+0\end{pmatrix}\)
 \(=\begin{pmatrix}1&3&6\\8&5&0\end{pmatrix}\),\\
 \(\begin{pmatrix}3&5\\2&4\\-1&8\end{pmatrix}-\begin{pmatrix}7&2\\6&-9\\3&8\end{pmatrix}\)
@@ -2861,7 +3158,7 @@ The \textbf{sum} (resp. \textbf{difference}) of two matrices \(A=(a_{ij})\) and 
 The \textbf{product} \(\lambda A\) of a number \(\lambda\) with a matrix \(A=(a_{ij})\) is the matrix \(B=(b_{ij})\) given by \(b_{ij}=\lambda a_{ij}\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-133}{}{\label{exm:unnamed-chunk-133} }\(2\cdot \begin{pmatrix} 3 & 4\\ 1 & 3\\ 2 & -2\end{pmatrix}\)
+\protect\hypertarget{exm:unnamed-chunk-40}{}{\label{exm:unnamed-chunk-40} }\(2\cdot \begin{pmatrix} 3 & 4\\ 1 & 3\\ 2 & -2\end{pmatrix}\)
 \(=\begin{pmatrix}2\cdot3&2\cdot4\\ 2\cdot1&2\cdot 3\\2\cdot 2&2\cdot(-2)\end{pmatrix}\)
 \(=\begin{pmatrix}6&8\\2&6\\4&-4\end{pmatrix}\).
 \end{example}
@@ -2875,7 +3172,7 @@ First, the product of a \(1\times n\) matrix (also called a \textbf{row vector})
 \]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-134}{}{\label{exm:unnamed-chunk-134} }\((2,3)\cdot\begin{pmatrix}1\\-1\end{pmatrix}=2\cdot1+3\cdot(-1)=2-3=-1\).\\
+\protect\hypertarget{exm:unnamed-chunk-41}{}{\label{exm:unnamed-chunk-41} }\((2,3)\cdot\begin{pmatrix}1\\-1\end{pmatrix}=2\cdot1+3\cdot(-1)=2-3=-1\).\\
 \((2,4,-1)\cdot \begin{pmatrix} 0\\ 2 \\ -4\end{pmatrix}\)
 \(=2\cdot0+4\cdot2+(-1)\cdot(-4)=0+8+4=12\).
 \end{example}
@@ -2883,13 +3180,13 @@ First, the product of a \(1\times n\) matrix (also called a \textbf{row vector})
 \emph{In general:} let \(A\) be an \(m\times n\) matrix, and let \(B\) be an \(n\times p\) matrix. Then their \textbf{product} \(A\cdot B\) is the \(m\times p\) matrix whose \((i,j)\)-entry is defined to be the product of the \(i^\text{th}\) row of \(A\) with the \(j^\text{th}\) column of \(B\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-135}{}{\label{exm:unnamed-chunk-135} }\(\begin{pmatrix}2&4\\9&1\end{pmatrix}\cdot \begin{pmatrix}8&7\\6&3\end{pmatrix}\)
+\protect\hypertarget{exm:unnamed-chunk-42}{}{\label{exm:unnamed-chunk-42} }\(\begin{pmatrix}2&4\\9&1\end{pmatrix}\cdot \begin{pmatrix}8&7\\6&3\end{pmatrix}\)
 \(=\begin{pmatrix}2\cdot8+4\cdot6& 2\cdot7+4\cdot3 \\ 9\cdot8+1\cdot6& 9\cdot7+1\cdot3\end{pmatrix}\)
 \(=\begin{pmatrix}40&26\\78&66\end{pmatrix}\).
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-136}{}{\label{exm:unnamed-chunk-136} }\(\begin{pmatrix}1 & 3 & 2\\ 6 & 0 & -4\end{pmatrix}\cdot \begin{pmatrix}1 & 0 & 1\\ 0&1&0 \\ 0& 1 & 1\end{pmatrix}\)\\
+\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43} }\(\begin{pmatrix}1 & 3 & 2\\ 6 & 0 & -4\end{pmatrix}\cdot \begin{pmatrix}1 & 0 & 1\\ 0&1&0 \\ 0& 1 & 1\end{pmatrix}\)\\
 \(=\begin{pmatrix}1\cdot1+1\cdot0+2\cdot0& 1\cdot0+3\cdot1+2\cdot1&1\cdot1+3\cdot0+2\cdot1\\ 6\cdot1+0\cdot0+(-4)\cdot0 & 6\cdot0+0\cdot0+(-4)\cdot1 & 6\cdot1+0\cdot0+(-4)\cdot1\end{pmatrix}\)\\
 \(=\begin{pmatrix}1&5&3\\6&-4&2\end{pmatrix}\).
 \end{example}
@@ -2943,7 +3240,7 @@ for that number.
 \end{itemize}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-137}{}{\label{exm:unnamed-chunk-137} }\(\begin{vmatrix}2&0&3\\ 4&1&2\\ 1&0&3\end{vmatrix}\)
+\protect\hypertarget{exm:unnamed-chunk-44}{}{\label{exm:unnamed-chunk-44} }\(\begin{vmatrix}2&0&3\\ 4&1&2\\ 1&0&3\end{vmatrix}\)
 \(=2\cdot1\cdot3+0\cdot2\cdot1 + 3\cdot4\cdot0 - 3\cdot1\cdot1 - 2\cdot2\cdot0 - 0\cdot4\cdot3\)
 \(=6-3=3\).
 \end{example}
@@ -2963,20 +3260,20 @@ We associate a \textbf{sign} to positions in a matrix: the
 Next, the \textbf{\((i,j)\)-minor} of a square matrix \(A=(a_{ij})\) is the determinant of the square matrix that is left when we remove the \(i^\text{th}\) row and \(j^\text{th}\) column of \(A\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-138}{}{\label{exm:unnamed-chunk-138} }The \((2,2)\)-minor of \(\begin{pmatrix}3&4\\5&6\end{pmatrix}\) is \(3\).
+\protect\hypertarget{exm:unnamed-chunk-45}{}{\label{exm:unnamed-chunk-45} }The \((2,2)\)-minor of \(\begin{pmatrix}3&4\\5&6\end{pmatrix}\) is \(3\).
 \end{example}
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-139}{}{\label{exm:unnamed-chunk-139} }The \((2,1)\)-minor of \(\begin{pmatrix}2&3&4\\-1& 0 &2\\3&4&1\end{pmatrix}\) is \(\begin{vmatrix}3&4\\ 4&1\end{vmatrix}=3-16=-13\).
+\protect\hypertarget{exm:unnamed-chunk-46}{}{\label{exm:unnamed-chunk-46} }The \((2,1)\)-minor of \(\begin{pmatrix}2&3&4\\-1& 0 &2\\3&4&1\end{pmatrix}\) is \(\begin{vmatrix}3&4\\ 4&1\end{vmatrix}=3-16=-13\).
 \end{example}
 
 The \textbf{\((i,j)\)-cofactor} of a square matrix \(A=(a_{ij})\), denoted
 \(A_{ij}\), is the \((i,j)\)-minor multiplied by the sign of the \((i,j)\)-position.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-140}{}{\label{exm:unnamed-chunk-140} }The \((1,2)\)-cofactor of \(\begin{pmatrix}2&-2\\1&3\end{pmatrix}\) is \(-1\).
+\protect\hypertarget{exm:unnamed-chunk-47}{}{\label{exm:unnamed-chunk-47} }The \((1,2)\)-cofactor of \(\begin{pmatrix}2&-2\\1&3\end{pmatrix}\) is \(-1\).
 \end{example}
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-141}{}{\label{exm:unnamed-chunk-141} }The \((2,3)\)-cofactor of \(\begin{pmatrix}1&2&0\\0&1&3\\-1&0&1\end{pmatrix}\) is \(-\begin{vmatrix}1&2\\-1&0\end{vmatrix}=-(1\cdot0-2\cdot(-1))=-2\).
+\protect\hypertarget{exm:unnamed-chunk-48}{}{\label{exm:unnamed-chunk-48} }The \((2,3)\)-cofactor of \(\begin{pmatrix}1&2&0\\0&1&3\\-1&0&1\end{pmatrix}\) is \(-\begin{vmatrix}1&2\\-1&0\end{vmatrix}=-(1\cdot0-2\cdot(-1))=-2\).
 \end{example}
 
 \hypertarget{determinants-general-definition}{%
@@ -2988,11 +3285,11 @@ The \textbf{determinant} of the square matrix \(A=(a_{ij})\) is
 \]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-142}{}{\label{exm:unnamed-chunk-142} }\(\det\begin{pmatrix}a&b\\c&d\end{pmatrix} = ad + b(-c)=ad-bc\).
+\protect\hypertarget{exm:unnamed-chunk-49}{}{\label{exm:unnamed-chunk-49} }\(\det\begin{pmatrix}a&b\\c&d\end{pmatrix} = ad + b(-c)=ad-bc\).
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-143}{}{\label{exm:unnamed-chunk-143} }\(\begin{vmatrix}2&0&3\\4&1&2\\1&0&3\end{vmatrix}\)
+\protect\hypertarget{exm:unnamed-chunk-50}{}{\label{exm:unnamed-chunk-50} }\(\begin{vmatrix}2&0&3\\4&1&2\\1&0&3\end{vmatrix}\)
 \(=2\cdot\begin{vmatrix}1&2\\0&3\end{vmatrix} - 0\cdot\begin{vmatrix}4&2\\1&3\end{vmatrix} + 3\cdot\begin{vmatrix}4&1\\1&0\end{vmatrix}\)
 \(=2\cdot(1\cdot3-2\cdot0) + 3(4\cdot0-1\cdot1)=6-3=3\).
 \end{example}
@@ -3098,13 +3395,19 @@ When we can, we call such a matrix \(A\) \textbf{invertible}, and we call the so
 A note about \(I_n\): we use this in place of ``\(1\)'', because it is \emph{the} matrix that satisfies \(B\cdot I_n=B\) and \(I_n\cdot B=B\) whenever the multiplication makes sense (i.e.~when \(B\) has the correct size).
 
 \begin{definition}
-\protect\hypertarget{def:unnamed-chunk-146}{}{\label{def:unnamed-chunk-146} }A square \(n\times n\) matrix \(A\) is called \textbf{invertible} if there exists an \(n\times n\) matrix \(B\) such that \(AB=BA=I_n\). (If such a matrix \(B\) exists, then it is automatically unique.) We denote this \(B\) by \(A^{-1}\). So:
+\protect\hypertarget{def:unlabeled-div-92}{}\label{def:unlabeled-div-92}
+
+A square \(n\times n\) matrix \(A\) is called \textbf{invertible} if there exists an \(n\times n\) matrix \(B\) such that \(AB=BA=I_n\). (If such a matrix \(B\) exists, then it is automatically unique.) We denote this \(B\) by \(A^{-1}\). So:
 \[
 AA^{-1}=I_n=A^{-1}A.
 \]
+
 \end{definition}
+
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-147}{}{\label{thm:unnamed-chunk-147} }A square \(n\times n\) matrix \(A\) is invertible if and only if \(\det(A)\not=0\). In this case
+\protect\hypertarget{thm:unlabeled-div-93}{}\label{thm:unlabeled-div-93}
+
+A square \(n\times n\) matrix \(A\) is invertible if and only if \(\det(A)\not=0\). In this case
 \[
 \boxed{A^{-1} = \frac{1}{\det(A)}\mathrm{adj}(A)},
 \]
@@ -3122,19 +3425,27 @@ where \(\mathrm{adj}(A)\) is called the \textbf{adjoint matrix} (the transpose o
     A_{1n} & A_{n2} & \cdots & A_{nn}
 \end{pmatrix}.
 \]
+
 \end{theorem}
+
 This Theorem is somewhat tricky to prove; you can learn the proof in MATH1048 Linear Algebra I module.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-148}{}{\label{exm:unnamed-chunk-148} }Is \(A=\begin{pmatrix}5&-3\\2&1\end{pmatrix}\) invertible? If so, determine \(A^{-1}\).
+\protect\hypertarget{exm:unlabeled-div-94}{}\label{exm:unlabeled-div-94}
+
+Is \(A=\begin{pmatrix}5&-3\\2&1\end{pmatrix}\) invertible? If so, determine \(A^{-1}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(\det(A)=\begin{vmatrix}5&-3\\2&1\end{vmatrix}=5\cdot1+3\cdot2=11\neq0\)\\
+
+\(\det(A)=\begin{vmatrix}5&-3\\2&1\end{vmatrix}=5\cdot1+3\cdot2=11\neq0\)\\
 \(A\) is invertible, and
 \[
 A^{-1} = \frac{1}{11}\begin{pmatrix}1&-2\\3&5\end{pmatrix}^T
 = \begin{pmatrix}\frac{1}{11}&\frac{3}{11}\\\frac{-2}{11}&\frac{5}{11}\end{pmatrix}.
 \]
+
 \end{solution}
 
 We can write the general formula for \(2\times 2\) matrices, which you may want to remember:
@@ -3144,7 +3455,10 @@ We can write the general formula for \(2\times 2\) matrices, which you may want 
 \]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-150}{}{\label{exm:unnamed-chunk-150} }Determine the matrix \(A^{-1}\) of the matrix \(A=\begin{pmatrix}1&1&1\\1&2&1\\3&-1&2\end{pmatrix}\) if it exists.
+\protect\hypertarget{exm:unlabeled-div-96}{}\label{exm:unlabeled-div-96}
+
+Determine the matrix \(A^{-1}\) of the matrix \(A=\begin{pmatrix}1&1&1\\1&2&1\\3&-1&2\end{pmatrix}\) if it exists.
+
 \end{example}
 
 \begin{align*}
@@ -3202,7 +3516,9 @@ A\cdot
 \]
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-151}{}{\label{thm:unnamed-chunk-151} }Consider a system of linear equations
+\protect\hypertarget{thm:unlabeled-div-97}{}\label{thm:unlabeled-div-97}
+
+Consider a system of linear equations
 \[
   A\cdot
 \begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
@@ -3216,6 +3532,7 @@ If \(\det(A)\not=0\), then it has exactly one solution given by:
 A^{-1}\cdot
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
 \]
+
 \end{theorem}
 
 \emph{Sketch of Proof (non--examinable):}
@@ -3230,10 +3547,15 @@ I_n
 \]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-152}{}{\label{exm:unnamed-chunk-152} }Solve ~ ~ \(\begin{matrix}4x+2y &=& 17\\ 5x-y &=& 7.25\end{matrix}\) ~ ~ using the inverse matrix method.
+\protect\hypertarget{exm:unlabeled-div-98}{}\label{exm:unlabeled-div-98}
+
+Solve ~ ~ \(\begin{matrix}4x+2y &=& 17\\ 5x-y &=& 7.25\end{matrix}\) ~ ~ using the inverse matrix method.
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Let \(A=\begin{pmatrix}4&2\\5&-1 \end{pmatrix}\)\\
+
+Let \(A=\begin{pmatrix}4&2\\5&-1 \end{pmatrix}\)\\
 \(\implies\) \(\det(A)=-4-10=-14\) ~ and ~ \(A^{-1}=\dfrac{1}{-14}\begin{pmatrix}-1&-2\\-5&4\end{pmatrix}\)
 \begin{align*}
 \implies\quad\quad
@@ -3243,10 +3565,13 @@ I_n
 &=\begin{pmatrix}2.25\\4\end{pmatrix}.
 \end{align*}
 \(\implies\) \(x=2.25\) and \(y=4\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-154}{}{\label{exm:unnamed-chunk-154} }Using the inverse matrix method, solve the following system of equations for \(a,b,c\):
+\protect\hypertarget{exm:unlabeled-div-100}{}\label{exm:unlabeled-div-100}
+
+Using the inverse matrix method, solve the following system of equations for \(a,b,c\):
 \[
 \begin{matrix}
     4a&+&2b&+&c&=&12\\
@@ -3254,10 +3579,12 @@ I_n
      a&+& b&+&c&=&4.
 \end{matrix}
 \]
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Let \(A=\begin{pmatrix}4&2&1\\1&-1&1\\1&1&1\end{pmatrix}\)
+
+Let \(A=\begin{pmatrix}4&2&1\\1&-1&1\\1&1&1\end{pmatrix}\)
 \begin{align*}
 \implies\quad\quad\quad \det(A) &= 4\cdot\begin{vmatrix}-1&1\\1&1\end{vmatrix} -2\cdot\begin{vmatrix}1&1\\1&1\end{vmatrix} +1\cdot\begin{vmatrix}1&-1\\1&1\end{vmatrix}\\
 &= 4\cdot(-2)-2\cdot0+2=-6
@@ -3294,6 +3621,7 @@ A^{-1}\cdot \begin{pmatrix}12\\-6\\4\end{pmatrix}
 = \begin{pmatrix}1\\5\\-2\end{pmatrix}
 \end{align*}
 \(\implies\) \(a=1\), ~ \(b=5\), ~ \(c=-2\).
+
 \end{solution}
 
 \hypertarget{cramers-rule-explained-for-2times-2-only}{%
@@ -3319,13 +3647,19 @@ Denote:
 Then \(x=\dfrac{D_x}{\det(A)}\) and \(y=\dfrac{D_y}{\det(A)}\) solves (**).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-156}{}{\label{exm:unnamed-chunk-156} }Using Cramer's rule, solve:
+\protect\hypertarget{exm:unlabeled-div-102}{}\label{exm:unlabeled-div-102}
+
+Using Cramer's rule, solve:
 ~~ \(\begin{matrix}2x+4y &=& 16\\ x+3y &=& 11\end{matrix}\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Let \(A=\begin{pmatrix}2&4\\1&3\end{pmatrix}\) \(\implies\) \(\det(A)=6-4=2\)\\
+
+Let \(A=\begin{pmatrix}2&4\\1&3\end{pmatrix}\) \(\implies\) \(\det(A)=6-4=2\)\\
 \(\implies\) \(D_x=\begin{vmatrix}16&4\\11&3\end{vmatrix}=4\) and \(D_y=\begin{vmatrix}2&16\\1&11\end{vmatrix}=6\)\\
 \(\implies\) \(x=\frac{4}{2}=2\) and \(y=\frac{6}{2}=3\).
+
 \end{solution}
 
 \hypertarget{exercises-13-inverse-matrix-method-and-cramers-rule}{%
@@ -3406,7 +3740,7 @@ Angles are normally measured in \textbf{degrees}, e.g.~a right angle has \(90^\c
 
 }
 
-\caption{Unit circle and radians}\label{fig:unnamed-chunk-161}
+\caption{Unit circle and radians}\label{fig:unnamed-chunk-56}
 \end{figure}
 
 \begin{longtable}[]{@{}
@@ -3420,8 +3754,8 @@ Angles are normally measured in \textbf{degrees}, e.g.~a right angle has \(90^\c
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.07}}@{}}
 \toprule
 \endhead
-degrees & \(360\) & \(180\) & \(90\) & \(60\) & \(45\) & \(30\) & \(0\) \\ \addlinespace
-radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{6}\) & \(0\) \\ \addlinespace
+degrees & \(360\) & \(180\) & \(90\) & \(60\) & \(45\) & \(30\) & \(0\) \\
+radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{6}\) & \(0\) \\
 \bottomrule
 \end{longtable}
 
@@ -3431,10 +3765,16 @@ radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\
 \[\theta^\circ = \left(\dfrac{2\pi}{360}\cdot\theta\right)\,\mathrm{rad}\]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-162}{}{\label{exm:unnamed-chunk-162} }Find the value of \(23^\circ\) in radians.
+\protect\hypertarget{exm:unlabeled-div-104}{}\label{exm:unlabeled-div-104}
+
+Find the value of \(23^\circ\) in radians.
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(23^\circ = \left(\dfrac{2\pi}{360}\cdot 23\right)\,\mathrm{rad} \approx 0.4\,\mathrm{rad}\).
+
+\(23^\circ = \left(\dfrac{2\pi}{360}\cdot 23\right)\,\mathrm{rad} \approx 0.4\,\mathrm{rad}\).
+
 \end{solution}
 
 \hypertarget{converting-radians-to-degrees}{%
@@ -3443,10 +3783,16 @@ radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\
 \[\theta\,\mathrm{rad}=\left(\dfrac{360}{2\pi}\cdot\theta\right)^\circ\]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-164}{}{\label{exm:unnamed-chunk-164} }Find the value of \(1.5\,\mathrm{rad}\) in degrees.
+\protect\hypertarget{exm:unlabeled-div-106}{}\label{exm:unlabeled-div-106}
+
+Find the value of \(1.5\,\mathrm{rad}\) in degrees.
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(1.5\,\mathrm{rad} = \left(\dfrac{360}{2\pi}\cdot 1.5\right)^\circ = \left(\dfrac{270}{\pi}\right)^\circ \approx 85.9^\circ\).
+
+\(1.5\,\mathrm{rad} = \left(\dfrac{360}{2\pi}\cdot 1.5\right)^\circ = \left(\dfrac{270}{\pi}\right)^\circ \approx 85.9^\circ\).
+
 \end{solution}
 
 \hypertarget{arc-and-sector}{%
@@ -3458,10 +3804,16 @@ radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\
 The \textbf{length of an arc} of a circle is given by \(s=r\cdot\theta\), where \(r\) is the radius and \(\theta\) is the angle subtended in radians.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-166}{}{\label{exm:unnamed-chunk-166} }Determine the length \(s\) of an arc of a circle with radius \(45mm\) when the angle subtended is \(85^\circ\).
+\protect\hypertarget{exm:unlabeled-div-108}{}\label{exm:unlabeled-div-108}
+
+Determine the length \(s\) of an arc of a circle with radius \(45mm\) when the angle subtended is \(85^\circ\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(s=r\theta = 45\,\mathrm{mm}\cdot\left(\dfrac{2\pi}{360}\cdot 85\right) \approx 66.8\,\mathrm{mm}\).
+
+\(s=r\theta = 45\,\mathrm{mm}\cdot\left(\dfrac{2\pi}{360}\cdot 85\right) \approx 66.8\,\mathrm{mm}\).
+
 \end{solution}
 
 \hypertarget{area-of-a-sector}{%
@@ -3470,10 +3822,16 @@ The \textbf{length of an arc} of a circle is given by \(s=r\cdot\theta\), where 
 The \textbf{area of a sector} of a disc is \(A=\left(\dfrac{\theta}{2\pi}\cdot\pi\cdot r^2\right) = \dfrac{1}{2}\cdot r^2\cdot \theta\), where \(r\) is the radius of \(\theta\) is the angle subtended in radians.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-168}{}{\label{exm:unnamed-chunk-168} }A light source spreads illumination through an angle \(130^\circ\) to a distance of \(35m\). Determine the illuminated area \(A\).
+\protect\hypertarget{exm:unlabeled-div-110}{}\label{exm:unlabeled-div-110}
+
+A light source spreads illumination through an angle \(130^\circ\) to a distance of \(35m\). Determine the illuminated area \(A\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(A=\frac12 r^2\theta = \frac12\left(35\,\mathrm{m}\right)^2\cdot\left(\dfrac{2\pi}{360}\cdot 130\right) \approx 1390\,\mathrm{m}^2\).
+
+\(A=\frac12 r^2\theta = \frac12\left(35\,\mathrm{m}\right)^2\cdot\left(\dfrac{2\pi}{360}\cdot 130\right) \approx 1390\,\mathrm{m}^2\).
+
 \end{solution}
 
 \hypertarget{exercises-14-length-of-an-arc-and-area-of-a-sector}{%
@@ -3550,11 +3908,14 @@ The \textbf{area of a sector} of a disc is \(A=\left(\dfrac{\theta}{2\pi}\cdot\p
 
 }
 
-\caption{A right triangle}\label{fig:unnamed-chunk-173}
+\caption{A right triangle}\label{fig:unnamed-chunk-60}
 \end{figure}
 
 \begin{theorem}[Pythagoras's Theorem]
-\protect\hypertarget{thm:unnamed-chunk-174}{}{\label{thm:unnamed-chunk-174} \iffalse (Pythagoras's Theorem) \fi{} }\(a^2+b^2=c^2\)
+\protect\hypertarget{thm:unlabeled-div-112}{}\label{thm:unlabeled-div-112}
+
+\(a^2+b^2=c^2\)
+
 \end{theorem}
 
 \emph{Proof (non-examinable):}
@@ -3600,7 +3961,10 @@ The \emph{definitions} of the values of the trigonometric functions for \(\theta
 \end{itemize}
 
 \begin{theorem}[Pythagoras's identity]
-\protect\hypertarget{thm:unnamed-chunk-177}{}{\label{thm:unnamed-chunk-177} \iffalse (Pythagoras's identity) \fi{} }\(\sin^2\theta+\cos^2\theta=1\)
+\protect\hypertarget{thm:unlabeled-div-113}{}\label{thm:unlabeled-div-113}
+
+\(\sin^2\theta+\cos^2\theta=1\)
+
 \end{theorem}
 
 \emph{Proof:} \(BC^2+AC^2=AB^2\) \hfill~{(by Pythagoras's Theorem)}\\
@@ -3608,26 +3972,38 @@ The \emph{definitions} of the values of the trigonometric functions for \(\theta
 \(\implies\) \(\cos^2\theta+\sin^2\theta = 1\) \hfill~{(by the definitions above)}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-178}{}{\label{exm:unnamed-chunk-178} }Prove that \(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\).
+\protect\hypertarget{exm:unlabeled-div-114}{}\label{exm:unlabeled-div-114}
+
+Prove that \(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \mathrm{LHS} &= \frac{1+\frac{\sin^2\theta}{\cos^2\theta}}{1+\frac{\cos^2\theta}{\sin^2\theta}}\\
 &= \frac{\sin^2\theta\,(\cos^2\theta+\sin^2\theta)}{\cos^2\theta\,(\sin^2\theta+\cos^2\theta)}\\
 &=\frac{\sin^2\theta}{\cos^2\theta} = \tan^2\theta = \mathrm{RHS}
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-180}{}{\label{exm:unnamed-chunk-180} }Prove that \(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\).
+\protect\hypertarget{exm:unlabeled-div-116}{}\label{exm:unlabeled-div-116}
+
+Prove that \(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \mathrm{RHS} &= \frac{1}{\sin\theta}-\frac{\cos\theta}{\sin\theta}= \frac{1-\cos\theta}{\sin\theta}.\\
 \mathrm{LHS} &= \sqrt{\frac{(1-\cos\theta)(1-\cos\theta)}{(1+\cos\theta)(1-\cos\theta)}} \\
 &= \frac{\sqrt{(1-\cos\theta)^2}}{\sqrt{1-\cos^2\theta}} = \frac{1-\cos\theta}{\sqrt{\sin^2\theta}}\\
 &= \frac{1-\cos\theta}{\sin\theta} = \mathrm{LHS}.
 \end{align*}
+
 \end{solution}
 
 A table of very commonly used values:
@@ -3641,10 +4017,10 @@ A table of very commonly used values:
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.17}}@{}}
 \toprule
 \endhead
-\(\theta\) & \(0\) & \(\frac{\pi}6\) & \(\frac{\pi}4\) & \(\frac{\pi}3\) & \(\frac{\pi}2\) \\ \addlinespace
-\(\sin\theta\) & \(0\) & \(\frac12\) & \(\frac1{\sqrt2}\) & \(\frac{\sqrt3}2\) & \(1\) \\ \addlinespace
-\(\cos\theta\) & \(1\) & \(\frac{\sqrt3}2\) & \(\frac1{\sqrt2}\) & \(\frac12\) & \(0\) \\ \addlinespace
-\(\tan\theta\) & \(0\) & \(\frac1{\sqrt3}\) & \(1\) & \(\sqrt3\) & not defined \\ \addlinespace
+\(\theta\) & \(0\) & \(\frac{\pi}6\) & \(\frac{\pi}4\) & \(\frac{\pi}3\) & \(\frac{\pi}2\) \\
+\(\sin\theta\) & \(0\) & \(\frac12\) & \(\frac1{\sqrt2}\) & \(\frac{\sqrt3}2\) & \(1\) \\
+\(\cos\theta\) & \(1\) & \(\frac{\sqrt3}2\) & \(\frac1{\sqrt2}\) & \(\frac12\) & \(0\) \\
+\(\tan\theta\) & \(0\) & \(\frac1{\sqrt3}\) & \(1\) & \(\sqrt3\) & not defined \\
 \bottomrule
 \end{longtable}
 
@@ -3909,7 +4285,7 @@ Given any \(x\), we let \(\arctan x\) \(= \theta\), such that \(\tan\theta=x\) a
 
 }
 
-\caption{Cartesian coordinate system}\label{fig:unnamed-chunk-185}
+\caption{Cartesian coordinate system}\label{fig:unnamed-chunk-66}
 \end{figure}
 
 \(x\) and \(y\) are called the \textbf{Cartesian} (or \textbf{rectangular}) coordinates of \(P\).
@@ -3922,7 +4298,7 @@ The whole plane is split by the coordinate axes into four regions called \textbf
 
 }
 
-\caption{Line graph}\label{fig:unnamed-chunk-186}
+\caption{Line graph}\label{fig:unnamed-chunk-67}
 \end{figure}
 
 The graph of a function of the form \(f(x)=mx+c\) is a line; \(m\) is called the \textbf{slope}; and \(c\) is the \textbf{intercept} of the line. Note: \(c=f(0)\).
@@ -3994,8 +4370,8 @@ to learn to ``recognise'' at least quadratics, exponentials and sine/cosine.
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.12}}@{}}
 \toprule
 \endhead
-\(\sigma\) (M Pa) & \(10.8\) & \(21.6\) & \(33.3\) & \(37.8\) & \(45.9\) \\ \addlinespace
-\(\varepsilon\) (\(\times 10^{-5}\)) & \(12\) & \(24\) & \(37\) & \(42\) & \(51\) \\ \addlinespace
+\(\sigma\) (M Pa) & \(10.8\) & \(21.6\) & \(33.3\) & \(37.8\) & \(45.9\) \\
+\(\varepsilon\) (\(\times 10^{-5}\)) & \(12\) & \(24\) & \(37\) & \(42\) & \(51\) \\
 \bottomrule
 \end{longtable}
 
@@ -4021,8 +4397,8 @@ Determine the law for the wire under test.
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}@{}}
 \toprule
 \endhead
-\(F\) (N) & \(19\) & \(37\) & \(50\) & \(93\) & \(125\) & \(149\) \\ \addlinespace
-\(L\) (N) & \(40\) & \(120\) & \(230\) & \(410\) & \(540\) & \(680\) \\ \addlinespace
+\(F\) (N) & \(19\) & \(37\) & \(50\) & \(93\) & \(125\) & \(149\) \\
+\(L\) (N) & \(40\) & \(120\) & \(230\) & \(410\) & \(540\) & \(680\) \\
 \bottomrule
 \end{longtable}
 
@@ -4046,8 +4422,8 @@ It is thought that the equation relating \(F\) and \(L\) is of the form \(F = kL
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}@{}}
 \toprule
 \endhead
-\(p\) (kPa) & \(248\) & \(253\) & \(257\) & \(262\) & \(266\) & \(270\) \\ \addlinespace
-\(T\) (K) & \(273\) & \(278\) & \(283\) & \(288\) & \(293\) & \(298\) \\ \addlinespace
+\(p\) (kPa) & \(248\) & \(253\) & \(257\) & \(262\) & \(266\) & \(270\) \\
+\(T\) (K) & \(273\) & \(278\) & \(283\) & \(288\) & \(293\) & \(298\) \\
 \bottomrule
 \end{longtable}
 
@@ -4087,7 +4463,10 @@ It is thought that the equation relating \(F\) and \(L\) is of the form \(F = kL
 Sometimes the variables \(x\) and \(y\) are themselves functions of another variable, called \textbf{parameter}, say \(x=x(t)\) and \(y=y(t)\). We may be able to express \(y\) in terms of \(x\) by eliminating \(t\).
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-189}{}{\label{exm:unnamed-chunk-189} }\(x=a\cos\theta\), ~ \(y=a\sin\theta\), where \(a\) is a positive constant and \(\theta\) is the parameter.
+\protect\hypertarget{exm:unlabeled-div-118}{}\label{exm:unlabeled-div-118}
+
+\(x=a\cos\theta\), ~ \(y=a\sin\theta\), where \(a\) is a positive constant and \(\theta\) is the parameter.
+
 \end{example}
 
 We aim to eliminate \(\theta\) and express \(y\) in terms of \(x\).\\
@@ -4102,14 +4481,27 @@ We square both equations and add them: \(x^2=a^2\sin^2\theta\), ~ \(y^2=a^2\cos^
 \end{figure}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-190}{}{\label{exm:unnamed-chunk-190} }A curve is given by \(x=t^2\) and \(y=2t\). Find its Cartesian equation.
+\protect\hypertarget{exm:unlabeled-div-119}{}\label{exm:unlabeled-div-119}
+
+A curve is given by \(x=t^2\) and \(y=2t\). Find its Cartesian equation.
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}
-1. \(y=2t\) \(\implies\) \(t^2=\frac{y^2}{4}\)\\
-2. \(x=t^2\)
+
+Calculate
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(y=2t\) \(\implies\) \(t^2=\frac{y^2}{4}\)\\
+\item
+  \(x=t^2\)
+\end{enumerate}
 
 Putting 1. and 2. together, we get \(x=\frac{y^2}{4}\) \(\iff\) \(y=\pm2\sqrt{x}\). See Figure \ref{fig:t17-sqrt}.
+
 \end{solution}
 
 \begin{figure}
@@ -4199,11 +4591,17 @@ Given a point \(P=[r\angle\theta]\) as in Figure \ref{fig:t18-triangle}, its Car
 \[\boxed{x=r\cos\theta, \quad y=r\sin\theta}\]
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-194}{}{\label{exm:unnamed-chunk-194} }\([2\sqrt2\angle \frac\pi4] = (2\sqrt{2}\cdot\frac{1}{\sqrt2},2\sqrt{2}\cdot\frac{1}{\sqrt2})=(2,2)\).
+\protect\hypertarget{exm:unlabeled-div-121}{}\label{exm:unlabeled-div-121}
+
+\([2\sqrt2\angle \frac\pi4] = (2\sqrt{2}\cdot\frac{1}{\sqrt2},2\sqrt{2}\cdot\frac{1}{\sqrt2})=(2,2)\).
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-195}{}{\label{exm:unnamed-chunk-195} }\([6.8\angle 55^\circ] = (6.8\cos 55^\circ,6.8\sin 55^\circ) \approx(3.9,5.6)\).
+\protect\hypertarget{exm:unlabeled-div-122}{}\label{exm:unlabeled-div-122}
+
+\([6.8\angle 55^\circ] = (6.8\cos 55^\circ,6.8\sin 55^\circ) \approx(3.9,5.6)\).
+
 \end{example}
 
 \hypertarget{converting-cartesian-to-polar-coordinates}{%
@@ -4225,14 +4623,20 @@ Given a point \(P=(x,y)\) as in Figure \ref{fig:t18-triangle}, its polar coordin
 \emph{Note:} The value of ``\(\arctan(\dots)\)'' is a quantity that describes \emph{size of an angle}. The formula above assumes that it is in \emph{radians} (hence the appearance of \(\pi\)). Some care is required when using a calculator which can be set to work in \emph{degrees} instead, in which case the above formulas need to be adjusted by replacing every \(\pi\) by \(180^\circ\).
 
 \begin{example}
-\protect\hypertarget{exm:t18-cart-to-polar}{}{\label{exm:t18-cart-to-polar} }\begin{align*}
+\protect\hypertarget{exm:t18-cart-to-polar}{}\label{exm:t18-cart-to-polar}
+
+\begin{align*}
 (-67.4,20.31) &= \left[\sqrt{(-67.4)^2+(20.31)^2}\angle \left(\arctan\left(\frac{20.31}{-67.4}\right)+\pi\right)\cdot\frac{180^\circ}{\pi}\right]\\
 &\approx\left[70.39\angle 163.23^\circ\right]
 \end{align*}
+
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-196}{}{\label{exm:unnamed-chunk-196} }Six holes in the plane are given, each in polar coordinates relative to the preceding one: see Table \ref{tab:t18-holes-table}. Sketch the system and determine the coordinates of hole 6 relative to hole 1 in rectangular and polar coordinates.
+\protect\hypertarget{exm:unlabeled-div-123}{}\label{exm:unlabeled-div-123}
+
+Six holes in the plane are given, each in polar coordinates relative to the preceding one: see Table \ref{tab:t18-holes-table}. Sketch the system and determine the coordinates of hole 6 relative to hole 1 in rectangular and polar coordinates.
+
 \end{example}
 
 \begin{longtable}[]{@{}
@@ -4240,28 +4644,38 @@ Given a point \(P=(x,y)\) as in Figure \ref{fig:t18-triangle}, its polar coordin
   >{\raggedleft\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.38}}@{}}
 \caption{\label{tab:t18-holes-table} Relative polar coordinates of holes in the plane}\tabularnewline
 \toprule
-Hole & Relative polar coordinates \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\raggedright
+Hole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative polar coordinates
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Hole & Relative polar coordinates \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\raggedright
+Hole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative polar coordinates
+\end{minipage} \\
 \midrule
 \endhead
-Hole 1 & \(90\angle 120^\circ\) \\ \addlinespace
-Hole 2 & \(40\angle 90^\circ\) \\ \addlinespace
-Hole 3 & \(55\angle 60^\circ\) \\ \addlinespace
-Hole 4 & \(25\angle 45^\circ\) \\ \addlinespace
-Hole 5 & \(20\angle-30^\circ\) \\ \addlinespace
-Hole 6 & \(150\angle -150^\circ\) \\ \addlinespace
+Hole 1 & \(90\angle 120^\circ\) \\
+Hole 2 & \(40\angle 90^\circ\) \\
+Hole 3 & \(55\angle 60^\circ\) \\
+Hole 4 & \(25\angle 45^\circ\) \\
+Hole 5 & \(20\angle-30^\circ\) \\
+Hole 6 & \(150\angle -150^\circ\) \\
 \bottomrule
 \end{longtable}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}For a sketch, see Figure \ref{fig:t18-holes-sketch}.
+
+For a sketch, see Figure \ref{fig:t18-holes-sketch}.
 
 Use the above formulas to convert \emph{relative polar} coordinates to \emph{relative Cartesian} coordinates: see Table \ref{tab:t18-holes-table-filled}. Cartesian coordinates of hole 6 relative to hole 1 are the sum of the rectangular coordinates of holes 2 to 6. Executing this we arrive at: \((-67.4,20.31)\).
 
 We convert back to polar coordinates (see Example \ref{exm:t18-cart-to-polar}) and obtain the polar coordinates of hole 6 relative to hole 1 as: \(70.39\angle 163.23^\circ\).
+
 \end{solution}
 
 \begin{figure}
@@ -4279,19 +4693,31 @@ We convert back to polar coordinates (see Example \ref{exm:t18-cart-to-polar}) a
   >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.38}}@{}}
 \caption{\label{tab:t18-holes-table-filled} Relative polar and Cartesian coordinates of holes}\tabularnewline
 \toprule
-Hole & Relative polar coords & Relative Cartesian coords \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\raggedright
+Hole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative polar coords
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative Cartesian coords
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Hole & Relative polar coords & Relative Cartesian coords \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\raggedright
+Hole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative polar coords
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Relative Cartesian coords
+\end{minipage} \\
 \midrule
 \endhead
-Hole 1 & \(90\angle 120^\circ\) & \((-45,77.94)\) \\ \addlinespace
-Hole 2 & \(40\angle 90^\circ\) & \((0,40)\) \\ \addlinespace
-Hole 3 & \(55\angle 60^\circ\) & \((27.5,47.63)\) \\ \addlinespace
-Hole 4 & \(25\angle 45^\circ\) & \((17.68,17.68)\) \\ \addlinespace
-Hole 5 & \(20\angle-30^\circ\) & \((17.32,-10)\) \\ \addlinespace
-Hole 6 & \(150\angle -150^\circ\) & \((-129.9,-75)\) \\ \addlinespace
+Hole 1 & \(90\angle 120^\circ\) & \((-45,77.94)\) \\
+Hole 2 & \(40\angle 90^\circ\) & \((0,40)\) \\
+Hole 3 & \(55\angle 60^\circ\) & \((27.5,47.63)\) \\
+Hole 4 & \(25\angle 45^\circ\) & \((17.68,17.68)\) \\
+Hole 5 & \(20\angle-30^\circ\) & \((17.32,-10)\) \\
+Hole 6 & \(150\angle -150^\circ\) & \((-129.9,-75)\) \\
 \bottomrule
 \end{longtable}
 
@@ -4355,12 +4781,12 @@ Hole 6 & \(150\angle -150^\circ\) & \((-129.9,-75)\) \\ \addlinespace
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.39}}@{}}
 \toprule
 \endhead
-Hole 1 & \(65 \angle 65^\circ\) \\ \addlinespace
-Hole 2 & \(55 \angle 95^\circ\) \\ \addlinespace
-Hole 3 & \(45 \angle -20^\circ\) \\ \addlinespace
-Hole 4 & \(80 \angle 55^\circ\) \\ \addlinespace
-Hole 5 & \(160 \angle -170^\circ\) \\ \addlinespace
-Hole 6 & \(95 \angle -80^\circ\) \\ \addlinespace
+Hole 1 & \(65 \angle 65^\circ\) \\
+Hole 2 & \(55 \angle 95^\circ\) \\
+Hole 3 & \(45 \angle -20^\circ\) \\
+Hole 4 & \(80 \angle 55^\circ\) \\
+Hole 5 & \(160 \angle -170^\circ\) \\
+Hole 6 & \(95 \angle -80^\circ\) \\
 \bottomrule
 \end{longtable}
 
@@ -4427,7 +4853,9 @@ Assume \(a\) is a constant.
 \end{figure}
 
 \begin{theorem}
-\protect\hypertarget{thm:unnamed-chunk-206}{}{\label{thm:unnamed-chunk-206} }Given an arbitrary triangle (marked as on Figure \ref{fig:t19-basictriangle}), we have:
+\protect\hypertarget{thm:unlabeled-div-125}{}\label{thm:unlabeled-div-125}
+
+Given an arbitrary triangle (marked as on Figure \ref{fig:t19-basictriangle}), we have:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4442,6 +4870,7 @@ Assume \(a\) is a constant.
   \(\boxed{\mathrm{Area} = \frac12 bh = \frac12ab\sin C = \sqrt{s(s-a)(s-b)(s-c)}}\) ~ ~ where \(h\) is the \emph{height} of the triangle (see Figure \ref{fig:t19-markedtriangle}) and \(s=\dfrac{a+b+c}{2}\).\\
   (The formula with \(s\) is called \emph{Heron's formula}.)
 \end{enumerate}
+
 \end{theorem}
 
 \emph{Proofs (non-examinable):} Start by further marking the triangle as in Figure \ref{fig:t19-markedtriangle}.
@@ -4520,22 +4949,30 @@ To find all the sides and angles of a triangle, you may want to use the followin
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.60}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.19}}@{}}
 \toprule
-given: & use: \\ \addlinespace
+\begin{minipage}[b]{\linewidth}\raggedright
+given:
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+use:
+\end{minipage} \\
 \midrule
 \endhead
-one side and two angles & sine rule \\ \addlinespace
-two sides and an angle (not between them) & sine rule \\ \addlinespace
-two sides and the angle between them & cosine rule \\ \addlinespace
-three sides & cosine rule \\ \addlinespace
+one side and two angles & sine rule \\
+two sides and an angle (not between them) & sine rule \\
+two sides and the angle between them & cosine rule \\
+three sides & cosine rule \\
 \bottomrule
 \end{longtable}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-207}{}{\label{exm:unnamed-chunk-207} }Calculate the angles of a triangle with sides of length \(a=80\,\mathrm{mm}\), \(b=70\,\mathrm{mm}\), \(c=50\,\mathrm{mm}\).
+\protect\hypertarget{exm:unlabeled-div-126}{}\label{exm:unlabeled-div-126}
+
+Calculate the angles of a triangle with sides of length \(a=80\,\mathrm{mm}\), \(b=70\,\mathrm{mm}\), \(c=50\,\mathrm{mm}\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}Using the cosine rule, we calculate
+
+Using the cosine rule, we calculate
 \begin{align*}
 \cos A &= \frac{b^2+c^2-a^2}{2bc}\\
 &= \frac{70^2+50^2-80^2}{2\cdot70\cdot50} =\frac{1}{7} \approx 0.1429
@@ -4549,27 +4986,38 @@ Using the sine rule, we calculate
 \end{align*}
 \(\implies\) \(\angle B=\arcsin 0.866 \approx 60^\circ\)\\
 \(\implies\) \(\angle C = 180^\circ-\angle A-\angle B= 38.22^\circ\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-209}{}{\label{exm:unnamed-chunk-209} }Determine the area of a triangle with \(a=6\,\mathrm{m}\), \(b=5\,\mathrm{m}\), \(c=9\,\mathrm{m}\).
+\protect\hypertarget{exm:unlabeled-div-128}{}\label{exm:unlabeled-div-128}
+
+Determine the area of a triangle with \(a=6\,\mathrm{m}\), \(b=5\,\mathrm{m}\), \(c=9\,\mathrm{m}\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}We use Heron's formula:
+
+We use Heron's formula:
 \begin{align*}
 s&=\frac{a+b+c+}{2}=\frac{6\,\mathrm{m} + 5\,\mathrm{m}+ 9\,\mathrm{m}}{2}=10\,\mathrm{m}\\
 \implies\quad\quad\quad\mathrm{Area} &= \sqrt{s(s-a)(s-b)(s-c)}\\
 &= \sqrt{10\,\mathrm{m}\cdot 4\,\mathrm{m}\cdot 5\,\mathrm{m}\cdot 1\,\mathrm{m}} \\
 &= \sqrt{200\,\mathrm{m^4}} \approx 14.14\,\mathrm{m^2}.
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-211}{}{\label{exm:unnamed-chunk-211} }Determine all sides, angles and area of a triangle with \(b=10\,\mathrm{m}\), \(c=5\,\mathrm{m}\) and \(\angle A=120^\circ\).
+\protect\hypertarget{exm:unlabeled-div-130}{}\label{exm:unlabeled-div-130}
+
+Determine all sides, angles and area of a triangle with \(b=10\,\mathrm{m}\), \(c=5\,\mathrm{m}\) and \(\angle A=120^\circ\).
+
 \end{example}
+
 \begin{solution}
-\iffalse{} {Solution. } \fi{}First, we use cosine rule to determine \(a\):
+
+First, we use cosine rule to determine \(a\):
 \begin{align*}
 a^2 &= b^2+c^2-2bc\cos A\\
 &= 100\,\mathrm{m^2} + 25 \,\mathrm{m^2} - 2\cdot 10\,\mathrm{m}\cdot 5\,\mathrm{m}\cdot \cos 120^\circ\\
@@ -4596,6 +5044,7 @@ s &= \frac{a+b+c}{2} = \frac{10+5+5\sqrt{7}}{2}\,\mathrm{m} \approx 14.12\,\math
 \sqrt{s(s-a)(s-b)(s-c)}\\
 &=\sqrt{14.12\cdot 0.89\cdot 4.12\cdot 9.12} \,\mathrm{m^2} \approx 21.73\,\mathrm{m^2}.
 \end{align*}
+
 \end{solution}
 
 \hypertarget{exercises-19-sine-and-cosine-rules}{%
@@ -4654,13 +5103,16 @@ s &= \frac{a+b+c}{2} = \frac{10+5+5\sqrt{7}}{2}\,\mathrm{m} \approx 14.12\,\math
 \chapter{Compound and multiple angles}\label{compound-and-multiple-angles}}
 
 \begin{theorem}[Compound angle formulas for sine and cosine]
-\protect\hypertarget{thm:t20-compsin}{}{\label{thm:t20-compsin} \iffalse (Compound angle formulas for sine and cosine) \fi{} }\[
+\protect\hypertarget{thm:t20-compsin}{}\label{thm:t20-compsin}
+
+\[
 \boxed{
 \begin{array}{rcl}
 \sin(\alpha+\beta) &=& \sin\alpha\cos\beta + \cos\alpha\sin\beta\\
 \cos(\alpha+\beta) &=& \cos\alpha\cos\beta - \sin\alpha\sin\beta
 \end{array}
 }\]
+
 \end{theorem}
 
 \emph{Proof of Theorem \ref{thm:t20-compsin} (non-examinable):}
@@ -4706,9 +5158,12 @@ Hence
 This finishes the proof.
 
 \begin{corollary}[Compound angle formula for tangent]
-\protect\hypertarget{cor:t20-comptan}{}{\label{cor:t20-comptan} \iffalse (Compound angle formula for tangent) \fi{} }\[\boxed{
+\protect\hypertarget{cor:t20-comptan}{}\label{cor:t20-comptan}
+
+\[\boxed{
   \tan(\alpha+\beta) = \frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}
 }\]
+
 \end{corollary}
 
 \emph{Proof of Corollary \ref{cor:t20-comptan} using Theorem \ref{thm:t20-compsin}:}
@@ -4721,13 +5176,16 @@ This finishes the proof.
 (For the penultimate step, we divide both top and bottom by \(\cos\alpha\cos\beta\).)
 
 \begin{corollary}[Double angle formulas]
-\protect\hypertarget{cor:t20-double}{}{\label{cor:t20-double} \iffalse (Double angle formulas) \fi{} }\[\boxed{
+\protect\hypertarget{cor:t20-double}{}\label{cor:t20-double}
+
+\[\boxed{
 \begin{array}{rcl}
 \sin(2\alpha) &=& 2\sin\alpha\cos\alpha\\
 \cos(2\alpha) &=& 2\cos^2\alpha - 1 = 1-2\sin^2\alpha\\
 \tan(2\alpha) &=& \dfrac{2\tan\alpha}{1-\tan^2\alpha}
 \end{array}
 }\]
+
 \end{corollary}
 
 \emph{Proof of double angle cosine formula (Corollary \ref{cor:t20-double}):}
@@ -4739,11 +5197,15 @@ This finishes the proof.
 (For the last step, we use Pythagoras's formula: \(\sin^2\alpha+\cos^2\alpha=1\).)
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-219}{}{\label{exm:unnamed-chunk-219} }Express \(\cos(3\alpha)\) in terms of \(\cos\alpha\).
+\protect\hypertarget{exm:unlabeled-div-132}{}\label{exm:unlabeled-div-132}
+
+Express \(\cos(3\alpha)\) in terms of \(\cos\alpha\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \cos(3\alpha) &=
 \cos(2\alpha+\alpha) \\
 &= \cos(2\alpha)\cos\alpha - \sin(2\alpha)\sin\alpha\\
@@ -4751,14 +5213,19 @@ This finishes the proof.
 &= 2\cos^3\alpha - \cos\alpha - 2(1-\cos^2\alpha)\cos\alpha\\
 &= 4\cos^3\alpha - 3\cos\alpha.
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-221}{}{\label{exm:unnamed-chunk-221} }Express \(\tan(3\alpha)\) in terms of \(\tan\alpha\).
+\protect\hypertarget{exm:unlabeled-div-134}{}\label{exm:unlabeled-div-134}
+
+Express \(\tan(3\alpha)\) in terms of \(\tan\alpha\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \tan(3\alpha) &=
   \tan(2\alpha+\alpha)\\
 &=\frac{\tan(2\alpha)+\tan\alpha}{1-\tan(2\alpha)\tan\alpha}\\
@@ -4766,10 +5233,13 @@ This finishes the proof.
 &=\frac{2\tan\alpha+\tan\alpha(1-\tan^2\alpha)}{1-\tan^2\alpha - 2\tan\alpha\cdot\tan\alpha}\\
 &=\frac{3\tan\alpha-\tan^3\alpha}{1-3\tan^2\alpha}.
 \end{align*}
+
 \end{solution}
 
 \begin{corollary}[Changing sums of (co)sines into products]
-\protect\hypertarget{cor:t20-prods}{}{\label{cor:t20-prods} \iffalse (Changing sums of (co)sines into products) \fi{} }\[\boxed{
+\protect\hypertarget{cor:t20-prods}{}\label{cor:t20-prods}
+
+\[\boxed{
 \begin{array}{rcl}
 \sin\alpha + \sin\beta &=& 2\sin\tfrac{\alpha+\beta}2\cos\tfrac{\alpha-\beta}2\\
 \sin\alpha - \sin\beta &=& 2\cos\tfrac{\alpha+\beta}2\sin\tfrac{\alpha-\beta}2\\
@@ -4777,6 +5247,7 @@ This finishes the proof.
 \cos\alpha - \cos\beta &=& - 2\sin\tfrac{\alpha+\beta}2\sin\tfrac{\alpha-\beta}2\\
 \end{array}
 }\]
+
 \end{corollary}
 
 \emph{Proof of Corollary \ref{cor:t20-prods} (non-examinable):}
@@ -4794,30 +5265,44 @@ Note that \(\frac{\alpha+\beta}2+\frac{\alpha-\beta}2 = \alpha\) and
 since \(\cos(-x)=\cos(x)\) and \(\sin(-x)=-\sin(x)\). The rest are similar.
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-223}{}{\label{exm:unnamed-chunk-223} }Prove that \(\dfrac{\sin(7\theta)+\sin(5\theta)}{\cos(7\theta) - \cos(5\theta)} = -\cot\theta.\)
+\protect\hypertarget{exm:unlabeled-div-136}{}\label{exm:unlabeled-div-136}
+
+Prove that \(\dfrac{\sin(7\theta)+\sin(5\theta)}{\cos(7\theta) - \cos(5\theta)} = -\cot\theta.\)
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \mathrm{LHS} &= \frac{2\sin\frac{7\theta+5\theta}{2}\cos\frac{7\theta-5\theta}{2}}{-2\sin\frac{7\theta+5\theta}{2}\sin\frac{7\theta-5\theta}{2}}\\
 &= \frac{\sin6\theta\cos\theta}{-\sin6\theta\sin\theta} = \mathrm{RHS}.
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-225}{}{\label{exm:unnamed-chunk-225} }Express \(\sin50^\circ + \sin30^\circ\) as a product of (co)sines.
+\protect\hypertarget{exm:unlabeled-div-138}{}\label{exm:unlabeled-div-138}
+
+Express \(\sin50^\circ + \sin30^\circ\) as a product of (co)sines.
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\(\sin50^\circ+\sin30^\circ = 2\sin\dfrac{50^\circ+30^\circ}{2}\cos\dfrac{50^\circ-30^\circ}{2} = 2\sin 40^\circ\cos 10^\circ\).
+
+\(\sin50^\circ+\sin30^\circ = 2\sin\dfrac{50^\circ+30^\circ}{2}\cos\dfrac{50^\circ-30^\circ}{2} = 2\sin 40^\circ\cos 10^\circ\).
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-227}{}{\label{exm:unnamed-chunk-227} }Without a calculator, evaluate \(16\cdot\sin75^\circ\cdot \cos15^\circ\).
+\protect\hypertarget{exm:unlabeled-div-140}{}\label{exm:unlabeled-div-140}
+
+Without a calculator, evaluate \(16\cdot\sin75^\circ\cdot \cos15^\circ\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}First, we want to find \(\alpha\) and \(\beta\) so that
+
+First, we want to find \(\alpha\) and \(\beta\) so that
 \[
 75^\circ=\frac{\alpha+\beta}{2}, \quad\quad\quad
 15^\circ=\frac{\alpha-\beta}{2}.
@@ -4828,18 +5313,24 @@ Solving the equations, we get \(\alpha=90^\circ\) and \(\beta=60^\circ\). Hence
 &= 8(\sin90^\circ+\sin60^\circ)\\
 &= 8\left(1+\frac{\sqrt3}{2}\right) = 8 + 4\sqrt{3}.
 \end{align*}
+
 \end{solution}
 
 \begin{example}
-\protect\hypertarget{exm:unnamed-chunk-229}{}{\label{exm:unnamed-chunk-229} }Prove that \(\dfrac{\sin2\alpha}{1+\cos2\alpha}=\tan\alpha\).
+\protect\hypertarget{exm:unlabeled-div-142}{}\label{exm:unlabeled-div-142}
+
+Prove that \(\dfrac{\sin2\alpha}{1+\cos2\alpha}=\tan\alpha\).
+
 \end{example}
 
 \begin{solution}
-\iffalse{} {Solution. } \fi{}\begin{align*}
+
+\begin{align*}
 \mathrm{LHS} &=
 \frac{2\sin\alpha\cos\alpha}{1+2\cos^2\alpha -1}\\
 &= \frac{2\sin\alpha\cos\alpha}{2\cos^2\alpha} = \frac{\sin\alpha}{\cos\alpha} = \mathrm{RHS}.
 \end{align*}
+
 \end{solution}
 
 \hypertarget{exercises-20-compound-and-multiple-angles}{%

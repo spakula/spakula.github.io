@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 17 Parametric representation | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 17 Parametric representation | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-16-plotting-in-rectangular-coordinates.html"/>
 <link rel="next" href="exercises-17-parametric-representation.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -208,9 +211,8 @@
 <div id="parametric-representation" class="section level1" number="17">
 <h1><span class="header-section-number">Topic 17</span> Parametric representation</h1>
 <p>Sometimes the variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are themselves functions of another variable, called <strong>parameter</strong>, say <span class="math inline">\(x=x(t)\)</span> and <span class="math inline">\(y=y(t)\)</span>. We may be able to express <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> by eliminating <span class="math inline">\(t\)</span>.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-189" class="example"><strong>Example 17.1  </strong></span><span class="math inline">\(x=a\cos\theta\)</span>,   <span class="math inline">\(y=a\sin\theta\)</span>, where <span class="math inline">\(a\)</span> is a positive constant and <span class="math inline">\(\theta\)</span> is the parameter.
+<p><span id="exm:unlabeled-div-135" class="example"><strong>Example 17.1  </strong></span><span class="math inline">\(x=a\cos\theta\)</span>,   <span class="math inline">\(y=a\sin\theta\)</span>, where <span class="math inline">\(a\)</span> is a positive constant and <span class="math inline">\(\theta\)</span> is the parameter.</p>
 </div>
 <p>We aim to eliminate <span class="math inline">\(\theta\)</span> and express <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>.<br />
 We square both equations and add them: <span class="math inline">\(x^2=a^2\sin^2\theta\)</span>,   <span class="math inline">\(y^2=a^2\cos^2\theta\)</span><br />
@@ -222,16 +224,17 @@ We square both equations and add them: <span class="math inline">\(x^2=a^2\sin^2
 Figure 17.1: Graph of ±√(4-x²)
 </p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-190" class="example"><strong>Example 17.2  </strong></span>A curve is given by <span class="math inline">\(x=t^2\)</span> and <span class="math inline">\(y=2t\)</span>. Find its Cartesian equation.
+<p><span id="exm:unlabeled-div-136" class="example"><strong>Example 17.2  </strong></span>A curve is given by <span class="math inline">\(x=t^2\)</span> and <span class="math inline">\(y=2t\)</span>. Find its Cartesian equation.</p>
 </div>
-
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> 
-1. <span class="math inline">\(y=2t\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(t^2=\frac{y^2}{4}\)</span><br />
-2. <span class="math inline">\(x=t^2\)</span></p>
-Putting 1. and 2. together, we get <span class="math inline">\(x=\frac{y^2}{4}\)</span> <span class="math inline">\(\iff\)</span> <span class="math inline">\(y=\pm2\sqrt{x}\)</span>. See Figure <a href="parametric-representation.html#fig:t17-sqrt">17.2</a>.
+<p><span id="unlabeled-div-137" class="solution"><em>Solution</em>. </span>Calculate</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(y=2t\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(t^2=\frac{y^2}{4}\)</span><br />
+</li>
+<li><span class="math inline">\(x=t^2\)</span></li>
+</ol>
+<p>Putting 1. and 2. together, we get <span class="math inline">\(x=\frac{y^2}{4}\)</span> <span class="math inline">\(\iff\)</span> <span class="math inline">\(y=\pm2\sqrt{x}\)</span>. See Figure <a href="parametric-representation.html#fig:t17-sqrt">17.2</a>.</p>
 </div>
 <div class="figure"><span id="fig:t17-sqrt"></span>
 <img src="fy_Alectnotes_files/figure-html/t17-sqrt-1.svg" alt="Graph of ±2√x" width="672" />
@@ -270,6 +273,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -289,7 +293,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

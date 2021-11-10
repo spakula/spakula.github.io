@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 9 Partial fractions | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 9 Partial fractions | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-8-long-division-and-the-remainder-theorem.html"/>
 <link rel="next" href="exercises-9-partial-fractions.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -254,14 +257,12 @@ into <strong>partial fractions</strong> as given in the right–hand column:</p>
 </tbody>
 </table>
 <p>Note: It is a Theorem that the above actually works — these are equations which work for all values of <span class="math inline">\(x\)</span> simultaneously! It is not proved here though.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-92" class="example"><strong>Example 9.1  </strong></span>Split <span class="math inline">\(\dfrac{-4x+15}{(x+2)(x-1)}\)</span> into partial fractions.
+<p><span id="exm:unlabeled-div-65" class="example"><strong>Example 9.1  </strong></span>Split <span class="math inline">\(\dfrac{-4x+15}{(x+2)(x-1)}\)</span> into partial fractions.</p>
 </div>
-
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.</p>
-Second, the denominator is already factored as much as possible (into linear factors). We see that it is “Type I”, so we want to find <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that
+<p><span id="unlabeled-div-66" class="solution"><em>Solution</em>. </span>First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.</p>
+<p>Second, the denominator is already factored as much as possible (into linear factors). We see that it is “Type I”, so we want to find <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that
 <span class="math display">\[
 \frac{-4x+15}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}
 \]</span>
@@ -270,15 +271,13 @@ Multiplying both sides by <span class="math inline">\((x+2)(x-1)\)</span>, we ar
 Let <span class="math inline">\(x=1\)</span>. Then <span class="math inline">\(-4+15 = A\cdot 0+B\cdot 3\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(B=\frac{11}{3}\)</span>.<br />
 Let <span class="math inline">\(x=-2\)</span>. Then <span class="math inline">\(8+15=A(-3)+B\cdot 0\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(A=-\frac{23}{3}\)</span>.<br />
 <em>Answer:</em>
-<span class="math inline">\(\dfrac{-4x+15}{(x+2)(x-1)} = -\dfrac{23}{3(x+2)}+\dfrac{11}{3(x-1)}.\)</span>
+<span class="math inline">\(\dfrac{-4x+15}{(x+2)(x-1)} = -\dfrac{23}{3(x+2)}+\dfrac{11}{3(x-1)}.\)</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-94" class="example"><strong>Example 9.2  </strong></span>Split <span class="math inline">\(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}\)</span> into partial fractions.
+<p><span id="exm:unlabeled-div-67" class="example"><strong>Example 9.2  </strong></span>Split <span class="math inline">\(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}\)</span> into partial fractions.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> (Type III.) We want to find <span class="math inline">\(A,B,C\)</span> such that
+<p><span id="unlabeled-div-68" class="solution"><em>Solution</em>. </span>(Type III.) We want to find <span class="math inline">\(A,B,C\)</span> such that
 <span class="math display">\[
 \frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.
 \]</span>
@@ -287,22 +286,20 @@ Let <span class="math inline">\(x=-2\)</span>. Then <span class="math inline">\(
 Let <span class="math inline">\(x=3\)</span>. Then <span class="math inline">\(5\cdot 9-3\cdot 3+2 = B\cdot 5\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(B=\frac{38}{5}\)</span>.<br />
 Equating coefficients of <span class="math inline">\(x^2\)</span> gives <span class="math inline">\(5=A+C\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(A=5-C=5-\frac{28}{25}=\frac{97}{25}\)</span>.<br />
 <em>Answer:</em>
-<span class="math inline">\(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}=\dfrac{97}{25(x-3)}+\dfrac{38}{5(x-3)^2}+\dfrac{28}{25(x+2)}.\)</span>
+<span class="math inline">\(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}=\dfrac{97}{25(x-3)}+\dfrac{38}{5(x-3)^2}+\dfrac{28}{25(x+2)}.\)</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-96" class="example"><strong>Example 9.3  </strong></span>Split <span class="math inline">\(\dfrac{2x+5}{(x^2+x+1)(x+3)}\)</span> into partial fractions.
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 9.3  </strong></span>Split <span class="math inline">\(\dfrac{2x+5}{(x^2+x+1)(x+3)}\)</span> into partial fractions.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> (Type IV.) We want to find <span class="math inline">\(A,B,C\)</span> such that
+<p><span id="unlabeled-div-70" class="solution"><em>Solution</em>. </span>(Type IV.) We want to find <span class="math inline">\(A,B,C\)</span> such that
 <span class="math display">\[\dfrac{2x+5}{(x^2+x+1)(x+3)}=\dfrac{Ax+B}{x^2+x+1}+\dfrac{C}{x+3}.\]</span>
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(2x+5=(Ax+B)(x+3)+C(x^2+x+1)\)</span>.<br />
 Let <span class="math inline">\(x=-3\)</span>. Then <span class="math inline">\(2\cdot(-3)+5=C\cdot(9-3+1)\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(C=-\frac17\)</span>.<br />
 Equating coefficients of <span class="math inline">\(x^2\)</span> gives <span class="math inline">\(0=A+C\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(A=\frac17\)</span>.<br />
 Equating constant coefficients gives <span class="math inline">\(5=3B+C\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(B=\frac{5-C}{3}=\frac{12}7\)</span>.<br />
 <em>Answer:</em>
-<span class="math inline">\(\dfrac{2x+5}{(x^2+x+1)(x+3)}=\dfrac{x+12}{7(x^2+x+1)}-\dfrac{1}{7(x+3)}.\)</span>
+<span class="math inline">\(\dfrac{2x+5}{(x^2+x+1)(x+3)}=\dfrac{x+12}{7(x^2+x+1)}-\dfrac{1}{7(x+3)}.\)</span></p>
 </div>
 
 </div>
@@ -341,6 +338,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -360,7 +358,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

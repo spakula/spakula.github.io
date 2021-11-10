@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 15 Trigonometric functions | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 15 Trigonometric functions | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-14-length-of-an-arc-and-area-of-a-sector.html"/>
 <link rel="next" href="exercises-15-trigonometric-functions-and-equations.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -209,15 +212,14 @@
 <h1><span class="header-section-number">Topic 15</span> Trigonometric functions</h1>
 <div id="from-right-triangles" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> From right triangles</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-173"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-60"></span>
 <img src="t15-rtriangle1.svg" alt="A right triangle"  />
 <p class="caption">
 Figure 15.1: A right triangle
 </p>
 </div>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-174" class="theorem"><strong>Theorem 15.1  (Pythagoras’s Theorem)  </strong></span><span class="math inline">\(a^2+b^2=c^2\)</span>
+<p><span id="thm:unlabeled-div-129" class="theorem"><strong>Theorem 15.1  (Pythagoras's Theorem) </strong></span><span class="math inline">\(a^2+b^2=c^2\)</span></p>
 </div>
 <p><em>Proof (non-examinable):</em>
 <img src="t15-pythagoras.svg" style="display: block; margin: auto;" />
@@ -242,37 +244,32 @@ Figure 15.1: A right triangle
 <li><span class="math inline">\(\mathrm{cosec}\,\theta = \dfrac{1}{\sin\theta} = \dfrac{AB}{AC}\)</span> (<strong>cosecant of <span class="math inline">\(\theta\)</span></strong>)</li>
 <li><span class="math inline">\(\cot\theta = \dfrac{1}{\tan\theta} = \dfrac{BC}{AC}\)</span> (<strong>cotangent of <span class="math inline">\(\theta\)</span></strong>)</li>
 </ul>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-177" class="theorem"><strong>Theorem 15.2  (Pythagoras’s identity)  </strong></span><span class="math inline">\(\sin^2\theta+\cos^2\theta=1\)</span>
+<p><span id="thm:unlabeled-div-130" class="theorem"><strong>Theorem 15.2  (Pythagoras's identity) </strong></span><span class="math inline">\(\sin^2\theta+\cos^2\theta=1\)</span></p>
 </div>
 <p><em>Proof:</em> <span class="math inline">\(BC^2+AC^2=AB^2\)</span>  <span style="float:right">(by Pythagoras’s Theorem)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\left(\dfrac{BC}{AB}\right)^2+\left(\dfrac{AC}{AB}\right)^2=1\)</span>  <span style="float:right">(dividing by <span class="math inline">\(AB^2\)</span>)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\cos^2\theta+\sin^2\theta = 1\)</span>  <span style="float:right">(by the definitions above)</span></p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-178" class="example"><strong>Example 15.1  </strong></span>Prove that <span class="math inline">\(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\)</span>.
+<p><span id="exm:unlabeled-div-131" class="example"><strong>Example 15.1  </strong></span>Prove that <span class="math inline">\(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-132" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{LHS} &amp;= \frac{1+\frac{\sin^2\theta}{\cos^2\theta}}{1+\frac{\cos^2\theta}{\sin^2\theta}}\\
 &amp;= \frac{\sin^2\theta\,(\cos^2\theta+\sin^2\theta)}{\cos^2\theta\,(\sin^2\theta+\cos^2\theta)}\\
 &amp;=\frac{\sin^2\theta}{\cos^2\theta} = \tan^2\theta = \mathrm{RHS}
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-180" class="example"><strong>Example 15.2  </strong></span>Prove that <span class="math inline">\(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\)</span>.
+<p><span id="exm:unlabeled-div-133" class="example"><strong>Example 15.2  </strong></span>Prove that <span class="math inline">\(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-134" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{RHS} &amp;= \frac{1}{\sin\theta}-\frac{\cos\theta}{\sin\theta}= \frac{1-\cos\theta}{\sin\theta}.\\
 \mathrm{LHS} &amp;= \sqrt{\frac{(1-\cos\theta)(1-\cos\theta)}{(1+\cos\theta)(1-\cos\theta)}} \\
 &amp;= \frac{\sqrt{(1-\cos\theta)^2}}{\sqrt{1-\cos^2\theta}} = \frac{1-\cos\theta}{\sqrt{\sin^2\theta}}\\
 &amp;= \frac{1-\cos\theta}{\sin\theta} = \mathrm{LHS}.
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
 <p>A table of very commonly used values:</p>
 <table>
@@ -428,6 +425,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -447,7 +445,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

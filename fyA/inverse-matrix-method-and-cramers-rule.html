@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 13 Inverse matrix method and Cramer’s rule | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 13 Inverse matrix method and Cramer’s rule | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-12-matrices-and-determinants.html"/>
 <link rel="next" href="exercises-13-inverse-matrix-method-and-cramers-rule.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -215,16 +218,14 @@
 <p>Answer: well, sometimes we can, sometimes we can’t.</p>
 <p>When we can, we call such a matrix <span class="math inline">\(A\)</span> <strong>invertible</strong>, and we call the solution to <span class="math inline">\(A\cdot X=I_n\)</span> the <strong>inverse</strong> of <span class="math inline">\(A\)</span>.</p>
 <p>A note about <span class="math inline">\(I_n\)</span>: we use this in place of “<span class="math inline">\(1\)</span>”, because it is <em>the</em> matrix that satisfies <span class="math inline">\(B\cdot I_n=B\)</span> and <span class="math inline">\(I_n\cdot B=B\)</span> whenever the multiplication makes sense (i.e. when <span class="math inline">\(B\)</span> has the correct size).</p>
-
 <div class="definition">
-<span id="def:unnamed-chunk-146" class="definition"><strong>Definition 13.1  </strong></span>A square <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is called <strong>invertible</strong> if there exists an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(B\)</span> such that <span class="math inline">\(AB=BA=I_n\)</span>. (If such a matrix <span class="math inline">\(B\)</span> exists, then it is automatically unique.) We denote this <span class="math inline">\(B\)</span> by <span class="math inline">\(A^{-1}\)</span>. So:
+<p><span id="def:unlabeled-div-109" class="definition"><strong>Definition 13.1  </strong></span>A square <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is called <strong>invertible</strong> if there exists an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(B\)</span> such that <span class="math inline">\(AB=BA=I_n\)</span>. (If such a matrix <span class="math inline">\(B\)</span> exists, then it is automatically unique.) We denote this <span class="math inline">\(B\)</span> by <span class="math inline">\(A^{-1}\)</span>. So:
 <span class="math display">\[
 AA^{-1}=I_n=A^{-1}A.
-\]</span>
+\]</span></p>
 </div>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-147" class="theorem"><strong>Theorem 13.1  </strong></span>A square <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is invertible if and only if <span class="math inline">\(\det(A)\not=0\)</span>. In this case
+<p><span id="thm:unlabeled-div-110" class="theorem"><strong>Theorem 13.1  </strong></span>A square <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is invertible if and only if <span class="math inline">\(\det(A)\not=0\)</span>. In this case
 <span class="math display">\[
 \boxed{A^{-1} = \frac{1}{\det(A)}\mathrm{adj}(A)},
 \]</span>
@@ -241,30 +242,27 @@ where <span class="math inline">\(\mathrm{adj}(A)\)</span> is called the <strong
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
     A_{1n} &amp; A_{n2} &amp; \cdots &amp; A_{nn}
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </div>
 <p>This Theorem is somewhat tricky to prove; you can learn the proof in MATH1048 Linear Algebra I module.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-148" class="example"><strong>Example 13.1  </strong></span>Is <span class="math inline">\(A=\begin{pmatrix}5&amp;-3\\2&amp;1\end{pmatrix}\)</span> invertible? If so, determine <span class="math inline">\(A^{-1}\)</span>.
+<p><span id="exm:unlabeled-div-111" class="example"><strong>Example 13.1  </strong></span>Is <span class="math inline">\(A=\begin{pmatrix}5&amp;-3\\2&amp;1\end{pmatrix}\)</span> invertible? If so, determine <span class="math inline">\(A^{-1}\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(\det(A)=\begin{vmatrix}5&amp;-3\\2&amp;1\end{vmatrix}=5\cdot1+3\cdot2=11\neq0\)</span><br />
+<p><span id="unlabeled-div-112" class="solution"><em>Solution</em>. </span><span class="math inline">\(\det(A)=\begin{vmatrix}5&amp;-3\\2&amp;1\end{vmatrix}=5\cdot1+3\cdot2=11\neq0\)</span><br />
 <span class="math inline">\(A\)</span> is invertible, and
 <span class="math display">\[
 A^{-1} = \frac{1}{11}\begin{pmatrix}1&amp;-2\\3&amp;5\end{pmatrix}^T
 = \begin{pmatrix}\frac{1}{11}&amp;\frac{3}{11}\\\frac{-2}{11}&amp;\frac{5}{11}\end{pmatrix}.
-\]</span>
+\]</span></p>
 </div>
 <p>We can write the general formula for <span class="math inline">\(2\times 2\)</span> matrices, which you may want to remember:
 <span class="math display">\[
 \begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}^{-1} = \frac{1}{ad-bc} \begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix}\quad\quad
 \text{if}\quad ad-bc\neq0.
 \]</span></p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-150" class="example"><strong>Example 13.2  </strong></span>Determine the matrix <span class="math inline">\(A^{-1}\)</span> of the matrix <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\3&amp;-1&amp;2\end{pmatrix}\)</span> if it exists.
+<p><span id="exm:unlabeled-div-113" class="example"><strong>Example 13.2  </strong></span>Determine the matrix <span class="math inline">\(A^{-1}\)</span> of the matrix <span class="math inline">\(A=\begin{pmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\3&amp;-1&amp;2\end{pmatrix}\)</span> if it exists.</p>
 </div>
 <p><span class="math display">\[\begin{align*}
 \det(A) &amp;= \begin{vmatrix}1&amp;1&amp;1\\1&amp;2&amp;1\\3&amp;-1&amp;2\end{vmatrix}\\
@@ -318,9 +316,8 @@ A\cdot
 =
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
 \]</span></p>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-151" class="theorem"><strong>Theorem 13.2  </strong></span>Consider a system of linear equations
+<p><span id="thm:unlabeled-div-114" class="theorem"><strong>Theorem 13.2  </strong></span>Consider a system of linear equations
 <span class="math display">\[
   A\cdot
 \begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
@@ -333,7 +330,7 @@ If <span class="math inline">\(\det(A)\not=0\)</span>, then it has exactly one s
 =
 A^{-1}\cdot
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
-\]</span>
+\]</span></p>
 </div>
 <p><em>Sketch of Proof (non–examinable):</em>
 <span class="math display">\[
@@ -345,13 +342,11 @@ I_n
 =
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}
 \]</span></p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-152" class="example"><strong>Example 13.3  </strong></span>Solve     <span class="math inline">\(\begin{matrix}4x+2y &amp;=&amp; 17\\ 5x-y &amp;=&amp; 7.25\end{matrix}\)</span>     using the inverse matrix method.
+<p><span id="exm:unlabeled-div-115" class="example"><strong>Example 13.3  </strong></span>Solve     <span class="math inline">\(\begin{matrix}4x+2y &amp;=&amp; 17\\ 5x-y &amp;=&amp; 7.25\end{matrix}\)</span>     using the inverse matrix method.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> Let <span class="math inline">\(A=\begin{pmatrix}4&amp;2\\5&amp;-1 \end{pmatrix}\)</span><br />
+<p><span id="unlabeled-div-116" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(A=\begin{pmatrix}4&amp;2\\5&amp;-1 \end{pmatrix}\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\det(A)=-4-10=-14\)</span>   and   <span class="math inline">\(A^{-1}=\dfrac{1}{-14}\begin{pmatrix}-1&amp;-2\\-5&amp;4\end{pmatrix}\)</span>
 <span class="math display">\[\begin{align*}
 \implies\quad\quad
@@ -360,22 +355,20 @@ I_n
 &amp;=-\dfrac{1}{14}\cdot\begin{pmatrix}-17-14.5\\-85+ 29\end{pmatrix} = -\dfrac{1}{14}\cdot\begin{pmatrix}-31.5\\-56\end{pmatrix}\\
 &amp;=\begin{pmatrix}2.25\\4\end{pmatrix}.
 \end{align*}\]</span>
-<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=2.25\)</span> and <span class="math inline">\(y=4\)</span>.
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=2.25\)</span> and <span class="math inline">\(y=4\)</span>.</p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-154" class="example"><strong>Example 13.4  </strong></span>Using the inverse matrix method, solve the following system of equations for <span class="math inline">\(a,b,c\)</span>:
+<p><span id="exm:unlabeled-div-117" class="example"><strong>Example 13.4  </strong></span>Using the inverse matrix method, solve the following system of equations for <span class="math inline">\(a,b,c\)</span>:
 <span class="math display">\[
 \begin{matrix}
     4a&amp;+&amp;2b&amp;+&amp;c&amp;=&amp;12\\
      a&amp;-&amp; b&amp;+&amp;c&amp;=&amp;-6\\
      a&amp;+&amp; b&amp;+&amp;c&amp;=&amp;4.
 \end{matrix}
-\]</span>
+\]</span></p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> Let <span class="math inline">\(A=\begin{pmatrix}4&amp;2&amp;1\\1&amp;-1&amp;1\\1&amp;1&amp;1\end{pmatrix}\)</span>
+<p><span id="unlabeled-div-118" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(A=\begin{pmatrix}4&amp;2&amp;1\\1&amp;-1&amp;1\\1&amp;1&amp;1\end{pmatrix}\)</span>
 <span class="math display">\[\begin{align*}
 \implies\quad\quad\quad \det(A) &amp;= 4\cdot\begin{vmatrix}-1&amp;1\\1&amp;1\end{vmatrix} -2\cdot\begin{vmatrix}1&amp;1\\1&amp;1\end{vmatrix} +1\cdot\begin{vmatrix}1&amp;-1\\1&amp;1\end{vmatrix}\\
 &amp;= 4\cdot(-2)-2\cdot0+2=-6
@@ -411,7 +404,7 @@ A^{-1}\cdot \begin{pmatrix}12\\-6\\4\end{pmatrix}
 =-\frac{1}{6}\begin{pmatrix}-6\\-30\\12\end{pmatrix}
 = \begin{pmatrix}1\\5\\-2\end{pmatrix}
 \end{align*}\]</span>
-<span class="math inline">\(\implies\)</span> <span class="math inline">\(a=1\)</span>,   <span class="math inline">\(b=5\)</span>,   <span class="math inline">\(c=-2\)</span>.
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(a=1\)</span>,   <span class="math inline">\(b=5\)</span>,   <span class="math inline">\(c=-2\)</span>.</p>
 </div>
 </div>
 <div id="cramers-rule-explained-for-2times-2-only" class="section level2" number="13.3">
@@ -428,16 +421,14 @@ Denote:</p>
 <li><span class="math inline">\(D_y := \begin{vmatrix}a&amp;e\\c&amp;f\end{vmatrix}\)</span>     (the <span class="math inline">\(2^\text{nd}\)</span> column of <span class="math inline">\(A\)</span> is replaced by the RHS of (**))</li>
 </ul>
 <p>Then <span class="math inline">\(x=\dfrac{D_x}{\det(A)}\)</span> and <span class="math inline">\(y=\dfrac{D_y}{\det(A)}\)</span> solves (**).</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-156" class="example"><strong>Example 13.5  </strong></span>Using Cramer’s rule, solve:
-   <span class="math inline">\(\begin{matrix}2x+4y &amp;=&amp; 16\\ x+3y &amp;=&amp; 11\end{matrix}\)</span>.
+<p><span id="exm:unlabeled-div-119" class="example"><strong>Example 13.5  </strong></span>Using Cramer’s rule, solve:
+   <span class="math inline">\(\begin{matrix}2x+4y &amp;=&amp; 16\\ x+3y &amp;=&amp; 11\end{matrix}\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> Let <span class="math inline">\(A=\begin{pmatrix}2&amp;4\\1&amp;3\end{pmatrix}\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(\det(A)=6-4=2\)</span><br />
+<p><span id="unlabeled-div-120" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(A=\begin{pmatrix}2&amp;4\\1&amp;3\end{pmatrix}\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(\det(A)=6-4=2\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(D_x=\begin{vmatrix}16&amp;4\\11&amp;3\end{vmatrix}=4\)</span> and <span class="math inline">\(D_y=\begin{vmatrix}2&amp;16\\1&amp;11\end{vmatrix}=6\)</span><br />
-<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=\frac{4}{2}=2\)</span> and <span class="math inline">\(y=\frac{6}{2}=3\)</span>.
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=\frac{4}{2}=2\)</span> and <span class="math inline">\(y=\frac{6}{2}=3\)</span>.</p>
 </div>
 
 </div>
@@ -471,6 +462,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -490,7 +482,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 18 Polar coordinates | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 18 Polar coordinates | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-17-parametric-representation.html"/>
 <link rel="next" href="exercises-18-polar-coordinates.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -229,13 +232,11 @@ Figure 18.2: Conversion triangle
 </div>
 <p>Given a point <span class="math inline">\(P=[r\angle\theta]\)</span> as in Figure <a href="polar-coordinates.html#fig:t18-triangle">18.2</a>, its Cartesian coordinates are given by the following formulas:</p>
 <p><span class="math display">\[\boxed{x=r\cos\theta, \quad y=r\sin\theta}\]</span></p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-194" class="example"><strong>Example 18.1  </strong></span><span class="math inline">\([2\sqrt2\angle \frac\pi4] = (2\sqrt{2}\cdot\frac{1}{\sqrt2},2\sqrt{2}\cdot\frac{1}{\sqrt2})=(2,2)\)</span>.
+<p><span id="exm:unlabeled-div-138" class="example"><strong>Example 18.1  </strong></span><span class="math inline">\([2\sqrt2\angle \frac\pi4] = (2\sqrt{2}\cdot\frac{1}{\sqrt2},2\sqrt{2}\cdot\frac{1}{\sqrt2})=(2,2)\)</span>.</p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-195" class="example"><strong>Example 18.2  </strong></span><span class="math inline">\([6.8\angle 55^\circ] = (6.8\cos 55^\circ,6.8\sin 55^\circ) \approx(3.9,5.6)\)</span>.
+<p><span id="exm:unlabeled-div-139" class="example"><strong>Example 18.2  </strong></span><span class="math inline">\([6.8\angle 55^\circ] = (6.8\cos 55^\circ,6.8\sin 55^\circ) \approx(3.9,5.6)\)</span>.</p>
 </div>
 </div>
 <div id="converting-cartesian-to-polar-coordinates" class="section level2" number="18.2">
@@ -251,16 +252,14 @@ Figure 18.2: Conversion triangle
         \text{undefined} &amp;\text{if }x=0\text{ and }y=0
 \end{cases}}\]</span></p>
 <p><em>Note:</em> The value of “<span class="math inline">\(\arctan(\dots)\)</span>” is a quantity that describes <em>size of an angle</em>. The formula above assumes that it is in <em>radians</em> (hence the appearance of <span class="math inline">\(\pi\)</span>). Some care is required when using a calculator which can be set to work in <em>degrees</em> instead, in which case the above formulas need to be adjusted by replacing every <span class="math inline">\(\pi\)</span> by <span class="math inline">\(180^\circ\)</span>.</p>
-
 <div class="example">
-<span id="exm:t18-cart-to-polar" class="example"><strong>Example 18.3  </strong></span><span class="math display">\[\begin{align*}
+<p><span id="exm:t18-cart-to-polar" class="example"><strong>Example 18.3  </strong></span><span class="math display">\[\begin{align*}
 (-67.4,20.31) &amp;= \left[\sqrt{(-67.4)^2+(20.31)^2}\angle \left(\arctan\left(\frac{20.31}{-67.4}\right)+\pi\right)\cdot\frac{180^\circ}{\pi}\right]\\
 &amp;\approx\left[70.39\angle 163.23^\circ\right]
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-196" class="example"><strong>Example 18.4  </strong></span>Six holes in the plane are given, each in polar coordinates relative to the preceding one: see Table <a href="polar-coordinates.html#tab:t18-holes-table">18.1</a>. Sketch the system and determine the coordinates of hole 6 relative to hole 1 in rectangular and polar coordinates.
+<p><span id="exm:unlabeled-div-140" class="example"><strong>Example 18.4  </strong></span>Six holes in the plane are given, each in polar coordinates relative to the preceding one: see Table <a href="polar-coordinates.html#tab:t18-holes-table">18.1</a>. Sketch the system and determine the coordinates of hole 6 relative to hole 1 in rectangular and polar coordinates.</p>
 </div>
 <table style="width:50%;">
 <caption><span id="tab:t18-holes-table">Table 18.1: </span> Relative polar coordinates of holes in the plane</caption>
@@ -301,11 +300,10 @@ Figure 18.2: Conversion triangle
 </tr>
 </tbody>
 </table>
-
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> For a sketch, see Figure <a href="polar-coordinates.html#fig:t18-holes-sketch">18.3</a>.</p>
+<p><span id="unlabeled-div-141" class="solution"><em>Solution</em>. </span>For a sketch, see Figure <a href="polar-coordinates.html#fig:t18-holes-sketch">18.3</a>.</p>
 <p>Use the above formulas to convert <em>relative polar</em> coordinates to <em>relative Cartesian</em> coordinates: see Table <a href="polar-coordinates.html#tab:t18-holes-table-filled">18.2</a>. Cartesian coordinates of hole 6 relative to hole 1 are the sum of the rectangular coordinates of holes 2 to 6. Executing this we arrive at: <span class="math inline">\((-67.4,20.31)\)</span>.</p>
-We convert back to polar coordinates (see Example <a href="polar-coordinates.html#exm:t18-cart-to-polar">18.3</a>) and obtain the polar coordinates of hole 6 relative to hole 1 as: <span class="math inline">\(70.39\angle 163.23^\circ\)</span>.
+<p>We convert back to polar coordinates (see Example <a href="polar-coordinates.html#exm:t18-cart-to-polar">18.3</a>) and obtain the polar coordinates of hole 6 relative to hole 1 as: <span class="math inline">\(70.39\angle 163.23^\circ\)</span>.</p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:t18-holes-sketch"></span>
 <img src="t18-polar-pics-3.svg" alt="A diagram for the example of holes in the plane"  />
@@ -400,6 +398,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -419,7 +418,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

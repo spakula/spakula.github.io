@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 6 Logarithms | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 6 Logarithms | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-5-indices.html"/>
 <link rel="next" href="exercises-6-logarithms.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -253,42 +256,35 @@ But by laws of exponents and the definition of logarithm, we have LHS <span clas
  \log_b(N) &amp;= \frac{\log_c(N)}{\log_c(b)} &amp; (\text{dividing by }\log_c(b)\not=0)
 \end{align*}\]</span></p></li>
 </ol>
-
 <div class="example">
-<span id="exm:unnamed-chunk-68" class="example"><strong>Example 6.1  </strong></span><span class="math inline">\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)</span>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 6.1  </strong></span><span class="math inline">\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-69" class="example"><strong>Example 6.2  </strong></span>Solve <span class="math inline">\(2^x =5\)</span>.
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 6.2  </strong></span>Solve <span class="math inline">\(2^x =5\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)</span>
+<p><span id="unlabeled-div-50" class="solution"><em>Solution</em>. </span><span class="math inline">\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-71" class="example"><strong>Example 6.3  </strong></span>Solve <span class="math inline">\(3^{x+1}=2^{2x-3}\)</span>.
+<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 6.3  </strong></span>Solve <span class="math inline">\(3^{x+1}=2^{2x-3}\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> Applying <span class="math inline">\(\log_{10}\)</span> on both sides: <span class="math inline">\(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\)</span>.<br />
+<p><span id="unlabeled-div-52" class="solution"><em>Solution</em>. </span>Applying <span class="math inline">\(\log_{10}\)</span> on both sides: <span class="math inline">\(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\)</span>.<br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\((x+1)\log_{10}(3) = (2x-3)\log_{10}(2)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(x\left(\log_{10}(3)-2\log_{10}(2)\right) = -3\log_{10}(2)-\log_{10}(3)\)</span><br />
-<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=\dfrac{-3\log_{10}(2)-\log_{10}(3)}{\log_{10}(3)-2\log_{10}(2)}\approx 11.0471\)</span>
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(x=\dfrac{-3\log_{10}(2)-\log_{10}(3)}{\log_{10}(3)-2\log_{10}(2)}\approx 11.0471\)</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-73" class="example"><strong>Example 6.4  </strong></span>Solve <span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span>.
+<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 6.4  </strong></span>Solve <span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> <span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span><br />
+<p><span id="unlabeled-div-54" class="solution"><em>Solution</em>. </span><span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\left(2^x\right)^2-2\cdot\left(2^x\right)-15=0\)</span>  <span style="float:right">(by laws of exponents)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(y^2 -2y-15=0\)</span>  <span style="float:right">(where <span class="math inline">\(y=2^x\)</span>)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\((y-5)(y+3)=0\)</span>  <span style="float:right">(factorising)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(y=5\)</span> or <span class="math inline">\(y=-3\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(x=\log_2(5)\approx 2.322\)</span>,<br />
-and <span class="math inline">\(2^x=-3\)</span> is not possible (so no solution)
+and <span class="math inline">\(2^x=-3\)</span> is not possible (so no solution)</p>
 </div>
 
 </div>
@@ -322,6 +318,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -341,7 +338,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }

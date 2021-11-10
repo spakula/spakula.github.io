@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 19 Sine and cosine rules | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 19 Sine and cosine rules | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="exercises-18-polar-coordinates.html"/>
 <link rel="next" href="exercises-19-sine-and-cosine-rules.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -221,9 +224,8 @@ Tricks in the r headers:
 Figure 19.1: Triangle ABC
 </p>
 </div>
-
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-206" class="theorem"><strong>Theorem 19.1  </strong></span>Given an arbitrary triangle (marked as on Figure <a href="sine-and-cosine-rules.html#fig:t19-basictriangle">19.1</a>), we have:</p>
+<p><span id="thm:unlabeled-div-142" class="theorem"><strong>Theorem 19.1  </strong></span>Given an arbitrary triangle (marked as on Figure <a href="sine-and-cosine-rules.html#fig:t19-basictriangle">19.1</a>), we have:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Sine Rule</strong>: <span class="math inline">\(\boxed{\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}}\)</span> = diameter of the circumscribed circle.</p></li>
 <li><p><strong>Cosine Rule</strong>: <span class="math inline">\(\boxed{a^2+b^2 = c^2 + 2ab\cos C}\)</span><br />
@@ -320,47 +322,41 @@ Consequently,
 </tr>
 </tbody>
 </table>
-
 <div class="example">
-<span id="exm:unnamed-chunk-207" class="example"><strong>Example 19.1  </strong></span>Calculate the angles of a triangle with sides of length <span class="math inline">\(a=80\,\mathrm{mm}\)</span>, <span class="math inline">\(b=70\,\mathrm{mm}\)</span>, <span class="math inline">\(c=50\,\mathrm{mm}\)</span>.
+<p><span id="exm:unlabeled-div-143" class="example"><strong>Example 19.1  </strong></span>Calculate the angles of a triangle with sides of length <span class="math inline">\(a=80\,\mathrm{mm}\)</span>, <span class="math inline">\(b=70\,\mathrm{mm}\)</span>, <span class="math inline">\(c=50\,\mathrm{mm}\)</span>.</p>
 </div>
-
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> Using the cosine rule, we calculate
+<p><span id="unlabeled-div-144" class="solution"><em>Solution</em>. </span>Using the cosine rule, we calculate
 <span class="math display">\[\begin{align*}
 \cos A &amp;= \frac{b^2+c^2-a^2}{2bc}\\
 &amp;= \frac{70^2+50^2-80^2}{2\cdot70\cdot50} =\frac{1}{7} \approx 0.1429
 \end{align*}\]</span>
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\angle A = \arccos 0.1429 \approx 81.78^\circ\)</span>.</p>
-Using the sine rule, we calculate
+<p>Using the sine rule, we calculate
 <span class="math display">\[\begin{align*}
 \sin B &amp;= b\cdot \frac{\sin A}{a}\\
 &amp;= 70 \cdot \frac{\sin 81.78^\circ}{80} \approx 0.866
 \end{align*}\]</span>
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\angle B=\arcsin 0.866 \approx 60^\circ\)</span><br />
-<span class="math inline">\(\implies\)</span> <span class="math inline">\(\angle C = 180^\circ-\angle A-\angle B= 38.22^\circ\)</span>.
+<span class="math inline">\(\implies\)</span> <span class="math inline">\(\angle C = 180^\circ-\angle A-\angle B= 38.22^\circ\)</span>.</p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-209" class="example"><strong>Example 19.2  </strong></span>Determine the area of a triangle with <span class="math inline">\(a=6\,\mathrm{m}\)</span>, <span class="math inline">\(b=5\,\mathrm{m}\)</span>, <span class="math inline">\(c=9\,\mathrm{m}\)</span>.
+<p><span id="exm:unlabeled-div-145" class="example"><strong>Example 19.2  </strong></span>Determine the area of a triangle with <span class="math inline">\(a=6\,\mathrm{m}\)</span>, <span class="math inline">\(b=5\,\mathrm{m}\)</span>, <span class="math inline">\(c=9\,\mathrm{m}\)</span>.</p>
 </div>
-
 <div class="solution">
- <span class="solution"><em>Solution. </em></span> We use Heron’s formula:
+<p><span id="unlabeled-div-146" class="solution"><em>Solution</em>. </span>We use Heron’s formula:
 <span class="math display">\[\begin{align*}
 s&amp;=\frac{a+b+c+}{2}=\frac{6\,\mathrm{m} + 5\,\mathrm{m}+ 9\,\mathrm{m}}{2}=10\,\mathrm{m}\\
 \implies\quad\quad\quad\mathrm{Area} &amp;= \sqrt{s(s-a)(s-b)(s-c)}\\
 &amp;= \sqrt{10\,\mathrm{m}\cdot 4\,\mathrm{m}\cdot 5\,\mathrm{m}\cdot 1\,\mathrm{m}} \\
 &amp;= \sqrt{200\,\mathrm{m^4}} \approx 14.14\,\mathrm{m^2}.
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-211" class="example"><strong>Example 19.3  </strong></span>Determine all sides, angles and area of a triangle with <span class="math inline">\(b=10\,\mathrm{m}\)</span>, <span class="math inline">\(c=5\,\mathrm{m}\)</span> and <span class="math inline">\(\angle A=120^\circ\)</span>.
+<p><span id="exm:unlabeled-div-147" class="example"><strong>Example 19.3  </strong></span>Determine all sides, angles and area of a triangle with <span class="math inline">\(b=10\,\mathrm{m}\)</span>, <span class="math inline">\(c=5\,\mathrm{m}\)</span> and <span class="math inline">\(\angle A=120^\circ\)</span>.</p>
 </div>
-
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> First, we use cosine rule to determine <span class="math inline">\(a\)</span>:
+<p><span id="unlabeled-div-148" class="solution"><em>Solution</em>. </span>First, we use cosine rule to determine <span class="math inline">\(a\)</span>:
 <span class="math display">\[\begin{align*}
 a^2 &amp;= b^2+c^2-2bc\cos A\\
 &amp;= 100\,\mathrm{m^2} + 25 \,\mathrm{m^2} - 2\cdot 10\,\mathrm{m}\cdot 5\,\mathrm{m}\cdot \cos 120^\circ\\
@@ -377,13 +373,13 @@ a^2 &amp;= b^2+c^2-2bc\cos A\\
 <span class="math display">\[
 \angle C = 180^\circ - \angle A-\angle B = 180^\circ- 120^\circ - 40.9^\circ = 19.1^\circ.
 \]</span></p>
-Finally, we can use (for example) Heron’s formula to obtain the area:
+<p>Finally, we can use (for example) Heron’s formula to obtain the area:
 <span class="math display">\[\begin{align*}
 s &amp;= \frac{a+b+c}{2} = \frac{10+5+5\sqrt{7}}{2}\,\mathrm{m} \approx 14.12\,\mathrm{m}\\
 \implies\quad\quad\quad \mathrm{Area} &amp;= 
 \sqrt{s(s-a)(s-b)(s-c)}\\
 &amp;=\sqrt{14.12\cdot 0.89\cdot 4.12\cdot 9.12} \,\mathrm{m^2} \approx 21.73\,\mathrm{m^2}.
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </div>
 
 </div>
@@ -416,6 +412,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": "github"
 },
 "fontsettings": {
@@ -435,7 +432,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["fy_Alectnotes.pdf", "fy_Alectnotes.epub"],
+"download": ["fy_Alectnotes.pdf"],
 "toc": {
 "collapse": "subsection"
 }
