@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Topic 12 Matrices and Determinants | Lecture notes - Maths A - Foundation year</title>
+  <title>Page not found | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Topic 12 Matrices and Determinants | Lecture notes - Maths A - Foundation year" />
+  <meta property="og:title" content="Page not found | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Topic 12 Matrices and Determinants | Lecture notes - Maths A - Foundation year" />
+  <meta name="twitter:title" content="Page not found | Lecture notes - Maths A - Foundation year" />
   
   <meta name="twitter:description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises-11-binomial-expansion.html"/>
-<link rel="next" href="exercises-12-matrices-and-determinants.html"/>
+
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -208,213 +208,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="matrices-and-determinants" class="section level1" number="12">
-<h1><span class="header-section-number">Topic 12</span> Matrices and Determinants</h1>
-<p>Matrices and determinants provide a convenient way to solve systems of linear
-equations (in any number of variables). Consider the system
-<span class="math display">\[
-\begin{matrix}
-    4x &amp; + &amp; y  &amp;   &amp;    &amp; = &amp; 1\\
-    x  &amp; + &amp; 2y &amp; + &amp; z  &amp; = &amp; 2\\
-    3x &amp; - &amp; y  &amp; + &amp; 2z &amp; = &amp; -1
-\end{matrix}
-\]</span>
-Lined up like this, we can record the coefficients on the LHS into a “matrix”:
-<span class="math display">\[
-\begin{pmatrix}
-    4 &amp; 1 &amp; 0\\ 1 &amp; 2 &amp; 1 \\ 3 &amp; -1 &amp; 2
-\end{pmatrix}.
-\]</span></p>
-<div id="terminology" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> Terminology</h2>
-<p>More precisely, an <span class="math inline">\(m\times n\)</span> (read “<span class="math inline">\(m\)</span> by <span class="math inline">\(n\)</span>”) <strong>matrix</strong> <span class="math inline">\(A\)</span> is a rectangular array of numbers, with <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns:
-<span class="math display">\[
-A = \begin{pmatrix}
-    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
-    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{pmatrix}.
-\]</span>
-Shorthand notation: <span class="math inline">\(A=(a_{ij})_{i=1,\dots,m; j=1,\dots,n}\)</span>, or just <span class="math inline">\(A=(a_{ij})\)</span>.</p>
-<p>The number <span class="math inline">\(a_{ij}\)</span> is called the <strong>entry</strong> (or <strong>element</strong>) of <span class="math inline">\(A\)</span> in the <span class="math inline">\(i^\text{th}\)</span> row and <span class="math inline">\(j^\text{th}\)</span> column. This can be also referred to as <strong><span class="math inline">\((i,j)\)</span>-entry</strong>.</p>
-<p><em>Note:</em> in <span class="math inline">\(m\times n\)</span>, the first number (<span class="math inline">\(m\)</span>) refers to <em>rows</em>, and the second (<span class="math inline">\(n\)</span>) to <em>columns</em>.</p>
-<p>The “<span class="math inline">\(m \times n\)</span>” is called the <strong>size</strong> (or <strong>order</strong>) of the matrix <span class="math inline">\(A\)</span>.</p>
-<p>If the size of a matrix is <span class="math inline">\(n\times n\)</span>, we call such a matrix a <strong>square matrix</strong>.</p>
-<p>If every entry of a matrix is <span class="math inline">\(0\)</span>, we call that matrix a <strong>zero matrix</strong>.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-37" class="example"><strong>Example 12.1  </strong></span><span class="math inline">\(\begin{pmatrix} 0 &amp; 0\\ 0 &amp; 0\end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0\end{pmatrix}\)</span>.
-</div>
-<p>The <strong>identity</strong> or <strong>unit matrix</strong>, denoted <span class="math inline">\(I_n\)</span>, is the <span class="math inline">\(n\times n\)</span> square matrix
-<span class="math display">\[
-I_n = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
-    0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
-    0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
-    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
-\end{pmatrix}
-\]</span></p>
-<p>Two matrices <span class="math inline">\(A=(a_{ij})\)</span> and <span class="math inline">\(B=(b_{ij})\)</span> are said to be equal, if:</p>
-<ol style="list-style-type: lower-alpha">
-<li>they have the same size, and</li>
-<li><span class="math inline">\(a_{ij}=b_{ij}\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</li>
-</ol>
-<p>The <strong>transpose</strong> of the <span class="math inline">\(m\times n\)</span> matrix <span class="math inline">\(A=(a_{ij})\)</span> is the <span class="math inline">\(n\times m\)</span> matrix <span class="math inline">\(A^{T} = (a_{ji})\)</span>.
-In other words, transposing turns rows into columns and vice versa.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-38" class="example"><strong>Example 12.2  </strong></span><span class="math inline">\(\begin{pmatrix}1 &amp; 2 &amp; 5 \\ 0 &amp; -6 &amp; 7\end{pmatrix}^T = \begin{pmatrix}1&amp;0\\2&amp;-6\\5&amp;7\end{pmatrix}\)</span>.
-</div>
-<p>The <strong>sum</strong> (resp. <strong>difference</strong>) of two matrices <span class="math inline">\(A=(a_{ij})\)</span> and <span class="math inline">\(B=(b_{ij})\)</span> of the <em>same size</em> <span class="math inline">\(m\times n\)</span> is the <span class="math inline">\(m\times n\)</span> matrix <span class="math inline">\(C=(c_{ij})\)</span> where <span class="math inline">\(c_{ij}=a_{ij} + b_{ij}\)</span> (resp. <span class="math inline">\(c_{ij}=a_{ij}-b_{ij}\)</span>).</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-39" class="example"><strong>Example 12.3  </strong></span><span class="math inline">\(\begin{pmatrix}1 &amp; 3 &amp; 1\\ 1 &amp; 0 &amp; 0\end{pmatrix}+ \begin{pmatrix}0 &amp; 0 &amp; 5\\ 7 &amp; -3 &amp; 0\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}1+0&amp;3+0&amp;1+5\\1+7&amp;0+5&amp;0+0\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}1&amp;3&amp;6\\8&amp;5&amp;0\end{pmatrix}\)</span>,<br />
-<span class="math inline">\(\begin{pmatrix}3&amp;5\\2&amp;4\\-1&amp;8\end{pmatrix}-\begin{pmatrix}7&amp;2\\6&amp;-9\\3&amp;8\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}3-7&amp;5-2\\2-6&amp;4+9\\-1-3&amp; 8-8\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}-4&amp;3\\-4&amp;13\\-4&amp;0\end{pmatrix}\)</span>.
-</div>
-<p><em>Note:</em> The sum nor the difference of matrices of different sizes is <em>not defined</em>.</p>
-<p>The <strong>product</strong> <span class="math inline">\(\lambda A\)</span> of a number <span class="math inline">\(\lambda\)</span> with a matrix <span class="math inline">\(A=(a_{ij})\)</span> is the matrix <span class="math inline">\(B=(b_{ij})\)</span> given by <span class="math inline">\(b_{ij}=\lambda a_{ij}\)</span>.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-40" class="example"><strong>Example 12.4  </strong></span><span class="math inline">\(2\cdot \begin{pmatrix} 3 &amp; 4\\ 1 &amp; 3\\ 2 &amp; -2\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}2\cdot3&amp;2\cdot4\\ 2\cdot1&amp;2\cdot 3\\2\cdot 2&amp;2\cdot(-2)\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}6&amp;8\\2&amp;6\\4&amp;-4\end{pmatrix}\)</span>.
-</div>
-<div id="multiplying-matrices" class="section level3" number="12.1.1">
-<h3><span class="header-section-number">12.1.1</span> Multiplying matrices</h3>
-<p>First, the product of a <span class="math inline">\(1\times n\)</span> matrix (also called a <strong>row vector</strong>) with an <span class="math inline">\(n\times 1\)</span> matrix (also called a <strong>column vector</strong>) is the following number (or a <span class="math inline">\(1\times 1\)</span> matrix):
-<span class="math display">\[
-(a_1,a_2,\dots,a_n)\cdot\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} := a_1b_1 + a_2b_2 + \dots + a_nb_n.
-\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-41" class="example"><strong>Example 12.5  </strong></span><span class="math inline">\((2,3)\cdot\begin{pmatrix}1\\-1\end{pmatrix}=2\cdot1+3\cdot(-1)=2-3=-1\)</span>.<br />
-<span class="math inline">\((2,4,-1)\cdot \begin{pmatrix} 0\\ 2 \\ -4\end{pmatrix}\)</span>
-<span class="math inline">\(=2\cdot0+4\cdot2+(-1)\cdot(-4)=0+8+4=12\)</span>.
-</div>
-<p><em>In general:</em> let <span class="math inline">\(A\)</span> be an <span class="math inline">\(m\times n\)</span> matrix, and let <span class="math inline">\(B\)</span> be an <span class="math inline">\(n\times p\)</span> matrix. Then their <strong>product</strong> <span class="math inline">\(A\cdot B\)</span> is the <span class="math inline">\(m\times p\)</span> matrix whose <span class="math inline">\((i,j)\)</span>-entry is defined to be the product of the <span class="math inline">\(i^\text{th}\)</span> row of <span class="math inline">\(A\)</span> with the <span class="math inline">\(j^\text{th}\)</span> column of <span class="math inline">\(B\)</span>.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-42" class="example"><strong>Example 12.6  </strong></span><span class="math inline">\(\begin{pmatrix}2&amp;4\\9&amp;1\end{pmatrix}\cdot \begin{pmatrix}8&amp;7\\6&amp;3\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}2\cdot8+4\cdot6&amp; 2\cdot7+4\cdot3 \\ 9\cdot8+1\cdot6&amp; 9\cdot7+1\cdot3\end{pmatrix}\)</span>
-<span class="math inline">\(=\begin{pmatrix}40&amp;26\\78&amp;66\end{pmatrix}\)</span>.
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-43" class="example"><strong>Example 12.7  </strong></span><span class="math inline">\(\begin{pmatrix}1 &amp; 3 &amp; 2\\ 6 &amp; 0 &amp; -4\end{pmatrix}\cdot \begin{pmatrix}1 &amp; 0 &amp; 1\\ 0&amp;1&amp;0 \\ 0&amp; 1 &amp; 1\end{pmatrix}\)</span><br />
-<span class="math inline">\(=\begin{pmatrix}1\cdot1+1\cdot0+2\cdot0&amp; 1\cdot0+3\cdot1+2\cdot1&amp;1\cdot1+3\cdot0+2\cdot1\\ 6\cdot1+0\cdot0+(-4)\cdot0 &amp; 6\cdot0+0\cdot0+(-4)\cdot1 &amp; 6\cdot1+0\cdot0+(-4)\cdot1\end{pmatrix}\)</span><br />
-<span class="math inline">\(=\begin{pmatrix}1&amp;5&amp;3\\6&amp;-4&amp;2\end{pmatrix}\)</span>.
-</div>
-<p><strong>Notes:</strong></p>
-<ol style="list-style-type: lower-roman">
-<li><p>If the number of columns of <span class="math inline">\(A\)</span> does not match the number of rows of <span class="math inline">\(B\)</span>, then the product <span class="math inline">\(AB\)</span> is <em>not defined</em>.</p></li>
-<li><p>In general <span class="math inline">\(AB\not=BA\)</span> even if both sides are defined.</p></li>
-</ol>
-</div>
-</div>
-<div id="determinants" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> Determinants</h2>
-<p>The determinant of a <em>square</em> matrix <span class="math inline">\(A=(a_{ij})\)</span> is a certain number that will be explained in the following subsections — first special cases for small matrices, and subsequently in general.</p>
-<p>We will write
-<span class="math display">\[
-\det(A) = \det
-\begin{pmatrix}
-    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
-    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
-\end{pmatrix}
-\quad\text{ or }\quad
-\begin{vmatrix}
-    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
-    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
-\end{vmatrix}
-\]</span>
-for that number.</p>
-<div id="determinants-formulas-for-small-sizes" class="section level3" number="12.2.1">
-<h3><span class="header-section-number">12.2.1</span> Determinants: formulas for small sizes</h3>
-<ul>
-<li><span class="math inline">\(\det(a_{11}) := a_{11}\)</span></li>
-<li><span class="math inline">\(\det\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix} := ad-bc\)</span>,   for example <span class="math inline">\(\begin{vmatrix}2&amp;1\\3&amp;5\end{vmatrix}=2\cdot 5-1\cdot 3=7\)</span>.</li>
-<li><span class="math inline">\(\det  \begin{pmatrix}  a_{11} &amp; a_{12} &amp; a_{13}\\  a_{21} &amp; a_{22} &amp; a_{23}\\  a_{31} &amp; a_{32} &amp; a_{33}  \end{pmatrix}\)</span>
-<span class="math inline">\(:= a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}  - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}\)</span>.</li>
-</ul>
-
-<div class="example">
-<span id="exm:unnamed-chunk-44" class="example"><strong>Example 12.8  </strong></span><span class="math inline">\(\begin{vmatrix}2&amp;0&amp;3\\ 4&amp;1&amp;2\\ 1&amp;0&amp;3\end{vmatrix}\)</span>
-<span class="math inline">\(=2\cdot1\cdot3+0\cdot2\cdot1 + 3\cdot4\cdot0 - 3\cdot1\cdot1 - 2\cdot2\cdot0 - 0\cdot4\cdot3\)</span>
-<span class="math inline">\(=6-3=3\)</span>.
-</div>
-</div>
-<div id="determinants-terminology-required-for-the-general-formula" class="section level3" number="12.2.2">
-<h3><span class="header-section-number">12.2.2</span> Determinants: terminology required for the general formula</h3>
-<p>We associate a <strong>sign</strong> to positions in a matrix: the
-<span class="math inline">\((i,j)\)</span>-position gets <span class="math inline">\((-1)^{i+j}\)</span>. Schematically:
-<span class="math display">\[
-\begin{pmatrix} + &amp; - &amp; + &amp; \cdots \\
-    - &amp; + &amp; - &amp; \cdots\\
-    + &amp; - &amp; + &amp; \cdots\\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots\end{pmatrix}
-\qquad\text{(chessboard pattern)}
-\]</span>
-Next, the <strong><span class="math inline">\((i,j)\)</span>-minor</strong> of a square matrix <span class="math inline">\(A=(a_{ij})\)</span> is the determinant of the square matrix that is left when we remove the <span class="math inline">\(i^\text{th}\)</span> row and <span class="math inline">\(j^\text{th}\)</span> column of <span class="math inline">\(A\)</span>.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-45" class="example"><strong>Example 12.9  </strong></span>The <span class="math inline">\((2,2)\)</span>-minor of <span class="math inline">\(\begin{pmatrix}3&amp;4\\5&amp;6\end{pmatrix}\)</span> is <span class="math inline">\(3\)</span>.
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-46" class="example"><strong>Example 12.10  </strong></span>The <span class="math inline">\((2,1)\)</span>-minor of <span class="math inline">\(\begin{pmatrix}2&amp;3&amp;4\\-1&amp; 0 &amp;2\\3&amp;4&amp;1\end{pmatrix}\)</span> is <span class="math inline">\(\begin{vmatrix}3&amp;4\\ 4&amp;1\end{vmatrix}=3-16=-13\)</span>.
-</div>
-<p>The <strong><span class="math inline">\((i,j)\)</span>-cofactor</strong> of a square matrix <span class="math inline">\(A=(a_{ij})\)</span>, denoted
-<span class="math inline">\(A_{ij}\)</span>, is the <span class="math inline">\((i,j)\)</span>-minor multiplied by the sign of the <span class="math inline">\((i,j)\)</span>-position.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-47" class="example"><strong>Example 12.11  </strong></span>The <span class="math inline">\((1,2)\)</span>-cofactor of <span class="math inline">\(\begin{pmatrix}2&amp;-2\\1&amp;3\end{pmatrix}\)</span> is <span class="math inline">\(-1\)</span>.
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-48" class="example"><strong>Example 12.12  </strong></span>The <span class="math inline">\((2,3)\)</span>-cofactor of <span class="math inline">\(\begin{pmatrix}1&amp;2&amp;0\\0&amp;1&amp;3\\-1&amp;0&amp;1\end{pmatrix}\)</span> is <span class="math inline">\(-\begin{vmatrix}1&amp;2\\-1&amp;0\end{vmatrix}=-(1\cdot0-2\cdot(-1))=-2\)</span>.
-</div>
-</div>
-<div id="determinants-general-definition" class="section level3" number="12.2.3">
-<h3><span class="header-section-number">12.2.3</span> Determinants: general definition</h3>
-<p>The <strong>determinant</strong> of the square matrix <span class="math inline">\(A=(a_{ij})\)</span> is
-<span class="math display">\[
-\det(A) = a_{11}A_{11} + a_{12}A_{12} + \dots + a_{1n}A_{1n}.
-\]</span></p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-49" class="example"><strong>Example 12.13  </strong></span><span class="math inline">\(\det\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix} = ad + b(-c)=ad-bc\)</span>.
-</div>
-
-<div class="example">
-<span id="exm:unnamed-chunk-50" class="example"><strong>Example 12.14  </strong></span><span class="math inline">\(\begin{vmatrix}2&amp;0&amp;3\\4&amp;1&amp;2\\1&amp;0&amp;3\end{vmatrix}\)</span>
-<span class="math inline">\(=2\cdot\begin{vmatrix}1&amp;2\\0&amp;3\end{vmatrix} - 0\cdot\begin{vmatrix}4&amp;2\\1&amp;3\end{vmatrix} + 3\cdot\begin{vmatrix}4&amp;1\\1&amp;0\end{vmatrix}\)</span>
-<span class="math inline">\(=2\cdot(1\cdot3-2\cdot0) + 3(4\cdot0-1\cdot1)=6-3=3\)</span>.
-</div>
-<p><em>Note:</em> This kind of ``expansion’’ works not just along the first row, but along any row or any column, and always gives the same number! (This is a Theorem, and we will not prove it here.)</p>
-<p>For example, using the second column:
-<span class="math inline">\(\begin{vmatrix}2&amp;0&amp;3\\4&amp;1&amp;2\\1&amp;0&amp;3\end{vmatrix}\)</span>
-<span class="math inline">\(=-0\cdot\begin{vmatrix}4&amp;2\\1&amp;3\end{vmatrix} + 1\cdot\begin{vmatrix}2&amp;3\\1&amp;3\end{vmatrix} - 0\cdot\begin{vmatrix}2&amp;3\\4&amp;2\end{vmatrix}\)</span>
-<span class="math inline">\(=2\cdot3-3\cdot1=3\)</span>.</p>
-
-</div>
-</div>
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercises-11-binomial-expansion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-12-matrices-and-determinants.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

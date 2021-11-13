@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 19 Sine and cosine rules | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 19 Sine and cosine rules | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-18-polar-coordinates.html"/>
 <link rel="next" href="exercises-19-sine-and-cosine-rules.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -218,14 +218,14 @@ Tricks in the r headers:
  fig.ext = if (knitr:::is_latex_output()) 'pdf' else 'svg'
  from https://stackoverflow.com/questions/51689570/how-to-force-tikz-in-rmarkdown-document-to-show-cyrillic-text
 -->
-<div class="figure" style="text-align: center"><span id="fig:t19-basictriangle"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:t19-basictriangle"></span>
 <img src="fy_Alectnotes_files/figure-html/t19-basictriangle-1.svg" alt="Triangle ABC" width="480" />
 <p class="caption">
 Figure 19.1: Triangle ABC
 </p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-142" class="theorem"><strong>Theorem 19.1  </strong></span>Given an arbitrary triangle (marked as on Figure <a href="sine-and-cosine-rules.html#fig:t19-basictriangle">19.1</a>), we have:</p>
+<p><span id="thm:unlabeled-div-125" class="theorem"><strong>Theorem 19.1  </strong></span>Given an arbitrary triangle (marked as on Figure <a href="sine-and-cosine-rules.html#fig:t19-basictriangle">19.1</a>), we have:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Sine Rule</strong>: <span class="math inline">\(\boxed{\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}}\)</span> = diameter of the circumscribed circle.</p></li>
 <li><p><strong>Cosine Rule</strong>: <span class="math inline">\(\boxed{a^2+b^2 = c^2 + 2ab\cos C}\)</span><br />
@@ -242,7 +242,7 @@ and variants:<br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\dfrac{a}{\sin A}=\dfrac{c}{\sin C}\)</span>.<br />
 The other equalities can be derived similarly.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:t19-markedtriangle"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:t19-markedtriangle"></span>
 <img src="fy_Alectnotes_files/figure-html/t19-markedtriangle-1.tex" alt="Triangle ABC with markings" width="480" />
 <p class="caption">
 Figure 19.2: Triangle ABC with markings
@@ -323,10 +323,10 @@ Consequently,
 </tbody>
 </table>
 <div class="example">
-<p><span id="exm:unlabeled-div-143" class="example"><strong>Example 19.1  </strong></span>Calculate the angles of a triangle with sides of length <span class="math inline">\(a=80\,\mathrm{mm}\)</span>, <span class="math inline">\(b=70\,\mathrm{mm}\)</span>, <span class="math inline">\(c=50\,\mathrm{mm}\)</span>.</p>
+<p><span id="exm:unlabeled-div-126" class="example"><strong>Example 19.1  </strong></span>Calculate the angles of a triangle with sides of length <span class="math inline">\(a=80\,\mathrm{mm}\)</span>, <span class="math inline">\(b=70\,\mathrm{mm}\)</span>, <span class="math inline">\(c=50\,\mathrm{mm}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-144" class="solution"><em>Solution</em>. </span>Using the cosine rule, we calculate
+<p><span id="unlabeled-div-127" class="solution"><em>Solution</em>. </span>Using the cosine rule, we calculate
 <span class="math display">\[\begin{align*}
 \cos A &amp;= \frac{b^2+c^2-a^2}{2bc}\\
 &amp;= \frac{70^2+50^2-80^2}{2\cdot70\cdot50} =\frac{1}{7} \approx 0.1429
@@ -341,10 +341,10 @@ Consequently,
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\angle C = 180^\circ-\angle A-\angle B= 38.22^\circ\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-145" class="example"><strong>Example 19.2  </strong></span>Determine the area of a triangle with <span class="math inline">\(a=6\,\mathrm{m}\)</span>, <span class="math inline">\(b=5\,\mathrm{m}\)</span>, <span class="math inline">\(c=9\,\mathrm{m}\)</span>.</p>
+<p><span id="exm:unlabeled-div-128" class="example"><strong>Example 19.2  </strong></span>Determine the area of a triangle with <span class="math inline">\(a=6\,\mathrm{m}\)</span>, <span class="math inline">\(b=5\,\mathrm{m}\)</span>, <span class="math inline">\(c=9\,\mathrm{m}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-146" class="solution"><em>Solution</em>. </span>We use Heron’s formula:
+<p><span id="unlabeled-div-129" class="solution"><em>Solution</em>. </span>We use Heron’s formula:
 <span class="math display">\[\begin{align*}
 s&amp;=\frac{a+b+c+}{2}=\frac{6\,\mathrm{m} + 5\,\mathrm{m}+ 9\,\mathrm{m}}{2}=10\,\mathrm{m}\\
 \implies\quad\quad\quad\mathrm{Area} &amp;= \sqrt{s(s-a)(s-b)(s-c)}\\
@@ -353,10 +353,10 @@ s&amp;=\frac{a+b+c+}{2}=\frac{6\,\mathrm{m} + 5\,\mathrm{m}+ 9\,\mathrm{m}}{2}=1
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-147" class="example"><strong>Example 19.3  </strong></span>Determine all sides, angles and area of a triangle with <span class="math inline">\(b=10\,\mathrm{m}\)</span>, <span class="math inline">\(c=5\,\mathrm{m}\)</span> and <span class="math inline">\(\angle A=120^\circ\)</span>.</p>
+<p><span id="exm:unlabeled-div-130" class="example"><strong>Example 19.3  </strong></span>Determine all sides, angles and area of a triangle with <span class="math inline">\(b=10\,\mathrm{m}\)</span>, <span class="math inline">\(c=5\,\mathrm{m}\)</span> and <span class="math inline">\(\angle A=120^\circ\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-148" class="solution"><em>Solution</em>. </span>First, we use cosine rule to determine <span class="math inline">\(a\)</span>:
+<p><span id="unlabeled-div-131" class="solution"><em>Solution</em>. </span>First, we use cosine rule to determine <span class="math inline">\(a\)</span>:
 <span class="math display">\[\begin{align*}
 a^2 &amp;= b^2+c^2-2bc\cos A\\
 &amp;= 100\,\mathrm{m^2} + 25 \,\mathrm{m^2} - 2\cdot 10\,\mathrm{m}\cdot 5\,\mathrm{m}\cdot \cos 120^\circ\\
@@ -393,7 +393,6 @@ s &amp;= \frac{a+b+c}{2} = \frac{10+5+5\sqrt{7}}{2}\,\mathrm{m} \approx 14.12\,\
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -433,6 +432,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

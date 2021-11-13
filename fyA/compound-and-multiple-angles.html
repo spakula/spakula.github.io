@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 20 Compound and multiple angles | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 20 Compound and multiple angles | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-19-sine-and-cosine-rules.html"/>
 <link rel="next" href="exercises-20-compound-and-multiple-angles.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -227,7 +227,7 @@
 <li>Define <span class="math inline">\(B\)</span> so that <span class="math inline">\(\angle ABC=90^\circ\)</span>.</li>
 <li>Form rectangle <span class="math inline">\(ABDF\)</span>, so that <span class="math inline">\(E\)</span> lies on <span class="math inline">\(DF\)</span>.</li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:t20-diagram"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:t20-diagram"></span>
 <img src="fy_Alectnotes_files/figure-html/t20-diagram-1.svg" alt="Diagram for the proof of compound angle formulas" width="480" />
 <p class="caption">
 Figure 20.1: Diagram for the proof of compound angle formulas
@@ -279,10 +279,10 @@ This finishes the proof.</p>
 \end{align*}\]</span>
 (For the last step, we use Pythagoras’s formula: <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=1\)</span>.)</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-149" class="example"><strong>Example 20.1  </strong></span>Express <span class="math inline">\(\cos(3\alpha)\)</span> in terms of <span class="math inline">\(\cos\alpha\)</span>.</p>
+<p><span id="exm:unlabeled-div-132" class="example"><strong>Example 20.1  </strong></span>Express <span class="math inline">\(\cos(3\alpha)\)</span> in terms of <span class="math inline">\(\cos\alpha\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-150" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-133" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \cos(3\alpha) &amp;=
 \cos(2\alpha+\alpha) \\
 &amp;= \cos(2\alpha)\cos\alpha - \sin(2\alpha)\sin\alpha\\
@@ -292,10 +292,10 @@ This finishes the proof.</p>
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-151" class="example"><strong>Example 20.2  </strong></span>Express <span class="math inline">\(\tan(3\alpha)\)</span> in terms of <span class="math inline">\(\tan\alpha\)</span>.</p>
+<p><span id="exm:unlabeled-div-134" class="example"><strong>Example 20.2  </strong></span>Express <span class="math inline">\(\tan(3\alpha)\)</span> in terms of <span class="math inline">\(\tan\alpha\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-152" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-135" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \tan(3\alpha) &amp;=
   \tan(2\alpha+\alpha)\\
 &amp;=\frac{\tan(2\alpha)+\tan\alpha}{1-\tan(2\alpha)\tan\alpha}\\
@@ -327,25 +327,25 @@ This finishes the proof.</p>
 \end{align*}\]</span>
 since <span class="math inline">\(\cos(-x)=\cos(x)\)</span> and <span class="math inline">\(\sin(-x)=-\sin(x)\)</span>. The rest are similar.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-153" class="example"><strong>Example 20.3  </strong></span>Prove that <span class="math inline">\(\dfrac{\sin(7\theta)+\sin(5\theta)}{\cos(7\theta) - \cos(5\theta)} = -\cot\theta.\)</span></p>
+<p><span id="exm:unlabeled-div-136" class="example"><strong>Example 20.3  </strong></span>Prove that <span class="math inline">\(\dfrac{\sin(7\theta)+\sin(5\theta)}{\cos(7\theta) - \cos(5\theta)} = -\cot\theta.\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-154" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-137" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{LHS} &amp;= \frac{2\sin\frac{7\theta+5\theta}{2}\cos\frac{7\theta-5\theta}{2}}{-2\sin\frac{7\theta+5\theta}{2}\sin\frac{7\theta-5\theta}{2}}\\
 &amp;= \frac{\sin6\theta\cos\theta}{-\sin6\theta\sin\theta} = \mathrm{RHS}.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-155" class="example"><strong>Example 20.4  </strong></span>Express <span class="math inline">\(\sin50^\circ + \sin30^\circ\)</span> as a product of (co)sines.</p>
+<p><span id="exm:unlabeled-div-138" class="example"><strong>Example 20.4  </strong></span>Express <span class="math inline">\(\sin50^\circ + \sin30^\circ\)</span> as a product of (co)sines.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-156" class="solution"><em>Solution</em>. </span><span class="math inline">\(\sin50^\circ+\sin30^\circ = 2\sin\dfrac{50^\circ+30^\circ}{2}\cos\dfrac{50^\circ-30^\circ}{2} = 2\sin 40^\circ\cos 10^\circ\)</span>.</p>
+<p><span id="unlabeled-div-139" class="solution"><em>Solution</em>. </span><span class="math inline">\(\sin50^\circ+\sin30^\circ = 2\sin\dfrac{50^\circ+30^\circ}{2}\cos\dfrac{50^\circ-30^\circ}{2} = 2\sin 40^\circ\cos 10^\circ\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-157" class="example"><strong>Example 20.5  </strong></span>Without a calculator, evaluate <span class="math inline">\(16\cdot\sin75^\circ\cdot \cos15^\circ\)</span>.</p>
+<p><span id="exm:unlabeled-div-140" class="example"><strong>Example 20.5  </strong></span>Without a calculator, evaluate <span class="math inline">\(16\cdot\sin75^\circ\cdot \cos15^\circ\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-158" class="solution"><em>Solution</em>. </span>First, we want to find <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> so that
+<p><span id="unlabeled-div-141" class="solution"><em>Solution</em>. </span>First, we want to find <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> so that
 <span class="math display">\[
 75^\circ=\frac{\alpha+\beta}{2}, \quad\quad\quad
 15^\circ=\frac{\alpha-\beta}{2}.
@@ -358,10 +358,10 @@ Solving the equations, we get <span class="math inline">\(\alpha=90^\circ\)</spa
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-159" class="example"><strong>Example 20.6  </strong></span>Prove that <span class="math inline">\(\dfrac{\sin2\alpha}{1+\cos2\alpha}=\tan\alpha\)</span>.</p>
+<p><span id="exm:unlabeled-div-142" class="example"><strong>Example 20.6  </strong></span>Prove that <span class="math inline">\(\dfrac{\sin2\alpha}{1+\cos2\alpha}=\tan\alpha\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-160" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-143" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{LHS} &amp;=
 \frac{2\sin\alpha\cos\alpha}{1+2\cos^2\alpha -1}\\
 &amp;= \frac{2\sin\alpha\cos\alpha}{2\cos^2\alpha} = \frac{\sin\alpha}{\cos\alpha} = \mathrm{RHS}.
@@ -379,7 +379,6 @@ Solving the equations, we get <span class="math inline">\(\alpha=90^\circ\)</spa
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -419,6 +418,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

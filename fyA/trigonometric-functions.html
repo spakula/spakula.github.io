@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 15 Trigonometric functions | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 15 Trigonometric functions | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-14-length-of-an-arc-and-area-of-a-sector.html"/>
 <link rel="next" href="exercises-15-trigonometric-functions-and-equations.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -212,14 +212,14 @@
 <h1><span class="header-section-number">Topic 15</span> Trigonometric functions</h1>
 <div id="from-right-triangles" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> From right triangles</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-60"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
 <img src="t15-rtriangle1.svg" alt="A right triangle"  />
 <p class="caption">
 Figure 15.1: A right triangle
 </p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-129" class="theorem"><strong>Theorem 15.1  (Pythagoras's Theorem) </strong></span><span class="math inline">\(a^2+b^2=c^2\)</span></p>
+<p><span id="thm:unlabeled-div-112" class="theorem"><strong>Theorem 15.1  (Pythagoras's Theorem) </strong></span><span class="math inline">\(a^2+b^2=c^2\)</span></p>
 </div>
 <p><em>Proof (non-examinable):</em>
 <img src="t15-pythagoras.svg" style="display: block; margin: auto;" />
@@ -245,26 +245,26 @@ Figure 15.1: A right triangle
 <li><span class="math inline">\(\cot\theta = \dfrac{1}{\tan\theta} = \dfrac{BC}{AC}\)</span> (<strong>cotangent of <span class="math inline">\(\theta\)</span></strong>)</li>
 </ul>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-130" class="theorem"><strong>Theorem 15.2  (Pythagoras's identity) </strong></span><span class="math inline">\(\sin^2\theta+\cos^2\theta=1\)</span></p>
+<p><span id="thm:unlabeled-div-113" class="theorem"><strong>Theorem 15.2  (Pythagoras's identity) </strong></span><span class="math inline">\(\sin^2\theta+\cos^2\theta=1\)</span></p>
 </div>
 <p><em>Proof:</em> <span class="math inline">\(BC^2+AC^2=AB^2\)</span>  <span style="float:right">(by Pythagoras’s Theorem)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\left(\dfrac{BC}{AB}\right)^2+\left(\dfrac{AC}{AB}\right)^2=1\)</span>  <span style="float:right">(dividing by <span class="math inline">\(AB^2\)</span>)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\cos^2\theta+\sin^2\theta = 1\)</span>  <span style="float:right">(by the definitions above)</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-131" class="example"><strong>Example 15.1  </strong></span>Prove that <span class="math inline">\(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\)</span>.</p>
+<p><span id="exm:unlabeled-div-114" class="example"><strong>Example 15.1  </strong></span>Prove that <span class="math inline">\(\dfrac{1+\tan^2\theta}{1+\cot^2\theta} = \tan^2\theta\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-132" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-115" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{LHS} &amp;= \frac{1+\frac{\sin^2\theta}{\cos^2\theta}}{1+\frac{\cos^2\theta}{\sin^2\theta}}\\
 &amp;= \frac{\sin^2\theta\,(\cos^2\theta+\sin^2\theta)}{\cos^2\theta\,(\sin^2\theta+\cos^2\theta)}\\
 &amp;=\frac{\sin^2\theta}{\cos^2\theta} = \tan^2\theta = \mathrm{RHS}
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-133" class="example"><strong>Example 15.2  </strong></span>Prove that <span class="math inline">\(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\)</span>.</p>
+<p><span id="exm:unlabeled-div-116" class="example"><strong>Example 15.2  </strong></span>Prove that <span class="math inline">\(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-\cot\theta\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-134" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-117" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \mathrm{RHS} &amp;= \frac{1}{\sin\theta}-\frac{\cos\theta}{\sin\theta}= \frac{1-\cos\theta}{\sin\theta}.\\
 \mathrm{LHS} &amp;= \sqrt{\frac{(1-\cos\theta)(1-\cos\theta)}{(1+\cos\theta)(1-\cos\theta)}} \\
 &amp;= \frac{\sqrt{(1-\cos\theta)^2}}{\sqrt{1-\cos^2\theta}} = \frac{1-\cos\theta}{\sqrt{\sin^2\theta}}\\
@@ -343,19 +343,19 @@ y&amp;= \sin\theta.
     \cos(\theta+\pi) &amp;= -\cos\theta &amp; \sin(\theta+\pi) &amp;= -\sin\theta\\
     \tan(\theta+\pi) &amp;= \tan\theta &amp; \tan(-\theta) &amp;= -\tan\theta
 \end{align*}\]</span></p>
-<div class="figure"><span id="fig:t15-sine"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-sine"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-sine-1.svg" alt="Graph of sine" width="672" />
 <p class="caption">
 Figure 15.2: Graph of sine
 </p>
 </div>
-<div class="figure"><span id="fig:t15-cosine"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-cosine"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-cosine-1.svg" alt="Graph of cosine" width="672" />
 <p class="caption">
 Figure 15.3: Graph of cosine
 </p>
 </div>
-<div class="figure"><span id="fig:t15-tangent"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-tangent"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-tangent-1.svg" alt="Graph of tangent" width="672" />
 <p class="caption">
 Figure 15.4: Graph of tangent
@@ -375,19 +375,19 @@ Figure 15.4: Graph of tangent
 <li><span class="math inline">\(\arcsin\frac{1}{\sqrt{2}} = \frac{\pi}{4} = \arccos\frac{1}{\sqrt{2}}\)</span></li>
 <li><span class="math inline">\(\arccos -\frac12= \frac{2\pi}{3}\)</span></li>
 </ul>
-<div class="figure"><span id="fig:t15-arcsin"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-arcsin"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-arcsin-1.svg" alt="Graph of arcsin" width="336" />
 <p class="caption">
 Figure 15.5: Graph of arcsin
 </p>
 </div>
-<div class="figure"><span id="fig:t15-arccos"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-arccos"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-arccos-1.svg" alt="Graph of arccos" width="336" />
 <p class="caption">
 Figure 15.6: Graph of arccos
 </p>
 </div>
-<div class="figure"><span id="fig:t15-arctan"></span>
+<div class="figure"><span style="display:block;" id="fig:t15-arctan"></span>
 <img src="fy_Alectnotes_files/figure-html/t15-arctan-1.svg" alt="Graph of arctan" width="672" />
 <p class="caption">
 Figure 15.7: Graph of arctan
@@ -406,7 +406,6 @@ Figure 15.7: Graph of arctan
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -446,6 +445,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

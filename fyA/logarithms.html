@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 6 Logarithms | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 6 Logarithms | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-5-indices.html"/>
 <link rel="next" href="exercises-6-logarithms.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -220,7 +220,7 @@
 <li><span class="math inline">\(\ln(a)\)</span> is also called the <strong>natural logarithm</strong> of <span class="math inline">\(a\)</span>.</li>
 </ul>
 <p><strong>Note:</strong>: <span class="math inline">\(\log_{10}(a) \begin{cases} =0 &amp; \text{for }a=1\\ &gt;0&amp; \text{for }a&gt;1\\ &lt;0 &amp;\text{for }0&lt;a&lt;1\\\text{does not exist}&amp;\text{for }a\leq0.\end{cases}\)</span></p>
-<div class="figure"><span id="fig:t06-log-graph"></span>
+<div class="figure"><span style="display:block;" id="fig:t06-log-graph"></span>
 <img src="fy_Alectnotes_files/figure-html/t06-log-graph-1.svg" alt="Graph of the natural logarithm function" width="672" />
 <p class="caption">
 Figure 6.1: Graph of the natural logarithm function
@@ -257,28 +257,28 @@ But by laws of exponents and the definition of logarithm, we have LHS <span clas
 \end{align*}\]</span></p></li>
 </ol>
 <div class="example">
-<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 6.1  </strong></span><span class="math inline">\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)</span></p>
+<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 6.1  </strong></span><span class="math inline">\(\log_5(2.623) \stackrel{4.}{=} \dfrac{\log_{10}(2.623)}{\log_{10}(5)} \approx \dfrac{0.4188}{0.6990} \approx 0.5991\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 6.2  </strong></span>Solve <span class="math inline">\(2^x =5\)</span>.</p>
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 6.2  </strong></span>Solve <span class="math inline">\(2^x =5\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-50" class="solution"><em>Solution</em>. </span><span class="math inline">\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)</span></p>
+<p><span id="unlabeled-div-47" class="solution"><em>Solution</em>. </span><span class="math inline">\(x=\log_2(5)=\dfrac{\log_{10}(5)}{\log_{10}(2)} \approx\dfrac{0.6990}{0.3010}\approx 2.322\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 6.3  </strong></span>Solve <span class="math inline">\(3^{x+1}=2^{2x-3}\)</span>.</p>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 6.3  </strong></span>Solve <span class="math inline">\(3^{x+1}=2^{2x-3}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-52" class="solution"><em>Solution</em>. </span>Applying <span class="math inline">\(\log_{10}\)</span> on both sides: <span class="math inline">\(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\)</span>.<br />
+<p><span id="unlabeled-div-49" class="solution"><em>Solution</em>. </span>Applying <span class="math inline">\(\log_{10}\)</span> on both sides: <span class="math inline">\(\log_{10}(3^{x+1}) = \log_{10}(2^{2x-3})\)</span>.<br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\((x+1)\log_{10}(3) = (2x-3)\log_{10}(2)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(x\left(\log_{10}(3)-2\log_{10}(2)\right) = -3\log_{10}(2)-\log_{10}(3)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(x=\dfrac{-3\log_{10}(2)-\log_{10}(3)}{\log_{10}(3)-2\log_{10}(2)}\approx 11.0471\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 6.4  </strong></span>Solve <span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span>.</p>
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 6.4  </strong></span>Solve <span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-54" class="solution"><em>Solution</em>. </span><span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span><br />
+<p><span id="unlabeled-div-51" class="solution"><em>Solution</em>. </span><span class="math inline">\(2^{2x}-2^{x+1}-15=0\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\left(2^x\right)^2-2\cdot\left(2^x\right)-15=0\)</span>  <span style="float:right">(by laws of exponents)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(y^2 -2y-15=0\)</span>  <span style="float:right">(where <span class="math inline">\(y=2^x\)</span>)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\((y-5)(y+3)=0\)</span>  <span style="float:right">(factorising)</span><br />
@@ -299,7 +299,6 @@ and <span class="math inline">\(2^x=-3\)</span> is not possible (so no solution)
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -339,6 +338,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 10 Arithmetic and geometric progressions | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 10 Arithmetic and geometric progressions | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-9-partial-fractions.html"/>
 <link rel="next" href="exercises-10-arithmetic-and-geometric-progressions.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -233,7 +233,7 @@ For example:</p>
 \end{align*}\]</span>
 In general: <span style="background-color: #ddd;"><span class="math inline">\(a_n = a+(n-1)d\)</span></span> where <span class="math inline">\(a=a_1\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-71" class="theorem"><strong>Theorem 10.1  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of an AP with the first term <span class="math inline">\(a\)</span> and the common difference <span class="math inline">\(d\)</span> is given by
+<p><span id="thm:unlabeled-div-68" class="theorem"><strong>Theorem 10.1  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of an AP with the first term <span class="math inline">\(a\)</span> and the common difference <span class="math inline">\(d\)</span> is given by
 <span class="math display">\[
 \boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}
 \]</span></p>
@@ -251,26 +251,26 @@ S_n &amp;=&amp; (a+(n-1)d) &amp; + &amp; (a+(n-2)d) &amp; + &amp;  \dots &amp; +
 The “<span class="math inline">\(\implies\)</span>” step is by summing the two previous equations “vertically”. The last step holds as there are <span class="math inline">\(n\)</span> summands, each of them equal to <span class="math inline">\(2a+(n-1)d\)</span>).</p>
 <p>Hence <span class="math inline">\(S_n = \frac{n}{2}(2a+(n-1)d)\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 10.1  </strong></span>Determine the sum <span class="math inline">\(S_{20}\)</span> of the first <span class="math inline">\(20\)</span> terms of the arithmetic progression: <span class="math inline">\(10, 6, 2, -2, \dots\)</span>.</p>
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 10.1  </strong></span>Determine the sum <span class="math inline">\(S_{20}\)</span> of the first <span class="math inline">\(20\)</span> terms of the arithmetic progression: <span class="math inline">\(10, 6, 2, -2, \dots\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-73" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=10\)</span>, <span class="math inline">\(d=-4\)</span>, <span class="math inline">\(n=20\)</span><br />
+<p><span id="unlabeled-div-70" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=10\)</span>, <span class="math inline">\(d=-4\)</span>, <span class="math inline">\(n=20\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(S_{20}=\frac{20}{2}(2\cdot 10+ 19\cdot(-4))\)</span> <span class="math inline">\(=10(20-76)=-560\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 10.2  </strong></span>The sum <span class="math inline">\(S_8\)</span> of the first <span class="math inline">\(8\)</span> terms of an AP is <span class="math inline">\(90\)</span>, and its first term is <span class="math inline">\(6\)</span>. What is the common difference?</p>
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 10.2  </strong></span>The sum <span class="math inline">\(S_8\)</span> of the first <span class="math inline">\(8\)</span> terms of an AP is <span class="math inline">\(90\)</span>, and its first term is <span class="math inline">\(6\)</span>. What is the common difference?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-75" class="solution"><em>Solution</em>. </span><span class="math inline">\(90=S_8=\frac{8}{2}(2\cdot 6 + 7\cdot d)\)</span><br />
+<p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span><span class="math inline">\(90=S_8=\frac{8}{2}(2\cdot 6 + 7\cdot d)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(90=4(12+7d)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(\frac{90}{4}-12=7d\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(d=\frac{42}{28}=\frac32=1.5\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 10.3  </strong></span>How many terms of the AP <span class="math inline">\(3,6,9,\dots\)</span> must be taken so that their sum is <span class="math inline">\(135\)</span>?</p>
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 10.3  </strong></span>How many terms of the AP <span class="math inline">\(3,6,9,\dots\)</span> must be taken so that their sum is <span class="math inline">\(135\)</span>?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-77" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=3\)</span>, <span class="math inline">\(d=3\)</span>, <span class="math inline">\(S_n=135\)</span>, <span class="math inline">\(n=?\)</span><br />
+<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=3\)</span>, <span class="math inline">\(d=3\)</span>, <span class="math inline">\(S_n=135\)</span>, <span class="math inline">\(n=?\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(135 = S_n = \frac{n}{2}(2\cdot 3+(n-1)\cdot 3)\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(270 = 3n^2 + 3n\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(n^2+n-90 = 0\)</span><br />
@@ -296,7 +296,7 @@ For example:</p>
 <p>We have: <span class="math inline">\(a_2=a_1r\)</span>,   <span class="math inline">\(a_3=a_2r = a_1r^2\)</span>,   <span class="math inline">\(a_4=a_3r=a_1r^3\)</span>, </p>
 <p>In general: <span style="background-color: #ddd;"><span class="math inline">\(a_n=a\cdot r^{n-1}\)</span></span> where <span class="math inline">\(a=a_1\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-78" class="theorem"><strong>Theorem 10.2  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of a GP with the first
+<p><span id="thm:unlabeled-div-75" class="theorem"><strong>Theorem 10.2  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of a GP with the first
 term <span class="math inline">\(a\)</span> and the common ratio <span class="math inline">\(r\)</span> is given by
 <span class="math display">\[
 \boxed{S_n = a\cdot \frac{1-r^n}{1-r}}
@@ -312,17 +312,17 @@ In particular, if <span class="math inline">\(-1&lt;r&lt;1\)</span>, then the su
 Thus <span class="math inline">\(S_n = a\frac{1-r^n}{1-r}\)</span>.<br />
 Now if <span class="math inline">\(-1&lt;r&lt;1\)</span>, then <span class="math inline">\(\lim_{n\to\infty}r^n=0\)</span>. So <span class="math inline">\(S_\infty=\lim_{n\to\infty}S_n = a\frac{1}{1-r}\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 10.4  </strong></span>Determine the sum <span class="math inline">\(S_7\)</span> of the first <span class="math inline">\(7\)</span> terms of the geometric progession <span class="math inline">\(4,-8,16,\dots\)</span></p>
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 10.4  </strong></span>Determine the sum <span class="math inline">\(S_7\)</span> of the first <span class="math inline">\(7\)</span> terms of the geometric progession <span class="math inline">\(4,-8,16,\dots\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=4\)</span>, <span class="math inline">\(r=-2\)</span>, <span class="math inline">\(n=7\)</span><br />
+<p><span id="unlabeled-div-77" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=4\)</span>, <span class="math inline">\(r=-2\)</span>, <span class="math inline">\(n=7\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(S_7=4\dfrac{1-(-2)^7}{1-(-2)}=4\cdot\dfrac{129}3 = 172\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 10.5  </strong></span>A GP is given by <span class="math inline">\(\dfrac14,\dfrac1{16},\dfrac1{64},\dots\)</span>. Determine <span class="math inline">\(S_\infty\)</span>.</p>
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 10.5  </strong></span>A GP is given by <span class="math inline">\(\dfrac14,\dfrac1{16},\dfrac1{64},\dots\)</span>. Determine <span class="math inline">\(S_\infty\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-82" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=\frac14\)</span>, <span class="math inline">\(r=\frac14\)</span><br />
+<p><span id="unlabeled-div-79" class="solution"><em>Solution</em>. </span><span class="math inline">\(a=\frac14\)</span>, <span class="math inline">\(r=\frac14\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(S_\infty = \dfrac{1}{4}\cdot\dfrac{1}{1-\frac14}= \dfrac{1}{4}\cdot\dfrac{1}{\frac{3}{4}}=\dfrac{1}{3}\)</span>.</p>
 </div>
 
@@ -338,7 +338,6 @@ Now if <span class="math inline">\(-1&lt;r&lt;1\)</span>, then <span class="math
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -378,6 +377,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

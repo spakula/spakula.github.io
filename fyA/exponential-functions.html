@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 7 Exponential functions | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 7 Exponential functions | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-6-logarithms.html"/>
 <link rel="next" href="exercises-7-exponential-functions.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -212,19 +212,19 @@
 <h1><span class="header-section-number">Topic 7</span> Exponential functions</h1>
 <p>If <span class="math inline">\(f(x)=b^x\)</span> for some <span class="math inline">\(b\)</span>, then <span class="math inline">\(f(x)\)</span> is called an <strong>exponential function</strong>.</p>
 <p>The notation for the most often encountered exponential function is <span class="math inline">\(\exp(x):= e^x\)</span>,     where <span class="math inline">\(e=2.7128\)</span> is the Euler’s number.</p>
-<div class="figure"><span id="fig:t07-exp-graph"></span>
+<div class="figure"><span style="display:block;" id="fig:t07-exp-graph"></span>
 <img src="fy_Alectnotes_files/figure-html/t07-exp-graph-1.svg" alt="Graph of the natural logarithm function" width="672" />
 <p class="caption">
 Figure 7.1: Graph of the natural logarithm function
 </p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-55" class="example"><strong>Example 7.1  </strong></span>In a circuit containing a capacitor, the <em>instantaneous voltage</em> across the capacitor is given by the equation
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 7.1  </strong></span>In a circuit containing a capacitor, the <em>instantaneous voltage</em> across the capacitor is given by the equation
 <span class="math display">\[\nu = V\left(1-e^{\frac{-t}{RC}}\right),\]</span>
 where <span class="math inline">\(V\)</span> is the initial supply voltage, <span class="math inline">\(R\)</span> is the resistance, <span class="math inline">\(C\)</span> is the capacitance and <span class="math inline">\(t\)</span> is the time since the initial connection of the supply voltage. If <span class="math inline">\(V=200\,\mathrm{V}\)</span>, <span class="math inline">\(R=10\,\mathrm{k}\Omega\)</span> and <span class="math inline">\(C=20\,\mu\mathrm{F}\)</span>, calculate the time when the voltage reaches <span class="math inline">\(\nu =100\,\mathrm{V}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-56" class="solution"><em>Solution</em>. </span>We want to make <span class="math inline">\(t\)</span> the subject of the formula above:
+<p><span id="unlabeled-div-53" class="solution"><em>Solution</em>. </span>We want to make <span class="math inline">\(t\)</span> the subject of the formula above:
 <span class="math display">\[\begin{align*}
 \frac{\nu}{V} &amp;=1-e^{\frac{-t}{RC}}\\
 e^{\frac{-t}{RC}} &amp;= 1-\frac{\nu}{V}\\
@@ -251,7 +251,6 @@ t&amp;=-10\,\mathrm{k}\Omega\cdot 20\,\mu\mathrm{F}\cdot \ln\left(1-\frac{100\,\
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -291,6 +290,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

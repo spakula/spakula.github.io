@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 17 Parametric representation | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 17 Parametric representation | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-16-plotting-in-rectangular-coordinates.html"/>
 <link rel="next" href="exercises-17-parametric-representation.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -212,23 +212,23 @@
 <h1><span class="header-section-number">Topic 17</span> Parametric representation</h1>
 <p>Sometimes the variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are themselves functions of another variable, called <strong>parameter</strong>, say <span class="math inline">\(x=x(t)\)</span> and <span class="math inline">\(y=y(t)\)</span>. We may be able to express <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span> by eliminating <span class="math inline">\(t\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-135" class="example"><strong>Example 17.1  </strong></span><span class="math inline">\(x=a\cos\theta\)</span>,   <span class="math inline">\(y=a\sin\theta\)</span>, where <span class="math inline">\(a\)</span> is a positive constant and <span class="math inline">\(\theta\)</span> is the parameter.</p>
+<p><span id="exm:unlabeled-div-118" class="example"><strong>Example 17.1  </strong></span><span class="math inline">\(x=a\cos\theta\)</span>,   <span class="math inline">\(y=a\sin\theta\)</span>, where <span class="math inline">\(a\)</span> is a positive constant and <span class="math inline">\(\theta\)</span> is the parameter.</p>
 </div>
 <p>We aim to eliminate <span class="math inline">\(\theta\)</span> and express <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>.<br />
 We square both equations and add them: <span class="math inline">\(x^2=a^2\sin^2\theta\)</span>,   <span class="math inline">\(y^2=a^2\cos^2\theta\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(x^2+y^2=a^2(\cos^2\theta+\sin^2\theta) = a^2\)</span><br />
 <span class="math inline">\(\implies\)</span> <span class="math inline">\(y=\pm\sqrt{a^2-x^2}\)</span>   (thus in this case, there are two “branches” of the function: one with the “+” and one with the “-”; see Figure <a href="parametric-representation.html#fig:t17-circle">17.1</a>).</p>
-<div class="figure"><span id="fig:t17-circle"></span>
+<div class="figure"><span style="display:block;" id="fig:t17-circle"></span>
 <img src="fy_Alectnotes_files/figure-html/t17-circle-1.svg" alt="Graph of ±√(4-x²)" width="672" />
 <p class="caption">
 Figure 17.1: Graph of ±√(4-x²)
 </p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-136" class="example"><strong>Example 17.2  </strong></span>A curve is given by <span class="math inline">\(x=t^2\)</span> and <span class="math inline">\(y=2t\)</span>. Find its Cartesian equation.</p>
+<p><span id="exm:unlabeled-div-119" class="example"><strong>Example 17.2  </strong></span>A curve is given by <span class="math inline">\(x=t^2\)</span> and <span class="math inline">\(y=2t\)</span>. Find its Cartesian equation.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-137" class="solution"><em>Solution</em>. </span>Calculate</p>
+<p><span id="unlabeled-div-120" class="solution"><em>Solution</em>. </span>Calculate</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(y=2t\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(t^2=\frac{y^2}{4}\)</span><br />
 </li>
@@ -236,7 +236,7 @@ Figure 17.1: Graph of ±√(4-x²)
 </ol>
 <p>Putting 1. and 2. together, we get <span class="math inline">\(x=\frac{y^2}{4}\)</span> <span class="math inline">\(\iff\)</span> <span class="math inline">\(y=\pm2\sqrt{x}\)</span>. See Figure <a href="parametric-representation.html#fig:t17-sqrt">17.2</a>.</p>
 </div>
-<div class="figure"><span id="fig:t17-sqrt"></span>
+<div class="figure"><span style="display:block;" id="fig:t17-sqrt"></span>
 <img src="fy_Alectnotes_files/figure-html/t17-sqrt-1.svg" alt="Graph of ±2√x" width="672" />
 <p class="caption">
 Figure 17.2: Graph of ±2√x
@@ -254,7 +254,6 @@ Figure 17.2: Graph of ±2√x
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -294,6 +293,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

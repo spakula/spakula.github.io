@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 5 Indices | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 5 Indices | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-4-inequalities.html"/>
 <link rel="next" href="exercises-5-indices.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -254,10 +254,10 @@
 <p>Deriving 4: <span class="math inline">\(\frac{a^r}{a^s} = a^r\cdot \frac{1}{a^s} = a^r\cdot a^{-s} \stackrel{1.}{=} a^{r-s}\)</span>.</p>
 <p>Deriving 5: <span class="math inline">\(\left(\sqrt[n]{a}\right)^m = \left(a^{\frac{1}{n}}\right)^m \stackrel{3.}{=} a^{\frac{1}{n}\cdot m} = a^\frac{m}{n}\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 5.1  </strong></span>Write the following expressions using only positive indices: <span class="math inline">\(x^{-4}\)</span>,  <span class="math inline">\(3x^{-4}\)</span>,  <span class="math inline">\((3x)^{-4}\)</span>   and <span class="math inline">\(\frac{2}{y^{-3}}\)</span>.</p>
+<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 5.1  </strong></span>Write the following expressions using only positive indices: <span class="math inline">\(x^{-4}\)</span>,  <span class="math inline">\(3x^{-4}\)</span>,  <span class="math inline">\((3x)^{-4}\)</span>   and <span class="math inline">\(\frac{2}{y^{-3}}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-43" class="solution"><em>Solution</em>. </span>Calculate</p>
+<p><span id="unlabeled-div-40" class="solution"><em>Solution</em>. </span>Calculate</p>
 <ul>
 <li><span class="math inline">\(x^{-4}=\frac{1}{x^4}\)</span></li>
 <li><span class="math inline">\(3x^{-4}=3\cdot\frac{1}{x^4}=\frac{3}{x^4}\)</span></li>
@@ -266,10 +266,10 @@
 </ul>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 5.2  </strong></span>Write the following expressions using only single index: <span class="math inline">\(\left(x^2\right)^{-3}\)</span>,   <span class="math inline">\(\left((-x)^{-2}\right)^{-3}\)</span>,   <span class="math inline">\(\left(\frac{t}{t^{-2}}\right)^{4}\)</span>.</p>
+<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 5.2  </strong></span>Write the following expressions using only single index: <span class="math inline">\(\left(x^2\right)^{-3}\)</span>,   <span class="math inline">\(\left((-x)^{-2}\right)^{-3}\)</span>,   <span class="math inline">\(\left(\frac{t}{t^{-2}}\right)^{4}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-45" class="solution"><em>Solution</em>. </span>Calculate</p>
+<p><span id="unlabeled-div-42" class="solution"><em>Solution</em>. </span>Calculate</p>
 <ul>
 <li><span class="math inline">\(\left(x^2\right)^{-3} = x^{2\cdot(-3)}=x^{-6}\)</span></li>
 <li><span class="math inline">\(\left((-x)^{-2}\right)^{-3} = (-x)^{(-2)\cdot(-3)}=(-x)^{6}=\left((-1)\cdot x\right)^6=(-1)^6\cdot x^6=x^6\)</span></li>
@@ -277,10 +277,10 @@
 </ul>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 5.3  </strong></span>Simplify the expression <span class="math inline">\(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}\div\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\)</span> so that it uses only positive indices.</p>
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 5.3  </strong></span>Simplify the expression <span class="math inline">\(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}\div\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\)</span> so that it uses only positive indices.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-47" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-44" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 A&amp;= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^{\frac{1}{2}}\sqrt[3]{y}}\\
 &amp;=\frac{x^{-6}y^{\frac{3}{2}}w^2x^3y^3w^{-\frac12}}{x^{-3}w^3x^{\frac12}y^{\frac13}}\\
 &amp;=x^{-6+3-(-3)-\frac12}\,y^{\frac32+3-\frac13}\, w^{2-\frac12-3}\\
@@ -354,7 +354,6 @@ A&amp;= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -394,6 +393,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

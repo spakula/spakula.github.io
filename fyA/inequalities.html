@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 4 Inequalities | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 4 Inequalities | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-3-quadratic-equations.html"/>
 <link rel="next" href="exercises-4-inequalities.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -240,18 +240,18 @@ then the following hold: <span class="math inline">\(-2&lt;x\)</span>,  <span c
 </ol>
 <p>For example: <span class="math inline">\(2&lt;3\)</span> <span class="math inline">\(\iff\)</span> <span class="math inline">\(-2&gt;-3\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 4.1  </strong></span>Solve <span class="math inline">\(3x+5&gt;17\)</span>.</p>
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 4.1  </strong></span>Solve <span class="math inline">\(3x+5&gt;17\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-35" class="solution"><em>Solution</em>. </span><span class="math inline">\(3x+5&gt;17\)</span><br />
+<p><span id="unlabeled-div-32" class="solution"><em>Solution</em>. </span><span class="math inline">\(3x+5&gt;17\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(3x&gt;12\)</span>  <span style="float:right">(subtract <span class="math inline">\(5\)</span>)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(x&gt;4\)</span>  <span style="float:right">(multiply by <span class="math inline">\(1/3\)</span>)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-36" class="example"><strong>Example 4.2  </strong></span>Determine the set <span class="math inline">\(\{x: 2x-x^2&lt;3x-12\}\)</span>.</p>
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 4.2  </strong></span>Determine the set <span class="math inline">\(\{x: 2x-x^2&lt;3x-12\}\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-37" class="solution"><em>Solution</em>. </span><span class="math inline">\(2x-x^2&lt;3x-12\)</span><br />
+<p><span id="unlabeled-div-34" class="solution"><em>Solution</em>. </span><span class="math inline">\(2x-x^2&lt;3x-12\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(2x-x^2-3x+12&lt;0\)</span>  <span style="float:right">(subtract <span class="math inline">\(3x-12\)</span>)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(-x^2-x+12&lt;0\)</span>  <span style="float:right">(rearrange LHS)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(x^2+x-12&gt;0\)</span>  <span style="float:right">(multiply by <span class="math inline">\(-1\)</span>)</span><br />
@@ -262,19 +262,19 @@ then the following hold: <span class="math inline">\(-2&lt;x\)</span>,  <span c
 Answer: <span class="math inline">\(\{x: x&gt;3\text{ or }x&lt;-4\}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 4.3  </strong></span>Solve <span class="math inline">\(\dfrac{x-1}{x-2}&lt;0\)</span>.</p>
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 4.3  </strong></span>Solve <span class="math inline">\(\dfrac{x-1}{x-2}&lt;0\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-39" class="solution"><em>Solution</em>. </span><span class="math inline">\(\frac{x-1}{x-2}&lt;0\)</span><br />
+<p><span id="unlabeled-div-36" class="solution"><em>Solution</em>. </span><span class="math inline">\(\frac{x-1}{x-2}&lt;0\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\((x-1)(x-2)&lt;0\)</span>  <span style="float:right">(multiply by <span class="math inline">\((x-1)^2\geq 0\)</span>)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\big( x&lt;1\)</span> and <span class="math inline">\(x&gt;2\big)\)</span> or <span class="math inline">\(\big(x&gt;1\)</span> and <span class="math inline">\(x&lt;2\big)\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(1&lt;x&lt;2\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 4.4  </strong></span>Solve <span class="math inline">\(\dfrac{3x-2}{1+x}\leq 1\)</span>.</p>
+<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 4.4  </strong></span>Solve <span class="math inline">\(\dfrac{3x-2}{1+x}\leq 1\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-41" class="solution"><em>Solution</em>. </span><span class="math inline">\(\frac{3x-2}{1+x}\leq1\)</span><br />
+<p><span id="unlabeled-div-38" class="solution"><em>Solution</em>. </span><span class="math inline">\(\frac{3x-2}{1+x}\leq1\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\frac{(3x-2)-(1+x)}{1+x}\leq0\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\frac{2x-3}{1+x}\leq0\)</span><br />
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(\big( x\leq\frac{3}{2}\)</span> and <span class="math inline">\(x&gt;-1\big)\)</span> or <span class="math inline">\(\big(x\geq \frac{3}{2}\)</span> and <span class="math inline">\(x&lt;-1\big)\)</span><br />
@@ -293,7 +293,6 @@ Answer: <span class="math inline">\(\{x: x&gt;3\text{ or }x&lt;-4\}\)</span>.</p
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -333,6 +332,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

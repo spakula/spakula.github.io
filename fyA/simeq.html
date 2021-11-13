@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 1 Simultaneous equations | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 1 Simultaneous equations | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="exercises-1-simultaneous-equations.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -265,7 +265,7 @@ where <span class="math inline">\(a,b\)</span> and <span class="math inline">\(c
 </tbody>
 </table>
 <p>Graphing these values (Figure <a href="simeq.html#fig:t01-eqex-graph">1.1</a>) we see that they appear to lie on a line.</p>
-<div class="figure"><span id="fig:t01-eqex-graph"></span>
+<div class="figure"><span style="display:block;" id="fig:t01-eqex-graph"></span>
 <img src="fy_Alectnotes_files/figure-html/t01-eqex-graph-1.svg" alt="Graphing some solutions of \(4x-3y=2\)." width="672" />
 <p class="caption">
 Figure 1.1: Graphing some solutions of <span class="math inline">\(4x-3y=2\)</span>.
@@ -376,7 +376,7 @@ x+2y &amp;= -2
 <div id="graphical-illustration" class="section level3" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Graphical illustration</h3>
 <p>The solutions of the equation (A) <em>alone</em> lie on some straight line. Likewise for the set of solutions of the equation (B). The solutions of the system of equations, i.e. both equations simultaneously, are exactly the point(s) where do these two lines intersect. For a sketch for the system (A),(B) above, see Figure <a href="simeq.html#fig:t01-system">1.2</a>.</p>
-<div class="figure"><span id="fig:t01-system"></span>
+<div class="figure"><span style="display:block;" id="fig:t01-system"></span>
 <img src="fy_Alectnotes_files/figure-html/t01-system-1.svg" alt="Solutions of (A) and (B) graphically" width="672" />
 <p class="caption">
 Figure 1.2: Solutions of (A) and (B) graphically
@@ -410,7 +410,6 @@ Figure 1.2: Solutions of (A) and (B) graphically
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -450,6 +449,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 3 Quadratic equations | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 3 Quadratic equations | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-2-factorising.html"/>
 <link rel="next" href="exercises-3-quadratic-equations.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -212,37 +212,37 @@
 <h1><span class="header-section-number">Topic 3</span> Quadratic equations</h1>
 <p>A <strong>quadratic polynomial</strong> is an expression of the form <span class="math inline">\(ax^2+bx+c\)</span>, where <span class="math inline">\(a,b,c\)</span> are constants and <span class="math inline">\(a\neq0\)</span>.
 Any value of <span class="math inline">\(x\)</span> that makes the equation <span class="math inline">\(ax^2+bx+c=0\)</span> hold true is called a <strong>root</strong> of the polynomial <span class="math inline">\(ax^2+bx+c\)</span>. The <strong>graph</strong> of the polynomial <span class="math inline">\(f(x)=ax^2+bx+c\)</span> consists of all points <span class="math inline">\((x,y)\)</span> in the plane that satisfy <span class="math inline">\(y=f(x)\)</span>.</p>
-<div class="figure"><span id="fig:t03-quadratic-1"></span>
+<div class="figure"><span style="display:block;" id="fig:t03-quadratic-1"></span>
 <img src="fy_Alectnotes_files/figure-html/t03-quadratic-1-1.svg" alt="Examples of graphs of quadratic functions 1" width="672" />
 <p class="caption">
 Figure 3.1: Examples of graphs of quadratic functions 1
 </p>
 </div>
-<div class="figure"><span id="fig:t03-quadratic-2"></span>
+<div class="figure"><span style="display:block;" id="fig:t03-quadratic-2"></span>
 <img src="fy_Alectnotes_files/figure-html/t03-quadratic-2-1.svg" alt="Examples of graphs of quadratic functions 2" width="672" />
 <p class="caption">
 Figure 3.2: Examples of graphs of quadratic functions 2
 </p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 3.1  </strong></span>Find the roots of <span class="math inline">\(2x^2-x-6\)</span>.</p>
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 3.1  </strong></span>Find the roots of <span class="math inline">\(2x^2-x-6\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-21" class="solution"><em>Solution</em>. </span>First factorise: <span class="math inline">\(2x^2-x-6 = (2x+3)(x-2)\)</span>.<br />
+<p><span id="unlabeled-div-18" class="solution"><em>Solution</em>. </span>First factorise: <span class="math inline">\(2x^2-x-6 = (2x+3)(x-2)\)</span>.<br />
 Thus the roots are <span class="math inline">\(x_1=-\frac{3}{2}\)</span> and <span class="math inline">\(x_2=2\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 3.2  </strong></span>Find the roots of <span class="math inline">\(4x^2+4x+1\)</span>.</p>
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 3.2  </strong></span>Find the roots of <span class="math inline">\(4x^2+4x+1\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-23" class="solution"><em>Solution</em>. </span>Factorise: <span class="math inline">\(4x^2+4x+1=(2x+1)(2x+1)=(2x+1)^2\)</span>.<br />
+<p><span id="unlabeled-div-20" class="solution"><em>Solution</em>. </span>Factorise: <span class="math inline">\(4x^2+4x+1=(2x+1)(2x+1)=(2x+1)^2\)</span>.<br />
 Hence the only root is <span class="math inline">\(x_1=-\frac{1}{2}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 3.3  </strong></span>Find the roots of <span class="math inline">\(x^2-2x+2\)</span>.</p>
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 3.3  </strong></span>Find the roots of <span class="math inline">\(x^2-2x+2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-25" class="solution"><em>Solution</em>. </span>We can rewrite <span class="math inline">\(x^2-2x+2=(x-1)^2+1\)</span>.<br />
+<p><span id="unlabeled-div-22" class="solution"><em>Solution</em>. </span>We can rewrite <span class="math inline">\(x^2-2x+2=(x-1)^2+1\)</span>.<br />
 This is positive for all real numbers <span class="math inline">\(x\)</span>, thus there are no roots.</p>
 </div>
 <div id="general-formula-for-roots-of-ax2bxc" class="section level2" number="3.1">
@@ -259,39 +259,39 @@ This is positive for all real numbers <span class="math inline">\(x\)</span>, th
 <li>A derivation of this formula in included at the end of the the chapter.</li>
 </ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-26" class="example"><strong>Example 3.4  </strong></span>Find the roots of <span class="math inline">\(x^2+3x+1\)</span>.</p>
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 3.4  </strong></span>Find the roots of <span class="math inline">\(x^2+3x+1\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-27" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot 1}\)</span> <span class="math inline">\(\dfrac{-3\pm\sqrt{9-4}}{2}\)</span> <span class="math inline">\(=-\dfrac{3}{2}\pm\dfrac{1}{2}\sqrt{5}\)</span>.</p>
+<p><span id="unlabeled-div-24" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot 1}\)</span> <span class="math inline">\(\dfrac{-3\pm\sqrt{9-4}}{2}\)</span> <span class="math inline">\(=-\dfrac{3}{2}\pm\dfrac{1}{2}\sqrt{5}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 3.5  </strong></span>Find the roots of <span class="math inline">\(x^2-9\)</span>.</p>
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 3.5  </strong></span>Find the roots of <span class="math inline">\(x^2-9\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-29" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-0\pm\sqrt{0-4\cdot1\cdot(-9)}}{2\cdot1}\)</span> <span class="math inline">\(=\pm\dfrac{36}{2}=\pm 3\)</span>.</p>
+<p><span id="unlabeled-div-26" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-0\pm\sqrt{0-4\cdot1\cdot(-9)}}{2\cdot1}\)</span> <span class="math inline">\(=\pm\dfrac{36}{2}=\pm 3\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 3.6  </strong></span>Find the roots of <span class="math inline">\(4x^2-4x+1\)</span>.</p>
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 3.6  </strong></span>Find the roots of <span class="math inline">\(4x^2-4x+1\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-31" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-4\pm\sqrt{(-4)^2-4\cdot 4\cdot 1}}{2\cdot 8}\)</span> <span class="math inline">\(=\dfrac{4\pm\sqrt{0}}{8}=\dfrac{1}{2}\)</span> (only one solution).</p>
+<p><span id="unlabeled-div-28" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-4\pm\sqrt{(-4)^2-4\cdot 4\cdot 1}}{2\cdot 8}\)</span> <span class="math inline">\(=\dfrac{4\pm\sqrt{0}}{8}=\dfrac{1}{2}\)</span> (only one solution).</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 3.7  </strong></span>Solve the simultaneous equations
+<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 3.7  </strong></span>Solve the simultaneous equations
 <span class="math display">\[\begin{align*}
 y &amp;= -x^2+2x+2 \tag{A}\\
 x+y-2 &amp;=0 \tag{B}
 \end{align*}\]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-33" class="solution"><em>Solution</em>. </span>Make <span class="math inline">\(x\)</span> the subject of (B): <span class="math inline">\(x=-y+2\)</span>.<br />
+<p><span id="unlabeled-div-30" class="solution"><em>Solution</em>. </span>Make <span class="math inline">\(x\)</span> the subject of (B): <span class="math inline">\(x=-y+2\)</span>.<br />
 Substitute into (A): <span class="math inline">\(y=-(-y+2)^2+2(-y+2)+2\)</span>.<br />
 Rearrange: <span class="math inline">\(y^2-y-2=0\)</span>.<br />
 Solve the quadratic: <span class="math inline">\(y_{1,2}=\dfrac{-(-1)\pm\sqrt{(-1)^2-4\cdot1\cdot(-2)}}{2\cdot1} = \dfrac{1\pm\sqrt{9}}{2}\)</span><br />
 <span class="math inline">\(\implies\)</span>   <span class="math inline">\(y_1=2\)</span>,    <span class="math inline">\(y_2=-1\)</span>.<br />
 Substitute back into (B):   <span class="math inline">\(x_1=0\)</span>,    <span class="math inline">\(x_2=3\)</span>.</p>
 </div>
-<div class="figure"><span id="fig:t03-linquad-system"></span>
+<div class="figure"><span style="display:block;" id="fig:t03-linquad-system"></span>
 <img src="fy_Alectnotes_files/figure-html/t03-linquad-system-1.svg" alt="Graphical illustration of the solutions of simultaneous linear+quadratic system" width="672" />
 <p class="caption">
 Figure 3.3: Graphical illustration of the solutions of simultaneous linear+quadratic system
@@ -335,7 +335,6 @@ x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -375,6 +374,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 14 Circular measure | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 14 Circular measure | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2021-07-26" />
+<meta name="date" content="2021-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="exercises-13-inverse-matrix-method-and-cramers-rule.html"/>
 <link rel="next" href="exercises-14-length-of-an-arc-and-area-of-a-sector.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -213,7 +213,7 @@
 <div id="radians-and-degrees" class="section level2" number="14.1">
 <h2><span class="header-section-number">14.1</span> Radians and degrees</h2>
 <p>Angles are normally measured in <strong>degrees</strong>, e.g. a right angle has <span class="math inline">\(90^\circ\)</span>. In mathematics and engineering it is more natural and convenient to measure angles in <strong>radians</strong>: the length of an arc of a unit circle is equal to the measurement, <em>in radians</em>, of the angle that it subtends.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-56"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-56"></span>
 <img src="t14-circle.svg" alt="Unit circle and radians"  />
 <p class="caption">
 Figure 14.1: Unit circle and radians
@@ -257,20 +257,20 @@ Figure 14.1: Unit circle and radians
 <h3><span class="header-section-number">14.1.1</span> Converting degrees to radians</h3>
 <p><span class="math display">\[\theta^\circ = \left(\dfrac{2\pi}{360}\cdot\theta\right)\,\mathrm{rad}\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-121" class="example"><strong>Example 14.1  </strong></span>Find the value of <span class="math inline">\(23^\circ\)</span> in radians.</p>
+<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 14.1  </strong></span>Find the value of <span class="math inline">\(23^\circ\)</span> in radians.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-122" class="solution"><em>Solution</em>. </span><span class="math inline">\(23^\circ = \left(\dfrac{2\pi}{360}\cdot 23\right)\,\mathrm{rad} \approx 0.4\,\mathrm{rad}\)</span>.</p>
+<p><span id="unlabeled-div-105" class="solution"><em>Solution</em>. </span><span class="math inline">\(23^\circ = \left(\dfrac{2\pi}{360}\cdot 23\right)\,\mathrm{rad} \approx 0.4\,\mathrm{rad}\)</span>.</p>
 </div>
 </div>
 <div id="converting-radians-to-degrees" class="section level3" number="14.1.2">
 <h3><span class="header-section-number">14.1.2</span> Converting radians to degrees</h3>
 <p><span class="math display">\[\theta\,\mathrm{rad}=\left(\dfrac{360}{2\pi}\cdot\theta\right)^\circ\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-123" class="example"><strong>Example 14.2  </strong></span>Find the value of <span class="math inline">\(1.5\,\mathrm{rad}\)</span> in degrees.</p>
+<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 14.2  </strong></span>Find the value of <span class="math inline">\(1.5\,\mathrm{rad}\)</span> in degrees.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-124" class="solution"><em>Solution</em>. </span><span class="math inline">\(1.5\,\mathrm{rad} = \left(\dfrac{360}{2\pi}\cdot 1.5\right)^\circ = \left(\dfrac{270}{\pi}\right)^\circ \approx 85.9^\circ\)</span>.</p>
+<p><span id="unlabeled-div-107" class="solution"><em>Solution</em>. </span><span class="math inline">\(1.5\,\mathrm{rad} = \left(\dfrac{360}{2\pi}\cdot 1.5\right)^\circ = \left(\dfrac{270}{\pi}\right)^\circ \approx 85.9^\circ\)</span>.</p>
 </div>
 </div>
 </div>
@@ -280,20 +280,20 @@ Figure 14.1: Unit circle and radians
 <h3><span class="header-section-number">14.2.1</span> Length of an arc</h3>
 <p>The <strong>length of an arc</strong> of a circle is given by <span class="math inline">\(s=r\cdot\theta\)</span>, where <span class="math inline">\(r\)</span> is the radius and <span class="math inline">\(\theta\)</span> is the angle subtended in radians.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-125" class="example"><strong>Example 14.3  </strong></span>Determine the length <span class="math inline">\(s\)</span> of an arc of a circle with radius <span class="math inline">\(45mm\)</span> when the angle subtended is <span class="math inline">\(85^\circ\)</span>.</p>
+<p><span id="exm:unlabeled-div-108" class="example"><strong>Example 14.3  </strong></span>Determine the length <span class="math inline">\(s\)</span> of an arc of a circle with radius <span class="math inline">\(45mm\)</span> when the angle subtended is <span class="math inline">\(85^\circ\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-126" class="solution"><em>Solution</em>. </span><span class="math inline">\(s=r\theta = 45\,\mathrm{mm}\cdot\left(\dfrac{2\pi}{360}\cdot 85\right) \approx 66.8\,\mathrm{mm}\)</span>.</p>
+<p><span id="unlabeled-div-109" class="solution"><em>Solution</em>. </span><span class="math inline">\(s=r\theta = 45\,\mathrm{mm}\cdot\left(\dfrac{2\pi}{360}\cdot 85\right) \approx 66.8\,\mathrm{mm}\)</span>.</p>
 </div>
 </div>
 <div id="area-of-a-sector" class="section level3" number="14.2.2">
 <h3><span class="header-section-number">14.2.2</span> Area of a sector</h3>
 <p>The <strong>area of a sector</strong> of a disc is <span class="math inline">\(A=\left(\dfrac{\theta}{2\pi}\cdot\pi\cdot r^2\right) = \dfrac{1}{2}\cdot r^2\cdot \theta\)</span>, where <span class="math inline">\(r\)</span> is the radius of <span class="math inline">\(\theta\)</span> is the angle subtended in radians.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-127" class="example"><strong>Example 14.4  </strong></span>A light source spreads illumination through an angle <span class="math inline">\(130^\circ\)</span> to a distance of <span class="math inline">\(35m\)</span>. Determine the illuminated area <span class="math inline">\(A\)</span>.</p>
+<p><span id="exm:unlabeled-div-110" class="example"><strong>Example 14.4  </strong></span>A light source spreads illumination through an angle <span class="math inline">\(130^\circ\)</span> to a distance of <span class="math inline">\(35m\)</span>. Determine the illuminated area <span class="math inline">\(A\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-128" class="solution"><em>Solution</em>. </span><span class="math inline">\(A=\frac12 r^2\theta = \frac12\left(35\,\mathrm{m}\right)^2\cdot\left(\dfrac{2\pi}{360}\cdot 130\right) \approx 1390\,\mathrm{m}^2\)</span>.</p>
+<p><span id="unlabeled-div-111" class="solution"><em>Solution</em>. </span><span class="math inline">\(A=\frac12 r^2\theta = \frac12\left(35\,\mathrm{m}\right)^2\cdot\left(\dfrac{2\pi}{360}\cdot 130\right) \approx 1390\,\mathrm{m}^2\)</span>.</p>
 </div>
 
 </div>
@@ -309,7 +309,6 @@ Figure 14.1: Unit circle and radians
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -349,6 +348,10 @@ gitbook.start({
 "text": null
 },
 "download": ["fy_Alectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
