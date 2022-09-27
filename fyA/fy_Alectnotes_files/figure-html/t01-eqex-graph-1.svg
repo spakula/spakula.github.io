@@ -9,6 +9,9 @@
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
@@ -36,19 +39,19 @@
 <circle cx='458.40' cy='67.47' r='2.70' style='stroke-width: 1.50; stroke: #CD0BBC; fill: #CD0BBC;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
-<text x='266.40' y='341.28' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>x</text>
-<text transform='translate(12.96,172.80) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>y</text>
+<text x='266.40' y='341.28' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>x</text>
+<text transform='translate(12.96,172.80) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>y</text>
 <line x1='74.40' y1='146.47' x2='458.40' y2='146.47' style='stroke-width: 0.75;' />
 <line x1='74.40' y1='146.47' x2='74.40' y2='153.67' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='146.47' x2='170.40' y2='153.67' style='stroke-width: 0.75;' />
 <line x1='266.40' y1='146.47' x2='266.40' y2='153.67' style='stroke-width: 0.75;' />
 <line x1='362.40' y1='146.47' x2='362.40' y2='153.67' style='stroke-width: 0.75;' />
 <line x1='458.40' y1='146.47' x2='458.40' y2='153.67' style='stroke-width: 0.75;' />
-<text x='74.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
-<text x='170.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-1</text>
-<text x='266.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='362.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>1</text>
-<text x='458.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='74.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
+<text x='170.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-1</text>
+<text x='266.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='362.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='458.40' y='172.39' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>2</text>
 <line x1='266.40' y1='264.97' x2='266.40' y2='67.47' style='stroke-width: 0.75;' />
 <line x1='266.40' y1='264.97' x2='259.20' y2='264.97' style='stroke-width: 0.75;' />
 <line x1='266.40' y1='225.47' x2='259.20' y2='225.47' style='stroke-width: 0.75;' />
@@ -56,11 +59,11 @@
 <line x1='266.40' y1='146.47' x2='259.20' y2='146.47' style='stroke-width: 0.75;' />
 <line x1='266.40' y1='106.97' x2='259.20' y2='106.97' style='stroke-width: 0.75;' />
 <line x1='266.40' y1='67.47' x2='259.20' y2='67.47' style='stroke-width: 0.75;' />
-<text transform='translate(249.12,264.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-3</text>
-<text transform='translate(249.12,225.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
-<text transform='translate(249.12,185.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-1</text>
-<text transform='translate(249.12,146.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text transform='translate(249.12,106.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>1</text>
-<text transform='translate(249.12,67.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text transform='translate(249.12,264.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-3</text>
+<text transform='translate(249.12,225.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
+<text transform='translate(249.12,185.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-1</text>
+<text transform='translate(249.12,146.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text transform='translate(249.12,106.97) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text transform='translate(249.12,67.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>2</text>
 </g>
 </svg>

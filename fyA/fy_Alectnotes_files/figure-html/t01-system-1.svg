@@ -9,6 +9,9 @@
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
@@ -28,8 +31,8 @@
 <polyline points='74.40,67.47 93.60,78.00 112.80,88.53 132.00,99.07 151.20,109.60 170.40,120.13 189.60,130.67 208.80,141.20 228.00,151.73 247.20,162.27 266.40,172.80 285.60,183.33 304.80,193.87 324.00,204.40 343.20,214.93 362.40,225.47 381.60,236.00 400.80,246.53 420.00,257.07 439.20,267.60 458.40,278.13 ' style='stroke-width: 1.50; stroke: #CD0BBC;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
-<text x='266.40' y='341.28' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>x</text>
-<text transform='translate(12.96,172.80) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>y</text>
+<text x='266.40' y='341.28' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>x</text>
+<text transform='translate(12.96,172.80) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.00px' lengthAdjust='spacingAndGlyphs'>y</text>
 </g>
 <g clip-path='url(#cpNTkuMDR8NDczLjc2fDU5LjA0fDI4Ni41Ng==)'>
 <polyline points='74.40,21.82 93.60,35.87 112.80,49.91 132.00,63.96 151.20,78.00 170.40,92.04 189.60,106.09 208.80,120.13 228.00,134.18 247.20,148.22 266.40,162.27 285.60,176.31 304.80,190.36 324.00,204.40 343.20,218.44 362.40,232.49 381.60,246.53 400.80,260.58 420.00,274.62 439.20,288.67 458.40,302.71 ' style='stroke-width: 1.50; stroke: #61D04F;' />
@@ -41,29 +44,29 @@
 <line x1='266.40' y1='99.07' x2='266.40' y2='106.27' style='stroke-width: 0.75;' />
 <line x1='362.40' y1='99.07' x2='362.40' y2='106.27' style='stroke-width: 0.75;' />
 <line x1='458.40' y1='99.07' x2='458.40' y2='106.27' style='stroke-width: 0.75;' />
-<text x='74.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-5</text>
-<text x='170.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='266.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>5</text>
-<text x='362.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>10</text>
-<text x='458.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>15</text>
+<text x='74.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-5</text>
+<text x='170.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='266.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='362.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='458.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>15</text>
 <line x1='170.40' y1='267.60' x2='170.40' y2='99.07' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='267.60' x2='163.20' y2='267.60' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='225.47' x2='163.20' y2='225.47' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='183.33' x2='163.20' y2='183.33' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='141.20' x2='163.20' y2='141.20' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='99.07' x2='163.20' y2='99.07' style='stroke-width: 0.75;' />
-<text transform='translate(153.12,267.60) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-8</text>
-<text transform='translate(153.12,225.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-6</text>
-<text transform='translate(153.12,183.33) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-4</text>
-<text transform='translate(153.12,141.20) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
-<text transform='translate(153.12,99.07) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arimo;' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text transform='translate(153.12,267.60) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-8</text>
+<text transform='translate(153.12,225.47) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-6</text>
+<text transform='translate(153.12,183.33) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-4</text>
+<text transform='translate(153.12,141.20) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-2</text>
+<text transform='translate(153.12,99.07) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
 </g>
 <g clip-path='url(#cpNTkuMDR8NDczLjc2fDU5LjA0fDI4Ni41Ng==)'>
-<text x='84.00' y='92.26' text-anchor='middle' style='font-size: 14.40px; font-weight: bold; fill: #CD0BBC; font-family: Arimo;' textLength='19.98px' lengthAdjust='spacingAndGlyphs'>(A)</text>
-<text x='170.40' y='81.72' text-anchor='middle' style='font-size: 14.40px; font-weight: bold; fill: #61D04F; font-family: Arimo;' textLength='19.98px' lengthAdjust='spacingAndGlyphs'>(B)</text>
+<text x='84.00' y='92.26' text-anchor='middle' style='font-size: 14.40px; font-weight: bold;fill: #CD0BBC; font-family: "Arimo";' textLength='19.98px' lengthAdjust='spacingAndGlyphs'>(A)</text>
+<text x='170.40' y='81.72' text-anchor='middle' style='font-size: 14.40px; font-weight: bold;fill: #61D04F; font-family: "Arimo";' textLength='19.99px' lengthAdjust='spacingAndGlyphs'>(B)</text>
 <line x1='59.04' y1='204.40' x2='473.76' y2='204.40' style='stroke-width: 0.52; stroke-dasharray: 4.00,4.00;' />
 <line x1='324.00' y1='286.56' x2='324.00' y2='59.04' style='stroke-width: 0.52; stroke-dasharray: 4.00,4.00;' />
-<text x='331.20' y='196.62' style='font-size: 12.00px; font-family: Arimo;' textLength='122.05px' lengthAdjust='spacingAndGlyphs'>The solution: x=8, y=-5</text>
+<text x='331.20' y='196.62' style='font-size: 12.00px; font-family: "Arimo";' textLength='122.04px' lengthAdjust='spacingAndGlyphs'>The solution: x=8, y=-5</text>
 <circle cx='324.00' cy='204.40' r='2.70' style='stroke-width: 0.75; fill: #000000;' />
 </g>
 </svg>

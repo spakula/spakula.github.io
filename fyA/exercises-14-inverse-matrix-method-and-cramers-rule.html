@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Topic 4 Quadratic equations | Lecture notes - Maths A - Foundation year</title>
+  <title>Exercises 14 (Inverse matrix method and Cramer’s rule) | Lecture notes - Maths A - Foundation year</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Topic 4 Quadratic equations | Lecture notes - Maths A - Foundation year" />
+  <meta property="og:title" content="Exercises 14 (Inverse matrix method and Cramer’s rule) | Lecture notes - Maths A - Foundation year" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Topic 4 Quadratic equations | Lecture notes - Maths A - Foundation year" />
+  <meta name="twitter:title" content="Exercises 14 (Inverse matrix method and Cramer’s rule) | Lecture notes - Maths A - Foundation year" />
   
   <meta name="twitter:description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises-3-factorising.html"/>
-<link rel="next" href="exercises-4-quadratic-equations.html"/>
+<link rel="prev" href="inverse-matrix-method-and-cramers-rule.html"/>
+<link rel="next" href="circular-measure.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -207,130 +207,55 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quadratic-equations" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Topic 4</span> Quadratic equations<a href="quadratic-equations.html#quadratic-equations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>A <strong>quadratic polynomial</strong> is an expression of the form <span class="math inline">\(ax^2+bx+c\)</span>, where <span class="math inline">\(a,b,c\)</span> are constants and <span class="math inline">\(a\neq0\)</span>.
-Any value of <span class="math inline">\(x\)</span> that makes the equation <span class="math inline">\(ax^2+bx+c=0\)</span> hold true is called a <strong>root</strong> of the polynomial <span class="math inline">\(ax^2+bx+c\)</span>. The <strong>graph</strong> of the polynomial <span class="math inline">\(f(x)=ax^2+bx+c\)</span> consists of all points <span class="math inline">\((x,y)\)</span> in the plane that satisfy <span class="math inline">\(y=f(x)\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:t03-quadratic-1"></span>
-<img src="fy_Alectnotes_files/figure-html/t03-quadratic-1-1.svg" alt="Examples of graphs of quadratic functions 1" width="672" />
-<p class="caption">
-Figure 4.1: Examples of graphs of quadratic functions 1
-</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:t03-quadratic-2"></span>
-<img src="fy_Alectnotes_files/figure-html/t03-quadratic-2-1.svg" alt="Examples of graphs of quadratic functions 2" width="672" />
-<p class="caption">
-Figure 4.2: Examples of graphs of quadratic functions 2
-</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 4.1  </strong></span>Find the roots of <span class="math inline">\(2x^2-x-6\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-18" class="solution"><em>Solution</em>. </span>First factorise: <span class="math inline">\(2x^2-x-6 = (2x+3)(x-2)\)</span>.<br />
-Thus the roots are <span class="math inline">\(x_1=-\frac{3}{2}\)</span> and <span class="math inline">\(x_2=2\)</span>.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 4.2  </strong></span>Find the roots of <span class="math inline">\(4x^2+4x+1\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-20" class="solution"><em>Solution</em>. </span>Factorise: <span class="math inline">\(4x^2+4x+1=(2x+1)(2x+1)=(2x+1)^2\)</span>.<br />
-Hence the only root is <span class="math inline">\(x_1=-\frac{1}{2}\)</span>.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 4.3  </strong></span>Find the roots of <span class="math inline">\(x^2-2x+2\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-22" class="solution"><em>Solution</em>. </span>We can rewrite <span class="math inline">\(x^2-2x+2=(x-1)^2+1\)</span>.<br />
-This is positive for all real numbers <span class="math inline">\(x\)</span>, thus there are no roots.</p>
-</div>
-<div id="general-formula-for-roots-of-ax2bxc" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> General formula for roots of <span class="math inline">\(ax^2+bx+c\)</span><a href="quadratic-equations.html#general-formula-for-roots-of-ax2bxc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercises-14-inverse-matrix-method-and-cramers-rule" class="section level1 unnumbered hasAnchor">
+<h1>Exercises 14 (Inverse matrix method and Cramer’s rule)<a href="exercises-14-inverse-matrix-method-and-cramers-rule.html#exercises-14-inverse-matrix-method-and-cramers-rule" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ol style="list-style-type: decimal">
-<li>Case: <span class="math inline">\(b^2-4ac &lt; 0\)</span>: no roots</li>
-<li>Case: <span class="math inline">\(b^2-4ac = 0\)</span>: exactly one root <span class="math inline">\(x_1=-\frac{b}{2a}\)</span>.</li>
-<li>Case: <span class="math inline">\(b^2-4ac &gt; 0\)</span>: two roots <span class="math inline">\(x_{1,2}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}\)</span>.</li>
+<li><p>Solve the first two pairs of equations using Cramer’s rule and use a matrix method for the third:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(\left\{\begin{aligned}3x-7y&amp;=-2\\4x-3y&amp;=7\end{aligned}\right.\)</span></li>
+<li><span class="math inline">\(\left\{\begin{aligned}4x-3y&amp;=18\\ x+2y&amp;=-1\end{aligned}\right.\)</span></li>
+<li><span class="math inline">\(\left\{\begin{aligned}11x-10y&amp;=30\\21y-20x&amp;=-40\end{aligned}\right.\)</span></li>
+</ol></li>
+<li><p>The equations of two straight lines are <span class="math inline">\(6x – 8.5y = 10\)</span> and <span class="math inline">\(2x - 4y = 8\)</span>. By using a determinant method, establish the coordinates where the two lines cross.</p></li>
+<li><p>The following circuit yields a pair of simultaneous equations:
+<img src="t13-circuit.svg" style="display: block; margin: auto;" />
+<span class="math display">\[\begin{align*}
+5I_1 - 10I_2 &amp;=0\\
+6(I_1+I_2)+5I_2 &amp;=12
+\end{align*}\]</span>
+Determine the values of <span class="math inline">\(I_1\)</span> and <span class="math inline">\(I_2\)</span> using a matrix method.</p></li>
+<li><p>Solve the equations using a determinant method:
+<span class="math display">\[\begin{align*}
+\frac{3}{x}-\frac{2}{y} &amp;= 0.5\\
+\frac{5}{x}-\frac{3}{y} &amp;= 2.57
+\end{align*}\]</span></p></li>
+<li><p>A vector system to determine the shortest distance between two moving bodies is analysed and produces the following equations:
+<span class="math display">\[\begin{align*}
+11s_1 - 10s_2 &amp;= 30\\
+21s_2 - 20s_1 &amp;= -40
+\end{align*}\]</span>
+Using Cramer’s rule solve for <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span>.</p></li>
+<li><p>The law connecting friction, <span class="math inline">\(F\)</span>, and load, <span class="math inline">\(L\)</span>, for an experiment to establish the friction force between two surfaces is of the form <span class="math inline">\(F = aL + b\)</span>, where both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants.
+When <span class="math inline">\(F = 6\)</span>, <span class="math inline">\(L = 7.5\)</span> and when <span class="math inline">\(F = 2.7\)</span>, <span class="math inline">\(L = 2\)</span>, determine the values of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> using a matrix method.</p></li>
 </ol>
-<p>Learn this by heart!</p>
-<p>Remarks:</p>
-<ul>
-<li>The number <span class="math inline">\(b^2-4ac\)</span> is sometimes referred to as the <em>discriminant</em> of the quadratic.</li>
-<li>A derivation of this formula in included at the end of the the chapter.</li>
-</ul>
-<div class="example">
-<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 4.4  </strong></span>Find the roots of <span class="math inline">\(x^2+3x+1\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-24" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot 1}\)</span> <span class="math inline">\(\dfrac{-3\pm\sqrt{9-4}}{2}\)</span> <span class="math inline">\(=-\dfrac{3}{2}\pm\dfrac{1}{2}\sqrt{5}\)</span>.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 4.5  </strong></span>Find the roots of <span class="math inline">\(x^2-9\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-26" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-0\pm\sqrt{0-4\cdot1\cdot(-9)}}{2\cdot1}\)</span> <span class="math inline">\(=\pm\dfrac{36}{2}=\pm 3\)</span>.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 4.6  </strong></span>Find the roots of <span class="math inline">\(4x^2-4x+1\)</span>.</p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-28" class="solution"><em>Solution</em>. </span><span class="math inline">\(x_{1,2}=\dfrac{-4\pm\sqrt{(-4)^2-4\cdot 4\cdot 1}}{2\cdot 8}\)</span> <span class="math inline">\(=\dfrac{4\pm\sqrt{0}}{8}=\dfrac{1}{2}\)</span> (only one solution).</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 4.7  </strong></span>Solve the simultaneous equations
-<span class="math display">\[\begin{align*}
-y &amp;= -x^2+2x+2 \tag{A}\\
-x+y-2 &amp;=0 \tag{B}
-\end{align*}\]</span></p>
-</div>
-<div class="solution">
-<p><span id="unlabeled-div-30" class="solution"><em>Solution</em>. </span>Make <span class="math inline">\(x\)</span> the subject of (B): <span class="math inline">\(x=-y+2\)</span>.<br />
-Substitute into (A): <span class="math inline">\(y=-(-y+2)^2+2(-y+2)+2\)</span>.<br />
-Rearrange: <span class="math inline">\(y^2-y-2=0\)</span>.<br />
-Solve the quadratic: <span class="math inline">\(y_{1,2}=\dfrac{-(-1)\pm\sqrt{(-1)^2-4\cdot1\cdot(-2)}}{2\cdot1} = \dfrac{1\pm\sqrt{9}}{2}\)</span><br />
-<span class="math inline">\(\implies\)</span>   <span class="math inline">\(y_1=2\)</span>,    <span class="math inline">\(y_2=-1\)</span>.<br />
-Substitute back into (B):   <span class="math inline">\(x_1=0\)</span>,    <span class="math inline">\(x_2=3\)</span>.</p>
-</div>
-<div class="figure"><span style="display:block;" id="fig:t03-linquad-system"></span>
-<img src="fy_Alectnotes_files/figure-html/t03-linquad-system-1.svg" alt="Graphical illustration of the solutions of simultaneous linear+quadratic system" width="672" />
-<p class="caption">
-Figure 4.3: Graphical illustration of the solutions of simultaneous linear+quadratic system
-</p>
-</div>
-</div>
-<div id="deriving-the-quadratic-formula" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Deriving the quadratic formula<a href="quadratic-equations.html#deriving-the-quadratic-formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>This material is not examinable.</em></p>
-<p><em>Why does the quadratic formula “work”? In other words, a “proof”.</em></p>
-<p>The following computation shows how to derive the general formula for the roots of a quadratic polynomial.</p>
-<p><span class="math display">\[\begin{align*}
-ax^2+bx+c &amp;= 0\\
-ax^2 + bx &amp;= -c\\
-x^2 + \tfrac{b}{a}x &amp;= -\tfrac{c}{a} \quad\text{(using $a\not=0$)}\\
-x^2 + \tfrac{b}{a}x + \left(\tfrac{b}{2a}\right)^2 &amp;= -\tfrac{c}{a} + \left(\tfrac{b}{2a}\right)^2
-\end{align*}\]</span>
-This trick (adding <span class="math inline">\(\left(\tfrac{b}{2a}\right)^2\)</span> to both sides) is called “completing the square”.
-<span class="math display">\[\begin{align*}
-\left(x+\tfrac{b}{2a}\right)^2 &amp;= \tfrac{b^2-4ac}{(2a)^2}\\
-x+\tfrac{b}{2a} &amp;= \frac{\pm\sqrt{b^2-4ac}}{2a}\\ %\quad\text{(when $b^2-4ac\geq 0$)}
-\end{align*}\]</span>
-The last step is only valid when <span class="math inline">\(b^2-4ac\geq 0\)</span>!<br />
-One should be careful when taking square roots on both sides of an equation — which is why there is “<span class="math inline">\(\pm\)</span>”.
-<span class="math display">\[
-x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}.
-\]</span></p>
-<hr />
-<p><em>Extra Note (non-examinable):</em> For quadratic equations, there are formulas (depending only on the numbers appearing in the equation itself) which allow us to very easily determine how many solutions does the equation have, and what are they. This situation is rather rare – for example, if we stay with equations with a single variable <span class="math inline">\(x\)</span> but allow the power of <span class="math inline">\(x\)</span> to be higher, we very quickly run into issues: There is a general formula for degree <span class="math inline">\(3\)</span>, but it is rather unpleasantly complicated. From degree <span class="math inline">\(5\)</span> onwards, it is possible to <em>prove</em> that no such formula can exist in general. That is not to say that we can’t solve <em>some</em> high-degree equations, but there is no general formula which is guaranteed to always work. <a href="https://en.wikipedia.org/wiki/Galois_theory">This wikipedia page</a> goes in that direction.</p>
-<p>Note - here we are talking about <em>exact</em> solutions. In practice, problems are almost always solved numerically, obtaining <em>approximate</em> solutions.</p>
+<p><em>Solutions:</em>
+<strong>1.</strong> (i) <span class="math inline">\(x=55/19\)</span>, <span class="math inline">\(y=29/19\)</span>;
+(ii) <span class="math inline">\(x=3\)</span>, <span class="math inline">\(y=-2\)</span>;
+(iii) <span class="math inline">\(x=230/31\)</span>, <span class="math inline">\(y=160/31\)</span>;
+<strong>2.</strong> <span class="math inline">\(x=-4\)</span>, <span class="math inline">\(y=-4\)</span>;
+<strong>3.</strong> <span class="math inline">\(I_1=24/23\)</span>, <span class="math inline">\(I_2=12/23\)</span>;
+<strong>4.</strong> <span class="math inline">\(x=0.27\)</span>, <span class="math inline">\(y=0.19\)</span>;
+<strong>5.</strong> <span class="math inline">\(s_1=230/31\)</span>, <span class="math inline">\(s_2=160/31\)</span>;
+<strong>6.</strong> <span class="math inline">\(a=0.6\)</span>, <span class="math inline">\(b=1.5\)</span></p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercises-3-factorising.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-4-quadratic-equations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="inverse-matrix-method-and-cramers-rule.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="circular-measure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
