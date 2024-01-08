@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 3 Exercises | GENG0002 Mathematics B lecture notes</title>
+  <title>1 Week 1 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 3 Exercises | GENG0002 Mathematics B lecture notes" />
+  <meta property="og:title" content="1 Week 1 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 3 Exercises | GENG0002 Mathematics B lecture notes" />
+  <meta name="twitter:title" content="1 Week 1 | GENG0002 Mathematics B lecture notes" />
   
   <meta name="twitter:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-three.html"/>
-<link rel="next" href="week-four.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="week-1-exercises.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -407,124 +407,350 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-3-exercises" class="section level1 unnumbered hasAnchor">
-<h1>Week 3 Exercises<a href="week-3-exercises.html#week-3-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sheet-8-successive-differentiation" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Sheet 8 Successive Differentiation<a href="week-3-exercises.html#sheet-8-successive-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercise-1-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 1<a href="week-3-exercises.html#exercise-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Determine the first four derivatives of the function
+<div id="week-one" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Week 1<a href="week-one.html#week-one" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>To start our exploration of the calculus, we start in lecture 1 with a look at the concept of limits of functions. We then consider the definition of the derivative of a function from first principles before looking at a few simple rules that enable us to evaluate some derivatives more easily than by first principles.
+</p>
+<div id="lecture-one" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Limits<a href="week-one.html#lecture-one" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In some cases, the value of a function is undefined or cannot be determined. For example
 <span class="math display">\[
-y=x^3-4x^{3/2}.
+f(x) = \frac{x^2-9}{x-3}\tag{1}
 \]</span>
+has the value <span class="math inline">\(\frac00\)</span> for <span class="math inline">\(f(3)\)</span>, which is undetermined. In such cases it is convenient to introduce the idea of a limit or a limiting value.</p>
+<p>Informally, a <a name='#limit'></a><span style="color: red;">limit</span> is a value which <span class="math inline">\(f(x)\)</span> gets closer and closer to, but may never actually reach.</p>
+For example, the function <span class="math inline">\(f(x) = e^{-x}\)</span> as it approaches the <span class="math inline">\(x-\)</span>axis.
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="tikztopng-figure0.png" alt="$e^{-x}$" width="40%" />
+<p class="caption">
+Figure 1.1: <span class="math inline">\(e^{-x}\)</span>
 </p>
 </div>
-<div id="exercise-2-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 2<a href="week-3-exercises.html#exercise-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Show that <span class="math inline">\(y=4x\)</span> is a solution to the differential equation
+<!--
+<div class="figure" style="text-align: center">
+<img src="fy-B-lectnotes_files/figure-html/01-exp-graph-1.svg" alt="$e^{-x}$" width="384" />
+<p class="caption">(\#fig:01-exp-graph)$e^{-x}$</p>
+</div>
+-->
+<p>In function (1) above, we can try to determine the limit <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>.
 <span class="math display">\[
-2x^2\frac{d^2y}{dx^2}-x\frac{dy}{dx}+y=0.
+f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.
+\]</span>
+Now if <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>, then <span class="math inline">\(x+3\)</span> gets closer to <span class="math inline">\(6\)</span>. Formally we write
+<span class="math display">\[
+\lim\limits_{x\to3} f(x) = 6
+\]</span>
+and we say “in the limit, as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(3\)</span> then <span class="math inline">\(f(x)\)</span> tends to 6”.</p>
+<p>We can approach this in a slightly different way, by first letting <span class="math inline">\(x = a+3\)</span> so that
+<span class="math display">\[
+f(x) = f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} = \frac{a^2+6a}{a} = a+6.
+\]</span>
+Now we can observe, that <span class="math inline">\(a\)</span> gets closer to <span class="math inline">\(0\)</span> if and only if <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>. As <span class="math inline">\(a\)</span> approaches <span class="math inline">\(0\)</span> then <span class="math inline">\(f(a+3)\)</span> approaches <span class="math inline">\(6\)</span>. So
+<span class="math display">\[
+\lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = 6.
+\]</span></p>
+<p>Note that the limit is not the same thing as substituting the value of <span class="math inline">\(x=3\)</span> into the function <span class="math inline">\(f(x)\)</span>, as <span class="math inline">\(f(x)\)</span> is not defined at the value <span class="math inline">\(x=3\)</span>. We say that <span class="math inline">\(f\)</span> is <a name='#discontinuous'></a><span style="color: red;">discontinuous</span> at <span class="math inline">\(x=3\)</span>.</p>
+<p>A function <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> is said to be <a name='#continuous'></a><span style="color: red;">continuous</span> at the value <span class="math inline">\(x=a\)</span> if the value of the limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(a\)</span> is equal to <span class="math inline">\(f(a)\)</span>. In other words
+<span class="math display">\[
+\lim\limits_{x\to a}f(x) = f(a).
+\]</span>
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 1.1  </strong></span>Determine the limit of
+<span class="math display">\[
+\frac{2x^2-5x-3}{x-3}
+\]</span>
+as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(3\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-2" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a+3\)</span> so that as <span class="math inline">\(a\)</span> tends to <span class="math inline">\(0\)</span> then <span class="math inline">\(x\)</span> tends to <span class="math inline">\(3\)</span>. Then
+<span class="math display">\[
+f(a+3) = \frac{2(a+3)^2-5(a+3)-3}{(a+3)-3}=\frac{2a^2+12a+18-5a-15-3}{a}=\frac{2a^2+7a}{a} = a+7.
+\]</span>
+So
+<span class="math display">\[
+\lim\limits_{x\to3}\frac{2x^2-5x-3}{x-3} = \lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = \lim\limits_{a\to0}2a+7 = 7.
+\]</span>
+Alternatively, you may spot that <span class="math inline">\(2x^2-5x-3 = (x-3)(2x+1)\)</span> so that
+<span class="math display">\[
+\lim\limits_{x\to 3}f(x) = \lim\limits_{x\to3}\frac{(x-3)(2x+1)}{x-3} = \lim\limits_{x\to3}2x+1 = 7.
 \]</span></p>
 </div>
-<div id="exercise-3-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 3<a href="week-3-exercises.html#exercise-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The displacement in metres for a particle moving along a line at time <span class="math inline">\(t\)</span> seconds is given by the equation
-<span class="math display">\[
-s=2t^2-10t+4.
-\]</span>
-Determine the velocity at times of <span class="math inline">\(1.5\)</span> and <span class="math inline">\(10\)</span> seconds.</p>
 </div>
-<div id="exercise-4-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 4<a href="week-3-exercises.html#exercise-4-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The velocity <span class="math inline">\(v\)</span> of a particle moving along a line is given by
-<span class="math display">\[
-v-33t^2+18t+3
-\]</span>
-where <span class="math inline">\(t\)</span> is measured in seconds and <span class="math inline">\(v\)</span> in metres per second. Determine the accellation after <span class="math inline">\(2s\)</span> and <span class="math inline">\(4s\)</span>.
+<div id="lecture-two" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Differentiation from 1st Principles<a href="week-one.html#lecture-two" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a straight line we can consider the slope or <a name='#gradient'></a><span style="color: red;">gradient</span>. This is a measure of how steep the line is</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="tikztopng-figure1.png" alt="gradient of a line" width="20%" />
+<p class="caption">
+Figure 1.2: gradient of a line
 </p>
 </div>
-<div id="exercise-5" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 5<a href="week-3-exercises.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The displacement of a body, measured in meters, from a reference point after time <span class="math inline">\(t\)</span> seconds is given by
+<p>The <a name='#gradient'></a><span style="color: red;">gradient</span> is defined to be the number
 <span class="math display">\[
-s=4t^2-3t+2.
+\frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.
 \]</span>
-Show that the acceleration of the body is constant at <span class="math inline">\(8ms^{-2}\)</span> and that the velocity is zero after <span class="math inline">\(375m\)</span>.
+For the line above, which has equation <span class="math inline">\(y = 2x-1\)</span> then
+<span class="math display">\[
+\frac{\Delta y}{\Delta x} = \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1} = \frac{2(x_2-x_1)}{x_2-x_1} = 2.
+\]</span></p>
+Suppose now we are given a curve with equation <span class="math inline">\(y=f(x)\)</span> and want to find the gradient of a line segment joining two points on the curve.
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="tikztopng-figure2.png" alt="line segment on a curve" width="40%" />
+<p class="caption">
+Figure 1.3: line segment on a curve
 </p>
 </div>
-<div id="exercise-6" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 6<a href="week-3-exercises.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The equation of motion of a particle is given by
+<p>The gradient of this line segment is given by
 <span class="math display">\[
-s=3+5t-6t^2
+\frac{\Delta y}{\Delta x} = \frac{f(x+h)-f(x)}{h}.
 \]</span>
-where <span class="math inline">\(s\)</span> is the displacement in metres and <span class="math inline">\(t\)</span> is the time in seconds.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Determine its position, velocity and acceleration after a time of <span class="math inline">\(4s\)</span>.</li>
-<li>Show that after <span class="math inline">\(415.66m\)</span> the body is momentarily at rest.</li>
-</ol>
-<p>[Solutions: 1. <span class="math inline">\(dy/dx=3x^2-6x^{1/2}, d^2y/dx^2=6x-3x^{-1/2}, d^3y/dx^3=6+3x^{-3/2}/2, d^4y/dx^4=-9x^{-5/2}/4\)</span>; 2. <span class="math inline">\(dy/dx=4, d^2y/dx^2=0\)</span>; 3. <span class="math inline">\(v(1.5) = -4\ m/s, v(10) = 30\ m/s\)</span>; 4. <span class="math inline">\(a(2) = 6\ m/s^2, a(4) = -6\ m/s^2\)</span>; 5. <span class="math inline">\(v=8t-3, a=8. v(0.375)=0\ m/s\)</span>; 6. <span class="math inline">\(v = -12t+5, a=-12, s(4) = -73\ m, v(4)=-43\ m/s, a(4)=-12\ m/s^2\)</span>. <span class="math inline">\(v(0.41666)=0\ m/s\)</span>.]
+</p>
+<p>Notice that when <span class="math inline">\(h=0\)</span> then this would have the indeterminate value of <span class="math inline">\(0/0\)</span>, and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as <span class="math inline">\(h\to0\)</span>, may exist and it is instructive to imagine what the limit would represent geometrically.</p>
+<style type="text/css">
+#div_head {
+    position:relative;
+    top:0px;
+    left:0px;
+    opacity:1;
+}
+#div_body {
+    position:relative;
+    top:100px;
+    left:0px;
+    opacity:1;
+    font-size:100%;
+}
+#div_body table td {
+    padding-left:1px;
+    padding-right:1px;
+}
+
+input#a {background-color:#cccccc}
+input#b {background-color:#cccccc}
+
+.etable {}
+.erow {}
+.ea {text-align:left;}
+.ee {color:red;}
+.eq {text-align:left;}
+.em {color:red;}
+.eb {text-align:left;}
+.ep {color:red;}
+.er {text-align:left;}
+.ec {text-align:left;}
+.ed {text-align:left;}
+td#spacer {
+    width:20px;
+}
+canvas {
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+}
+
+</style>
+<div id="div_head">
+<canvas id="myCanvas" width="1000px" height="600px">
+</canvas>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script language="javascript" src="01-tangents.js"></script>
+<button id="submit" onclick="doplot()">
+Let <span class="math inline">\(h\to 0\)</span>
+</button>
+</div>
+<div id="div_body">
+
+</div>
+<script language="javascript">init()</script>
+<p>Press the button and see what happens to the line segment as <span class="math inline">\(h\to0\)</span>.</p>
+<p>With some thought, it should be clear that the line segment tends to a line that just meets the curve at the point <span class="math inline">\((x,f(x))\)</span>, and we call this line the <a name='#tangent'></a><span style="color: red;">tangent</span> to the curve at the point <span class="math inline">\((x,f(x))\)</span>.</p>
+<div style="display:none">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="tikztopng-figure12.png" alt="line segment on a curve" width="30%" />
+<p class="caption">
+Figure 1.4: line segment on a curve
 </p>
 </div>
 </div>
-<div id="sheet-8b-more-examples-of-successive-differentiation" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Sheet 8B More Examples of Successive Differentiation<a href="week-3-exercises.html#sheet-8b-more-examples-of-successive-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercise-1-3" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 1<a href="week-3-exercises.html#exercise-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If <span class="math inline">\(y(t) = a + bt^2 + ct^4\)</span>; where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants, find <span class="math inline">\(dy/dt\)</span> and <span class="math inline">\(d^2y/dt^2\)</span>.</p>
-</div>
-<div id="exercise-2-3" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 2<a href="week-3-exercises.html#exercise-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If <span class="math inline">\(y(t) = at -\frac 12gt^2\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(g\)</span> are constants find <span class="math inline">\(dy/dt\)</span> and <span class="math inline">\(d^2y/dt^2\)</span>.</p>
-</div>
-<div id="exercise-3-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 3<a href="week-3-exercises.html#exercise-3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If a body moves according to the law <span class="math inline">\(s = 12 - 4.5t + 6.2t^22\)</span> find its velocity in metres when <span class="math inline">\(t = 4\)</span> seconds. What can you say about the variation of the acceleration with time?</p>
-</div>
-<div id="exercise-4-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 4<a href="week-3-exercises.html#exercise-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The angle <span class="math inline">\(\theta\)</span> in radians turned through by a revolving wheel is connected by the time <span class="math inline">\(t\)</span> (in seconds) that has elapsed since starting by the law
+<p>We call this value the <a name='#derivative'></a><span style="color: red;">derivative</span> of the function <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span> and write
 <span class="math display">\[
-\theta = 2.1 - 3.2t + 4.8t^2.
+\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]</span>
-Find the angular velocity (in radians per second) of that wheel when <span class="math inline">\(1.5\)</span> seconds have elapsed. Find also its angular acceleration.</p>
+and we refer to the process of calculating this limit as <a name='#differentiation-by-1st-principles'></a><span style="color: red;">differentiation by 1st principles</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 1.2  </strong></span>Find the derivative by 1st principles for the function <span class="math inline">\(f(x) = x^2\)</span> at the point <span class="math inline">\(x\)</span>.</p>
 </div>
-<div id="exercise-5-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 5<a href="week-3-exercises.html#exercise-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A slider moves so that, during the first part of its motion, its distance <span class="math inline">\(s\)</span> (in metres) from its starting point is given by the expression
+<div class="solution">
+<p><span id="unlabeled-div-4" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
+\end{gather*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 1.3  </strong></span>Find the derivative by 1st principles for the function <span class="math inline">\(f(x) = x^3\)</span> at the point <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-6" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
+\end{gather*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 1.4  </strong></span>Find the derivative by 1st principles for the function <span class="math inline">\(f(x) = 1/(2x-1)\)</span> at the point <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-8" class="solution"><em>Solution</em>. </span>Notice that
+<span class="math display">\[\begin{gather*}
+f(x+h)-f(x) = \frac{1}{2(x+h)-1} - \frac{1}{2x-1} =\\ \frac{2x+1-\left(2(x+h)-1\right)}{\left(2(x+h)-1\right)\left(2x-1)\right)} = \frac{-2h}{(2x+2h-1)(2x-1)},
+\end{gather*}\]</span>
+and so
+<span class="math display">\[\begin{gather*}
+\frac{f(x+h)-f(x)}{h} = \frac{-2h}{h(2x+2h-1)(2x-1)} = \frac{-2}{(2x+2h-1)(2x-1)}.
+\end{gather*}\]</span>
+Hence
+<span class="math display">\[\begin{gather*}
+\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
+\end{gather*}\]</span></p>
+</div>
+</div>
+<div id="lecture-three" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Differentiation by Rule<a href="week-one.html#lecture-three" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have discovered that functions may be differentiated from first principles by considering small changes in <span class="math inline">\(x\)</span>, which lead to small changes in <span class="math inline">\(y\)</span>. Now we would like to know if there is a rule so that we can differentiate a function without going through the process of finding a limit every time.</p>
+<p>If the notation of functions is used so that <span class="math inline">\(y = f(x)\)</span> then <span class="math inline">\(dy/ dx\)</span> is defined as
 <span class="math display">\[
-s = 6.8t^3 - 10.8t
+\frac{dy}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]</span>
-<span class="math inline">\(t\)</span> being in seconds. Find the expression for the velocity and acceleration at any time; and hence find the velocity and acceleration after <span class="math inline">\(3\)</span> seconds.</p>
-</div>
-<div id="exercise-6-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 6<a href="week-3-exercises.html#exercise-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The motion of a rising balloon is such that its height <span class="math inline">\(h\)</span> in miles is given at any instant by the expression
+and <span class="math inline">\(dy/ dx\)</span> may also be written as <span class="math inline">\(f’(x)\)</span>, where the apostrophe indicates that <span class="math inline">\(f(x)\)</span> has been differentiated once. So <span class="math inline">\(dy/ dx\)</span> and <span class="math inline">\(f’(x)\)</span> have the same meaning.
+</p>
+<div id="rule-for-differentiation" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Rule for differentiation<a href="week-one.html#rule-for-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider the differentiation of <span class="math inline">\(y = x^n\)</span> from first principles. We have <span class="math inline">\(f(x+h) = (x + h)^n\)</span>.</p>
+<p>Expanding the right-hand side using the binomial theorem gives
 <span class="math display">\[
-h = 05+ \frac1{10}\sqrt[3]{t-125}
+f(x+h) = x^n + nx^{(n-1)}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots+h^n
 \]</span>
-<span class="math inline">\(t\)</span> being in seconds. Find an expression for the velocity and acceleration at any time. Draw curves to show the variation of height, velocity and acceleration during the first ten minutes of the ascent.</p>
+So that
+<span class="math display">\[
+f(x+h)-f(x) = xn^{n-1}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots + h^n,
+\]</span>
+and thus
+<span class="math display">\[
+\frac{f(x+h)-f(x)}{h} = xn^{n-1}+\frac{n(n-1)}{2!}x^{n-2}h+\ldots + h^{n-1},
+\]</span>
+Now, taking limit we have
+<span class="math display">\[
+\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \frac{dy}{dx} = nx^{n-1}.
+\]</span>
+Therefore in general, we differentiate <span class="math inline">\(x^n\)</span> for all values of <span class="math inline">\(n\)</span> using the rule
+<span class="math display">\[
+\frac{dy}{dx} = \frac{d(x^n)}{dx} = nx^{n-1}.
+\]</span>
+This is known as the rule for differentiation.
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 1.5  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = x^4\)</span> at the point <span class="math inline">\(x\)</span>.</p>
 </div>
-<div id="exercise-7" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 7<a href="week-3-exercises.html#exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A body moves in such a way that the space described in the time <span class="math inline">\(t\)</span> from starting is given by <span class="math inline">\(s = t^n\)</span>, where <span class="math inline">\(n\)</span> is a constant. Find the value of <span class="math inline">\(n\)</span> when the velocity is doubled from the 5th to the 10th second; find it also when the velocity is numerically equal to the acceleration at the end of the 10th second.</p>
-<p>[Solutions: 1. <span class="math inline">\(dy/dt=2bt+4ct^3, d^2y/dt^2=2b+12ct^2\)</span>; 2. <span class="math inline">\(dy/dt=a-gt, d^2y/dt^2=-g\)</span>; 3. <span class="math inline">\(v=12.4t-4.5, v(4)=45.1\ m/s, a=12.4\)</span>; 4. <span class="math inline">\(d\theta/dt(1.5)=11.2\ rad/s, s^2\theta/dt = 9.6\)</span>; 5. <span class="math inline">\(v=20.4t^2-10.8, a=40.8t, v(3)=172.8\ m/s, a(3)=122.4\ m/s^2\)</span>; 6. <span class="math inline">\(v=(t-125)^{-2/3}/30, a=-(t-125)^{-5/3}/45\)</span>; 7. <span class="math inline">\(n=2, n=11\)</span>]</p>
+<div class="solution">
+<p><span id="unlabeled-div-10" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+\frac{dy}{dx} = 4x^3.
+\end{gather*}\]</span></p>
+</div>
+<p>In words, the operation is multiply the function by the index and then reduce the value of the index by one.</p>
+<p>In fact this rule is also true for any real value of <span class="math inline">\(n\)</span> not just when <span class="math inline">\(n\)</span> is a positive integer.</p>
+</div>
+<div id="differentiation-of-axn." class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Differentiation of <span class="math inline">\(ax^n\)</span>.<a href="week-one.html#differentiation-of-axn." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Where a power of <span class="math inline">\(x\)</span> is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
+<span class="math display">\[
+y = ax^n \Rightarrow \frac{dy}{dx} = nax^{n-1}.
+\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Example 1.6  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = 3x^4\)</span> at the point <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-12" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+\frac{dy}{dx} = 3\times4x^3 = 12 x^3.
+\end{gather*}\]</span></p>
+</div>
+<p>Note that the differential of <span class="math inline">\(ax\)</span> and of <span class="math inline">\(a\)</span> also follow the rule. For <span class="math inline">\(ax\)</span> we may write <span class="math inline">\(ax = ax^1\)</span>. So differentiating by rule
+<span class="math display">\[
+\frac{dy}{dx} = a\times1x^0 = a.
+\]</span>
+For <span class="math inline">\(a\)</span> we may write <span class="math inline">\(a = ax^0\)</span> and hence differentiating by rule we have
+<span class="math display">\[
+\frac{dy}{dx} = a\times0x^{-1} = 0.
+\]</span>
+That is to say, the differential of a constant value is always zero.</p>
+<p>The above rule works in a more general situation. If <span class="math inline">\(f(x) = ag(x)\)</span> where <span class="math inline">\(a\)</span> is a constant and <span class="math inline">\(g(x)\)</span> is function then
+<span class="math display">\[
+\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} = a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{dg}{dx}
+\]</span>
+</p>
+</div>
+<div id="differentiation-of-a-sum-of-terms" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Differentiation of a sum of terms<a href="week-one.html#differentiation-of-a-sum-of-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we have to differentiate more terms added together, then we differentiate each term separately and add them together. This is illustrated with the following example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-13" class="example"><strong>Example 1.7  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = 4x^5+3x^2-6x\)</span> at the point <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-14" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+\frac{dy}{dx} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
+\end{gather*}\]</span></p>
+</div>
+<p>So to summarise we have the following rules for differentiation:</p>
+<p><span class="math display">\[\begin{gather}
+\frac{d(x^n)}{dx} = nx^{n-1}\text{ for }n\in{\mathbb R}\\
+\frac{d(ag(x))}{dx} = a\frac{dg}{dx}\\
+\frac{d(f(x)+g(x))}{dx} = \frac{df}{dx}+\frac{dg}{dx}.
+\end{gather}\]</span>
+</p>
 </div>
 </div>
-<div id="sheet-9-maxima-minima-and-points-of-inflexion" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Sheet 9 Maxima, minima and points of inflexion<a href="week-3-exercises.html#sheet-9-maxima-minima-and-points-of-inflexion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For each of the functions given below determine the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates of any maxima, minima or points of inflexion. Find the coordinates of the points where the curves cross the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axes. Using all this information, sketch the graph of the function.</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(y=x^2-4x+4\)</span>,</li>
-<li><span class="math inline">\(y=-2x^2+4x-5\)</span>,</li>
-<li><span class="math inline">\(y=x^2-x-12\)</span>,</li>
-<li><span class="math inline">\(y=2x^3-9x^2+12x+4\)</span>,</li>
-<li><span class="math inline">\(y=x^3+2x^2-1\)</span>,</li>
-<li><span class="math inline">\(y=x^3+6x^2-15x+3\)</span>,</li>
-<li><span class="math inline">\(y=x^3-9x^2+24x-7\)</span>,</li>
-<li><span class="math inline">\(y=x^4-8x^2\)</span>.</li>
-</ol>
-<p>[Solutions: 1. minimum at <span class="math inline">\((2,0)\)</span>; 2. maximum at <span class="math inline">\((1,-3)\)</span>, passes through <span class="math inline">\((0,-5)\)</span>; 3. minimum at <span class="math inline">\((0.5,-12.25)\)</span>, passes through <span class="math inline">\((0,-12), (-3,0), (4,0)\)</span>; 4. maximum at <span class="math inline">\((1,9)\)</span>, minimum at <span class="math inline">\((2,8)\)</span>, point of inflection at <span class="math inline">\((1.5,8.5)\)</span>, passes through <span class="math inline">\((0,4), (-0.274,0)\)</span>; 5. minimum at <span class="math inline">\((0,-1)\)</span>, maximum at <span class="math inline">\((-4/3,5/27)\)</span>, point of inflection at <span class="math inline">\((-2/3,-11/27)\)</span>, passes through <span class="math inline">\((0,-1), (-1.618,0), (-1,0), (0.618,0)\)</span>; 6. local maximum at <span class="math inline">\((-5,103)\)</span>, minimum at <span class="math inline">\((1,-5)\)</span>, point of inflection at <span class="math inline">\((-2,49)\)</span>, passes through <span class="math inline">\((0,3), -7.937,0), (0.22,0), (1.717,0)\)</span>; 7. maximum at <span class="math inline">\((2,13)\)</span>, minimum at <span class="math inline">\((4,9)\)</span>, point of inflection at <span class="math inline">\((3,11)\)</span>, passes through <span class="math inline">\((0,-7), (0.331,0)\)</span>; 8. maximum at <span class="math inline">\((0,0)\)</span>, minimum at <span class="math inline">\((-2,-16)\)</span>, minimum at <span class="math inline">\((2,-16)\)</span>, points of inflection at <span class="math inline">\((-\sqrt{4/3},-80/9)\)</span> and <span class="math inline">\((\sqrt{4/3},-80/9)\)</span>, passes through <span class="math inline">\((0,0), (-2\sqrt{2},0), (2\sqrt{2},0)\)</span>]</p>
+<div id="standard-derivatives" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Standard Derivatives<a href="week-one.html#standard-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The derivatives in the following table are well-known and may be quoted without having to explain where they come from.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">f</th>
+<th align="left">df</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(e^x\)</span></td>
+<td align="left"><span class="math inline">\(e^x\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\ln(x)\)</span></td>
+<td align="left"><span class="math inline">\(\frac{1}{x}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sin(x)\)</span></td>
+<td align="left"><span class="math inline">\(\cos(x)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\cos(x)\)</span></td>
+<td align="left"><span class="math inline">\(-\sin(x)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\tan(x)\)</span></td>
+<td align="left"><span class="math inline">\(\sec^2(x)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\text{cosec}(x)\)</span></td>
+<td align="left"><span class="math inline">\(-\text{cosec}(x)\cot(x)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sec(x)\)</span></td>
+<td align="left"><span class="math inline">\(\sec(x)\tan(x)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\cot(x)\)</span></td>
+<td align="left"><span class="math inline">\(-\text{cosec}^2(x)\)</span></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -533,8 +759,8 @@ h = 05+ \frac1{10}\sqrt[3]{t-125}
           </div>
         </div>
       </div>
-<a href="week-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-four.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-1-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

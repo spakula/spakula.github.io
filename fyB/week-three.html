@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 3 Exercises | GENG0002 Mathematics B lecture notes</title>
+  <title>3 Week 3 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 3 Exercises | GENG0002 Mathematics B lecture notes" />
+  <meta property="og:title" content="3 Week 3 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 3 Exercises | GENG0002 Mathematics B lecture notes" />
+  <meta name="twitter:title" content="3 Week 3 | GENG0002 Mathematics B lecture notes" />
   
   <meta name="twitter:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-three.html"/>
-<link rel="next" href="week-four.html"/>
+<link rel="prev" href="week-2-exercises.html"/>
+<link rel="next" href="week-3-exercises.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -407,125 +407,281 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-3-exercises" class="section level1 unnumbered hasAnchor">
-<h1>Week 3 Exercises<a href="week-3-exercises.html#week-3-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sheet-8-successive-differentiation" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Sheet 8 Successive Differentiation<a href="week-3-exercises.html#sheet-8-successive-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercise-1-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 1<a href="week-3-exercises.html#exercise-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Determine the first four derivatives of the function
-<span class="math display">\[
-y=x^3-4x^{3/2}.
-\]</span>
+<div id="week-three" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Week 3<a href="week-three.html#week-three" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We start this week by looking at derivatives of derivatives and then move on to look at derivatives from the point of view of rates of change of the function with respect to the variable. This leads us to look at velocity and accelleration.
 </p>
-</div>
-<div id="exercise-2-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 2<a href="week-3-exercises.html#exercise-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Show that <span class="math inline">\(y=4x\)</span> is a solution to the differential equation
+<div id="lecture-seven" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Successive Differentiation<a href="week-three.html#lecture-seven" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have only differentiated each function once, but there is no reason why a function may not be differentiated several times.
+Suppose <span class="math inline">\(y = x^3 + 2x^2\)</span> then
 <span class="math display">\[
-2x^2\frac{d^2y}{dx^2}-x\frac{dy}{dx}+y=0.
+\frac{dy}{dx} = 3x^2 + 4x.
+\]</span>
+We may then differentiate <span class="math inline">\(dy/dx\)</span> as well and this may be written
+<span class="math display">\[
+\frac{d}{dx}\frac{dy}{dx}\text{ or more usually }\frac{d^2y}{dx^2}.
+\]</span>
+So in this case <span class="math inline">\(d^2y/dx^2 = 6x+4\)</span>.</p>
+<p>This is called the <a name='#second-derivative-of-$y$'></a><span style="color: red;">second derivative of <span class="math inline">\(y\)</span></span>.
+</p>
+<p><span class="math inline">\(d^2y/dx^2\)</span> may also be differentiated with respect to <span class="math inline">\(x\)</span> to give
+<span class="math display">\[
+\frac{d^3y}{dx^3} = 6
+\]</span>
+and is called the <a name='#third-derivative-of-$y$'></a><span style="color: red;">third derivative of <span class="math inline">\(y\)</span></span>, and <span class="math inline">\(d^3y/dx^3\)</span> may be differentiated with respect to <span class="math inline">\(x\)</span> to give
+<span class="math display">\[
+\frac{d^4y}{dx^4} = 0,
+\]</span>
+the <a name='#fourth-derivative-of-$y$'></a><span style="color: red;">fourth derivative of <span class="math inline">\(y\)</span></span>. Once the result of the successive differentiation operations is zero, no further differential coefficients exist.
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 3.1  </strong></span>Find <span class="math inline">\(dy/dx, d^2y/dx^2, d^3y/dx^3\)</span> for <span class="math inline">\(y =e^x\sin(x)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-32" class="solution"><em>Solution</em>. </span>We use the product rule. If
+<span class="math display">\[
+y=e^x\sin(x)\text{ then }\frac{dy}{dx} = e^x\cos(x) + e^x\sin(x).
+\]</span>
+Now
+<span class="math display">\[
+\frac{d^2y}{dx^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),
+\]</span>
+and finally
+<span class="math display">\[
+\frac{d^3y}{dx^3} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).
 \]</span></p>
 </div>
-<div id="exercise-3-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 3<a href="week-3-exercises.html#exercise-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The displacement in metres for a particle moving along a line at time <span class="math inline">\(t\)</span> seconds is given by the equation
+<div id="rates-of-change" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Rates of Change<a href="week-three.html#rates-of-change" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The derivative <span class="math inline">\(dy/dx\)</span> may be considered as the rate at which <span class="math inline">\(y\)</span> changes as a result of a change in <span class="math inline">\(x\)</span>.</p>
+<p>This is easiest to understand if we consider the distance <span class="math inline">\(s\)</span> in metres, of a particle from an origin <span class="math inline">\(O\)</span> at a time, <span class="math inline">\(t\)</span> seconds.</p>
+<p>Let us assume that <span class="math inline">\(s(t) = 3t^3 + 2t\)</span>. This equation tells us that at time <span class="math inline">\(t = 0\)</span>, the particle is at <span class="math inline">\(O\)</span>, at time <span class="math inline">\(t = 1\)</span>, the particle is <span class="math inline">\(5\)</span> m away from <span class="math inline">\(O\)</span>, at time <span class="math inline">\(t = 2\)</span>, the particle is <span class="math inline">\(28\)</span> m away from <span class="math inline">\(O\)</span> etc.</p>
+<p>If we differentiate <span class="math inline">\(s\)</span>, we get
 <span class="math display">\[
-s=2t^2-10t+4.
+\frac{ds}{dt} = 9t^2 + 2.
 \]</span>
-Determine the velocity at times of <span class="math inline">\(1.5\)</span> and <span class="math inline">\(10\)</span> seconds.</p>
-</div>
-<div id="exercise-4-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 4<a href="week-3-exercises.html#exercise-4-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The velocity <span class="math inline">\(v\)</span> of a particle moving along a line is given by
-<span class="math display">\[
-v-33t^2+18t+3
-\]</span>
-where <span class="math inline">\(t\)</span> is measured in seconds and <span class="math inline">\(v\)</span> in metres per second. Determine the accellation after <span class="math inline">\(2s\)</span> and <span class="math inline">\(4s\)</span>.
+This tells us that the slope of the graph of <span class="math inline">\(s\)</span> against <span class="math inline">\(t\)</span> is not constant but varies depending on the value of <span class="math inline">\(t\)</span>. So when <span class="math inline">\(t = 0\)</span>, the slope is <span class="math inline">\(2\)</span>, when <span class="math inline">\(t = 1\)</span>, the slope is <span class="math inline">\(11\)</span>, etc.
 </p>
-</div>
-<div id="exercise-5" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 5<a href="week-3-exercises.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The displacement of a body, measured in meters, from a reference point after time <span class="math inline">\(t\)</span> seconds is given by
+<p><span class="math inline">\(ds/dt\)</span> is the rate at which <span class="math inline">\(s\)</span> changes for a change in <span class="math inline">\(t\)</span> or the rate at which distance changes with time, so <span class="math inline">\(ds/dt\)</span> is the <a name='#velocity'></a><span style="color: red;">velocity</span>, <span class="math inline">\(v\)</span>, of the particle in <span class="math inline">\(ms^{-1}\)</span>.</p>
+<p>If we differentiate the velocity <span class="math inline">\(v\)</span>, we get <span class="math inline">\(dv/dt = 18t\)</span>. Also, since the derivative of the velocity is the second derivative of the distance, we have
 <span class="math display">\[
-s=4t^2-3t+2.
+\frac{dv}{dt}= \frac{d^2s}{dt^2}.
 \]</span>
-Show that the acceleration of the body is constant at <span class="math inline">\(8ms^{-2}\)</span> and that the velocity is zero after <span class="math inline">\(375m\)</span>.
+<span class="math inline">\(dv/dt\)</span> is the rate of change of velocity with time or the <a name='#acceleration'></a><span style="color: red;">acceleration</span> of the particle.</p>
+<p>Note that <span class="math inline">\(d^3s/dt^3\)</span> is not zero for <span class="math inline">\(s = 3t^3 + 2t\)</span>, so we could find it. The rate of change of acceleration has no physical meaning and so it is not useful for describing the behaviour of the particle.
 </p>
-</div>
-<div id="exercise-6" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 6<a href="week-3-exercises.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The equation of motion of a particle is given by
+<div class="example">
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 3.2  </strong></span>A body moves such that its displacement <span class="math inline">\(s\)</span>, in metres, for any instant of time <span class="math inline">\(t\)</span> seconds is given by
 <span class="math display">\[
-s=3+5t-6t^2
-\]</span>
-where <span class="math inline">\(s\)</span> is the displacement in metres and <span class="math inline">\(t\)</span> is the time in seconds.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Determine its position, velocity and acceleration after a time of <span class="math inline">\(4s\)</span>.</li>
-<li>Show that after <span class="math inline">\(415.66m\)</span> the body is momentarily at rest.</li>
-</ol>
-<p>[Solutions: 1. <span class="math inline">\(dy/dx=3x^2-6x^{1/2}, d^2y/dx^2=6x-3x^{-1/2}, d^3y/dx^3=6+3x^{-3/2}/2, d^4y/dx^4=-9x^{-5/2}/4\)</span>; 2. <span class="math inline">\(dy/dx=4, d^2y/dx^2=0\)</span>; 3. <span class="math inline">\(v(1.5) = -4\ m/s, v(10) = 30\ m/s\)</span>; 4. <span class="math inline">\(a(2) = 6\ m/s^2, a(4) = -6\ m/s^2\)</span>; 5. <span class="math inline">\(v=8t-3, a=8. v(0.375)=0\ m/s\)</span>; 6. <span class="math inline">\(v = -12t+5, a=-12, s(4) = -73\ m, v(4)=-43\ m/s, a(4)=-12\ m/s^2\)</span>. <span class="math inline">\(v(0.41666)=0\ m/s\)</span>.]
-</p>
-</div>
-</div>
-<div id="sheet-8b-more-examples-of-successive-differentiation" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Sheet 8B More Examples of Successive Differentiation<a href="week-3-exercises.html#sheet-8b-more-examples-of-successive-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercise-1-3" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 1<a href="week-3-exercises.html#exercise-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If <span class="math inline">\(y(t) = a + bt^2 + ct^4\)</span>; where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants, find <span class="math inline">\(dy/dt\)</span> and <span class="math inline">\(d^2y/dt^2\)</span>.</p>
-</div>
-<div id="exercise-2-3" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 2<a href="week-3-exercises.html#exercise-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If <span class="math inline">\(y(t) = at -\frac 12gt^2\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(g\)</span> are constants find <span class="math inline">\(dy/dt\)</span> and <span class="math inline">\(d^2y/dt^2\)</span>.</p>
-</div>
-<div id="exercise-3-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 3<a href="week-3-exercises.html#exercise-3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If a body moves according to the law <span class="math inline">\(s = 12 - 4.5t + 6.2t^22\)</span> find its velocity in metres when <span class="math inline">\(t = 4\)</span> seconds. What can you say about the variation of the acceleration with time?</p>
-</div>
-<div id="exercise-4-2" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 4<a href="week-3-exercises.html#exercise-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The angle <span class="math inline">\(\theta\)</span> in radians turned through by a revolving wheel is connected by the time <span class="math inline">\(t\)</span> (in seconds) that has elapsed since starting by the law
-<span class="math display">\[
-\theta = 2.1 - 3.2t + 4.8t^2.
-\]</span>
-Find the angular velocity (in radians per second) of that wheel when <span class="math inline">\(1.5\)</span> seconds have elapsed. Find also its angular acceleration.</p>
-</div>
-<div id="exercise-5-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 5<a href="week-3-exercises.html#exercise-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A slider moves so that, during the first part of its motion, its distance <span class="math inline">\(s\)</span> (in metres) from its starting point is given by the expression
-<span class="math display">\[
-s = 6.8t^3 - 10.8t
-\]</span>
-<span class="math inline">\(t\)</span> being in seconds. Find the expression for the velocity and acceleration at any time; and hence find the velocity and acceleration after <span class="math inline">\(3\)</span> seconds.</p>
-</div>
-<div id="exercise-6-1" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 6<a href="week-3-exercises.html#exercise-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The motion of a rising balloon is such that its height <span class="math inline">\(h\)</span> in miles is given at any instant by the expression
-<span class="math display">\[
-h = 05+ \frac1{10}\sqrt[3]{t-125}
-\]</span>
-<span class="math inline">\(t\)</span> being in seconds. Find an expression for the velocity and acceleration at any time. Draw curves to show the variation of height, velocity and acceleration during the first ten minutes of the ascent.</p>
-</div>
-<div id="exercise-7" class="section level3 unnumbered hasAnchor">
-<h3>Exercise 7<a href="week-3-exercises.html#exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A body moves in such a way that the space described in the time <span class="math inline">\(t\)</span> from starting is given by <span class="math inline">\(s = t^n\)</span>, where <span class="math inline">\(n\)</span> is a constant. Find the value of <span class="math inline">\(n\)</span> when the velocity is doubled from the 5th to the 10th second; find it also when the velocity is numerically equal to the acceleration at the end of the 10th second.</p>
-<p>[Solutions: 1. <span class="math inline">\(dy/dt=2bt+4ct^3, d^2y/dt^2=2b+12ct^2\)</span>; 2. <span class="math inline">\(dy/dt=a-gt, d^2y/dt^2=-g\)</span>; 3. <span class="math inline">\(v=12.4t-4.5, v(4)=45.1\ m/s, a=12.4\)</span>; 4. <span class="math inline">\(d\theta/dt(1.5)=11.2\ rad/s, s^2\theta/dt = 9.6\)</span>; 5. <span class="math inline">\(v=20.4t^2-10.8, a=40.8t, v(3)=172.8\ m/s, a(3)=122.4\ m/s^2\)</span>; 6. <span class="math inline">\(v=(t-125)^{-2/3}/30, a=-(t-125)^{-5/3}/45\)</span>; 7. <span class="math inline">\(n=2, n=11\)</span>]</p>
-</div>
-</div>
-<div id="sheet-9-maxima-minima-and-points-of-inflexion" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Sheet 9 Maxima, minima and points of inflexion<a href="week-3-exercises.html#sheet-9-maxima-minima-and-points-of-inflexion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For each of the functions given below determine the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates of any maxima, minima or points of inflexion. Find the coordinates of the points where the curves cross the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axes. Using all this information, sketch the graph of the function.</p>
+s(t) = 0.4t-0.2t^2.
+\]</span></p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(y=x^2-4x+4\)</span>,</li>
-<li><span class="math inline">\(y=-2x^2+4x-5\)</span>,</li>
-<li><span class="math inline">\(y=x^2-x-12\)</span>,</li>
-<li><span class="math inline">\(y=2x^3-9x^2+12x+4\)</span>,</li>
-<li><span class="math inline">\(y=x^3+2x^2-1\)</span>,</li>
-<li><span class="math inline">\(y=x^3+6x^2-15x+3\)</span>,</li>
-<li><span class="math inline">\(y=x^3-9x^2+24x-7\)</span>,</li>
-<li><span class="math inline">\(y=x^4-8x^2\)</span>.</li>
+<li>Show that its acceleration is constant;</li>
+<li>determine its velocity after <span class="math inline">\(3\)</span> seconds and its position after <span class="math inline">\(2\)</span> seconds.</li>
 </ol>
-<p>[Solutions: 1. minimum at <span class="math inline">\((2,0)\)</span>; 2. maximum at <span class="math inline">\((1,-3)\)</span>, passes through <span class="math inline">\((0,-5)\)</span>; 3. minimum at <span class="math inline">\((0.5,-12.25)\)</span>, passes through <span class="math inline">\((0,-12), (-3,0), (4,0)\)</span>; 4. maximum at <span class="math inline">\((1,9)\)</span>, minimum at <span class="math inline">\((2,8)\)</span>, point of inflection at <span class="math inline">\((1.5,8.5)\)</span>, passes through <span class="math inline">\((0,4), (-0.274,0)\)</span>; 5. minimum at <span class="math inline">\((0,-1)\)</span>, maximum at <span class="math inline">\((-4/3,5/27)\)</span>, point of inflection at <span class="math inline">\((-2/3,-11/27)\)</span>, passes through <span class="math inline">\((0,-1), (-1.618,0), (-1,0), (0.618,0)\)</span>; 6. local maximum at <span class="math inline">\((-5,103)\)</span>, minimum at <span class="math inline">\((1,-5)\)</span>, point of inflection at <span class="math inline">\((-2,49)\)</span>, passes through <span class="math inline">\((0,3), -7.937,0), (0.22,0), (1.717,0)\)</span>; 7. maximum at <span class="math inline">\((2,13)\)</span>, minimum at <span class="math inline">\((4,9)\)</span>, point of inflection at <span class="math inline">\((3,11)\)</span>, passes through <span class="math inline">\((0,-7), (0.331,0)\)</span>; 8. maximum at <span class="math inline">\((0,0)\)</span>, minimum at <span class="math inline">\((-2,-16)\)</span>, minimum at <span class="math inline">\((2,-16)\)</span>, points of inflection at <span class="math inline">\((-\sqrt{4/3},-80/9)\)</span> and <span class="math inline">\((\sqrt{4/3},-80/9)\)</span>, passes through <span class="math inline">\((0,0), (-2\sqrt{2},0), (2\sqrt{2},0)\)</span>]</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-34" class="solution"><em>Solution</em>. </span></p>
+<ol style="list-style-type: decimal">
+<li><p>Since <span class="math inline">\(s(t) = 0.4t-0.2t^2\)</span> then velocity = <span class="math inline">\(ds/dt = 0.4-0.4t\)</span>; acceleration = <span class="math inline">\(d^2s/dt^2 = -0.4\)</span>.
+So the acceleration is always <span class="math inline">\(-0.4ms^{-2}\)</span> which is a constant value (so does not depend on the value of <span class="math inline">\(t\)</span>).</p></li>
+<li><p>At <span class="math inline">\(t=3, ds/dt = 0.4-(0.4\times 3) = -0.8\)</span>. At <span class="math inline">\(t=2, s = 0.4\times2-(0.2\times 2^2) = 0.8-0.8 = 0\)</span>. Therefore after <span class="math inline">\(3\)</span> seconds the velocity is <span class="math inline">\(-0.8ms^{-1}\)</span> and after 2 seconds the particle has a displacement (distance in metres from the origin <span class="math inline">\(O\)</span>) of <span class="math inline">\(0m\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="lecture-eight" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Maxima, Minima and points of inflection<a href="week-three.html#lecture-eight" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The derivative of a function at a point gives the gradient (the slope) of that curve at the point. The gradient may be positive, negative or zero.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="tikztopng-figure6.png" alt="turning points" width="30%" />
+<p class="caption">
+Figure 3.1: turning points
+</p>
+</div>
+<p>For the graph above:</p>
+<ul>
+<li>The slope from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> is positive.</li>
+<li>The slope at <span class="math inline">\(B\)</span> is zero.</li>
+<li>The slope from <span class="math inline">\(B\)</span> to <span class="math inline">\(C\)</span> is negative.</li>
+<li>The slope at <span class="math inline">\(C\)</span> is zero.</li>
+<li>The slope from <span class="math inline">\(C\)</span> to <span class="math inline">\(D\)</span> is positive.</li>
+</ul>
+<p>As <span class="math inline">\(x\)</span> increases from just before <span class="math inline">\(B\)</span> to just after, the slope of the graph changes from positive to negative. A point such as <span class="math inline">\(B\)</span> is known as a <a name='#maximum'></a><span style="color: red;">maximum</span> or <a name='#local-maximum'></a><span style="color: red;">local maximum</span>. The word local is used to indicate that this is not the maximum <span class="math inline">\(y\)</span> value that the curve can have, but is the maximum value in the region between <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span>.</p>
+<p>As <span class="math inline">\(x\)</span> increases from just before <span class="math inline">\(C\)</span> to just after, the slope of the graph changes from negative to positive. A point such as <span class="math inline">\(C\)</span> is known as a <a name='#minimum'></a><span style="color: red;">minimum</span> or <a name='#local-minimum'></a><span style="color: red;">local minimum</span>.</p>
+<p>Points such as <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are also sometimes called <a name='#critical-points'></a><span style="color: red;">critical points</span> or <a name='#stationary-points'></a><span style="color: red;">stationary points</span> or <a name='#turning-points'></a><span style="color: red;">turning points</span>. A function can have more than one maximum or minimum along its range of <span class="math inline">\(x\)</span> values.
+</p>
+<div id="points-of-inflection" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Points of inflection<a href="week-three.html#points-of-inflection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>At any point on a graph where a maximum or minimum occurs, the gradient or rate of change of the curve is zero i.e.
+<span class="math display">\[
+\frac{dy}{dx}=0.
+\]</span>
+However, there is a further situation where the gradient of the graph may be zero, but where the sign of the slope of the graph does not change. Such a point is called a <a name='#point-of-inflection'></a><span style="color: red;">point of inflection</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:inflection"></span>
+<img src="tikztopng-figure7.png" alt="points of inflection" width="50%" />
+<p class="caption">
+Figure 3.2: points of inflection
+</p>
+</div>
+<p>In the left hand graph above, the slope from <span class="math inline">\(A\)</span> to just before <span class="math inline">\(B\)</span> is positive, the slope at <span class="math inline">\(B\)</span> is zero and the slope from just after <span class="math inline">\(B\)</span> to <span class="math inline">\(C\)</span> is positive.</p>
+<p>In the right hand graph above, the slope from <span class="math inline">\(D\)</span> to just before <span class="math inline">\(E\)</span> is negative, the slope at <span class="math inline">\(E\)</span> is zero and the slope from just after <span class="math inline">\(E\)</span> to <span class="math inline">\(F\)</span> is negative.</p>
+<p>The points <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> are both points of inflection.
+</p>
+<p>We would like to be able to find out how many maxima, minima and points of inflection a curve has without having to plot the graph. We can do this by examining the derivatives of the function.</p>
+<p>Consider the curve of the function with the equation
+<span class="math display">\[
+y = x^3-\frac 32x^2-18x+10.
+\]</span>
+We know that at a stationary point, <span class="math inline">\(dy/dx=0\)</span>. So by finding <span class="math inline">\(dy/dx\)</span> and setting it equal to zero, we can determine the <span class="math inline">\(x\)</span> values of the stationary points as follows:
+<span class="math display">\[
+\frac{dy}{dx} = 3x^2-3x-18\tag{1}
+\]</span>
+When <span class="math inline">\(dy/dx = 0\)</span>, then
+<span class="math display">\[
+3x^2-3x-18=0\tag{2}
+\]</span>
+The values of <span class="math inline">\(x\)</span> where this equation is satisfied can be found by solving the quadratic equation (2) for <span class="math inline">\(x\)</span>.</p>
+<p>We find that the quadratic equation (2) has roots at <span class="math inline">\(x = 3\)</span> and <span class="math inline">\(x = -2\)</span>. So now we know that there are two turning points, one at <span class="math inline">\(x = 3\)</span> and one at <span class="math inline">\(x = -2\)</span>. We can find the <span class="math inline">\(y\)</span> co-ordinates of these points by substituting each <span class="math inline">\(x\)</span> value into equation (1). This gives <span class="math inline">\(y = -30.5\)</span> when <span class="math inline">\(x = 3\)</span> and <span class="math inline">\(y = 32\)</span> when <span class="math inline">\(x = -2\)</span>.</p>
+<p>We now know the co-ordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second differential <span class="math inline">\(d^2y/dx^2\)</span>.
+</p>
+<p>Consider first a maximum.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="tikztopng-figure8.png" alt="maximum turning point" width="60%" />
+<p class="caption">
+Figure 3.3: maximum turning point
+</p>
+</div>
+<p>In the left hand graph above, of the function <span class="math inline">\(y\)</span>, we have a local maximum. The gradient of the curve, <span class="math inline">\(dy/dx\)</span>, at point <span class="math inline">\(A\)</span> will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at <span class="math inline">\(A\)</span> on a graph (right hand graph above, of the function <span class="math inline">\(dy/dx\)</span>). At <span class="math inline">\(B\)</span> the slope of graph <span class="math inline">\(y\)</span> is still positive, but less steep, so the gradient at <span class="math inline">\(B\)</span>, shown on the graph of <span class="math inline">\(dy/dx\)</span> is still a positive value, but is smaller than at <span class="math inline">\(A\)</span>.</p>
+<p>At <span class="math inline">\(C\)</span> the gradient of graph <span class="math inline">\(y\)</span> is zero. This is the point where the curve in graph of <span class="math inline">\(dy/dx\)</span> crosses the <span class="math inline">\(x\)</span> axis. At <span class="math inline">\(D\)</span> the gradient of graph <span class="math inline">\(y\)</span> is now negative, but not very steep, so on graph <span class="math inline">\(dy/dx\)</span> the gradient at <span class="math inline">\(D\)</span> is a small negative value. At <span class="math inline">\(E\)</span> the gradient of graph <span class="math inline">\(y\)</span> is steep and negative, so on graph <span class="math inline">\(dy/dx\)</span> the point is marked as a large negative value.</p>
+<p>Now consider the gradient of graph <span class="math inline">\(dy/dx\)</span>. Graph <span class="math inline">\(dy/dx\)</span> is a plot of <span class="math inline">\(dy/dx\)</span> against <span class="math inline">\(x\)</span>. The gradient of this graph is given by <span class="math inline">\(d^2y/dx^2\)</span>. We can see from the curve in that graph that the gradient of the curve is negative at all points. That is <span class="math inline">\(d^2y/dx^2&lt;0\)</span> for all <span class="math inline">\(x\)</span> values close to the local maximum. Therefore if <span class="math inline">\(d^2y/dx^2\)</span> is a negative number for the <span class="math inline">\(x\)</span> value of the turning point, we can be sure the turning point is a maximum.
+</p>
+<p>By a similar argument and considering the graphs below, we can show that for any turning point where, <span class="math inline">\(d^2y/dx^2&gt;0\)</span> we have a local minimum.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="tikztopng-figure9.png" alt="minimum turning point" width="60%" />
+<p class="caption">
+Figure 3.4: minimum turning point
+</p>
+</div>
+<p>Previously, we established that the curve <span class="math inline">\(y = x^3-\frac32 x^2-18x+10\)</span> had turning points at <span class="math inline">\(x=3\)</span> and <span class="math inline">\(x=-2\)</span>. We are now in a position to find out what kind of turning points each of these is.
+<span class="math display">\[
+\frac{dy}{dx} = 3x^2-3x-18\text{ therefore } \frac{d^2y}{dx^2} = 6x-3.
+\]</span>
+When <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(d^2y/dx^2=15 &gt; 0\)</span>. So we deduce that the turning point at <span class="math inline">\(x=3\)</span> is therefore a local minimum.</p>
+<p>When <span class="math inline">\(x = -2\)</span>, <span class="math inline">\(d^2y/dx^2 = -15 &lt; 0\)</span> and so we deuce that the turning point at <span class="math inline">\(x = -2\)</span> is therefore a local maximum.</p>
+<p>Note that the statement
+<span class="math display">\[
+\text{When }x = 3, \frac{d^2y}{dx^2} = 15
+\]</span>
+is often written as
+<span class="math display">\[
+\left.\frac{d^2y}{dx^2}\right\vert_{x=3} = 15
+\]</span>
+and similarly we can write for the other statement,
+<span class="math display">\[
+\left.\frac{d^2y}{dx^2}\right\vert_{x=-2} = -15.
+\]</span>
+</p>
+<p>There is a third possibility for the value of <span class="math inline">\(d^2y/dx^2\)</span>. It may be zero.</p>
+<p>When <span class="math inline">\(d^2y/dx^2=0\)</span>, we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure <a href="week-three.html#fig:inflection">3.2</a>, we can see that for the left-hand graph, the slope, <span class="math inline">\(dy/dx\)</span> , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as <span class="math inline">\(x\)</span> increases. This suggests a way of finding out what kind of turning point we have when <span class="math inline">\(d^2y/dx^2\)</span> turns out to be zero.</p>
+<p>We can substitute an <span class="math inline">\(x\)</span> value just smaller than the value at the turning point into our equation for <span class="math inline">\(dy/dx\)</span> and find if <span class="math inline">\(dy/dx\)</span> is positive or negative at this <span class="math inline">\(x\)</span> value, then we can do the same for an <span class="math inline">\(x\)</span> value just larger than the <span class="math inline">\(x\)</span> value of the turning point and again determine the sign of the outcome.
+</p>
+<p>Then the type of turning point can be established according to the following table:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="25%" />
+<col width="28%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">slope before turning point</th>
+<th align="left">slope at turning point</th>
+<th align="left">slope after turning point</th>
+<th align="left">type of point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">positive</td>
+<td align="left">zero</td>
+<td align="left">negative</td>
+<td align="left">maximum</td>
+</tr>
+<tr class="even">
+<td align="left">negative</td>
+<td align="left">zero</td>
+<td align="left">positive</td>
+<td align="left">minimum</td>
+</tr>
+<tr class="odd">
+<td align="left">positive</td>
+<td align="left">zero</td>
+<td align="left">positive</td>
+<td align="left">inflection</td>
+</tr>
+<tr class="even">
+<td align="left">negative</td>
+<td align="left">zero</td>
+<td align="left">negative</td>
+<td align="left">inflection</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 3.3  </strong></span>Find and identify the critical or turning points of the function <span class="math inline">\(y=x^3\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-36" class="solution"><em>Solution</em>. </span>For <span class="math inline">\(y=x^3, dy/dx = 3x^2\)</span>. At a turning point <span class="math inline">\(dy/dx=0\)</span> and so <span class="math inline">\(3x^2=0\)</span> and so there is a turning point of some kind at <span class="math inline">\(x=0\)</span>.</p>
+<p><span class="math inline">\(d^2y/dx^2=6x\)</span> and so
+<span class="math display">\[
+\left.\frac{d^2y}{dx^2}\right\vert_{x=0} = 0.
+\]</span>
+Thus we cannot identify the type of turning point from the second derivative.
+However, we can consider the first derivative.</p>
+<p>For <span class="math inline">\(x=-0.1\)</span> (just less than <span class="math inline">\(0\)</span>) <span class="math inline">\(dy/dx = 3(-0.1)^2 = 0.03&gt;0\)</span>.</p>
+<p>For <span class="math inline">\(x = 0.1\)</span> (just greater than <span class="math inline">\(0\)</span>) <span class="math inline">\(dy/dx=3(0.1)^2 = 0.03&gt;0\)</span>.</p>
+<p>So from examining the table above we see that the critical point at <span class="math inline">\(x=0\)</span> must be a point of inflection.</p>
+</div>
+</div>
+<div id="points-of-inflection-1" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Points of inflection<a href="week-three.html#points-of-inflection-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The points of inflection we have considered so far are a special case where the gradient is zero at
+some value of x. In fact any point where the curve changes from concave to convex is called a
+point of inflection regardless of whether the gradient becomes zero or not. Two points of this type
+are shown in the graphs below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="tikztopng-figure10.png" alt="points of inflection" width="60%" />
+<p class="caption">
+Figure 3.5: points of inflection
+</p>
+</div>
+<p>Here the graph changes from concave downwards to concave upwards as <span class="math inline">\(x\)</span> increases in the first case and from concave upwards to concave downwards in the second case. In each case the marked point is a point of inflection. But the gradient is clearly never zero!</p>
+<p>For points such as these <span class="math inline">\(dy/dx\)</span> is not zero, but <span class="math inline">\(d^2y/dx^2\)</span> always is. We can find the position of such points by finding where <span class="math inline">\(d^2y/dx^2\)</span> is zero. We can decide which way they bend by considering <span class="math inline">\(dy/dx\)</span> as for the previous point of inflection example.
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 3.4  </strong></span>Find the <span class="math inline">\(x\)</span> coordinates of all the maxima, minima and points of inflection for the curve
+<span class="math display">\[
+y = 2x^3-9x^2+12x.
+\]</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-38" class="solution"><em>Solution</em>. </span>For <span class="math inline">\(y = 2x^3-9x^2+12x\)</span>, <span class="math inline">\(dy/dx = 6x^2-18x+12\)</span>. When <span class="math inline">\(dy/dx=0\)</span> then <span class="math inline">\(6x^2-18x+12=0\)</span> and so <span class="math inline">\(x=2\)</span> or <span class="math inline">\(x=1\)</span>.</p>
+<p>Now <span class="math inline">\(d^2y/dx^2 = 12x-18\)</span>, so when <span class="math inline">\(x=2\)</span>, <span class="math inline">\(d^2y/dx^2&gt;0\)</span> and the point is a minimum.</p>
+<p>When <span class="math inline">\(x=1\)</span>, <span class="math inline">\(d^2y/dx^2&lt;0\)</span> and the point is a maximum.</p>
+<p>Also, <span class="math inline">\(d^2y/dx^2=0\)</span> when <span class="math inline">\(x=1.5\)</span> and so at <span class="math inline">\(x=1.5\)</span> here is a point of inflection (but not of zero gradient).</p>
+<p>From examining the value of <span class="math inline">\(dy/dx\)</span> just before and just after <span class="math inline">\(x=1.5\)</span> we find that the gradient is negative on both sides of the point of inflection and thus the curves slopes down from left to right.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<img src="tikztopng-figure11.png" alt="$y = 2x^3-9x^2+12x$" width="30%" />
+<p class="caption">
+Figure 3.6: <span class="math inline">\(y = 2x^3-9x^2+12x\)</span>
+</p>
+</div>
+</div>
 
+</div>
 </div>
 </div>
             </section>
@@ -533,8 +689,8 @@ h = 05+ \frac1{10}\sqrt[3]{t-125}
           </div>
         </div>
       </div>
-<a href="week-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-four.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-2-exercises.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-3-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
