@@ -1,0 +1,56 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+div.theorem, div.lemma, div.corollary, div.proposition {
+    padding:0.625em 0.625em 0.3125em 0.625em;
+    margin-bottom: 1.25em;
+    margin-top: 1.875em;
+}
+div.example, div.exercise {
+    padding:0.625em 0.625em 0.3125em 0;
+    margin-bottom: 1.25em;
+    margin-top: 1.875em;
+}
+div.theorem, div.lemma, div.corollary, div.proposition {
+    border: 2px #CCCCFF solid;
+}
+span.theorem,span.lemma,span.corollary,span.proposition,
+div.theorem p, div.lemma p, div.corollary p, div.proposition p,
+div.theorem ol, div.lemma ol, div.corollary ol, div.proposition ol,
+div.theorem ul, div.lemma ul, div.corollary ul, div.proposition ul {
+  position:relative;
+  top: -3em;
+}
+div.theorem div, div.lemma div, div.corollary div, div.proposition div {
+  margin-bottom: -2.5em!important;
+}
+span.theorem,span.lemma,span.corollary, span.proposition {
+  display:block;
+  background-color:#CCCCFF;
+  padding:0.625em;
+}
+span.theorem,span.lemma,span.corollary,span.proposition,span.example, span.exercise {
+  margin-top:1em;
+  margin-bottom: 0.85em;
+}
+span.example, span.exercise {
+  padding:0.625em 0.625em 0.625em 0;
+}
+span.theorem::before,span.lemma::before,span.corollary::before,span.proposition::before {
+    content: attr(data-text);
+    padding: 1px 0.1em;
+}
+div.proof, div.solution {
+  margin-bottom:1em;
+}

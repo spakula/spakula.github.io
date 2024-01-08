@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.3 The Product and Quotient Rules | GENG0002 Mathematics B lecture notes</title>
+  <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.3 The Product and Quotient Rules | GENG0002 Mathematics B lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.3 The Product and Quotient Rules | GENG0002 Mathematics B lecture notes" />
+  
+  <meta name="twitter:description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
+  
+
+<meta name="author" content="Ján Špakula" />
+
+
+<meta name="date" content="2023-12-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture-five.html"/>
+<link rel="next" href="week-2-exercises.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front Matter</a></li>
+<li class="chapter" data-level="1" data-path="week-1.html"><a href="week-1.html"><i class="fa fa-check"></i><b>1</b> Week 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture-one.html"><a href="lecture-one.html"><i class="fa fa-check"></i><b>1.1</b> Limits</a></li>
+<li class="chapter" data-level="1.2" data-path="lecture-two.html"><a href="lecture-two.html"><i class="fa fa-check"></i><b>1.2</b> Differentiation from 1st Principles</a></li>
+<li class="chapter" data-level="1.3" data-path="lecture-three.html"><a href="lecture-three.html"><i class="fa fa-check"></i><b>1.3</b> Differentiation by Rule</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="lecture-three.html"><a href="lecture-three.html#rule-for-differentiation"><i class="fa fa-check"></i><b>1.3.1</b> Rule for differentiation</a></li>
+<li class="chapter" data-level="1.3.2" data-path="lecture-three.html"><a href="lecture-three.html#differentiation-of-axn."><i class="fa fa-check"></i><b>1.3.2</b> Differentiation of <span class="math inline">\(ax^n\)</span>.</a></li>
+<li class="chapter" data-level="1.3.3" data-path="lecture-three.html"><a href="lecture-three.html#differentiation-of-a-sum-of-terms"><i class="fa fa-check"></i><b>1.3.3</b> Differentiation of a sum of terms</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="standard-derivatives.html"><a href="standard-derivatives.html"><i class="fa fa-check"></i><b>1.4</b> Standard Derivatives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-1-exercises.html"><a href="week-1-exercises.html"><i class="fa fa-check"></i>Week 1 Exercises</a>
+<ul>
+<li class="chapter" data-level="1.5" data-path="sheet-1-limits.html"><a href="sheet-1-limits.html"><i class="fa fa-check"></i><b>1.5</b> Sheet 1 Limits</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-1-limits.html"><a href="sheet-1-limits.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-1-limits.html"><a href="sheet-1-limits.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-1-limits.html"><a href="sheet-1-limits.html#exercise-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-1-limits.html"><a href="sheet-1-limits.html#exercise-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="sheet-2-differentiation-by-first-principles.html"><a href="sheet-2-differentiation-by-first-principles.html"><i class="fa fa-check"></i><b>1.6</b> Sheet 2 Differentiation by first principles</a></li>
+<li class="chapter" data-level="1.7" data-path="sheet-3-differentiation-by-rule.html"><a href="sheet-3-differentiation-by-rule.html"><i class="fa fa-check"></i><b>1.7</b> Sheet 3 Differentiation by rule</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week-2.html"><a href="week-2.html"><i class="fa fa-check"></i><b>2</b> Week 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lecture-four.html"><a href="lecture-four.html"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
+<li class="chapter" data-level="2.2" data-path="lecture-five.html"><a href="lecture-five.html"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="lecture-five.html"><a href="lecture-five.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="lecture-six.html"><a href="lecture-six.html"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="lecture-six.html"><a href="lecture-six.html#differentiation-of-a-product"><i class="fa fa-check"></i><b>2.3.1</b> Differentiation of a product</a></li>
+<li class="chapter" data-level="2.3.2" data-path="lecture-six.html"><a href="lecture-six.html#differentiation-of-a-quotient"><i class="fa fa-check"></i><b>2.3.2</b> Differentiation of a quotient</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-2-exercises.html"><a href="week-2-exercises.html"><i class="fa fa-check"></i>Week 2 Exercises</a>
+<ul>
+<li class="chapter" data-level="2.4" data-path="sheet-4-tangents-and-normals.html"><a href="sheet-4-tangents-and-normals.html"><i class="fa fa-check"></i><b>2.4</b> Sheet 4 Tangents and Normals</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-4-tangents-and-normals.html"><a href="sheet-4-tangents-and-normals.html#exercise-1-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-4-tangents-and-normals.html"><a href="sheet-4-tangents-and-normals.html#exercise-2-1"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="sheet-5-the-chain-rule.html"><a href="sheet-5-the-chain-rule.html"><i class="fa fa-check"></i><b>2.5</b> Sheet 5 The Chain Rule</a></li>
+<li class="chapter" data-level="2.6" data-path="sheet-6-the-product-rule.html"><a href="sheet-6-the-product-rule.html"><i class="fa fa-check"></i><b>2.6</b> Sheet 6 The Product Rule</a></li>
+<li class="chapter" data-level="2.7" data-path="sheet-7-the-quotient-rule.html"><a href="sheet-7-the-quotient-rule.html"><i class="fa fa-check"></i><b>2.7</b> Sheet 7 The Quotient Rule</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-3.html"><a href="week-3.html"><i class="fa fa-check"></i><b>3</b> Week 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lecture-seven.html"><a href="lecture-seven.html"><i class="fa fa-check"></i><b>3.1</b> Successive Differentiation</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="lecture-seven.html"><a href="lecture-seven.html#rates-of-change"><i class="fa fa-check"></i><b>3.1.1</b> Rates of Change</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="lecture-eight.html"><a href="lecture-eight.html"><i class="fa fa-check"></i><b>3.2</b> Maxima, Minima and points of inflection</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="lecture-eight.html"><a href="lecture-eight.html#points-of-inflection"><i class="fa fa-check"></i><b>3.2.1</b> Points of inflection</a></li>
+<li class="chapter" data-level="3.2.2" data-path="lecture-eight.html"><a href="lecture-eight.html#points-of-inflection-1"><i class="fa fa-check"></i><b>3.2.2</b> Points of inflection</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-3-exercises.html"><a href="week-3-exercises.html"><i class="fa fa-check"></i>Week 3 Exercises</a>
+<ul>
+<li class="chapter" data-level="3.3" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html"><i class="fa fa-check"></i><b>3.3</b> Sheet 8 Successive Differentiation</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-1-2"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-2-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-3-1"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-4-1"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-5"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-8-successive-differentiation.html"><a href="sheet-8-successive-differentiation.html#exercise-6"><i class="fa fa-check"></i>Exercise 6</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html"><i class="fa fa-check"></i><b>3.4</b> Sheet 8B More Examples of Successive Differentiation</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-1-3"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-2-3"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-3-2"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-4-2"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-5-1"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-6-1"><i class="fa fa-check"></i>Exercise 6</a></li>
+<li class="chapter" data-level="" data-path="sheet-8b-more-examples-of-successive-differentiation.html"><a href="sheet-8b-more-examples-of-successive-differentiation.html#exercise-7"><i class="fa fa-check"></i>Exercise 7</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="sheet-9-maxima-minima-and-points-of-inflexion.html"><a href="sheet-9-maxima-minima-and-points-of-inflexion.html"><i class="fa fa-check"></i><b>3.5</b> Sheet 9 Maxima, minima and points of inflexion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-four.html"><a href="week-four.html"><i class="fa fa-check"></i><b>4</b> Week 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="curve-sketching.html"><a href="curve-sketching.html"><i class="fa fa-check"></i><b>4.1</b> Curve Sketching</a></li>
+<li class="chapter" data-level="4.2" data-path="engineering-problems-with-maxmin.html"><a href="engineering-problems-with-maxmin.html"><i class="fa fa-check"></i><b>4.2</b> Engineering Problems with Max/Min</a></li>
+<li class="chapter" data-level="4.3" data-path="further-forms-of-differentiation.html"><a href="further-forms-of-differentiation.html"><i class="fa fa-check"></i><b>4.3</b> Further forms of differentiation</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="further-forms-of-differentiation.html"><a href="further-forms-of-differentiation.html#differentiation-of-implicit-functions"><i class="fa fa-check"></i><b>4.3.1</b> Differentiation of implicit functions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="further-forms-of-differentiation.html"><a href="further-forms-of-differentiation.html#differentiation-in-parameters"><i class="fa fa-check"></i><b>4.3.2</b> Differentiation in parameters</a></li>
+<li class="chapter" data-level="4.3.3" data-path="further-forms-of-differentiation.html"><a href="further-forms-of-differentiation.html#logarithmic-differentiation"><i class="fa fa-check"></i><b>4.3.3</b> Logarithmic differentiation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-4-exercises.html"><a href="week-4-exercises.html"><i class="fa fa-check"></i>Week 4 Exercises</a>
+<ul>
+<li class="chapter" data-level="4.4" data-path="sheet-10---curve-sketching-using-differentiation.html"><a href="sheet-10---curve-sketching-using-differentiation.html"><i class="fa fa-check"></i><b>4.4</b> Sheet 10 - Curve Sketching using differentiation</a></li>
+<li class="chapter" data-level="4.5" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html"><i class="fa fa-check"></i><b>4.5</b> Sheet 11 - Problems involving maxima &amp; minima</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-1-4"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-2-4"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-3-3"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-4-3"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-5-2"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-11---problems-involving-maxima-minima.html"><a href="sheet-11---problems-involving-maxima-minima.html#exercise-6-2"><i class="fa fa-check"></i>Exercise 6</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="sheet-11a---logarithmic-differentiation.html"><a href="sheet-11a---logarithmic-differentiation.html"><i class="fa fa-check"></i><b>4.6</b> Sheet 11A - Logarithmic Differentiation</a></li>
+<li class="chapter" data-level="4.7" data-path="sheet-11b---further-differentiation.html"><a href="sheet-11b---further-differentiation.html"><i class="fa fa-check"></i><b>4.7</b> Sheet 11B - Further Differentiation</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-11b---further-differentiation.html"><a href="sheet-11b---further-differentiation.html#exercise-1-5"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-11b---further-differentiation.html"><a href="sheet-11b---further-differentiation.html#exercise-2-5"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-11b---further-differentiation.html"><a href="sheet-11b---further-differentiation.html#exercise-3-4"><i class="fa fa-check"></i>Exercise 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-five.html"><a href="week-five.html"><i class="fa fa-check"></i><b>5</b> Week 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="partial-differentiation.html"><a href="partial-differentiation.html"><i class="fa fa-check"></i><b>5.1</b> Partial Differentiation</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="partial-differentiation.html"><a href="partial-differentiation.html#successive-partial-derivatives"><i class="fa fa-check"></i><b>5.1.1</b> Successive partial derivatives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="integration-as-the-opposite-of-differentiation.html"><a href="integration-as-the-opposite-of-differentiation.html"><i class="fa fa-check"></i><b>5.2</b> Integration as the opposite of differentiation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="integration-as-the-opposite-of-differentiation.html"><a href="integration-as-the-opposite-of-differentiation.html#integration-by-rule"><i class="fa fa-check"></i><b>5.2.1</b> Integration by rule</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="indefinite-integration.html"><a href="indefinite-integration.html"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="indefinite-integration.html"><a href="indefinite-integration.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
+<ul>
+<li class="chapter" data-level="5.4" data-path="sheet-12---partial-differentiation.html"><a href="sheet-12---partial-differentiation.html"><i class="fa fa-check"></i><b>5.4</b> Sheet 12 - Partial Differentiation</a></li>
+<li class="chapter" data-level="5.5" data-path="sheet-12a---indefinite-integration.html"><a href="sheet-12a---indefinite-integration.html"><i class="fa fa-check"></i><b>5.5</b> Sheet 12A - Indefinite Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week-six.html"><a href="week-six.html"><i class="fa fa-check"></i><b>6</b> Week 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="integration-by-substitution.html"><a href="integration-by-substitution.html"><i class="fa fa-check"></i><b>6.1</b> Integration by Substitution</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="integration-by-substitution.html"><a href="integration-by-substitution.html#trig-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trig substitutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="integration-by-parts.html"><a href="integration-by-parts.html"><i class="fa fa-check"></i><b>6.2</b> Integration by Parts</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-6-exercises.html"><a href="week-6-exercises.html"><i class="fa fa-check"></i>Week 6 Exercises</a>
+<ul>
+<li class="chapter" data-level="6.3" data-path="sheet-13-integration-by-substitution.html"><a href="sheet-13-integration-by-substitution.html"><i class="fa fa-check"></i><b>6.3</b> Sheet 13 Integration by substitution</a></li>
+<li class="chapter" data-level="6.4" data-path="sheet-14---integration-by-parts.html"><a href="sheet-14---integration-by-parts.html"><i class="fa fa-check"></i><b>6.4</b> Sheet 14 - Integration by parts</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week-seven.html"><a href="week-seven.html"><i class="fa fa-check"></i><b>7</b> Week 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="integration-using-partial-fractions.html"><a href="integration-using-partial-fractions.html"><i class="fa fa-check"></i><b>7.1</b> Integration using partial fractions</a></li>
+<li class="chapter" data-level="7.2" data-path="definite-integrals.html"><a href="definite-integrals.html"><i class="fa fa-check"></i><b>7.2</b> Definite Integrals</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="definite-integrals.html"><a href="definite-integrals.html#area-under-a-curve"><i class="fa fa-check"></i><b>7.2.1</b> Area under a curve</a></li>
+<li class="chapter" data-level="7.2.2" data-path="definite-integrals.html"><a href="definite-integrals.html#negative-areas"><i class="fa fa-check"></i><b>7.2.2</b> Negative Areas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="area-between-two-curves-and-parametric-integration.html"><a href="area-between-two-curves-and-parametric-integration.html"><i class="fa fa-check"></i><b>7.3</b> Area between two curves and Parametric Integration</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="area-between-two-curves-and-parametric-integration.html"><a href="area-between-two-curves-and-parametric-integration.html#parametric-integration"><i class="fa fa-check"></i><b>7.3.1</b> Parametric Integration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html"><i class="fa fa-check"></i>Week 7 Exercises</a>
+<ul>
+<li class="chapter" data-level="7.4" data-path="sheet-15---integration-using-partial-fractions.html"><a href="sheet-15---integration-using-partial-fractions.html"><i class="fa fa-check"></i><b>7.4</b> Sheet 15 - Integration using Partial Fractions</a></li>
+<li class="chapter" data-level="7.5" data-path="sheet-16---definite-integration.html"><a href="sheet-16---definite-integration.html"><i class="fa fa-check"></i><b>7.5</b> Sheet 16 - Definite Integration</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-16---definite-integration.html"><a href="sheet-16---definite-integration.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-16---definite-integration.html"><a href="sheet-16---definite-integration.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="week-eight.html"><a href="week-eight.html"><i class="fa fa-check"></i><b>8</b> Week 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="mid-ordinate-rule.html"><a href="mid-ordinate-rule.html"><i class="fa fa-check"></i><b>8.1</b> Mid-ordinate Rule</a></li>
+<li class="chapter" data-level="8.2" data-path="trapezium-rule.html"><a href="trapezium-rule.html"><i class="fa fa-check"></i><b>8.2</b> Trapezium rule</a></li>
+<li class="chapter" data-level="8.3" data-path="simpsons-rule.html"><a href="simpsons-rule.html"><i class="fa fa-check"></i><b>8.3</b> Simpson’s Rule</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-8-exercises.html"><a href="week-8-exercises.html"><i class="fa fa-check"></i>Week 8 Exercises</a>
+<ul>
+<li class="chapter" data-level="8.4" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html"><i class="fa fa-check"></i><b>8.4</b> Sheet 17 Approximate Integration</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-1-7"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-2-7"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-3-5"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-4-4"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-5-3"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-6-3"><i class="fa fa-check"></i>Exercise 6</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-7-1"><i class="fa fa-check"></i>Exercise 7</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-8"><i class="fa fa-check"></i>Exercise 8</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-9"><i class="fa fa-check"></i>Exercise 9</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-10"><i class="fa fa-check"></i>Exercise 10</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-approximate-integration.html"><a href="sheet-17-approximate-integration.html#exercise-11"><i class="fa fa-check"></i>Exercise 11</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week-nine.html"><a href="week-nine.html"><i class="fa fa-check"></i><b>9</b> Week 9</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="mean-and-rms-values.html"><a href="mean-and-rms-values.html"><i class="fa fa-check"></i><b>9.1</b> Mean and RMS Values</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="mean-and-rms-values.html"><a href="mean-and-rms-values.html#rms-value"><i class="fa fa-check"></i><b>9.1.1</b> RMS Value</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-9-exercises.html"><a href="week-9-exercises.html"><i class="fa fa-check"></i>Week 9 Exercises</a>
+<ul>
+<li class="chapter" data-level="9.2" data-path="sheet-17-more-problems-on-numerical-integration.html"><a href="sheet-17-more-problems-on-numerical-integration.html"><i class="fa fa-check"></i><b>9.2</b> Sheet 17 More problems on Numerical Integration</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-17-more-problems-on-numerical-integration.html"><a href="sheet-17-more-problems-on-numerical-integration.html#exercise-1-8"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-more-problems-on-numerical-integration.html"><a href="sheet-17-more-problems-on-numerical-integration.html#exercise-2-8"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-17-more-problems-on-numerical-integration.html"><a href="sheet-17-more-problems-on-numerical-integration.html#exercise-3-6"><i class="fa fa-check"></i>Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html"><i class="fa fa-check"></i><b>9.3</b> Sheet 18 Mean and RMS Values</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-1-9"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-2-9"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-3-7"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-4-5"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-5-4"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-18-mean-and-rms-values.html"><a href="sheet-18-mean-and-rms-values.html#exercise-6-4"><i class="fa fa-check"></i>Exercise 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-ten.html"><a href="week-ten.html"><i class="fa fa-check"></i><b>10</b> Week 10</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="centre-of-gravity-and-centroids.html"><a href="centre-of-gravity-and-centroids.html"><i class="fa fa-check"></i><b>10.1</b> Centre of Gravity and Centroids</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="centre-of-gravity-and-centroids.html"><a href="centre-of-gravity-and-centroids.html#masses-along-a-line"><i class="fa fa-check"></i><b>10.1.1</b> Masses along a line</a></li>
+<li class="chapter" data-level="10.1.2" data-path="centre-of-gravity-and-centroids.html"><a href="centre-of-gravity-and-centroids.html#centroid-of-a-uniform-lamina"><i class="fa fa-check"></i><b>10.1.2</b> Centroid of a uniform lamina</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="volume-and-surface-of-revolution.html"><a href="volume-and-surface-of-revolution.html"><i class="fa fa-check"></i><b>10.2</b> Volume and Surface of Revolution</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="volume-and-surface-of-revolution.html"><a href="volume-and-surface-of-revolution.html#rotation-about-the-x-axis"><i class="fa fa-check"></i><b>10.2.1</b> Rotation about the <span class="math inline">\(x-\)</span>axis</a></li>
+<li class="chapter" data-level="10.2.2" data-path="volume-and-surface-of-revolution.html"><a href="volume-and-surface-of-revolution.html#rotation-about-the-y-axis"><i class="fa fa-check"></i><b>10.2.2</b> Rotation about the <span class="math inline">\(y-\)</span>axis</a></li>
+<li class="chapter" data-level="10.2.3" data-path="volume-and-surface-of-revolution.html"><a href="volume-and-surface-of-revolution.html#surface-area-of-revolution"><i class="fa fa-check"></i><b>10.2.3</b> Surface area of revolution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-10-exercises.html"><a href="week-10-exercises.html"><i class="fa fa-check"></i>Week 10 Exercises</a>
+<ul>
+<li class="chapter" data-level="10.3" data-path="sheet-19-centroids-of-area.html"><a href="sheet-19-centroids-of-area.html"><i class="fa fa-check"></i><b>10.3</b> Sheet 19 Centroids of area</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-19-centroids-of-area.html"><a href="sheet-19-centroids-of-area.html#exercise-1-10"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-19-centroids-of-area.html"><a href="sheet-19-centroids-of-area.html#exercise-2-10"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-19-centroids-of-area.html"><a href="sheet-19-centroids-of-area.html#exercise-3-8"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-19-centroids-of-area.html"><a href="sheet-19-centroids-of-area.html#exercise-4-6"><i class="fa fa-check"></i>Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html"><i class="fa fa-check"></i><b>10.4</b> Sheet 20 Volumes of Revolution</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html#exercise-1-11"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html#exercise-2-11"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html#exercise-3-9"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html#exercise-4-7"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-20-volumes-of-revolution.html"><a href="sheet-20-volumes-of-revolution.html#exercise-5-5"><i class="fa fa-check"></i>Exercise 5</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-eleven.html"><a href="week-eleven.html"><i class="fa fa-check"></i><b>11</b> Week 11</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="vectors-i.html"><a href="vectors-i.html"><i class="fa fa-check"></i><b>11.1</b> Vectors I</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="vectors-i.html"><a href="vectors-i.html#vector-algebra"><i class="fa fa-check"></i><b>11.1.1</b> Vector Algebra</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="vectors-ii.html"><a href="vectors-ii.html"><i class="fa fa-check"></i><b>11.2</b> Vectors II</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="vectors-ii.html"><a href="vectors-ii.html#unit-vectors"><i class="fa fa-check"></i><b>11.2.1</b> Unit Vectors</a></li>
+<li class="chapter" data-level="11.2.2" data-path="vectors-ii.html"><a href="vectors-ii.html#vector-algebra-with-component-vectors"><i class="fa fa-check"></i><b>11.2.2</b> Vector algebra with component vectors</a></li>
+<li class="chapter" data-level="11.2.3" data-path="vectors-ii.html"><a href="vectors-ii.html#the-magnitude-of-a-vector"><i class="fa fa-check"></i><b>11.2.3</b> The magnitude of a vector</a></li>
+<li class="chapter" data-level="11.2.4" data-path="vectors-ii.html"><a href="vectors-ii.html#finding-a-unit-vector"><i class="fa fa-check"></i><b>11.2.4</b> Finding a unit vector</a></li>
+<li class="chapter" data-level="11.2.5" data-path="vectors-ii.html"><a href="vectors-ii.html#direction-cosines"><i class="fa fa-check"></i><b>11.2.5</b> Direction Cosines</a></li>
+<li class="chapter" data-level="11.2.6" data-path="vectors-ii.html"><a href="vectors-ii.html#the-angle-between-two-vectors"><i class="fa fa-check"></i><b>11.2.6</b> The angle between two vectors</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="vectors-iii.html"><a href="vectors-iii.html"><i class="fa fa-check"></i><b>11.3</b> Vectors III</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="vectors-iii.html"><a href="vectors-iii.html#multiplication-of-vectors"><i class="fa fa-check"></i><b>11.3.1</b> Multiplication of vectors</a></li>
+<li class="chapter" data-level="11.3.2" data-path="vectors-iii.html"><a href="vectors-iii.html#the-scalar-or-dot-product"><i class="fa fa-check"></i><b>11.3.2</b> The scalar or dot product</a></li>
+<li class="chapter" data-level="11.3.3" data-path="vectors-iii.html"><a href="vectors-iii.html#the-vector-or-cross-product"><i class="fa fa-check"></i><b>11.3.3</b> The vector or cross product</a></li>
+<li class="chapter" data-level="11.3.4" data-path="vectors-iii.html"><a href="vectors-iii.html#the-scalar-triple-product"><i class="fa fa-check"></i><b>11.3.4</b> The scalar triple product</a></li>
+<li class="chapter" data-level="11.3.5" data-path="vectors-iii.html"><a href="vectors-iii.html#the-vector-triple-product"><i class="fa fa-check"></i><b>11.3.5</b> The vector triple product</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="week-11-exercises.html"><a href="week-11-exercises.html"><i class="fa fa-check"></i>Week 11 Exercises</a>
+<ul>
+<li class="chapter" data-level="11.4" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html"><i class="fa fa-check"></i><b>11.4</b> Sheet 21 Vectors I</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html#exercise-1-12"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html#exercise-2-12"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html#exercise-3-10"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html#exercise-4-8"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-21-vectors-i.html"><a href="sheet-21-vectors-i.html#exercise-5-6"><i class="fa fa-check"></i>Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html"><i class="fa fa-check"></i><b>11.5</b> Sheet 22 Vectors II</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-1-13"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-2-13"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-3-11"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-4-9"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-5-7"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-6-5"><i class="fa fa-check"></i>Exercise 6</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-7-2"><i class="fa fa-check"></i>Exercise 7</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-8-1"><i class="fa fa-check"></i>Exercise 8</a></li>
+<li class="chapter" data-level="" data-path="sheet-22-vectors-ii.html"><a href="sheet-22-vectors-ii.html#exercise-9-1"><i class="fa fa-check"></i>Exercise 9</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html"><i class="fa fa-check"></i><b>11.6</b> Sheet 23 Vectors III</a>
+<ul>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-1-14"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-2-14"><i class="fa fa-check"></i>Exercise 2</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-3-12"><i class="fa fa-check"></i>Exercise 3</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-4-10"><i class="fa fa-check"></i>Exercise 4</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-5-8"><i class="fa fa-check"></i>Exercise 5</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-6-6"><i class="fa fa-check"></i>Exercise 6</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-7-3"><i class="fa fa-check"></i>Exercise 7</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-8-2"><i class="fa fa-check"></i>Exercise 8</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-9-2"><i class="fa fa-check"></i>Exercise 9</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-10-1"><i class="fa fa-check"></i>Exercise 10</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-11-1"><i class="fa fa-check"></i>Exercise 11</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-12"><i class="fa fa-check"></i>Exercise 12</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-13"><i class="fa fa-check"></i>Exercise 13</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-14"><i class="fa fa-check"></i>Exercise 14</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-15"><i class="fa fa-check"></i>Exercise 15</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-16"><i class="fa fa-check"></i>Exercise 16</a></li>
+<li class="chapter" data-level="" data-path="sheet-23-vectors-iii.html"><a href="sheet-23-vectors-iii.html#exercise-17"><i class="fa fa-check"></i>Exercise 17</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GENG0002 Mathematics B lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture-six" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> The Product and Quotient Rules<a href="lecture-six.html#lecture-six" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="differentiation-of-a-product" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Differentiation of a product<a href="lecture-six.html#differentiation-of-a-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>So far, if we want to differentiate a function which is a product of two functions of <span class="math inline">\(x\)</span>, like <span class="math inline">\(y = 4x^2(3x^3 - 6x)\)</span>, we need to multiply out the brackets and differentiate term by term as follows;
+<span class="math display">\[\begin{gather*}
+y = 4x^2(3x^3 - 6x) = 12x^5 - 24x^3\\
+\frac{dy}{dx} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
+\end{gather*}\]</span>
+For some products, multiplying terms out still doesn’t help to differentiate them e.g.
+<span class="math display">\[
+y = \sqrt{x^2 - 2x} \sin(x).
+\]</span>
+This would require a binomial expansion for the first part and would still leave a set of terms that were products of a function of <span class="math inline">\(x\)</span> and <span class="math inline">\(\sin(x)\)</span>.
+</p>
+<p>It would be helpful to find a way of differentiating a product of two functions without having to multiply out. From the first example above, it is clear that the differential of a product is not just the differential of each part (that would give <span class="math inline">\(8x(9x^2 - 6) = 72x^3 - 48x)\)</span>.</p>
+<p>Let <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> be functions of <span class="math inline">\(x\)</span> so that <span class="math inline">\(u = u(x)\)</span> and <span class="math inline">\(v = v(x)\)</span>. Hence a small change <span class="math inline">\(h\)</span> in <span class="math inline">\(x\)</span> will give a small change in <span class="math inline">\(u\)</span> and a small change in <span class="math inline">\(v\)</span>.</p>
+<p>If <span class="math inline">\(y = uv\)</span> then <span class="math inline">\(y(x+h) = u(x+h)v(x+h)\)</span> so <span class="math inline">\(y(x+h)-y(x) = u(x+h)v(x+h) - u(x)v(x)\)</span>. Now by adding zero to the right side of the equation by adding and subtracting <span class="math inline">\(v(x)u(x+h)\)</span> we get
+<span class="math display">\[
+y(x+h)-y(x) = u(x+h)v(x+h) - v(x)u(x+h) + v(x)u(x+h ) - u(x)v(x).
+\]</span>
+Further, dividing both sides of equation by <span class="math inline">\(h\)</span> gives
+<span class="math display">\[
+\frac{y(x+h)-y(x)}{h} = u(x+h)\frac{v(x+h) - v(x)}{h} + v(x)\frac{u(x+h ) - u(x)}{h}.
+\]</span>
+As <span class="math inline">\(h\)</span> tends to zero, <span class="math inline">\(u(x+h)\)</span> tends to <span class="math inline">\(u(x)\)</span> and in the limit we have
+<span class="math display">\[
+\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\]</span>
+or, put another way,
+<span class="math display">\[
+\frac{d(uv)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\]</span>
+This is called the <a name='#product-rule'></a><span style="color: red;">Product Rule</span>.
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 2.5  </strong></span>Differentiate <span class="math inline">\(y=4x^2(3x^3-6x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-24" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 4x^2\)</span> and <span class="math inline">\(v = 3x^3-6x\)</span>. Then
+<span class="math display">\[
+\frac{du}{dx} = 8x\text{ and }\frac{dv}{dx} = 9x^2-6.
+\]</span>
+Hence the product rule gives
+<span class="math display">\[\begin{gather*}
+\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
+24x^4 - 48x^2 + 36x^4-24x^2 = 60x^4-72x^2 = 12x^2(5x^2-6).
+\end{gather*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 2.6  </strong></span>Differentiate <span class="math inline">\(y=\sqrt{x^2-2x}\sin(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-26" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\)</span> and <span class="math inline">\(v = \sin(x)\)</span>. Then
+<span class="math display">\[
+\frac{du}{dx} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{dx} = \cos(x).
+\]</span>
+Hence the product rule gives
+<span class="math display">\[\begin{gather*}
+\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
+\frac{(x-1)\sin(x)}{(x^2-2x)^{1/2}} + (x^2-2x)^{1/2}\cos(x).
+\end{gather*}\]</span></p>
+</div>
+</div>
+<div id="differentiation-of-a-quotient" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Differentiation of a quotient<a href="lecture-six.html#differentiation-of-a-quotient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider <span class="math inline">\(y\)</span> to be a function consisting of the quotient of two functions of <span class="math inline">\(x\)</span>, <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. So <span class="math inline">\(y\)</span> may be written as
+<span class="math display">\[
+y = \frac{u(x)}{v(x)} = \frac{u}{v}.
+\]</span>
+Since <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are both functions of <span class="math inline">\(x\)</span>, then if <span class="math inline">\(x\)</span> changes by a small amount to <span class="math inline">\(x + h\)</span>, there will be a corresponding small change in <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> and hence will result in small change in <span class="math inline">\(y\)</span>.
+So if
+<span class="math display">\[
+y(x) = \frac{u(x)}{v(x)} \text{ then } y(x+h) = \frac{u(x+h)}{v(x+h)}
+\]</span>
+Hence
+<span class="math display">\[\begin{gather*}
+y(x+h)-y(x) = \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
+=\frac{v(x)u(x+h)-u(x)v(x+h)}{v(x+h)v(x)}\\
+=\frac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}
+\end{gather*}\]</span>
+Rearranging the numerator and dividing by <span class="math inline">\(h\)</span> we get
+<span class="math display">\[
+\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}
+\]</span>
+And in the limit as <span class="math inline">\(h\)</span> tends to zero
+<span class="math display">\[\frac{dy}{dx} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{du}{dx} - u(x)\frac{dv}{dx}}{v(x)^2}
+\]</span></p>
+<p>This is the formula for the <a name='#differentiation-of-a-quotient'></a><span style="color: red;">differentiation of a quotient</span>.</p>
+<p>Note that for the product formula it is up to you which part of the product you call <span class="math inline">\(u\)</span> and which <span class="math inline">\(v\)</span>, but that for the quotient formula, the denominator of the quotient must be <span class="math inline">\(v\)</span> and the numerator must be <span class="math inline">\(u\)</span>.
+</p>
+<p>There is an alternative way to derive this formula. Since
+<span class="math display">\[
+y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
+\]</span>
+and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the function <span class="math inline">\(v(x)\)</span> and the function <span class="math inline">\(x^{-1}\)</span>, we can use a combination of the product rule and the chain rule. So
+<span class="math display">\[\begin{gather*}
+\frac{d(uv^{-1})}{dx} = u\frac{d(v^{-1})}{dx}+v^{-1}\frac{du}{dx} = u\left(-1\times v^{-2}\frac{dv}{dx}\right) + v^{-1}\frac{du}{dx}\\
+= \frac{du}{dx}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}
+\end{gather*}\]</span>
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 2.7  </strong></span>Differentiate <span class="math inline">\(y=\frac{3x^2+2}{(4x^2-4)^2}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-28" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 3x^2+2\)</span> and <span class="math inline">\(v = (4x^2-4)^2\)</span>.
+Then
+<span class="math display">\[
+\frac{du}{dx} = 6x\text{ and }\frac{dv}{dx} = 2(4x^2-4)\times8x = 16x(4x^2-4)
+\]</span>
+and so
+<span class="math display">\[
+\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 2.8  </strong></span>Differentiate <span class="math inline">\(y=\frac{1-\sin(x)}{1+\sin(x)}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-30" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 1-\sin(x)\)</span> and <span class="math inline">\(v = 1+\sin(x)\)</span>.
+Then
+<span class="math display">\[
+\frac{du}{dx} = -\cos(x)\text{ and }\frac{dv}{dx} = \cos(x)
+\]</span>
+and so
+<span class="math display">\[
+\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
+\]</span></p>
+</div>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture-five.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": "github"
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["fy-B-lectnotes.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed",
+"search": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
