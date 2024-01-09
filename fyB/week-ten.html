@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-08" />
+<meta name="date" content="2024-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -415,21 +415,27 @@
 <p>Many structures and mechanical systems act as if their masses were concentrated at a single point called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#centre-of-gravity'></a><span style="color: red;">centre of gravity</span>. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then move to consider it in 2-dimensions.</p>
 <div id="masses-along-a-line" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Masses along a line<a href="week-ten.html#masses-along-a-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-67"></span>
-<img src="tikztopng-figure34.png" alt="mass along a line" width="60%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:35-mass-along-a-line"></span>
+<img src="fy-B-lectnotes_files/figure-html/35-mass-along-a-line-1.svg" alt="mass along a line" width="70%" />
 <p class="caption">
 Figure 10.1: mass along a line
 </p>
 </div>
-<p>Suppose that the <span class="math inline">\(x-\)</span>axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin. This is similar to a `see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: red;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>. The <a name='#principle-of-moments'></a><span style="color: red;">principle of moments</span> says that the system will balance providing
+<p>Suppose that the <span class="math inline">\(x-\)</span>axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin, see Figure <a href="week-ten.html#fig:35-mass-along-a-line">10.1</a>. This is similar to a `see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: red;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>. The <a name='#principle-of-moments'></a><span style="color: red;">principle of moments</span> says that the system will balance providing
 <span class="math display">\[
 m_1x_1 + m_2x_2 = 0.
 \]</span></p>
-<p>If we are given a system with more than 2 masses</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-68"></span>
-<img src="tikztopng-figure35.png" alt="mass along a line - many bodies" width="60%" />
+<p>If we are given a system with more than 2 masses (see Figure <a href="week-ten.html#fig:36-mass-along-a-line-many">10.2</a>)</p>
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:36-mass-along-a-line-many"></span>
+<img src="fy-B-lectnotes_files/figure-html/36-mass-along-a-line-many-1.svg" alt="mass along a line -- many bodies" width="70%" />
 <p class="caption">
-Figure 10.2: mass along a line - many bodies
+Figure 10.2: mass along a line – many bodies
 </p>
 </div>
 <p>the principle says that the system will balance providing
@@ -437,11 +443,14 @@ Figure 10.2: mass along a line - many bodies
 \sum m_ix_i = 0.
 \]</span>
 In principle, we should use the force acting on the body, which is <span class="math inline">\(m_ig\)</span> where <span class="math inline">\(g\)</span> is the gravitational acceleration. However the constant <span class="math inline">\(g\)</span> will cancel out.
-Suppose however, the system does not balance. Can we find a point <span class="math inline">\(\overline x\)</span> such that if we were to move the fulcrum to that position, the system would balance?</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-69"></span>
-<img src="tikztopng-figure36.png" alt="center of mass" width="60%" />
+Suppose however, the system does not balance. Can we find a point <span class="math inline">\(\overline x\)</span> such that if we were to move the fulcrum to that position, the system would balance (see Figure <a href="week-ten.html#fig:37-centre-of-mass">10.3</a>)?</p>
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:37-centre-of-mass"></span>
+<img src="fy-B-lectnotes_files/figure-html/37-centre-of-mass-1.svg" alt="centre of mass" width="70%" />
 <p class="caption">
-Figure 10.3: center of mass
+Figure 10.3: centre of mass
 </p>
 </div>
 <p>This would require that
@@ -454,9 +463,12 @@ Figure 10.3: center of mass
 <p>The point <span class="math inline">\(\overline x\)</span> is called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#center-of-gravity'></a><span style="color: red;">center of gravity</span>.
 </p>
 <p>In order to generalise this situation to 2-dimensions and to consider an ‘infinite number of points’, we need to use integration, rather than a finite sum.</p>
-Consider the 2-dimensional strip below, and suppose that the <a name='#density'></a><span style="color: red;">density</span> at the point <span class="math inline">\(x\)</span> is given by <span class="math inline">\(\rho(x)\)</span>.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig37"></span>
-<img src="tikztopng-figure37.png" alt="2-dimensional rod" width="50%" />
+Consider the 2-dimensional strip on Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>, and suppose that the <a name='#density'></a><span style="color: red;">density</span> at the point <span class="math inline">\(x\)</span> is given by <span class="math inline">\(\rho(x)\)</span>.
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:38-2d-rod"></span>
+<img src="fy-B-lectnotes_files/figure-html/38-2d-rod-1.svg" alt="2-dimensional rod" width="60%" />
 <p class="caption">
 Figure 10.4: 2-dimensional rod
 </p>
@@ -483,8 +495,11 @@ Take a small rectangular strip of width <span class="math inline">\(\delta x\)</
 <span class="math display">\[
 \left(2+\frac{x^2}2\right)\delta x.
 \]</span>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig38"></span>
-<img src="tikztopng-figure38.png" alt="2-dimensional rod" width="50%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:39-2d-rod2"></span>
+<img src="fy-B-lectnotes_files/figure-html/39-2d-rod2-1.svg" alt="2-dimensional rod" width="60%" />
 <p class="caption">
 Figure 10.5: 2-dimensional rod
 </p>
@@ -494,7 +509,7 @@ Figure 10.5: 2-dimensional rod
 \text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ dx = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
 \]</span></p>
 </div>
-<p>Suppose we wish to find the centre of mass of the rod in Figure <a href="week-ten.html#fig:fig38">10.5</a>. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width <span class="math inline">\(\delta x\)</span> is <span class="math inline">\(x(2+x^2/2)\delta x\)</span>. So
+<p>Suppose we wish to find the centre of mass of the rod on Figure <a href="week-ten.html#fig:39-2d-rod2">10.5</a>. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width <span class="math inline">\(\delta x\)</span> is <span class="math inline">\(x(2+x^2/2)\delta x\)</span>. So
 <span class="math display">\[
 \overline x = \frac{\text{moment}}{\text{mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ dx = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
 \]</span>
@@ -508,13 +523,16 @@ Figure 10.5: 2-dimensional rod
 \]</span>
 Then <span class="math inline">\(\overline x\)</span> and <span class="math inline">\(\overline y\)</span> are the coordinates of the <a name='#centroid-of-the-area'></a><span style="color: red;">centroid of the area</span> or the <a name='#centroid'></a><span style="color: red;">centroid</span>.</p>
 Suppose that the centroid of the area bounded by the curve <span class="math inline">\(y=f(x)\)</span>, the <span class="math inline">\(x-\)</span>axis and the lines <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> is required.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig39"></span>
-<img src="tikztopng-figure39.png" alt="lamina" width="40%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:40-lamina"></span>
+<img src="fy-B-lectnotes_files/figure-html/40-lamina-1.svg" alt="lamina" width="50%" />
 <p class="caption">
 Figure 10.6: lamina
 </p>
 </div>
-<p>Consider a narrow strip of width <span class="math inline">\(\delta x\)</span>. The strip can be considered as approximately a rectangle with height <span class="math inline">\(y\)</span> and area <span class="math inline">\(y\delta x\)</span>. The centre of the area is at the midpoint with coordinate <span class="math inline">\((x,y/2)\)</span>. By summing the moments of the centre of area for each strip we can find the centroid.</p>
+<p>Consider a narrow strip of width <span class="math inline">\(\delta x\)</span> (see Figure <a href="week-ten.html#fig:40-lamina">10.6</a>). The strip can be considered as approximately a rectangle with height <span class="math inline">\(y\)</span> and area <span class="math inline">\(y\delta x\)</span>. The centre of the area is at the midpoint with coordinate <span class="math inline">\((x,y/2)\)</span>. By summing the moments of the centre of area for each strip we can find the centroid.</p>
 <p>Taking moments about the <span class="math inline">\(y-\)</span>axis
 <span class="math display">\[
 \overline x = \frac{\displaystyle\int_a^bxy\ dx}{\displaystyle\int_a^b y\ dx}.
@@ -543,18 +561,24 @@ The centroid therefore has coordinates <span class="math inline">\((2.31,2.78)\)
 <p>Consider a curve <span class="math inline">\(y = f(x)\)</span> between the ordinates <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>. The volume of revolution is the volume of the equivalent solid body obtained by rotating the curve around the <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> axes.</p>
 <div id="rotation-about-the-x-axis" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Rotation about the <span class="math inline">\(x-\)</span>axis<a href="week-ten.html#rotation-about-the-x-axis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-70"></span>
-<img src="tikztopng-figure40.png" alt="Volume of revolution" width="40%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:41-volume-of-revolution"></span>
+<img src="fy-B-lectnotes_files/figure-html/41-volume-of-revolution-1.svg" alt="volume of revolution" width="50%" />
 <p class="caption">
-Figure 10.7: Volume of revolution
+Figure 10.7: volume of revolution
 </p>
 </div>
-<p>If the shaded strip in the above figure is rotated about the <span class="math inline">\(x-\)</span>axis then, provided <span class="math inline">\(\delta x\)</span> is small, it will trace out a disc with thickness <span class="math inline">\(\delta x\)</span> and volume <span class="math inline">\(\delta V = \pi y^2\delta x\)</span>, where <span class="math inline">\(y\)</span> is the radius of the disc.
+<p>If the shaded strip in Figure <a href="week-ten.html#fig:41-volume-of-revolution">10.7</a> is rotated about the <span class="math inline">\(x-\)</span>axis then, provided <span class="math inline">\(\delta x\)</span> is small, it will trace out a disc with thickness <span class="math inline">\(\delta x\)</span> and volume <span class="math inline">\(\delta V = \pi y^2\delta x\)</span>, where <span class="math inline">\(y\)</span> is the radius of the disc, see Figure <a href="week-ten.html#fig:42-volume-of-revolution2">10.8</a>.
 </p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-71"></span>
-<img src="tikztopng-figure41.png" alt="Volume of revolution" width="40%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:42-volume-of-revolution2"></span>
+<img src="fy-B-lectnotes_files/figure-html/42-volume-of-revolution2-1.svg" alt="volume of revolution" width="50%" />
 <p class="caption">
-Figure 10.8: Volume of revolution
+Figure 10.8: volume of revolution
 </p>
 </div>
 <p>We may sum the volumes generated by all the strips between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> to obtained the volume of the solid of revolution for the section of curve about the x axis.
@@ -582,15 +606,19 @@ S = 2\pi\int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\ dx.
 <div class="example">
 <p><span id="exm:unlabeled-div-125" class="example"><strong>Example 10.3  </strong></span></p>
 The straight line <span class="math inline">\(y=mx\)</span> between <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=h\)</span> is rotated about the <span class="math inline">\(x-\)</span>axis thus generating a right circular cone. Calculate its volume in terms of <span class="math inline">\(h\)</span> and <span class="math inline">\(R\)</span> where <span class="math inline">\(R\)</span> is the <span class="math inline">\(y\)</span> value at <span class="math inline">\(x=h\)</span>. Find also the surface area of the resultant cone.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-72"></span>
-<img src="tikztopng-figure42.png" alt="right circular cone" width="50%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:43-right-circ-cone"></span>
+<img src="fy-B-lectnotes_files/figure-html/43-right-circ-cone-1.svg" alt="right-circular-cone" width="60%" />
 <p class="caption">
-Figure 10.9: right circular cone
+Figure 10.9: right-circular-cone
 </p>
 </div>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-126" class="solution"><em>Solution</em>. </span>The volume of the solid of revolution for <span class="math inline">\(y = mx\)</span> is given by
+<p><span id="unlabeled-div-126" class="solution"><em>Solution</em>. </span>See Figure <a href="week-ten.html#fig:43-right-circ-cone">10.9</a>.</p>
+<p>The volume of the solid of revolution for <span class="math inline">\(y = mx\)</span> is given by
 <span class="math display">\[
 V = \pi\int_0^hy^2\ dx = \pi\int_0^h (mx)^2\ dx = m^2\pi\int_0^hx^2\ dx = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
 \]</span>

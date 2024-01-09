@@ -96,7 +96,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-01-08}
+\date{2024-01-09}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -146,15 +146,15 @@ Informally, a \textcolor{red}{\em limit}\index{limit} is a value which \(f(x)\) 
 
 \slide
 
-For example, the function \(f(x) = e^{-x}\) as it approaches the \(x-\)axis.
+For example, the function \(f(x) = e^{-x}\) as it approaches the \(x-\)axis (Figure \ref{fig:01-exp-graph}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure0} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/01-exp-graph-1} 
 
 }
 
-\caption{$e^{-x}$}\label{fig:unnamed-chunk-3}
+\caption{$e^{-x}$}\label{fig:01-exp-graph}
 \end{figure}
 
 \slide
@@ -215,15 +215,15 @@ Alternatively, you may spot that \(2x^2-5x-3 = (x-3)(2x+1)\) so that
 
 \section{Differentiation from 1st Principles}\label{lecture-two}
 
-For a straight line we can consider the slope or \textcolor{red}{\em gradient}\index{gradient}. This is a measure of how steep the line is
+For a straight line we can consider the slope or \textcolor{red}{\em gradient}\index{gradient}. This is a measure of how steep the line is, see Figure \ref{fig:02-gradient-line}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.2\linewidth]{tikztopng-figure1} 
+{\centering \includegraphics[width=0.3\linewidth]{fy-B-lectnotes_files/figure-latex/02-gradient-line-1} 
 
 }
 
-\caption{gradient of a line}\label{fig:unnamed-chunk-4}
+\caption{gradient of a line}\label{fig:02-gradient-line}
 \end{figure}
 
 \slide
@@ -239,15 +239,15 @@ For the line above, which has equation \(y = 2x-1\) then
 
 \slide
 
-Suppose now we are given a curve with equation \(y=f(x)\) and want to find the gradient of a line segment joining two points on the curve.
+Suppose now we are given a curve with equation \(y=f(x)\) and want to find the gradient of a line segment joining two points on the curve (Figure \ref{fig:03-line-seg-curve}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure2} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/03-line-seg-curve-1} 
 
 }
 
-\caption{line segment on a curve}\label{fig:unnamed-chunk-5}
+\caption{line segment of a curve}\label{fig:03-line-seg-curve}
 \end{figure}
 
 The gradient of this line segment is given by
@@ -256,7 +256,7 @@ The gradient of this line segment is given by
 \]
 \slide
 
-Notice that when \(h=0\) then this would have the indeterminate value of \(0/0\), and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as \(h\to0\), may exist and it is instructive to imagine what the limit would represent geometrically.
+Notice that when \(h=0\) then this would have the indeterminate value of \(0/0\), and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as \(h\to0\), may exist and it is instructive to imagine what the limit would represent geometrically (Figure \ref{fig:04-line-seg-curve2}):
 
 \begin{htmlonly}
 
@@ -273,11 +273,11 @@ With some thought, it should be clear that the line segment tends to a line that
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure12} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/04-line-seg-curve2-1} 
 
 }
 
-\caption{line segment on a curve}\label{fig:unnamed-chunk-7}
+\caption{line segment of a curve}\label{fig:04-line-seg-curve2}
 \end{figure}
 
 \slide
@@ -632,27 +632,27 @@ This week we will consider the equations of tangents and normals and then comple
 
 \section{Tangents and Normals}\label{lecture-four}
 
-Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(4\) and hence are all parallel.
+Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(4\) and hence are all parallel (Figure \ref{fig:05-parallel-lines}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure3} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/05-parallel-lines-1} 
 
 }
 
-\caption{parallel lines}\label{fig:unnamed-chunk-12}
+\caption{parallel lines}\label{fig:05-parallel-lines}
 \end{figure}
 \slide
 
-If two lines are perpendicular we may also find a relationship between their gradients. Consider the figure below:
+If two lines are perpendicular we may also find a relationship between their gradients. Consider Figure \ref{fig:06-perpendicular-lines}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure4} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/06-perpendicular-lines-1} 
 
 }
 
-\caption{perpendicular lines}\label{fig:unnamed-chunk-13}
+\caption{perpendicular lines}\label{fig:06-perpendicular-lines}
 \end{figure}
 
 The gradient of the line \(l_1\) is given by the ratio
@@ -667,15 +667,15 @@ So if a line has gradient \(m\) then the gradient of the line perpendicular to i
 \[
 \text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.
 \]
-Now consider the figure below:
+Now consider Figure \ref{fig:07-tangent-and-normal}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.35\linewidth]{tikztopng-figure5} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/07-tangent-and-normal-1} 
 
 }
 
-\caption{tangent and normal}\label{fig:unnamed-chunk-14}
+\caption{tangent and normal}\label{fig:07-tangent-and-normal}
 \end{figure}
 
 Here we have the tangent \(PT\) and the normal \(PN\) to a curve. The \textcolor{red}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent. We already know that the gradient of the tangent is given by
@@ -1262,16 +1262,17 @@ s(t) = 0.4t-0.2t^2.
 
 \section{Maxima, Minima and points of inflection}\label{lecture-eight}
 
-The derivative of a function at a point gives the gradient (the slope) of that curve at the point. The gradient may be positive, negative or zero.
+The derivative of a function at a point gives the gradient (the slope) of that curve at the point. The gradient may be positive, negative or zero. Consider Figure \ref{fig:08-turning-points}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure6} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/08-turning-points-1} 
 
 }
 
-\caption{turning points}\label{fig:unnamed-chunk-17}
+\caption{turning points}\label{fig:08-turning-points}
 \end{figure}
+
 \slide
 
 For the graph above:
@@ -1307,16 +1308,16 @@ However, there is a further situation where the gradient of the graph may be zer
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{tikztopng-figure7} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/09-points-of-inflection-1} 
 
 }
 
-\caption{points of inflection}\label{fig:inflection}
+\caption{points of inflection}\label{fig:09-points-of-inflection}
 \end{figure}
 
-In the left hand graph above, the slope from \(A\) to just before \(B\) is positive, the slope at \(B\) is zero and the slope from just after \(B\) to \(C\) is positive.
+In the left hand graph on Figure \ref{fig:09-points-of-inflection}, the slope from \(A\) to just before \(B\) is positive, the slope at \(B\) is zero and the slope from just after \(B\) to \(C\) is positive.
 
-In the right hand graph above, the slope from \(D\) to just before \(E\) is negative, the slope at \(E\) is zero and the slope from just after \(E\) to \(F\) is negative.
+In the right hand graph on Figure \ref{fig:09-points-of-inflection}, the slope from \(D\) to just before \(E\) is negative, the slope at \(E\) is zero and the slope from just after \(E\) to \(F\) is negative.
 
 The points \(B\) and \(E\) are both points of inflection.
 \slide
@@ -1346,29 +1347,29 @@ Consider first a maximum.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure8} 
+{\centering \includegraphics[width=0.8\linewidth]{fy-B-lectnotes_files/figure-latex/10-maximum-turning-point-1} 
 
 }
 
-\caption{maximum turning point}\label{fig:unnamed-chunk-18}
+\caption{maximum turning point}\label{fig:10-maximum-turning-point}
 \end{figure}
 
-In the left hand graph above, of the function \(y\), we have a local maximum. The gradient of the curve, \(dy/dx\), at point \(A\) will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at \(A\) on a graph (right hand graph above, of the function \(dy/dx\)). At \(B\) the slope of graph \(y\) is still positive, but less steep, so the gradient at \(B\), shown on the graph of \(dy/dx\) is still a positive value, but is smaller than at \(A\).
+In the left hand graph on Figure \ref{fig:10-maximum-turning-point}, of the function \(y\), we have a local maximum. The gradient of the curve, \(dy/dx\), at point \(A\) will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at \(A\) on a graph (right hand graph above, of the function \(dy/dx\)). At \(B\) the slope of graph \(y\) is still positive, but less steep, so the gradient at \(B\), shown on the graph of \(dy/dx\) is still a positive value, but is smaller than at \(A\).
 
 At \(C\) the gradient of graph \(y\) is zero. This is the point where the curve in graph of \(dy/dx\) crosses the \(x\) axis. At \(D\) the gradient of graph \(y\) is now negative, but not very steep, so on graph \(dy/dx\) the gradient at \(D\) is a small negative value. At \(E\) the gradient of graph \(y\) is steep and negative, so on graph \(dy/dx\) the point is marked as a large negative value.
 
 Now consider the gradient of graph \(dy/dx\). Graph \(dy/dx\) is a plot of \(dy/dx\) against \(x\). The gradient of this graph is given by \(d^2y/dx^2\). We can see from the curve in that graph that the gradient of the curve is negative at all points. That is \(d^2y/dx^2<0\) for all \(x\) values close to the local maximum. Therefore if \(d^2y/dx^2\) is a negative number for the \(x\) value of the turning point, we can be sure the turning point is a maximum.
 \slide
 
-By a similar argument and considering the graphs below, we can show that for any turning point where, \(d^2y/dx^2>0\) we have a local minimum.
+By a similar argument and considering the graphs below (Figure \ref{fig:11-minimum-turning-point}, we can show that for any turning point where, \(d^2y/dx^2>0\) we have a local minimum.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure9} 
+{\centering \includegraphics[width=0.8\linewidth]{fy-B-lectnotes_files/figure-latex/11-minimum-turning-point-1} 
 
 }
 
-\caption{minimum turning point}\label{fig:unnamed-chunk-19}
+\caption{minimum turning point}\label{fig:11-minimum-turning-point}
 \end{figure}
 \slide
 
@@ -1396,7 +1397,7 @@ and similarly we can write for the other statement,
 
 There is a third possibility for the value of \(d^2y/dx^2\). It may be zero.
 
-When \(d^2y/dx^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure \ref{fig:inflection}, we can see that for the left-hand graph, the slope, \(dy/dx\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(d^2y/dx^2\) turns out to be zero.
+When \(d^2y/dx^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure \ref{fig:09-points-of-inflection}, we can see that for the left-hand graph, the slope, \(dy/dx\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(d^2y/dx^2\) turns out to be zero.
 
 We can substitute an \(x\) value just smaller than the value at the turning point into our equation for \(dy/dx\) and find if \(dy/dx\) is positive or negative at this \(x\) value, then we can do the same for an \(x\) value just larger than the \(x\) value of the turning point and again determine the sign of the outcome.
 \slide
@@ -1446,18 +1447,18 @@ So from examining the table above we see that the critical point at \(x=0\) must
 The points of inflection we have considered so far are a special case where the gradient is zero at
 some value of x. In fact any point where the curve changes from concave to convex is called a
 point of inflection regardless of whether the gradient becomes zero or not. Two points of this type
-are shown in the graphs below.
+are shown in the graphs on Figure \ref{fig:12-points-of-inflection}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure10} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/12-points-of-inflection-1} 
 
 }
 
-\caption{points of inflection}\label{fig:unnamed-chunk-21}
+\caption{points of inflection}\label{fig:12-points-of-inflection}
 \end{figure}
 
-Here the graph changes from concave downwards to concave upwards as \(x\) increases in the first case and from concave upwards to concave downwards in the second case. In each case the marked point is a point of inflection. But the gradient is clearly never zero!
+Here the graph changes from concave downwards to concave upwards as \(x\) increases in the first case and from concave upwards to concave downwards in the second case. In each case the marked point is a point of inflection. But the gradient is not zero at these points!
 
 For points such as these \(dy/dx\) is not zero, but \(d^2y/dx^2\) always is. We can find the position of such points by finding where \(d^2y/dx^2\) is zero. We can decide which way they bend by considering \(dy/dx\) as for the previous point of inflection example.
 \slide
@@ -1483,11 +1484,11 @@ From examining the value of \(dy/dx\) just before and just after \(x=1.5\) we fi
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure11} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/13-graph-of-2x3-9x2-12x-1} 
 
 }
 
-\caption{$y = 2x^3-9x^2+12x$}\label{fig:unnamed-chunk-22}
+\caption{$y = 2x^3-9x^2+12x$}\label{fig:13-graph-of-2x3-9x2-12x}
 \end{figure}
 
 \end{solution}
@@ -1726,13 +1727,15 @@ y(-\frac32) = \left(-\frac32\right)^2 +3\left(-\frac 32\right) - 2 = -\frac{17}4
 
 Since \(d^2y/dx^2 = 2\ne0\) there are no points of inflection and the curve is always concave up.
 
+Sketch on Figure \ref{fig:14-graph-x2-3x-2}.
+
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure16} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/14-graph-x2-3x-2-1} 
 
 }
 
-\caption{$f(x) = x^2+3x-2$}\label{fig:unnamed-chunk-25}
+\caption{$f(x)=x^2+3x-2$}\label{fig:14-graph-x2-3x-2}
 \end{figure}
 \slide
 
@@ -1780,13 +1783,15 @@ This clearly has no solutions and so there are no critical points.
 
 Since \(d^2y/dx^2 = 6x\) then \((0,3)\) is a point of inflection. When \(x < 0\), \(d^2y/dx^2<0\) and so the curve is concave down here, while if \(x>0\) then \(d^2y/dx^2>0\) and the curve is concave up here.
 
+Sketch on Figure \ref{fig:15-graph-x3-2x-3}.
+
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure17} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/15-graph-x3-2x-3-1} 
 
 }
 
-\caption{$f(x)=x^3+2x+3$}\label{fig:unnamed-chunk-26}
+\caption{$f(x)=x^3+2x+3$}\label{fig:15-graph-x3-2x-3}
 \end{figure}
 \slide
 
@@ -1838,13 +1843,15 @@ So the line \(x=-1\) is a \textcolor{red}{\em vertical asymptote}\index{vertical
 
 There is also a \textcolor{red}{\em horizontal asymptote}\index{horizontal asymptote}. Notice that as \(x\to+\infty\) then \(y\to 0\) (from above), and as \(x\to-\infty\) then \(y\to0\) (from below). So the line \(y=0\) is a horizontal asymptote.
 
+Sketch on Figure \ref{fig:16-graph-1-x-1}.
+
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure18} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/16-graph-1-x-1-1} 
 
 }
 
-\caption{$f(x) = 1/(x+1)$}\label{fig:unnamed-chunk-27}
+\caption{$f(x)=1/(x+1)$}\label{fig:16-graph-1-x-1}
 \end{figure}
 
 \slide
@@ -1859,15 +1866,15 @@ All such problems are solved by forming an equation for the quantity to be minim
 Metal boxes are to be made from sheets of steel 800 mm long by 400 mm wide, by cutting squares from the corners and bending the sides. Determine the size of the square to be cut from a sheet such that the volume of the box is maximum.
 \end{example}
 
-It is usually helpful to begin by drawing a diagram
+It is usually helpful to begin by drawing a diagram (Figure \ref{fig:17-maximum-volume}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure13} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/17-maximum-volume-1} 
 
 }
 
-\caption{maximum volume}\label{fig:unnamed-chunk-28}
+\caption{maximum-volume}\label{fig:17-maximum-volume}
 \end{figure}
 
 Let \(x\) be the length in metres of side of the square to be cut.
@@ -1919,16 +1926,16 @@ A beam which is built into a wall at one end is simply supported by a force of 7
 \[
 M = 75x-20(x-1.25)-30x\frac{x}{2}.
 \]
-Determine the position of the maximum bending moment and its magnitude.
+Determine the position of the maximum bending moment and its magnitude. (Figure \ref{fig:18-maximum-bending-moment})
 \end{example}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.55\linewidth]{tikztopng-figure14} 
+{\centering \includegraphics[width=0.65\linewidth]{fy-B-lectnotes_files/figure-latex/18-maximum-bending-moment-1} 
 
 }
 
-\caption{maximum bending moment}\label{fig:unnamed-chunk-29}
+\caption{maximum bending moment}\label{fig:18-maximum-bending-moment}
 \end{figure}
 
 \begin{gather*}
@@ -1950,7 +1957,7 @@ The maximum bending moment occurs at \(1.83 m\) from the simply supported end an
 
 \begin{example}
 
-Given a cylindical can with surface area \(S=100\ m^2\), height \(h\) and radius \(r\),
+Given a cylindical can with surface area \(S=100\ m^2\), height \(h\) and radius \(r\) (see Figure \ref{fig:19-maximum-volume}),
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1965,11 +1972,11 @@ Given a cylindical can with surface area \(S=100\ m^2\), height \(h\) and radius
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.25\linewidth]{tikztopng-figure15} 
+{\centering \includegraphics[width=0.25\linewidth]{fy-B-lectnotes_files/figure-latex/19-maximum-volume-1} 
 
 }
 
-\caption{maximum volume}\label{fig:unnamed-chunk-30}
+\caption{maximum volume}\label{fig:19-maximum-volume}
 \end{figure}
 
 Let \(A=\pi r^2\) be the surface area of the top of the can.
@@ -2041,15 +2048,15 @@ Differentiate with respect to \(x\), \(10x^2 + 12xy + 10y^2 = 1\) where \(y = f(
 \end{example}
 
 \begin{solution}
-This is actually the equation of an ellipse.
+This is actually the equation of an ellipse (Figure \ref{fig:20-ellipse}).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure32} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/20-ellipse-1} 
 
 }
 
-\caption{ellipse $10x^2 + 12xy + 10y^2 = 1$}\label{fig:unnamed-chunk-31}
+\caption{ellipse $10x^2 + 12xy + 10y^2 = 1$}\label{fig:20-ellipse}
 \end{figure}
 
 \begin{gather*}
@@ -2348,15 +2355,15 @@ In the same way, thinking of \(x\) as being a fixed constant and differentiating
 \frac{\partial z}{\partial y} = x + 2y.
 \]
 
-Consider the expression for the volume of a cylinder, \(V = \pi r^2h\) where \(r\) is the radius of the cylinder and \(h\) is its height.
+Consider the expression for the volume of a cylinder, \(V = \pi r^2h\) where \(r\) is the radius of the cylinder and \(h\) is its height. (Figure \ref{fig:21-cylinder})
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.25\linewidth]{tikztopng-figure19} 
+{\centering \includegraphics[width=0.25\linewidth]{fy-B-lectnotes_files/figure-latex/21-cylinder-1} 
 
 }
 
-\caption{cylinder}\label{fig:unnamed-chunk-34}
+\caption{cylinder}\label{fig:21-cylinder}
 \end{figure}
 
 The differential coefficients can be
@@ -3254,14 +3261,14 @@ Consider the graph of \(y = f(x)\) and the area it encloses between the curve an
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure20} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/22-slice-under-a-curve-1} 
 
 }
 
-\caption{$f(x)$}\label{fig:unnamed-chunk-42}
+\caption{$f(x)$}\label{fig:22-slice-under-a-curve}
 \end{figure}
 
-At point \(x\), the curve has a height \(y\) at point \(x + \delta x\) the curve has height \(y + \delta y\).
+At point \(x\), the curve has a height \(y\) at point \(x + \delta x\) the curve has height \(y + \delta y\) (Figure \ref{fig:22-slice-under-a-curve}).
 
 The area of the shaded rectangle under the curve is \(y\delta x\). As drawn, the area of the rectangle has a value quite close to the area under the curve between \(x\) and \(x + \delta x\). If we chose \(\delta x\) to have a smaller value, then the area of the resulting rectangle would be nearer in size to the area between \(x\) and \(x + \delta x\). The smaller we choose \(\delta x\) to be, the better the approximation to the area. In the limit as \(\delta x \to 0\), the area of the rectangle is exactly the same as the area under the curve.
 
@@ -3285,17 +3292,18 @@ Determine the area between the curve \(y=2x^2+3x+1\) and the \(x-\)axis between 
 \begin{solution}
 \leavevmode
 
+(See Figure \ref{fig:23-area-under-2x23x1}.)
 \[
 A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
 \]
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.15\linewidth]{tikztopng-figure21} 
+{\centering \includegraphics[width=0.2\linewidth]{fy-B-lectnotes_files/figure-latex/23-area-under-2x23x1-1} 
 
 }
 
-\caption{$2x^2+3x+1$}\label{fig:unnamed-chunk-43}
+\caption{$2x^2+3x+1$}\label{fig:23-area-under-2x23x1}
 \end{figure}
 
 \end{solution}
@@ -3306,15 +3314,15 @@ A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \le
 
 If the curve lies below the \(x\)-axis between \(a\) and \(b\), then \(y\) is negative and \(y\delta x\) will have a negative value. As a result the area for regions below the \(x-\)axis will be negative. We are not suggesting that the area itself is negative, just that the presence of the minus sign after integration indicates an area below the \(x-\)axis. For this reason there is a small difference between the definite integral and the area under a curve.
 
-Consider the curve \(y = x^2 - 3x\). We would like to find the area enclosed between the \(x-\)axis and the values \(x = -1\) and \(x = 5\).
+Consider the curve \(y = x^2 - 3x\) (Figure \ref{fig:24-graph-x23x}). We would like to find the area enclosed between the \(x-\)axis and the values \(x = -1\) and \(x = 5\).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure22} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/24-graph-x23x-1} 
 
 }
 
-\caption{$x^2-3x$}\label{fig:unnamed-chunk-44}
+\caption{$x^2-3x$}\label{fig:24-graph-x23x}
 \end{figure}
 
 The definite integral over this range is
@@ -3341,15 +3349,15 @@ Determine the area enclosed between the curve \(y=x^3\) and the \(x-\)axis, betw
 \end{example}
 
 \begin{solution}
-First sketch the curve.
+First sketch the curve: Figure \ref{fig:25-graph-x3}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure24} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/25-graph-x3-1} 
 
 }
 
-\caption{$y=x^3$}\label{fig:unnamed-chunk-45}
+\caption{$y=x^3$}\label{fig:25-graph-x3}
 \end{figure}
 
 We might expect the area to be given by
@@ -3377,15 +3385,15 @@ Determine the area enclosed between the curve \(y=x^2+1\) and the straight line 
 \begin{solution}
 \leavevmode
 
-In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch.
+In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch: Figure \ref{fig:26-graph-x2117x}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure23} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/26-graph-x2117x-1} 
 
 }
 
-\caption{$y=x^2+1$ and $y=7-x$}\label{fig:unnamed-chunk-46}
+\caption{$y=x^2+1$ and $y=7-x$}\label{fig:26-graph-x2117x}
 \end{figure}
 
 We want to find the shaded area. The limits of integration will be the points of intersection of the two curves.
@@ -3420,15 +3428,15 @@ Determine the area enclosed between the curve \(y=e^x\) and the curve \(y=e^{-x}
 \begin{solution}
 \leavevmode
 
-A quick sketch of the curves is:
+A quick sketch of the curves is on Figure \ref{fig:27-graph-exex}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure25} 
+{\centering \includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/27-graph-exex-1} 
 
 }
 
-\caption{$y=e^x$ and $y=e^{-x}$}\label{fig:unnamed-chunk-47}
+\caption{$y=e^x$ and $y=e^{-x}$}\label{fig:27-graph-exex}
 \end{figure}
 
 \[
@@ -3598,25 +3606,27 @@ We shall consider three methods
 
 \slide
 
-With the \textcolor{red}{\em mid-ordinate rule}\index{mid-ordinate rule}, the curve for which we want to know the area is divided into strips of equal width \(s\).
+With the \textcolor{red}{\em mid-ordinate rule}\index{mid-ordinate rule}, the curve for which we want to know the area is divided into strips of equal width \(s\), see Figure \ref{fig:28-graph-vertical-strips}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure26} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/28-graph-vertical-strips-1} 
 
 }
 
-\caption{$f(x)$}\label{fig:unnamed-chunk-51}
+\caption{$f(x)$}\label{fig:28-graph-vertical-strips}
 \end{figure}
 
-Considering each strip in turn, we measure the height of the strip, \(h\), along the centre line or mid-ordinate. The area of the strip is then taken to be the area of a rectangle with height \(h\) and width \(s\).
+Considering each strip in turn, we measure the height of the strip, \(h\), along the centre line or mid-ordinate, see Figure \ref{fig:29-mid-ordinate-rule}. The area of the strip is then taken to be the area of a rectangle with height \(h\) and width \(s\).
 \slide
 
 \begin{figure}
 
-\includegraphics[width=0.4\linewidth]{tikztopng-figure27} \hfill{}
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/29-mid-ordinate-rule-1} 
 
-\caption{mid-ordinate rule}\label{fig:unnamed-chunk-52}
+}
+
+\caption{mid-ordinate rule}\label{fig:29-mid-ordinate-rule}
 \end{figure}
 
 The area is \(h \times s\), the area of the shaded rectangle. Note that the approximate area slightly over estimates the area to the right of the mid-ordinate, but slightly under estimates it by an approximately similar amount on the left of the mid-ordinate. As a result, the shaded area is a good approximation to the total area.
@@ -3658,15 +3668,15 @@ Using three strips, \(s=1\), the three mid-points are \(x_1=1.5, x_2=2.5\) and \
 
 \section{Trapezium rule}\label{trapezium-rule}
 
-For the \textcolor{red}{\em trapezium rule}\index{trapezium rule}, the curve is again divided into strips of equal width \(s\), but this time, the area of each strip is approximated by a trapezium instead of a rectangle.
+For the \textcolor{red}{\em trapezium rule}\index{trapezium rule}, the curve is again divided into strips of equal width \(s\), but this time, the area of each strip is approximated by a trapezium instead of a rectangle, see Figure \ref{fig:30-trapezium-rule}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure28} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/30-trapezium-rule-1} 
 
 }
 
-\caption{trapezium rule}\label{fig:unnamed-chunk-53}
+\caption{trapezium rule}\label{fig:30-trapezium-rule}
 \end{figure}
 
 For a trapezium, the area is given by
@@ -3706,26 +3716,26 @@ With three strips then \(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4,
 
 \section{Simpson's Rule}\label{simpsons-rule}
 
-The idea behind \textcolor{red}{\em Simpson's rule}\index{Simpson's rule} is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials.
+The idea behind \textcolor{red}{\em Simpson's rule}\index{Simpson's rule} is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials, see Figure \ref{fig:31-simpsons-rule}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure29} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/31-simpsons-rule-1} 
 
 }
 
-\caption{Simpson's rule}\label{fig:unnamed-chunk-54}
+\caption{Simpson's rule}\label{fig:31-simpsons-rule}
 \end{figure}
 
-Given 3 equally spaced points on the curve \((x_1,y_1), (x_2, y_2)\) and \((x_3,y_3)\), we construct a quadratic polynomial \(y=ax^2+bx+c\) which passes through all three points. In order to simplify the calculations, we can `move' the curve so that the point \(x_2\) coincides with the origin. In other words assume that \(x_2=0\). We also let \(x_3-x_2=x_2-x_1=s\) and so \(x_3=s, x_1=-s\).
+Given 3 equally spaced points on the curve \((x_1,y_1), (x_2, y_2)\) and \((x_3,y_3)\), we construct a quadratic polynomial \(y=ax^2+bx+c\) which passes through all three points. In order to simplify the calculations, we can `move' the curve so that the point \(x_2\) coincides with the origin, see Figure \ref{fig:32-simpsons-rule2}. In other words assume that \(x_2=0\). We also let \(x_3-x_2=x_2-x_1=s\) and so \(x_3=s, x_1=-s\).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure30} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/32-simpsons-rule2-1} 
 
 }
 
-\caption{Simpson's rule}\label{fig:unnamed-chunk-55}
+\caption{Simpson's rule: move to arrange $x_2=0$}\label{fig:32-simpsons-rule2}
 \end{figure}
 
 for this to be the case we then need
@@ -3815,18 +3825,18 @@ $x_1$ & $y_1$\\
 \hline
 \end{tabular}
 
-Hence using Simpson's rule
+Hence using Simpson's rule (Figure \ref{fig:33-graph-ex2}):
 \[
 \int_{-1}^1e^{-x^2}dx \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
 \]
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{tikztopng-figure31} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/33-graph-ex2-1} 
 
 }
 
-\caption{$e^{-x^2}$}\label{fig:unnamed-chunk-57}
+\caption{$e^{-x^2}$}\label{fig:33-graph-ex2}
 \end{figure}
 
 \end{solution}
@@ -4073,14 +4083,15 @@ In this section, we consider the mean and root mean square values of a function,
 
 \section{Mean and RMS Values}\label{mean-and-rms-values}
 
-The \textcolor{red}{\em mean}\index{mean} value for a function \(y = f(x)\) for the range \(a\) to \(b\) is the mean value of all the ordinates in that range. Consider a function \(y = f(x)\) for the values \(x = a\) to \(x = b\), divided into a number of strips of equal width \(\delta x\). Let the mid-ordinate for each strip be \(y_1, y_2, y_3,\ldots,y_n\).
+The \textcolor{red}{\em mean}\index{mean} value for a function \(y = f(x)\) for the range \(a\) to \(b\) is the mean value of all the ordinates in that range. Consider a function \(y = f(x)\) for the values \(x = a\) to \(x = b\), divided into a number of strips of equal width \(\delta x\). Let the mid-ordinate for each strip be \(y_1, y_2, y_3,\ldots,y_n\), see Figure \ref{fig:34-striped-graph}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.3\linewidth]{tikztopng-figure33} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/34-striped-graph-1} 
 
 }
 
+\caption{$f(x)$}\label{fig:34-striped-graph}
 \end{figure}
 
 The mean or average value of the mid-ordinates is
@@ -4295,29 +4306,29 @@ Many structures and mechanical systems act as if their masses were concentrated 
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure34} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/35-mass-along-a-line-1} 
 
 }
 
-\caption{mass along a line}\label{fig:unnamed-chunk-67}
+\caption{mass along a line}\label{fig:35-mass-along-a-line}
 \end{figure}
 
-Suppose that the \(x-\)axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{red}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\). The \textcolor{red}{\em principle of moments}\index{principle of moments} says that the system will balance providing
+Suppose that the \(x-\)axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{red}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\). The \textcolor{red}{\em principle of moments}\index{principle of moments} says that the system will balance providing
 \[
 m_1x_1 + m_2x_2 = 0.
 \]
 
 \slide
 
-If we are given a system with more than 2 masses
+If we are given a system with more than 2 masses (see Figure \ref{fig:36-mass-along-a-line-many})
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure35} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/36-mass-along-a-line-many-1} 
 
 }
 
-\caption{mass along a line - many bodies}\label{fig:unnamed-chunk-68}
+\caption{mass along a line -- many bodies}\label{fig:36-mass-along-a-line-many}
 \end{figure}
 
 the principle says that the system will balance providing
@@ -4326,15 +4337,15 @@ the principle says that the system will balance providing
 \]
 In principle, we should use the force acting on the body, which is \(m_ig\) where \(g\) is the gravitational acceleration. However the constant \(g\) will cancel out.
 \slide
-Suppose however, the system does not balance. Can we find a point \(\overline x\) such that if we were to move the fulcrum to that position, the system would balance?
+Suppose however, the system does not balance. Can we find a point \(\overline x\) such that if we were to move the fulcrum to that position, the system would balance (see Figure \ref{fig:37-centre-of-mass})?
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{tikztopng-figure36} 
+{\centering \includegraphics[width=0.7\linewidth]{fy-B-lectnotes_files/figure-latex/37-centre-of-mass-1} 
 
 }
 
-\caption{center of mass}\label{fig:unnamed-chunk-69}
+\caption{centre of mass}\label{fig:37-centre-of-mass}
 \end{figure}
 
 This would require that
@@ -4350,15 +4361,15 @@ The point \(\overline x\) is called the \textcolor{red}{\em center of mass}\inde
 
 In order to generalise this situation to 2-dimensions and to consider an `infinite number of points', we need to use integration, rather than a finite sum.
 
-Consider the 2-dimensional strip below, and suppose that the \textcolor{red}{\em density}\index{density} at the point \(x\) is given by \(\rho(x)\).
+Consider the 2-dimensional strip on Figure \ref{fig:38-2d-rod}, and suppose that the \textcolor{red}{\em density}\index{density} at the point \(x\) is given by \(\rho(x)\).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{tikztopng-figure37} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/38-2d-rod-1} 
 
 }
 
-\caption{2-dimensional rod}\label{fig:fig37}
+\caption{2-dimensional rod}\label{fig:38-2d-rod}
 \end{figure}
 \slide
 
@@ -4390,11 +4401,11 @@ Take a small rectangular strip of width \(\delta x\) at the point \(x\) so that 
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{tikztopng-figure38} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/39-2d-rod2-1} 
 
 }
 
-\caption{2-dimensional rod}\label{fig:fig38}
+\caption{2-dimensional rod}\label{fig:39-2d-rod2}
 \end{figure}
 
 Now sum over all such rectangles and allow \(\delta x \to 0\) (in other words compute the integral) to get the mass
@@ -4406,7 +4417,7 @@ Now sum over all such rectangles and allow \(\delta x \to 0\) (in other words co
 
 \slide
 
-Suppose we wish to find the centre of mass of the rod in Figure \ref{fig:fig38}. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is \(x(2+x^2/2)\delta x\). So
+Suppose we wish to find the centre of mass of the rod on Figure \ref{fig:39-2d-rod2}. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is \(x(2+x^2/2)\delta x\). So
 \[
 \overline x = \frac{\text{moment}}{\text{mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ dx = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
 \]
@@ -4426,14 +4437,14 @@ Suppose that the centroid of the area bounded by the curve \(y=f(x)\), the \(x-\
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure39} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/40-lamina-1} 
 
 }
 
-\caption{lamina}\label{fig:fig39}
+\caption{lamina}\label{fig:40-lamina}
 \end{figure}
 
-Consider a narrow strip of width \(\delta x\). The strip can be considered as approximately a rectangle with height \(y\) and area \(y\delta x\). The centre of the area is at the midpoint with coordinate \((x,y/2)\). By summing the moments of the centre of area for each strip we can find the centroid.
+Consider a narrow strip of width \(\delta x\) (see Figure \ref{fig:40-lamina}). The strip can be considered as approximately a rectangle with height \(y\) and area \(y\delta x\). The centre of the area is at the midpoint with coordinate \((x,y/2)\). By summing the moments of the centre of area for each strip we can find the centroid.
 
 \slide
 
@@ -4473,23 +4484,23 @@ Consider a curve \(y = f(x)\) between the ordinates \(x = a\) and \(x = b\). The
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure40} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/41-volume-of-revolution-1} 
 
 }
 
-\caption{Volume of revolution}\label{fig:unnamed-chunk-70}
+\caption{volume of revolution}\label{fig:41-volume-of-revolution}
 \end{figure}
 
-If the shaded strip in the above figure is rotated about the \(x-\)axis then, provided \(\delta x\) is small, it will trace out a disc with thickness \(\delta x\) and volume \(\delta V = \pi y^2\delta x\), where \(y\) is the radius of the disc.
+If the shaded strip in Figure \ref{fig:41-volume-of-revolution} is rotated about the \(x-\)axis then, provided \(\delta x\) is small, it will trace out a disc with thickness \(\delta x\) and volume \(\delta V = \pi y^2\delta x\), where \(y\) is the radius of the disc, see Figure \ref{fig:42-volume-of-revolution2}.
 \slide
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure41} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/42-volume-of-revolution2-1} 
 
 }
 
-\caption{Volume of revolution}\label{fig:unnamed-chunk-71}
+\caption{volume of revolution}\label{fig:42-volume-of-revolution2}
 \end{figure}
 
 We may sum the volumes generated by all the strips between \(x = a\) and \(x = b\) to obtained the volume of the solid of revolution for the section of curve about the x axis.
@@ -4522,16 +4533,18 @@ The straight line \(y=mx\) between \(x=0\) and \(x=h\) is rotated about the \(x-
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{tikztopng-figure42} 
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/43-right-circ-cone-1} 
 
 }
 
-\caption{right circular cone}\label{fig:unnamed-chunk-72}
+\caption{right-circular-cone}\label{fig:43-right-circ-cone}
 \end{figure}
 
 \end{example}
 
 \begin{solution}
+See Figure \ref{fig:43-right-circ-cone}.
+
 The volume of the solid of revolution for \(y = mx\) is given by
 \[
 V = \pi\int_0^hy^2\ dx = \pi\int_0^h (mx)^2\ dx = m^2\pi\int_0^hx^2\ dx = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
@@ -4680,7 +4693,7 @@ A \textcolor{red}{\em vector}\index{vector} quantity has magnitude and direction
 
 A vector is represented graphically by a straight line with an arrowhead showing its direction. Often the line is drawn to scale so that the magnitude of the vector may be determined by measuring its length.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure46} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/44-vectors-1-1} \end{center}
 
 The diagram above shows two ways that vectors are often drawn. To refer to the vector we give it a name. There are many different methods used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as \(\underline{OP}\) or \(\underline p\) or \(\vec{p}\). The point at which a vector starts is called the initial point. The point at which it ends is called the final point.
 
@@ -4688,11 +4701,11 @@ Sometimes we are only interested in the magnitude of the vector. In this case we
 
 We can multiply a vector by a positive scalar (or ordinary number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors \(\underline a\) and \(3\underline a\). Note that \(3\underline a\) is parallel to \(\underline a\) (has the same direction) but is \(3\) times as long.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure47} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/45-vectors-2-1} \end{center}
 
 Multiplication by a negative scalar turns the vector around through \(180^\circ\). A position vector indicates the distance and direction that we have to travel from the origin to get to a point. In the diagram below, if \(O\) is the origin then \(\underline{OP}\) is the position vector of the point called \(P\). \(\underline{PQ}\) is called a displacement vector. It shows the distance and direction that we have to travel from \(P\) to get to \(Q\). \(\underline{OQ}\) is the position vector of the point \(Q\). Position vectors always refer to the position of a point relative to the origin. Displacement vectors refer to the position of any point relative to any other.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure48} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/46-vectors-3-1} \end{center}
 
 \slide
 
@@ -4702,25 +4715,25 @@ We have already seen that a vector may be \textcolor{red}{\em multiplied by a sc
 
 Two vectors \(a\) and \(b\) are equal if they have the same magnitude and the same direction. They do not actually have to start and finish at the same point.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure49} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/47-vectors-4-1} \end{center}
 
 In the above diagram, \(\underline a= \underline b = \underline c\).
 
 If a vector \(\underline b\) has the same magnitude as vector \(\underline a\), but points in the opposite direction then \(\underline b = -\underline a\).
 
-\begin{center}\includegraphics[width=0.1\linewidth]{tikztopng-figure50} \end{center}
+\begin{center}\includegraphics[width=0.15\linewidth]{fy-B-lectnotes_files/figure-latex/48-vectors-5-1} \end{center}
 
 Again it doesn't matter whether they start and finish at the same point or not.
 
 The \textcolor{red}{\em sum}\index{sum} (or \textcolor{red}{\em resultant}\index{resultant}) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e.~runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure51} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/49-vectors-6-1} \end{center}
 
 The difference of two vectors is given by \(\underline a + (-\underline b)\), where \(-\underline b\) points in the opposite direction to \(\underline b\). The sum of \(\underline a + (-\underline b)\) is then found from the triangle law above. Hence we write \(\underline a-\underline b = \underline a + (-\underline b)\).
 
 The sum of a set of vectors that form a closed loop is always zero.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure52} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/50-vectors-7-1} \end{center}
 
 \(\underline a + \underline b + \underline c + \underline d + \underline e = \underline 0\).
 
@@ -4730,7 +4743,7 @@ The sum of a set of vectors that form a closed loop is always zero.
 
 For the diagram below, state the magnitude of the sum of the vectors \(\underline{AB}\), \(\underline{BC}\), \(\underline{CD}\) and \(\underline{DE}\).
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure53} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/51-vectors-8-1} \end{center}
 
 \end{example}
 
@@ -4740,7 +4753,7 @@ The sum of all the vectors starts at the initial point of the first vector and e
 
 If a vector joins two points \(A\) and \(B\), then it is equivalent to any other system of vectors that form a path from \(A\) to \(B\). For example the vector \(\underline{AB}\) shown as a solid line below, is equivalent to the sum of the vectors shown dotted.
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure54} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/52-vectors-9-1} \end{center}
 
 This fact may be used to solve geometric problems using vectors.
 
@@ -4753,7 +4766,7 @@ For the triangle \(ABC\), if \(D\) is the mid-point of \(AB\) show that
 2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.\tag{1}
 \]
 
-\begin{center}\includegraphics[width=0.3\linewidth]{tikztopng-figure55} \end{center}
+\begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/53-vectors-10-1} \end{center}
 
 \end{example}
 
@@ -4798,11 +4811,11 @@ If \(\underline a\) is a vector with magnitude \(|\underline a|\), then a unit v
 \]
 For vector systems, there are three special unit vectors \(\underline i\), \(\underline j\) and \(\underline k\). These vectors for a set of axes for a vector system and are perpendicular to each other (like \(x\), \(y\) and \(z\) in Cartesian notation). Strictly, they should be written \(\hat{\underline i}, \hat{\underline j}\) and \(\hat{\underline k}\) to indicate that they are unit vectors, but they are used so often that the circumflex, \(\hat{}\), tends to get left off. The axis vectors are arranged as a righthand system. This means that a screw turned from \(\underline i\) to \(\underline j\) should travel up the \(\underline k\) axis.
 
-\begin{center}\includegraphics[width=0.8\linewidth]{tikztopng-figure56} \end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{fy-B-lectnotes_files/figure-latex/54-vectors-11-1} \end{center}
 
 A vector may be resolved in terms of its components in the direction of the unit axis vectors. We shall start by considering a two dimensional vector. For this we need only the \(\underline i\) and \(\underline j\) axes.
 
-\begin{center}\includegraphics[width=0.25\linewidth]{tikztopng-figure57} \end{center}
+\begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/55-vectors-12-1} \end{center}
 
 The vector \(\underline r\) makes an angle \(\theta\) with the \(\underline i\) axis and has magnitude \(|\underline r| = r\). We may say that to get to the point \(R\), we have to start at the \(\underline i\) axis, turn through an angle \(\theta\) and then travel a distance \(r\) from the origin. Alternatively, we may get to \(R\), by travelling a distance along the \(\underline i\) axis and then a distance up in the direction of the \(\underline j\) axis. The distance to be travelled along the \(\underline i\) axis is \(r\cos(\theta)\) and the distance to be travelled up in the direction of the \(\underline j\) axis is \(r\sin(\theta)\). The vector \(\underline r\) may thus be written as \(\underline r = r\cos(\theta) \underline i + r\sin(\theta)\underline j\).
 
@@ -4814,7 +4827,7 @@ A 2D vector may be given in its component form as, for example \(\underline r = 
 
 If we have two 2D vectors lying in the same plane, then they are said to be co-planar vectors.
 
-\begin{center}\includegraphics[width=0.25\linewidth]{tikztopng-figure58} \end{center}
+\begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/56-vectors-13-1} \end{center}
 
 The vectors \(\underline a\) and \(\underline b\) are co-planar.
 
@@ -4822,7 +4835,7 @@ The vectors \(\underline a\) and \(\underline b\) are co-planar.
 
 We may also write 3D vectors in terms of their unit vectors, but this time we need all three axes.
 
-\begin{center}\includegraphics[width=0.35\linewidth]{tikztopng-figure59} \end{center}
+\begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/57-vectors-14-1} \end{center}
 
 The vector \(\underline r\) projects a length \(a\) onto the \(\underline i\) axis, a length \(b\) onto the \(\underline j\) axis and a length \(c\) onto the \(\underline k\) axis, so \(\underline r\) may be written \(\underline r = a\underline i + b\underline j + c\underline k\).
 
@@ -4853,11 +4866,11 @@ When a vector written in terms of components is multiplied by a scalar, each com
 
 \subsection{The magnitude of a vector}\label{the-magnitude-of-a-vector}
 
-\begin{center}\includegraphics[width=0.25\linewidth]{tikztopng-figure60} \end{center}
+\begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/58-vectors-15-1} \end{center}
 
 The vector \(\underline r = a\underline i + b\underline j\). From Pythagoras' theorem, the magnitude of vector \(|\underline r| = \sqrt{a^2+b^2}\). In three dimensions, if \(\underline r = a\underline i + b\underline j + c\underline k\), then \(|\underline r| = \sqrt{a^2+b^2+c^2}\).
 
-\begin{center}\includegraphics[width=0.35\linewidth]{tikztopng-figure59} \end{center}
+\begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/59-vectors-16-1} \end{center}
 
 \slide
 
@@ -4920,7 +4933,7 @@ If \(\underline r = 5\underline i+2\underline j-\underline k\), find a unit vect
 The \textcolor{red}{\em direction cosines}\index{direction cosines} of a vector are the cosines of the angles that that vector makes with each of
 the three axes. The angles are marked \(\alpha, \beta\) and \(\gamma\) in the figure below
 
-\begin{center}\includegraphics[width=0.35\linewidth]{tikztopng-figure61} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{fy-B-lectnotes_files/figure-latex/60-vectors-17-1} \end{center}
 
 The direction cosines are
 \[
@@ -4945,7 +4958,7 @@ l = \frac{3}{\sqrt{50}},\;\;m = \frac{4}{\sqrt{50}},\;\;n = \frac{-5}{\sqrt{50}}
 
 \subsection{The angle between two vectors}\label{the-angle-between-two-vectors}
 
-\begin{center}\includegraphics[width=0.25\linewidth]{tikztopng-figure62} \end{center}
+\begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/61-vectors-18-1} \end{center}
 
 If we have two vectors \(\underline a\) and \(\underline b\) where \(\underline a\) has direction cosines \(l_a, m_a, n_a\) and \(\underline b\) has direction cosines \(l_b, m_b, n_b\), then the cosine of the angle \(\theta\) between the vectors is given by:
 \[
@@ -4996,7 +5009,7 @@ The scalar product of two vectors \(\underline a\) and \(\underline b\) is defin
 \]
 where \(\theta\) is the angle between the two vectors as shown below
 
-\begin{center}\includegraphics[width=0.2\linewidth]{tikztopng-figure62} \end{center}
+\begin{center}\includegraphics[width=0.3\linewidth]{fy-B-lectnotes_files/figure-latex/62-vectors-19-1} \end{center}
 
 If \(\underline a\) and \(\underline b\) are parallel then \(\theta = 0^\circ\) and \(\cos(\theta) = 1\), so \(\underline a \cdot\underline b = |\underline a||\underline b|\).
 
@@ -5095,7 +5108,7 @@ The vector product is defined as \(\underline a \times\underline b = |\underline
 
 That is to say that the magnitude of \(\underline a\times\underline b\) is \(|\underline a||\underline b|\sin(\theta)\) where \(\theta\) is the angle between \(\underline a\) and \(\underline b\) and, since it is a vector, it must also have a direction so \(\underline{\hat n}\) indicates the direction. For a vector product, \(\underline {\hat n}\) is always perpendicular to both \(\underline a\) and \(\underline b\). For \(\underline {\hat n}\) to be perpendicular to \(\underline a\) and \(\underline b\), it could either point in the direction shown below, or in the opposite direction, however for a vector product, \(\underline {\hat n}\) always forms a right-hand set of axes (like \(\underline i, \underline j\) and \(\underline k\)). The vector in the opposite direction (shown dotted) would be obtained from \(\underline b\times\underline a\).
 
-\begin{center}\includegraphics[width=0.35\linewidth]{tikztopng-figure63} \end{center}
+\begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/63-vectors-20-1} \end{center}
 
 If \(\underline a\) and \(\underline b\) are parallel (i.e.~\(\theta = 0\)), then since \(\sin(\theta) = 0, \underline a \times\underline b = {\underline 0}\).
 
@@ -5150,7 +5163,7 @@ Note that the vector product must be evaluated first, then the scalar product.
 
 The scalar triple product gives the volume of a parallelepiped with edges defined by the vectors \(\underline a, \underline b\) and \(\underline c\).
 
-\begin{center}\includegraphics[width=0.35\linewidth]{tikztopng-figure64} \end{center}
+\begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/64-vectors-21-1} \end{center}
 
 \slide
 
@@ -5221,30 +5234,30 @@ Determine the resultant of the vectors \(\underline A, \underline B, \underline 
 \subsection*{Exercise 3}\label{exercise-3-10}
 \addcontentsline{toc}{subsection}{Exercise 3}
 
-An object \(P\) is acted on by three forces as shown below. All forces lie in the same plane (are \{\em co-planar\}). Determine the required force and its direction so as to prevent \(P\) from moving.
+An object \(P\) is acted on by three forces as shown on Figure \ref{fig:65-res-force}. All forces lie in the same plane (are \emph{co-planar}). Determine the required force and its direction so as to prevent \(P\) from moving.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure43} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/65-res-force-1} 
 
 }
 
-\caption{resultant force}\label{fig:unnamed-chunk-97}
+\caption{resultant force}\label{fig:65-res-force}
 \end{figure}
 \slide
 
 \subsection*{Exercise 4}\label{exercise-4-8}
 \addcontentsline{toc}{subsection}{Exercise 4}
 
-For the triangle shown, prove by vectors that the line \(DE\), where \(D\) and \(E\) are the mid-points of \(AB\) and \(AC\) respectively, is half the length of the side \(BC\).
+For the triangle on Figure \ref{fig:66-triangles}, prove by vectors that the line \(DE\), where \(D\) and \(E\) are the mid-points of \(AB\) and \(AC\) respectively, is half the length of the side \(BC\).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure44} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/66-triangles-1} 
 
 }
 
-\caption{triangles}\label{fig:unnamed-chunk-98}
+\caption{triangles}\label{fig:66-triangles}
 \end{figure}
 
 \slide
@@ -5252,15 +5265,15 @@ For the triangle shown, prove by vectors that the line \(DE\), where \(D\) and \
 \subsection*{Exercise 5}\label{exercise-5-6}
 \addcontentsline{toc}{subsection}{Exercise 5}
 
-The quadrilateral \(ABCD\) shown below has the mid-points of the diagonals as \(P\) and \(Q\). Show that \(\underline{AB}+\underline{AD}+\underline{CB}+\underline{CD} = 4\underline{PQ}\)
+The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mid-points of the diagonals as \(P\) and \(Q\). Show that \(\underline{AB}+\underline{AD}+\underline{CB}+\underline{CD} = 4\underline{PQ}\)
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{tikztopng-figure45} 
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/67-quadrilateral-1} 
 
 }
 
-\caption{quadrilateral}\label{fig:unnamed-chunk-99}
+\caption{quadrilateral}\label{fig:67-quadrilateral}
 \end{figure}
 
 \slide

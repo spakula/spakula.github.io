@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-08" />
+<meta name="date" content="2024-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -536,13 +536,16 @@ I&amp;= \int\frac{5x+2}{x^2-4x+4} dx\\
 <h3><span class="header-section-number">7.2.1</span> Area under a curve<a href="week-seven.html#area-under-a-curve" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A most important application of the definite integral is for finding the area between a curve and an axis.</p>
 <p>Consider the graph of <span class="math inline">\(y = f(x)\)</span> and the area it encloses between the curve and the <span class="math inline">\(x-\)</span>axis between the <span class="math inline">\(x\)</span> values <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-42"></span>
-<img src="tikztopng-figure20.png" alt="$f(x)$" width="40%" />
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:22-slice-under-a-curve"></span>
+<img src="fy-B-lectnotes_files/figure-html/22-slice-under-a-curve-1.svg" alt="$f(x)$" width="50%" />
 <p class="caption">
 Figure 7.1: <span class="math inline">\(f(x)\)</span>
 </p>
 </div>
-<p>At point <span class="math inline">\(x\)</span>, the curve has a height <span class="math inline">\(y\)</span> at point <span class="math inline">\(x + \delta x\)</span> the curve has height <span class="math inline">\(y + \delta y\)</span>.</p>
+<p>At point <span class="math inline">\(x\)</span>, the curve has a height <span class="math inline">\(y\)</span> at point <span class="math inline">\(x + \delta x\)</span> the curve has height <span class="math inline">\(y + \delta y\)</span> (Figure <a href="week-seven.html#fig:22-slice-under-a-curve">7.1</a>).</p>
 <p>The area of the shaded rectangle under the curve is <span class="math inline">\(y\delta x\)</span>. As drawn, the area of the rectangle has a value quite close to the area under the curve between <span class="math inline">\(x\)</span> and <span class="math inline">\(x + \delta x\)</span>. If we chose <span class="math inline">\(\delta x\)</span> to have a smaller value, then the area of the resulting rectangle would be nearer in size to the area between <span class="math inline">\(x\)</span> and <span class="math inline">\(x + \delta x\)</span>. The smaller we choose <span class="math inline">\(\delta x\)</span> to be, the better the approximation to the area. In the limit as <span class="math inline">\(\delta x \to 0\)</span>, the area of the rectangle is exactly the same as the area under the curve.</p>
 <p>If we now consider the area between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we can divide it up into lots of rectangles each of width <span class="math inline">\(\delta x\)</span>. The total area, <span class="math inline">\(A\)</span>, under the curve is the sum of the areas of all the rectangles and may be written as
 <span class="math display">\[
@@ -559,11 +562,15 @@ This sometimes known as the <a name='#(second)-fundamental-theorem-of-calculus'>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-96" class="solution"><em>Solution</em>. </span></p>
+(See Figure <a href="week-seven.html#fig:23-area-under-2x23x1">7.2</a>.)
 <span class="math display">\[
 A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
 \]</span>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-43"></span>
-<img src="tikztopng-figure21.png" alt="$2x^2+3x+1$" width="15%" />
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:23-area-under-2x23x1"></span>
+<img src="fy-B-lectnotes_files/figure-html/23-area-under-2x23x1-1.svg" alt="$2x^2+3x+1$" width="20%" />
 <p class="caption">
 Figure 7.2: <span class="math inline">\(2x^2+3x+1\)</span>
 </p>
@@ -573,9 +580,12 @@ Figure 7.2: <span class="math inline">\(2x^2+3x+1\)</span>
 <div id="negative-areas" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Negative Areas<a href="week-seven.html#negative-areas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If the curve lies below the <span class="math inline">\(x\)</span>-axis between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then <span class="math inline">\(y\)</span> is negative and <span class="math inline">\(y\delta x\)</span> will have a negative value. As a result the area for regions below the <span class="math inline">\(x-\)</span>axis will be negative. We are not suggesting that the area itself is negative, just that the presence of the minus sign after integration indicates an area below the <span class="math inline">\(x-\)</span>axis. For this reason there is a small difference between the definite integral and the area under a curve.</p>
-<p>Consider the curve <span class="math inline">\(y = x^2 - 3x\)</span>. We would like to find the area enclosed between the <span class="math inline">\(x-\)</span>axis and the values <span class="math inline">\(x = -1\)</span> and <span class="math inline">\(x = 5\)</span>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-44"></span>
-<img src="tikztopng-figure22.png" alt="$x^2-3x$" width="40%" />
+<p>Consider the curve <span class="math inline">\(y = x^2 - 3x\)</span> (Figure <a href="week-seven.html#fig:24-graph-x23x">7.3</a>). We would like to find the area enclosed between the <span class="math inline">\(x-\)</span>axis and the values <span class="math inline">\(x = -1\)</span> and <span class="math inline">\(x = 5\)</span>.</p>
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:24-graph-x23x"></span>
+<img src="fy-B-lectnotes_files/figure-html/24-graph-x23x-1.svg" alt="$x^2-3x$" width="50%" />
 <p class="caption">
 Figure 7.3: <span class="math inline">\(x^2-3x\)</span>
 </p>
@@ -597,9 +607,12 @@ and the total area is given by <span class="math inline">\(A = A_1 + (-A_2) + A_
 <p><span id="exm:unlabeled-div-97" class="example"><strong>Example 7.7  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^3\)</span> and the <span class="math inline">\(x-\)</span>axis, between the points <span class="math inline">\(x=-2\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-98" class="solution"><em>Solution</em>. </span>First sketch the curve.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-45"></span>
-<img src="tikztopng-figure24.png" alt="$y=x^3$" width="40%" />
+<p><span id="unlabeled-div-98" class="solution"><em>Solution</em>. </span>First sketch the curve: Figure <a href="week-seven.html#fig:25-graph-x3">7.4</a>.</p>
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:25-graph-x3"></span>
+<img src="fy-B-lectnotes_files/figure-html/25-graph-x3-1.svg" alt="$y=x^3$" width="40%" />
 <p class="caption">
 Figure 7.4: <span class="math inline">\(y=x^3\)</span>
 </p>
@@ -624,9 +637,12 @@ This is clearly not the case. The area to the left of the <span class="math inli
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-100" class="solution"><em>Solution</em>. </span></p>
-In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
-<img src="tikztopng-figure23.png" alt="$y=x^2+1$ and $y=7-x$" width="40%" />
+In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch: Figure <a href="week-seven.html#fig:26-graph-x2117x">7.5</a>.
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:26-graph-x2117x"></span>
+<img src="fy-B-lectnotes_files/figure-html/26-graph-x2117x-1.svg" alt="$y=x^2+1$ and $y=7-x$" width="50%" />
 <p class="caption">
 Figure 7.5: <span class="math inline">\(y=x^2+1\)</span> and <span class="math inline">\(y=7-x\)</span>
 </p>
@@ -650,9 +666,12 @@ The area is therefore <span class="math inline">\(20.83\)</span> units<span clas
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-102" class="solution"><em>Solution</em>. </span></p>
-A quick sketch of the curves is:
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-47"></span>
-<img src="tikztopng-figure25.png" alt="$y=e^x$ and $y=e^{-x}$" width="30%" />
+A quick sketch of the curves is on Figure <a href="week-seven.html#fig:27-graph-exex">7.6</a>.
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:27-graph-exex"></span>
+<img src="fy-B-lectnotes_files/figure-html/27-graph-exex-1.svg" alt="$y=e^x$ and $y=e^{-x}$" width="40%" />
 <p class="caption">
 Figure 7.6: <span class="math inline">\(y=e^x\)</span> and <span class="math inline">\(y=e^{-x}\)</span>
 </p>

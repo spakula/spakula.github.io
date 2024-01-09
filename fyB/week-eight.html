@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-08" />
+<meta name="date" content="2024-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -419,17 +419,23 @@
 <li>Trapezium rule;</li>
 <li>Simpson’s rule.</li>
 </ol>
-<p>With the <a name='#mid-ordinate-rule'></a><span style="color: red;">mid-ordinate rule</span>, the curve for which we want to know the area is divided into strips of equal width <span class="math inline">\(s\)</span>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-51"></span>
-<img src="tikztopng-figure26.png" alt="$f(x)$" width="40%" />
+<p>With the <a name='#mid-ordinate-rule'></a><span style="color: red;">mid-ordinate rule</span>, the curve for which we want to know the area is divided into strips of equal width <span class="math inline">\(s\)</span>, see Figure <a href="week-eight.html#fig:28-graph-vertical-strips">8.1</a>.</p>
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:28-graph-vertical-strips"></span>
+<img src="fy-B-lectnotes_files/figure-html/28-graph-vertical-strips-1.svg" alt="$f(x)$" width="60%" />
 <p class="caption">
 Figure 8.1: <span class="math inline">\(f(x)\)</span>
 </p>
 </div>
-<p>Considering each strip in turn, we measure the height of the strip, <span class="math inline">\(h\)</span>, along the centre line or mid-ordinate. The area of the strip is then taken to be the area of a rectangle with height <span class="math inline">\(h\)</span> and width <span class="math inline">\(s\)</span>.
+<p>Considering each strip in turn, we measure the height of the strip, <span class="math inline">\(h\)</span>, along the centre line or mid-ordinate, see Figure <a href="week-eight.html#fig:29-mid-ordinate-rule">8.2</a>. The area of the strip is then taken to be the area of a rectangle with height <span class="math inline">\(h\)</span> and width <span class="math inline">\(s\)</span>.
 </p>
-<div class="figure" style="text-align: left"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
-<img src="tikztopng-figure27.png" alt="mid-ordinate rule" width="40%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:29-mid-ordinate-rule"></span>
+<img src="fy-B-lectnotes_files/figure-html/29-mid-ordinate-rule-1.svg" alt="mid-ordinate rule" width="60%" />
 <p class="caption">
 Figure 8.2: mid-ordinate rule
 </p>
@@ -465,9 +471,12 @@ Using three strips, <span class="math inline">\(s=1\)</span>, the three mid-poin
 </div>
 <div id="trapezium-rule" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Trapezium rule<a href="week-eight.html#trapezium-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the <a name='#trapezium-rule'></a><span style="color: red;">trapezium rule</span>, the curve is again divided into strips of equal width <span class="math inline">\(s\)</span>, but this time, the area of each strip is approximated by a trapezium instead of a rectangle.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-53"></span>
-<img src="tikztopng-figure28.png" alt="trapezium rule" width="40%" />
+<p>For the <a name='#trapezium-rule'></a><span style="color: red;">trapezium rule</span>, the curve is again divided into strips of equal width <span class="math inline">\(s\)</span>, but this time, the area of each strip is approximated by a trapezium instead of a rectangle, see Figure <a href="week-eight.html#fig:30-trapezium-rule">8.3</a>.</p>
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:30-trapezium-rule"></span>
+<img src="fy-B-lectnotes_files/figure-html/30-trapezium-rule-1.svg" alt="trapezium rule" width="70%" />
 <p class="caption">
 Figure 8.3: trapezium rule
 </p>
@@ -505,18 +514,24 @@ With three strips then <span class="math inline">\(s=1,x_1=1, x_2=2, x_3 = 3, x_
 </div>
 <div id="simpsons-rule" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Simpson’s Rule<a href="week-eight.html#simpsons-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-The idea behind <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span> is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-54"></span>
-<img src="tikztopng-figure29.png" alt="Simpson's rule" width="40%" />
+The idea behind <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span> is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials, see Figure <a href="week-eight.html#fig:31-simpsons-rule">8.4</a>.
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:31-simpsons-rule"></span>
+<img src="fy-B-lectnotes_files/figure-html/31-simpsons-rule-1.svg" alt="Simpson's rule" width="70%" />
 <p class="caption">
 Figure 8.4: Simpson’s rule
 </p>
 </div>
-Given 3 equally spaced points on the curve <span class="math inline">\((x_1,y_1), (x_2, y_2)\)</span> and <span class="math inline">\((x_3,y_3)\)</span>, we construct a quadratic polynomial <span class="math inline">\(y=ax^2+bx+c\)</span> which passes through all three points. In order to simplify the calculations, we can ‘move’ the curve so that the point <span class="math inline">\(x_2\)</span> coincides with the origin. In other words assume that <span class="math inline">\(x_2=0\)</span>. We also let <span class="math inline">\(x_3-x_2=x_2-x_1=s\)</span> and so <span class="math inline">\(x_3=s, x_1=-s\)</span>.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-55"></span>
-<img src="tikztopng-figure30.png" alt="Simpson's rule" width="40%" />
+Given 3 equally spaced points on the curve <span class="math inline">\((x_1,y_1), (x_2, y_2)\)</span> and <span class="math inline">\((x_3,y_3)\)</span>, we construct a quadratic polynomial <span class="math inline">\(y=ax^2+bx+c\)</span> which passes through all three points. In order to simplify the calculations, we can ‘move’ the curve so that the point <span class="math inline">\(x_2\)</span> coincides with the origin, see Figure <a href="week-eight.html#fig:32-simpsons-rule2">8.5</a>. In other words assume that <span class="math inline">\(x_2=0\)</span>. We also let <span class="math inline">\(x_3-x_2=x_2-x_1=s\)</span> and so <span class="math inline">\(x_3=s, x_1=-s\)</span>.
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:32-simpsons-rule2"></span>
+<img src="fy-B-lectnotes_files/figure-html/32-simpsons-rule2-1.svg" alt="Simpson's rule: move to arrange $x_2=0$" width="70%" />
 <p class="caption">
-Figure 8.5: Simpson’s rule
+Figure 8.5: Simpson’s rule: move to arrange <span class="math inline">\(x_2=0\)</span>
 </p>
 </div>
 <p>for this to be the case we then need
@@ -613,12 +628,15 @@ by taking 6 strips.</p>
 </tr>
 </tbody>
 </table>
-Hence using Simpson’s rule
+Hence using Simpson’s rule (Figure <a href="week-eight.html#fig:33-graph-ex2">8.6</a>):
 <span class="math display">\[
 \int_{-1}^1e^{-x^2}dx \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
 \]</span>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-57"></span>
-<img src="tikztopng-figure31.png" alt="$e^{-x^2}$" width="50%" />
+<!--insfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:33-graph-ex2"></span>
+<img src="fy-B-lectnotes_files/figure-html/33-graph-ex2-1.svg" alt="$e^{-x^2}$" width="70%" />
 <p class="caption">
 Figure 8.6: <span class="math inline">\(e^{-x^2}\)</span>
 </p>

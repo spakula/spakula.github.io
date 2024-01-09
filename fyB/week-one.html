@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-08" />
+<meta name="date" content="2024-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -419,19 +419,16 @@ f(x) = \frac{x^2-9}{x-3}\tag{1}
 \]</span>
 has the value <span class="math inline">\(\frac00\)</span> for <span class="math inline">\(f(3)\)</span>, which is undetermined. In such cases it is convenient to introduce the idea of a limit or a limiting value.</p>
 <p>Informally, a <a name='#limit'></a><span style="color: red;">limit</span> is a value which <span class="math inline">\(f(x)\)</span> gets closer and closer to, but may never actually reach.</p>
-For example, the function <span class="math inline">\(f(x) = e^{-x}\)</span> as it approaches the <span class="math inline">\(x-\)</span>axis.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="tikztopng-figure0.png" alt="$e^{-x}$" width="40%" />
+<p>For example, the function <span class="math inline">\(f(x) = e^{-x}\)</span> as it approaches the <span class="math inline">\(x-\)</span>axis (Figure <a href="week-one.html#fig:01-exp-graph">1.1</a>).
+<!--incfig
+
+--></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:01-exp-graph"></span>
+<img src="fy-B-lectnotes_files/figure-html/01-exp-graph-1.svg" alt="$e^{-x}$" width="50%" />
 <p class="caption">
 Figure 1.1: <span class="math inline">\(e^{-x}\)</span>
 </p>
 </div>
-<!--
-<div class="figure" style="text-align: center">
-<img src="fy-B-lectnotes_files/figure-html/01-exp-graph-1.svg" alt="$e^{-x}$" width="384" />
-<p class="caption">(\#fig:01-exp-graph)$e^{-x}$</p>
-</div>
--->
 <p>In function (1) above, we can try to determine the limit <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>.
 <span class="math display">\[
 f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.
@@ -479,9 +476,12 @@ Alternatively, you may spot that <span class="math inline">\(2x^2-5x-3 = (x-3)(2
 </div>
 <div id="lecture-two" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Differentiation from 1st Principles<a href="week-one.html#lecture-two" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For a straight line we can consider the slope or <a name='#gradient'></a><span style="color: red;">gradient</span>. This is a measure of how steep the line is</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
-<img src="tikztopng-figure1.png" alt="gradient of a line" width="20%" />
+<p>For a straight line we can consider the slope or <a name='#gradient'></a><span style="color: red;">gradient</span>. This is a measure of how steep the line is, see Figure <a href="week-one.html#fig:02-gradient-line">1.2</a>.</p>
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:02-gradient-line"></span>
+<img src="fy-B-lectnotes_files/figure-html/02-gradient-line-1.svg" alt="gradient of a line" width="30%" />
 <p class="caption">
 Figure 1.2: gradient of a line
 </p>
@@ -494,11 +494,14 @@ For the line above, which has equation <span class="math inline">\(y = 2x-1\)</s
 <span class="math display">\[
 \frac{\Delta y}{\Delta x} = \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1} = \frac{2(x_2-x_1)}{x_2-x_1} = 2.
 \]</span></p>
-Suppose now we are given a curve with equation <span class="math inline">\(y=f(x)\)</span> and want to find the gradient of a line segment joining two points on the curve.
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
-<img src="tikztopng-figure2.png" alt="line segment on a curve" width="40%" />
+Suppose now we are given a curve with equation <span class="math inline">\(y=f(x)\)</span> and want to find the gradient of a line segment joining two points on the curve (Figure <a href="week-one.html#fig:03-line-seg-curve">1.3</a>).
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:03-line-seg-curve"></span>
+<img src="fy-B-lectnotes_files/figure-html/03-line-seg-curve-1.svg" alt="line segment of a curve" width="70%" />
 <p class="caption">
-Figure 1.3: line segment on a curve
+Figure 1.3: line segment of a curve
 </p>
 </div>
 <p>The gradient of this line segment is given by
@@ -506,7 +509,7 @@ Figure 1.3: line segment on a curve
 \frac{\Delta y}{\Delta x} = \frac{f(x+h)-f(x)}{h}.
 \]</span>
 </p>
-<p>Notice that when <span class="math inline">\(h=0\)</span> then this would have the indeterminate value of <span class="math inline">\(0/0\)</span>, and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as <span class="math inline">\(h\to0\)</span>, may exist and it is instructive to imagine what the limit would represent geometrically.</p>
+<p>Notice that when <span class="math inline">\(h=0\)</span> then this would have the indeterminate value of <span class="math inline">\(0/0\)</span>, and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as <span class="math inline">\(h\to0\)</span>, may exist and it is instructive to imagine what the limit would represent geometrically (Figure <a href="week-one.html#fig:04-line-seg-curve2">1.4</a>):</p>
 <style type="text/css">
 #div_head {
     position:relative;
@@ -566,10 +569,13 @@ Let <span class="math inline">\(h\to 0\)</span>
 <p>Press the button and see what happens to the line segment as <span class="math inline">\(h\to0\)</span>.</p>
 <p>With some thought, it should be clear that the line segment tends to a line that just meets the curve at the point <span class="math inline">\((x,f(x))\)</span>, and we call this line the <a name='#tangent'></a><span style="color: red;">tangent</span> to the curve at the point <span class="math inline">\((x,f(x))\)</span>.</p>
 <div style="display:none">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
-<img src="tikztopng-figure12.png" alt="line segment on a curve" width="30%" />
+<!--incfig
+
+-->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:04-line-seg-curve2"></span>
+<img src="fy-B-lectnotes_files/figure-html/04-line-seg-curve2-1.svg" alt="line segment of a curve" width="70%" />
 <p class="caption">
-Figure 1.4: line segment on a curve
+Figure 1.4: line segment of a curve
 </p>
 </div>
 </div>
