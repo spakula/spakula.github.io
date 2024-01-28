@@ -417,7 +417,7 @@
 </ol>
 <div id="lecture-four" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Tangents and Normals<a href="week-two.html#lecture-four" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Two lines are <a name='#parallel'></a><span style="color: red;">parallel</span> if their gradients are identical. For example <span class="math inline">\(y=2x\)</span>, <span class="math inline">\(y=2x-2\)</span> and <span class="math inline">\(y=2x+3\)</span> all have gradient of <span class="math inline">\(4\)</span> and hence are all parallel (Figure <a href="week-two.html#fig:05-parallel-lines">2.1</a>).</p>
+<p>Two lines are <a name='#parallel'></a><span style="color: red;">parallel</span> if their gradients are identical. For example <span class="math inline">\(y=2x\)</span>, <span class="math inline">\(y=2x-2\)</span> and <span class="math inline">\(y=2x+3\)</span> all have gradient of <span class="math inline">\(2\)</span> and hence are all parallel (Figure <a href="week-two.html#fig:05-parallel-lines">2.1</a>).</p>
 <!--insfig
 
 -->
@@ -427,7 +427,7 @@
 Figure 2.1: parallel lines
 </p>
 </div>
-<p>If two lines are perpendicular we may also find a relationship between their gradients. Consider Figure <a href="week-two.html#fig:06-perpendicular-lines">2.2</a>.</p>
+<p>If two lines are perpendicular, there is also a certain relationship between their gradients. Consider Figure <a href="week-two.html#fig:06-perpendicular-lines">2.2</a>.</p>
 <!--insfig
 
 -->
@@ -459,13 +459,13 @@ Now consider Figure <a href="week-two.html#fig:07-tangent-and-normal">2.3</a>.</
 Figure 2.3: tangent and normal
 </p>
 </div>
-<p>Here we have the tangent <span class="math inline">\(PT\)</span> and the normal <span class="math inline">\(PN\)</span> to a curve. The <a name='#normal'></a><span style="color: red;">normal</span> is the line at <span class="math inline">\(90^\circ\)</span> to the tangent. We already know that the gradient of the tangent is given by
+<p>The <a name='#normal'></a><span style="color: red;">normal</span> is the line at <span class="math inline">\(90^\circ\)</span> to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line <span class="math inline">\(PT\)</span> and the normal is the line <span class="math inline">\(PN\)</span>. We already know that the gradient of the tangent is given by
 <span class="math display">\[
-m = \frac{dy}{dx}\text{ at the point }P,
+m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,
 \]</span>
 and so from the argument above, the gradient of the normal to the tangent is given by
 <span class="math display">\[
-\frac{-1}{m} = \frac{-1}{dy/dx}.
+\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.
 \]</span>
 Now, the equation of the line with gradient <span class="math inline">\(m\)</span>, passing through the point <span class="math inline">\(P=(x_1,y_1)\)</span> is given by
 <span class="math display">\[
@@ -473,19 +473,19 @@ y-y_1 = m(x-x_1).
 \]</span>
 So the <a name='#equation-of-the-tangent'></a><span style="color: red;">equation of the tangent</span> is
 <span class="math display">\[
-y - y_1 = \frac{dy}{dx}(x-x_1),
+y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),
 \]</span>
 while the <a name='#equation-of-the-normal'></a><span style="color: red;">equation of the normal</span> to the curve is
 <span class="math display">\[
-y - y_1 = \frac{-1}{dy/dx}(x-x_1).
+y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
 \]</span>
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-15" class="example"><strong>Example 2.1  </strong></span>Find the equation of the tangent and the normal to the curve <span class="math inline">\(y = x^2+5x\)</span> at the point <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-16" class="solution"><em>Solution</em>. </span>If <span class="math inline">\(y=x^2+5\)</span> then <span class="math inline">\(dy/dx = 2x+5\)</span>.</p>
-<p>At <span class="math inline">\(x_1=2\)</span>, <span class="math inline">\(y_1 = 2^2 + 5\times2 = 14\)</span> and <span class="math inline">\(dy/dx = 2\times2+5=9\)</span>.
+<p><span id="unlabeled-div-16" class="solution"><em>Solution</em>. </span>If <span class="math inline">\(y=x^2+5\)</span> then <span class="math inline">\({\mathrm{d} y/\mathrm{d} x} = 2x+5\)</span>.</p>
+<p>At <span class="math inline">\(x_1=2\)</span>, <span class="math inline">\(y_1 = 2^2 + 5\times2 = 14\)</span> and <span class="math inline">\({\mathrm{d} y/\mathrm{d} x} = 2\times2+5=9\)</span>.
 The equation of the tangent is therefore
 <span class="math display">\[
 y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.
@@ -499,22 +499,22 @@ y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x - \frac{2}{9}\text{ and so }y = -\frac{x}
 <div id="lecture-five" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> The Chain Rule<a href="week-two.html#lecture-five" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A function may be considered as an operation that has to be done to <span class="math inline">\(x\)</span> to get <span class="math inline">\(y\)</span>. For example if <span class="math inline">\(y = f(x) = x^2\)</span> then the function (called <span class="math inline">\(f\)</span> in this case) is: square the value of <span class="math inline">\(x\)</span>.</p>
-<p>For <span class="math inline">\(y = g(\theta) = sin(\theta)\)</span> the function (called <span class="math inline">\(g\)</span> in this case ) is: take the sine of <span class="math inline">\(\theta\)</span>.</p>
+<p>For <span class="math inline">\(y = g(\theta) = \sin(\theta)\)</span> the function (called <span class="math inline">\(g\)</span> in this case) is: evaluate the sine of <span class="math inline">\(\theta\)</span>.</p>
 <p>If we now look at <span class="math inline">\((x^2 + 4)^3\)</span> then we can consider this as one function described in the following way: take <span class="math inline">\(x\)</span>, square it, add <span class="math inline">\(4\)</span> and then cube the answer. So we can write
 <span class="math display">\[
 y = f(x) = (x^2+ 4)^3
 \]</span>
 or we can consider the function <span class="math inline">\(f\)</span> as two functions:
-<span class="math display">\[\begin{gather*}
-u = g(x) = (x^2 + 4)\\
-y = h(u) = u^3
-\end{gather*}\]</span>
+<span class="math display">\[\begin{align*}
+u &amp;= g(x) = (x^2 + 4)\\
+y &amp;= h(u) = u^3
+\end{align*}\]</span>
 or we can even consider it as 3 functions
-<span class="math display">\[\begin{gather*}
-u = k(x) = x^2\\
-v = m(u) = u + 4\\
-y = n(v) = v^3.
-\end{gather*}\]</span>
+<span class="math display">\[\begin{align*}
+u &amp;= k(x) = x^2\\
+v &amp;= m(u) = u + 4\\
+y &amp;= n(v) = v^3.
+\end{align*}\]</span>
 In the first case, the value of <span class="math inline">\(y\)</span> is calculated all in one attempt. In the second case, <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule of the function <span class="math inline">\(g\)</span>, then <span class="math inline">\(y\)</span> is calculated using <span class="math inline">\(u\)</span> and the rule of the function <span class="math inline">\(h\)</span>. In the third case <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule of function <span class="math inline">\(k\)</span>, then <span class="math inline">\(v\)</span> is calculated from <span class="math inline">\(u\)</span> according to the rule of function <span class="math inline">\(m\)</span> and finally <span class="math inline">\(y\)</span> is calculated from the value of <span class="math inline">\(v\)</span> according to the rule of function <span class="math inline">\(n\)</span>.</p>
 <p>We shall consider the second case as this is most helpful for differentiation. In the second case
 <span class="math display">\[\begin{gather*}
@@ -529,34 +529,34 @@ so by substituting for <span class="math inline">\(u\)</span> we can write <span
 <p>The chain rule allows us to differentiate functions of functions without having to multiply out all the brackets.</p>
 <p>We can consider <span class="math inline">\(y\)</span> as a function of a function if we let <span class="math inline">\(u = x^2 + 4\)</span>. In that case <span class="math inline">\(u\)</span> is a function of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is a function of <span class="math inline">\(u\)</span>, namely <span class="math inline">\(y = u^3\)</span>. Therefore we can say that
 <span class="math display">\[
-\frac{dy}{du} = 3u^2
+\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2
 \]</span>
 (using ordinary differentiation by rule).</p>
 <p>However, we want to find
 <span class="math display">\[
-\frac{dy}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x}.
 \]</span>
-The chain rule says that
+The <a name='#chain-rule'></a><span style="color: red;">chain rule</span> says that
 <span class="math display">\[
-\frac{dy}{dx} = \frac{dy}{du}\times \frac{du}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
 This can be proved from first principles, but we shall not do that here.</p>
 <p>Now since <span class="math inline">\(u = x^2 + 4\)</span>, then
 <span class="math display">\[
-\frac{du}{dx} = 2x
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
 \]</span>
 (again using differentiation by rule).
 So
 <span class="math display">\[
-\frac{dy}{dx} = \frac{dy}{du}\times \frac{du}{dx} = 3u^2\times 2x = 6xu^2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
 \]</span>
 But since <span class="math inline">\(u = (x^2+4)\)</span> then
 <span class="math display">\[
-\frac{dy}{dx} = 6x(x^2 +4)^2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
 \]</span>
 The chain rule can be extended for any number of functions e.g.
 <span class="math display">\[
-\frac{dy}{dx} = \frac{dy}{da}\times \frac{da}{db}\times \frac{db}{dc}\times \frac{dc}{de}\times\frac{de}{df}\times\frac{df}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
 \]</span>
 </p>
 <div class="example">
@@ -565,15 +565,15 @@ The chain rule can be extended for any number of functions e.g.
 <div class="solution">
 <p><span id="unlabeled-div-18" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2t^2-4t\)</span> and <span class="math inline">\(s = u^5\)</span>. Then
 <span class="math display">\[
-\frac{du}{dt} = 4t-4\text{ and }\frac{ds}{du} = 5u^4
+\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4
 \]</span>
 So
 <span class="math display">\[
-\frac{ds}{dt} = \frac{ds}{du}\times\frac{du}{dt} = 5u^4(4t-4).
+\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).
 \]</span>
 But since <span class="math inline">\(u = 2t^2-4t\)</span> then
 <span class="math display">\[
-\frac{ds}{dt} = 5(2t^2-4t)^4(4t-4).
+\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).
 \]</span></p>
 </div>
 <div class="example">
@@ -582,15 +582,15 @@ But since <span class="math inline">\(u = 2t^2-4t\)</span> then
 <div class="solution">
 <p><span id="unlabeled-div-20" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 5\theta\)</span> and <span class="math inline">\(y = 5\cos(u)\)</span>. Then
 <span class="math display">\[
-\frac{du}{d\theta} = 5\text{ and }\frac{dy}{du} = -5\sin(u)
+\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)
 \]</span>
 So
 <span class="math display">\[
-\frac{dy}{d\theta} = \frac{dy}{du}\times\frac{du}{d\theta} = -5\sin(u)\times5.
+\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.
 \]</span>
 But since <span class="math inline">\(u = 5\theta\)</span> then
 <span class="math display">\[
-\frac{dy}{d\theta} = -25\sin(5\theta).
+\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).
 \]</span></p>
 </div>
 <div class="example">
@@ -599,15 +599,15 @@ But since <span class="math inline">\(u = 5\theta\)</span> then
 <div class="solution">
 <p><span id="unlabeled-div-22" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2x+3\)</span> and <span class="math inline">\(y = e^u\)</span>. Then
 <span class="math display">\[
-\frac{du}{dx} = 2\text{ and }\frac{dy}{du} = e^u
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u
 \]</span>
 So
 <span class="math display">\[
-\frac{dy}{dx} = \frac{dy}{du}\times\frac{du}{dx} = e^u\times2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.
 \]</span>
 But since <span class="math inline">\(u = e^u\)</span> then
 <span class="math display">\[
-\frac{dy}{dx} = 2e^{2x+3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.
 \]</span></p>
 </div>
 </div>
@@ -619,7 +619,7 @@ But since <span class="math inline">\(u = e^u\)</span> then
 <p>So far, if we want to differentiate a function which is a product of two functions of <span class="math inline">\(x\)</span>, like <span class="math inline">\(y = 4x^2(3x^3 - 6x)\)</span>, we need to multiply out the brackets and differentiate term by term as follows;
 <span class="math display">\[\begin{gather*}
 y = 4x^2(3x^3 - 6x) = 12x^5 - 24x^3\\
-\frac{dy}{dx} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
+\frac{\mathrm{d} y}{\mathrm{d} x} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
 \end{gather*}\]</span>
 For some products, multiplying terms out still doesn’t help to differentiate them e.g.
 <span class="math display">\[
@@ -639,13 +639,13 @@ Further, dividing both sides of equation by <span class="math inline">\(h\)</spa
 \]</span>
 As <span class="math inline">\(h\)</span> tends to zero, <span class="math inline">\(u(x+h)\)</span> tends to <span class="math inline">\(u(x)\)</span> and in the limit we have
 <span class="math display">\[
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
 or, put another way,
 <span class="math display">\[
-\frac{d(uv)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
-This is called the <a name='#product-rule'></a><span style="color: red;">Product Rule</span>.
+This is called the <a name='#product-rule'></a><span style="color: red;">product rule</span>.
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-23" class="example"><strong>Example 2.5  </strong></span>Differentiate <span class="math inline">\(y=4x^2(3x^3-6x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
@@ -653,11 +653,11 @@ This is called the <a name='#product-rule'></a><span style="color: red;">Product
 <div class="solution">
 <p><span id="unlabeled-div-24" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 4x^2\)</span> and <span class="math inline">\(v = 3x^3-6x\)</span>. Then
 <span class="math display">\[
-\frac{du}{dx} = 8x\text{ and }\frac{dv}{dx} = 9x^2-6.
+\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{dv}{\mathrm{d} x} = 9x^2-6.
 \]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
 24x^4 - 48x^2 + 36x^4-24x^2 = 60x^4-72x^2 = 12x^2(5x^2-6).
 \end{gather*}\]</span></p>
 </div>
@@ -667,11 +667,11 @@ Hence the product rule gives
 <div class="solution">
 <p><span id="unlabeled-div-26" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\)</span> and <span class="math inline">\(v = \sin(x)\)</span>. Then
 <span class="math display">\[
-\frac{du}{dx} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{dx} = \cos(x).
+\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x).
 \]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
 \frac{(x-1)\sin(x)}{(x^2-2x)^{1/2}} + (x^2-2x)^{1/2}\cos(x).
 \end{gather*}\]</span></p>
 </div>
@@ -698,7 +698,7 @@ Rearranging the numerator and dividing by <span class="math inline">\(h\)</span>
 \frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}
 \]</span>
 And in the limit as <span class="math inline">\(h\)</span> tends to zero
-<span class="math display">\[\frac{dy}{dx} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{du}{dx} - u(x)\frac{dv}{dx}}{v(x)^2}
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{dv}{\mathrm{d} x}}{v(x)^2}
 \]</span></p>
 <p>This is the formula for the <a name='#differentiation-of-a-quotient'></a><span style="color: red;">differentiation of a quotient</span>.</p>
 <p>Note that for the product formula it is up to you which part of the product you call <span class="math inline">\(u\)</span> and which <span class="math inline">\(v\)</span>, but that for the quotient formula, the denominator of the quotient must be <span class="math inline">\(v\)</span> and the numerator must be <span class="math inline">\(u\)</span>.
@@ -709,8 +709,8 @@ y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
 \]</span>
 and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the function <span class="math inline">\(v(x)\)</span> and the function <span class="math inline">\(x^{-1}\)</span>, we can use a combination of the product rule and the chain rule. So
 <span class="math display">\[\begin{gather*}
-\frac{d(uv^{-1})}{dx} = u\frac{d(v^{-1})}{dx}+v^{-1}\frac{du}{dx} = u\left(-1\times v^{-2}\frac{dv}{dx}\right) + v^{-1}\frac{du}{dx}\\
-= \frac{du}{dx}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}
+\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} = u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{dv}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
+= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2}
 \end{gather*}\]</span>
 </p>
 <div class="example">
@@ -720,11 +720,11 @@ and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the f
 <p><span id="unlabeled-div-28" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 3x^2+2\)</span> and <span class="math inline">\(v = (4x^2-4)^2\)</span>.
 Then
 <span class="math display">\[
-\frac{du}{dx} = 6x\text{ and }\frac{dv}{dx} = 2(4x^2-4)\times8x = 16x(4x^2-4)
+\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{dv}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
 \]</span>
 and so
 <span class="math display">\[
-\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
 \]</span></p>
 </div>
 <div class="example">
@@ -734,11 +734,11 @@ and so
 <p><span id="unlabeled-div-30" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 1-\sin(x)\)</span> and <span class="math inline">\(v = 1+\sin(x)\)</span>.
 Then
 <span class="math display">\[
-\frac{du}{dx} = -\cos(x)\text{ and }\frac{dv}{dx} = \cos(x)
+\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x)
 \]</span>
 and so
 <span class="math display">\[
-\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
 \]</span></p>
 </div>
 

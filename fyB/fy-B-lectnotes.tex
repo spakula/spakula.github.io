@@ -75,8 +75,6 @@
 
 \renewcommand{\chaptername}{}
 
-\def\dd{\mathrm{d}}
-
 \newcommand{\slide}{}
 \newcommand{\cpybx}{}
 \newcommand{\ecpybx}{}
@@ -679,7 +677,7 @@ This week we will consider the equations of tangents and normals and then comple
 
 \section{Tangents and Normals}\label{lecture-four}
 
-Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(4\) and hence are all parallel (Figure \ref{fig:05-parallel-lines}).
+Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(2\) and hence are all parallel (Figure \ref{fig:05-parallel-lines}).
 
 \begin{figure}
 
@@ -691,7 +689,7 @@ Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients a
 \end{figure}
 \slide
 
-If two lines are perpendicular we may also find a relationship between their gradients. Consider Figure \ref{fig:06-perpendicular-lines}.
+If two lines are perpendicular, there is also a certain relationship between their gradients. Consider Figure \ref{fig:06-perpendicular-lines}.
 
 \begin{figure}
 
@@ -725,13 +723,13 @@ Now consider Figure \ref{fig:07-tangent-and-normal}.
 \caption{tangent and normal}\label{fig:07-tangent-and-normal}
 \end{figure}
 
-Here we have the tangent \(PT\) and the normal \(PN\) to a curve. The \textcolor{red}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent. We already know that the gradient of the tangent is given by
+The \textcolor{red}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line \(PT\) and the normal is the line \(PN\). We already know that the gradient of the tangent is given by
 \[
-m = \frac{dy}{dx}\text{ at the point }P,
+m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,
 \]
 and so from the argument above, the gradient of the normal to the tangent is given by
 \[
-\frac{-1}{m} = \frac{-1}{dy/dx}.
+\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.
 \]
 Now, the equation of the line with gradient \(m\), passing through the point \(P=(x_1,y_1)\) is given by
 \[
@@ -739,11 +737,11 @@ y-y_1 = m(x-x_1).
 \]
 So the \textcolor{red}{\em equation of the tangent}\index{equation of the tangent} is
 \[
-y - y_1 = \frac{dy}{dx}(x-x_1),
+y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),
 \]
 while the \textcolor{red}{\em equation of the normal}\index{equation of the normal} to the curve is
 \[
-y - y_1 = \frac{-1}{dy/dx}(x-x_1).
+y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
 \]
 \slide
 
@@ -752,9 +750,9 @@ Find the equation of the tangent and the normal to the curve \(y = x^2+5x\) at t
 \end{example}
 
 \begin{solution}
-If \(y=x^2+5\) then \(dy/dx = 2x+5\).
+If \(y=x^2+5\) then \({\mathrm{d} y/\mathrm{d} x} = 2x+5\).
 
-At \(x_1=2\), \(y_1 = 2^2 + 5\times2 = 14\) and \(dy/dx = 2\times2+5=9\).
+At \(x_1=2\), \(y_1 = 2^2 + 5\times2 = 14\) and \({\mathrm{d} y/\mathrm{d} x} = 2\times2+5=9\).
 The equation of the tangent is therefore
 \[
 y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.
@@ -771,23 +769,23 @@ y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x - \frac{2}{9}\text{ and so }y = -\frac{x}
 
 A function may be considered as an operation that has to be done to \(x\) to get \(y\). For example if \(y = f(x) = x^2\) then the function (called \(f\) in this case) is: square the value of \(x\).
 
-For \(y = g(\theta) = sin(\theta)\) the function (called \(g\) in this case ) is: take the sine of \(\theta\).
+For \(y = g(\theta) = \sin(\theta)\) the function (called \(g\) in this case) is: evaluate the sine of \(\theta\).
 
 If we now look at \((x^2 + 4)^3\) then we can consider this as one function described in the following way: take \(x\), square it, add \(4\) and then cube the answer. So we can write
 \[
 y = f(x) = (x^2+ 4)^3
 \]
 or we can consider the function \(f\) as two functions:
-\begin{gather*}
-u = g(x) = (x^2 + 4)\\
-y = h(u) = u^3
-\end{gather*}
+\begin{align*}
+u &= g(x) = (x^2 + 4)\\
+y &= h(u) = u^3
+\end{align*}
 or we can even consider it as 3 functions
-\begin{gather*}
-u = k(x) = x^2\\
-v = m(u) = u + 4\\
-y = n(v) = v^3.
-\end{gather*}
+\begin{align*}
+u &= k(x) = x^2\\
+v &= m(u) = u + 4\\
+y &= n(v) = v^3.
+\end{align*}
 In the first case, the value of \(y\) is calculated all in one attempt. In the second case, \(u\) is calculated from \(x\) according to the rule of the function \(g\), then \(y\) is calculated using \(u\) and the rule of the function \(h\). In the third case \(u\) is calculated from \(x\) according to the rule of function \(k\), then \(v\) is calculated from \(u\) according to the rule of function \(m\) and finally \(y\) is calculated from the value of \(v\) according to the rule of function \(n\).
 
 We shall consider the second case as this is most helpful for differentiation. In the second case
@@ -806,36 +804,36 @@ The chain rule allows us to differentiate functions of functions without having 
 
 We can consider \(y\) as a function of a function if we let \(u = x^2 + 4\). In that case \(u\) is a function of \(x\) and \(y\) is a function of \(u\), namely \(y = u^3\). Therefore we can say that
 \[
-\frac{dy}{du} = 3u^2
+\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2
 \]
 (using ordinary differentiation by rule).
 
 However, we want to find
 \[
-\frac{dy}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x}.
 \]
-The chain rule says that
+The \textcolor{red}{\em chain rule}\index{chain rule} says that
 \[
-\frac{dy}{dx} = \frac{dy}{du}\times \frac{du}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
 This can be proved from first principles, but we shall not do that here.
 
 Now since \(u = x^2 + 4\), then
 \[
-\frac{du}{dx} = 2x
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
 \]
 (again using differentiation by rule).
 So
 \[
-\frac{dy}{dx} = \frac{dy}{du}\times \frac{du}{dx} = 3u^2\times 2x = 6xu^2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
 \]
 But since \(u = (x^2+4)\) then
 \[
-\frac{dy}{dx} = 6x(x^2 +4)^2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
 \]
 The chain rule can be extended for any number of functions e.g.
 \[
-\frac{dy}{dx} = \frac{dy}{da}\times \frac{da}{db}\times \frac{db}{dc}\times \frac{dc}{de}\times\frac{de}{df}\times\frac{df}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
 \]
 \slide
 
@@ -846,15 +844,15 @@ Differentiate \(s = (2t^2- 4t)^5\) with respect to \(t\).
 \begin{solution}
 Let \(u = 2t^2-4t\) and \(s = u^5\). Then
 \[
-\frac{du}{dt} = 4t-4\text{ and }\frac{ds}{du} = 5u^4
+\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4
 \]
 So
 \[
-\frac{ds}{dt} = \frac{ds}{du}\times\frac{du}{dt} = 5u^4(4t-4).
+\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).
 \]
 But since \(u = 2t^2-4t\) then
 \[
-\frac{ds}{dt} = 5(2t^2-4t)^4(4t-4).
+\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).
 \]
 \end{solution}
 
@@ -867,15 +865,15 @@ Differentiate \(y=5\cos(5\theta)\) with respect to \(\theta\).
 \begin{solution}
 Let \(u = 5\theta\) and \(y = 5\cos(u)\). Then
 \[
-\frac{du}{d\theta} = 5\text{ and }\frac{dy}{du} = -5\sin(u)
+\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)
 \]
 So
 \[
-\frac{dy}{d\theta} = \frac{dy}{du}\times\frac{du}{d\theta} = -5\sin(u)\times5.
+\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.
 \]
 But since \(u = 5\theta\) then
 \[
-\frac{dy}{d\theta} = -25\sin(5\theta).
+\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).
 \]
 \end{solution}
 
@@ -888,15 +886,15 @@ Differentiate \(y=e^{2x+3}\) with respect to \(x\).
 \begin{solution}
 Let \(u = 2x+3\) and \(y = e^u\). Then
 \[
-\frac{du}{dx} = 2\text{ and }\frac{dy}{du} = e^u
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u
 \]
 So
 \[
-\frac{dy}{dx} = \frac{dy}{du}\times\frac{du}{dx} = e^u\times2.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.
 \]
 But since \(u = e^u\) then
 \[
-\frac{dy}{dx} = 2e^{2x+3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.
 \]
 \end{solution}
 
@@ -909,7 +907,7 @@ But since \(u = e^u\) then
 So far, if we want to differentiate a function which is a product of two functions of \(x\), like \(y = 4x^2(3x^3 - 6x)\), we need to multiply out the brackets and differentiate term by term as follows;
 \begin{gather*}
 y = 4x^2(3x^3 - 6x) = 12x^5 - 24x^3\\
-\frac{dy}{dx} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
+\frac{\mathrm{d} y}{\mathrm{d} x} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
 \end{gather*}
 For some products, multiplying terms out still doesn't help to differentiate them e.g.
 \[
@@ -933,13 +931,13 @@ Further, dividing both sides of equation by \(h\) gives
 \]
 As \(h\) tends to zero, \(u(x+h)\) tends to \(u(x)\) and in the limit we have
 \[ 
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
 or, put another way,
 \[ 
-\frac{d(uv)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}.
+\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
-This is called the \textcolor{red}{\em Product Rule}\index{Product Rule}.
+This is called the \textcolor{red}{\em product rule}\index{product rule}.
 \slide
 
 \begin{example}
@@ -949,11 +947,11 @@ Differentiate \(y=4x^2(3x^3-6x)\) with respect to \(x\).
 \begin{solution}
 Let \(u = 4x^2\) and \(v = 3x^3-6x\). Then
 \[
-\frac{du}{dx} = 8x\text{ and }\frac{dv}{dx} = 9x^2-6.
+\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{dv}{\mathrm{d} x} = 9x^2-6.
 \]
 Hence the product rule gives
 \begin{gather*}
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
 24x^4 - 48x^2 + 36x^4-24x^2 = 60x^4-72x^2 = 12x^2(5x^2-6).
 \end{gather*}
 \end{solution}
@@ -967,11 +965,11 @@ Differentiate \(y=\sqrt{x^2-2x}\sin(x)\) with respect to \(x\).
 \begin{solution}
 Let \(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\) and \(v = \sin(x)\). Then
 \[
-\frac{du}{dx} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{dx} = \cos(x).
+\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x).
 \]
 Hence the product rule gives
 \begin{gather*}
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
 \frac{(x-1)\sin(x)}{(x^2-2x)^{1/2}} + (x^2-2x)^{1/2}\cos(x).
 \end{gather*}
 \end{solution}
@@ -1001,7 +999,7 @@ Rearranging the numerator and dividing by \(h\) we get
 \frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}
 \]
 And in the limit as \(h\) tends to zero
-\[\frac{dy}{dx} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{du}{dx} - u(x)\frac{dv}{dx}}{v(x)^2}
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{dv}{\mathrm{d} x}}{v(x)^2}
 \]
 
 This is the formula for the \textcolor{red}{\em differentiation of a quotient}\index{differentiation of a quotient}.
@@ -1015,8 +1013,8 @@ y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
 \]
 and since \(v(x)^{-1}\) is a composite of the function \(v(x)\) and the function \(x^{-1}\), we can use a combination of the product rule and the chain rule. So
 \begin{gather*}
-\frac{d(uv^{-1})}{dx} = u\frac{d(v^{-1})}{dx}+v^{-1}\frac{du}{dx} = u\left(-1\times v^{-2}\frac{dv}{dx}\right) + v^{-1}\frac{du}{dx}\\
-= \frac{du}{dx}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}
+\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} = u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{dv}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
+= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2}
 \end{gather*}
 \slide
 
@@ -1028,11 +1026,11 @@ Differentiate \(y=\frac{3x^2+2}{(4x^2-4)^2}\) with respect to \(x\).
 Let \(u = 3x^2+2\) and \(v = (4x^2-4)^2\).
 Then
 \[
-\frac{du}{dx} = 6x\text{ and }\frac{dv}{dx} = 2(4x^2-4)\times8x = 16x(4x^2-4)
+\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{dv}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
 \]
 and so
 \[
-\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
 \]
 \end{solution}
 
@@ -1044,11 +1042,11 @@ Differentiate \(y=\frac{1-\sin(x)}{1+\sin(x)}\) with respect to \(x\).
 Let \(u = 1-\sin(x)\) and \(v = 1+\sin(x)\).
 Then
 \[
-\frac{du}{dx} = -\cos(x)\text{ and }\frac{dv}{dx} = \cos(x) 
+\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x) 
 \]
 and so
 \[
-\frac{dy}{dx} = \frac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
 \]
 \end{solution}
 
