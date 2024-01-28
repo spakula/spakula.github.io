@@ -75,11 +75,31 @@
 
 \renewcommand{\chaptername}{}
 
+\def\dd{\mathrm{d}}
+
 \newcommand{\slide}{}
 \newcommand{\cpybx}{}
 \newcommand{\ecpybx}{}
 \newbox{\copybox}
 
+% \usepackage[x11names]{xcolor}
+% \definecolor{Cream}{RGB}{254, 251, 237}
+% \definecolor{Navy Blue}{RGB}{18,43,93}
+% \pagecolor{Cream}
+% \usepackage[paperwidth=4.6in,paperheight=3.25in,margin=4mm]{geometry}
+% \setmainfont{TeX Gyre Heros}
+% % \setmainfont{TeX Gyre Termes}
+% \setmathfont{texgyretermes-math.otf}
+% \renewcommand{\slide}{\vfill\eject}
+% \renewcommand{\cpybx}{\setbox\copybox=\vbox\bgroup}
+% \renewcommand{\ecpybx}{\egroup\copy\copybox}
+% \color{Navy Blue}
+% \pagestyle{empty}
+% %% blanking solutions
+% \usepackage{environ}
+% \NewEnviron{blanksol}{\emph{Solution:}\vfill}
+% \let\solution\blanksol
+% \let\endsolution\endblanksol
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -96,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-01-09}
+\date{2024-01-28}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -136,11 +156,11 @@ To start our exploration of the calculus, we start in lecture 1 with a look at t
 
 \section{Limits}\label{lecture-one}
 
-In some cases, the value of a function is undefined or cannot be determined. For example
+In some cases, the value of a function at a point is undefined or cannot be determined. For example
 \[
 f(x) = \frac{x^2-9}{x-3}\tag{1}
 \]
-has the value \(\frac00\) for \(f(3)\), which is undetermined. In such cases it is convenient to introduce the idea of a limit or a limiting value.
+has the value \(\frac00\) for \(f(3)\), which is undetermined. However the function may still ``behave well'' around that point. In such cases it is convenient to introduce the idea of a limit or a limiting value.
 
 Informally, a \textcolor{red}{\em limit}\index{limit} is a value which \(f(x)\) gets closer and closer to, but may never actually reach.
 
@@ -150,7 +170,7 @@ For example, the function \(f(x) = e^{-x}\) as it approaches the \(x-\)axis (Fig
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/01-exp-graph-1} 
+{\centering \includegraphics[width=0.41\linewidth]{fy-B-lectnotes_files/figure-latex/01-exp-graph-1} 
 
 }
 
@@ -163,31 +183,48 @@ In function (1) above, we can try to determine the limit \(f(x)\) as \(x\) gets 
 \[
 f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.
 \]
+(However, the last ``\(=\)'\,' is only valid for \(x\not=3\)!)
+
 Now if \(x\) gets closer to \(3\), then \(x+3\) gets closer to \(6\). Formally we write
 \[
 \lim\limits_{x\to3} f(x) = 6
 \]
-and we say ``in the limit, as \(x\) tends to \(3\) then \(f(x)\) tends to 6''.
+and we say ``in the limit, if \(x\) tends to \(3\) then \(f(x)\) tends to 6''.
 
 \slide
 
 We can approach this in a slightly different way, by first letting \(x = a+3\) so that
-\[
-f(x) = f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} = \frac{a^2+6a}{a} = a+6.
-\]
+\begin{align*}
+f(x) &= f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} =\\
+&= \frac{a^2+6a}{a} = a+6.
+\end{align*}
 Now we can observe, that \(a\) gets closer to \(0\) if and only if \(x\) gets closer to \(3\). As \(a\) approaches \(0\) then \(f(a+3)\) approaches \(6\). So
 \[
 \lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = 6.
 \]
 
+(Why would we do this?)
+
 \slide
 
-Note that the limit is not the same thing as substituting the value of \(x=3\) into the function \(f(x)\), as \(f(x)\) is not defined at the value \(x=3\). We say that \(f\) is \textcolor{red}{\em discontinuous}\index{discontinuous} at \(x=3\).
+Note that the limit is not the same thing as substituting the value of \(x=3\) into the function \(f(x)\), as \(f(x)\) is not defined at the value \(x=3\). We say that \(f\) is ``\emph{discontinuous}'' at \(x=3\).
 
-A function \(f\) of \(x\) is said to be \textcolor{red}{\em continuous}\index{continuous} at the value \(x=a\) if the value of the limit of \(f(x)\) as \(x\) tends to \(a\) is equal to \(f(a)\). In other words
+A function \(f\) of \(x\) is said to be \textcolor{red}{\em continuous}\index{continuous} at the value \(x=a\) if:
+
+\begin{itemize}
+\tightlist
+\item
+  \(f\) is defined at \(a\), and
+\item
+  the value of the limit of \(f(x)\) as \(x\) tends to \(a\) is equal to \(f(a)\).
+\end{itemize}
+
+In other words
 \[
 \lim\limits_{x\to a}f(x) = f(a).
 \]
+
+Formally, a function \(f\) of \(x\) is said to be \textcolor{red}{\em discontinuous}\index{discontinuous} at \(x=a\) if it is not continuous at \(x=a\).
 \slide
 
 \begin{example}
@@ -213,9 +250,11 @@ Alternatively, you may spot that \(2x^2-5x-3 = (x-3)(2x+1)\) so that
 \]
 \end{solution}
 
+\slide
+
 \section{Differentiation from 1st Principles}\label{lecture-two}
 
-For a straight line we can consider the slope or \textcolor{red}{\em gradient}\index{gradient}. This is a measure of how steep the line is, see Figure \ref{fig:02-gradient-line}.
+For a straight line we can consider the \textcolor{red}{\em slope}\index{slope} or \textcolor{red}{\em gradient}\index{gradient}. This is a measure of how steep the line is, see Figure \ref{fig:02-gradient-line}.
 
 \begin{figure}
 
@@ -233,9 +272,9 @@ The \textcolor{red}{\em gradient}\index{gradient} is defined to be the number
 \frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.
 \]
 For the line above, which has equation \(y = 2x-1\) then
-\[
-\frac{\Delta y}{\Delta x} = \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1} = \frac{2(x_2-x_1)}{x_2-x_1} = 2.
-\]
+\begin{align*}
+\frac{\Delta y}{\Delta x} &= \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1}\\ &= \frac{2(x_2-x_1)}{x_2-x_1} = 2.
+\end{align*}
 
 \slide
 
@@ -284,7 +323,7 @@ With some thought, it should be clear that the line segment tends to a line that
 
 We call this value the \textcolor{red}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
 \[
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]
 and we refer to the process of calculating this limit as \textcolor{red}{\em differentiation by 1st principles}\index{differentiation by 1st principles}.
 
@@ -296,7 +335,7 @@ Find the derivative by 1st principles for the function \(f(x) = x^2\) at the poi
 
 \begin{solution}
 \begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
 \end{gather*}
 \end{solution}
 
@@ -306,7 +345,7 @@ Find the derivative by 1st principles for the function \(f(x) = x^3\) at the poi
 
 \begin{solution}
 \begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
 \end{gather*}
 \end{solution}
 
@@ -327,19 +366,25 @@ and so
 \end{gather*}
 Hence
 \begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
 \end{gather*}
 \end{solution}
 
 \section{Differentiation by Rule}\label{lecture-three}
 
-We have discovered that functions may be differentiated from first principles by considering small changes in \(x\), which lead to small changes in \(y\). Now we would like to know if there is a rule so that we can differentiate a function without going through the process of finding a limit every time.
+To summarise: we can differentiate a function by calculating a certain limit.
 
-If the notation of functions is used so that \(y = f(x)\) then \(dy/ dx\) is defined as
+Can we do ``better'' so that we don't have to do this every time?
+
+If we denote \(y = f(x)\), there are a few ways to \emph{denote} the derivative:
 \[
-\frac{dy}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\dd f}{\dd x} = \frac{\dd y}{\dd x} = f'(x).
 \]
-and \(dy/ dx\) may also be written as \(f’(x)\), where the apostrophe indicates that \(f(x)\) has been differentiated once. So \(dy/ dx\) and \(f’(x)\) have the same meaning.
+These all mean the same thing, namely the derivative of \(y=f(x)\) at the point \(x\), which is defined to be (recall)
+\[
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
+\]
+
 \slide
 
 \subsection{Rule for differentiation}\label{rule-for-differentiation}
@@ -361,13 +406,13 @@ and thus
 \slide
 Now, taking limit we have
 \[
-\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \frac{dy}{dx} = nx^{n-1}.
+\frac{\dd y}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
 \]
-Therefore in general, we differentiate \(x^n\) for all values of \(n\) using the rule
+Therefore, in general, we can differentiate \(x^n\) for all values of \(n\) using the rule
 \[
-\frac{dy}{dx} = \frac{d(x^n)}{dx} = nx^{n-1}.
+\frac{\dd y}{\dd x} = \frac{d(x^n)}{\dd x} = nx^{n-1}.
 \]
-This is known as the rule for differentiation.
+This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 \slide
 
 \begin{example}
@@ -376,13 +421,13 @@ Find the derivative by rule for the function \(y = x^4\) at the point \(x\).
 
 \begin{solution}
 \begin{gather*}
-\frac{dy}{dx} = 4x^3.
+\frac{\dd y}{\dd x} = 4x^3.
 \end{gather*}
 \end{solution}
 
-In words, the operation is multiply the function by the index and then reduce the value of the index by one.
+In words, the rule is: multiply the function by the exponent and then reduce the value of the exponent by one.
 
-In fact this rule is also true for any real value of \(n\) not just when \(n\) is a positive integer.
+In fact this rule is also true for any real number in the exponent, not just when it is a positive integer.
 
 \slide
 
@@ -390,7 +435,7 @@ In fact this rule is also true for any real value of \(n\) not just when \(n\) i
 
 Where a power of \(x\) is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
 \[
-y = ax^n \Rightarrow \frac{dy}{dx} = nax^{n-1}.
+y = ax^n \Rightarrow \frac{\dd y}{\dd x} = nax^{n-1}.
 \]
 
 \begin{example}
@@ -399,24 +444,29 @@ Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
 
 \begin{solution}
 \begin{gather*}
-\frac{dy}{dx} = 3\times4x^3 = 12 x^3.
+\frac{\dd y}{\dd x} = 3\times4x^3 = 12 x^3.
 \end{gather*}
 \end{solution}
 
+\slide
+
 Note that the differential of \(ax\) and of \(a\) also follow the rule. For \(ax\) we may write \(ax = ax^1\). So differentiating by rule
 \[
-\frac{dy}{dx} = a\times1x^0 = a.
+\frac{\dd y}{\dd x} = a\times1x^0 = a.
 \]
 For \(a\) we may write \(a = ax^0\) and hence differentiating by rule we have
 \[
-\frac{dy}{dx} = a\times0x^{-1} = 0.
+\frac{\dd y}{\dd x} = a\times0x^{-1} = 0.
 \]
 That is to say, the differential of a constant value is always zero.
 
-The above rule works in a more general situation. If \(f(x) = ag(x)\) where \(a\) is a constant and \(g(x)\) is function then
-\[
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} = a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{dg}{dx}
-\]
+\slide
+
+The above rule works in a more general situation. If \(f(x) = ag(x)\) where \(a\) is a constant and \(g(x)\) is a function, then
+\begin{align*}
+\frac{\dd f}{\dd x} &= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\dd g}{\dd x}.
+\end{align*}
+
 \slide
 
 \subsection{Differentiation of a sum of terms}\label{differentiation-of-a-sum-of-terms}
@@ -429,44 +479,41 @@ Find the derivative by rule for the function \(y = 4x^5+3x^2-6x\) at the point \
 
 \begin{solution}
 \begin{gather*}
-\frac{dy}{dx} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
+\frac{\dd y}{\dd x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
 \end{gather*}
 \end{solution}
 
-So to summarise we have the following rules for differentiation:
+\slide
 
-\begin{gather}
-\frac{d(x^n)}{dx} = nx^{n-1}\text{ for }n\in{\mathbb R}\\
-\frac{d(ag(x))}{dx} = a\frac{dg}{dx}\\
-\frac{d(f(x)+g(x))}{dx} = \frac{df}{dx}+\frac{dg}{dx}.
-\end{gather}
+To summarise, so far we have the following rules for differentiation:
+
+\begin{align*}
+\frac{\dd(x^n)}{\dd x} &= nx^{n-1}\text{ for }n\in{\mathbb R}\\
+\frac{\dd(ag(x))}{\dd x} &= a\frac{\dd g}{\dd x}\\
+\frac{\dd(f(x)+g(x))}{\dd x} &= \frac{\dd f}{\dd x}+\frac{\dd g}{\dd x}.
+\end{align*}
 \slide
 
 \section{Standard Derivatives}\label{standard-derivatives}
 
 The derivatives in the following table are well-known and may be quoted without having to explain where they come from.
 
-\begin{tabular}{l|l}
-\hline
-f & df\\
-\hline
-$e^x$ & $e^x$\\
-\hline
-$\ln(x)$ & $\frac{1}{x}$\\
-\hline
-$\sin(x)$ & $\cos(x)$\\
-\hline
-$\cos(x)$ & $-\sin(x)$\\
-\hline
-$\tan(x)$ & $\sec^2(x)$\\
-\hline
-$\text{cosec}(x)$ & $-\text{cosec}(x)\cot(x)$\\
-\hline
-$\sec(x)$ & $\sec(x)\tan(x)$\\
-\hline
-$\cot(x)$ & $-\text{cosec}^2(x)$\\
-\hline
-\end{tabular}
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(\mathbf{f(x)}\) & \(\mathbf{f'(x)}\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(e^x\) & \(e^x\) \\
+\(\ln(x)\) & \(\frac{1}{x}\) \\
+\(\sin(x)\) & \(\cos(x)\) \\
+\(\cos(x)\) & \(-\sin(x)\) \\
+\(\tan(x)\) & \(\sec^2(x)\) \\
+\(\csc(x)\) & \(-\csc(x)\cot(x)\) \\
+\(\sec(x)\) & \(\sec(x)\tan(x)\) \\
+\(\cot(x)\) & \(-\csc(x)\) \\
+\end{longtable}
 
 \chapter*{Week 1 Exercises}\label{week-1-exercises}
 \addcontentsline{toc}{chapter}{Week 1 Exercises}

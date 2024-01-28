@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-09" />
+<meta name="date" content="2024-01-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -413,18 +413,18 @@
 </p>
 <div id="lecture-one" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Limits<a href="week-one.html#lecture-one" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In some cases, the value of a function is undefined or cannot be determined. For example
+<p>In some cases, the value of a function at a point is undefined or cannot be determined. For example
 <span class="math display">\[
 f(x) = \frac{x^2-9}{x-3}\tag{1}
 \]</span>
-has the value <span class="math inline">\(\frac00\)</span> for <span class="math inline">\(f(3)\)</span>, which is undetermined. In such cases it is convenient to introduce the idea of a limit or a limiting value.</p>
+has the value <span class="math inline">\(\frac00\)</span> for <span class="math inline">\(f(3)\)</span>, which is undetermined. However the function may still “behave well” around that point. In such cases it is convenient to introduce the idea of a limit or a limiting value.</p>
 <p>Informally, a <a name='#limit'></a><span style="color: red;">limit</span> is a value which <span class="math inline">\(f(x)\)</span> gets closer and closer to, but may never actually reach.</p>
 <p>For example, the function <span class="math inline">\(f(x) = e^{-x}\)</span> as it approaches the <span class="math inline">\(x-\)</span>axis (Figure <a href="week-one.html#fig:01-exp-graph">1.1</a>).
 <!--incfig
 
 --></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:01-exp-graph"></span>
-<img src="fy-B-lectnotes_files/figure-html/01-exp-graph-1.svg" alt="$e^{-x}$" width="50%" />
+<img src="fy-B-lectnotes_files/figure-html/01-exp-graph-1.svg" alt="$e^{-x}$" width="41%" />
 <p class="caption">
 Figure 1.1: <span class="math inline">\(e^{-x}\)</span>
 </p>
@@ -433,24 +433,33 @@ Figure 1.1: <span class="math inline">\(e^{-x}\)</span>
 <span class="math display">\[
 f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.
 \]</span>
-Now if <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>, then <span class="math inline">\(x+3\)</span> gets closer to <span class="math inline">\(6\)</span>. Formally we write
+(However, the last ``<span class="math inline">\(=\)</span>’’ is only valid for <span class="math inline">\(x\not=3\)</span>!)</p>
+<p>Now if <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>, then <span class="math inline">\(x+3\)</span> gets closer to <span class="math inline">\(6\)</span>. Formally we write
 <span class="math display">\[
 \lim\limits_{x\to3} f(x) = 6
 \]</span>
-and we say “in the limit, as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(3\)</span> then <span class="math inline">\(f(x)\)</span> tends to 6”.</p>
+and we say “in the limit, if <span class="math inline">\(x\)</span> tends to <span class="math inline">\(3\)</span> then <span class="math inline">\(f(x)\)</span> tends to 6”.</p>
 <p>We can approach this in a slightly different way, by first letting <span class="math inline">\(x = a+3\)</span> so that
-<span class="math display">\[
-f(x) = f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} = \frac{a^2+6a}{a} = a+6.
-\]</span>
+<span class="math display">\[\begin{align*}
+f(x) &amp;= f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} =\\
+&amp;= \frac{a^2+6a}{a} = a+6.
+\end{align*}\]</span>
 Now we can observe, that <span class="math inline">\(a\)</span> gets closer to <span class="math inline">\(0\)</span> if and only if <span class="math inline">\(x\)</span> gets closer to <span class="math inline">\(3\)</span>. As <span class="math inline">\(a\)</span> approaches <span class="math inline">\(0\)</span> then <span class="math inline">\(f(a+3)\)</span> approaches <span class="math inline">\(6\)</span>. So
 <span class="math display">\[
 \lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = 6.
 \]</span></p>
-<p>Note that the limit is not the same thing as substituting the value of <span class="math inline">\(x=3\)</span> into the function <span class="math inline">\(f(x)\)</span>, as <span class="math inline">\(f(x)\)</span> is not defined at the value <span class="math inline">\(x=3\)</span>. We say that <span class="math inline">\(f\)</span> is <a name='#discontinuous'></a><span style="color: red;">discontinuous</span> at <span class="math inline">\(x=3\)</span>.</p>
-<p>A function <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> is said to be <a name='#continuous'></a><span style="color: red;">continuous</span> at the value <span class="math inline">\(x=a\)</span> if the value of the limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(a\)</span> is equal to <span class="math inline">\(f(a)\)</span>. In other words
+<p>(Why would we do this?)</p>
+<p>Note that the limit is not the same thing as substituting the value of <span class="math inline">\(x=3\)</span> into the function <span class="math inline">\(f(x)\)</span>, as <span class="math inline">\(f(x)\)</span> is not defined at the value <span class="math inline">\(x=3\)</span>. We say that <span class="math inline">\(f\)</span> is “<em>discontinuous</em>” at <span class="math inline">\(x=3\)</span>.</p>
+<p>A function <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> is said to be <a name='#continuous'></a><span style="color: red;">continuous</span> at the value <span class="math inline">\(x=a\)</span> if:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> is defined at <span class="math inline">\(a\)</span>, and</li>
+<li>the value of the limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(a\)</span> is equal to <span class="math inline">\(f(a)\)</span>.</li>
+</ul>
+<p>In other words
 <span class="math display">\[
 \lim\limits_{x\to a}f(x) = f(a).
-\]</span>
+\]</span></p>
+<p>Formally, a function <span class="math inline">\(f\)</span> of <span class="math inline">\(x\)</span> is said to be <a name='#discontinuous'></a><span style="color: red;">discontinuous</span> at <span class="math inline">\(x=a\)</span> if it is not continuous at <span class="math inline">\(x=a\)</span>.
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-1" class="example"><strong>Example 1.1  </strong></span>Determine the limit of
@@ -476,7 +485,7 @@ Alternatively, you may spot that <span class="math inline">\(2x^2-5x-3 = (x-3)(2
 </div>
 <div id="lecture-two" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Differentiation from 1st Principles<a href="week-one.html#lecture-two" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For a straight line we can consider the slope or <a name='#gradient'></a><span style="color: red;">gradient</span>. This is a measure of how steep the line is, see Figure <a href="week-one.html#fig:02-gradient-line">1.2</a>.</p>
+<p>For a straight line we can consider the <a name='#slope'></a><span style="color: red;">slope</span> or <a name='#gradient'></a><span style="color: red;">gradient</span>. This is a measure of how steep the line is, see Figure <a href="week-one.html#fig:02-gradient-line">1.2</a>.</p>
 <!--incfig
 
 -->
@@ -491,9 +500,9 @@ Figure 1.2: gradient of a line
 \frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.
 \]</span>
 For the line above, which has equation <span class="math inline">\(y = 2x-1\)</span> then
-<span class="math display">\[
-\frac{\Delta y}{\Delta x} = \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1} = \frac{2(x_2-x_1)}{x_2-x_1} = 2.
-\]</span></p>
+<span class="math display">\[\begin{align*}
+\frac{\Delta y}{\Delta x} &amp;= \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1}\\ &amp;= \frac{2(x_2-x_1)}{x_2-x_1} = 2.
+\end{align*}\]</span></p>
 Suppose now we are given a curve with equation <span class="math inline">\(y=f(x)\)</span> and want to find the gradient of a line segment joining two points on the curve (Figure <a href="week-one.html#fig:03-line-seg-curve">1.3</a>).
 <!--incfig
 
@@ -581,7 +590,7 @@ Figure 1.4: line segment of a curve
 </div>
 <p>We call this value the <a name='#derivative'></a><span style="color: red;">derivative</span> of the function <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span> and write
 <span class="math display">\[
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]</span>
 and we refer to the process of calculating this limit as <a name='#differentiation-by-1st-principles'></a><span style="color: red;">differentiation by 1st principles</span>.</p>
 <div class="example">
@@ -589,7 +598,7 @@ and we refer to the process of calculating this limit as <a name='#differentiati
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-4" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
 \end{gather*}\]</span></p>
 </div>
 <div class="example">
@@ -597,7 +606,7 @@ and we refer to the process of calculating this limit as <a name='#differentiati
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-6" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
 \end{gather*}\]</span></p>
 </div>
 <div class="example">
@@ -614,19 +623,22 @@ and so
 \end{gather*}\]</span>
 Hence
 <span class="math display">\[\begin{gather*}
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
 \end{gather*}\]</span></p>
 </div>
 </div>
 <div id="lecture-three" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Differentiation by Rule<a href="week-one.html#lecture-three" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have discovered that functions may be differentiated from first principles by considering small changes in <span class="math inline">\(x\)</span>, which lead to small changes in <span class="math inline">\(y\)</span>. Now we would like to know if there is a rule so that we can differentiate a function without going through the process of finding a limit every time.</p>
-<p>If the notation of functions is used so that <span class="math inline">\(y = f(x)\)</span> then <span class="math inline">\(dy/ dx\)</span> is defined as
+<p>To summarise: we can differentiate a function by calculating a certain limit.</p>
+<p>Can we do “better” so that we don’t have to do this every time?</p>
+<p>If we denote <span class="math inline">\(y = f(x)\)</span>, there are a few ways to <em>denote</em> the derivative:
 <span class="math display">\[
-\frac{dy}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\dd f}{\dd x} = \frac{\dd y}{\dd x} = f&#39;(x).
 \]</span>
-and <span class="math inline">\(dy/ dx\)</span> may also be written as <span class="math inline">\(f’(x)\)</span>, where the apostrophe indicates that <span class="math inline">\(f(x)\)</span> has been differentiated once. So <span class="math inline">\(dy/ dx\)</span> and <span class="math inline">\(f’(x)\)</span> have the same meaning.
-</p>
+These all mean the same thing, namely the derivative of <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span>, which is defined to be (recall)
+<span class="math display">\[
+\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
+\]</span></p>
 <div id="rule-for-differentiation" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Rule for differentiation<a href="week-one.html#rule-for-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Consider the differentiation of <span class="math inline">\(y = x^n\)</span> from first principles. We have <span class="math inline">\(f(x+h) = (x + h)^n\)</span>.</p>
@@ -644,53 +656,52 @@ and thus
 \]</span>
 Now, taking limit we have
 <span class="math display">\[
-\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \frac{dy}{dx} = nx^{n-1}.
+\frac{\dd y}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
 \]</span>
-Therefore in general, we differentiate <span class="math inline">\(x^n\)</span> for all values of <span class="math inline">\(n\)</span> using the rule
+Therefore, in general, we can differentiate <span class="math inline">\(x^n\)</span> for all values of <span class="math inline">\(n\)</span> using the rule
 <span class="math display">\[
-\frac{dy}{dx} = \frac{d(x^n)}{dx} = nx^{n-1}.
+\frac{\dd y}{\dd x} = \frac{d(x^n)}{\dd x} = nx^{n-1}.
 \]</span>
-This is known as the rule for differentiation.
+This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-9" class="example"><strong>Example 1.5  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = x^4\)</span> at the point <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-10" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{dy}{dx} = 4x^3.
+\frac{\dd y}{\dd x} = 4x^3.
 \end{gather*}\]</span></p>
 </div>
-<p>In words, the operation is multiply the function by the index and then reduce the value of the index by one.</p>
-<p>In fact this rule is also true for any real value of <span class="math inline">\(n\)</span> not just when <span class="math inline">\(n\)</span> is a positive integer.</p>
+<p>In words, the rule is: multiply the function by the exponent and then reduce the value of the exponent by one.</p>
+<p>In fact this rule is also true for any real number in the exponent, not just when it is a positive integer.</p>
 </div>
 <div id="differentiation-of-axn." class="section level3 hasAnchor" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> Differentiation of <span class="math inline">\(ax^n\)</span>.<a href="week-one.html#differentiation-of-axn." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Where a power of <span class="math inline">\(x\)</span> is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
 <span class="math display">\[
-y = ax^n \Rightarrow \frac{dy}{dx} = nax^{n-1}.
+y = ax^n \Rightarrow \frac{\dd y}{\dd x} = nax^{n-1}.
 \]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-11" class="example"><strong>Example 1.6  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = 3x^4\)</span> at the point <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-12" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{dy}{dx} = 3\times4x^3 = 12 x^3.
+\frac{\dd y}{\dd x} = 3\times4x^3 = 12 x^3.
 \end{gather*}\]</span></p>
 </div>
 <p>Note that the differential of <span class="math inline">\(ax\)</span> and of <span class="math inline">\(a\)</span> also follow the rule. For <span class="math inline">\(ax\)</span> we may write <span class="math inline">\(ax = ax^1\)</span>. So differentiating by rule
 <span class="math display">\[
-\frac{dy}{dx} = a\times1x^0 = a.
+\frac{\dd y}{\dd x} = a\times1x^0 = a.
 \]</span>
 For <span class="math inline">\(a\)</span> we may write <span class="math inline">\(a = ax^0\)</span> and hence differentiating by rule we have
 <span class="math display">\[
-\frac{dy}{dx} = a\times0x^{-1} = 0.
+\frac{\dd y}{\dd x} = a\times0x^{-1} = 0.
 \]</span>
 That is to say, the differential of a constant value is always zero.</p>
-<p>The above rule works in a more general situation. If <span class="math inline">\(f(x) = ag(x)\)</span> where <span class="math inline">\(a\)</span> is a constant and <span class="math inline">\(g(x)\)</span> is function then
-<span class="math display">\[
-\frac{df}{dx} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} = a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{dg}{dx}
-\]</span>
-</p>
+<p>The above rule works in a more general situation. If <span class="math inline">\(f(x) = ag(x)\)</span> where <span class="math inline">\(a\)</span> is a constant and <span class="math inline">\(g(x)\)</span> is a function, then
+<span class="math display">\[\begin{align*}
+\frac{\dd f}{\dd x} &amp;= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &amp;= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\dd g}{\dd x}.
+\end{align*}\]</span></p>
 </div>
 <div id="differentiation-of-a-sum-of-terms" class="section level3 hasAnchor" number="1.3.3">
 <h3><span class="header-section-number">1.3.3</span> Differentiation of a sum of terms<a href="week-one.html#differentiation-of-a-sum-of-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -700,15 +711,15 @@ That is to say, the differential of a constant value is always zero.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-14" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{dy}{dx} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
+\frac{\dd y}{\dd x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
 \end{gather*}\]</span></p>
 </div>
-<p>So to summarise we have the following rules for differentiation:</p>
-<p><span class="math display">\[\begin{gather}
-\frac{d(x^n)}{dx} = nx^{n-1}\text{ for }n\in{\mathbb R}\\
-\frac{d(ag(x))}{dx} = a\frac{dg}{dx}\\
-\frac{d(f(x)+g(x))}{dx} = \frac{df}{dx}+\frac{dg}{dx}.
-\end{gather}\]</span>
+<p>To summarise, so far we have the following rules for differentiation:</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\dd(x^n)}{\dd x} &amp;= nx^{n-1}\text{ for }n\in{\mathbb R}\\
+\frac{\dd(ag(x))}{\dd x} &amp;= a\frac{\dd g}{\dd x}\\
+\frac{\dd(f(x)+g(x))}{\dd x} &amp;= \frac{\dd f}{\dd x}+\frac{\dd g}{\dd x}.
+\end{align*}\]</span>
 </p>
 </div>
 </div>
@@ -718,8 +729,8 @@ That is to say, the differential of a constant value is always zero.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">f</th>
-<th align="left">df</th>
+<th align="left"><span class="math inline">\(\mathbf{f(x)}\)</span></th>
+<th align="left"><span class="math inline">\(\mathbf{f&#39;(x)}\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -744,8 +755,8 @@ That is to say, the differential of a constant value is always zero.</p>
 <td align="left"><span class="math inline">\(\sec^2(x)\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(\text{cosec}(x)\)</span></td>
-<td align="left"><span class="math inline">\(-\text{cosec}(x)\cot(x)\)</span></td>
+<td align="left"><span class="math inline">\(\csc(x)\)</span></td>
+<td align="left"><span class="math inline">\(-\csc(x)\cot(x)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(\sec(x)\)</span></td>
@@ -753,7 +764,7 @@ That is to say, the differential of a constant value is always zero.</p>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(\cot(x)\)</span></td>
-<td align="left"><span class="math inline">\(-\text{cosec}^2(x)\)</span></td>
+<td align="left"><span class="math inline">\(-\csc(x)\)</span></td>
 </tr>
 </tbody>
 </table>
