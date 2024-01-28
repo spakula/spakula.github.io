@@ -590,7 +590,7 @@ Figure 1.4: line segment of a curve
 </div>
 <p>We call this value the <a name='#derivative'></a><span style="color: red;">derivative</span> of the function <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span> and write
 <span class="math display">\[
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]</span>
 and we refer to the process of calculating this limit as <a name='#differentiation-by-1st-principles'></a><span style="color: red;">differentiation by 1st principles</span>.</p>
 <div class="example">
@@ -598,7 +598,7 @@ and we refer to the process of calculating this limit as <a name='#differentiati
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-4" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
 \end{gather*}\]</span></p>
 </div>
 <div class="example">
@@ -606,7 +606,7 @@ and we refer to the process of calculating this limit as <a name='#differentiati
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-6" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
 \end{gather*}\]</span></p>
 </div>
 <div class="example">
@@ -623,7 +623,7 @@ and so
 \end{gather*}\]</span>
 Hence
 <span class="math display">\[\begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
 \end{gather*}\]</span></p>
 </div>
 </div>
@@ -633,11 +633,11 @@ Hence
 <p>Can we do “better” so that we don’t have to do this every time?</p>
 <p>If we denote <span class="math inline">\(y = f(x)\)</span>, there are a few ways to <em>denote</em> the derivative:
 <span class="math display">\[
-\frac{\dd f}{\dd x} = \frac{\dd y}{\dd x} = f&#39;(x).
+\frac{\mathrm{d} f}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} x} = f&#39;(x).
 \]</span>
 These all mean the same thing, namely the derivative of <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span>, which is defined to be (recall)
 <span class="math display">\[
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
 \]</span></p>
 <div id="rule-for-differentiation" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Rule for differentiation<a href="week-one.html#rule-for-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -656,11 +656,11 @@ and thus
 \]</span>
 Now, taking limit we have
 <span class="math display">\[
-\frac{\dd y}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
 \]</span>
 Therefore, in general, we can differentiate <span class="math inline">\(x^n\)</span> for all values of <span class="math inline">\(n\)</span> using the rule
 <span class="math display">\[
-\frac{\dd y}{\dd x} = \frac{d(x^n)}{\dd x} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{d(x^n)}{\mathrm{d} x} = nx^{n-1}.
 \]</span>
 This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 </p>
@@ -669,7 +669,7 @@ This is known as the rule for differentiation (well, one of the rules, there is 
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-10" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{\dd y}{\dd x} = 4x^3.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 4x^3.
 \end{gather*}\]</span></p>
 </div>
 <p>In words, the rule is: multiply the function by the exponent and then reduce the value of the exponent by one.</p>
@@ -679,28 +679,28 @@ This is known as the rule for differentiation (well, one of the rules, there is 
 <h3><span class="header-section-number">1.3.2</span> Differentiation of <span class="math inline">\(ax^n\)</span>.<a href="week-one.html#differentiation-of-axn." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Where a power of <span class="math inline">\(x\)</span> is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
 <span class="math display">\[
-y = ax^n \Rightarrow \frac{\dd y}{\dd x} = nax^{n-1}.
+y = ax^n \Rightarrow \frac{\mathrm{d} y}{\mathrm{d} x} = nax^{n-1}.
 \]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-11" class="example"><strong>Example 1.6  </strong></span>Find the derivative by rule for the function <span class="math inline">\(y = 3x^4\)</span> at the point <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-12" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{\dd y}{\dd x} = 3\times4x^3 = 12 x^3.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3\times4x^3 = 12 x^3.
 \end{gather*}\]</span></p>
 </div>
 <p>Note that the differential of <span class="math inline">\(ax\)</span> and of <span class="math inline">\(a\)</span> also follow the rule. For <span class="math inline">\(ax\)</span> we may write <span class="math inline">\(ax = ax^1\)</span>. So differentiating by rule
 <span class="math display">\[
-\frac{\dd y}{\dd x} = a\times1x^0 = a.
+\frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.
 \]</span>
 For <span class="math inline">\(a\)</span> we may write <span class="math inline">\(a = ax^0\)</span> and hence differentiating by rule we have
 <span class="math display">\[
-\frac{\dd y}{\dd x} = a\times0x^{-1} = 0.
+\frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.
 \]</span>
 That is to say, the differential of a constant value is always zero.</p>
 <p>The above rule works in a more general situation. If <span class="math inline">\(f(x) = ag(x)\)</span> where <span class="math inline">\(a\)</span> is a constant and <span class="math inline">\(g(x)\)</span> is a function, then
 <span class="math display">\[\begin{align*}
-\frac{\dd f}{\dd x} &amp;= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &amp;= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\dd g}{\dd x}.
+\frac{\mathrm{d} f}{\mathrm{d} x} &amp;= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &amp;= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\mathrm{d} g}{\mathrm{d} x}.
 \end{align*}\]</span></p>
 </div>
 <div id="differentiation-of-a-sum-of-terms" class="section level3 hasAnchor" number="1.3.3">
@@ -711,14 +711,14 @@ That is to say, the differential of a constant value is always zero.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-14" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
-\frac{\dd y}{\dd x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
+\frac{\mathrm{d} y}{\mathrm{d} x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
 \end{gather*}\]</span></p>
 </div>
 <p>To summarise, so far we have the following rules for differentiation:</p>
 <p><span class="math display">\[\begin{align*}
-\frac{\dd(x^n)}{\dd x} &amp;= nx^{n-1}\text{ for }n\in{\mathbb R}\\
-\frac{\dd(ag(x))}{\dd x} &amp;= a\frac{\dd g}{\dd x}\\
-\frac{\dd(f(x)+g(x))}{\dd x} &amp;= \frac{\dd f}{\dd x}+\frac{\dd g}{\dd x}.
+\frac{\mathrm{d}(x^n)}{\mathrm{d} x} &amp;= nx^{n-1}\text{ for }n\in{\mathbb R}\\
+\frac{\mathrm{d}(ag(x))}{\mathrm{d} x} &amp;= a\frac{\mathrm{d} g}{\mathrm{d} x}\\
+\frac{\mathrm{d}(f(x)+g(x))}{\mathrm{d} x} &amp;= \frac{\mathrm{d} f}{\mathrm{d} x}+\frac{\mathrm{d} g}{\mathrm{d} x}.
 \end{align*}\]</span>
 </p>
 </div>

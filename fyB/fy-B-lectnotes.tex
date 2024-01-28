@@ -323,7 +323,7 @@ With some thought, it should be clear that the line segment tends to a line that
 
 We call this value the \textcolor{red}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
 \[
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]
 and we refer to the process of calculating this limit as \textcolor{red}{\em differentiation by 1st principles}\index{differentiation by 1st principles}.
 
@@ -335,7 +335,7 @@ Find the derivative by 1st principles for the function \(f(x) = x^2\) at the poi
 
 \begin{solution}
 \begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
 \end{gather*}
 \end{solution}
 
@@ -345,7 +345,7 @@ Find the derivative by 1st principles for the function \(f(x) = x^3\) at the poi
 
 \begin{solution}
 \begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^3 - x^3}{h} = \lim\limits_{h\to0}\frac{(x^3+3x^2h+3xh^2+h^3)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{3x^2h+3xh^2+h^3}{h} = \lim\limits_{h\to0}(3x^2+3xh+h^2) = 3x^2.
 \end{gather*}
 \end{solution}
 
@@ -366,7 +366,7 @@ and so
 \end{gather*}
 Hence
 \begin{gather*}
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{-2}{(2x+2h-1)(2x-1)} = \frac{-2}{(2x-1)(2x-1)} = \frac{-2}{(2x-1)^2}.
 \end{gather*}
 \end{solution}
 
@@ -378,11 +378,11 @@ Can we do ``better'' so that we don't have to do this every time?
 
 If we denote \(y = f(x)\), there are a few ways to \emph{denote} the derivative:
 \[
-\frac{\dd f}{\dd x} = \frac{\dd y}{\dd x} = f'(x).
+\frac{\mathrm{d} f}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} x} = f'(x).
 \]
 These all mean the same thing, namely the derivative of \(y=f(x)\) at the point \(x\), which is defined to be (recall)
 \[
-\frac{\dd f}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
+\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
 \]
 
 \slide
@@ -406,11 +406,11 @@ and thus
 \slide
 Now, taking limit we have
 \[
-\frac{\dd y}{\dd x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
 \]
 Therefore, in general, we can differentiate \(x^n\) for all values of \(n\) using the rule
 \[
-\frac{\dd y}{\dd x} = \frac{d(x^n)}{\dd x} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{d(x^n)}{\mathrm{d} x} = nx^{n-1}.
 \]
 This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 \slide
@@ -421,7 +421,7 @@ Find the derivative by rule for the function \(y = x^4\) at the point \(x\).
 
 \begin{solution}
 \begin{gather*}
-\frac{\dd y}{\dd x} = 4x^3.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 4x^3.
 \end{gather*}
 \end{solution}
 
@@ -435,7 +435,7 @@ In fact this rule is also true for any real number in the exponent, not just whe
 
 Where a power of \(x\) is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
 \[
-y = ax^n \Rightarrow \frac{\dd y}{\dd x} = nax^{n-1}.
+y = ax^n \Rightarrow \frac{\mathrm{d} y}{\mathrm{d} x} = nax^{n-1}.
 \]
 
 \begin{example}
@@ -444,7 +444,7 @@ Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
 
 \begin{solution}
 \begin{gather*}
-\frac{\dd y}{\dd x} = 3\times4x^3 = 12 x^3.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3\times4x^3 = 12 x^3.
 \end{gather*}
 \end{solution}
 
@@ -452,11 +452,11 @@ Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
 
 Note that the differential of \(ax\) and of \(a\) also follow the rule. For \(ax\) we may write \(ax = ax^1\). So differentiating by rule
 \[
-\frac{\dd y}{\dd x} = a\times1x^0 = a.
+\frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.
 \]
 For \(a\) we may write \(a = ax^0\) and hence differentiating by rule we have
 \[
-\frac{\dd y}{\dd x} = a\times0x^{-1} = 0.
+\frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.
 \]
 That is to say, the differential of a constant value is always zero.
 
@@ -464,7 +464,7 @@ That is to say, the differential of a constant value is always zero.
 
 The above rule works in a more general situation. If \(f(x) = ag(x)\) where \(a\) is a constant and \(g(x)\) is a function, then
 \begin{align*}
-\frac{\dd f}{\dd x} &= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\dd g}{\dd x}.
+\frac{\mathrm{d} f}{\mathrm{d} x} &= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\mathrm{d} g}{\mathrm{d} x}.
 \end{align*}
 
 \slide
@@ -479,7 +479,7 @@ Find the derivative by rule for the function \(y = 4x^5+3x^2-6x\) at the point \
 
 \begin{solution}
 \begin{gather*}
-\frac{\dd y}{\dd x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
+\frac{\mathrm{d} y}{\mathrm{d} x} = 4\times5x^4 + 3\times 2x^1 - 6\times1 = 20x^4+6x-6
 \end{gather*}
 \end{solution}
 
@@ -488,9 +488,9 @@ Find the derivative by rule for the function \(y = 4x^5+3x^2-6x\) at the point \
 To summarise, so far we have the following rules for differentiation:
 
 \begin{align*}
-\frac{\dd(x^n)}{\dd x} &= nx^{n-1}\text{ for }n\in{\mathbb R}\\
-\frac{\dd(ag(x))}{\dd x} &= a\frac{\dd g}{\dd x}\\
-\frac{\dd(f(x)+g(x))}{\dd x} &= \frac{\dd f}{\dd x}+\frac{\dd g}{\dd x}.
+\frac{\mathrm{d}(x^n)}{\mathrm{d} x} &= nx^{n-1}\text{ for }n\in{\mathbb R}\\
+\frac{\mathrm{d}(ag(x))}{\mathrm{d} x} &= a\frac{\mathrm{d} g}{\mathrm{d} x}\\
+\frac{\mathrm{d}(f(x)+g(x))}{\mathrm{d} x} &= \frac{\mathrm{d} f}{\mathrm{d} x}+\frac{\mathrm{d} g}{\mathrm{d} x}.
 \end{align*}
 \slide
 
