@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -500,36 +500,45 @@ y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x - \frac{2}{9}\text{ and so }y = -\frac{x}
 <h2><span class="header-section-number">2.2</span> The Chain Rule<a href="week-two.html#lecture-five" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A function may be considered as an operation that has to be done to <span class="math inline">\(x\)</span> to get <span class="math inline">\(y\)</span>. For example if <span class="math inline">\(y = f(x) = x^2\)</span> then the function (called <span class="math inline">\(f\)</span> in this case) is: square the value of <span class="math inline">\(x\)</span>.</p>
 <p>For <span class="math inline">\(y = g(\theta) = \sin(\theta)\)</span> the function (called <span class="math inline">\(g\)</span> in this case) is: evaluate the sine of <span class="math inline">\(\theta\)</span>.</p>
-<p>If we now look at <span class="math inline">\((x^2 + 4)^3\)</span> then we can consider this as one function described in the following way: take <span class="math inline">\(x\)</span>, square it, add <span class="math inline">\(4\)</span> and then cube the answer. So we can write
+<p>If we now look at <span class="math inline">\((x^2 + 4)^3\)</span> then we can consider this as one function described be performing these steps:</p>
+<ol style="list-style-type: decimal">
+<li>take <span class="math inline">\(x\)</span>,</li>
+<li>square it,</li>
+<li>add <span class="math inline">\(4\)</span> to the previous result, and then</li>
+<li>cube the preceding result.</li>
+</ol>
+<p>So we can write
 <span class="math display">\[
-y = f(x) = (x^2+ 4)^3
+y = f(x) = (x^2+ 4)^3,
 \]</span>
-or we can consider the function <span class="math inline">\(f\)</span> as two functions:
+or we can think of <span class="math inline">\(f\)</span> as (a composition of) two functions:
 <span class="math display">\[\begin{align*}
-u &amp;= g(x) = (x^2 + 4)\\
-y &amp;= h(u) = u^3
+u &amp;= g(x) = x^2 + 4\\
+y &amp;= h(u) = u^3,
 \end{align*}\]</span>
-or we can even consider it as 3 functions
+or we can even consider it as (a composition of) 3 functions:
 <span class="math display">\[\begin{align*}
 u &amp;= k(x) = x^2\\
 v &amp;= m(u) = u + 4\\
 y &amp;= n(v) = v^3.
 \end{align*}\]</span>
-In the first case, the value of <span class="math inline">\(y\)</span> is calculated all in one attempt. In the second case, <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule of the function <span class="math inline">\(g\)</span>, then <span class="math inline">\(y\)</span> is calculated using <span class="math inline">\(u\)</span> and the rule of the function <span class="math inline">\(h\)</span>. In the third case <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule of function <span class="math inline">\(k\)</span>, then <span class="math inline">\(v\)</span> is calculated from <span class="math inline">\(u\)</span> according to the rule of function <span class="math inline">\(m\)</span> and finally <span class="math inline">\(y\)</span> is calculated from the value of <span class="math inline">\(v\)</span> according to the rule of function <span class="math inline">\(n\)</span>.</p>
-<p>We shall consider the second case as this is most helpful for differentiation. In the second case
-<span class="math display">\[\begin{gather*}
-u = g(x) = (x^2+ 4)\\
-y = h(u) = u^3
-\end{gather*}\]</span>
-so by substituting for <span class="math inline">\(u\)</span> we can write <span class="math inline">\(y = h(g(x))\)</span> which means: to get <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>, first apply the rule <span class="math inline">\(g\)</span> (get <span class="math inline">\(x\)</span>, square it and add <span class="math inline">\(4\)</span>) and then apply the rule <span class="math inline">\(h\)</span> (cube the answer to operation <span class="math inline">\(g\)</span>). When <span class="math inline">\(y\)</span> is written in this form it is called a <a name='#function-of-a-function'></a><span style="color: red;">function of a function</span> or a <a name='#composite-functon'></a><span style="color: red;">composite functon</span>.
+In the first case, the value of <span class="math inline">\(y\)</span> is calculated all in one attempt. In the second case, <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule of the function <span class="math inline">\(g\)</span>, then <span class="math inline">\(y\)</span> is calculated using <span class="math inline">\(u\)</span> and the rule of the function <span class="math inline">\(h\)</span>. In the third case <span class="math inline">\(u\)</span> is calculated from <span class="math inline">\(x\)</span> according to the rule <span class="math inline">\(k\)</span>, then <span class="math inline">\(v\)</span> is calculated from <span class="math inline">\(u\)</span> according to the rule <span class="math inline">\(m\)</span>, and finally <span class="math inline">\(y\)</span> is calculated from the value of <span class="math inline">\(v\)</span> according to the rule <span class="math inline">\(n\)</span>.</p>
+<p>We shall consider the second case. Recall:
+<span class="math display">\[\begin{align*}
+u &amp;= g(x) = x^2+ 4\\
+y &amp;= h(u) = u^3.
+\end{align*}\]</span>
+By substituting for <span class="math inline">\(u\)</span> we can write <span class="math inline">\(y = h(g(x))\)</span> which means: to get <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>, first apply the rule <span class="math inline">\(g\)</span> (get <span class="math inline">\(x\)</span>, square it and add <span class="math inline">\(4\)</span>) and then apply the rule <span class="math inline">\(h\)</span> (cube the answer to operation <span class="math inline">\(g\)</span>). When <span class="math inline">\(y\)</span> is written in this form it is called a <a name='#function-of-a-function'></a><span style="color: red;">function of a function</span> or a <a name='#composite-functon'></a><span style="color: red;">composite functon</span>.
 </p>
-<div id="differentiation-of-a-function-of-a-function-the-chain-rule" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Differentiation of a function of a function (the Chain Rule)<a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let consider the function <span class="math inline">\(y = (x^2+ 4)^3\)</span>. Up to now, if we wanted to differentiate <span class="math inline">\(y = (x^2 + 4)^3\)</span>, we had to multiply out the brackets to get a string of things added together since so far the only things we can differentiate are sums of terms of standard functions (e.g. <span class="math inline">\(\sin(x), \cos(x), \ln(x)\)</span>, etc).</p>
+<div id="the-chain-rule-differentiating-composite-functions" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> The Chain Rule: Differentiating composite functions<a href="week-two.html#the-chain-rule-differentiating-composite-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let consider the function <span class="math inline">\(y = (x^2+ 4)^3\)</span>. Up to now, if we wanted to differentiate <span class="math inline">\(y = (x^2 + 4)^3\)</span>, we had to multiply out the brackets to get a string of things added together, since so far the only things we can differentiate are sums of terms of standard functions (e.g. <span class="math inline">\(\sin(x), \cos(x), \ln(x)\)</span>, etc).</p>
 <p>The chain rule allows us to differentiate functions of functions without having to multiply out all the brackets.</p>
-<p>We can consider <span class="math inline">\(y\)</span> as a function of a function if we let <span class="math inline">\(u = x^2 + 4\)</span>. In that case <span class="math inline">\(u\)</span> is a function of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is a function of <span class="math inline">\(u\)</span>, namely <span class="math inline">\(y = u^3\)</span>. Therefore we can say that
+<p>Recall that we “decompose” <span class="math inline">\(y=(x^2+4)^3\)</span> as <span class="math inline">\(u = g(x) = x^2+4\)</span>, <span class="math inline">\(y = h(u) = u^3\)</span>.
+Thus
 <span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2
+\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
 \]</span>
 (using ordinary differentiation by rule).</p>
 <p>However, we want to find
@@ -540,30 +549,26 @@ The <a name='#chain-rule'></a><span style="color: red;">chain rule</span> says t
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
-This can be proved from first principles, but we shall not do that here.</p>
-<p>Now since <span class="math inline">\(u = x^2 + 4\)</span>, then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
-\]</span>
-(again using differentiation by rule).
+(This can be proved from first principles, but we won’t.)
 So
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
 \]</span>
-But since <span class="math inline">\(u = (x^2+4)\)</span> then
+But since <span class="math inline">\(u = x^2+4\)</span>, we have
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
-\]</span>
-The chain rule can be extended for any number of functions e.g.
+\]</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-17" class="remark"><em>Remark</em>. </span>The chain rule can be extended for any number of functions, for example
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
-\]</span>
-</p>
+\]</span></p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 2.2  </strong></span>Differentiate <span class="math inline">\(s = (2t^2- 4t)^5\)</span> with respect to <span class="math inline">\(t\)</span>.</p>
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 2.2  </strong></span>Differentiate <span class="math inline">\(s = (2t^2- 4t)^5\)</span> with respect to <span class="math inline">\(t\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-18" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2t^2-4t\)</span> and <span class="math inline">\(s = u^5\)</span>. Then
+<p><span id="unlabeled-div-19" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2t^2-4t\)</span> and <span class="math inline">\(s = u^5\)</span>. Then
 <span class="math display">\[
 \frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4
 \]</span>
@@ -577,10 +582,10 @@ But since <span class="math inline">\(u = 2t^2-4t\)</span> then
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 2.3  </strong></span>Differentiate <span class="math inline">\(y=5\cos(5\theta)\)</span> with respect to <span class="math inline">\(\theta\)</span>.</p>
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.3  </strong></span>Differentiate <span class="math inline">\(y=5\cos(5\theta)\)</span> with respect to <span class="math inline">\(\theta\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-20" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 5\theta\)</span> and <span class="math inline">\(y = 5\cos(u)\)</span>. Then
+<p><span id="unlabeled-div-21" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 5\theta\)</span> and <span class="math inline">\(y = 5\cos(u)\)</span>. Then
 <span class="math display">\[
 \frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)
 \]</span>
@@ -594,10 +599,10 @@ But since <span class="math inline">\(u = 5\theta\)</span> then
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 2.4  </strong></span>Differentiate <span class="math inline">\(y=e^{2x+3}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 2.4  </strong></span>Differentiate <span class="math inline">\(y=e^{2x+3}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-22" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2x+3\)</span> and <span class="math inline">\(y = e^u\)</span>. Then
+<p><span id="unlabeled-div-23" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2x+3\)</span> and <span class="math inline">\(y = e^u\)</span>. Then
 <span class="math display">\[
 \frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u
 \]</span>
@@ -625,80 +630,82 @@ For some products, multiplying terms out still doesn’t help to differentiate t
 <span class="math display">\[
 y = \sqrt{x^2 - 2x} \sin(x).
 \]</span>
-This would require a binomial expansion for the first part and would still leave a set of terms that were products of a function of <span class="math inline">\(x\)</span> and <span class="math inline">\(\sin(x)\)</span>.
+(We could use binomial expansion for the first factor, but we still don’t have tools to turn <span class="math inline">\(\sin(x)\)</span> into a power series.)
 </p>
-<p>It would be helpful to find a way of differentiating a product of two functions without having to multiply out. From the first example above, it is clear that the differential of a product is not just the differential of each part (that would give <span class="math inline">\(8x(9x^2 - 6) = 72x^3 - 48x)\)</span>.</p>
-<p>Let <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> be functions of <span class="math inline">\(x\)</span> so that <span class="math inline">\(u = u(x)\)</span> and <span class="math inline">\(v = v(x)\)</span>. Hence a small change <span class="math inline">\(h\)</span> in <span class="math inline">\(x\)</span> will give a small change in <span class="math inline">\(u\)</span> and a small change in <span class="math inline">\(v\)</span>.</p>
-<p>If <span class="math inline">\(y = uv\)</span> then <span class="math inline">\(y(x+h) = u(x+h)v(x+h)\)</span> so <span class="math inline">\(y(x+h)-y(x) = u(x+h)v(x+h) - u(x)v(x)\)</span>. Now by adding zero to the right side of the equation by adding and subtracting <span class="math inline">\(v(x)u(x+h)\)</span> we get
-<span class="math display">\[
-y(x+h)-y(x) = u(x+h)v(x+h) - v(x)u(x+h) + v(x)u(x+h ) - u(x)v(x).
-\]</span>
+<p>We’d like a general rule for differentiating a product.</p>
+<p>From the first example above, we see that the derivative of a product is not just the derivative of each factor, as
+that would give <span class="math inline">\(8x(9x^2 - 6) = 72x^3 - 48x\)</span>.</p>
+<p>Let <span class="math inline">\(u = u(x)\)</span> and <span class="math inline">\(v = v(x)\)</span> be functions of <span class="math inline">\(x\)</span>.</p>
+<p>If <span class="math inline">\(y = u(x)v(x)\)</span>, then <span class="math inline">\(y(x+h) = u(x+h)v(x+h)\)</span>, so
+<span class="math display">\[y(x+h)-y(x) = u(x+h)v(x+h) - u(x)v(x).\]</span>
+Now we do a trick: add and subtract <span class="math inline">\(u(x+h)v(x)\)</span>:
+<span class="math display">\[\begin{align*}
+y(x+h)-y(x) &amp;= u(x+h)v(x+h) - u(x+h)v(x)\\
+    &amp;\phantom{=} + u(x+h)v(x) - u(x)v(x).
+\end{align*}\]</span>
 Further, dividing both sides of equation by <span class="math inline">\(h\)</span> gives
+<span class="math display">\[\begin{align*}
+\frac{y(x+h)-y(x)}{h} &amp;= u(x+h)\frac{v(x+h) - v(x)}{h} \\
+&amp;\phantom{=} + v(x)\frac{u(x+h ) - u(x)}{h}.
+\end{align*}\]</span>
+In the limit as <span class="math inline">\(h\)</span> tends to <span class="math inline">\(0\)</span>, we have <span class="math inline">\(u(x+h)\to u(x)\)</span>, and so
 <span class="math display">\[
-\frac{y(x+h)-y(x)}{h} = u(x+h)\frac{v(x+h) - v(x)}{h} + v(x)\frac{u(x+h ) - u(x)}{h}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
-As <span class="math inline">\(h\)</span> tends to zero, <span class="math inline">\(u(x+h)\)</span> tends to <span class="math inline">\(u(x)\)</span> and in the limit we have
+Equivalently,
 <span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
-\]</span>
-or, put another way,
-<span class="math display">\[
-\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
+\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]</span>
 This is called the <a name='#product-rule'></a><span style="color: red;">product rule</span>.
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 2.5  </strong></span>Differentiate <span class="math inline">\(y=4x^2(3x^3-6x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 2.5  </strong></span>Differentiate <span class="math inline">\(y=4x^2(3x^3-6x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-24" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 4x^2\)</span> and <span class="math inline">\(v = 3x^3-6x\)</span>. Then
+<p><span id="unlabeled-div-25" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 4x^2\)</span> and <span class="math inline">\(v = 3x^3-6x\)</span>. Then
 <span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{dv}{\mathrm{d} x} = 9x^2-6.
+\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.
 \]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
 24x^4 - 48x^2 + 36x^4-24x^2 = 60x^4-72x^2 = 12x^2(5x^2-6).
 \end{gather*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 2.6  </strong></span>Differentiate <span class="math inline">\(y=\sqrt{x^2-2x}\sin(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Example 2.6  </strong></span>Differentiate <span class="math inline">\(y=\sqrt{x^2-2x}\sin(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-26" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\)</span> and <span class="math inline">\(v = \sin(x)\)</span>. Then
+<p><span id="unlabeled-div-27" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\)</span> and <span class="math inline">\(v = \sin(x)\)</span>. Then
 <span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x).
+\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).
 \]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
 \frac{(x-1)\sin(x)}{(x^2-2x)^{1/2}} + (x^2-2x)^{1/2}\cos(x).
 \end{gather*}\]</span></p>
 </div>
 </div>
 <div id="differentiation-of-a-quotient" class="section level3 hasAnchor" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Differentiation of a quotient<a href="week-two.html#differentiation-of-a-quotient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Consider <span class="math inline">\(y\)</span> to be a function consisting of the quotient of two functions of <span class="math inline">\(x\)</span>, <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. So <span class="math inline">\(y\)</span> may be written as
+<p>Suppose that
 <span class="math display">\[
 y = \frac{u(x)}{v(x)} = \frac{u}{v}.
 \]</span>
-Since <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are both functions of <span class="math inline">\(x\)</span>, then if <span class="math inline">\(x\)</span> changes by a small amount to <span class="math inline">\(x + h\)</span>, there will be a corresponding small change in <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> and hence will result in small change in <span class="math inline">\(y\)</span>.
-So if
-<span class="math display">\[
-y(x) = \frac{u(x)}{v(x)} \text{ then } y(x+h) = \frac{u(x+h)}{v(x+h)}
-\]</span>
+Considering a small <span class="math inline">\(h\)</span>, we have <span class="math inline">\(y(x+h) = \dfrac{u(x+h)}{v(x+h)}\)</span>.
 Hence
-<span class="math display">\[\begin{gather*}
-y(x+h)-y(x) = \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
-=\frac{v(x)u(x+h)-u(x)v(x+h)}{v(x+h)v(x)}\\
-=\frac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}
-\end{gather*}\]</span>
-Rearranging the numerator and dividing by <span class="math inline">\(h\)</span> we get
+<span class="math display">\[\begin{align*}
+y(x+h)-y(x) &amp;= \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
+&amp;=\frac{v(x)u(x+h)-u(x)v(x+h)}{v(x+h)v(x)}\\
+&amp;=\tfrac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}.
+\end{align*}\]</span>
+Dividing by <span class="math inline">\(h\)</span> and rearranging, we get
 <span class="math display">\[
-\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}
+\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.
 \]</span>
-And in the limit as <span class="math inline">\(h\)</span> tends to zero
-<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{dv}{\mathrm{d} x}}{v(x)^2}
+Thus in the limit as <span class="math inline">\(h\)</span> tends to zero
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}
 \]</span></p>
 <p>This is the formula for the <a name='#differentiation-of-a-quotient'></a><span style="color: red;">differentiation of a quotient</span>.</p>
 <p>Note that for the product formula it is up to you which part of the product you call <span class="math inline">\(u\)</span> and which <span class="math inline">\(v\)</span>, but that for the quotient formula, the denominator of the quotient must be <span class="math inline">\(v\)</span> and the numerator must be <span class="math inline">\(u\)</span>.
@@ -708,37 +715,37 @@ And in the limit as <span class="math inline">\(h\)</span> tends to zero
 y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
 \]</span>
 and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the function <span class="math inline">\(v(x)\)</span> and the function <span class="math inline">\(x^{-1}\)</span>, we can use a combination of the product rule and the chain rule. So
-<span class="math display">\[\begin{gather*}
-\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} = u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{dv}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
-= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2}
-\end{gather*}\]</span>
+<span class="math display">\[\begin{align*}
+\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} &amp;= u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{\mathrm{d} v}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
+&amp;= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{\mathrm{d} v}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2}.
+\end{align*}\]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 2.7  </strong></span>Differentiate <span class="math inline">\(y=\frac{3x^2+2}{(4x^2-4)^2}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 2.7  </strong></span>Differentiate <span class="math inline">\(y=\frac{3x^2+2}{(4x^2-4)^2}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-28" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 3x^2+2\)</span> and <span class="math inline">\(v = (4x^2-4)^2\)</span>.
+<p><span id="unlabeled-div-29" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 3x^2+2\)</span> and <span class="math inline">\(v = (4x^2-4)^2\)</span>.
 Then
 <span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{dv}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
+\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
 \]</span>
 and so
 <span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 2.8  </strong></span>Differentiate <span class="math inline">\(y=\frac{1-\sin(x)}{1+\sin(x)}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 2.8  </strong></span>Differentiate <span class="math inline">\(y=\frac{1-\sin(x)}{1+\sin(x)}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-30" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 1-\sin(x)\)</span> and <span class="math inline">\(v = 1+\sin(x)\)</span>.
+<p><span id="unlabeled-div-31" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 1-\sin(x)\)</span> and <span class="math inline">\(v = 1+\sin(x)\)</span>.
 Then
 <span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x)
+\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x)
 \]</span>
 and so
 <span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
 \]</span></p>
 </div>
 

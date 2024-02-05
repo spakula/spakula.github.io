@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -447,14 +447,14 @@ Figure 8.2: mid-ordinate rule
 \]</span>
 where <span class="math inline">\(\sum h\)</span> is shorthand for the sum of all the values of <span class="math inline">\(h\)</span>. So the total area = width of strip <span class="math inline">\(\times\)</span> sum of the mid-ordinates.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-107" class="example"><strong>Example 8.1  </strong></span>Use the mid-ordinate approximation to calculate the integral
+<p><span id="exm:unlabeled-div-108" class="example"><strong>Example 8.1  </strong></span>Use the mid-ordinate approximation to calculate the integral
 <span class="math display">\[
 \int_1^4x^2dx
 \]</span>
 by taking 1, 2 or 3 strips. Compare the values with the correct value.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-108" class="solution"><em>Solution</em>. </span>First we know that <span class="math inline">\(\displaystyle\int_1^4 x^2 dx = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\)</span>.</p>
+<p><span id="unlabeled-div-109" class="solution"><em>Solution</em>. </span>First we know that <span class="math inline">\(\displaystyle\int_1^4 x^2 dx = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\)</span>.</p>
 <p>Using one strip, <span class="math inline">\(s=3\)</span>, the mid-point is <span class="math inline">\(x=2.5\)</span> and <span class="math inline">\(h=2.5^2 = 6.25\)</span>. Hence the mid-ordinate approximation gives
 <span class="math display">\[
 \int_1^4 x^2 dx \sim 3\times 6.25 = 18.75.
@@ -491,14 +491,14 @@ A&amp; = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1}
 &amp;= \frac s2\left(y_1+2y_2+2y_3+\ldots 2y_{n}+y_{n+1}\right).
 \end{align*}\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-109" class="example"><strong>Example 8.2  </strong></span>Use the trapezium rule to approximate the integral
+<p><span id="exm:unlabeled-div-110" class="example"><strong>Example 8.2  </strong></span>Use the trapezium rule to approximate the integral
 <span class="math display">\[
 \int_1^4x^2dx
 \]</span>
 by taking 1, 2 or 3 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-110" class="solution"><em>Solution</em>. </span>If there is one strip then <span class="math inline">\(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\)</span>. Hence the trapezium rule gives
+<p><span id="unlabeled-div-111" class="solution"><em>Solution</em>. </span>If there is one strip then <span class="math inline">\(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\)</span>. Hence the trapezium rule gives
 <span class="math display">\[
 \int_1^4 x^2 dx \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
 \]</span>
@@ -559,14 +559,14 @@ Notice that the answer is not dependent on the values of <span class="math inlin
 This is known as <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span>.
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-111" class="example"><strong>Example 8.3  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-112" class="example"><strong>Example 8.3  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
 \int_1^4x^3dx
 \]</span>
 by taking 2 and 4 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-112" class="solution"><em>Solution</em>. </span>First notice that
+<p><span id="unlabeled-div-113" class="solution"><em>Solution</em>. </span>First notice that
 <span class="math display">\[
 \int_1^4x^3dx = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75
 \]</span>
@@ -581,14 +581,14 @@ For <span class="math inline">\(n=2\)</span> we have <span class="math inline">\
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-113" class="example"><strong>Example 8.4  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-114" class="example"><strong>Example 8.4  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
 \int_{-1}^1e^{-x^2}dx
 \]</span>
 by taking 6 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-114" class="solution"><em>Solution</em>. </span>This is an example of a function that does not have a suitable antiderivative, so we need to use numerical techniques.</p>
+<p><span id="unlabeled-div-115" class="solution"><em>Solution</em>. </span>This is an example of a function that does not have a suitable antiderivative, so we need to use numerical techniques.</p>
 <p>With 6 strips, <span class="math inline">\(s=1/3\)</span> so we have</p>
 <table>
 <thead>
@@ -643,14 +643,14 @@ Figure 8.6: <span class="math inline">\(e^{-x^2}\)</span>
 </div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-115" class="example"><strong>Example 8.5  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-116" class="example"><strong>Example 8.5  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
 \int_0^2\frac1{1+x^2}dx
 \]</span>
 by taking 10 strips and calculate the error involved.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-116" class="solution"><em>Solution</em>. </span>With 10 strips, <span class="math inline">\(s=2/10=0.2\)</span> so we have</p>
+<p><span id="unlabeled-div-117" class="solution"><em>Solution</em>. </span>With 10 strips, <span class="math inline">\(s=2/10=0.2\)</span> so we have</p>
 <table>
 <thead>
 <tr class="header">

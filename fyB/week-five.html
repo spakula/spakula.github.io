@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -413,7 +413,7 @@
 <p>We then move on to look at the opposite process to differentiation, called integration. Given the derivative of a function, can we ‘reconstruct’ the function that gave rise to that derivative?</p>
 <div id="partial-differentiation" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Partial Differentiation<a href="week-five.html#partial-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If an expression is a function of two variables then it can have two differential coefficients.</p>
+<p>If an expression is a function of two variables then it can be differentiated with respect to either of the variables.</p>
 <p>For example, if
 <span class="math display">\[
 z(x,y) = x^2+xy+y^2
@@ -446,28 +446,28 @@ In the same way, thinking of <span class="math inline">\(x\)</span> as being a f
 Figure 5.1: cylinder
 </p>
 </div>
-<p>The differential coefficients can be
+<p>The two different “derivatives” are
 <span class="math display">\[\begin{gather*}
 \text{treating }h\text{ as a constant } \frac{\partial V}{\partial r} = 2\pi rh\\
 \text{treating }r\text{ as a constant } \frac{\partial V}{\partial h} = \pi r^2
 \end{gather*}\]</span>
 </p>
-<p>We use the symbol <span class="math inline">\(\partial\)</span> in the differential coefficient to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.</p>
-<p>The first differential coefficient tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second differential coefficient tells us how the volume would vary as the height varied for a cylinder of constant radius.</p>
+<p>We use the symbol <span class="math inline">\(\partial\)</span> in the derivatives above to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.</p>
+<p>The first type of derivative tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second type of derivative tells us how the volume would vary as the height varied for a cylinder of constant radius.</p>
 <p>When a function of more than one variable is differentiated with respect to one variable only, this process is called <a name='#partial-differentiation'></a><span style="color: red;">partial differentiation</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 5.1  </strong></span>From the function <span class="math inline">\(z=x^3y^2\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.1  </strong></span>From the function <span class="math inline">\(z=x^3y^2\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-52" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-53" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{\partial z}{\partial x} = 3x^2y^2,\;\frac{\partial z}{\partial y} = 2yx^3.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 5.2  </strong></span>From the function <span class="math inline">\(z=3x^5-5y^3+6\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
+<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 5.2  </strong></span>From the function <span class="math inline">\(z=3x^5-5y^3+6\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-54" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-55" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{\partial z}{\partial x} = 15x^4,\;\frac{\partial z}{\partial y} = -15y^2.
 \]</span></p>
 </div>
@@ -475,12 +475,12 @@ Figure 5.1: cylinder
 <h3><span class="header-section-number">5.1.1</span> Successive partial derivatives<a href="week-five.html#successive-partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If a second partial derivative is required and there are, say, two variables, then a second derivative may be made with each of these variables.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-55" class="example"><strong>Example 5.3  </strong></span><span class="math display">\[
+<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 5.3  </strong></span><span class="math display">\[
 z=3x^2+2x^2y^2+3y^2.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-56" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-57" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{\partial z}{\partial x} = 6x+4xy^2,\;\frac{\partial z}{\partial y} = 4x^2y+6y.
 \]</span>
 So
@@ -498,12 +498,12 @@ So
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 5.4  </strong></span><span class="math display">\[
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Example 5.4  </strong></span><span class="math display">\[
 z = x\cos(y)-y\cos(x)
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-58" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-59" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{\partial z}{\partial x} = \cos(y)+y\sin(x),\;\frac{\partial z}{\partial y} = -x\sin(y)-\cos(x).
 \]</span>
 So
@@ -549,7 +549,7 @@ where <span class="math inline">\(c\)</span> is called an arbitrary constant.</p
 <p>For integration if <span class="math inline">\(dy/dx = ax^n\)</span> then <span class="math inline">\(\displaystyle\int ax^n dx = y = ax^{n+1}/(n+1) + c, n \ne -1\)</span></p>
 <p>After a function has been integrated, the result of integration may be checked by differentiating the answer.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-59" class="example"><strong>Example 5.5  </strong></span>Integrate the functions</p>
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Example 5.5  </strong></span>Integrate the functions</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(y=x^3\)</span>,</li>
 <li><span class="math inline">\(y=3x^2\)</span>,</li>
@@ -559,7 +559,7 @@ where <span class="math inline">\(c\)</span> is called an arbitrary constant.</p
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-60" class="solution"><em>Solution</em>. </span> </p>
+<p><span id="unlabeled-div-61" class="solution"><em>Solution</em>. </span> </p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\displaystyle\int x^3 dx = x^4/4+c\)</span>,</li>
 <li><span class="math inline">\(\displaystyle\int 3x^2 dx = 3x^3/3+c = x^3+c\)</span>,</li>
@@ -587,10 +587,10 @@ where <span class="math inline">\(c\)</span> is called an arbitrary constant.</p
 <h2><span class="header-section-number">5.3</span> Indefinite Integration<a href="week-five.html#indefinite-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The result of an integration which has the arbitrary constant stated as <span class="math inline">\(c\)</span> (as for the examples above) is called an <a name='#indefinite-integration'></a><span style="color: red;">indefinite integration</span> because it does not tell us which of an infinite number of possible curves we are dealing with. If we want to know the value of <span class="math inline">\(c\)</span> we need more information such as a pair of co-ordinates through which our particular curve passes. Such additional information is called a <a name='#boundary-condition'></a><span style="color: red;">boundary condition</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 5.6  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(4x + 5\)</span> and evaluate the arbitrary constant given that the boundary condition is: When <span class="math inline">\(x = 1, y = 3\)</span>.</p>
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 5.6  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(4x + 5\)</span> and evaluate the arbitrary constant given that the boundary condition is: When <span class="math inline">\(x = 1, y = 3\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-62" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-63" class="solution"><em>Solution</em>. </span><span class="math display">\[
 y = \int(4x+5)dx = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c
 \]</span>
 Now we use the condition that when <span class="math inline">\(x=1\)</span> then <span class="math inline">\(y=3\)</span> so that
@@ -603,10 +603,10 @@ y = 2x^2+5x-4.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-63" class="example"><strong>Example 5.7  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(3\sqrt{x} - 2/x^2\)</span> and evaluate the arbitrary constant given that the boundary condition is: When <span class="math inline">\(x = 1, y = 4\)</span>.</p>
+<p><span id="exm:unlabeled-div-64" class="example"><strong>Example 5.7  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(3\sqrt{x} - 2/x^2\)</span> and evaluate the arbitrary constant given that the boundary condition is: When <span class="math inline">\(x = 1, y = 4\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-64" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-65" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 y&amp; = \int(3\sqrt{x}-2/x^2)dx = 3\int x^{1/2}dx - 2\int x^{-2}dx\\
 &amp;= \frac{3x^{3/2}}{3/2} - \frac{2x^{-1}}{-1}+C = 2x^{3/2}+\frac2x+C.
 \end{align*}\]</span>
@@ -668,7 +668,7 @@ y = 2x^{3/2}+\frac 2x.
 <p><span id="exm:cos-example" class="example"><strong>Example 5.8  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(\cos(2x)\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-65" class="solution"><em>Solution</em>. </span>Notice that
+<p><span id="unlabeled-div-66" class="solution"><em>Solution</em>. </span>Notice that
 <span class="math display">\[
 \frac{d}{dx}\sin(2x) = 2\cos(2x)
 \]</span>
@@ -682,10 +682,10 @@ In general if
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-66" class="example"><strong>Example 5.9  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(2\sin(x) - \sec^2(x)+1/\pi\)</span> and evaluate the arbitrary constant given that the boundary condition is: when <span class="math inline">\(x = \pi/4, y = 0\)</span>.</p>
+<p><span id="exm:unlabeled-div-67" class="example"><strong>Example 5.9  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(2\sin(x) - \sec^2(x)+1/\pi\)</span> and evaluate the arbitrary constant given that the boundary condition is: when <span class="math inline">\(x = \pi/4, y = 0\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-67" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-68" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 y&amp; = \int(2\sin(x) - \sec^2(x)+\frac1{\pi})dx = 2\int \sin(x)dx - \int \sec^2(x)dx + \frac{1}{\pi}\int 1dx\\
 &amp;= -2\cos(x)-\tan(x)+\frac{x}{\pi}+C
 \end{align*}\]</span>
@@ -695,10 +695,10 @@ y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-68" class="example"><strong>Example 5.10  </strong></span>Calculate <span class="math inline">\(\displaystyle\int\sin^2(x)\ dx\)</span>.</p>
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 5.10  </strong></span>Calculate <span class="math inline">\(\displaystyle\int\sin^2(x)\ dx\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-69" class="solution"><em>Solution</em>. </span>This is not one of our standard integrals so at first sight it would appear we cannot integrate this function (as yet). However, recall that
+<p><span id="unlabeled-div-70" class="solution"><em>Solution</em>. </span>This is not one of our standard integrals so at first sight it would appear we cannot integrate this function (as yet). However, recall that
 <span class="math display">\[
 \cos(2x) = \cos^2(x)-\sin^2(x) = 1-2\sin^2(x).
 \]</span>

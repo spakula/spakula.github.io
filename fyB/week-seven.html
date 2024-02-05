@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -442,10 +442,10 @@ Now the integrals can be arranged so that the numerator of each is the derivativ
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 7.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\frac{x^2+2}{x-2}dx\)</span></p>
+<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 7.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\frac{x^2+2}{x-2}dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-87" class="solution"><em>Solution</em>. </span>This is an improper fraction so we must make a long division first
+<p><span id="unlabeled-div-88" class="solution"><em>Solution</em>. </span>This is an improper fraction so we must make a long division first
 <span class="math display">\[
 \begin{array}{r}
 x+2\phantom{)}   \\
@@ -466,10 +466,10 @@ and hence
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 7.2  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} dx\)</span></p>
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 7.2  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-89" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-90" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{x^3-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
 \]</span>
 and so
@@ -485,10 +485,10 @@ I&amp;= \int\frac 1{2(x-1)}dx-\int\frac 1{x-2}dx+\int\frac 3{2(x-3)}dx\\
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-90" class="example"><strong>Example 7.3  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} dx\)</span></p>
+<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 7.3  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-91" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-92" class="solution"><em>Solution</em>. </span><span class="math display">\[
 \frac{5x+2}{x^2-4x+4} = \frac{5x+2}{(x-2)^2} = \frac A{x-2}+\frac{B}{(x-2)^2}
 \]</span>
 and so
@@ -512,7 +512,7 @@ I&amp;= \int\frac{5x+2}{x^2-4x+4} dx\\
 \int_a^b f(x)dx = F(b)-F(a).
 \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 7.4  </strong></span><span class="math display">\[\begin{align*}
+<p><span id="exm:unlabeled-div-93" class="example"><strong>Example 7.4  </strong></span><span class="math display">\[\begin{align*}
 \int_1^4(x^2-2x)dx&amp; = \left[\frac{x^3}{3}-x^2+C\right]_1^4\\
 &amp;=\left(\frac{4^3}{3}-4^2+C\right) - \left(\frac{1^3}{3}-1^2+C\right)\\
 &amp;=\frac{64}{3}-16-\frac{1}{3}+1^2 = 6.
@@ -521,13 +521,13 @@ I&amp;= \int\frac{5x+2}{x^2-4x+4} dx\\
 <p>Note that during the subtraction process the arbitrary constant disappears. This will always happen for a definite integral since we will always get <span class="math inline">\(+ c\)</span> for the upper limit minus <span class="math inline">\(+ c\)</span> for the upper limit. Thus for a definite integral we need not bother to write an arbitrary constant in at all.
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-93" class="example"><strong>Example 7.5  </strong></span>Determine the value of
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 7.5  </strong></span>Determine the value of
 <span class="math display">\[
 \int_0^{\pi/2}\cos(x)dx.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-94" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-95" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \int_0^{\pi/2}\cos(x)dx&amp; = \left[\sin(x)\right]_0^{\pi/2}\\
 &amp;=\sin\left(\frac{\pi}{2}\right)-\sin(0) = 1.
 \end{align*}\]</span></p>
@@ -558,10 +558,10 @@ A =\lim\limits_{\delta x\to 0}\sum_{x=a}^{x=b}y\delta x = \int_a^b y\ dx.
 This sometimes known as the <a name='#(second)-fundamental-theorem-of-calculus'></a><span style="color: red;">(Second) Fundamental Theorem of Calculus</span>.
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 7.6  </strong></span>Determine the area between the curve <span class="math inline">\(y=2x^2+3x+1\)</span> and the <span class="math inline">\(x-\)</span>axis between the values of <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-96" class="example"><strong>Example 7.6  </strong></span>Determine the area between the curve <span class="math inline">\(y=2x^2+3x+1\)</span> and the <span class="math inline">\(x-\)</span>axis between the values of <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-96" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-97" class="solution"><em>Solution</em>. </span></p>
 (See Figure <a href="week-seven.html#fig:23-area-under-2x23x1">7.2</a>.)
 <span class="math display">\[
 A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
@@ -604,10 +604,10 @@ A_3&amp;=\int_{3}^5(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.
 and the total area is given by <span class="math inline">\(A = A_1 + (-A_2) + A_3 = 1.83 + 4.5 + 8.67 = 15\)</span>.</p>
 <p>If we are asked to find the area under a curve for a certain range of <span class="math inline">\(x\)</span>, we must first determine whether the curve crosses the axis in that range. If it does we need to be very careful about how we find the area, making sure we find the area for each section individually and then add all the results at the end.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-97" class="example"><strong>Example 7.7  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^3\)</span> and the <span class="math inline">\(x-\)</span>axis, between the points <span class="math inline">\(x=-2\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-98" class="example"><strong>Example 7.7  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^3\)</span> and the <span class="math inline">\(x-\)</span>axis, between the points <span class="math inline">\(x=-2\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-98" class="solution"><em>Solution</em>. </span>First sketch the curve: Figure <a href="week-seven.html#fig:25-graph-x3">7.4</a>.</p>
+<p><span id="unlabeled-div-99" class="solution"><em>Solution</em>. </span>First sketch the curve: Figure <a href="week-seven.html#fig:25-graph-x3">7.4</a>.</p>
 <!--incfig
 
 -->
@@ -633,10 +633,10 @@ This is clearly not the case. The area to the left of the <span class="math inli
 <h2><span class="header-section-number">7.3</span> Area between two curves and Parametric Integration<a href="week-seven.html#area-between-two-curves-and-parametric-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We may use definite integration to find the area between two curves (or a curve and a straight line).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-99" class="example"><strong>Example 7.8  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^2+1\)</span> and the straight line <span class="math inline">\(y=7-x\)</span>.</p>
+<p><span id="exm:unlabeled-div-100" class="example"><strong>Example 7.8  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^2+1\)</span> and the straight line <span class="math inline">\(y=7-x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-100" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-101" class="solution"><em>Solution</em>. </span></p>
 In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch: Figure <a href="week-seven.html#fig:26-graph-x2117x">7.5</a>.
 <!--incfig
 
@@ -662,10 +662,10 @@ A&amp;=\int_{-3}^2(7-x)dx - \int_{-3}^2(x^2+1)dx = \left[7x-\frac{x^2}2\right]_{
 The area is therefore <span class="math inline">\(20.83\)</span> units<span class="math inline">\(^2\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-101" class="example"><strong>Example 7.9  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=e^x\)</span> and the curve <span class="math inline">\(y=e^{-x}\)</span> and <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-102" class="example"><strong>Example 7.9  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=e^x\)</span> and the curve <span class="math inline">\(y=e^{-x}\)</span> and <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-102" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-103" class="solution"><em>Solution</em>. </span></p>
 A quick sketch of the curves is on Figure <a href="week-seven.html#fig:27-graph-exex">7.6</a>.
 <!--incfig
 
@@ -692,19 +692,19 @@ Notice that <span class="math inline">\(dx/dt = f&#39;(t)\)</span> and so we wri
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-103" class="example"><strong>Example 7.10  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = at^2\)</span> and <span class="math inline">\(y = 2at\)</span> where <span class="math inline">\(t\)</span> is a parameter and <span class="math inline">\(a\)</span> is a constant. Determine the definite integral between <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(t = 2\)</span>.</p>
+<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 7.10  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = at^2\)</span> and <span class="math inline">\(y = 2at\)</span> where <span class="math inline">\(t\)</span> is a parameter and <span class="math inline">\(a\)</span> is a constant. Determine the definite integral between <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(t = 2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-104" class="solution"><em>Solution</em>. </span>Here <span class="math inline">\(x=f(t)=at^2\)</span> and <span class="math inline">\(y=g(t)=2at\)</span>. Hence <span class="math inline">\(f&#39;(t) = 2at\)</span> and the integral is
+<p><span id="unlabeled-div-105" class="solution"><em>Solution</em>. </span>Here <span class="math inline">\(x=f(t)=at^2\)</span> and <span class="math inline">\(y=g(t)=2at\)</span>. Hence <span class="math inline">\(f&#39;(t) = 2at\)</span> and the integral is
 <span class="math display">\[
 A = \int_a^{4a} y\ dx = \int_{t=1}^{t=2}y\ dx = \int_1^22at\times 2at\ dt = \int_1^24a^2t^2\ dt = 4a^2\left[\frac{t^3}3\right]_1^2 = 4a^2\left[\frac 83-\frac13\right]=\frac{28}3a^2.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 7.11  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = \sin(t)\)</span> and <span class="math inline">\(y = \cos(t)\)</span> where <span class="math inline">\(t\)</span> is a parameter. Determine the definite integral of <span class="math inline">\(y\)</span> between <span class="math inline">\(t = 0\)</span> and <span class="math inline">\(t = \pi/2\)</span>.</p>
+<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 7.11  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = \sin(t)\)</span> and <span class="math inline">\(y = \cos(t)\)</span> where <span class="math inline">\(t\)</span> is a parameter. Determine the definite integral of <span class="math inline">\(y\)</span> between <span class="math inline">\(t = 0\)</span> and <span class="math inline">\(t = \pi/2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-106" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-107" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \int_{\sin(0)}^{\sin(\pi/2)}y\ dx&amp; = \int_0^{\pi/2}\cos(t)\cos(t)dt = \int_0^{\pi/2}\cos^2(t)dt = \int_0^{\pi/2}\frac{\cos(2t)+1}{2}dt\\
 &amp; = \frac12\left[\frac{\sin(2t)}2+t\right]_0^{\pi/2} = \frac12\left[0+\pi/2\right]-\frac12\left[0\right]=\frac{\pi}4.
 \end{align*}\]</span></p>

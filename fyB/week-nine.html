@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -441,10 +441,10 @@ When the number of strips increases indefinitely such that <span class="math inl
 \]</span>
 That is, the mean value of a function between two limits is the area under the curve between those limits divided by the range of <span class="math inline">\(x\)</span> between those limits.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-117" class="example"><strong>Example 9.1  </strong></span>If the velocity <span class="math inline">\(v\)</span> in <span class="math inline">\(m/s\)</span> of a body is given by <span class="math inline">\(v=4t+3\)</span> where <span class="math inline">\(t\)</span> is in seconds, determine the mean velocity of the body from <span class="math inline">\(t=2\ \)</span>s to <span class="math inline">\(t=6\ \)</span>s.</p>
+<p><span id="exm:unlabeled-div-118" class="example"><strong>Example 9.1  </strong></span>If the velocity <span class="math inline">\(v\)</span> in <span class="math inline">\(m/s\)</span> of a body is given by <span class="math inline">\(v=4t+3\)</span> where <span class="math inline">\(t\)</span> is in seconds, determine the mean velocity of the body from <span class="math inline">\(t=2\ \)</span>s to <span class="math inline">\(t=6\ \)</span>s.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-118" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-119" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \text{Mean velocity}&amp; = \frac{1}{6-2}\int_2^6(4t+3)\ dt = \frac 14\left[2t^2+3t\right]_2^6\\
 &amp;= \frac 14\left[(2\times36+3\times6) -(2\times4+3\times2)\right] = \frac{76}{4}=19\ m/s.
 \end{align*}\]</span></p>
@@ -459,10 +459,10 @@ That is, the mean value of a function between two limits is the area under the c
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-119" class="example"><strong>Example 9.2  </strong></span>Determine the RMS value of the current in an a.c. circuit given by <span class="math inline">\(i=20+100\sin(100\pi t)\)</span> between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=0.02\)</span>s.</p>
+<p><span id="exm:unlabeled-div-120" class="example"><strong>Example 9.2  </strong></span>Determine the RMS value of the current in an a.c. circuit given by <span class="math inline">\(i=20+100\sin(100\pi t)\)</span> between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=0.02\)</span>s.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-120" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-121" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \text{RMS}&amp;= \sqrt{\frac{1}{b-a}\int_a^b i^2\ dt}\\
 i&amp;=20+100\sin(100\pi t)\\
 i^2&amp;=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\

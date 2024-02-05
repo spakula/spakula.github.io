@@ -66,6 +66,8 @@
 \setcounter{secnumdepth}{5}
 \usepackage{version}
 \excludeversion{htmlonly}
+\excludeversion{slidesonly}
+\includeversion{notslides}
 \usepackage{makeidx}
 \makeindex
 \usepackage{booktabs}
@@ -114,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-01-29}
+\date{2024-02-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -319,7 +321,7 @@ With some thought, it should be clear that the line segment tends to a line that
 
 \slide
 
-We call this value the \textcolor{red}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
+We call the slope of the tangent line the \textcolor{red}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
 \[
 \frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]
@@ -336,6 +338,8 @@ Find the derivative by 1st principles for the function \(f(x) = x^2\) at the poi
 \frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{(x+h)^2 - x^2}{h} = \lim\limits_{h\to0}\frac{(x^2+2xh+h^2)-x^2}{h}\\ = \lim\limits_{h\to0}\frac{2xh+h^2}{h} = \lim\limits_{h\to0}(2x+h) = 2x.
 \end{gather*}
 \end{solution}
+
+\slide
 
 \begin{example}
 Find the derivative by 1st principles for the function \(f(x) = x^3\) at the point \(x\).
@@ -408,7 +412,7 @@ Now, taking limit we have
 \]
 Therefore, in general, we can differentiate \(x^n\) for all values of \(n\) using the rule
 \[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{d(x^n)}{\mathrm{d} x} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} (x^n)}{\mathrm{d} x} = nx^{n-1}.
 \]
 This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 \slide
@@ -448,7 +452,7 @@ Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
 
 \slide
 
-Note that the differential of \(ax\) and of \(a\) also follow the rule. For \(ax\) we may write \(ax = ax^1\). So differentiating by rule
+Note that the derivative of \(ax\) and of \(a\) also follow the rule. For \(ax\) we may write \(ax = ax^1\). So differentiating by rule
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.
 \]
@@ -456,7 +460,7 @@ For \(a\) we may write \(a = ax^0\) and hence differentiating by rule we have
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.
 \]
-That is to say, the differential of a constant value is always zero.
+That is to say, the derivative of a constant value is always zero.
 
 \slide
 
@@ -699,6 +703,7 @@ If two lines are perpendicular, there is also a certain relationship between the
 
 \caption{perpendicular lines}\label{fig:06-perpendicular-lines}
 \end{figure}
+\slide
 
 The gradient of the line \(l_1\) is given by the ratio
 \[
@@ -712,6 +717,7 @@ So if a line has gradient \(m\) then the gradient of the line perpendicular to i
 \[
 \text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.
 \]
+\slide
 Now consider Figure \ref{fig:07-tangent-and-normal}.
 
 \begin{figure}
@@ -722,6 +728,7 @@ Now consider Figure \ref{fig:07-tangent-and-normal}.
 
 \caption{tangent and normal}\label{fig:07-tangent-and-normal}
 \end{figure}
+\slide
 
 The \textcolor{red}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line \(PT\) and the normal is the line \(PN\). We already know that the gradient of the tangent is given by
 \[
@@ -771,40 +778,62 @@ A function may be considered as an operation that has to be done to \(x\) to get
 
 For \(y = g(\theta) = \sin(\theta)\) the function (called \(g\) in this case) is: evaluate the sine of \(\theta\).
 
-If we now look at \((x^2 + 4)^3\) then we can consider this as one function described in the following way: take \(x\), square it, add \(4\) and then cube the answer. So we can write
+If we now look at \((x^2 + 4)^3\) then we can consider this as one function described be performing these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  take \(x\),
+\item
+  square it,
+\item
+  add \(4\) to the previous result, and then
+\item
+  cube the preceding result.
+\end{enumerate}
+
+\slide
+
+So we can write
 \[
-y = f(x) = (x^2+ 4)^3
+y = f(x) = (x^2+ 4)^3,
 \]
-or we can consider the function \(f\) as two functions:
+or we can think of \(f\) as (a composition of) two functions:
 \begin{align*}
-u &= g(x) = (x^2 + 4)\\
-y &= h(u) = u^3
+u &= g(x) = x^2 + 4\\
+y &= h(u) = u^3,
 \end{align*}
-or we can even consider it as 3 functions
+or we can even consider it as (a composition of) 3 functions:
 \begin{align*}
 u &= k(x) = x^2\\
 v &= m(u) = u + 4\\
 y &= n(v) = v^3.
 \end{align*}
-In the first case, the value of \(y\) is calculated all in one attempt. In the second case, \(u\) is calculated from \(x\) according to the rule of the function \(g\), then \(y\) is calculated using \(u\) and the rule of the function \(h\). In the third case \(u\) is calculated from \(x\) according to the rule of function \(k\), then \(v\) is calculated from \(u\) according to the rule of function \(m\) and finally \(y\) is calculated from the value of \(v\) according to the rule of function \(n\).
+\slide
+In the first case, the value of \(y\) is calculated all in one attempt. In the second case, \(u\) is calculated from \(x\) according to the rule of the function \(g\), then \(y\) is calculated using \(u\) and the rule of the function \(h\). In the third case \(u\) is calculated from \(x\) according to the rule \(k\), then \(v\) is calculated from \(u\) according to the rule \(m\), and finally \(y\) is calculated from the value of \(v\) according to the rule \(n\).
 
-We shall consider the second case as this is most helpful for differentiation. In the second case
-\begin{gather*}
-u = g(x) = (x^2+ 4)\\
-y = h(u) = u^3
-\end{gather*}
-so by substituting for \(u\) we can write \(y = h(g(x))\) which means: to get \(y\) from \(x\), first apply the rule \(g\) (get \(x\), square it and add \(4\)) and then apply the rule \(h\) (cube the answer to operation \(g\)). When \(y\) is written in this form it is called a \textcolor{red}{\em function of a function}\index{function of a function} or a \textcolor{red}{\em composite functon}\index{composite functon}.
+We shall consider the second case. Recall:
+\begin{align*}
+u &= g(x) = x^2+ 4\\
+y &= h(u) = u^3.
+\end{align*}
+By substituting for \(u\) we can write \(y = h(g(x))\) which means: to get \(y\) from \(x\), first apply the rule \(g\) (get \(x\), square it and add \(4\)) and then apply the rule \(h\) (cube the answer to operation \(g\)). When \(y\) is written in this form it is called a \textcolor{red}{\em function of a function}\index{function of a function} or a \textcolor{red}{\em composite functon}\index{composite functon}.
 \slide
 
-\subsection{Differentiation of a function of a function (the Chain Rule)}\label{differentiation-of-a-function-of-a-function-the-chain-rule}
+\subsection{The Chain Rule: Differentiating composite functions}\label{the-chain-rule-differentiating-composite-functions}
 
-Let consider the function \(y = (x^2+ 4)^3\). Up to now, if we wanted to differentiate \(y = (x^2 + 4)^3\), we had to multiply out the brackets to get a string of things added together since so far the only things we can differentiate are sums of terms of standard functions (e.g.~\(\sin(x), \cos(x), \ln(x)\), etc).
+Let consider the function \(y = (x^2+ 4)^3\). Up to now, if we wanted to differentiate \(y = (x^2 + 4)^3\), we had to multiply out the brackets to get a string of things added together, since so far the only things we can differentiate are sums of terms of standard functions (e.g.~\(\sin(x), \cos(x), \ln(x)\), etc).
 
 The chain rule allows us to differentiate functions of functions without having to multiply out all the brackets.
 
-We can consider \(y\) as a function of a function if we let \(u = x^2 + 4\). In that case \(u\) is a function of \(x\) and \(y\) is a function of \(u\), namely \(y = u^3\). Therefore we can say that
+\slide
+
+Recall that we ``decompose'' \(y=(x^2+4)^3\) as \(u = g(x) = x^2+4\), \(y = h(u) = u^3\).
+Thus
 \[
-\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2
+\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
 \]
 (using ordinary differentiation by rule).
 
@@ -816,25 +845,23 @@ The \textcolor{red}{\em chain rule}\index{chain rule} says that
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
-This can be proved from first principles, but we shall not do that here.
-
-Now since \(u = x^2 + 4\), then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
-\]
-(again using differentiation by rule).
+(This can be proved from first principles, but we won't.)
 So
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
 \]
-But since \(u = (x^2+4)\) then
+But since \(u = x^2+4\), we have
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
 \]
-The chain rule can be extended for any number of functions e.g.
+
+\begin{remark}
+The chain rule can be extended for any number of functions, for example
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
 \]
+\end{remark}
+
 \slide
 
 \begin{example}
@@ -913,29 +940,36 @@ For some products, multiplying terms out still doesn't help to differentiate the
 \[
 y = \sqrt{x^2 - 2x} \sin(x).
 \]
-This would require a binomial expansion for the first part and would still leave a set of terms that were products of a function of \(x\) and \(\sin(x)\).
+(We could use binomial expansion for the first factor, but we still don't have tools to turn \(\sin(x)\) into a power series.)
 \slide
 
-It would be helpful to find a way of differentiating a product of two functions without having to multiply out. From the first example above, it is clear that the differential of a product is not just the differential of each part (that would give \(8x(9x^2 - 6) = 72x^3 - 48x)\).
+We'd like a general rule for differentiating a product.
 
-Let \(u\) and \(v\) be functions of \(x\) so that \(u = u(x)\) and \(v = v(x)\). Hence a small change \(h\) in \(x\) will give a small change in \(u\) and a small change in \(v\).
+From the first example above, we see that the derivative of a product is not just the derivative of each factor, as
+that would give \(8x(9x^2 - 6) = 72x^3 - 48x\).
 
-If \(y = uv\) then \(y(x+h) = u(x+h)v(x+h)\) so \(y(x+h)-y(x) = u(x+h)v(x+h) - u(x)v(x)\). Now by adding zero to the right side of the equation by adding and subtracting \(v(x)u(x+h)\) we get
-\[
-y(x+h)-y(x) = u(x+h)v(x+h) - v(x)u(x+h) + v(x)u(x+h ) - u(x)v(x).
-\]
+Let \(u = u(x)\) and \(v = v(x)\) be functions of \(x\).
+
+If \(y = u(x)v(x)\), then \(y(x+h) = u(x+h)v(x+h)\), so
+\[y(x+h)-y(x) = u(x+h)v(x+h) - u(x)v(x).\]
+Now we do a trick: add and subtract \(u(x+h)v(x)\):
+\begin{align*}
+y(x+h)-y(x) &= u(x+h)v(x+h) - u(x+h)v(x)\\
+    &\phantom{=} + u(x+h)v(x) - u(x)v(x).
+\end{align*}
 \slide
 Further, dividing both sides of equation by \(h\) gives
-\[
-\frac{y(x+h)-y(x)}{h} = u(x+h)\frac{v(x+h) - v(x)}{h} + v(x)\frac{u(x+h ) - u(x)}{h}.
-\]
-As \(h\) tends to zero, \(u(x+h)\) tends to \(u(x)\) and in the limit we have
+\begin{align*}
+\frac{y(x+h)-y(x)}{h} &= u(x+h)\frac{v(x+h) - v(x)}{h} \\
+ &\phantom{=} + v(x)\frac{u(x+h ) - u(x)}{h}.
+\end{align*}
+In the limit as \(h\) tends to \(0\), we have \(u(x+h)\to u(x)\), and so
 \[ 
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
-or, put another way,
+Equivalently,
 \[ 
-\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
+\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
 This is called the \textcolor{red}{\em product rule}\index{product rule}.
 \slide
@@ -947,11 +981,11 @@ Differentiate \(y=4x^2(3x^3-6x)\) with respect to \(x\).
 \begin{solution}
 Let \(u = 4x^2\) and \(v = 3x^3-6x\). Then
 \[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{dv}{\mathrm{d} x} = 9x^2-6.
+\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.
 \]
 Hence the product rule gives
 \begin{gather*}
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
 24x^4 - 48x^2 + 36x^4-24x^2 = 60x^4-72x^2 = 12x^2(5x^2-6).
 \end{gather*}
 \end{solution}
@@ -965,11 +999,11 @@ Differentiate \(y=\sqrt{x^2-2x}\sin(x)\) with respect to \(x\).
 \begin{solution}
 Let \(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\) and \(v = \sin(x)\). Then
 \[
-\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x).
+\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).
 \]
 Hence the product rule gives
 \begin{gather*}
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{dv}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
+\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
 \frac{(x-1)\sin(x)}{(x^2-2x)^{1/2}} + (x^2-2x)^{1/2}\cos(x).
 \end{gather*}
 \end{solution}
@@ -978,28 +1012,24 @@ Hence the product rule gives
 
 \subsection{Differentiation of a quotient}\label{differentiation-of-a-quotient}
 
-Consider \(y\) to be a function consisting of the quotient of two functions of \(x\), \(u\) and \(v\). So \(y\) may be written as
+Suppose that
 \[
 y = \frac{u(x)}{v(x)} = \frac{u}{v}.
 \]
-Since \(u\) and \(v\) are both functions of \(x\), then if \(x\) changes by a small amount to \(x + h\), there will be a corresponding small change in \(u\) and \(v\) and hence will result in small change in \(y\).
-So if
-\[
-y(x) = \frac{u(x)}{v(x)} \text{ then } y(x+h) = \frac{u(x+h)}{v(x+h)}
-\]
+Considering a small \(h\), we have \(y(x+h) = \dfrac{u(x+h)}{v(x+h)}\).
 Hence
-\begin{gather*}
-y(x+h)-y(x) = \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
-=\frac{v(x)u(x+h)-u(x)v(x+h)}{v(x+h)v(x)}\\
-=\frac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}
-\end{gather*}
+\begin{align*}
+y(x+h)-y(x) &= \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
+&=\frac{v(x)u(x+h)-u(x)v(x+h)}{v(x+h)v(x)}\\
+&=\tfrac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}.
+\end{align*}
 \slide
-Rearranging the numerator and dividing by \(h\) we get
+Dividing by \(h\) and rearranging, we get
 \[
-\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}
+\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.
 \]
-And in the limit as \(h\) tends to zero
-\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{dv}{\mathrm{d} x}}{v(x)^2}
+Thus in the limit as \(h\) tends to zero
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}
 \]
 
 This is the formula for the \textcolor{red}{\em differentiation of a quotient}\index{differentiation of a quotient}.
@@ -1012,10 +1042,10 @@ There is an alternative way to derive this formula. Since
 y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
 \]
 and since \(v(x)^{-1}\) is a composite of the function \(v(x)\) and the function \(x^{-1}\), we can use a combination of the product rule and the chain rule. So
-\begin{gather*}
-\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} = u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{dv}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
-= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{dv}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2}
-\end{gather*}
+\begin{align*}
+\frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} &= u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{\mathrm{d} v}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
+&= \frac{\mathrm{d} u}{\mathrm{d} x}\frac{1}{v} - \frac{u}{v^2}\frac{\mathrm{d} v}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2}.
+\end{align*}
 \slide
 
 \begin{example}
@@ -1026,13 +1056,15 @@ Differentiate \(y=\frac{3x^2+2}{(4x^2-4)^2}\) with respect to \(x\).
 Let \(u = 3x^2+2\) and \(v = (4x^2-4)^2\).
 Then
 \[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{dv}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
+\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
 \]
 and so
 \[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
 \]
 \end{solution}
+
+\slide
 
 \begin{example}
 Differentiate \(y=\frac{1-\sin(x)}{1+\sin(x)}\) with respect to \(x\).
@@ -1042,11 +1074,11 @@ Differentiate \(y=\frac{1-\sin(x)}{1+\sin(x)}\) with respect to \(x\).
 Let \(u = 1-\sin(x)\) and \(v = 1+\sin(x)\).
 Then
 \[
-\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{dv}{\mathrm{d} x} = \cos(x) 
+\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x) 
 \]
 and so
 \[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{dv}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
 \]
 \end{solution}
 
@@ -1088,7 +1120,7 @@ Determine the gradient for \(y=6x^3-9x^2-20x+6\) and show that the slope is zero
 
 {[}Solutions. 1: (a) \(y=2x-1\)/\(y=-x/2+3/2\); (b) \(y=5x-8\)/\(y=-x/5+12/5\); (c) \(y=-3x+5\)/\(y=x/3-5/3\); (d) \(y=22x-51\)/\(y=-x/22+333/22\); (e) \(y=-x/4+1\)/\(y=4x-15/2\); (f) \(y=4x-16\)/\(y=-x/4+21/4\)
 
-2: \(dy/dx = 18x^2-18x-20 = 0\) gives \(x=5/3\) and \(x=-2/3\). \(dy/dx(1) = -20\) Equation of tangent is \(y=-20x+3\), equation of normal is \(y=x/20-341/20\).{]}
+2: \(dy/dx = 18x^2-18x-20 = 0\) gives \(x=5/3\) and \(x=-2/3\). \(dy/dx(1) = -20\). Equation of tangent is \(y=-20x+3\), equation of normal is \(y=x/20-341/20\).{]}
 
 \slide
 
@@ -1133,7 +1165,7 @@ Differentiate each of the following functions using the chain rule.
 
 \slide
 
-\{Solutions. (1) \(dy/dx=8x+20\); (2) \(dy/dx=-20(1-5x)^3\); (3) \(ds/dt=15(3t+7)^4\); (4) \(dp/dq=-44q(1-2q^2)^{10}\); (5) \(dy/dx=-6(1-2x)^2\); (6) \(dy/dx=(24x-20(3x^2-5x+4)^3\); (7) \(ds/dt=(24t^2+6)(4t^3+3t-2)\); (8) \(dy/dx=-x/(x^2-1)^{3/2}\); (9) \(y/d\theta=a^2\cos(a\theta)\); (10) \(dy/dt=\omega\cos(\omega t)\); (11) \(dy/dt=-2\pi f\sin(2\pi ft+\pi/2\); (12) \(dy/dx=4\sec^2(4x+3)\); (13) \(dy/dx=30e^{5x}\); (14) \(dy/dx=5/x\); (15) \(dy/dx=-1/x\)\}
+\{Solutions. (1) \(dy/dx=8x+20\); (2) \(dy/dx=-20(1-5x)^3\); (3) \(ds/dt=15(3t+7)^4\); (4) \(dp/dq=-44q(1-2q^2)^{10}\); (5) \(dy/dx=-6(1-2x)^2\); (6) \(dy/dx=(24x-20(3x^2-5x+4)^3\); (7) \(ds/dt=(24t^2+6)(4t^3+3t-2)\); (8) \(dy/dx=-x/(x^2-1)^{3/2}\); (9) \(dy/d\theta=a^2\cos(a\theta)\); (10) \(dy/d\omega=\omega\cos(\omega t)\); (11) \(dy/dt=-2\pi f\sin(2\pi ft+\pi/2)\); (12) \(dy/dx=4\sec^2(4x+3)\); (13) \(dy/dx=30e^{5x}\); (14) \(dy/dx=5/x\); (15) \(dy/dx=-1/x\)\}
 \slide
 
 \section{Sheet 6 The Product Rule}\label{sheet-6-the-product-rule}
@@ -1143,24 +1175,42 @@ Differentiate each of the following functions using the chain rule.
 \]
 Differentiate the following functions
 
-1.\(y=(4x+5)(x^2-2x)\)
-1.\(y=x^{5/3}(4x-2)^2\)
-1.\(y=(x+1)^2(1-2x)\)
-1.\(y=4x\sqrt{5-2x^2}\)
-1.\(y=(4x^2+3x)(2x-8)^5\)
-1.\(y=8x^3\sin(3x)\)
-1.\(y=4x^2\cos(x)\)
-1.\(y=(x^2-2x)\sin(x)\)
-1.\(y=e^{2x}\sin(x)\)
-1.\(y=x\ln(x)\)
-1.\(y=\sqrt{x^2+4}\cos(2x+1)\)
-1.\(y=\sqrt{x^2-1}\ln(2x+1)\)
-1.\(y=e^{x\ln(x)}\)
-1.\(y=x^x\)
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(y=(4x+5)(x^2-2x)\)
+\item
+  \(y=x^{5/3}(4x-2)^2\)
+\item
+  \(y=(x+1)^2(1-2x)\)
+\item
+  \(y=4x\sqrt{5-2x^2}\)
+\item
+  \(y=(4x^2+3x)(2x-8)^5\)
+\item
+  \(y=8x^3\sin(3x)\)
+\item
+  \(y=4x^2\cos(x)\)
+\item
+  \(y=(x^2-2x)\sin(x)\)
+\item
+  \(y=e^{2x}\sin(x)\)
+\item
+  \(y=x\ln(x)\)
+\item
+  \(y=\sqrt{x^2+4}\cos(2x+1)\)
+\item
+  \(y=\sqrt{x^2-1}\ln(2x+1)\)
+\item
+  \(y=e^{x\ln(x)}\)
+\item
+  \(y=x^x\)
+\end{enumerate}
 
 \slide
 
-{[}Solutions. 1. \((4x+5)(2x-2)+4(x^2-2x)\); 2. \(8x^{5/3}(4x-2)+5x^{2/3}(4x-2)^2/3\); 3. \(-2(x+1)^2+2(1-2x)(x+1)\); 4. \(-8x^2(5-2x^2)^{-1/2}+4(5-2x^2)^{1/2}\); 5. \(10(4x^2+3x)(2x-8)^4+(8x+3)(2x-8)^5\); 6. \(24x^2\sin(3x)+24x^3\cos(3x)\); 7. \(8x\cos9x)-4x^2\sin(x)\); 8. \((2x-2)\sin(x)+(x^2-2x)\cos(x)\); 9. \(2e^{2x}\sin(x)+e^{2x}\cos(x)\); 10. \(x(x^2+4)^{-1/2}\cos(2x+1)-2(x^2+4)^{1/2}\sin(2x+1)\){]}
+\{Solutions. 1. \((4x+5)(2x-2)+4(x^2-2x)\); 2. \(8x^{5/3}(4x-2)+5x^{2/3}(4x-2)^2/3\); 3. \(-2(x+1)^2+2(1-2x)(x+1)\); 4. \(-8x^2(5-2x^2)^{-1/2}+4(5-2x^2)^{1/2}\); 5. \(10(4x^2+3x)(2x-8)^4+(8x+3)(2x-8)^5\); 6. \(24x^2\sin(3x)+24x^3\cos(3x)\); 7. \(8x\cos x-4x^2\sin(x)\); 8. \((2x-2)\sin(x)+(x^2-2x)\cos(x)\); 9. \(2e^{2x}\sin(x)+e^{2x}\cos(x)\); 10. \(\ln(x)+1\); 11. \(x(x^2+4)^{-1/2}\cos(2x+1)-2(x^2+4)^{1/2}\sin(2x+1)\); 12. \(x(x^2-1)^{-1/2}\ln(2x+1)+2\sqrt{x^2-1}/(2x+1)\); 13. \(\exp(x\ln x)(1+\ln x)\); 14. same as 13.\}
 \slide
 
 \section{Sheet 7 The Quotient Rule}\label{sheet-7-the-quotient-rule}
@@ -1190,56 +1240,59 @@ Differentiate the following functions with respect to \(x\) using the quotient r
 
 \slide
 
-{[}Solutions: 1. \(dy/dx = (15x^2+24x-10)/(5x+4)^2\); 2. \(dy/dx = 18(3x^2+1)(9x^2-48-1)/(2x-8)^2\); 3. \(dy/dx = 2/(1-x)^2\); 4. \(dy/dx = -2(3x^3+2x)(15x^3+18x^2+2x+4)/(3x^3+2x)^4\); 5. \(dy/dx = 18x+(x^2-2x-2)/(1-x)^2\); 6. \(dy/dx = (-6x^2+16x+3)/(2x^2+1)^2\); 7. \(dy/dx = (3\cos(3x)(x+1)-\sin(3x))/(x+1)^2\); 8. \(dy/dx = 4(3x-4)((9x-4)\sin(x)-x(3x-4)\cos(x))/\sin^2(x)\){]}
+\{Solutions: 1. \(dy/dx = (15x^2+24x-10)/(5x+4)^2\); 2. \(dy/dx = 18(3x^2+1)(9x^2-48-1)/(2x-8)^2\); 3. \(dy/dx = 2/(1-x)^2\); 4. \(dy/dx = -2(3x^3+2x)(15x^3+18x^2+2x+4)/(3x^3+2x)^4\); 5. \(dy/dx = 18x+(x^2-2x-2)/(1-x)^2\); 6. \(dy/dx = (-6x^2+16x+3)/(2x^2+1)^2\); 7. \(dy/dx = (3\cos(3x)(x+1)-\sin(3x))/(x+1)^2\); 8. \(dy/dx = 4(3x-4)((9x-4)\sin(x)-x(3x-4)\cos(x))/\sin^2(x)\)\}
 
 \chapter{Week 3}\label{week-three}
 
-We start this week by looking at derivatives of derivatives and then move on to look at derivatives from the point of view of rates of change of the function with respect to the variable. This leads us to look at velocity and accelleration.
+We start this week by looking at derivatives of derivatives and then move on to look at derivatives from the point of view of rates of change of the function with respect to the variable. This leads us to look at velocity and acceleration.
 \slide
 
 \section{Successive Differentiation}\label{lecture-seven}
 
-So far we have only differentiated each function once, but there is no reason why a function may not be differentiated several times.
-Suppose \(y = x^3 + 2x^2\) then
+The result of differentiating a function (i.e.~taking the derivative of a function) is again a function. So we can differentiate again.
+
+Suppose \(y = x^3 + 2x^2\). Then
 \[
-\frac{dy}{dx} = 3x^2 + 4x.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.
 \]
-We may then differentiate \(dy/dx\) as well and this may be written
+We may then differentiate \(\mathrm{d}y/\mathrm{d} x\) as well. This is written as
 \[
-\frac{d}{dx}\frac{dy}{dx}\text{ or more usually }\frac{d^2y}{dx^2}.
+\frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.
 \]
-So in this case \(d^2y/dx^2 = 6x+4\).
+So in this case \(\mathrm{d}^{2}y/\mathrm{d} x^2 = 6x+4\).
 
 This is called the \textcolor{red}{\em second derivative of $y$}\index{second derivative of $y$}.
 \slide
 
-\(d^2y/dx^2\) may also be differentiated with respect to \(x\) to give
+We can repeat, and differentiate \(\mathrm{d}^{2}y/\mathrm{d} x^2\). This gives
 \[
-\frac{d^3y}{dx^3} = 6
+\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6
 \]
-and is called the \textcolor{red}{\em third derivative of $y$}\index{third derivative of $y$}, and \(d^3y/dx^3\) may be differentiated with respect to \(x\) to give
+and is called the \textcolor{red}{\em third derivative of $y$}\index{third derivative of $y$}. Taking the derivative of \(\mathrm{d}^{3}y/\mathrm{d} x^{3}\) yields
 \[
-\frac{d^4y}{dx^4} = 0,
+\frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,
 \]
-the \textcolor{red}{\em fourth derivative of $y$}\index{fourth derivative of $y$}. Once the result of the successive differentiation operations is zero, no further differential coefficients exist.
+the \textcolor{red}{\em fourth derivative of $y$}\index{fourth derivative of $y$}.
+
+We can continue, but as the derivative of \(0\) is \(0\), all further derivatives of \(y\) will just be \(0\).
 \slide
 
 \begin{example}
-Find \(dy/dx, d^2y/dx^2, d^3y/dx^3\) for \(y =e^x\sin(x)\).
+Find \(\mathrm{d}y/\mathrm{d} x, \mathrm{d}^{2}y/\mathrm{d} x^2, \mathrm{d}^{3}y/\mathrm{d} x^{3}\) for \(y =e^x\sin(x)\).
 \end{example}
 
 \begin{solution}
 We use the product rule. If
 \[
-y=e^x\sin(x)\text{ then }\frac{dy}{dx} = e^x\cos(x) + e^x\sin(x).
+y=e^x\sin(x)\text{ then }\frac{\mathrm{d} y}{\mathrm{d} x} = e^x\cos(x) + e^x\sin(x).
 \]
 Now
 \[
-\frac{d^2y}{dx^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),
 \]
 and finally
 \[
-\frac{d^3y}{dx^3} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).
+\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).
 \]
 \end{solution}
 
@@ -1247,28 +1300,26 @@ and finally
 
 \subsection{Rates of Change}\label{rates-of-change}
 
-The derivative \(dy/dx\) may be considered as the rate at which \(y\) changes as a result of a change in \(x\).
+The derivative \(\mathrm{d}y/\mathrm{d} x\) may be considered as the rate at which \(y\) changes as a result of a change in \(x\).
 
-This is easiest to understand if we consider the distance \(s\) in metres, of a particle from an origin \(O\) at a time, \(t\) seconds.
+For example, suppose that \(s=s(t)\) gives the distance of a particle to the origin \(O\) in metres, at a time \(t\) seconds.
 
-Let us assume that \(s(t) = 3t^3 + 2t\). This equation tells us that at time \(t = 0\), the particle is at \(O\), at time \(t = 1\), the particle is \(5\) m away from \(O\), at time \(t = 2\), the particle is \(28\) m away from \(O\) etc.
+Suppose that \(s(t) = 3t^3 + 2t\). So at time \(t = 0\text{s}\), the particle is at \(O\); at time \(t = 1\text{s}\) sec, the particle is \(5\text{m}\) metres away from \(O\); at time \(t = 2\text{s}\), the particle is \(28\text{m}\) away from \(O\), etc.
 
-If we differentiate \(s\), we get
-\[
-\frac{ds}{dt} = 9t^2 + 2.
-\]
+If we differentiate \(s\) with respect to \(t\), we get \(\dfrac{\mathrm{d} s}{\mathrm{d} t} = 9t^2 + 2\).
+
 This tells us that the slope of the graph of \(s\) against \(t\) is not constant but varies depending on the value of \(t\). So when \(t = 0\), the slope is \(2\), when \(t = 1\), the slope is \(11\), etc.
 \slide
 
-\(ds/dt\) is the rate at which \(s\) changes for a change in \(t\) or the rate at which distance changes with time, so \(ds/dt\) is the \textcolor{red}{\em velocity}\index{velocity}, \(v\), of the particle in \(ms^{-1}\).
+\(\mathrm{d} s/\mathrm{d} t\) is the rate at which \(s\) changes for a change in \(t\), or the rate at which distance changes with time, so \(\mathrm{d} s/\mathrm{d} t\) is the \textcolor{red}{\em velocity}\index{velocity}, \(v\), of the particle in \(\text{m}\text{s}^{-1}\).
 
-If we differentiate the velocity \(v\), we get \(dv/dt = 18t\). Also, since the derivative of the velocity is the second derivative of the distance, we have
+If we differentiate the velocity \(v\), we get \(\mathrm{d} v/\mathrm{d} t = 18t\). Also, since the derivative of the velocity is the second derivative of the distance, we have
 \[
-\frac{dv}{dt}= \frac{d^2s}{dt^2}.
+\frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.
 \]
-\(dv/dt\) is the rate of change of velocity with time or the \textcolor{red}{\em acceleration}\index{acceleration} of the particle.
+\(\mathrm{d} v/\mathrm{d} t\) is the rate of change of velocity with time or the \textcolor{red}{\em acceleration}\index{acceleration} of the particle.
 
-Note that \(d^3s/dt^3\) is not zero for \(s = 3t^3 + 2t\), so we could find it. The rate of change of acceleration has no physical meaning and so it is not useful for describing the behaviour of the particle.
+Note that \(\mathrm{d}^{3}s/\mathrm{d} t^{3}\) is not zero for \(s = 3t^3 + 2t\), so we could find it. The rate of change of acceleration is called ``jerk''; higher derivatives are even less common to be considered (``snap'', ``crackle'', ``pop'').
 \slide
 
 \begin{example}
@@ -1284,7 +1335,7 @@ s(t) = 0.4t-0.2t^2.
 \item
   Show that its acceleration is constant;
 \item
-  determine its velocity after \(3\) seconds and its position after \(2\) seconds.
+  Determine its velocity after \(3\) seconds and its position after \(2\) seconds.
 \end{enumerate}
 
 \end{example}
@@ -1295,10 +1346,10 @@ s(t) = 0.4t-0.2t^2.
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Since \(s(t) = 0.4t-0.2t^2\) then velocity = \(ds/dt = 0.4-0.4t\); acceleration = \(d^2s/dt^2 = -0.4\).
+  Since \(s(t) = 0.4t-0.2t^2\) then velocity = \(\mathrm{d} s/\mathrm{d} t = 0.4-0.4t\); acceleration = \(\mathrm{d}^{2}s/dt^2 = -0.4\).
   So the acceleration is always \(-0.4ms^{-2}\) which is a constant value (so does not depend on the value of \(t\)).
 \item
-  At \(t=3, ds/dt = 0.4-(0.4\times 3) = -0.8\). At \(t=2, s = 0.4\times2-(0.2\times 2^2) = 0.8-0.8 = 0\). Therefore after \(3\) seconds the velocity is \(-0.8ms^{-1}\) and after 2 seconds the particle has a displacement (distance in metres from the origin \(O\)) of \(0m\).
+  At \(t=3, \mathrm{d} s/\mathrm{d} t = 0.4-(0.4\times 3) = -0.8\). At \(t=2, s = 0.4\times2-(0.2\times 2^2) = 0.8-0.8 = 0\). Therefore after \(3\) seconds the velocity is \(-0.8ms^{-1}\) and after 2 seconds the particle has a displacement (distance in metres from the origin \(O\)) of \(0m\).
 \end{enumerate}
 
 \end{solution}
@@ -1322,6 +1373,26 @@ The derivative of a function at a point gives the gradient (the slope) of that c
 
 For the graph above:
 
+\begin{slidesonly}
+
+\begin{itemize}
+\tightlist
+\item
+  The slope from \(A\) to \(B\) is:
+\item
+  The slope at \(B\) is:
+\item
+  The slope from \(B\) to \(C\) is:
+\item
+  The slope at \(C\) is:
+\item
+  The slope from \(C\) to \(D\) is:
+\end{itemize}
+
+\end{slidesonly}
+
+\begin{notslides}
+
 \begin{itemize}
 \tightlist
 \item
@@ -1336,7 +1407,9 @@ For the graph above:
   The slope from \(C\) to \(D\) is positive.
 \end{itemize}
 
-As \(x\) increases from just before \(B\) to just after, the slope of the graph changes from positive to negative. A point such as \(B\) is known as a \textcolor{red}{\em maximum}\index{maximum} or \textcolor{red}{\em local maximum}\index{local maximum}. The word local is used to indicate that this is not the maximum \(y\) value that the curve can have, but is the maximum value in the region between \(A\) and \(C\).
+\end{notslides}
+
+As \(x\) increases from just before \(B\) to just after, the slope of the graph changes from positive to negative. A point such as \(B\) is called a \textcolor{red}{\em maximum}\index{maximum} or \textcolor{red}{\em local maximum}\index{local maximum}. The word ``local'' means that this is not the ``global'' maximum \(y\) value of the whole curve, but is the maximum value in the region ``near \(B\)'', e.g.~between \(A\) and \(C\).
 
 As \(x\) increases from just before \(C\) to just after, the slope of the graph changes from negative to positive. A point such as \(C\) is known as a \textcolor{red}{\em minimum}\index{minimum} or \textcolor{red}{\em local minimum}\index{local minimum}.
 
@@ -1347,9 +1420,11 @@ Points such as \(B\) and \(C\) are also sometimes called \textcolor{red}{\em cri
 
 At any point on a graph where a maximum or minimum occurs, the gradient or rate of change of the curve is zero i.e.
 \[
-\frac{dy}{dx}=0.
+\frac{\mathrm{d} y}{\mathrm{d} x}=0.
 \]
-However, there is a further situation where the gradient of the graph may be zero, but where the sign of the slope of the graph does not change. Such a point is called a \textcolor{red}{\em point of inflection}\index{point of inflection}.
+However, the converse is not necessarily true: the gradient may be zero, but the sign of the slope of the graph may not change. Such a point is called a \textcolor{red}{\em point of inflection}\index{point of inflection}.
+
+\slide
 
 \begin{figure}
 
@@ -1360,9 +1435,10 @@ However, there is a further situation where the gradient of the graph may be zer
 \caption{points of inflection}\label{fig:09-points-of-inflection}
 \end{figure}
 
-In the left hand graph on Figure \ref{fig:09-points-of-inflection}, the slope from \(A\) to just before \(B\) is positive, the slope at \(B\) is zero and the slope from just after \(B\) to \(C\) is positive.
+In the left hand graph on Figure \ref{fig:09-points-of-inflection}, the slope is positive (strictly) between \(A\) and \(B\), and likewise between \(B\) and \(C\). At \(B\) it is zero.
 
-In the right hand graph on Figure \ref{fig:09-points-of-inflection}, the slope from \(D\) to just before \(E\) is negative, the slope at \(E\) is zero and the slope from just after \(E\) to \(F\) is negative.
+Similarly on the right of Figure \ref{fig:09-points-of-inflection}:
+the slope is negative between \(D\) and \(E\), between \(E\) and \(F\), and zero at \(E\).
 
 The points \(B\) and \(E\) are both points of inflection.
 \slide
@@ -1373,19 +1449,20 @@ Consider the curve of the function with the equation
 \[
 y = x^3-\frac 32x^2-18x+10.
 \]
-We know that at a stationary point, \(dy/dx=0\). So by finding \(dy/dx\) and setting it equal to zero, we can determine the \(x\) values of the stationary points as follows:
-\[
-\frac{dy}{dx} = 3x^2-3x-18\tag{1}
-\]
-When \(dy/dx = 0\), then
-\[
-3x^2-3x-18=0\tag{2}
-\]
-The values of \(x\) where this equation is satisfied can be found by solving the quadratic equation (2) for \(x\).
+We know that at a stationary point, \(\mathrm{d}y/\mathrm{d} x=0\). So by finding \(\mathrm{d}y/\mathrm{d} x\) and setting it equal to zero, we can determine the \(x\) values of the stationary points as follows:
+\begin{equation}
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18
+\label{eq:3-1}
+\end{equation}
+Finding when \(\mathrm{d}y/\mathrm{d} x = 0\) leads to the (quadratic) equation
+\begin{equation}
+3x^2-3x-18=0.
+\label{eq:3-2}
+\end{equation}
 
-We find that the quadratic equation (2) has roots at \(x = 3\) and \(x = -2\). So now we know that there are two turning points, one at \(x = 3\) and one at \(x = -2\). We can find the \(y\) co-ordinates of these points by substituting each \(x\) value into equation (1). This gives \(y = -30.5\) when \(x = 3\) and \(y = 32\) when \(x = -2\).
+We find that the quadratic equation \eqref{eq:3-2} has roots at \(x = 3\) and \(x = -2\). So now we know that there are two turning points, one at \(x = 3\) and one at \(x = -2\). We can find the \(y\) coordinates of these points by substituting each \(x\) value into equation \eqref{eq:3-1}. This gives \(y = -30.5\) when \(x = 3\) and \(y = 32\) when \(x = -2\).
 
-We now know the co-ordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second differential \(d^2y/dx^2\).
+We now know the coordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative \(\mathrm{d}^{2}y/\mathrm{d} x^2\).
 \slide
 
 Consider first a maximum.
@@ -1399,14 +1476,14 @@ Consider first a maximum.
 \caption{maximum turning point}\label{fig:10-maximum-turning-point}
 \end{figure}
 
-In the left hand graph on Figure \ref{fig:10-maximum-turning-point}, of the function \(y\), we have a local maximum. The gradient of the curve, \(dy/dx\), at point \(A\) will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at \(A\) on a graph (right hand graph above, of the function \(dy/dx\)). At \(B\) the slope of graph \(y\) is still positive, but less steep, so the gradient at \(B\), shown on the graph of \(dy/dx\) is still a positive value, but is smaller than at \(A\).
+In the left hand graph on Figure \ref{fig:10-maximum-turning-point}, of the function \(y\), we have a local maximum. The gradient of the curve, \(\mathrm{d}y/\mathrm{d} x\), at point \(A\) will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at \(A\) on a graph (right hand graph above, of the function \(\mathrm{d}y/\mathrm{d} x\)). At \(B\) the slope of graph \(y\) is still positive, but less steep, so the gradient at \(B\), shown on the graph of \(\mathrm{d}y/\mathrm{d} x\) is still a positive value, but is smaller than at \(A\).
 
-At \(C\) the gradient of graph \(y\) is zero. This is the point where the curve in graph of \(dy/dx\) crosses the \(x\) axis. At \(D\) the gradient of graph \(y\) is now negative, but not very steep, so on graph \(dy/dx\) the gradient at \(D\) is a small negative value. At \(E\) the gradient of graph \(y\) is steep and negative, so on graph \(dy/dx\) the point is marked as a large negative value.
+At \(C\) the gradient of graph \(y\) is zero. This is the point where the curve in graph of \(\mathrm{d}y/\mathrm{d} x\) crosses the \(x\) axis. At \(D\) the gradient of graph \(y\) is now negative, but not very steep, so on graph \(\mathrm{d}y/\mathrm{d} x\) the gradient at \(D\) is a small negative value. At \(E\) the gradient of graph \(y\) is steep and negative, so on graph \(\mathrm{d}y/\mathrm{d} x\) the point is marked as a large negative value.
 
-Now consider the gradient of graph \(dy/dx\). Graph \(dy/dx\) is a plot of \(dy/dx\) against \(x\). The gradient of this graph is given by \(d^2y/dx^2\). We can see from the curve in that graph that the gradient of the curve is negative at all points. That is \(d^2y/dx^2<0\) for all \(x\) values close to the local maximum. Therefore if \(d^2y/dx^2\) is a negative number for the \(x\) value of the turning point, we can be sure the turning point is a maximum.
+Now consider the gradient of graph \(\mathrm{d}y/\mathrm{d} x\). Graph \(\mathrm{d}y/\mathrm{d} x\) is a plot of \(\mathrm{d}y/\mathrm{d} x\) against \(x\). The gradient of this graph is given by \(\mathrm{d}^{2}y/\mathrm{d} x^2\). We can see from the curve in that graph that the gradient of the curve is negative at all points. That is \(\mathrm{d}^{2}y/\mathrm{d} x^2<0\) for all \(x\) values close to the local maximum. Therefore if \(\mathrm{d}^{2}y/\mathrm{d} x^2\) is a negative number for the \(x\) value of the turning point, we can be sure the turning point is a maximum.
 \slide
 
-By a similar argument and considering the graphs below (Figure \ref{fig:11-minimum-turning-point}, we can show that for any turning point where, \(d^2y/dx^2>0\) we have a local minimum.
+By a similar argument and considering the graphs below (Figure \ref{fig:11-minimum-turning-point}, we can show that for any turning point where, \(\mathrm{d}^{2}y/\mathrm{d} x^2>0\) we have a local minimum.
 
 \begin{figure}
 
@@ -1420,48 +1497,65 @@ By a similar argument and considering the graphs below (Figure \ref{fig:11-minim
 
 Previously, we established that the curve \(y = x^3-\frac32 x^2-18x+10\) had turning points at \(x=3\) and \(x=-2\). We are now in a position to find out what kind of turning points each of these is.
 \[
-\frac{dy}{dx} = 3x^2-3x-18\text{ therefore } \frac{d^2y}{dx^2} = 6x-3.
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.
 \]
-When \(x = 3\), \(d^2y/dx^2=15 > 0\). So we deduce that the turning point at \(x=3\) is therefore a local minimum.
+When \(x = 3\), \(\mathrm{d}^{2}y/\mathrm{d} x^2=15 > 0\). So we deduce that the turning point at \(x=3\) is therefore a local minimum.
 
-When \(x = -2\), \(d^2y/dx^2 = -15 < 0\) and so we deuce that the turning point at \(x = -2\) is therefore a local maximum.
+When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 < 0\) and so we deuce that the turning point at \(x = -2\) is therefore a local maximum.
+
+\slide
 
 Note that the statement
 \[
-\text{When }x = 3, \frac{d^2y}{dx^2} = 15
+\text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15
 \]
 is often written as
 \[
-\left.\frac{d^2y}{dx^2}\right\vert_{x=3} = 15
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15
 \]
 and similarly we can write for the other statement,
 \[
-\left.\frac{d^2y}{dx^2}\right\vert_{x=-2} = -15.
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} = -15.
 \]
 \slide
 
-There is a third possibility for the value of \(d^2y/dx^2\). It may be zero.
+There is a third possibility for the value of \(\mathrm{d}^{2}y/\mathrm{d} x^2\). It may be zero.
 
-When \(d^2y/dx^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure \ref{fig:09-points-of-inflection}, we can see that for the left-hand graph, the slope, \(dy/dx\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(d^2y/dx^2\) turns out to be zero.
+When \(\mathrm{d}^{2}y/\mathrm{d} x^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure \ref{fig:09-points-of-inflection}, we can see that for the left-hand graph, the slope, \(\mathrm{d}y/\mathrm{d} x\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(\mathrm{d}^{2}y/\mathrm{d} x^2\) turns out to be zero.
 
-We can substitute an \(x\) value just smaller than the value at the turning point into our equation for \(dy/dx\) and find if \(dy/dx\) is positive or negative at this \(x\) value, then we can do the same for an \(x\) value just larger than the \(x\) value of the turning point and again determine the sign of the outcome.
+\slide
+
+We can substitute an \(x\) value just smaller than the value at the turning point into our equation for \(\mathrm{d}y/\mathrm{d} x\) and find if \(\mathrm{d}y/\mathrm{d} x\) is positive or negative at this \(x\) value, then we can do the same for an \(x\) value just larger than the \(x\) value of the turning point and again determine the sign of the outcome.
+
 \slide
 
 Then the type of turning point can be established according to the following table:
 
-\begin{tabular}{l|l|l|l}
-\hline
-slope before turning point & slope at turning point & slope after turning point & type of point\\
-\hline
-positive & zero & negative & maximum\\
-\hline
-negative & zero & positive & minimum\\
-\hline
-positive & zero & positive & inflection\\
-\hline
-negative & zero & negative & inflection\\
-\hline
-\end{tabular}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2941}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+slope before turning pt
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+slope at turning pt
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+slope after turning pt
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+type of pt
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+positive & zero & negative & maximum \\
+negative & zero & positive & minimum \\
+positive & zero & positive & inflection \\
+negative & zero & negative & inflection \\
+\end{longtable}
+
 \slide
 
 \begin{example}
@@ -1469,18 +1563,18 @@ Find and identify the critical or turning points of the function \(y=x^3\).
 \end{example}
 
 \begin{solution}
-For \(y=x^3, dy/dx = 3x^2\). At a turning point \(dy/dx=0\) and so \(3x^2=0\) and so there is a turning point of some kind at \(x=0\).
+For \(y=x^3, \mathrm{d}y/\mathrm{d} x = 3x^2\). At a turning point \(\mathrm{d}y/\mathrm{d} x=0\) and so \(3x^2=0\) and so there is a turning point of some kind at \(x=0\).
 
-\(d^2y/dx^2=6x\) and so
+\(\mathrm{d}^{2}y/\mathrm{d} x^2=6x\) and so
 \[
-\left.\frac{d^2y}{dx^2}\right\vert_{x=0} = 0.
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=0} = 0.
 \]
 Thus we cannot identify the type of turning point from the second derivative.
 However, we can consider the first derivative.
 
-For \(x=-0.1\) (just less than \(0\)) \(dy/dx = 3(-0.1)^2 = 0.03>0\).
+For \(x=-0.1\) (just less than \(0\)) \(\mathrm{d}y/\mathrm{d} x = 3(-0.1)^2 = 0.03>0\).
 
-For \(x = 0.1\) (just greater than \(0\)) \(dy/dx=3(0.1)^2 = 0.03>0\).
+For \(x = 0.1\) (just greater than \(0\)) \(\mathrm{d}y/\mathrm{d} x=3(0.1)^2 = 0.03>0\).
 
 So from examining the table above we see that the critical point at \(x=0\) must be a point of inflection.
 \end{solution}
@@ -1491,7 +1585,11 @@ So from examining the table above we see that the critical point at \(x=0\) must
 
 The points of inflection we have considered so far are a special case where the gradient is zero at
 some value of x. In fact any point where the curve changes from concave to convex is called a
-point of inflection regardless of whether the gradient becomes zero or not. Two points of this type
+point of inflection regardless of whether the gradient becomes zero or not.
+
+\slide
+
+Two points of this type
 are shown in the graphs on Figure \ref{fig:12-points-of-inflection}.
 
 \begin{figure}
@@ -1505,27 +1603,29 @@ are shown in the graphs on Figure \ref{fig:12-points-of-inflection}.
 
 Here the graph changes from concave downwards to concave upwards as \(x\) increases in the first case and from concave upwards to concave downwards in the second case. In each case the marked point is a point of inflection. But the gradient is not zero at these points!
 
-For points such as these \(dy/dx\) is not zero, but \(d^2y/dx^2\) always is. We can find the position of such points by finding where \(d^2y/dx^2\) is zero. We can decide which way they bend by considering \(dy/dx\) as for the previous point of inflection example.
+\slide
+
+For points such as these \(\mathrm{d}y/\mathrm{d} x\) is not zero, but \(\mathrm{d}^{2}y/\mathrm{d} x^2\) always is. We can find the position of such points by finding where \(\mathrm{d}^{2}y/\mathrm{d} x^2\) is zero. We can decide which way they bend by considering \(\mathrm{d}y/\mathrm{d} x\) as for the previous point of inflection example.
 \slide
 
 \begin{example}
 Find the \(x\) coordinates of all the maxima, minima and points of inflection for the curve
 \[
 y = 2x^3-9x^2+12x.
-\].
+\]
 \end{example}
 
 \begin{solution}
 
-For \(y = 2x^3-9x^2+12x\), \(dy/dx = 6x^2-18x+12\). When \(dy/dx=0\) then \(6x^2-18x+12=0\) and so \(x=2\) or \(x=1\).
+For \(y = 2x^3-9x^2+12x\), \(\mathrm{d}y/\mathrm{d} x = 6x^2-18x+12\). When \(\mathrm{d}y/\mathrm{d} x=0\) then \(6x^2-18x+12=0\) and so \(x=2\) or \(x=1\).
 
-Now \(d^2y/dx^2 = 12x-18\), so when \(x=2\), \(d^2y/dx^2>0\) and the point is a minimum.
+Now \(\mathrm{d}^{2}y/\mathrm{d} x^2 = 12x-18\), so when \(x=2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2>0\) and the point is a minimum.
 
-When \(x=1\), \(d^2y/dx^2<0\) and the point is a maximum.
+When \(x=1\), \(\mathrm{d}^{2}y/\mathrm{d} x^2<0\) and the point is a maximum.
 
-Also, \(d^2y/dx^2=0\) when \(x=1.5\) and so at \(x=1.5\) here is a point of inflection (but not of zero gradient).
+Also, \(\mathrm{d}^{2}y/\mathrm{d} x^2=0\) when \(x=1.5\) and so at \(x=1.5\) here is a point of inflection (but not of zero gradient).
 
-From examining the value of \(dy/dx\) just before and just after \(x=1.5\) we find that the gradient is negative on both sides of the point of inflection and thus the curves slopes down from left to right.
+From examining the value of \(\mathrm{d}y/\mathrm{d} x\) just before and just after \(x=1.5\) we find that the gradient is negative on both sides of the point of inflection and thus the curves slopes down from left to right.
 
 \begin{figure}
 
@@ -1905,7 +2005,7 @@ Sketch on Figure \ref{fig:16-graph-1-x-1}.
 
 Maxima and minima may be used in engineering to solve problems such as finding the minimum surface area required to make an object with a fixed volume.
 
-All such problems are solved by forming an equation for the quantity to be minimised (or maximised), i.e.~the surface area in the example above, and then using the first and second differentials of the equation to find the minimum (or maximum) values. However, some intuition is often required to decide how the equation should be formed from the available information.
+All such problems are solved by forming an equation for the quantity to be minimised (or maximised), i.e.~the surface area in the example above, and then using the first and second derivatives of the equation to find the minimum (or maximum) values. However, some intuition is often required to decide how the equation should be formed from the available information.
 
 \begin{example}
 Metal boxes are to be made from sheets of steel 800 mm long by 400 mm wide, by cutting squares from the corners and bending the sides. Determine the size of the square to be cut from a sheet such that the volume of the box is maximum.
@@ -2061,7 +2161,7 @@ y^2 + x^2 + 2xy + 2x = 0
 \]
 where \(y = f(x)\). Thus the whole expression is a function of \(x\) even though we don't know what function of \(x\) \(y\) represents.
 
-As the function \(f(x)\) is unknown, we cannot replace \(y\) by \(f(x)\) in order to differentiate. However, we can find the differential of the terms with \(y\) in by using the chain rule.
+As the function \(f(x)\) is unknown, we cannot replace \(y\) by \(f(x)\) in order to differentiate. However, we can find the derivative of the terms with \(y\) in by using the chain rule.
 
 To differentiate \(y^2\) with respect to \(x\) we write
 \[
@@ -2076,7 +2176,7 @@ Hence if
 \[
 y^2 + x^2 + 2xy + 2x = 0
 \]
-then the differential with respect to \(x\) is
+then the derivative with respect to \(x\) is
 \[
 2y\frac{dy}{dx} + 2x+2x\frac{dy}{dx} +2y+2 = 0.
 \]
@@ -2160,7 +2260,7 @@ A function is expressed in parametric form as \(y = 2t + t^2, x = t^2 - 1\), whe
 
 \subsection{Logarithmic differentiation}\label{logarithmic-differentiation}
 
-This is a convenient way to deal with the differential of a product of quotient with more than two terms.
+This is a convenient way to deal with the derivative of a product of quotient with more than two terms.
 
 Consider
 \[
@@ -2371,7 +2471,7 @@ We then move on to look at the opposite process to differentiation, called integ
 
 \section{Partial Differentiation}\label{partial-differentiation}
 
-If an expression is a function of two variables then it can have two differential coefficients.
+If an expression is a function of two variables then it can be differentiated with respect to either of the variables.
 
 For example, if
 \[
@@ -2411,16 +2511,16 @@ Consider the expression for the volume of a cylinder, \(V = \pi r^2h\) where \(r
 \caption{cylinder}\label{fig:21-cylinder}
 \end{figure}
 
-The differential coefficients can be
+The two different ``derivatives'' are
 \begin{gather*}
 \text{treating }h\text{ as a constant } \frac{\partial V}{\partial r} = 2\pi rh\\
 \text{treating }r\text{ as a constant } \frac{\partial V}{\partial h} = \pi r^2
 \end{gather*}
 \slide
 
-We use the symbol \(\partial\) in the differential coefficient to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.
+We use the symbol \(\partial\) in the derivatives above to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.
 
-The first differential coefficient tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second differential coefficient tells us how the volume would vary as the height varied for a cylinder of constant radius.
+The first type of derivative tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second type of derivative tells us how the volume would vary as the height varied for a cylinder of constant radius.
 
 When a function of more than one variable is differentiated with respect to one variable only, this process is called \textcolor{red}{\em partial differentiation}\index{partial differentiation}.
 
@@ -2869,7 +2969,7 @@ Hence
 
 \slide
 
-There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the differential of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the differential of the denominator.
+There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the derivative of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the derivative of the denominator.
 
 \cpybx
 
@@ -2938,7 +3038,7 @@ Hence
 
 \section{Integration by Parts}\label{integration-by-parts}
 
-To integrate a product of two terms where one half is the differential of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the differential of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product
+To integrate a product of two terms where one half is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product
 
 If \(y = uv\), where \(u\) and \(v\) are both functions of \(x\) then,
 \[
@@ -3043,7 +3143,7 @@ Using integration by parts.
 &=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)dx\tag{5}
 \end{align*}
 
-We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the differential of the other, so integration by parts should help again. Considering just that term:-
+We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-
 
 \slide
 

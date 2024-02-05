@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -414,7 +414,7 @@
 <h2><span class="header-section-number">4.1</span> Curve Sketching<a href="week-four.html#curve-sketching" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Given a function <span class="math inline">\(y=f(x)\)</span> representing a curve in the plane, we wish to examine the function and its derivative(s) so as to be able to (roughly) sketch the graph of the function.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 4.1  </strong></span>Sketch the graph of the function
+<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 4.1  </strong></span>Sketch the graph of the function
 <span class="math display">\[
 y = x^2+3x-2.
 \]</span></p>
@@ -457,7 +457,7 @@ Figure 4.1: <span class="math inline">\(f(x)=x^2+3x-2\)</span>
 </p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 4.2  </strong></span>Sketch the graph of the function
+<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 4.2  </strong></span>Sketch the graph of the function
 <span class="math display">\[
 y = x^3+2x+3.
 \]</span></p>
@@ -498,7 +498,7 @@ Figure 4.2: <span class="math inline">\(f(x)=x^3+2x+3\)</span>
 </p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 4.3  </strong></span>Sketch the graph of the curve
+<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 4.3  </strong></span>Sketch the graph of the curve
 <span class="math display">\[
 y = \frac1{x+1}.
 \]</span></p>
@@ -541,9 +541,9 @@ Figure 4.3: <span class="math inline">\(f(x)=1/(x+1)\)</span>
 <div id="engineering-problems-with-maxmin" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Engineering Problems with Max/Min<a href="week-four.html#engineering-problems-with-maxmin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Maxima and minima may be used in engineering to solve problems such as finding the minimum surface area required to make an object with a fixed volume.</p>
-<p>All such problems are solved by forming an equation for the quantity to be minimised (or maximised), i.e. the surface area in the example above, and then using the first and second differentials of the equation to find the minimum (or maximum) values. However, some intuition is often required to decide how the equation should be formed from the available information.</p>
+<p>All such problems are solved by forming an equation for the quantity to be minimised (or maximised), i.e. the surface area in the example above, and then using the first and second derivatives of the equation to find the minimum (or maximum) values. However, some intuition is often required to decide how the equation should be formed from the available information.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 4.4  </strong></span>Metal boxes are to be made from sheets of steel 800 mm long by 400 mm wide, by cutting squares from the corners and bending the sides. Determine the size of the square to be cut from a sheet such that the volume of the box is maximum.</p>
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 4.4  </strong></span>Metal boxes are to be made from sheets of steel 800 mm long by 400 mm wide, by cutting squares from the corners and bending the sides. Determine the size of the square to be cut from a sheet such that the volume of the box is maximum.</p>
 </div>
 <p>It is usually helpful to begin by drawing a diagram (Figure <a href="week-four.html#fig:17-maximum-volume">4.4</a>).</p>
 <!--insfig
@@ -590,7 +590,7 @@ Now we need to find which value of <span class="math inline">\(x\)</span> gives 
 <p>For maximum volume, the square to be cut out must have sides of 0.085 m, i.e. 85 mm
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 4.5  </strong></span>A beam which is built into a wall at one end is simply supported by a force of 75 kN at the other end. The beam is loaded as shown below and the mass of the beam produces a force of 30kN/m. The beam is 4 m long, and the bending moment <span class="math inline">\(M\)</span> at any distance <span class="math inline">\(x\)</span> from the simply supported end is given by
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 4.5  </strong></span>A beam which is built into a wall at one end is simply supported by a force of 75 kN at the other end. The beam is loaded as shown below and the mass of the beam produces a force of 30kN/m. The beam is 4 m long, and the bending moment <span class="math inline">\(M\)</span> at any distance <span class="math inline">\(x\)</span> from the simply supported end is given by
 <span class="math display">\[
 M = 75x-20(x-1.25)-30x\frac{x}{2}.
 \]</span>
@@ -619,7 +619,7 @@ Or <span class="math inline">\(M = 75\ kNm\)</span></p>
 <p>The maximum bending moment occurs at <span class="math inline">\(1.83 m\)</span> from the simply supported end and has a value of <span class="math inline">\(75\ kNm\)</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 4.6  </strong></span>Given a cylindical can with surface area <span class="math inline">\(S=100\ m^2\)</span>, height <span class="math inline">\(h\)</span> and radius <span class="math inline">\(r\)</span> (see Figure <a href="week-four.html#fig:19-maximum-volume">4.6</a>),</p>
+<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 4.6  </strong></span>Given a cylindical can with surface area <span class="math inline">\(S=100\ m^2\)</span>, height <span class="math inline">\(h\)</span> and radius <span class="math inline">\(r\)</span> (see Figure <a href="week-four.html#fig:19-maximum-volume">4.6</a>),</p>
 <ol style="list-style-type: decimal">
 <li>prove that the volume <span class="math inline">\(V = 50r-\pi r^3\)</span>;</li>
 <li>find the value of <span class="math inline">\(r\)</span> that maximises the volume.</li>
@@ -667,7 +667,7 @@ By the 2nd derivative test we see that <span class="math inline">\(r=\sqrt{50/3\
 y^2 + x^2 + 2xy + 2x = 0
 \]</span>
 where <span class="math inline">\(y = f(x)\)</span>. Thus the whole expression is a function of <span class="math inline">\(x\)</span> even though we don’t know what function of <span class="math inline">\(x\)</span> <span class="math inline">\(y\)</span> represents.</p>
-<p>As the function <span class="math inline">\(f(x)\)</span> is unknown, we cannot replace <span class="math inline">\(y\)</span> by <span class="math inline">\(f(x)\)</span> in order to differentiate. However, we can find the differential of the terms with <span class="math inline">\(y\)</span> in by using the chain rule.</p>
+<p>As the function <span class="math inline">\(f(x)\)</span> is unknown, we cannot replace <span class="math inline">\(y\)</span> by <span class="math inline">\(f(x)\)</span> in order to differentiate. However, we can find the derivative of the terms with <span class="math inline">\(y\)</span> in by using the chain rule.</p>
 <p>To differentiate <span class="math inline">\(y^2\)</span> with respect to <span class="math inline">\(x\)</span> we write
 <span class="math display">\[
 \frac{d}{dx}(y^2) = \frac{d}{dy}(y^2)\times\frac{dy}{dx}= 2y\frac{dy}{dx}.
@@ -680,7 +680,7 @@ Hence if
 <span class="math display">\[
 y^2 + x^2 + 2xy + 2x = 0
 \]</span>
-then the differential with respect to <span class="math inline">\(x\)</span> is
+then the derivative with respect to <span class="math inline">\(x\)</span> is
 <span class="math display">\[
 2y\frac{dy}{dx} + 2x+2x\frac{dy}{dx} +2y+2 = 0.
 \]</span>
@@ -692,10 +692,10 @@ Which may be rearranged so that
 \end{gather*}\]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 4.7  </strong></span>Differentiate with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(10x^2 + 12xy + 10y^2 = 1\)</span> where <span class="math inline">\(y = f(x)\)</span>. Hence find the gradient of the tangents to the curve when <span class="math inline">\(x=0.2\)</span>.</p>
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 4.7  </strong></span>Differentiate with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(10x^2 + 12xy + 10y^2 = 1\)</span> where <span class="math inline">\(y = f(x)\)</span>. Hence find the gradient of the tangents to the curve when <span class="math inline">\(x=0.2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-46" class="solution"><em>Solution</em>. </span>This is actually the equation of an ellipse (Figure <a href="week-four.html#fig:20-ellipse">4.7</a>).</p>
+<p><span id="unlabeled-div-47" class="solution"><em>Solution</em>. </span>This is actually the equation of an ellipse (Figure <a href="week-four.html#fig:20-ellipse">4.7</a>).</p>
 <!--insfig
 
 -->
@@ -738,10 +738,10 @@ where <span class="math inline">\(t\)</span> is a parameter.</p>
 \]</span>
 Thus if we can find <span class="math inline">\(dy/dt\)</span> and <span class="math inline">\(dx/dt\)</span> we can establish <span class="math inline">\(dy/dx\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 4.8  </strong></span>A function is expressed in parametric form as <span class="math inline">\(y = 2t + t^2, x = t^2 - 1\)</span>, where <span class="math inline">\(t\)</span> is a parameter. Find <span class="math inline">\(dy/dx\)</span>.</p>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 4.8  </strong></span>A function is expressed in parametric form as <span class="math inline">\(y = 2t + t^2, x = t^2 - 1\)</span>, where <span class="math inline">\(t\)</span> is a parameter. Find <span class="math inline">\(dy/dx\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-48" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+<p><span id="unlabeled-div-49" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
 \frac{dy}{dt} = 2+2t\\
 \frac{dx}{dt} = 2t\\
 \frac{dy}{dx} = \frac{dy}{dt}/\frac{dx}{dt} = \frac{2+2t}{2t} = \frac{1+t}{t}.
@@ -750,7 +750,7 @@ Thus if we can find <span class="math inline">\(dy/dt\)</span> and <span class="
 </div>
 <div id="logarithmic-differentiation" class="section level3 hasAnchor" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Logarithmic differentiation<a href="week-four.html#logarithmic-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This is a convenient way to deal with the differential of a product of quotient with more than two terms.</p>
+<p>This is a convenient way to deal with the derivative of a product of quotient with more than two terms.</p>
 <p>Consider
 <span class="math display">\[
 y = \frac{(x-4)(x+5)}{(x+3)(x-2)}
@@ -766,10 +766,10 @@ Differentiating and treating <span class="math inline">\(\ln(y)\)</span> as a fu
 = \left(\frac{1}{x-4}+\frac{1}{x+5}-\frac{1}{x+3}-\frac{1}{x-2}\right)\frac{(x-4)(x+5)}{(x+3)(x-2)}.
 \end{gather*}\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 4.9  </strong></span>Differentiate with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(y=x^x\)</span>.</p>
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 4.9  </strong></span>Differentiate with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(y=x^x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-50" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
+<p><span id="unlabeled-div-51" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{gather*}
 \ln(y) = x\ln(x)\\
 \frac{1}{y}\times\frac{dy}{dx} = \ln(x)+x\times\frac{1}{x} = \ln(x)+1\\
 \frac{dy}{dx} = y(\ln(x)+1) = x^x(\ln(x)+1).

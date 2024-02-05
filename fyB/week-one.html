@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -588,7 +588,7 @@ Figure 1.4: line segment of a curve
 </p>
 </div>
 </div>
-<p>We call this value the <a name='#derivative'></a><span style="color: red;">derivative</span> of the function <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span> and write
+<p>We call the slope of the tangent line the <a name='#derivative'></a><span style="color: red;">derivative</span> of the function <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\(x\)</span> and write
 <span class="math display">\[
 \frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]</span>
@@ -660,7 +660,7 @@ Now, taking limit we have
 \]</span>
 Therefore, in general, we can differentiate <span class="math inline">\(x^n\)</span> for all values of <span class="math inline">\(n\)</span> using the rule
 <span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{d(x^n)}{\mathrm{d} x} = nx^{n-1}.
+\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} (x^n)}{\mathrm{d} x} = nx^{n-1}.
 \]</span>
 This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 </p>
@@ -689,7 +689,7 @@ y = ax^n \Rightarrow \frac{\mathrm{d} y}{\mathrm{d} x} = nax^{n-1}.
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3\times4x^3 = 12 x^3.
 \end{gather*}\]</span></p>
 </div>
-<p>Note that the differential of <span class="math inline">\(ax\)</span> and of <span class="math inline">\(a\)</span> also follow the rule. For <span class="math inline">\(ax\)</span> we may write <span class="math inline">\(ax = ax^1\)</span>. So differentiating by rule
+<p>Note that the derivative of <span class="math inline">\(ax\)</span> and of <span class="math inline">\(a\)</span> also follow the rule. For <span class="math inline">\(ax\)</span> we may write <span class="math inline">\(ax = ax^1\)</span>. So differentiating by rule
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.
 \]</span>
@@ -697,7 +697,7 @@ For <span class="math inline">\(a\)</span> we may write <span class="math inline
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.
 \]</span>
-That is to say, the differential of a constant value is always zero.</p>
+That is to say, the derivative of a constant value is always zero.</p>
 <p>The above rule works in a more general situation. If <span class="math inline">\(f(x) = ag(x)\)</span> where <span class="math inline">\(a\)</span> is a constant and <span class="math inline">\(g(x)\)</span> is a function, then
 <span class="math display">\[\begin{align*}
 \frac{\mathrm{d} f}{\mathrm{d} x} &amp;= \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = \lim\limits_{h\to0}\frac{ag(x+h)-ag(x)}{h} \\ &amp;= a\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h} = a\frac{\mathrm{d} g}{\mathrm{d} x}.

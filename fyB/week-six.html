@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-01-29" />
+<meta name="date" content="2024-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -103,7 +103,7 @@
 <li class="chapter" data-level="2.1" data-path="week-two.html"><a href="week-two.html#lecture-four"><i class="fa fa-check"></i><b>2.1</b> Tangents and Normals</a></li>
 <li class="chapter" data-level="2.2" data-path="week-two.html"><a href="week-two.html#lecture-five"><i class="fa fa-check"></i><b>2.2</b> The Chain Rule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#differentiation-of-a-function-of-a-function-the-chain-rule"><i class="fa fa-check"></i><b>2.2.1</b> Differentiation of a function of a function (the Chain Rule)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="week-two.html"><a href="week-two.html#the-chain-rule-differentiating-composite-functions"><i class="fa fa-check"></i><b>2.2.1</b> The Chain Rule: Differentiating composite functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="week-two.html"><a href="week-two.html#lecture-six"><i class="fa fa-check"></i><b>2.3</b> The Product and Quotient Rules</a>
 <ul>
@@ -437,10 +437,10 @@ Finally we can substitute for <span class="math inline">\(u\)</span> to give the
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-70" class="example"><strong>Example 6.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\sin^2(x)\cos(x)dx\)</span>.</p>
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 6.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\sin^2(x)\cos(x)dx\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-71" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sin(x)\)</span> so that <span class="math inline">\(du/dx = \cos(x)\)</span>. Then <span class="math inline">\(dx = du/\cos(x)\)</span> and so
+<p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sin(x)\)</span> so that <span class="math inline">\(du/dx = \cos(x)\)</span>. Then <span class="math inline">\(dx = du/\cos(x)\)</span> and so
 <span class="math display">\[
 \int\sin^2(x)\cos(x)dx = \int u^2du = \frac 13u^3+c.
 \]</span>
@@ -449,15 +449,15 @@ Hence
 \int\sin^2(x)\cos(x)dx = \frac 13\sin^3(x) + c.
 \]</span></p>
 </div>
-<p>There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the differential of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the differential of the denominator.</p>
+<p>There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the derivative of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the derivative of the denominator.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 6.2  </strong></span>Find
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 6.2  </strong></span>Find
 <span class="math display">\[
 \int\frac{3x^2}{x^3-4}dx.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-73" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^3-4\)</span> so that <span class="math inline">\(du = 3x^2dx\)</span>. Then
+<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^3-4\)</span> so that <span class="math inline">\(du = 3x^2dx\)</span>. Then
 <span class="math display">\[
 \int\frac{3x^2}{x^3-4}dx = \int \frac{du}{u} = \ln|u|+c = \ln|x^3-4|+c.
 \]</span></p>
@@ -468,25 +468,25 @@ Hence
 <h3><span class="header-section-number">6.1.1</span> Trig substitutions<a href="week-six.html#trig-substitutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practise.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 6.3  </strong></span>Find
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 6.3  </strong></span>Find
 <span class="math display">\[
 \int\sin^2(x) dx.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-75" class="solution"><em>Solution</em>. </span>Using the trig identity for <span class="math inline">\(\cos(2x)\)</span> we see that <span class="math inline">\(\sin^2(x) = (1-\cos(2x))/2\)</span>. So
+<p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span>Using the trig identity for <span class="math inline">\(\cos(2x)\)</span> we see that <span class="math inline">\(\sin^2(x) = (1-\cos(2x))/2\)</span>. So
 <span class="math display">\[
 \int\sin^2(x) dx = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 6.4  </strong></span>Find
+<p><span id="exm:unlabeled-div-77" class="example"><strong>Example 6.4  </strong></span>Find
 <span class="math display">\[
 \int\frac{dx}{\sqrt{a^2-x^2}}.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-77" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a\sin(\theta)\)</span> then <span class="math inline">\(dx = a\cos(\theta)d\theta\)</span>. So <span class="math inline">\(x^2 = a^2\sin^2(\theta)\)</span> and <span class="math inline">\(\theta = \sin^{-1}(x/a)\)</span>. Hence
+<p><span id="unlabeled-div-78" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a\sin(\theta)\)</span> then <span class="math inline">\(dx = a\cos(\theta)d\theta\)</span>. So <span class="math inline">\(x^2 = a^2\sin^2(\theta)\)</span> and <span class="math inline">\(\theta = \sin^{-1}(x/a)\)</span>. Hence
 <span class="math display">\[
 \int\frac{dx}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
 \]</span>
@@ -499,7 +499,7 @@ Hence
 </div>
 <div id="integration-by-parts" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Integration by Parts<a href="week-six.html#integration-by-parts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To integrate a product of two terms where one half is the differential of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the differential of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product</p>
+<p>To integrate a product of two terms where one half is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product</p>
 <p>If <span class="math inline">\(y = uv\)</span>, where <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are both functions of <span class="math inline">\(x\)</span> then,
 <span class="math display">\[
 \frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}\tag{1}
@@ -523,10 +523,10 @@ and therefore, rearranging gives us
 Equation (4) is the formula for <a name='#integration-by-parts'></a><span style="color: red;">integration by parts</span> and can be used to integrate some types of
 product.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 6.5  </strong></span>Find <span class="math inline">\(\displaystyle\int x^3\ln(x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 6.5  </strong></span>Find <span class="math inline">\(\displaystyle\int x^3\ln(x)dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-79" class="solution"><em>Solution</em>. </span>This is a product but one half is not the derivative of the other, so integration by parts must be used.</p>
+<p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>This is a product but one half is not the derivative of the other, so integration by parts must be used.</p>
 <p>First choose one part of the product and let it be <span class="math inline">\(u\)</span>, then the other half is <span class="math inline">\(dv/dx\)</span>.</p>
 <p>So, let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(dv/dx = x^3\)</span>. Then <span class="math inline">\(du/dx = 1/x\)</span> and <span class="math inline">\(v=\displaystyle\int x^3dx = x^4/4\)</span>.</p>
 <p>Then substituting for <span class="math inline">\(u, du/dx, v\)</span> and <span class="math inline">\(dv/dx\)</span> in equation (4) we get
@@ -540,10 +540,10 @@ product.</p>
 <p>By choosing the terms we did for <span class="math inline">\(u\)</span> and <span class="math inline">\(dv/dx\)</span>, the formula helped us simplify what had to be integrated. We could have chosen <span class="math inline">\(u\)</span> as <span class="math inline">\(x^3\)</span> and <span class="math inline">\(dv/dx\)</span> as <span class="math inline">\(\ln(x)\)</span>, but if we had, we would have found that after substituting our terms into the formula, the integral was no more simple that before.</p>
 <p>Knowing which term to choose for which part of the formula is on the whole a question of practice.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 6.6  </strong></span>Find <span class="math inline">\(\displaystyle\int xe^{-x}dx\)</span></p>
+<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 6.6  </strong></span>Find <span class="math inline">\(\displaystyle\int xe^{-x}dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-81" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x\)</span> and <span class="math inline">\(dv/dx=e^{-x}\)</span> so that <span class="math inline">\(du/dx = 1\)</span> and <span class="math inline">\(v=\displaystyle\int e^{-x}dx = -e^{-x}\)</span>. So using integration by parts
+<p><span id="unlabeled-div-82" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x\)</span> and <span class="math inline">\(dv/dx=e^{-x}\)</span> so that <span class="math inline">\(du/dx = 1\)</span> and <span class="math inline">\(v=\displaystyle\int e^{-x}dx = -e^{-x}\)</span>. So using integration by parts
 <span class="math display">\[\begin{align*}
 \int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
 \int xe^{-x}dx&amp;=x(-e^{-x})-\int-e^{-x}dx\\
@@ -552,10 +552,10 @@ product.</p>
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 6.7  </strong></span>Find <span class="math inline">\(\displaystyle\int \ln(x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 6.7  </strong></span>Find <span class="math inline">\(\displaystyle\int \ln(x)dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-83" class="solution"><em>Solution</em>. </span>At first sight this doesn’t look as if integration by parts will be useful as it doesn’t seem to involve a product. However we can think of it as <span class="math inline">\(\displaystyle\int 1\times\ln(x)dx\)</span>.</p>
+<p><span id="unlabeled-div-84" class="solution"><em>Solution</em>. </span>At first sight this doesn’t look as if integration by parts will be useful as it doesn’t seem to involve a product. However we can think of it as <span class="math inline">\(\displaystyle\int 1\times\ln(x)dx\)</span>.</p>
 <p>Let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(dv/dx = 1\)</span> then <span class="math inline">\(du/dx = 1/x\)</span> and <span class="math inline">\(v = x\)</span>. hence using integration by parts we see that
 <span class="math display">\[\begin{align*}
 \int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
@@ -566,17 +566,17 @@ product.</p>
 </div>
 <p>Sometimes it is necessary to apply the formula twice (or more).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 6.8  </strong></span>Find <span class="math inline">\(\displaystyle\int x^2\sin(2x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 6.8  </strong></span>Find <span class="math inline">\(\displaystyle\int x^2\sin(2x)dx\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-85" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^2\)</span> and let <span class="math inline">\(dv/dx = \sin(2x)\)</span>. Then <span class="math inline">\(du/dx = 2x\)</span> and <span class="math inline">\(v = \displaystyle\int \sin(2x)dx = -\cos(2x)/2\)</span>.</p>
+<p><span id="unlabeled-div-86" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^2\)</span> and let <span class="math inline">\(dv/dx = \sin(2x)\)</span>. Then <span class="math inline">\(du/dx = 2x\)</span> and <span class="math inline">\(v = \displaystyle\int \sin(2x)dx = -\cos(2x)/2\)</span>.</p>
 <p>Using integration by parts.
 <span class="math display">\[\begin{align*}
 \int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
 \int x^2\sin(2x)dx&amp;=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)dx\\
 &amp;=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)dx\tag{5}
 \end{align*}\]</span></p>
-<p>We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the differential of the other, so integration by parts should help again. Considering just that term:-</p>
+<p>We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-</p>
 <p>We have <span class="math inline">\(\displaystyle\int x\cos(2x)dx\)</span>. Let <span class="math inline">\(u=x\)</span> and <span class="math inline">\(dv/dx = \cos(2x)\)</span>. Then <span class="math inline">\(du/dx = 1\)</span> and <span class="math inline">\(v=\sin(2x)/2\)</span>.
 <span class="math display">\[
 \int x\cos(2x)dx = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1dx = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
