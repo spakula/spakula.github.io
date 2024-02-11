@@ -116,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-02-07}
+\date{2024-02-11}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1252,16 +1252,42 @@ We start this week by looking at derivatives of derivatives and then move on to 
 The result of differentiating a function (i.e.~taking the derivative of a function) is again a function. So we can differentiate again.
 
 Suppose \(y = x^3 + 2x^2\). Then
+
+\begin{notslides}
+
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.
 \]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\[
+\frac{\mathrm{d} y}{\mathrm{d} x} = 
+\]
+
+\end{slidesonly}
+
 We may then differentiate \(\mathrm{d}y/\mathrm{d} x\) as well. This is written as
 \[
 \frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.
 \]
+
+\begin{notslides}
+
 So in this case \(\mathrm{d}^{2}y/\mathrm{d} x^2 = 6x+4\).
 
+\end{notslides}
+
+\begin{slidesonly}
+
+So in this case \(\mathrm{d}^{2}y/\mathrm{d} x^2 =\)
+
+\end{slidesonly}
+
 This is called the \textcolor{red}{\em second derivative of $y$}\index{second derivative of $y$}.
+
 \slide
 
 We can repeat, and differentiate \(\mathrm{d}^{2}y/\mathrm{d} x^2\). This gives
@@ -1300,15 +1326,50 @@ and finally
 
 \subsection{Rates of Change}\label{rates-of-change}
 
+\begin{notslides}
+
 The derivative \(\mathrm{d}y/\mathrm{d} x\) may be considered as the rate at which \(y\) changes as a result of a change in \(x\).
 
 For example, suppose that \(s=s(t)\) gives the distance of a particle to the origin \(O\) in metres, at a time \(t\) seconds.
 
-Suppose that \(s(t) = 3t^3 + 2t\). So at time \(t = 0\text{s}\), the particle is at \(O\); at time \(t = 1\text{s}\) sec, the particle is \(5\text{m}\) metres away from \(O\); at time \(t = 2\text{s}\), the particle is \(28\text{m}\) away from \(O\), etc.
+Suppose that \(s(t) = 3t^3 + 2t\). So at time \(t = 0\text{s}\), the particle is at \(O\); at time \(t = 1\text{s}\), the particle is \(5\text{m}\) metres away from \(O\); at time \(t = 2\text{s}\), the particle is \(28\text{m}\) away from \(O\), etc.
 
 If we differentiate \(s\) with respect to \(t\), we get \(\dfrac{\mathrm{d} s}{\mathrm{d} t} = 9t^2 + 2\).
 
 This tells us that the slope of the graph of \(s\) against \(t\) is not constant but varies depending on the value of \(t\). So when \(t = 0\), the slope is \(2\), when \(t = 1\), the slope is \(11\), etc.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+The derivative \(\mathrm{d}y/\mathrm{d} x\) may be considered as the rate at which \(y\) changes as a result of a change in \(x\).
+
+For example, suppose that \(s=s(t)=3t^3 + 2t\) gives the distance of a particle to the origin \(O\) in metres, at a time \(t\) seconds. So:
+
+\begin{itemize}
+\tightlist
+\item
+  At time \(t = 0\text{s}\), the particle is at
+\item
+  At time \(t = 1\text{s}\), the particle is
+\item
+  At time \(t = 2\text{s}\), the particle is
+\end{itemize}
+
+If we differentiate \(s\) with respect to \(t\), we get \(\dfrac{\mathrm{d} s}{\mathrm{d} t} =\)
+
+The slope of \(s\) against \(t\) is not constant but varies with \(t\). So:
+
+\begin{itemize}
+\tightlist
+\item
+  when \(t = 0\), the slope is:
+\item
+  when \(t = 1\), the slope is:
+\end{itemize}
+
+\end{slidesonly}
+
 \slide
 
 \(\mathrm{d} s/\mathrm{d} t\) is the rate at which \(s\) changes for a change in \(t\), or the rate at which distance changes with time, so \(\mathrm{d} s/\mathrm{d} t\) is the \textcolor{red}{\em velocity}\index{velocity}, \(v\), of the particle in \(\text{m}\text{s}^{-1}\).
@@ -1435,15 +1496,38 @@ However, the converse is not necessarily true: the gradient may be zero, but the
 \caption{points of inflection}\label{fig:09-points-of-inflection}
 \end{figure}
 
+\begin{notslides}
+
 In the left hand graph on Figure \ref{fig:09-points-of-inflection}, the slope is positive (strictly) between \(A\) and \(B\), and likewise between \(B\) and \(C\). At \(B\) it is zero.
 
 Similarly on the right of Figure \ref{fig:09-points-of-inflection}:
 the slope is negative between \(D\) and \(E\), between \(E\) and \(F\), and zero at \(E\).
 
+\end{notslides}
+
+\begin{slidesonly}
+
+In the left hand graph on Figure \ref{fig:09-points-of-inflection}:
+
+\begin{itemize}
+\tightlist
+\item
+  between \(A\) and \(B\), the slope is:
+\item
+  at \(B\), the slope is:
+\item
+  between \(B\) and \(C\), the slope is:
+\end{itemize}
+
+\end{slidesonly}
+
 The points \(B\) and \(E\) are both points of inflection.
+
 \slide
 
 We would like to be able to find out how many maxima, minima and points of inflection a curve has without having to plot the graph. We can do this by examining the derivatives of the function.
+
+\begin{notslides}
 
 Consider the curve of the function with the equation
 \[
@@ -1460,12 +1544,57 @@ Finding when \(\mathrm{d}y/\mathrm{d} x = 0\) leads to the (quadratic) equation
 \label{eq:3-2}
 \end{equation}
 
+\end{notslides}
+
+\begin{slidesonly}
+
+Consider the curve of the function with the equation
+\[
+y = x^3-\frac 32x^2-18x+10.
+\]
+We know that at a stationary point, \(\mathrm{d}y/\mathrm{d} x=0\). So by finding \(\mathrm{d}y/\mathrm{d} x\) and setting it equal to zero, we can determine the \(x\) values of the stationary points as follows:
+\begin{equation}
+\frac{\mathrm{d} y}{\mathrm{d} x} =\hbox to 5cm{}
+\label{eq:3-1}
+\end{equation}
+Finding when \(\mathrm{d}y/\mathrm{d} x = 0\) leads to the equation
+\begin{equation}
+\label{eq:3-2}
+\end{equation}
+
+\end{slidesonly}
+
+\slide
+
+\begin{notslides}
+
 We find that the quadratic equation \eqref{eq:3-2} has roots at \(x = 3\) and \(x = -2\). So now we know that there are two turning points, one at \(x = 3\) and one at \(x = -2\). We can find the \(y\) coordinates of these points by substituting each \(x\) value into equation \eqref{eq:3-1}. This gives \(y = -30.5\) when \(x = 3\) and \(y = 32\) when \(x = -2\).
 
 We now know the coordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative \(\mathrm{d}^{2}y/\mathrm{d} x^2\).
+
+\end{notslides}
+
+\begin{slidesonly}
+
+Solving the equation \eqref{eq:3-2}:
+
+\vfill
+
+The stationary points are at:
+
+\vfill
+
+We find the corresponding \(y\) values by using equation \eqref{eq:3-1}. This yields:
+
+\vfill
+
+We now know the coordinates of the stationary points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative \(\mathrm{d}^{2}y/\mathrm{d} x^2\).
+
+\end{slidesonly}
+
 \slide
 
-Consider first a maximum.
+Consider a maximum of some function (generally).
 
 \begin{figure}
 
@@ -1476,6 +1605,8 @@ Consider first a maximum.
 \caption{maximum turning point}\label{fig:10-maximum-turning-point}
 \end{figure}
 
+\begin{notslides}
+
 In the left hand graph on Figure \ref{fig:10-maximum-turning-point}, of the function \(y\), we have a local maximum. The gradient of the curve, \(\mathrm{d}y/\mathrm{d} x\), at point \(A\) will be a large positive value as the curve here is steeply sloped up from left to right. We can plot the value of the gradient at \(A\) on a graph (right hand graph above, of the function \(\mathrm{d}y/\mathrm{d} x\)). At \(B\) the slope of graph \(y\) is still positive, but less steep, so the gradient at \(B\), shown on the graph of \(\mathrm{d}y/\mathrm{d} x\) is still a positive value, but is smaller than at \(A\).
 
 At \(C\) the gradient of graph \(y\) is zero. This is the point where the curve in graph of \(\mathrm{d}y/\mathrm{d} x\) crosses the \(x\) axis. At \(D\) the gradient of graph \(y\) is now negative, but not very steep, so on graph \(\mathrm{d}y/\mathrm{d} x\) the gradient at \(D\) is a small negative value. At \(E\) the gradient of graph \(y\) is steep and negative, so on graph \(\mathrm{d}y/\mathrm{d} x\) the point is marked as a large negative value.
@@ -1484,6 +1615,30 @@ Now consider the gradient of graph \(\mathrm{d}y/\mathrm{d} x\). Graph \(\mathrm
 \slide
 
 By a similar argument and considering the graphs below (Figure \ref{fig:11-minimum-turning-point}, we can show that for any turning point where, \(\mathrm{d}^{2}y/\mathrm{d} x^2>0\) we have a local minimum.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+Examine Figure \ref{fig:10-maximum-turning-point}.
+
+\vfill
+
+This leads to the following criterion:
+
+If \(\mathrm{d}^{2}y/\mathrm{d} x^2\) \phantom{aaaaaaa} at a stationary point, then the stationary point is a local
+
+\slide
+
+Similarly with Figure \ref{fig:11-minimum-turning-point}.
+
+\vfill
+
+We get the other part of the criterion (called \textcolor{red}{\em second derivative criterion}\index{second derivative criterion}):
+
+If \(\mathrm{d}^{2}y/\mathrm{d} x^2\) \phantom{aaaaaaa} at a stationary point, then the stationary point is a local
+
+\end{slidesonly}
 
 \begin{figure}
 
@@ -1496,12 +1651,34 @@ By a similar argument and considering the graphs below (Figure \ref{fig:11-minim
 \slide
 
 Previously, we established that the curve \(y = x^3-\frac32 x^2-18x+10\) had turning points at \(x=3\) and \(x=-2\). We are now in a position to find out what kind of turning points each of these is.
+
+\begin{notslides}
+
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.
 \]
 When \(x = 3\), \(\mathrm{d}^{2}y/\mathrm{d} x^2=15 > 0\). So we deduce that the turning point at \(x=3\) is therefore a local minimum.
 
 When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 < 0\) and so we deuce that the turning point at \(x = -2\) is therefore a local maximum.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\[
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 
+\]
+
+\begin{itemize}
+\item
+  When \(x = 3\), \(\mathrm{d}^{2}y/\mathrm{d} x^2=\)\\
+  So the turning point at \(x=3\) is a local
+\item
+  When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2=\)\\
+  So the turning point at \(x=-2\) is a local
+\end{itemize}
+
+\end{slidesonly}
 
 \slide
 
@@ -1511,17 +1688,42 @@ Note that the statement
 \]
 is often written as
 \[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.
 \]
-and similarly we can write for the other statement,
+Sometimes you can also see the notation
 \[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} = -15.
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.
+\]
+Similarly we can write for the other statement that
+\[
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.
 \]
 \slide
 
 There is a third possibility for the value of \(\mathrm{d}^{2}y/\mathrm{d} x^2\). It may be zero.
 
-When \(\mathrm{d}^{2}y/\mathrm{d} x^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure \ref{fig:09-points-of-inflection}, we can see that for the left-hand graph, the slope, \(\mathrm{d}y/\mathrm{d} x\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(\mathrm{d}^{2}y/\mathrm{d} x^2\) turns out to be zero.
+When \(\mathrm{d}^{2}y/\mathrm{d} x^2=0\), we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which.
+
+\begin{notslides}
+
+If we consider the points of inflection in Figure \ref{fig:09-points-of-inflection}, we can see that for the left-hand graph, the slope, \(\mathrm{d}y/\mathrm{d} x\) , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as \(x\) increases. This suggests a way of finding out what kind of turning point we have when \(\mathrm{d}^{2}y/\mathrm{d} x^2\) turns out to be zero.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+Consider again the points of inflection in Figure \ref{fig:09-points-of-inflection}.
+
+\vfill
+
+Consider the maximum and minimum in Figures \ref{fig:10-maximum-turning-point} \ref{fig:11-minimum-turning-point}.
+
+\vfill
+
+What can we say about the sign of the derivative near the stationary points?
+
+\end{slidesonly}
 
 \slide
 
@@ -4320,7 +4522,7 @@ Simpson's rule.
 \subsection*{Exercise 5}\label{exercise-5-3}
 \addcontentsline{toc}{subsection}{Exercise 5}
 
-Evaluate by Simpson's rule using 9 ordinates
+Evaluate by Simpson's rule using 10 strips:
 \[
 \int_0^2\frac{dx}{4+x^2}
 \]
@@ -4406,7 +4608,7 @@ Apply Simpson's rule with 8 intervals to determine the approximate distance trav
 Evaluate correct to three decimal places
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(\displaystyle\int_0^1\sqrt{x}\cos(x)\ dx\),
@@ -4433,6 +4635,19 @@ By using Simpson's rule with 8 intervals, establish the approximate value of
 \[
 \int_0^1\sqrt{4+x^4}\ dx
 \]
+
+{[}Solutions:
+1. \(1620\);
+2. \(31\,\text{kPa}\);
+3. \(0.97\%\), \(3.34\%\), \(1.3\%\);
+4. \(3.78\,\text{ms}^{-1}\);
+5. \(0.39\);
+6. \(6.62\,\text{units}^2\);
+7. \(1.19\);
+8. \(46.5\,\text{m}\);
+9. (i) \(0.529\), (ii) \(0.365\);
+10. \(2.41\);
+11. \(2.05\);{]}
 
 \chapter{Week 9}\label{week-nine}
 
@@ -4527,20 +4742,16 @@ i^2&=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\
 \subsection*{Exercise 1}\label{exercise-1-8}
 \addcontentsline{toc}{subsection}{Exercise 1}
 
-(Exam 2001/2002)
-
-Use the Simpson's rule with five ordinates to find an approximate value for
+Use the Simpson's rule with six strips to find an approximate value for
 \[
 \int_0^{\pi/4}x^2\sin(2x)\ dx,
 \]
-giving your answer correct to four decimal place
+giving your answer correct to four decimal places.
 
 \slide
 
 \subsection*{Exercise 2}\label{exercise-2-8}
 \addcontentsline{toc}{subsection}{Exercise 2}
-
-(Exam 2000/2001)
 
 By using the Simpson's rule with 8 equal intervals, determine
 \[
@@ -4553,13 +4764,16 @@ stating the answer to four decimal places.
 \subsection*{Exercise 3}\label{exercise-3-6}
 \addcontentsline{toc}{subsection}{Exercise 3}
 
-(Exam 1999/2000)
-
-Using the Simpson's rule with 5 ordinates, find an approximate value for
+Using the Simpson's rule with 6 strips, find an approximate value for
 \[
 \int_4^6\frac{12}{(x-3)(x+1)}\ dx,
 \]
 giving your answer correct to four decimal places.
+
+{[}Solutions:
+1. \(0.1426\);
+2. \(2.1230\);
+3. \(2.2874\);{]}
 
 \slide
 
@@ -4573,7 +4787,7 @@ giving your answer correct to four decimal places.
 Determine the mean and RMS values for the following functions
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(x^2-x\) from \(x=1\) to \(x=3\);
@@ -4606,7 +4820,7 @@ Determine the average value of \(y = \sin(3x) + \cos(x)\) for values of \(x\) ra
 Evaluate the mean values for
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(1/\sqrt{16-2x^2}\) from \(x=0\) to \(x2\);
@@ -4622,7 +4836,7 @@ Evaluate the mean values for
 Determine the RMS values for the following functions
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(x(2-x)\) from \(x=0\) to \(x=2\);
@@ -4639,7 +4853,7 @@ Determine the RMS values for the following functions
 \subsection*{Exercise 5}\label{exercise-5-4}
 \addcontentsline{toc}{subsection}{Exercise 5}
 
-The instantaneous voltage in an a.c.(alternating current) circuit is given by \(v = 6 + 8\cos(\omega t)\).
+The instantaneous voltage in an AC (alternating current) circuit is given by \(v = 6 + 8\cos(\omega t)\).
 Determine the RMS value for the time period \(t = 0\) to \(t = 2\pi/\omega\).
 
 \slide
@@ -4648,6 +4862,14 @@ Determine the RMS value for the time period \(t = 0\) to \(t = 2\pi/\omega\).
 \addcontentsline{toc}{subsection}{Exercise 6}
 
 An alternating current is given by \(i = a\sin(\theta)\). Determine the RMS value of the current over a half wave and show that the ratio of the RMS value to the mean value is approximately \(1.11\).
+
+{[}Solutions:
+1. (i) \(\overline{y}=2.33\), \(\overline{y}_{\text{RMS}}=2.92\), (ii) \(\overline{y}=1.5\), \(\overline{y}_{\text{RMS}}=1.64\), (iii) \(\overline{y}=1.9\), \(\overline{y}_{\text{RMS}}=2.12\), (iv) \(\overline{y}=3.9\), \(\overline{y}_{\text{RMS}}=4.02\), (v) \(\overline{y}=0.64\), \(\overline{y}_{\text{RMS}}=0.707\), (vi) \(\overline{y}=0.51\), \(\overline{y}_{\text{RMS}}=0.61\), (vii) \(\overline{y}=0.087\), \(\overline{y}_{\text{RMS}}=0.1\);
+2. \(\overline{y}=1.59\);
+3. (i) \(\overline{y}=0.277\), (ii) \(\overline{y}=0.78\);
+4. (i) \(\overline{y}_{\text{RMS}}=0.73\); (ii) \(\overline{y}_{\text{RMS}}=1.22\); (iii) \(\overline{y}_{\text{RMS}}=\sqrt{11}\); (iv) \(\overline{y}_{\text{RMS}}=82.5\);
+5. \(\overline{v}_{\text{RMS}}=8.2\);
+6. \(\overline{i}=2a/\pi\), \(\overline{i}_{\text{RMS}}=a/\sqrt{2}\), ratio \(=1.11\);{]}
 
 \chapter{Week 10}\label{week-ten}
 
@@ -4952,14 +5174,14 @@ V& = \pi\int_0^t(6t-t^2)^28t\ dt = 8\pi\int_0^2(36t^3-12t^4+t^5)\ dt\\
 Determine the positionns of the centroids of the uniform laminae represented by the following curves and indicated boundaries.
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
-  \(y=x^2\), the \(x-\)axis and \(x=0, x=2\);
+  \(y=x^2\), the \(x\)-axis and \(x=0, x=2\);
 \item
-  \(y=2x^3\), the \(x-\)axis and \(x=1, x=2\);
+  \(y=2x^3\), the \(x\)-axis and \(x=1, x=2\);
 \item
-  The portion of \(y=2x-x^2\) above the \(x-\)axis.
+  The portion of \(y=2x-x^2\) above the \(x\)-axis.
 \end{enumerate}
 
 \slide
@@ -4983,6 +5205,15 @@ Determine the position of the centroid of the figure bounded by the curve \(y = 
 
 A curve is given parametrically as \(x = at^2, y = 2at\) where \(t\) is a parameter and \(a\) is a constant. Determine the position of the centroid about the for figure bounded by the values \(t = 1\) and \(t = 2\).
 
+{[}Solutions:
+1.
+(i) \(\overline{x}=1.5\), \(\overline{y}=1.2\),
+(ii) \(\overline{x}=1.65\), \(\overline{y}=4.8\),
+(iii) \(\overline{x}=1\), \(\overline{y}=0.4\);
+2. \(\overline{x}=1.5\), \(\overline{y}=13.6\);
+3. \(\overline{x}=0.3\), \(\overline{y}=1.5\);
+4. \(\overline{x}=2.66\), \(\overline{y}=1.61\);{]}
+
 \slide
 
 \section{Sheet 20 Volumes of Revolution}\label{sheet-20-volumes-of-revolution}
@@ -4995,7 +5226,7 @@ A curve is given parametrically as \(x = at^2, y = 2at\) where \(t\) is a parame
 Determine the volume of the solid of revolution obtained by rotating the curve \(y = x^2\) about
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   The \(x-\)axis between the limits \(x = 1\) and \(x = 3\);
@@ -5018,7 +5249,7 @@ A cone is generated by rotating the line \(y = x/2\) about the \(x-\)axis from \
 Determine the volumes of revolution formed by rotating about the \(x-\)axis the areas between the curves of
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(y = x^2 - 2x\) and the \(x-\)axis;
@@ -5039,6 +5270,13 @@ Determine the volume generated when the plane figure bounded by \(y = 5\cos(2x)\
 \addcontentsline{toc}{subsection}{Exercise 5}
 
 The parametric equations of a curve are given as \(x = 6t^2, y = 2t - t^2\).Determine the volume generated when the plane figure bounded by the curve, the \(x-\)axis and the ordinates corresponding to \(t = 0\) and \(t = 2\) rotates about the \(x-\)axis
+
+{[}Solutions:
+1. \(152\);
+2. \(126\);
+3. (i) \(3.35\), (ii) \(25.4\);
+4. \(30.8\);
+5. \(40.2\);{]}
 
 \chapter{Week 11}\label{week-eleven}
 
@@ -5573,7 +5811,7 @@ From the previous example, \(\underline b \times\underline c = 3\underline i-5\u
 Two vectors \(\underline A\) and \(\underline B\) are at right angles. Find
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   the magnitude of the vector \(\underline A+\underline B\) if \(|\underline A| = 1\) and \(|\underline B| = 2\).
@@ -5635,6 +5873,11 @@ The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mi
 \caption{quadrilateral}\label{fig:67-quadrilateral}
 \end{figure}
 
+{[}Solutions:
+1. (i) \(\sqrt{5}\), (ii) \(29\);
+2. \([25.7 \angle -173^{\circ}]\);
+3. \(-323\underline{i}\,N\);{]}
+
 \slide
 
 \section{Sheet 22 Vectors II}\label{sheet-22-vectors-ii}
@@ -5663,14 +5906,14 @@ If \(\underline{OA} = 4\underline{i}+3\underline{j}, \underline{OB}=6\underline{
 \subsection*{Exercise 4}\label{exercise-4-9}
 \addcontentsline{toc}{subsection}{Exercise 4}
 
-Determine the magnitude and direction cosines of each of the vectors \(3\underline{i}+7\underline{j}-4\underline{k}, \underline{i}-5\underline{j}-8\underline{k}\) and \(6\underline{i}-2\underline{j}+12\underline{k}\) and then determine the magnitude and direction cosines of their sums.
+Determine the magnitude and direction cosines of each of the vectors \(3\underline{i}+7\underline{j}-4\underline{k}, \underline{i}-5\underline{j}-8\underline{k}\) and \(6\underline{i}-2\underline{j}+12\underline{k}\) and then determine the magnitude and direction cosines of their sum.
 
 \slide
 
 \subsection*{Exercise 5}\label{exercise-5-7}
 \addcontentsline{toc}{subsection}{Exercise 5}
 
-If \(\underline A=2\underline{i}+4\underline{j}-3\underline{k}\) and \(\underline B=\underline{i}+3\underline{j}+2\underline{k}\) establish the value of the angle between \(\underline A\) and \(\underline B\).
+If \(\underline a=2\underline{i}+4\underline{j}-3\underline{k}\) and \(\underline b=\underline{i}+3\underline{j}+2\underline{k}\) establish the value of the angle between \(\underline a\) and \(\underline b\).
 
 \slide
 
@@ -5684,7 +5927,7 @@ If \(\underline{OA}=2\underline{i}+3\underline{j}-\underline{k}\) and \(\underli
 \subsection*{Exercise 7}\label{exercise-7-2}
 \addcontentsline{toc}{subsection}{Exercise 7}
 
-Given that the position vectors describing points \(P\) and \(Q\) are \(\underline{i}+3\underline{j}-7\underline{k}\) and \(5\underline{i}-2\underline{j}+4\underline{k}\) respectively, find the vector \$\underline{PQ} and determine its direction cosines.
+Given that the position vectors describing points \(P\) and \(Q\) are \(\underline{i}+3\underline{j}-7\underline{k}\) and \(5\underline{i}-2\underline{j}-6\underline{k}\) respectively, find the vector \(\underline{PQ}\) and determine its direction cosines.
 
 \slide
 
@@ -5698,7 +5941,18 @@ If \(\vec{a}=\frac2{11}\underline{i}+p\underline{j}+\frac9{11}\underline{k}\) is
 \subsection*{Exercise 9}\label{exercise-9-1}
 \addcontentsline{toc}{subsection}{Exercise 9}
 
-Find the unit vector \(\vec{a}\) parallel to the vector \(\underline a=3\underline{i}-2\underline{j}+\underline{k}\).
+Find the unit vector \(\hat{\underline{a}}\) parallel to the vector \(\underline a=3\underline{i}-2\underline{j}+\underline{k}\).
+
+{[}Solutions:
+1. \(12\underline{i}\), \(-2\underline{i}-4\underline{j}\);
+2. \(\underline{i}-5\underline{j}\);
+3. \(2\underline{i}-5\underline{j}\), \(-4\underline{i}+\underline{j}\), \(2\underline{i}+4\underline{j}\), \(\sqrt{29}\), \(\sqrt{17}\), \(\sqrt{20}\);
+4. \(\sqrt{74}\), \(3\sqrt{10}\), \(2\sqrt{46}\), \(10\) are magnitudes;
+5. \(66.7^{\circ}\);
+6. \(120^{\circ}\);
+7. \(\underline{PQ}=4\underline{i}-5\underline{j}+\underline{k}\), direction cosines are \(4/\sqrt{42}\), \(-5/\sqrt{42}\), \(1/\sqrt{42}\);
+8. \(p=6/11\);
+9. \(|\underline{a}|=\sqrt{14}\), so \(\hat{\underline{a}}=\frac{3}{\sqrt{14}}\underline{i} - \frac{2}{\sqrt{14}}\underline{j} + \frac{1}{\sqrt{14}}\underline{k}\);{]}
 
 \slide
 
@@ -5717,7 +5971,7 @@ If \(\underline{a} = 2\underline{i} + 4\underline{j} - 3\underline{k}\) and \(\u
 Given that \(\underline{OA} = 2\underline{i} + 3\underline{j} - \underline{k}\) and \(\underline{OB} = \underline{i} - 2\underline{j} + 3\underline{k}\) determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   the scalar product \(\underline{OA}\cdot\underline{OB}\),
@@ -5735,7 +5989,7 @@ Given that \(\underline{OA} = 2\underline{i} + 3\underline{j} - \underline{k}\) 
 Determine the scalar and vector product of \(\underline{a}\) and \(\underline{b}\) when
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(\underline{a} = \underline{i} + 2\underline{j} - \underline{k}\) and \(\underline{b} = 2\underline{i} + 3\underline{j} + \underline{k}\),
@@ -5765,7 +6019,7 @@ If \(\underline{a} = 3\underline{i} - \underline{j} + 2\underline{k}\) and \(\un
 If \(\underline{a} = 5\underline{i} + 4\underline{j} + 2\underline{k}, \underline{b} = 4\underline{i} - 5\underline{j} + 3\underline{k}\) and \(\underline{c} = 2\underline{i} - \underline{j} - 2\underline{k}\) determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   the value of \(\underline{a} \cdot \underline{b}\) and the angle between the vectors \(\underline{a}\) and \(\underline{b}\),
@@ -5783,7 +6037,7 @@ If \(\underline{a} = 5\underline{i} + 4\underline{j} + 2\underline{k}, \underlin
 If position vectors \(\underline{OA}, \underline{OB}\) and \(\underline{OC}\) are given as \(2\underline{i} - \underline{j} + 3\underline{k}, 3\underline{i} + 2\underline{j} - 4\underline{k}\) and \(-\underline{i} + 2\underline{j} - 4\underline{k}\) respectively. Determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   the vector \(\underline{AB}\),
@@ -5807,7 +6061,7 @@ If position vectors \(\underline{OA}, \underline{OB}\) and \(\underline{OC}\) ar
 If \(\underline{a} = 2\underline{i} - 3\underline{j} - \underline{k}\) and \(\underline{b} = \underline{i} + 4\underline{j} - 2\underline{k}\), determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(\underline{a} \times \underline{b}\),
@@ -5822,10 +6076,10 @@ If \(\underline{a} = 2\underline{i} - 3\underline{j} - \underline{k}\) and \(\un
 \subsection*{Exercise 9}\label{exercise-9-2}
 \addcontentsline{toc}{subsection}{Exercise 9}
 
-If \(\underline{a} = 3\underline{i} - \underline{j} + 2\underline{k}, \underline{b} = 2\underline{i} + \underline{j} - \underline{k} and \underline{c} = \underline{i} - 2\underline{j} + 2\underline{k}\), determine
+If \(\underline{a} = 3\underline{i} - \underline{j} + 2\underline{k}, \underline{b} = 2\underline{i} + \underline{j} - \underline{k}\) and \(\underline{c} = \underline{i} - 2\underline{j} + 2\underline{k}\), determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \((\underline{a} \times \underline{b}) \times \underline{c}\),
@@ -5878,7 +6132,7 @@ Determine the area of the triangle having vertices at \(A=(1,3,2), B=(2, -1,1)\)
 If \(\underline{a} = 3\underline{i} + 2\underline{j} - 4\underline{k}, \underline{b} = 4\underline{i} - 3\underline{j} + 2\underline{k}\) and \(\underline{c} = 2\underline{i} - 4\underline{j} - 3\underline{k}\) determine
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\roman{enumi}.}
 \tightlist
 \item
   \(\underline{a} \cdot (\underline{b} \times \underline{c})\),
@@ -5899,7 +6153,7 @@ If \(\underline{a} = 3\underline{i} + 2\underline{j} - 4\underline{k}, \underlin
 \subsection*{Exercise 16}\label{exercise-16}
 \addcontentsline{toc}{subsection}{Exercise 16}
 
-Given that a parallelepiped has its edges represented by the vectors \(\underline{a} = 4\underline{i} - 2\underline{j} - 3\underline{k}\), \underline{b} = \underline{i} + 2\underline{j} + \underline{k}\$ and \(\underline{c} = 3\underline{i} - \underline{j} + 2\underline{k}\) determine the volume of the parallelepiped.
+Given that a parallelepiped has its edges represented by the vectors \(\underline{a} = 4\underline{i} - 2\underline{j} - 3\underline{k}\), \(\underline{b} = \underline{i} + 2\underline{j} + \underline{k}\) and \(\underline{c} = 3\underline{i} - \underline{j} + 2\underline{k}\) determine the volume of the parallelepiped.
 
 \slide
 
@@ -5907,6 +6161,22 @@ Given that a parallelepiped has its edges represented by the vectors \(\underlin
 \addcontentsline{toc}{subsection}{Exercise 17}
 
 Determine \(x\) so that the vectors \(\underline{a} = x\underline{i} - 2x\underline{j} - 3\underline{k}, \underline{b} =2 \underline{i} + \underline{j} - \underline{k}\) and \(\underline{c} = \underline{i} - \underline{j} + 14\underline{k}\) are coplanar.
+
+{[}Solutions:
+1. \(\underline{a}\cdot\underline{b}=8\), \(\underline{a}\times\underline{b} = 17\underline{i}-7\underline{j}+2\underline{k}\), angle \(67^{\circ}\);
+2. (i) \(-7\), (ii) \(7\underline{i}-7\underline{j}-7\underline{k}\), (iii) \(120^{\circ}\);
+3. (i) \(7\), \(5\underline{i}-3\underline{j}-\underline{k}\), (ii) \(8\), \(11\underline{i}+18\underline{j}-19\underline{k}\);
+4. \(118^{\circ}\);
+5. direction cosines are \(\frac{-4}{3\sqrt{20}}\), \(\frac{8}{3\sqrt{20}}\), \(\frac{10}{3\sqrt{20}}\);
+6. (i) \(6\), \(82.7^{\circ}\), (ii) \(\frac{22}{47.1}\), \(\frac{-7}{47.1}\), \(\frac{-41}{47.1}\), (iii) \(19.6^{\circ}\);
+7. (i) \(\underline{i}+3\underline{j}-7\underline{k}\), (ii) \(-4\underline{i}\), (iii) \(-2\underline{i}+17\underline{j}+7\underline{k}\), (iv) \(3\sqrt{38}\,\text{units}^2\), (v) \(3\sqrt{38}/2\,\text{units}^2\), (vi) \(\theta=97.5^{\circ}\);
+8. (i) \(10\underline{i}+3\underline{j}+11\underline{k}\), (ii) \(-10\underline{i}-3\underline{j}-11\underline{k}\), (iii) \(-20\underline{i}-6\underline{j}-22\underline{k}\);
+9. (i) \(24\underline{i}+7\underline{j}-5\underline{k}\), (ii) \(15\underline{i}+15\underline{j}-15\underline{k}\), (iii) \(-5\underline{i}+35\underline{j}+25\underline{k}\);
+13. \(a=3\);
+14. \(5.2\,\text{units}^2\);
+15. (i) \(123\), (ii) \(123\), (iii) \(123\), (iv) \(44\underline{i}-38\underline{j}+14\underline{k}\), (v) \(2\underline{i}+58\underline{j}-54\underline{k}\), (vi) \(-46\underline{i} -20\underline{j}+62\underline{k}\);
+16. \(3\,\text{units}^3\);
+17. \(-9/71\);{]}
 
 \phantomsection
 \cleardoublepage

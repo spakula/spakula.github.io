@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-02-07" />
+<meta name="date" content="2024-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -414,17 +414,24 @@
 <div id="lecture-seven" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Successive Differentiation<a href="week-three.html#lecture-seven" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The result of differentiating a function (i.e. taking the derivative of a function) is again a function. So we can differentiate again.</p>
-<p>Suppose <span class="math inline">\(y = x^3 + 2x^2\)</span>. Then
+Suppose <span class="math inline">\(y = x^3 + 2x^2\)</span>. Then
 <span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.
 \]</span>
-We may then differentiate <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> as well. This is written as
+<div style="display:none">
+<span class="math display">\[
+\frac{\mathrm{d} y}{\mathrm{d} x} =
+\]</span>
+</div>
+<p>We may then differentiate <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> as well. This is written as
 <span class="math display">\[
 \frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.
 \]</span>
 So in this case <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 = 6x+4\)</span>.</p>
-<p>This is called the <a name='#second-derivative-of-$y$'></a><span style="color: red;">second derivative of <span class="math inline">\(y\)</span></span>.
-</p>
+<div style="display:none">
+<p>So in this case <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 =\)</span></p>
+</div>
+<p>This is called the <a name='#second-derivative-of-$y$'></a><span style="color: red;">second derivative of <span class="math inline">\(y\)</span></span>.</p>
 <p>We can repeat, and differentiate <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>. This gives
 <span class="math display">\[
 \frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6
@@ -457,10 +464,24 @@ and finally
 <h3><span class="header-section-number">3.1.1</span> Rates of Change<a href="week-three.html#rates-of-change" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The derivative <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> may be considered as the rate at which <span class="math inline">\(y\)</span> changes as a result of a change in <span class="math inline">\(x\)</span>.</p>
 <p>For example, suppose that <span class="math inline">\(s=s(t)\)</span> gives the distance of a particle to the origin <span class="math inline">\(O\)</span> in metres, at a time <span class="math inline">\(t\)</span> seconds.</p>
-<p>Suppose that <span class="math inline">\(s(t) = 3t^3 + 2t\)</span>. So at time <span class="math inline">\(t = 0\text{s}\)</span>, the particle is at <span class="math inline">\(O\)</span>; at time <span class="math inline">\(t = 1\text{s}\)</span> sec, the particle is <span class="math inline">\(5\text{m}\)</span> metres away from <span class="math inline">\(O\)</span>; at time <span class="math inline">\(t = 2\text{s}\)</span>, the particle is <span class="math inline">\(28\text{m}\)</span> away from <span class="math inline">\(O\)</span>, etc.</p>
+<p>Suppose that <span class="math inline">\(s(t) = 3t^3 + 2t\)</span>. So at time <span class="math inline">\(t = 0\text{s}\)</span>, the particle is at <span class="math inline">\(O\)</span>; at time <span class="math inline">\(t = 1\text{s}\)</span>, the particle is <span class="math inline">\(5\text{m}\)</span> metres away from <span class="math inline">\(O\)</span>; at time <span class="math inline">\(t = 2\text{s}\)</span>, the particle is <span class="math inline">\(28\text{m}\)</span> away from <span class="math inline">\(O\)</span>, etc.</p>
 <p>If we differentiate <span class="math inline">\(s\)</span> with respect to <span class="math inline">\(t\)</span>, we get <span class="math inline">\(\dfrac{\mathrm{d} s}{\mathrm{d} t} = 9t^2 + 2\)</span>.</p>
-<p>This tells us that the slope of the graph of <span class="math inline">\(s\)</span> against <span class="math inline">\(t\)</span> is not constant but varies depending on the value of <span class="math inline">\(t\)</span>. So when <span class="math inline">\(t = 0\)</span>, the slope is <span class="math inline">\(2\)</span>, when <span class="math inline">\(t = 1\)</span>, the slope is <span class="math inline">\(11\)</span>, etc.
-</p>
+<p>This tells us that the slope of the graph of <span class="math inline">\(s\)</span> against <span class="math inline">\(t\)</span> is not constant but varies depending on the value of <span class="math inline">\(t\)</span>. So when <span class="math inline">\(t = 0\)</span>, the slope is <span class="math inline">\(2\)</span>, when <span class="math inline">\(t = 1\)</span>, the slope is <span class="math inline">\(11\)</span>, etc.</p>
+<div style="display:none">
+<p>The derivative <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> may be considered as the rate at which <span class="math inline">\(y\)</span> changes as a result of a change in <span class="math inline">\(x\)</span>.</p>
+<p>For example, suppose that <span class="math inline">\(s=s(t)=3t^3 + 2t\)</span> gives the distance of a particle to the origin <span class="math inline">\(O\)</span> in metres, at a time <span class="math inline">\(t\)</span> seconds. So:</p>
+<ul>
+<li>At time <span class="math inline">\(t = 0\text{s}\)</span>, the particle is at</li>
+<li>At time <span class="math inline">\(t = 1\text{s}\)</span>, the particle is</li>
+<li>At time <span class="math inline">\(t = 2\text{s}\)</span>, the particle is</li>
+</ul>
+<p>If we differentiate <span class="math inline">\(s\)</span> with respect to <span class="math inline">\(t\)</span>, we get <span class="math inline">\(\dfrac{\mathrm{d} s}{\mathrm{d} t} =\)</span></p>
+<p>The slope of <span class="math inline">\(s\)</span> against <span class="math inline">\(t\)</span> is not constant but varies with <span class="math inline">\(t\)</span>. So:</p>
+<ul>
+<li>when <span class="math inline">\(t = 0\)</span>, the slope is:</li>
+<li>when <span class="math inline">\(t = 1\)</span>, the slope is:</li>
+</ul>
+</div>
 <p><span class="math inline">\(\mathrm{d} s/\mathrm{d} t\)</span> is the rate at which <span class="math inline">\(s\)</span> changes for a change in <span class="math inline">\(t\)</span>, or the rate at which distance changes with time, so <span class="math inline">\(\mathrm{d} s/\mathrm{d} t\)</span> is the <a name='#velocity'></a><span style="color: red;">velocity</span>, <span class="math inline">\(v\)</span>, of the particle in <span class="math inline">\(\text{m}\text{s}^{-1}\)</span>.</p>
 <p>If we differentiate the velocity <span class="math inline">\(v\)</span>, we get <span class="math inline">\(\mathrm{d} v/\mathrm{d} t = 18t\)</span>. Also, since the derivative of the velocity is the second derivative of the distance, we have
 <span class="math display">\[
@@ -541,8 +562,15 @@ Figure 3.2: points of inflection
 <p>In the left hand graph on Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>, the slope is positive (strictly) between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, and likewise between <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>. At <span class="math inline">\(B\)</span> it is zero.</p>
 <p>Similarly on the right of Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>:
 the slope is negative between <span class="math inline">\(D\)</span> and <span class="math inline">\(E\)</span>, between <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span>, and zero at <span class="math inline">\(E\)</span>.</p>
-<p>The points <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> are both points of inflection.
-</p>
+<div style="display:none">
+<p>In the left hand graph on Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>:</p>
+<ul>
+<li>between <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the slope is:</li>
+<li>at <span class="math inline">\(B\)</span>, the slope is:</li>
+<li>between <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>, the slope is:</li>
+</ul>
+</div>
+<p>The points <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> are both points of inflection.</p>
 <p>We would like to be able to find out how many maxima, minima and points of inflection a curve has without having to plot the graph. We can do this by examining the derivatives of the function.</p>
 <p>Consider the curve of the function with the equation
 <span class="math display">\[
@@ -558,10 +586,30 @@ Finding when <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 0\)</span> l
 3x^2-3x-18=0.
 \tag{3.2}
 \end{equation}\]</span></p>
+<div style="display:none">
+<p>Consider the curve of the function with the equation
+<span class="math display">\[
+y = x^3-\frac 32x^2-18x+10.
+\]</span>
+We know that at a stationary point, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x=0\)</span>. So by finding <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> and setting it equal to zero, we can determine the <span class="math inline">\(x\)</span> values of the stationary points as follows:
+<span class="math display" id="eq:3-1">\[\begin{equation}
+\frac{\mathrm{d} y}{\mathrm{d} x} =\hbox to 5cm{}
+\tag{3.1}
+\end{equation}\]</span>
+Finding when <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 0\)</span> leads to the equation
+<span class="math display" id="eq:3-2">\[\begin{equation}
+\tag{3.2}
+\end{equation}\]</span></p>
+</div>
 <p>We find that the quadratic equation <a href="week-three.html#eq:3-2">(3.2)</a> has roots at <span class="math inline">\(x = 3\)</span> and <span class="math inline">\(x = -2\)</span>. So now we know that there are two turning points, one at <span class="math inline">\(x = 3\)</span> and one at <span class="math inline">\(x = -2\)</span>. We can find the <span class="math inline">\(y\)</span> coordinates of these points by substituting each <span class="math inline">\(x\)</span> value into equation <a href="week-three.html#eq:3-1">(3.1)</a>. This gives <span class="math inline">\(y = -30.5\)</span> when <span class="math inline">\(x = 3\)</span> and <span class="math inline">\(y = 32\)</span> when <span class="math inline">\(x = -2\)</span>.</p>
-<p>We now know the coordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>.
-</p>
-<p>Consider first a maximum.</p>
+<p>We now know the coordinates of the turning points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>.</p>
+<div style="display:none">
+<p>Solving the equation <a href="week-three.html#eq:3-2">(3.2)</a>:</p>
+<p>The stationary points are at:</p>
+<p>We find the corresponding <span class="math inline">\(y\)</span> values by using equation <a href="week-three.html#eq:3-1">(3.1)</a>. This yields:</p>
+<p>We now know the coordinates of the stationary points, but we do not know whether they are maxima, minima or points of inflection. We can often establish the type of turning point by considering the second derivative <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>.</p>
+</div>
+<p>Consider a maximum of some function (generally).</p>
 <!--insfig
 
 -->
@@ -576,6 +624,14 @@ Figure 3.3: maximum turning point
 <p>Now consider the gradient of graph <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span>. Graph <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> is a plot of <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> against <span class="math inline">\(x\)</span>. The gradient of this graph is given by <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>. We can see from the curve in that graph that the gradient of the curve is negative at all points. That is <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2&lt;0\)</span> for all <span class="math inline">\(x\)</span> values close to the local maximum. Therefore if <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span> is a negative number for the <span class="math inline">\(x\)</span> value of the turning point, we can be sure the turning point is a maximum.
 </p>
 <p>By a similar argument and considering the graphs below (Figure <a href="week-three.html#fig:11-minimum-turning-point">3.4</a>, we can show that for any turning point where, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2&gt;0\)</span> we have a local minimum.</p>
+<div style="display:none">
+<p>Examine Figure <a href="week-three.html#fig:10-maximum-turning-point">3.3</a>.</p>
+<p>This leads to the following criterion:</p>
+<p>If <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span> at a stationary point, then the stationary point is a local</p>
+<p>Similarly with Figure <a href="week-three.html#fig:11-minimum-turning-point">3.4</a>.</p>
+<p>We get the other part of the criterion (called <a name='#second-derivative-criterion'></a><span style="color: red;">second derivative criterion</span>):</p>
+<p>If <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span> at a stationary point, then the stationary point is a local</p>
+</div>
 <!--insfig
 
 -->
@@ -585,27 +641,49 @@ Figure 3.3: maximum turning point
 Figure 3.4: minimum turning point
 </p>
 </div>
-<p>Previously, we established that the curve <span class="math inline">\(y = x^3-\frac32 x^2-18x+10\)</span> had turning points at <span class="math inline">\(x=3\)</span> and <span class="math inline">\(x=-2\)</span>. We are now in a position to find out what kind of turning points each of these is.
-<span class="math display">\[
+<p>Previously, we established that the curve <span class="math inline">\(y = x^3-\frac32 x^2-18x+10\)</span> had turning points at <span class="math inline">\(x=3\)</span> and <span class="math inline">\(x=-2\)</span>. We are now in a position to find out what kind of turning points each of these is.</p>
+<p><span class="math display">\[
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.
 \]</span>
 When <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=15 &gt; 0\)</span>. So we deduce that the turning point at <span class="math inline">\(x=3\)</span> is therefore a local minimum.</p>
 <p>When <span class="math inline">\(x = -2\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 &lt; 0\)</span> and so we deuce that the turning point at <span class="math inline">\(x = -2\)</span> is therefore a local maximum.</p>
+<div style="display:none">
+<p><span class="math display">\[
+\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} =
+\]</span></p>
+<ul>
+<li><p>When <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=\)</span><br />
+So the turning point at <span class="math inline">\(x=3\)</span> is a local</p></li>
+<li><p>When <span class="math inline">\(x = -2\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=\)</span><br />
+So the turning point at <span class="math inline">\(x=-2\)</span> is a local</p></li>
+</ul>
+</div>
 <p>Note that the statement
 <span class="math display">\[
 \text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15
 \]</span>
 is often written as
 <span class="math display">\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.
 \]</span>
-and similarly we can write for the other statement,
+Sometimes you can also see the notation
 <span class="math display">\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} = -15.
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.
+\]</span>
+Similarly we can write for the other statement that
+<span class="math display">\[
+\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.
 \]</span>
 </p>
 <p>There is a third possibility for the value of <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>. It may be zero.</p>
-<p>When <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=0\)</span>, we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which. If we consider the points of inflection in Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>, we can see that for the left-hand graph, the slope, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as <span class="math inline">\(x\)</span> increases. This suggests a way of finding out what kind of turning point we have when <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span> turns out to be zero.</p>
+<p>When <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=0\)</span>, we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which.</p>
+<p>If we consider the points of inflection in Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>, we can see that for the left-hand graph, the slope, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> , is positive on both sides of the point of inflection. For the right hand graph the slope is negative on both sides of the point of inflection. For a maximum the slope always changes from positive to negative as x increases and for a minimum the slope always changes from negative to positive as <span class="math inline">\(x\)</span> increases. This suggests a way of finding out what kind of turning point we have when <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span> turns out to be zero.</p>
+<div style="display:none">
+<p>Consider again the points of inflection in Figure <a href="week-three.html#fig:09-points-of-inflection">3.2</a>.</p>
+<p>Consider the maximum and minimum in Figures <a href="week-three.html#fig:10-maximum-turning-point">3.3</a> <a href="week-three.html#fig:11-minimum-turning-point">3.4</a>.</p>
+<p>What can we say about the sign of the derivative near the stationary points?</p>
+</div>
 <p>We can substitute an <span class="math inline">\(x\)</span> value just smaller than the value at the turning point into our equation for <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> and find if <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> is positive or negative at this <span class="math inline">\(x\)</span> value, then we can do the same for an <span class="math inline">\(x\)</span> value just larger than the <span class="math inline">\(x\)</span> value of the turning point and again determine the sign of the outcome.</p>
 <p>Then the type of turning point can be established according to the following table:</p>
 <table>
