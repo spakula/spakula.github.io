@@ -116,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-02-14}
+\date{2024-02-18}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2982,9 +2982,9 @@ Obtain \(dy/dx\) for each function by writing it in logarithmic form
 
 \chapter{Week 5}\label{week-five}
 
-We first of all consider functions that have more than one variable e.g.~\(z = f(x,y)\) and look at differentiation with respect to either of the variables.
+We close ``differentiation'' by considering functions that have more than one variable, and differentiating with respect to either of them.
 
-We then move on to look at the opposite process to differentiation, called integration. Given the derivative of a function, can we `reconstruct' the function that gave rise to that derivative?
+We then move on to look at the opposite process to differentiation, called integration. Given the derivative of a function, can we find a function that gave rise to that derivative?
 
 \slide
 
@@ -2992,32 +2992,79 @@ We then move on to look at the opposite process to differentiation, called integ
 
 If an expression is a function of two variables then it can be differentiated with respect to either of the variables.
 
-For example, if
+For example, suppose
 \[
-z(x,y) = x^2+xy+y^2
+z(x,y) = x^2+xy+y^2.
 \]
-then we can fix, then value of the variable \(y\) and consider this as a function of the variable \(x\) only.
+If we fix the value of the variable \(y\) and consider this as a function of the variable \(x\) only.
+
+\begin{notslides}
+
+For example, if \(y=2\), then
 \[
 z(x,2) = x^2 + 2x + 4.
 \]
-It then make sense to differentiate this resultant function with respect to \(x\) to get \(dz(x,2)/dx = 2x+2\).
+We can differentiate this function with respect to \(x\) to get \(\mathrm{d}z(x,2)/\mathrm{d}x = 2x+2\).
 
-Alternatively, we can fix the value of the variable \(x\) and consider it as a function of \(y\) only.
+Similarly, we can fix the value of the variable \(x\) and consider it as a function of \(y\) only. For example if \(x=-1\), then
 \[
 z(-1,y) = 1-y+y^2.
 \]
-The derivative of this with respect to \(y\) is then \(dz(-1,y)/dy = -1+2y\).
+T
+
+\end{notslides}
+
+\begin{slidesonly}
+
+For example, if \(y=2\), then
+\[
+z(x,2) = \phantom{x^2 + 2x + 4.}
+\]
+We can differentiate this function with respect to \(x\) to get \(\mathrm{d}z(x,2)/\mathrm{d}x =\)
 
 \slide
 
-In general, if we think of \(y\) as being a fixed constant (let's not worry about the actual value) then we can differentiate \(z\) with respect to \(x\). We use the following notation
+(Recall: \(z(x,y) = x^2+xy+y^2\).)
+
+Similarly, we can fix the value of the variable \(x\) and consider it as a function of \(y\) only. For example if \(x=-1\), then
+\[
+z(-1,y) =
+\]
+The derivative of this with respect to \(y\) is then \(\mathrm{d}z(-1,y)/\mathrm{d}y =\)
+
+\slide
+
+\end{slidesonly}
+
+\begin{notslides}
+
+In general, if we think of \(y\) as being a fixed constant (not worrying about the actual value), then we can differentiate \(z\) with respect to \(x\). We use the following notation
 \[
 \frac{\partial z}{\partial x} = 2x+y.
 \]
-In the same way, thinking of \(x\) as being a fixed constant and differentiating wth respect to \(y\) we write
+In the same way, thinking of \(x\) as being a fixed constant and differentiating with respect to \(y\) we write
 \[
 \frac{\partial z}{\partial y} = x + 2y.
 \]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+(Recall: \(z(x,y) = x^2+xy+y^2\).)
+
+In general, if we think of \(y\) as being a fixed constant (not worrying about the actual value), then we can differentiate \(z\) with respect to \(x\). We use the following notation
+\[
+\frac{\partial z}{\partial x} = \phantom{2x+y.}
+\]
+In the same way, thinking of \(x\) as being a fixed constant and differentiating with respect to \(y\) we write
+\[
+\frac{\partial z}{\partial y} = \phantom{x + 2y.}
+\]
+
+\slide
+
+\end{slidesonly}
 
 Consider the expression for the volume of a cylinder, \(V = \pi r^2h\) where \(r\) is the radius of the cylinder and \(h\) is its height. (Figure \ref{fig:21-cylinder})
 
@@ -3030,12 +3077,26 @@ Consider the expression for the volume of a cylinder, \(V = \pi r^2h\) where \(r
 \caption{cylinder}\label{fig:21-cylinder}
 \end{figure}
 
+\begin{notslides}
+
 The two different ``derivatives'' are
-\begin{gather*}
-\text{treating }h\text{ as a constant } \frac{\partial V}{\partial r} = 2\pi rh\\
-\text{treating }r\text{ as a constant } \frac{\partial V}{\partial h} = \pi r^2
-\end{gather*}
+\begin{align*}
+\text{treating }h\text{ as a constant } \frac{\partial V}{\partial r} &= 2\pi rh\\
+\text{treating }r\text{ as a constant } \frac{\partial V}{\partial h} &= \pi r^2
+\end{align*}
+
+\end{notslides}
+
+\begin{slidesonly}
+
+The two different ``derivatives'' are
+\begin{align*}
+\text{treating }h\text{ as a constant } \frac{\partial V}{\partial r} &= \phantom{2\pi rh}\\
+\text{treating }r\text{ as a constant } \frac{\partial V}{\partial h} &= \phantom{\pi r^2}
+\end{align*}
 \slide
+
+\end{slidesonly}
 
 We use the symbol \(\partial\) in the derivatives above to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.
 
@@ -3074,6 +3135,7 @@ From the function \(z=3x^5-5y^3+6\), determine \(\partial z/\partial x\) and \(\
 If a second partial derivative is required and there are, say, two variables, then a second derivative may be made with each of these variables.
 
 \begin{example}
+Calculate all possible ``second partial derivatives'\,' of
 \[
 z=3x^2+2x^2y^2+3y^2.
 \]
@@ -3098,9 +3160,17 @@ So
 \]
 \end{solution}
 
+\begin{slidesonly}
+
 \slide
 
+(Recall: \(z=3x^2+2x^2y^2+3y^2\).)
+\slide
+
+\end{slidesonly}
+
 \begin{example}
+Calculate all possible ``second partial derivatives'\,' of
 \[
 z = x\cos(y)-y\cos(x)
 \]
@@ -3129,43 +3199,70 @@ So
 
 \section{Integration as the opposite of differentiation}\label{integration-as-the-opposite-of-differentiation}
 
-Given a function \(f(x)\) we are used to thinking of the \textbf{inverse function}, that is a function \(g(x)\) such that \(f(g(x)) = x\). For example if \(f(x) = x^2\) then \(g(x) = \sqrt{x}\) so that \(f(g(x)) = (\sqrt{x})^2 = x\). The inverse `undoes' what the original function does.
+Given a function \(f(x)\), we have seen the notion of the \textbf{inverse function}, that is a function \(g(x)\) such that \(f(g(x)) = x\) (or \(g(f(x))=x\); which one?). For example if \(f(x) = x^2\) (for \(x\geq0\)), then taking \(g(x) = \sqrt{x}\) (for \(x\geq0\)) indeed verifies \(f(g(x)) = (\sqrt{x})^2 = x\). The inverse `undoes' what the original function does.
 
-Integration is the converse of differentiation. That is, having been given the derivative of a function, we are asking; what was the original function that was differentiated to get that derivative?
+Integration is the ``inverse'\,' of differentiation. That is, having been given the derivative of a function, we are asking; what was the original function that was differentiated to get that derivative? (\href{https://xkcd.com/2117/}{xkcd})
 
-The symbol for integration is \(\displaystyle\int\) which is the Old English symbol for ``s''. The symbol is used to indicate that integration is a summation process. We shall see why later.
+The symbol for integration is \(\displaystyle\int\), which is the Old English symbol for ``s''. The symbol is used to indicate that integration is a summation process. We shall see why later.
 
 \slide
 
 \subsection{Integration by rule}\label{integration-by-rule}
 
-Suppose \(dy/dx = 2x\), then the instruction ``integrate the function with respect to \(x\) is written
+Suppose \(\mathrm{d}y/\mathrm{d} x = 2x\). Then the instruction ``integrate this function with respect to \(x\)'\,' is written
 \[
-\int 2x dx
+\int 2x \,\mathrm{d}x
 \]
 We know that to get
 \[
-\frac{dy}{dx} = 2x
+\frac{\mathrm{d}y}{\mathrm{d}x} = 2x
 \]
 we could have started with \(y = x^2\) so this is one possible solution.
 
+\begin{notslides}
+
 However, we could also have started with \(y = x^2 + 5\) or \(y = x^2 + 1\) or \(y = x^2 + 25\) or \(y = x^2 + 1245\).
+
+\end{notslides}
+
+\begin{slidesonly}
+
+However, we could also have started with \(y =\)
+\slide
+
+\end{slidesonly}
 
 We can't tell which because all information about the any constant value is lost when we differentiate. To make this clear we write
 \[
-\int 2x dx = x^2 + c
+\int 2x \,\mathrm{d}x = x^2 + c
 \]
-where \(c\) is called an arbitrary constant.
+where ``\(c\)'' represents an arbitrary constant.
 
 \slide
 
-A general rule for simple functions follows from the differentiation rules.
+General rules for simple functions follow from the differentiation rules:
 
-For differentiation we had if \(y = ax^n\) then \(dy/dx= anx^{n-1}\).
+For differentiation, we had that if \(y = x^n\), then \(\mathrm{d}y/\mathrm{d} x= nx^{n-1}\).
 
-For integration if \(dy/dx = ax^n\) then \(\displaystyle\int ax^n dx = y = ax^{n+1}/(n+1) + c, n \ne -1\)
+Thus for integration, if \(\mathrm{d}y/\mathrm{d}x = x^n\) then \(y=\displaystyle\int x^n \,\mathrm{d}x = \frac{x^{n+1}}{n+1} + c\), if \(n \ne -1\).
 
 After a function has been integrated, the result of integration may be checked by differentiating the answer.
+
+\slide
+
+Similarly as for derivatives, constants and \(\pm\) ``come out of the integral'':
+
+\begin{itemize}
+\tightlist
+\item
+  Summation Rule: \(\displaystyle\int(f(x)+g(x))\,\mathrm{d}x = \displaystyle\int f(x)\,\mathrm{d}x + \displaystyle\int g(x)\,\mathrm{d}x\).
+\item
+  Coefficient Rule: \(\displaystyle\int af(x)\,\mathrm{d}x = a\displaystyle\int f(x)\,\mathrm{d}x\).
+\item
+  Power Rule: \(\displaystyle\int x^n \,\mathrm{d}x = x^{n+1}/(n+1) + c\).
+\end{itemize}
+
+\slide
 
 \begin{example}
 
@@ -3175,74 +3272,76 @@ Integrate the functions
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \(y=x^3\),
+  \(y=x^3\)
 \item
-  \(y=3x^2\),
+  \(y=3x^2\)
 \item
-  \(y=6x-4\),
+  \(y=6x-4\)
 \item
-  \(y=(8x^2-4x+5)/x^4\),
+  \(y=(8x^2-4x+5)/x^4\)
 \item
-  \(y=x^{3/5}(2x-\sqrt{x})\).
+  \(y=x^{3/5}(2x-\sqrt{x})\)
 \end{enumerate}
 
 \end{example}
 
 \begin{solution}
-
-~
+\leavevmode
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \(\displaystyle\int x^3 dx = x^4/4+c\),
+  \(\displaystyle\int x^3 \,\mathrm{d}x = x^4/4+c\),
 \item
-  \(\displaystyle\int 3x^2 dx = 3x^3/3+c = x^3+c\),
+  \(\displaystyle\int 3x^2 \,\mathrm{d}x = 3x^3/3+c = x^3+c\),
 \item
-  \(\displaystyle\int(6x-4)dx = \displaystyle\int 6x dx - \displaystyle\int 4dx = 6x^2/2-4x+c = 3x^2-4x+c\),
+  \(\displaystyle\int(6x-4)\,\mathrm{d}x = \displaystyle\int 6x \,\mathrm{d}x - \displaystyle\int 4\,\mathrm{d}x = 6x^2/2-4x+c = 3x^2-4x+c\),
 \item
   \(y=(8x^2-4x+5)/x^4 = 8/x^2-4/x^3+5/x^4 = 8x^{-2}-4x^{-3}+5x^{-4}\) and so
   \begin{align*}
-  \int y dx& = \int 8x^{-2}dx\int -4x^{-3}dx+\int5x^{-4}dx = \frac{8x^{-1}}{-1}-\frac{4x^{-2}}{-2}+\frac{5x^{-3}}{-3}+C\\
+  \int y \,\mathrm{d}x& = \int 8x^{-2}\,\mathrm{d}x\int -4x^{-3}\,\mathrm{d}x+\int5x^{-4}\,\mathrm{d}x = \frac{8x^{-1}}{-1}-\frac{4x^{-2}}{-2}+\frac{5x^{-3}}{-3}+C\\
   &=\frac{-1}{8x}+\frac{2}{x^2}-\frac{5}{3x^3} = \frac{-3x^2+48x-40}{24x^3} + C,
   \end{align*}
 \item
   \(y = x^{3/5}(2x-\sqrt{x}) = 2x^{8/5}-x^{11/10}\) and so
   \[
-  \int y dx = \int 2x^{8/5}dx-\int x^{11/10}dx = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.
+  \int y \,\mathrm{d}x = \int 2x^{8/5}\,\mathrm{d}x-\int x^{11/10}\,\mathrm{d}x = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.
   \]
 \end{enumerate}
 
 \end{solution}
 
-Note that when a sum of several terms is integrated, as in example (3), the result is the sum of the integrals of each of the separate terms. In fact we have the following rules.
-
-\begin{itemize}
-\tightlist
-\item
-  Summation Rule: \(\displaystyle\int(f(x)+g(x))dx = \displaystyle\int f(x)dx + \displaystyle\int g(x)dx\).
-\item
-  Coefficient Rule: \(\displaystyle\int af(x)dx = a\displaystyle\int f(x)dx\).
-\item
-  Power Rule: \(\displaystyle\int x^n dx = x^{n+1}/(n+1) + c\).
-\end{itemize}
+\begin{slidesonly}
 
 \slide
 
+(Recall: 4. \(y=(8x^2-4x+5)/x^4\))
+
+\slide
+
+(Recall: 5. \(y=x^{3/5}(2x-\sqrt{x})\))
+\slide
+
+\end{slidesonly}
+
 \section{Indefinite Integration}\label{indefinite-integration}
 
-The result of an integration which has the arbitrary constant stated as \(c\) (as for the examples above) is called an \textcolor{red}{\em indefinite integration}\index{indefinite integration} because it does not tell us which of an infinite number of possible curves we are dealing with. If we want to know the value of \(c\) we need more information such as a pair of co-ordinates through which our particular curve passes. Such additional information is called a \textcolor{red}{\em boundary condition}\index{boundary condition}.
+The result of an integration which has the arbitrary constant (we used letter \(c\) in the examples above) is called an \textcolor{red}{\em indefinite integration}\index{indefinite integration}, because it does not tell us which of an infinite number of possible functions is the ``correct'' one -- they are all ``correct'' answers to the question
+of finding a function which differentiates to the given one.
+
+To determine the value of \(c\), we need more information, such as a pair of co-ordinates through which our particular solution (curve) passes. Such additional information is called a \textcolor{red}{\em boundary condition}\index{boundary condition}.
 
 \slide
 
 \begin{example}
-Find \(y\), the integral of \(4x + 5\) and evaluate the arbitrary constant given that the boundary condition is: When \(x = 1, y = 3\).
+Find \(y\), the integral of \(4x + 5\), with the correct constant, given that the boundary condition is:
+When \(x = 1, y = 3\).
 \end{example}
 
 \begin{solution}
 \[
-y = \int(4x+5)dx = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c
+y = \int(4x+5)\,\mathrm{d}x = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c
 \]
 Now we use the condition that when \(x=1\) then \(y=3\) so that
 \[
@@ -3257,12 +3356,13 @@ y = 2x^2+5x-4.
 \slide
 
 \begin{example}
-Find \(y\), the integral of \(3\sqrt{x} - 2/x^2\) and evaluate the arbitrary constant given that the boundary condition is: When \(x = 1, y = 4\).
+Find \(y\), the integral of \(3\sqrt{x} - 2/x^2\), with the correct constant, given thatthe boundary condition is:
+When \(x = 1, y = 4\).
 \end{example}
 
 \begin{solution}
 \begin{align*}
-y& = \int(3\sqrt{x}-2/x^2)dx = 3\int x^{1/2}dx - 2\int x^{-2}dx\\
+y& = \int(3\sqrt{x}-2/x^2)\,\mathrm{d}x = 3\int x^{1/2}\,\mathrm{d}x - 2\int x^{-2}\,\mathrm{d}x\\
 &= \frac{3x^{3/2}}{3/2} - \frac{2x^{-1}}{-1}+C = 2x^{3/2}+\frac2x+C.
 \end{align*}
 Now the boundary condition tells us that when \(x=1, y = 4\) and so \(4=2\times1^{3/2}+2/1+C = 2+2+C\). Hence \(C=0\) and so
@@ -3275,29 +3375,33 @@ y = 2x^{3/2}+\frac 2x.
 
 \subsection{Standard integrals}\label{standard-integrals}
 
-For differentiation we had some standard derivatives which could be quoted without explanation. The same is true for integration. A list is given below.
+For differentiation we had some standard derivatives which are used without explanation. The same is true for integration. A list is given below.
 
-\begin{tabular}{l|l}
-\hline
-derivative & integral\\
-\hline
-$\frac{d}{dx}(x^n)=nx^{n-1}$ & $\displaystyle\int x^ndx = \frac{x^{n+1}}{n+1}+c, n\ne -1$\\
-\hline
-$\frac{d}{dx}(\ln(x)) = \frac 1x$ & $\displaystyle\int\frac{1}{x}dx = \ln(x)+c, x>0$\\
-\hline
-$\frac{d}{dx}(e^x)dx = e^x$ & $\displaystyle\int e^x dx = e^x + c$\\
-\hline
-$\frac{d}{dx}(e^{kx})dx = ke^{kx}$ & $\displaystyle\int e^{kx} dx = \frac{e^{kx}}{k} + c$\\
-\hline
-$\frac{d}{dx}(a^x)dx = a^x\ln(a)$ & $\displaystyle\int a^x dx = \frac{a^x}{\ln(a)} + c$\\
-\hline
-$\frac{d}{dx}(\sin(x))dx=\cos(x)$ & $\displaystyle\int \sin(x)dx=-\cos(x)+c$\\
-\hline
-$\frac{d}{dx}(\cos(x))dx=-\sin(x)$ & $\displaystyle\int \cos(x)dx=\sin(x)+c$\\
-\hline
-$\frac{d}{dx}(\tan(x))dx=\sec^2(x)$ & $\displaystyle\int \sec^2(x)dx=\tan(x)+c$\\
-\hline
-\end{tabular}
+\slide
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+derivative
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+integral
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(x^n)=nx^{n-1}\) & \(\displaystyle\int x^n\,\mathrm{d}x = \frac{x^{n+1}}{n+1}+c, n\ne -1\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\ln(x)) = \frac 1x\) & \(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln(                     | x | )+c, x\neq0\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^x)\,\mathrm{d}x = e^x\) & \(\displaystyle\int e^x \,\mathrm{d}x = e^x + c\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^{kx})\,\mathrm{d}x = ke^{kx}\) & \(\displaystyle\int e^{kx} \,\mathrm{d}x = \frac{e^{kx}}{k} + c\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(a^x)\,\mathrm{d}x = a^x\ln(a)\) & \(\displaystyle\int a^x \,\mathrm{d}x = \frac{a^x}{\ln(a)} + c\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\sin(x))\,\mathrm{d}x=\cos(x)\) & \(\displaystyle\int \sin(x)\,\mathrm{d}x=-\cos(x)+c\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\cos(x))\,\mathrm{d}x=-\sin(x)\) & \(\displaystyle\int \cos(x)\,\mathrm{d}x=\sin(x)+c\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\tan(x))\,\mathrm{d}x=\sec^2(x)\) & \(\displaystyle\int \sec^2(x)\,\mathrm{d}x=\tan(x)+c\) \\
+\end{longtable}
+
 \slide
 
 \begin{example}
@@ -3307,27 +3411,41 @@ $\frac{d}{dx}(\tan(x))dx=\sec^2(x)$ & $\displaystyle\int \sec^2(x)dx=\tan(x)+c$\
 \begin{solution}
 Notice that
 \[
-\frac{d}{dx}\sin(2x) = 2\cos(2x)
+\frac{\mathrm{d}}{\mathrm{d}x}\sin(2x) = 2\cos(2x)
 \]
 and so
 \[
-\int\cos(2x)\ dx = \frac12\sin(2x).
-\]
-In general if
-\[
-\int f(x)\ dx = g(x)\text{ then }\int f(kx)\ dx = \frac1kg(kx). 
+\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+c.
 \]
 \end{solution}
 
+\begin{notslides}
+
+This works in general: if
+\[
+\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \frac1kg(kx) + c.
+\]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+This works in general: if
+\[
+\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \phantom{\frac1kg(kx) + c.}
+\]
 \slide
 
+\end{slidesonly}
+
 \begin{example}
-Find \(y\), the integral of \(2\sin(x) - \sec^2(x)+1/\pi\) and evaluate the arbitrary constant given that the boundary condition is: when \(x = \pi/4, y = 0\).
+Find \(y\), the integral of \(2\sin(x) - \sec^2(x)+1/\pi\), with the correct constant, given that the boundary condition is:
+When \(x = \pi/4, y = 0\).
 \end{example}
 
 \begin{solution}
 \begin{align*}
-y& = \int(2\sin(x) - \sec^2(x)+\frac1{\pi})dx = 2\int \sin(x)dx - \int \sec^2(x)dx + \frac{1}{\pi}\int 1dx\\
+y& = \int(2\sin(x) - \sec^2(x)+\frac1{\pi})\,\mathrm{d}x = 2\int \sin(x)\,\mathrm{d}x - \int \sec^2(x)\,\mathrm{d}x + \frac{1}{\pi}\int 1\,\mathrm{d}x\\
 &= -2\cos(x)-\tan(x)+\frac{x}{\pi}+C
 \end{align*}
 Now the boundary condition tells us that when \(x=\pi/4, y = 0\) and so \(0=-2\cos(\pi/4)-\tan(\pi/4)+\pi/(4\pi)+C = -\sqrt{2}-1+1/4+C\). Hence \(C=\sqrt{2}+3/4\) and so
@@ -3339,7 +3457,7 @@ y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.
 \slide
 
 \begin{example}
-Calculate \(\displaystyle\int\sin^2(x)\ dx\).
+Calculate \(\displaystyle\int\sin^2(x)\,\mathrm{d}x\).
 \end{example}
 
 \begin{solution}
@@ -3349,16 +3467,16 @@ This is not one of our standard integrals so at first sight it would appear we c
 \]
 Hence
 \[
-\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\ dx = \frac12\int(1-\cos(2x))\ dx
+\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x
 \]
-Now by Example \ref{exm:cos-example} we know that \(\displaystyle\int\cos(2x)\ dx = \frac12\sin(2x)+C\).
+Now by Example \ref{exm:cos-example} we know that \(\displaystyle\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+C\).
 Hence
 \[
-\int\sin^2(x)\ dx = \frac12\int(1-\cos(2x))\ dx = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.
+\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.
 \]
-Notice that we can check we are correct by differentiation:
+Note that we can check we are correct by differentiation:
 \[
-\frac{d}{dx}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).
+\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).
 \]
 \end{solution}
 
