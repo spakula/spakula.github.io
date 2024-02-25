@@ -116,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-02-18}
+\date{2024-02-25}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2025,7 +2025,7 @@ For each of the functions given below determine the \(x\) and \(y\) coordinates 
 \textbf{3.} minimum at \((0.5,-12.25)\), passes through \((0,-12), (-3,0), (4,0)\);
 \textbf{4.} maximum at \((1,9)\), minimum at \((2,8)\), point of inflection at \((1.5,8.5)\), passes through \((0,4), (-0.274,0)\);
 \textbf{5.} minimum at \((0,-1)\), maximum at \((-4/3,5/27)\), point of inflection at \((-2/3,-11/27)\), passes through \((0,-1), (-1.618,0), (-1,0), (0.618,0)\);
-\textbf{6.} local maximum at \((-5,103)\), minimum at \((1,-5)\), point of inflection at \((-2,49)\), passes through \((0,3), -7.937,0), (0.22,0), (1.717,0)\);
+\textbf{6.} local maximum at \((-5,103)\), minimum at \((1,-5)\), point of inflection at \((-2,49)\), passes through \((0,3), (-7.937,0), (0.22,0), (1.717,0)\);
 \textbf{7.} maximum at \((2,13)\), minimum at \((4,9)\), point of inflection at \((3,11)\), passes through \((0,-7), (0.331,0)\);
 \textbf{8.} maximum at \((0,0)\), minimum at \((-2,-16)\), minimum at \((2,-16)\), points of inflection at \((-\sqrt{4/3},-80/9)\) and \((\sqrt{4/3},-80/9)\), passes through \((0,0), (-2\sqrt{2},0), (2\sqrt{2},0)\);{]}
 
@@ -2697,7 +2697,7 @@ When \(x=0.2\) then
 \]
 So
 \[
-\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=-0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069
+\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069
 \]
 and
 \[
@@ -3613,122 +3613,147 @@ Integrate the following functions with respect to the variable
 
 \chapter{Week 6}\label{week-six}
 
-We continue our study of integration by looking at two very important techniques to calculate the integral of certain functions that are difficult to integrate by other means - integration by substitution and integration by parts.
+We continue our study of integration by looking at two very important techniques to calculate integrals: integration by substitution and integration by parts.
 
 \slide
 
 \section{Integration by Substitution}\label{integration-by-substitution}
 
-So far we have learnt to integrate simple functions such as \(x^2 + 2x + 3\) and standard integrals such as \(\sin(x), e^x\) etc. If we want to integrate more complicated functions, more advanced techniques will be needed. One very useful method is \textcolor{red}{\em integration by substitution}\index{integration by substitution}. Consider
-\[
-\int x\sqrt{x^2+1} dx.\tag{1}
-\]
-We cannot integrate this directly, and if we try making a binomial expansion of the part under the square root sign and then multiplying by \(x\), we will only get an approximate answer. However, if we make a substitution, we can make the integral look like something we can integrate.
+So far we have learnt to integrate ``sums of powers'' functions such as \(x^2 + 2x + 3\) and standard integrals such as \(\sin(x), e^x\) etc. A useful method for more complicated functions is \textcolor{red}{\em integration by substitution}\index{integration by substitution}. Consider
+\begin{equation}
+\int x\sqrt{x^2+1} \,\mathrm{d}x.
+\label{eq:6-1}
+\end{equation}
+We cannot integrate this directly. If we try making a binomial expansion of the part under the square root sign and then multiplying by \(x\), we will only get an approximate answer. However, we can make a ``substitution'':
 
-Let \(u = x^2+ 1\) then (1) becomes
-\[
-\int x\sqrt{u} dx=\int xu^{1/2} dx.\tag{2}
-\]
-So far, this doesn't look much better, but if we now try to integrate with respect to \(u\) instead of \(x\), we will find the substitution has helped. Before we can integrate with respect to \(u\), we must replace \(dx\) with \(du\).
+\slide
 
-If \(u = x^2+ 1\), then \(du/dx = 2x\) and so \(du = 2x dx\) or \(du/2 = xdx\).
-If we substitute for \(dx\) in (2) we get
-\[
-\int u^{1/2}xdx = \int\frac12u^{1/2}du.
-\]
+Let \(u = x^2+ 1\). Then \eqref{eq:6-1} becomes
+\begin{equation}
+\int x\sqrt{u}\,\mathrm{d}x=\int xu^{1/2}\,\mathrm{d}x.
+\label{eq:6-2}
+\end{equation}
+To get further, we need to replace all the ``\(x\)'' in the integral by ``\(u\)'' somehow; especially \(\mathrm{d}x\) by \(\mathrm{d}u\).
+
+Here is where Leibniz notation for the derivative is ``telling''.
+If \(u = x^2+ 1\), then \(\mathrm{d}u/\mathrm{d}x = 2x\), ``and so'' \(\mathrm{d}u = 2x\,\mathrm{d}x\), or \(\mathrm{d}u/2 = x\,\mathrm{d}x\).
+
+If we use this in \eqref{eq:6-2}, we get
+\begin{equation}
+\int u^{1/2}x\,\mathrm{d}x = \int\frac12u^{1/2}\,\mathrm{d}u.
+\label{eq:6-3}
+\end{equation}
+(Note: It is convenient to work with \(\mathrm{d}u\) and \(\mathrm{d}x\) like above, and you should continue to do so; however the fact that \eqref{eq:6-3} works is really a Theorem.)
+
+\slide
+
 Now our function is expressed entirely in terms of \(u\) and we can integrate with respect to \(u\) to give
+
+\begin{notslides}
+
 \[
-\int\frac12u^{1/2}du = \frac 12\frac23u^{3/2}+c = \frac13u^{3/2}+c.
+\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.
 \]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\[
+\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}
+\]
+
+\end{slidesonly}
+
 Finally we can substitute for \(u\) to give the answer in terms of \(x\)
+
+\begin{notslides}
+
 \[
 \frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.
 \]
+
+\end{notslides}
+
 \slide
 
-\cpybx
-
 \begin{example}
-Evaluate \(\displaystyle\int\sin^2(x)\cos(x)dx\).
+Evaluate \(\displaystyle\int\sin^2(x)\cos(x)\mathrm{d}x\).
 \end{example}
 
-\ecpybx\slide\copy\copybox
-
 \begin{solution}
-Let \(u = \sin(x)\) so that \(du/dx = \cos(x)\). Then \(dx = du/\cos(x)\) and so
+Let \(u = \sin(x)\) so that \(\mathrm{d}u/\mathrm{d}x = \cos(x)\). Then \(\mathrm{d}x = \mathrm{d}u/\cos(x)\) and so
 \[
-\int\sin^2(x)\cos(x)dx = \int u^2du = \frac 13u^3+c.
+\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.
 \]
 Hence
 \[
-\int\sin^2(x)\cos(x)dx = \frac 13\sin^3(x) + c.
+\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.
 \]
 \end{solution}
 
 \slide
 
-There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the derivative of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the derivative of the denominator.
+This ``by substitution'' method is helpful in many cases. The ``pattern'' is this: usually we are looking for a part of the integrated expression such that the derivative of this part of the expression appears as a factor in the expression.
+
+One way this can happen is that the numerator in a fraction is the derivative of the denominator, as in the following Example.
 
 \cpybx
 
 \begin{example}
 Find
 \[
-\int\frac{3x^2}{x^3-4}dx.
+\int\frac{3x^2}{x^3-4}\mathrm{d}x.
 \]
 \end{example}
 
 \ecpybx\slide\copy\copybox
 
 \begin{solution}
-Let \(u = x^3-4\) so that \(du = 3x^2dx\). Then
+Let \(u = x^3-4\) so that \(\mathrm{d}u = 3x^2\mathrm{d}x\). Then
 \[
-\int\frac{3x^2}{x^3-4}dx = \int \frac{du}{u} = \ln|u|+c = \ln|x^3-4|+c.
+\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.
 \]
 \end{solution}
 
-For integrals of this class, the result is always the natural log of the denominator.
+(For integrals of this class of examples, the result is always the natural log of the denominator.)
 \slide
 
-\subsection{Trig substitutions}\label{trig-substitutions}
+\subsection{Trigonometric integrals and substitutions}\label{trigonometric-integrals-and-substitutions}
 
-Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practise.
+Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practice.
 
 \begin{example}
 Find
 \[
-\int\sin^2(x) dx.
+\int\sin^2(x) \mathrm{d}x.
 \]
 \end{example}
 
 \begin{solution}
 Using the trig identity for \(\cos(2x)\) we see that \(\sin^2(x) = (1-\cos(2x))/2\). So
 \[
-\int\sin^2(x) dx = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
+\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
 \]
 \end{solution}
 
 \slide
 
-\cpybx
-
 \begin{example}
 Find
 \[
-\int\frac{dx}{\sqrt{a^2-x^2}}.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.
 \]
 \end{example}
 
-\ecpybx\slide\copy\copybox
-
 \begin{solution}
-Let \(x = a\sin(\theta)\) then \(dx = a\cos(\theta)d\theta\). So \(x^2 = a^2\sin^2(\theta)\) and \(\theta = \sin^{-1}(x/a)\). Hence
+Let \(x = a\sin(\theta)\) then \(\mathrm{d}x = a\cos(\theta)d\theta\). So \(x^2 = a^2\sin^2(\theta)\) and \(\theta = \sin^{-1}(x/a)\). Hence
 \[
-\int\frac{dx}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
 \]
 Hence
 \[
-\int\frac{dx}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
 \]
 \end{solution}
 
@@ -3736,71 +3761,76 @@ Hence
 
 \section{Integration by Parts}\label{integration-by-parts}
 
-To integrate a product of two terms where one half is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product
+To integrate a product of two terms where one part is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product.
 
 If \(y = uv\), where \(u\) and \(v\) are both functions of \(x\) then,
-\[
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}\tag{1}
-\]
-If we integrate both sides of equation (1) with respect to \(x\) then we have
-\[
-\int\frac{dy}{dx}dx = \int u\frac{dv}{dx}dx + \int v\frac{du}{dx}dx\tag{2}
-\]
+\begin{equation}
+\frac{\mathrm{d}y}{\mathrm{d}x} = u\cdot\frac{\mathrm{d}v}{\mathrm{d}x} + v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}
+\label{eq:6-4}
+\end{equation}
+If we integrate both sides of equation \eqref{eq:6-4} with respect to \(x\) then we have
+\begin{equation}
+\int\frac{\mathrm{d}y}{\mathrm{d}x}\,\mathrm{d}x = \int u\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x + \int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\label{eq:6-5}
+\end{equation}
 Now the integral of the left-hand side is given by
-\[
-\int\frac{dy}{dx}dx = \int dy = y
-\]
+\begin{equation}
+\int\frac{\mathrm{d}y}{\mathrm{d}x}\,\mathrm{d}x = y
+\label{eq:6-6}
+\end{equation}
 and \(y = uv\) so
-\[
-uv =\int u\frac{dv}{dx}dx +\int v\frac{du}{dx}dx\tag{3}
-\]
+\begin{equation}
+uv =\int u\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x +\int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\label{eq:6-7}
+\end{equation}
 and therefore, rearranging gives us
-\[
-\int u\frac{dv}{dx}dx = uv -\int v\frac{du}{dx}dx\tag{4}
-\]
-Equation (4) is the formula for \textcolor{red}{\em integration by parts}\index{integration by parts} and can be used to integrate some types of
+\begin{equation}
+\int u\cdot \frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x = uv -\int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\label{eq:6-8}
+\end{equation}
+Equation \eqref{eq:6-8} is the formula for \textcolor{red}{\em integration by parts}\index{integration by parts} and can be used to integrate some types of
 product.
 
 \slide
 
 \begin{example}
-Find \(\displaystyle\int x^3\ln(x)dx\)
+Find \(\displaystyle\int x^3\ln(x)\mathrm{d}x\)
 \end{example}
 
 \begin{solution}
 This is a product but one half is not the derivative of the other, so integration by parts must be used.
 
-First choose one part of the product and let it be \(u\), then the other half is \(dv/dx\).
+First choose one part of the product and let it be \(u\), then the other half is \(\mathrm{d}v/\mathrm{d}x\).
 
-So, let \(u = \ln(x)\) and \(dv/dx = x^3\). Then \(du/dx = 1/x\) and \(v=\displaystyle\int x^3dx = x^4/4\).
+So, let \(u = \ln(x)\) and \(\mathrm{d}v/\mathrm{d}x = x^3\). Then \(\mathrm{d}u/\mathrm{d}x = 1/x\) and \(v=\displaystyle\int x^3\mathrm{d}x = x^4/4\).
 
-Then substituting for \(u, du/dx, v\) and \(dv/dx\) in equation (4) we get
+Then substituting for \(u, \mathrm{d}u/\mathrm{d}x, v\) and \(\mathrm{d}v/\mathrm{d}x\) in equation (4) we get
 \begin{align*}
-\int u\frac{dv}{dx}dx& = uv-\int v\frac{du}{dx}dx\\
-\int x^3\ln(x)dx& = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)dx\\
-&=\left(\frac{x^4}{4}\ln(x)\right)-\int\frac{x^3}{4}dx = \left(\frac{x^4}{4}\ln(x)\right) - \left(\frac{x^4}{16}\right)+c\\
-\int x^3\ln(x)dx& = \frac{x^4}{4}\left(\ln(x)-\frac14\right)+c.
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int x^3\ln(x)\mathrm{d}x& = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)\mathrm{d}x\\
+&=\left(\frac{x^4}{4}\ln(x)\right)-\int\frac{x^3}{4}\mathrm{d}x = \left(\frac{x^4}{4}\ln(x)\right) - \left(\frac{x^4}{16}\right)+c\\
+\int x^3\ln(x)\mathrm{d}x& = \frac{x^4}{4}\left(\ln(x)-\frac14\right)+c.
 \end{align*}
 \end{solution}
 
 \slide
 
-By choosing the terms we did for \(u\) and \(dv/dx\), the formula helped us simplify what had to be integrated. We could have chosen \(u\) as \(x^3\) and \(dv/dx\) as \(\ln(x)\), but if we had, we would have found that after substituting our terms into the formula, the integral was no more simple that before.
+By choosing the terms we did for \(u\) and \(\mathrm{d}v/\mathrm{d}x\), the formula helped us simplify what had to be integrated. We could have chosen \(u\) as \(x^3\) and \(\mathrm{d}v/\mathrm{d}x\) as \(\ln(x)\), but if we had, we would have found that after substituting our terms into the formula, the integral was no more simple that before.
 
 Knowing which term to choose for which part of the formula is on the whole a question of practice.
 
 \slide
 
 \begin{example}
-Find \(\displaystyle\int xe^{-x}dx\)
+Find \(\displaystyle\int xe^{-x}\mathrm{d}x\)
 \end{example}
 
 \begin{solution}
-Let \(u = x\) and \(dv/dx=e^{-x}\) so that \(du/dx = 1\) and \(v=\displaystyle\int e^{-x}dx = -e^{-x}\). So using integration by parts
+Let \(u = x\) and \(\mathrm{d}v/\mathrm{d}x=e^{-x}\) so that \(\mathrm{d}u/\mathrm{d}x = 1\) and \(v=\displaystyle\int e^{-x}\mathrm{d}x = -e^{-x}\). So using integration by parts
 \begin{align*}
-\int u\frac{dv}{dx}dx& = uv-\int v\frac{du}{dx}dx\\
-\int xe^{-x}dx&=x(-e^{-x})-\int-e^{-x}dx\\
-&=-xe^{-x}+\int e^{-x}dx\\
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int xe^{-x}\mathrm{d}x&=x(-e^{-x})-\int-e^{-x}\mathrm{d}x\\
+&=-xe^{-x}+\int e^{-x}\mathrm{d}x\\
 &=-xe^{-x}-e^{-x}+c.
 \end{align*}
 \end{solution}
@@ -3808,17 +3838,17 @@ Let \(u = x\) and \(dv/dx=e^{-x}\) so that \(du/dx = 1\) and \(v=\displaystyle\i
 \slide
 
 \begin{example}
-Find \(\displaystyle\int \ln(x)dx\)
+Find \(\displaystyle\int \ln(x)\mathrm{d}x\)
 \end{example}
 
 \begin{solution}
-At first sight this doesn't look as if integration by parts will be useful as it doesn't seem to involve a product. However we can think of it as \(\displaystyle\int 1\times\ln(x)dx\).
+At first sight this doesn't look as if integration by parts will be useful as it doesn't seem to involve a product. However we can think of it as \(\displaystyle\int 1\times\ln(x)\mathrm{d}x\).
 
-Let \(u = \ln(x)\) and \(dv/dx = 1\) then \(du/dx = 1/x\) and \(v = x\). hence using integration by parts we see that
+Let \(u = \ln(x)\) and \(\mathrm{d}v/\mathrm{d}x = 1\) then \(\mathrm{d}u/\mathrm{d}x = 1/x\) and \(v = x\). hence using integration by parts we see that
 \begin{align*}
-\int u\frac{dv}{dx}dx& = uv-\int v\frac{du}{dx}dx\\
-\int\ln(x)dx&=x\ln(x)-\int x\times\frac 1x dx\\
-&=x\ln(x)-\int 1dx\\
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int\ln(x)\mathrm{d}x&=x\ln(x)-\int x\times\frac 1x \mathrm{d}x\\
+&=x\ln(x)-\int 1\mathrm{d}x\\
 &=x\ln(x)-x + c.
 \end{align*}
 \end{solution}
@@ -3828,30 +3858,30 @@ Let \(u = \ln(x)\) and \(dv/dx = 1\) then \(du/dx = 1/x\) and \(v = x\). hence u
 Sometimes it is necessary to apply the formula twice (or more).
 
 \begin{example}
-Find \(\displaystyle\int x^2\sin(2x)dx\)
+Find \(\displaystyle\int x^2\sin(2x)\mathrm{d}x\)
 \end{example}
 
 \begin{solution}
-Let \(u = x^2\) and let \(dv/dx = \sin(2x)\). Then \(du/dx = 2x\) and \(v = \displaystyle\int \sin(2x)dx = -\cos(2x)/2\).
+Let \(u = x^2\) and let \(\mathrm{d}v/\mathrm{d}x = \sin(2x)\). Then \(\mathrm{d}u/\mathrm{d}x = 2x\) and \(v = \displaystyle\int \sin(2x)\mathrm{d}x = -\cos(2x)/2\).
 
 Using integration by parts.
 \begin{align*}
-\int u\frac{dv}{dx}dx& = uv-\int v\frac{du}{dx}dx\\
-\int x^2\sin(2x)dx&=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)dx\\
-&=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)dx\tag{5}
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int x^2\sin(2x)\mathrm{d}x&=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)\mathrm{d}x\\
+&=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x\tag{5}
 \end{align*}
 
 We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-
 
 \slide
 
-We have \(\displaystyle\int x\cos(2x)dx\). Let \(u=x\) and \(dv/dx = \cos(2x)\). Then \(du/dx = 1\) and \(v=\sin(2x)/2\).
+We have \(\displaystyle\int x\cos(2x)\mathrm{d}x\). Let \(u=x\) and \(\mathrm{d}v/\mathrm{d}x = \cos(2x)\). Then \(\mathrm{d}u/\mathrm{d}x = 1\) and \(v=\sin(2x)/2\).
 \[
-\int x\cos(2x)dx = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1dx = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
+\int x\cos(2x)\mathrm{d}x = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
 \]
 Now substituting (6) into (5) we can obtain the answer to the original integral
 \[
-\int x^2\sin(2x)dx = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
+\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
 \]
 \end{solution}
 
@@ -4033,25 +4063,31 @@ Integrate the following integrals using integration by parts
 
 \chapter{Week 7}\label{week-seven}
 
-We finish our study of indefinite integrals by looking at integration by converting functions using partial fractions. We then consider definite integrals and their connection to areas under curves.
+We our study of indefinite integrals by looking at integration by converting functions using partial fractions. We then consider definite integrals and their connection to areas under curves.
 \slide
 
 \section{Integration using partial fractions}\label{integration-using-partial-fractions}
 
 Consider the integral
 \[
-\int\frac{x}{(x-1)(x-2)}dx
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x
 \]
-This is not a standard integral. Also, if we multiply out the denominator we get \(x^2 - 3x + 2\). The derivative of this denominator is \(2x - 3\). Clearly the numerator is not the derivative of the denominator and so making a substitution won't help us to integrate. However, if we split the quotient into its partial fractions, we may be able to integrate these.
+This is not a ``standard'' integral. Also, if we multiply out the denominator we get \(x^2 - 3x + 2\). The derivative of this denominator is \(2x - 3\). The numerator is thus not the derivative of the denominator, and so making a substitution won't help us to integrate.
 
-We know that
+The method to apply is to split the fraction into partial fractions.
+
+From semester 1, we know we can do this:
+
+\begin{notslides}
+
 \[
-\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}
+\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.
 \]
-and hence
+We calculate:
 \[
 x = A(x-2)+B(x-1)
 \]
+
 Let \(x=2\), so that \(2=A\times0+B\times1\) i.e.~\(B=2\).
 
 Let \(x=1\), so that \(1=A\times-1+B\times0\) i.e.~\(A=-1\).
@@ -4062,16 +4098,45 @@ So
 \]
 and thus
 \[
-\int\frac{x}{(x-1)(x-2)}dx = \int\frac {-1}{x-1}dx+\int\frac 2{x-2}dx
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x
 \]
-Now the integrals can be arranged so that the numerator of each is the derivative of the denominator
+which we can finish with the methods we already know:
 \[
-\int\frac {-1}{x-1}dx+\int\frac 2{x-2}dx = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
+\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
+\]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\[
+\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}
 \]
 \slide
 
+We calculate:
+
+\vfill
+
+So
+\[
+\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}
+\]
+and thus
+\[
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}
+\]
+\slide
+We can finish using known methods:
+\[
+\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}
+\]
+\slide
+
+\end{slidesonly}
+
 \begin{example}
-Evaluate \(\displaystyle\int\frac{x^2+2}{x-2}dx\)
+Evaluate \(\displaystyle\int\frac{x^2+2}{x-2}\mathrm{d}x\).
 \end{example}
 
 \begin{solution}
@@ -4092,23 +4157,23 @@ So
 \]
 and hence
 \[
-\int\frac{x^2+2}{x-2}dx = \int (x+2)dx+\int\frac6{x-2}dx = \frac{x^2}{2}+2x+6\ln|x-2|+c
+\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c
 \]
 \end{solution}
 
 \slide
 
 \begin{example}
-Evaluate \(I = \displaystyle\int\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} dx\)
+Evaluate \(I = \displaystyle\int\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} \mathrm{d}x\)
 \end{example}
 
 \begin{solution}
 \[
-\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
+\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
 \]
 and so
 \[
-x^3-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
+x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
 \]
 Let \(x=1\) so that \(1=2A\) or \(A=1/2\).
 
@@ -4117,15 +4182,22 @@ Let \(x=2\) so that \(1=-B\) or \(B=-1\).
 Let \(x=3\) so that \(3=2C\) or \(C=3/2\).
 
 \begin{align*}
-I&= \int\frac 1{2(x-1)}dx-\int\frac 1{x-2}dx+\int\frac 3{2(x-3)}dx\\
+I&= \int\frac 1{2(x-1)}\mathrm{d}x-\int\frac 1{x-2}\mathrm{d}x+\int\frac 3{2(x-3)}\mathrm{d}x\\
 &=\frac 12\ln|x-1| -\ln|x-2| + \frac 32\ln|x-3|+c
 \end{align*}
 \end{solution}
 
+\begin{slidesonly}
+
+\slide
+\phantom{a}
+
+\end{slidesonly}
+
 \slide
 
 \begin{example}
-Evaluate \(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} dx\)
+Evaluate \(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\)
 \end{example}
 
 \begin{solution}
@@ -4141,30 +4213,59 @@ Let \(x=2\) so that \(12=B\).
 \(A(x-2)+12 = 5x+2\) and so \(Ax+10-2A=5x\), so that \(A=5\).
 
 \begin{align*}
-I&= \int\frac{5x+2}{x^2-4x+4} dx\\
-&=\int\frac5{x-2}dx+\int\frac{12}{(x-2)^2}dx\\
+I&= \int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\\
+&=\int\frac5{x-2}\mathrm{d}x+\int\frac{12}{(x-2)^2}\mathrm{d}x\\
 &=5\ln|x-2|-\frac{12}{x-2}+c
 \end{align*}
 \end{solution}
+
+\begin{slidesonly}
+
+\slide
+\phantom{a}
+
+\end{slidesonly}
 
 \slide
 
 \section{Definite Integrals}\label{definite-integrals}
 
-Let \(F(x) = \displaystyle\int f(x)dx\) E.g. \(F(x)=\displaystyle\int xdx = x^2/2 + C\).
+Let \(F(x) = \displaystyle\int f(x)\mathrm{d}x\). For example, \(F(x)=\displaystyle\int x\mathrm{d}x = \frac{x^2}{2} + C\).
 
 Define
 \[
-\int_a^b f(x)dx = F(b)-F(a).
+\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
 \]
+
+(If the definite integral would be defined as in most textbooks, this statement would be called the \textcolor{red}{\em First Fundamental Theorem of Calculus}\index{First Fundamental Theorem of Calculus}.)
+
+\begin{notslides}
 
 \begin{example}
 \begin{align*}
-\int_1^4(x^2-2x)dx& = \left[\frac{x^3}{3}-x^2+C\right]_1^4\\
+\int_1^4 x^2-2x\,\mathrm{d}x& = \left[\frac{x^3}{3}-x^2+C\right]_1^4\\
 &=\left(\frac{4^3}{3}-4^2+C\right) - \left(\frac{1^3}{3}-1^2+C\right)\\
 &=\frac{64}{3}-16-\frac{1}{3}+1^2 = 6.
 \end{align*}
 \end{example}
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\slide
+
+\begin{example}
+\begin{align*}
+\int_1^4 x^2-2x\,\mathrm{d}x& = \phantom{\left(\frac{4^3}{3}-4^2+C\right) - \left(\frac{1^3}{3}-1^2+C\right)}
+\end{align*}
+\end{example}
+
+\vfill
+
+\slide
+
+\end{slidesonly}
 
 Note that during the subtraction process the arbitrary constant disappears. This will always happen for a definite integral since we will always get \(+ c\) for the upper limit minus \(+ c\) for the upper limit. Thus for a definite integral we need not bother to write an arbitrary constant in at all.
 \slide
@@ -4172,13 +4273,13 @@ Note that during the subtraction process the arbitrary constant disappears. This
 \begin{example}
 Determine the value of
 \[
-\int_0^{\pi/2}\cos(x)dx.
+\int_0^{\pi/2}\cos(x)\mathrm{d}x.
 \]
 \end{example}
 
 \begin{solution}
 \begin{align*}
-\int_0^{\pi/2}\cos(x)dx& = \left[\sin(x)\right]_0^{\pi/2}\\
+\int_0^{\pi/2}\cos(x)\mathrm{d}x& = \left[\sin(x)\right]_0^{\pi/2}\\
 &=\sin\left(\frac{\pi}{2}\right)-\sin(0) = 1.
 \end{align*}
 \end{solution}
@@ -4187,7 +4288,7 @@ Determine the value of
 
 \subsection{Area under a curve}\label{area-under-a-curve}
 
-A most important application of the definite integral is for finding the area between a curve and an axis.
+A most important application of the definite integral is for finding the area between a curve and an axis. (In fact, this is how the definite integral is usually \emph{defined}.)
 
 Consider the graph of \(y = f(x)\) and the area it encloses between the curve and the \(x-\)axis between the \(x\) values \(x = a\) and \(x = b\).
 
@@ -4202,20 +4303,62 @@ Consider the graph of \(y = f(x)\) and the area it encloses between the curve an
 
 At point \(x\), the curve has a height \(y\) at point \(x + \delta x\) the curve has height \(y + \delta y\) (Figure \ref{fig:22-slice-under-a-curve}).
 
+\begin{notslides}
+
 The area of the shaded rectangle under the curve is \(y\delta x\). As drawn, the area of the rectangle has a value quite close to the area under the curve between \(x\) and \(x + \delta x\). If we chose \(\delta x\) to have a smaller value, then the area of the resulting rectangle would be nearer in size to the area between \(x\) and \(x + \delta x\). The smaller we choose \(\delta x\) to be, the better the approximation to the area. In the limit as \(\delta x \to 0\), the area of the rectangle is exactly the same as the area under the curve.
 
+\end{notslides}
+
+\begin{slidesonly}
+
+\vfill
+
+\begin{itemize}
+\tightlist
+\item
+  shaded area \(y\delta x\)
+\item
+  ``close'' to area under that part of the curve
+\item
+  smaller \(\delta x\) \(\implies\) better approximation
+\end{itemize}
+
+\vfill
 \slide
 
-If we now consider the area between \(a\) and \(b\), we can divide it up into lots of rectangles each of width \(\delta x\). The total area, \(A\), under the curve is the sum of the areas of all the rectangles and may be written as
-\[
-A=\sum_{x=a}^{x=b}y\delta x.
-\]
-where the sign \(\Sigma\) (sigma) means, work out the area of each rectangle in turn then add all the areas together. Now as \(\delta x \to 0\), the total area becomes exactly the sum of all the small areas and we may replace the \(\delta\) with an integration sign and write
-\[
-A =\lim\limits_{\delta x\to 0}\sum_{x=a}^{x=b}y\delta x = \int_a^b y\ dx.
-\]
-This sometimes known as the \textcolor{red}{\em (Second) Fundamental Theorem of Calculus}\index{(Second) Fundamental Theorem of Calculus}.
-\slide
+\end{slidesonly}
+
+Consider now the area \(A\) under the curve between \(a\) and \(b\).
+
+\begin{itemize}
+\tightlist
+\item
+  We split it up into several vertical strips, each of width \(\delta x\).
+\item
+  Denote the \(x\)-coordinates of the vertical ``chopping lines'' by \(x_0=a, x_1, \dots, x_k=b\).
+\item
+  An approximation of \(A\) is the sum of the areas of all the rectangles as above, and may be written as
+  \[
+  A\approx\sum_{i=0}^{k-1}f(x_i)\delta x
+  \]
+\end{itemize}
+
+\begin{notslides}
+
+where the sign \(\Sigma\) (sigma) means, work out the area of each rectangle in turn then add all the areas together.
+
+\end{notslides}
+
+\begin{itemize}
+\tightlist
+\item
+  As \(\delta x \to 0\), the approximation gets precise. We replace \(\sigma\) by \(\int\)
+  (1st Fundamental Theorem of Calculus in reverse):
+  \[
+  A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.
+  \]
+  \slide
+\end{itemize}
 
 \begin{example}
 Determine the area between the curve \(y=2x^2+3x+1\) and the \(x-\)axis between the values of \(x=1\) and \(x=2\).
@@ -4226,7 +4369,7 @@ Determine the area between the curve \(y=2x^2+3x+1\) and the \(x-\)axis between 
 
 (See Figure \ref{fig:23-area-under-2x23x1}.)
 \[
-A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
+A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
 \]
 
 \begin{figure}
@@ -4244,7 +4387,13 @@ A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \le
 
 \subsection{Negative Areas}\label{negative-areas}
 
-If the curve lies below the \(x\)-axis between \(a\) and \(b\), then \(y\) is negative and \(y\delta x\) will have a negative value. As a result the area for regions below the \(x-\)axis will be negative. We are not suggesting that the area itself is negative, just that the presence of the minus sign after integration indicates an area below the \(x-\)axis. For this reason there is a small difference between the definite integral and the area under a curve.
+If the curve lies below the \(x\)-axis between \(a\) and \(b\), then \(y\) is negative and \(y\delta x\) will also be negative. As a result the integral for regions below the \(x\)-axis will be negative.
+
+This does not mean that the area itself is negative, just that the integral ``counts'' the area below the \(x\)-axis with a minus sign.
+
+Thus some care needs to be taken when using integrals to calculate an ``area under a curve''.
+
+\slide
 
 Consider the curve \(y = x^2 - 3x\) (Figure \ref{fig:24-graph-x23x}). We would like to find the area enclosed between the \(x-\)axis and the values \(x = -1\) and \(x = 5\).
 
@@ -4256,23 +4405,58 @@ Consider the curve \(y = x^2 - 3x\) (Figure \ref{fig:24-graph-x23x}). We would l
 
 \caption{$x^2-3x$}\label{fig:24-graph-x23x}
 \end{figure}
+\slide
 
 The definite integral over this range is
+
+\begin{notslides}
+
 \[
-\int_{-1}^5(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
+\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
 \]
-However, this is not the area this is \(A_1 + A_2 + A_3\) where \(A_2\) is negative, so the value of the definite integral over this range is smaller than the actual area.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\[
+\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}
+\]
+\vfill
+
+\end{slidesonly}
+
+However, this is not quite the area we may think. This is \(A_1 + A_2 + A_3\) where \(A_2\) is negative, so the value of the definite integral over this range is smaller than the actual area.
+
+\slide
 
 The area of each section is given by
 
+\begin{notslides}
+
 \begin{align*}
-A_1&=\int_{-1}^0(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83\\
-A_2&=\int_{0}^3(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5\\
-A_3&=\int_{3}^5(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67
+A_1&=\int_{-1}^0(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83\\
+A_2&=\int_{0}^3(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5\\
+A_3&=\int_{3}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67
 \end{align*}
 and the total area is given by \(A = A_1 + (-A_2) + A_3 = 1.83 + 4.5 + 8.67 = 15\).
 
-If we are asked to find the area under a curve for a certain range of \(x\), we must first determine whether the curve crosses the axis in that range. If it does we need to be very careful about how we find the area, making sure we find the area for each section individually and then add all the results at the end.
+\end{notslides}
+
+\begin{slidesonly}
+
+\begin{align*}
+A_1&=\phantom{\int_{-1}^0(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83}\\
+A_2&=\phantom{\int_{0}^3(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5}\\
+A_3&=\phantom{\int_{3}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67}
+\end{align*}
+and the total area is given by \(A = A_1 + (-A_2) + A_3 =\)
+
+\end{slidesonly}
+
+\slide
+
+When we are asked to find the area under a curve for a certain range of \(x\), we must first determine whether the curve crosses the axis in that range. If it does, we need to find the area for each section individually, and then add all the results at the end with the correct signs.
 
 \slide
 
@@ -4294,19 +4478,26 @@ First sketch the curve: Figure \ref{fig:25-graph-x3}.
 
 We might expect the area to be given by
 \[
-\int_{-2}^2x^3dx = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
+\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
 \]
 This is clearly not the case. The area to the left of the \(y-\)axis clearly has a negative area while the area to the right has a positive area and these are cancelling one another out.
 
 We actually need
 \[
-\left|\int_{-2}^0x^3dx\right|+\left|\int_0^2x^3dx\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
+\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
 \]
 \end{solution}
 
 \slide
 
-\section{Area between two curves and Parametric Integration}\label{area-between-two-curves-and-parametric-integration}
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
+\section{Area between two curves}\label{area-between-two-curves}
 
 We may use definite integration to find the area between two curves (or a curve and a straight line).
 
@@ -4343,7 +4534,7 @@ area under straight line between limits - area under curve between limits.
 \end{center}
 
 \begin{align*}
-A&=\int_{-3}^2(7-x)dx - \int_{-3}^2(x^2+1)dx = \left[7x-\frac{x^2}2\right]_{-3}^2 - \left[\frac{x^3}3+x\right]_{-3}^2\\
+A&=\int_{-3}^2(7-x)\mathrm{d}x - \int_{-3}^2(x^2+1)\mathrm{d}x = \left[7x-\frac{x^2}2\right]_{-3}^2 - \left[\frac{x^3}3+x\right]_{-3}^2\\
 &=\left[7\times2-\frac{4}2\right]-\left[7(-3)-\frac92\right]-\left\{\left[\frac{8}3+2\right]-\left[\frac{-27}3-3\right]\right\}\\
 &=14-2+21+\frac 92-\frac83-2-\frac{27}3-3=20.83.
 \end{align*}
@@ -4352,6 +4543,13 @@ The area is therefore \(20.83\) units\(^2\).
 \end{solution}
 
 \slide
+
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \begin{example}
 Determine the area enclosed between the curve \(y=e^x\) and the curve \(y=e^{-x}\) and \(x=0\) and \(x=2\).
@@ -4372,22 +4570,29 @@ A quick sketch of the curves is on Figure \ref{fig:27-graph-exex}.
 \end{figure}
 
 \[
-A = \int_0^2(e^x-e^{-x})dx = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
+A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
 \]
 
 \end{solution}
 
 \slide
 
-\subsection{Parametric Integration}\label{parametric-integration}
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
+\section{Parametric Integration}\label{parametric-integration}
 
 If a curve is defined parametrically such that \(x = f(t)\) and \(y = g(t)\) it can be integrated parametrically as follows
 \[
-\int_a^by\ dx = \int_{x=a}^{x=b}g(t)f'(t)dt.
+\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f'(t)\,\mathrm{d}t.
 \]
-Notice that \(dx/dt = f'(t)\) and so we write \(dx = f'(t)dt\). It is normally best to convert the limits of integration into values of \(t\) rather than \(x\). So we find \(a', b'\) such that \(a=f(a'), b = f(b')\) and then the integral becomes
+Since \(\mathrm{d}x/\mathrm{d}t = f'(t)\), we may imagine that \(\mathrm{d}x = f'(t)\,\mathrm{d}t\), which happens to be correct. It is normally best to convert the limits of integration into values of \(t\) rather than \(x\). So we find \(a', b'\) such that \(a=f(a'), b = f(b')\) and then the integral becomes
 \[
-\int_{a'}^{b'}g(t)f'(t)dt.
+\int_{a'}^{b'}g(t)f'(t)\,\mathrm{d}t.
 \]
 \slide
 
@@ -4397,9 +4602,10 @@ A curve is described by the parametric equations \(x = at^2\) and \(y = 2at\) wh
 
 \begin{solution}
 Here \(x=f(t)=at^2\) and \(y=g(t)=2at\). Hence \(f'(t) = 2at\) and the integral is
-\[
-A = \int_a^{4a} y\ dx = \int_{t=1}^{t=2}y\ dx = \int_1^22at\times 2at\ dt = \int_1^24a^2t^2\ dt = 4a^2\left[\frac{t^3}3\right]_1^2 = 4a^2\left[\frac 83-\frac13\right]=\frac{28}3a^2.
-\]
+\begin{align*}
+A &= \int_a^{4a} y\ \mathrm{d}x = \int_{t=1}^{t=2}y\ \mathrm{d}x = \int_1^22at\times 2at\ \mathrm{d}t = \int_1^24a^2t^2\ \mathrm{d}t\\
+&= 4a^2\left[\frac{t^3}3\right]_1^2 = 4a^2\left[\frac 83-\frac13\right]=\frac{28}3a^2.
+\end{align*}
 \end{solution}
 
 \slide
@@ -4410,7 +4616,7 @@ A curve is described by the parametric equations \(x = \sin(t)\) and \(y = \cos(
 
 \begin{solution}
 \begin{align*}
-\int_{\sin(0)}^{\sin(\pi/2)}y\ dx& = \int_0^{\pi/2}\cos(t)\cos(t)dt = \int_0^{\pi/2}\cos^2(t)dt = \int_0^{\pi/2}\frac{\cos(2t)+1}{2}dt\\
+\int_{\sin(0)}^{\sin(\pi/2)}y\ \mathrm{d}x& = \int_0^{\pi/2}\cos(t)\cos(t)\mathrm{d}t = \int_0^{\pi/2}\cos^2(t)\mathrm{d}t = \int_0^{\pi/2}\frac{\cos(2t)+1}{2}\mathrm{d}t\\
 & = \frac12\left[\frac{\sin(2t)}2+t\right]_0^{\pi/2} = \frac12\left[0+\pi/2\right]-\frac12\left[0\right]=\frac{\pi}4.
 \end{align*}
 \end{solution}
@@ -4579,28 +4785,27 @@ Evaluate the area bounded by the curve, the x axis and the given ordinates for t
 
 \chapter{Week 8}\label{week-eight}
 
-Some function can't be, or are difficult to, integrate analytically. In these cases we need to rely on numerical techniques to approximate the value of a definite integral. We shall consider three common methods during this week.
+Some function can't be, or are difficult to, integrate analytically. However for definite integrals we can use numerical methods to approximate the result. We will learn three methods.
+
+\slide
+
+We defined \(\displaystyle\int_a^bf(x)\,\mathrm{d}x\) using an antiderivative of \(f\); but \(\displaystyle\int_a^bf(x)\,\mathrm{d}x\) also represents the area between the curve and the \(x\)-axis, and we can approximate that to any given degree of accuracy (for reasonable functions \(f\)).
+
+All three methods here start the same way: we chop the area under the curve into a number of vertical strips. Where they differ are the shapes of the regions used to approximate the area(s) of the individual strips.
+
+\begin{itemize}
+\tightlist
+\item
+  Mid-ordinate rule: rectangles (``degree 0 top'')
+\item
+  Trapezium rule: trapeziums (``degree 1 top'')
+\item
+  Simpson's rule: ``with a parabola on top'' (``degree 2 top'')
+\end{itemize}
 
 \slide
 
 \section{Mid-ordinate Rule}\label{mid-ordinate-rule}
-
-To evaluate a definite integral \(\displaystyle\int_a^bf(x)dx\) we must find an antiderivative of the function \(f(x)\). If such a function cannot be found then we must use numerical methods to approximate the integral to a desired degree of accuracy. To do this, we make use of the fact that the integral \(\displaystyle\int_a^bf(x)dx\) represents the area beneath the curve and the \(x-\)axis.
-
-We shall consider three methods
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Mid-ordinate rule;
-\item
-  Trapezium rule;
-\item
-  Simpson's rule.
-\end{enumerate}
-
-\slide
 
 With the \textcolor{red}{\em mid-ordinate rule}\index{mid-ordinate rule}, the curve for which we want to know the area is divided into strips of equal width \(s\), see Figure \ref{fig:28-graph-vertical-strips}.
 
@@ -4612,9 +4817,9 @@ With the \textcolor{red}{\em mid-ordinate rule}\index{mid-ordinate rule}, the cu
 
 \caption{$f(x)$}\label{fig:28-graph-vertical-strips}
 \end{figure}
+\slide
 
 Considering each strip in turn, we measure the height of the strip, \(h\), along the centre line or mid-ordinate, see Figure \ref{fig:29-mid-ordinate-rule}. The area of the strip is then taken to be the area of a rectangle with height \(h\) and width \(s\).
-\slide
 
 \begin{figure}
 
@@ -4625,42 +4830,55 @@ Considering each strip in turn, we measure the height of the strip, \(h\), along
 \caption{mid-ordinate rule}\label{fig:29-mid-ordinate-rule}
 \end{figure}
 
-The area is \(h \times s\), the area of the shaded rectangle. Note that the approximate area slightly over estimates the area to the right of the mid-ordinate, but slightly under estimates it by an approximately similar amount on the left of the mid-ordinate. As a result, the shaded area is a good approximation to the total area.
+\slide
+
+The area of the shaded rectangle \(h \times s\). Depending on the shape of the curve \(f\) in that strip, this area of the rectangle can be smaller or greater than the actual area of the strip under the curve. But if the function \(f\) does not ``wiggle'' too much and the width is small, the approximation is plausible.
+
+\slide
 
 The approximate total area under the curve is the sum of the approximate areas of all the strips so
 \[
 \text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h
 \]
-where \(\sum h\) is shorthand for the sum of all the values of \(h\). So the total area = width of strip \(\times\) sum of the mid-ordinates.
+where \(\sum h\) is shorthand for the sum of all the values of \(h\).
+
+In words, the total area equals {[}the width of strip{]} times {[}the sum of the mid-ordinates{]}.
 
 \slide
 
 \begin{example}
-Use the mid-ordinate approximation to calculate the integral
+Use the mid-ordinate rule to approximate the value of the integral
 \[
-\int_1^4x^2dx
+\int_1^4x^2\,\mathrm{d}x
 \]
 by taking 1, 2 or 3 strips. Compare the values with the correct value.
 \end{example}
 
 \begin{solution}
-First we know that \(\displaystyle\int_1^4 x^2 dx = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\).
+First we know that \(\displaystyle\int_1^4 x^2\,\mathrm{d}x = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\).
 
 Using one strip, \(s=3\), the mid-point is \(x=2.5\) and \(h=2.5^2 = 6.25\). Hence the mid-ordinate approximation gives
 \[
-\int_1^4 x^2 dx \sim 3\times 6.25 = 18.75.
+\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.
 \]
 Using two strips, \(s=1.5\), the two mid-points are \(x_1=1.75\) and \(x_2=3.25\) with heights \(h_1=1.75^2=3.0625, h_2=3.25^2=10.5625\). Hence the mid-ordinate approximation gives
 \[
-\int_1^4 x^2 dx \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
+\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
 \]
 Using three strips, \(s=1\), the three mid-points are \(x_1=1.5, x_2=2.5\) and \(x_3=3.5\) with heights \(h_1=1.5^2=2.25, h_2=2.5^2=6.25, h_3=3.5^2=12.25\). Hence the mid-ordinate approximation gives
 \[
-\int_1^4 x^2 dx \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
+\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
 \]
 \end{solution}
 
 \slide
+
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \section{Trapezium rule}\label{trapezium-rule}
 
@@ -4677,9 +4895,9 @@ For the \textcolor{red}{\em trapezium rule}\index{trapezium rule}, the curve is 
 
 For a trapezium, the area is given by
 \[
-A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{ perpendicular distance between parallel sides})
+A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})
 \]
-So for each strip \(\delta A =s(y_1+y_2)/2\). The total area is then, for \(n\) strips
+So for each strip \(\delta A =s(y_1+y_2)/2\). With \(n\) strips, the total area (of the trapeziums) is
 \begin{align*}
 A& = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
 &= \frac s2\left(y_1+2y_2+2y_3+\ldots 2y_{n}+y_{n+1}\right).
@@ -4690,7 +4908,7 @@ A& = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
 \begin{example}
 Use the trapezium rule to approximate the integral
 \[
-\int_1^4x^2dx
+\int_1^4x^2\,\mathrm{d}x
 \]
 by taking 1, 2 or 3 strips.
 \end{example}
@@ -4698,21 +4916,30 @@ by taking 1, 2 or 3 strips.
 \begin{solution}
 If there is one strip then \(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\). Hence the trapezium rule gives
 \[
-\int_1^4 x^2 dx \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
 \]
 With two strips then \(s=1.5,x_1=1, x_2=2.5, x_3=4, y_1=1^2=1, y_2=2.5^2=6.25, y_3=4^2=16\). Hence the trapezium rule gives
 \[
-\int_1^4 x^2 dx \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
 \]
 With three strips then \(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4, y_3=3^2=9, y_4=4^2=16\). Hence the trapezium rule gives
 \[
-\int_1^4 x^2 dx \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
 \]
 \end{solution}
 
+\slide
+
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \section{Simpson's Rule}\label{simpsons-rule}
 
-The idea behind \textcolor{red}{\em Simpson's rule}\index{Simpson's rule} is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials, see Figure \ref{fig:31-simpsons-rule}.
+For \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}, we approximate the function in each strip by a quadratic polynomial (i.e.~a piece of a parabola), rather than a line as in the previous two rules --- see Figure \ref{fig:31-simpsons-rule}.
 
 \begin{figure}
 
@@ -4723,7 +4950,11 @@ The idea behind \textcolor{red}{\em Simpson's rule}\index{Simpson's rule} is tha
 \caption{Simpson's rule}\label{fig:31-simpsons-rule}
 \end{figure}
 
-Given 3 equally spaced points on the curve \((x_1,y_1), (x_2, y_2)\) and \((x_3,y_3)\), we construct a quadratic polynomial \(y=ax^2+bx+c\) which passes through all three points. In order to simplify the calculations, we can `move' the curve so that the point \(x_2\) coincides with the origin, see Figure \ref{fig:32-simpsons-rule2}. In other words assume that \(x_2=0\). We also let \(x_3-x_2=x_2-x_1=s\) and so \(x_3=s, x_1=-s\).
+\slide
+
+Given 3 equally spaced points on the curve \((x_1,y_1), (x_2, y_2)\) and \((x_3,y_3)\), we construct a quadratic polynomial \(y=ax^2+bx+c\) which passes through all three points.
+
+In order to simplify the calculations, we can `move' the curve so that the point \(x_2\) coincides with the origin, see Figure \ref{fig:32-simpsons-rule2}. In other words assume that \(x_2=0\). We also let \(x_3-x_2=x_2-x_1=s\) and so \(x_3=s\) and \(x_1=-s\).
 
 \begin{figure}
 
@@ -4734,7 +4965,9 @@ Given 3 equally spaced points on the curve \((x_1,y_1), (x_2, y_2)\) and \((x_3,
 \caption{Simpson's rule: move to arrange $x_2=0$}\label{fig:32-simpsons-rule2}
 \end{figure}
 
-for this to be the case we then need
+\slide
+
+For the parabola \(y=ax^2+bx+c\) to go through the points \((-s,y_1),(0,y_2),(s,y_3)\) it needs to satisfy
 \begin{align*}
 y_1&=a(-s)^2+b(-s)+c\\
 y_2&=a0^2+b0+c\\
@@ -4746,51 +4979,109 @@ a&=\frac{y_1+y_3-2y_2}{2s^2}\\
 b&=\frac{y_3-y_1}{2s}\\
 c&=y_2.
 \end{align*}
+\slide
 The area under that quadratic will then be
-\[
-\int_{-s}^{s}(ax^2+bx+c)dx = \left[a\frac{x^3}3+b\frac{x^2}2+cx\right]_{-s}^{s}=\frac{s}{3}\left[y_1+4y_2+y_3\right].
-\]
-Notice that the answer is not dependent on the values of \(x_1, x_2\) or \(x_3\). Notice also that we are using 2 intervals of length \(s\) to construct the quadratic.
-
-If we now split out interval over which we are integrating into an even number, say \(2n\), of intervals of length \(s\), we can then construct a quadratic using \(x_1, x_2, x_3\) then another quadratic using \(x_3, x_4, x_5\), and so on until we get a final quadratic using \(x_{2n-1},x_{2n},x_{2n+1}\) and the sum of the areas under those quadratic will be an approximation to the area under the curve. This gives us
 \begin{align*}
-\int_{x_1}^{x_{2n+1}}y\ dx& = \frac s3\left[y_1+4y_2+y_3\right] + \frac s3\left[y_3+4y_4+y_5\right] + \ldots + \frac s3\left[y_{2n-1}+4y_{2n}+y_{2n+1}\right]\\
-&=\frac s3\left[y_1+4y_2+2y_3+4y_4+2y_5+\ldots +2y_{2n-1}+4y_{2n}+y_{2n+1}\right].
+\int_{-s}^{s}(ax^2+bx+c)\,\mathrm{d}x &= \left[a\frac{x^3}3+b\frac{x^2}2+cx\right]_{-s}^{s}\\
+&=\frac{s}{3}\left(y_1+4y_2+y_3\right).
 \end{align*}
-This is known as \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}.
+Notes:
+
+\begin{itemize}
+\tightlist
+\item
+  The formula does not depend on \(x_1,x_2,x_3\) (we've arranged this).
+\item
+  This approximates \emph{two} strips of width \(s\) rather than one --- so we will want an \emph{even} number of strips.
+\end{itemize}
+
+\slide
+
+\begin{notslides}
+
+For approximate integration:
+
+\begin{itemize}
+\tightlist
+\item
+  We split the interval \([a,b]\) over which we are integrating into an even number, say \(2n\), of intervals of length \(s\). Denote the \(x\)-coordinates of the points where we split by \(a=x_1, x_1,\dots,x_{2n+1}=b\).
+\item
+  We use the above to approximate the area of two consecutive strips: using \(x_1,x_2,x_3\), then \(x_3,x_4,x_5\), etc, until \(x_{2n-1},x_{2n},x_{2n+1}\).
+\item
+  The sum of the areas gives
+  \begin{align*}
+  \int_{a}^{b}y\,\mathrm{d}x& \approx \frac s3\left(y_1+4y_2+y_3\right) + \frac s3\left(y_3+4y_4+y_5\right) + \dots + \frac s3\left(y_{2n-1}+4y_{2n}+y_{2n+1}\right)\\
+  &=\frac s3\left(y_1+4y_2+2y_3+4y_4+2y_5+\dots +2y_{2n-1}+4y_{2n}+y_{2n+1}\right).
+  \end{align*}
+\item
+  This is known as \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}.
+\end{itemize}
+
+\end{notslides}
+
+\begin{slidesonly}
+
+\begin{itemize}
+\tightlist
+\item
+  We split the interval \([a,b]\) over which we are integrating into an even number, say \(2n\), of intervals of length \(s\). Denote the the points where we split by \(a=x_1, x_1,\dots,x_{2n+1}=b\).
+\item
+  We use the above to approximate the area of two consecutive strips: using \(x_1,x_2,x_3\), then \(x_3,x_4,x_5\), etc, until \(x_{2n-1},x_{2n},x_{2n+1}\). So altogether
+  \begin{align*}
+  \int_{a}^{b}y\,\mathrm{d}x& \approx \frac s3\left(y_1+4y_2+y_3\right) + \frac s3\left(y_3+4y_4+y_5\right) + \dots\\
+  & \qquad\qquad \dots + \frac s3\left(y_{2n-1}+4y_{2n}+y_{2n+1}\right)\\
+  &=\frac s3(y_1+4y_2+2y_3+4y_4+2y_5+\dots\\
+  & \qquad\qquad \dots +2y_{2n-1}+4y_{2n}+y_{2n+1}).
+  \end{align*}
+\item
+  This is known as \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}.
+\end{itemize}
+
+\end{slidesonly}
+
 \slide
 
 \begin{example}
 Use Simpson's rule to approximate the integral
 \[
-\int_1^4x^3dx
+\int_1^4x^3\,\mathrm{d}x
 \]
 by taking 2 and 4 strips.
 \end{example}
 
 \begin{solution}
-First notice that
-\[
-\int_1^4x^3dx = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75
-\]
 In our above formula we let \(n=1\) and then \(2\).
 
 For \(n=1\) we have \(s=3/2, x_1=1, x_2=2.5, x_3=4\) with \(y_1=1, y_2=15.625, y_3=64\).
 \[
-\int_1^4x^3dx\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
+\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
 \]
 For \(n=2\) we have \(s=0.75, x_1=1, x_2=1.75, x_3=2.5, x_4=3.25, x_5=4\) with \(y_1=1, y_2=1.75^3=5.36, y_3 = 2.5^3=15.625, y_4=3.25^3=34.33, y_5=64\).
 \[
-\int_1^4x^3dx\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
+\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
+\]
+
+Note that this is actually the exact value:
+\[
+\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.
 \]
 \end{solution}
 
 \slide
 
+\begin{slidesonly}
+
+\hbox{}
+\slide
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \begin{example}
 Use Simpson's rule to approximate the integral
 \[
-\int_{-1}^1e^{-x^2}dx
+\int_{-1}^1e^{-x^2}\,\mathrm{d}x
 \]
 by taking 6 strips.
 \end{example}
@@ -4823,7 +5114,7 @@ $x_1$ & $y_1$\\
 
 Hence using Simpson's rule (Figure \ref{fig:33-graph-ex2}):
 \[
-\int_{-1}^1e^{-x^2}dx \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
+\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
 \]
 
 \begin{figure}
@@ -4839,10 +5130,19 @@ Hence using Simpson's rule (Figure \ref{fig:33-graph-ex2}):
 
 \slide
 
+\begin{slidesonly}
+
+\hbox{}
+\slide
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \begin{example}
 Use Simpson's rule to approximate the integral
 \[
-\int_0^2\frac1{1+x^2}dx
+\int_0^2\frac1{1+x^2}\,\mathrm{d}x
 \]
 by taking 10 strips and calculate the error involved.
 \end{example}
@@ -4880,17 +5180,28 @@ $x_1$ & $y_1$\\
 
 Hence using Simpson's rule
 \begin{align*}
-\int_0^2\frac{dx}{1+x^2} \sim& \frac{0.2}3\left[1 + 0.2\right] +\\
+\int_0^2\frac{\mathrm{d}x}{1+x^2} \sim& \frac{0.2}3\left[1 + 0.2\right] +\\
 &\frac{0.2}3\times 4\left[0.96154+0.73529+0.5+0.33784+0.23585\right]+\\
 &\frac{0.2}3\times 2\left[0.86207+0.60976+0.40984+0.28090\right]\\
 &= 1.10715.
 \end{align*}
 The actual value of the integral is
 \[
-\int_0^2\frac{dx}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
+\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
 \]
 and so the error is 0.000563.
 \end{solution}
+
+\begin{slidesonly}
+
+\hbox{}
+\slide
+\hbox{}
+\slide
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \chapter*{Week 8 Exercises}\label{week-8-exercises}
 \addcontentsline{toc}{chapter}{Week 8 Exercises}

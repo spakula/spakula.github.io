@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,7 +212,7 @@
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-six.html"><a href="week-six.html#integration-by-substitution"><i class="fa fa-check"></i><b>6.1</b> Integration by Substitution</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trig-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trig substitutions</a></li>
+<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trigonometric-integrals-and-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trigonometric integrals and substitutions</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="week-six.html"><a href="week-six.html#integration-by-parts"><i class="fa fa-check"></i><b>6.2</b> Integration by Parts</a></li>
 </ul></li>
@@ -229,15 +229,13 @@
 <li class="chapter" data-level="7.2.1" data-path="week-seven.html"><a href="week-seven.html#area-under-a-curve"><i class="fa fa-check"></i><b>7.2.1</b> Area under a curve</a></li>
 <li class="chapter" data-level="7.2.2" data-path="week-seven.html"><a href="week-seven.html#negative-areas"><i class="fa fa-check"></i><b>7.2.2</b> Negative Areas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves-and-parametric-integration"><i class="fa fa-check"></i><b>7.3</b> Area between two curves and Parametric Integration</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.3.1</b> Parametric Integration</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves"><i class="fa fa-check"></i><b>7.3</b> Area between two curves</a></li>
+<li class="chapter" data-level="7.4" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.4</b> Parametric Integration</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html"><i class="fa fa-check"></i>Week 7 Exercises</a>
 <ul>
-<li class="chapter" data-level="7.4" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.4</b> Sheet 15 - Integration using Partial Fractions</a></li>
-<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.5</b> Sheet 16 - Definite Integration</a>
+<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.5</b> Sheet 15 - Integration using Partial Fractions</a></li>
+<li class="chapter" data-level="7.6" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.6</b> Sheet 16 - Definite Integration</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
@@ -409,24 +407,25 @@
             <section class="normal" id="section-">
 <div id="week-seven" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">7</span> Week 7<a href="week-seven.html#week-seven" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We finish our study of indefinite integrals by looking at integration by converting functions using partial fractions. We then consider definite integrals and their connection to areas under curves.
+<p>We our study of indefinite integrals by looking at integration by converting functions using partial fractions. We then consider definite integrals and their connection to areas under curves.
 </p>
 <div id="integration-using-partial-fractions" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Integration using partial fractions<a href="week-seven.html#integration-using-partial-fractions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider the integral
 <span class="math display">\[
-\int\frac{x}{(x-1)(x-2)}dx
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x
 \]</span>
-This is not a standard integral. Also, if we multiply out the denominator we get <span class="math inline">\(x^2 - 3x + 2\)</span>. The derivative of this denominator is <span class="math inline">\(2x - 3\)</span>. Clearly the numerator is not the derivative of the denominator and so making a substitution won’t help us to integrate. However, if we split the quotient into its partial fractions, we may be able to integrate these.</p>
-<p>We know that
-<span class="math display">\[
-\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}
+This is not a “standard” integral. Also, if we multiply out the denominator we get <span class="math inline">\(x^2 - 3x + 2\)</span>. The derivative of this denominator is <span class="math inline">\(2x - 3\)</span>. The numerator is thus not the derivative of the denominator, and so making a substitution won’t help us to integrate.</p>
+<p>The method to apply is to split the fraction into partial fractions.</p>
+<p>From semester 1, we know we can do this:</p>
+<p><span class="math display">\[
+\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.
 \]</span>
-and hence
+We calculate:
 <span class="math display">\[
 x = A(x-2)+B(x-1)
-\]</span>
-Let <span class="math inline">\(x=2\)</span>, so that <span class="math inline">\(2=A\times0+B\times1\)</span> i.e. <span class="math inline">\(B=2\)</span>.</p>
+\]</span></p>
+<p>Let <span class="math inline">\(x=2\)</span>, so that <span class="math inline">\(2=A\times0+B\times1\)</span> i.e. <span class="math inline">\(B=2\)</span>.</p>
 <p>Let <span class="math inline">\(x=1\)</span>, so that <span class="math inline">\(1=A\times-1+B\times0\)</span> i.e. <span class="math inline">\(A=-1\)</span>.</p>
 <p>So
 <span class="math display">\[
@@ -434,15 +433,34 @@ Let <span class="math inline">\(x=2\)</span>, so that <span class="math inline">
 \]</span>
 and thus
 <span class="math display">\[
-\int\frac{x}{(x-1)(x-2)}dx = \int\frac {-1}{x-1}dx+\int\frac 2{x-2}dx
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x
 \]</span>
-Now the integrals can be arranged so that the numerator of each is the derivative of the denominator
+which we can finish with the methods we already know:
 <span class="math display">\[
-\int\frac {-1}{x-1}dx+\int\frac 2{x-2}dx = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
+\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
+\]</span></p>
+<div style="display:none">
+<p><span class="math display">\[
+\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}
 \]</span>
 </p>
+<p>We calculate:</p>
+<p>So
+<span class="math display">\[
+\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}
+\]</span>
+and thus
+<span class="math display">\[
+\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}
+\]</span>
+We can finish using known methods:
+<span class="math display">\[
+\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}
+\]</span>
+</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 7.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\frac{x^2+2}{x-2}dx\)</span></p>
+<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 7.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\frac{x^2+2}{x-2}\mathrm{d}x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-88" class="solution"><em>Solution</em>. </span>This is an improper fraction so we must make a long division first
@@ -462,30 +480,33 @@ So
 \]</span>
 and hence
 <span class="math display">\[
-\int\frac{x^2+2}{x-2}dx = \int (x+2)dx+\int\frac6{x-2}dx = \frac{x^2}{2}+2x+6\ln|x-2|+c
+\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 7.2  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} dx\)</span></p>
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 7.2  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} \mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-90" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{x^3-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
+\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
 \]</span>
 and so
 <span class="math display">\[
-x^3-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
+x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
 \]</span>
 Let <span class="math inline">\(x=1\)</span> so that <span class="math inline">\(1=2A\)</span> or <span class="math inline">\(A=1/2\)</span>.</p>
 <p>Let <span class="math inline">\(x=2\)</span> so that <span class="math inline">\(1=-B\)</span> or <span class="math inline">\(B=-1\)</span>.</p>
 <p>Let <span class="math inline">\(x=3\)</span> so that <span class="math inline">\(3=2C\)</span> or <span class="math inline">\(C=3/2\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
-I&amp;= \int\frac 1{2(x-1)}dx-\int\frac 1{x-2}dx+\int\frac 3{2(x-3)}dx\\
+I&amp;= \int\frac 1{2(x-1)}\mathrm{d}x-\int\frac 1{x-2}\mathrm{d}x+\int\frac 3{2(x-3)}\mathrm{d}x\\
 &amp;=\frac 12\ln|x-1| -\ln|x-2| + \frac 32\ln|x-3|+c
 \end{align*}\]</span></p>
 </div>
+<div style="display:none">
+
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 7.3  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} dx\)</span></p>
+<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 7.3  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-92" class="solution"><em>Solution</em>. </span><span class="math display">\[
@@ -498,43 +519,54 @@ and so
 Let <span class="math inline">\(x=2\)</span> so that <span class="math inline">\(12=B\)</span>.</p>
 <p><span class="math inline">\(A(x-2)+12 = 5x+2\)</span> and so <span class="math inline">\(Ax+10-2A=5x\)</span>, so that <span class="math inline">\(A=5\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
-I&amp;= \int\frac{5x+2}{x^2-4x+4} dx\\
-&amp;=\int\frac5{x-2}dx+\int\frac{12}{(x-2)^2}dx\\
+I&amp;= \int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\\
+&amp;=\int\frac5{x-2}\mathrm{d}x+\int\frac{12}{(x-2)^2}\mathrm{d}x\\
 &amp;=5\ln|x-2|-\frac{12}{x-2}+c
 \end{align*}\]</span></p>
+</div>
+<div style="display:none">
+
 </div>
 </div>
 <div id="definite-integrals" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Definite Integrals<a href="week-seven.html#definite-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let <span class="math inline">\(F(x) = \displaystyle\int f(x)dx\)</span> E.g. <span class="math inline">\(F(x)=\displaystyle\int xdx = x^2/2 + C\)</span>.</p>
+<p>Let <span class="math inline">\(F(x) = \displaystyle\int f(x)\mathrm{d}x\)</span>. For example, <span class="math inline">\(F(x)=\displaystyle\int x\mathrm{d}x = \frac{x^2}{2} + C\)</span>.</p>
 <p>Define
 <span class="math display">\[
-\int_a^b f(x)dx = F(b)-F(a).
+\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
 \]</span></p>
+<p>(If the definite integral would be defined as in most textbooks, this statement would be called the <a name='#first-fundamental-theorem-of-calculus'></a><span style="color: red;">First Fundamental Theorem of Calculus</span>.)</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-93" class="example"><strong>Example 7.4  </strong></span><span class="math display">\[\begin{align*}
-\int_1^4(x^2-2x)dx&amp; = \left[\frac{x^3}{3}-x^2+C\right]_1^4\\
+\int_1^4 x^2-2x\,\mathrm{d}x&amp; = \left[\frac{x^3}{3}-x^2+C\right]_1^4\\
 &amp;=\left(\frac{4^3}{3}-4^2+C\right) - \left(\frac{1^3}{3}-1^2+C\right)\\
 &amp;=\frac{64}{3}-16-\frac{1}{3}+1^2 = 6.
 \end{align*}\]</span></p>
 </div>
+<div style="display:none">
+<div class="example">
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 7.5  </strong></span><span class="math display">\[\begin{align*}
+\int_1^4 x^2-2x\,\mathrm{d}x&amp; = \phantom{\left(\frac{4^3}{3}-4^2+C\right) - \left(\frac{1^3}{3}-1^2+C\right)}
+\end{align*}\]</span></p>
+</div>
+</div>
 <p>Note that during the subtraction process the arbitrary constant disappears. This will always happen for a definite integral since we will always get <span class="math inline">\(+ c\)</span> for the upper limit minus <span class="math inline">\(+ c\)</span> for the upper limit. Thus for a definite integral we need not bother to write an arbitrary constant in at all.
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 7.5  </strong></span>Determine the value of
+<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 7.6  </strong></span>Determine the value of
 <span class="math display">\[
-\int_0^{\pi/2}\cos(x)dx.
+\int_0^{\pi/2}\cos(x)\mathrm{d}x.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-95" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
-\int_0^{\pi/2}\cos(x)dx&amp; = \left[\sin(x)\right]_0^{\pi/2}\\
+<p><span id="unlabeled-div-96" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+\int_0^{\pi/2}\cos(x)\mathrm{d}x&amp; = \left[\sin(x)\right]_0^{\pi/2}\\
 &amp;=\sin\left(\frac{\pi}{2}\right)-\sin(0) = 1.
 \end{align*}\]</span></p>
 </div>
 <div id="area-under-a-curve" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Area under a curve<a href="week-seven.html#area-under-a-curve" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A most important application of the definite integral is for finding the area between a curve and an axis.</p>
+<p>A most important application of the definite integral is for finding the area between a curve and an axis. (In fact, this is how the definite integral is usually <em>defined</em>.)</p>
 <p>Consider the graph of <span class="math inline">\(y = f(x)\)</span> and the area it encloses between the curve and the <span class="math inline">\(x-\)</span>axis between the <span class="math inline">\(x\)</span> values <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.</p>
 <!--incfig
 
@@ -547,24 +579,39 @@ Figure 7.1: <span class="math inline">\(f(x)\)</span>
 </div>
 <p>At point <span class="math inline">\(x\)</span>, the curve has a height <span class="math inline">\(y\)</span> at point <span class="math inline">\(x + \delta x\)</span> the curve has height <span class="math inline">\(y + \delta y\)</span> (Figure <a href="week-seven.html#fig:22-slice-under-a-curve">7.1</a>).</p>
 <p>The area of the shaded rectangle under the curve is <span class="math inline">\(y\delta x\)</span>. As drawn, the area of the rectangle has a value quite close to the area under the curve between <span class="math inline">\(x\)</span> and <span class="math inline">\(x + \delta x\)</span>. If we chose <span class="math inline">\(\delta x\)</span> to have a smaller value, then the area of the resulting rectangle would be nearer in size to the area between <span class="math inline">\(x\)</span> and <span class="math inline">\(x + \delta x\)</span>. The smaller we choose <span class="math inline">\(\delta x\)</span> to be, the better the approximation to the area. In the limit as <span class="math inline">\(\delta x \to 0\)</span>, the area of the rectangle is exactly the same as the area under the curve.</p>
-<p>If we now consider the area between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we can divide it up into lots of rectangles each of width <span class="math inline">\(\delta x\)</span>. The total area, <span class="math inline">\(A\)</span>, under the curve is the sum of the areas of all the rectangles and may be written as
+<div style="display:none">
+<ul>
+<li>shaded area <span class="math inline">\(y\delta x\)</span></li>
+<li>“close” to area under that part of the curve</li>
+<li>smaller <span class="math inline">\(\delta x\)</span> <span class="math inline">\(\implies\)</span> better approximation</li>
+</ul>
+</div>
+<p>Consider now the area <span class="math inline">\(A\)</span> under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<ul>
+<li>We split it up into several vertical strips, each of width <span class="math inline">\(\delta x\)</span>.</li>
+<li>Denote the <span class="math inline">\(x\)</span>-coordinates of the vertical “chopping lines” by <span class="math inline">\(x_0=a, x_1, \dots, x_k=b\)</span>.</li>
+<li>An approximation of <span class="math inline">\(A\)</span> is the sum of the areas of all the rectangles as above, and may be written as
 <span class="math display">\[
-A=\sum_{x=a}^{x=b}y\delta x.
-\]</span>
-where the sign <span class="math inline">\(\Sigma\)</span> (sigma) means, work out the area of each rectangle in turn then add all the areas together. Now as <span class="math inline">\(\delta x \to 0\)</span>, the total area becomes exactly the sum of all the small areas and we may replace the <span class="math inline">\(\delta\)</span> with an integration sign and write
+A\approx\sum_{i=0}^{k-1}f(x_i)\delta x
+\]</span></li>
+</ul>
+<p>where the sign <span class="math inline">\(\Sigma\)</span> (sigma) means, work out the area of each rectangle in turn then add all the areas together.</p>
+<ul>
+<li>As <span class="math inline">\(\delta x \to 0\)</span>, the approximation gets precise. We replace <span class="math inline">\(\sigma\)</span> by <span class="math inline">\(\int\)</span>
+(1st Fundamental Theorem of Calculus in reverse):
 <span class="math display">\[
-A =\lim\limits_{\delta x\to 0}\sum_{x=a}^{x=b}y\delta x = \int_a^b y\ dx.
+A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.
 \]</span>
-This sometimes known as the <a name='#(second)-fundamental-theorem-of-calculus'></a><span style="color: red;">(Second) Fundamental Theorem of Calculus</span>.
-</p>
+</li>
+</ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-96" class="example"><strong>Example 7.6  </strong></span>Determine the area between the curve <span class="math inline">\(y=2x^2+3x+1\)</span> and the <span class="math inline">\(x-\)</span>axis between the values of <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-97" class="example"><strong>Example 7.7  </strong></span>Determine the area between the curve <span class="math inline">\(y=2x^2+3x+1\)</span> and the <span class="math inline">\(x-\)</span>axis between the values of <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-97" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-98" class="solution"><em>Solution</em>. </span></p>
 (See Figure <a href="week-seven.html#fig:23-area-under-2x23x1">7.2</a>.)
 <span class="math display">\[
-A=\int_1^2(2x^2+3x+1)dx = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
+A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
 \]</span>
 <!--incfig
 
@@ -579,7 +626,9 @@ Figure 7.2: <span class="math inline">\(2x^2+3x+1\)</span>
 </div>
 <div id="negative-areas" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Negative Areas<a href="week-seven.html#negative-areas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If the curve lies below the <span class="math inline">\(x\)</span>-axis between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then <span class="math inline">\(y\)</span> is negative and <span class="math inline">\(y\delta x\)</span> will have a negative value. As a result the area for regions below the <span class="math inline">\(x-\)</span>axis will be negative. We are not suggesting that the area itself is negative, just that the presence of the minus sign after integration indicates an area below the <span class="math inline">\(x-\)</span>axis. For this reason there is a small difference between the definite integral and the area under a curve.</p>
+<p>If the curve lies below the <span class="math inline">\(x\)</span>-axis between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then <span class="math inline">\(y\)</span> is negative and <span class="math inline">\(y\delta x\)</span> will also be negative. As a result the integral for regions below the <span class="math inline">\(x\)</span>-axis will be negative.</p>
+<p>This does not mean that the area itself is negative, just that the integral “counts” the area below the <span class="math inline">\(x\)</span>-axis with a minus sign.</p>
+<p>Thus some care needs to be taken when using integrals to calculate an “area under a curve”.</p>
 <p>Consider the curve <span class="math inline">\(y = x^2 - 3x\)</span> (Figure <a href="week-seven.html#fig:24-graph-x23x">7.3</a>). We would like to find the area enclosed between the <span class="math inline">\(x-\)</span>axis and the values <span class="math inline">\(x = -1\)</span> and <span class="math inline">\(x = 5\)</span>.</p>
 <!--incfig
 
@@ -590,24 +639,38 @@ Figure 7.2: <span class="math inline">\(2x^2+3x+1\)</span>
 Figure 7.3: <span class="math inline">\(x^2-3x\)</span>
 </p>
 </div>
-<p>The definite integral over this range is
-<span class="math display">\[
-\int_{-1}^5(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
+<p>The definite integral over this range is</p>
+<p><span class="math display">\[
+\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
+\]</span></p>
+<div style="display:none">
+<p><span class="math display">\[
+\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}
 \]</span>
-However, this is not the area this is <span class="math inline">\(A_1 + A_2 + A_3\)</span> where <span class="math inline">\(A_2\)</span> is negative, so the value of the definite integral over this range is smaller than the actual area.</p>
+</p>
+</div>
+<p>However, this is not quite the area we may think. This is <span class="math inline">\(A_1 + A_2 + A_3\)</span> where <span class="math inline">\(A_2\)</span> is negative, so the value of the definite integral over this range is smaller than the actual area.</p>
 <p>The area of each section is given by</p>
 <p><span class="math display">\[\begin{align*}
-A_1&amp;=\int_{-1}^0(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83\\
-A_2&amp;=\int_{0}^3(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5\\
-A_3&amp;=\int_{3}^5(x^2-3x)dx = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67
+A_1&amp;=\int_{-1}^0(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83\\
+A_2&amp;=\int_{0}^3(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5\\
+A_3&amp;=\int_{3}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67
 \end{align*}\]</span>
 and the total area is given by <span class="math inline">\(A = A_1 + (-A_2) + A_3 = 1.83 + 4.5 + 8.67 = 15\)</span>.</p>
-<p>If we are asked to find the area under a curve for a certain range of <span class="math inline">\(x\)</span>, we must first determine whether the curve crosses the axis in that range. If it does we need to be very careful about how we find the area, making sure we find the area for each section individually and then add all the results at the end.</p>
+<div style="display:none">
+<p><span class="math display">\[\begin{align*}
+A_1&amp;=\phantom{\int_{-1}^0(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^0 = 1.83}\\
+A_2&amp;=\phantom{\int_{0}^3(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{0}^3 = -4.5}\\
+A_3&amp;=\phantom{\int_{3}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{3}^5 = 8.67}
+\end{align*}\]</span>
+and the total area is given by <span class="math inline">\(A = A_1 + (-A_2) + A_3 =\)</span></p>
+</div>
+<p>When we are asked to find the area under a curve for a certain range of <span class="math inline">\(x\)</span>, we must first determine whether the curve crosses the axis in that range. If it does, we need to find the area for each section individually, and then add all the results at the end with the correct signs.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-98" class="example"><strong>Example 7.7  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^3\)</span> and the <span class="math inline">\(x-\)</span>axis, between the points <span class="math inline">\(x=-2\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-99" class="example"><strong>Example 7.8  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^3\)</span> and the <span class="math inline">\(x-\)</span>axis, between the points <span class="math inline">\(x=-2\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-99" class="solution"><em>Solution</em>. </span>First sketch the curve: Figure <a href="week-seven.html#fig:25-graph-x3">7.4</a>.</p>
+<p><span id="unlabeled-div-100" class="solution"><em>Solution</em>. </span>First sketch the curve: Figure <a href="week-seven.html#fig:25-graph-x3">7.4</a>.</p>
 <!--incfig
 
 -->
@@ -619,24 +682,28 @@ Figure 7.4: <span class="math inline">\(y=x^3\)</span>
 </div>
 <p>We might expect the area to be given by
 <span class="math display">\[
-\int_{-2}^2x^3dx = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
+\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
 \]</span>
 This is clearly not the case. The area to the left of the <span class="math inline">\(y-\)</span>axis clearly has a negative area while the area to the right has a positive area and these are cancelling one another out.</p>
 <p>We actually need
 <span class="math display">\[
-\left|\int_{-2}^0x^3dx\right|+\left|\int_0^2x^3dx\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
+\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
 \]</span></p>
 </div>
+<div style="display:none">
+<p>
+</p>
 </div>
 </div>
-<div id="area-between-two-curves-and-parametric-integration" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Area between two curves and Parametric Integration<a href="week-seven.html#area-between-two-curves-and-parametric-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="area-between-two-curves" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Area between two curves<a href="week-seven.html#area-between-two-curves" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We may use definite integration to find the area between two curves (or a curve and a straight line).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-100" class="example"><strong>Example 7.8  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^2+1\)</span> and the straight line <span class="math inline">\(y=7-x\)</span>.</p>
+<p><span id="exm:unlabeled-div-101" class="example"><strong>Example 7.9  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=x^2+1\)</span> and the straight line <span class="math inline">\(y=7-x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-101" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-102" class="solution"><em>Solution</em>. </span></p>
 In this example we are not told the limits of integration. We must work them out. It is usually best to draw a sketch: Figure <a href="week-seven.html#fig:26-graph-x2117x">7.5</a>.
 <!--incfig
 
@@ -655,17 +722,21 @@ Figure 7.5: <span class="math inline">\(y=x^2+1\)</span> and <span class="math i
 Hence we see that the curves intersect at <span class="math inline">\(x=-3\)</span> and <span class="math inline">\(x=2\)</span>. These are the limits of integration.</p>
 <p>From the sketch, the shaded area will be given by</p>
 <p><span class="math display">\[\begin{align*}
-A&amp;=\int_{-3}^2(7-x)dx - \int_{-3}^2(x^2+1)dx = \left[7x-\frac{x^2}2\right]_{-3}^2 - \left[\frac{x^3}3+x\right]_{-3}^2\\
+A&amp;=\int_{-3}^2(7-x)\mathrm{d}x - \int_{-3}^2(x^2+1)\mathrm{d}x = \left[7x-\frac{x^2}2\right]_{-3}^2 - \left[\frac{x^3}3+x\right]_{-3}^2\\
 &amp;=\left[7\times2-\frac{4}2\right]-\left[7(-3)-\frac92\right]-\left\{\left[\frac{8}3+2\right]-\left[\frac{-27}3-3\right]\right\}\\
 &amp;=14-2+21+\frac 92-\frac83-2-\frac{27}3-3=20.83.
 \end{align*}\]</span>
 The area is therefore <span class="math inline">\(20.83\)</span> units<span class="math inline">\(^2\)</span>.</p>
 </div>
+<div style="display:none">
+<p>
+</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-102" class="example"><strong>Example 7.9  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=e^x\)</span> and the curve <span class="math inline">\(y=e^{-x}\)</span> and <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=2\)</span>.</p>
+<p><span id="exm:unlabeled-div-103" class="example"><strong>Example 7.10  </strong></span>Determine the area enclosed between the curve <span class="math inline">\(y=e^x\)</span> and the curve <span class="math inline">\(y=e^{-x}\)</span> and <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-103" class="solution"><em>Solution</em>. </span></p>
+<p><span id="unlabeled-div-104" class="solution"><em>Solution</em>. </span></p>
 A quick sketch of the curves is on Figure <a href="week-seven.html#fig:27-graph-exex">7.6</a>.
 <!--incfig
 
@@ -677,40 +748,45 @@ Figure 7.6: <span class="math inline">\(y=e^x\)</span> and <span class="math inl
 </p>
 </div>
 <p><span class="math display">\[
-A = \int_0^2(e^x-e^{-x})dx = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
+A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
 \]</span></p>
 </div>
-<div id="parametric-integration" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Parametric Integration<a href="week-seven.html#parametric-integration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div style="display:none">
+<p>
+</p>
+</div>
+</div>
+<div id="parametric-integration" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Parametric Integration<a href="week-seven.html#parametric-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If a curve is defined parametrically such that <span class="math inline">\(x = f(t)\)</span> and <span class="math inline">\(y = g(t)\)</span> it can be integrated parametrically as follows
 <span class="math display">\[
-\int_a^by\ dx = \int_{x=a}^{x=b}g(t)f&#39;(t)dt.
+\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f&#39;(t)\,\mathrm{d}t.
 \]</span>
-Notice that <span class="math inline">\(dx/dt = f&#39;(t)\)</span> and so we write <span class="math inline">\(dx = f&#39;(t)dt\)</span>. It is normally best to convert the limits of integration into values of <span class="math inline">\(t\)</span> rather than <span class="math inline">\(x\)</span>. So we find <span class="math inline">\(a&#39;, b&#39;\)</span> such that <span class="math inline">\(a=f(a&#39;), b = f(b&#39;)\)</span> and then the integral becomes
+Since <span class="math inline">\(\mathrm{d}x/\mathrm{d}t = f&#39;(t)\)</span>, we may imagine that <span class="math inline">\(\mathrm{d}x = f&#39;(t)\,\mathrm{d}t\)</span>, which happens to be correct. It is normally best to convert the limits of integration into values of <span class="math inline">\(t\)</span> rather than <span class="math inline">\(x\)</span>. So we find <span class="math inline">\(a&#39;, b&#39;\)</span> such that <span class="math inline">\(a=f(a&#39;), b = f(b&#39;)\)</span> and then the integral becomes
 <span class="math display">\[
-\int_{a&#39;}^{b&#39;}g(t)f&#39;(t)dt.
+\int_{a&#39;}^{b&#39;}g(t)f&#39;(t)\,\mathrm{d}t.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 7.10  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = at^2\)</span> and <span class="math inline">\(y = 2at\)</span> where <span class="math inline">\(t\)</span> is a parameter and <span class="math inline">\(a\)</span> is a constant. Determine the definite integral between <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(t = 2\)</span>.</p>
+<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 7.11  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = at^2\)</span> and <span class="math inline">\(y = 2at\)</span> where <span class="math inline">\(t\)</span> is a parameter and <span class="math inline">\(a\)</span> is a constant. Determine the definite integral between <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(t = 2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-105" class="solution"><em>Solution</em>. </span>Here <span class="math inline">\(x=f(t)=at^2\)</span> and <span class="math inline">\(y=g(t)=2at\)</span>. Hence <span class="math inline">\(f&#39;(t) = 2at\)</span> and the integral is
-<span class="math display">\[
-A = \int_a^{4a} y\ dx = \int_{t=1}^{t=2}y\ dx = \int_1^22at\times 2at\ dt = \int_1^24a^2t^2\ dt = 4a^2\left[\frac{t^3}3\right]_1^2 = 4a^2\left[\frac 83-\frac13\right]=\frac{28}3a^2.
-\]</span></p>
+<p><span id="unlabeled-div-106" class="solution"><em>Solution</em>. </span>Here <span class="math inline">\(x=f(t)=at^2\)</span> and <span class="math inline">\(y=g(t)=2at\)</span>. Hence <span class="math inline">\(f&#39;(t) = 2at\)</span> and the integral is
+<span class="math display">\[\begin{align*}
+A &amp;= \int_a^{4a} y\ \mathrm{d}x = \int_{t=1}^{t=2}y\ \mathrm{d}x = \int_1^22at\times 2at\ \mathrm{d}t = \int_1^24a^2t^2\ \mathrm{d}t\\
+&amp;= 4a^2\left[\frac{t^3}3\right]_1^2 = 4a^2\left[\frac 83-\frac13\right]=\frac{28}3a^2.
+\end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 7.11  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = \sin(t)\)</span> and <span class="math inline">\(y = \cos(t)\)</span> where <span class="math inline">\(t\)</span> is a parameter. Determine the definite integral of <span class="math inline">\(y\)</span> between <span class="math inline">\(t = 0\)</span> and <span class="math inline">\(t = \pi/2\)</span>.</p>
+<p><span id="exm:unlabeled-div-107" class="example"><strong>Example 7.12  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = \sin(t)\)</span> and <span class="math inline">\(y = \cos(t)\)</span> where <span class="math inline">\(t\)</span> is a parameter. Determine the definite integral of <span class="math inline">\(y\)</span> between <span class="math inline">\(t = 0\)</span> and <span class="math inline">\(t = \pi/2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-107" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
-\int_{\sin(0)}^{\sin(\pi/2)}y\ dx&amp; = \int_0^{\pi/2}\cos(t)\cos(t)dt = \int_0^{\pi/2}\cos^2(t)dt = \int_0^{\pi/2}\frac{\cos(2t)+1}{2}dt\\
+<p><span id="unlabeled-div-108" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+\int_{\sin(0)}^{\sin(\pi/2)}y\ \mathrm{d}x&amp; = \int_0^{\pi/2}\cos(t)\cos(t)\mathrm{d}t = \int_0^{\pi/2}\cos^2(t)\mathrm{d}t = \int_0^{\pi/2}\frac{\cos(2t)+1}{2}\mathrm{d}t\\
 &amp; = \frac12\left[\frac{\sin(2t)}2+t\right]_0^{\pi/2} = \frac12\left[0+\pi/2\right]-\frac12\left[0\right]=\frac{\pi}4.
 \end{align*}\]</span></p>
 </div>
 
-</div>
 </div>
 </div>
             </section>

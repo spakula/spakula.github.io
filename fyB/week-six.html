@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,7 +212,7 @@
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-six.html"><a href="week-six.html#integration-by-substitution"><i class="fa fa-check"></i><b>6.1</b> Integration by Substitution</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trig-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trig substitutions</a></li>
+<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trigonometric-integrals-and-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trigonometric integrals and substitutions</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="week-six.html"><a href="week-six.html#integration-by-parts"><i class="fa fa-check"></i><b>6.2</b> Integration by Parts</a></li>
 </ul></li>
@@ -229,15 +229,13 @@
 <li class="chapter" data-level="7.2.1" data-path="week-seven.html"><a href="week-seven.html#area-under-a-curve"><i class="fa fa-check"></i><b>7.2.1</b> Area under a curve</a></li>
 <li class="chapter" data-level="7.2.2" data-path="week-seven.html"><a href="week-seven.html#negative-areas"><i class="fa fa-check"></i><b>7.2.2</b> Negative Areas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves-and-parametric-integration"><i class="fa fa-check"></i><b>7.3</b> Area between two curves and Parametric Integration</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.3.1</b> Parametric Integration</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves"><i class="fa fa-check"></i><b>7.3</b> Area between two curves</a></li>
+<li class="chapter" data-level="7.4" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.4</b> Parametric Integration</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html"><i class="fa fa-check"></i>Week 7 Exercises</a>
 <ul>
-<li class="chapter" data-level="7.4" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.4</b> Sheet 15 - Integration using Partial Fractions</a></li>
-<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.5</b> Sheet 16 - Definite Integration</a>
+<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.5</b> Sheet 15 - Integration using Partial Fractions</a></li>
+<li class="chapter" data-level="7.6" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.6</b> Sheet 16 - Definite Integration</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
@@ -409,181 +407,196 @@
             <section class="normal" id="section-">
 <div id="week-six" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Week 6<a href="week-six.html#week-six" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We continue our study of integration by looking at two very important techniques to calculate the integral of certain functions that are difficult to integrate by other means - integration by substitution and integration by parts.</p>
+<p>We continue our study of integration by looking at two very important techniques to calculate integrals: integration by substitution and integration by parts.</p>
 <div id="integration-by-substitution" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Integration by Substitution<a href="week-six.html#integration-by-substitution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>So far we have learnt to integrate simple functions such as <span class="math inline">\(x^2 + 2x + 3\)</span> and standard integrals such as <span class="math inline">\(\sin(x), e^x\)</span> etc. If we want to integrate more complicated functions, more advanced techniques will be needed. One very useful method is <a name='#integration-by-substitution'></a><span style="color: red;">integration by substitution</span>. Consider
-<span class="math display">\[
-\int x\sqrt{x^2+1} dx.\tag{1}
-\]</span>
-We cannot integrate this directly, and if we try making a binomial expansion of the part under the square root sign and then multiplying by <span class="math inline">\(x\)</span>, we will only get an approximate answer. However, if we make a substitution, we can make the integral look like something we can integrate.</p>
-<p>Let <span class="math inline">\(u = x^2+ 1\)</span> then (1) becomes
-<span class="math display">\[
-\int x\sqrt{u} dx=\int xu^{1/2} dx.\tag{2}
-\]</span>
-So far, this doesn’t look much better, but if we now try to integrate with respect to <span class="math inline">\(u\)</span> instead of <span class="math inline">\(x\)</span>, we will find the substitution has helped. Before we can integrate with respect to <span class="math inline">\(u\)</span>, we must replace <span class="math inline">\(dx\)</span> with <span class="math inline">\(du\)</span>.</p>
-<p>If <span class="math inline">\(u = x^2+ 1\)</span>, then <span class="math inline">\(du/dx = 2x\)</span> and so <span class="math inline">\(du = 2x dx\)</span> or <span class="math inline">\(du/2 = xdx\)</span>.
-If we substitute for <span class="math inline">\(dx\)</span> in (2) we get
-<span class="math display">\[
-\int u^{1/2}xdx = \int\frac12u^{1/2}du.
-\]</span>
-Now our function is expressed entirely in terms of <span class="math inline">\(u\)</span> and we can integrate with respect to <span class="math inline">\(u\)</span> to give
-<span class="math display">\[
-\int\frac12u^{1/2}du = \frac 12\frac23u^{3/2}+c = \frac13u^{3/2}+c.
-\]</span>
-Finally we can substitute for <span class="math inline">\(u\)</span> to give the answer in terms of <span class="math inline">\(x\)</span>
-<span class="math display">\[
+<p>So far we have learnt to integrate “sums of powers” functions such as <span class="math inline">\(x^2 + 2x + 3\)</span> and standard integrals such as <span class="math inline">\(\sin(x), e^x\)</span> etc. A useful method for more complicated functions is <a name='#integration-by-substitution'></a><span style="color: red;">integration by substitution</span>. Consider
+<span class="math display" id="eq:6-1">\[\begin{equation}
+\int x\sqrt{x^2+1} \,\mathrm{d}x.
+\tag{6.1}
+\end{equation}\]</span>
+We cannot integrate this directly. If we try making a binomial expansion of the part under the square root sign and then multiplying by <span class="math inline">\(x\)</span>, we will only get an approximate answer. However, we can make a “substitution”:</p>
+<p>Let <span class="math inline">\(u = x^2+ 1\)</span>. Then <a href="week-six.html#eq:6-1">(6.1)</a> becomes
+<span class="math display" id="eq:6-2">\[\begin{equation}
+\int x\sqrt{u}\,\mathrm{d}x=\int xu^{1/2}\,\mathrm{d}x.
+\tag{6.2}
+\end{equation}\]</span>
+To get further, we need to replace all the “<span class="math inline">\(x\)</span>” in the integral by “<span class="math inline">\(u\)</span>” somehow; especially <span class="math inline">\(\mathrm{d}x\)</span> by <span class="math inline">\(\mathrm{d}u\)</span>.</p>
+<p>Here is where Leibniz notation for the derivative is “telling”.
+If <span class="math inline">\(u = x^2+ 1\)</span>, then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 2x\)</span>, “and so” <span class="math inline">\(\mathrm{d}u = 2x\,\mathrm{d}x\)</span>, or <span class="math inline">\(\mathrm{d}u/2 = x\,\mathrm{d}x\)</span>.</p>
+<p>If we use this in <a href="week-six.html#eq:6-2">(6.2)</a>, we get
+<span class="math display" id="eq:6-3">\[\begin{equation}
+\int u^{1/2}x\,\mathrm{d}x = \int\frac12u^{1/2}\,\mathrm{d}u.
+\tag{6.3}
+\end{equation}\]</span>
+(Note: It is convenient to work with <span class="math inline">\(\mathrm{d}u\)</span> and <span class="math inline">\(\mathrm{d}x\)</span> like above, and you should continue to do so; however the fact that <a href="week-six.html#eq:6-3">(6.3)</a> works is really a Theorem.)</p>
+<p>Now our function is expressed entirely in terms of <span class="math inline">\(u\)</span> and we can integrate with respect to <span class="math inline">\(u\)</span> to give</p>
+<p><span class="math display">\[
+\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.
+\]</span></p>
+<div style="display:none">
+<p><span class="math display">\[
+\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}
+\]</span></p>
+</div>
+<p>Finally we can substitute for <span class="math inline">\(u\)</span> to give the answer in terms of <span class="math inline">\(x\)</span></p>
+<p><span class="math display">\[
 \frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.
-\]</span>
-</p>
+\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 6.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\sin^2(x)\cos(x)dx\)</span>.</p>
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 6.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\sin^2(x)\cos(x)\mathrm{d}x\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sin(x)\)</span> so that <span class="math inline">\(du/dx = \cos(x)\)</span>. Then <span class="math inline">\(dx = du/\cos(x)\)</span> and so
+<p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sin(x)\)</span> so that <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = \cos(x)\)</span>. Then <span class="math inline">\(\mathrm{d}x = \mathrm{d}u/\cos(x)\)</span> and so
 <span class="math display">\[
-\int\sin^2(x)\cos(x)dx = \int u^2du = \frac 13u^3+c.
+\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.
 \]</span>
 Hence
 <span class="math display">\[
-\int\sin^2(x)\cos(x)dx = \frac 13\sin^3(x) + c.
+\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.
 \]</span></p>
 </div>
-<p>There are many functions where making a substitution helps us to integrate. In all cases, the method for finding the integral has the general form of the examples above. One common class of problems is those where we have a product and one half of the product is the derivative of the other half. The examples above belong to this class. A second class is a quotient where the numerator is the derivative of the denominator.</p>
+<p>This “by substitution” method is helpful in many cases. The “pattern” is this: usually we are looking for a part of the integrated expression such that the derivative of this part of the expression appears as a factor in the expression.</p>
+<p>One way this can happen is that the numerator in a fraction is the derivative of the denominator, as in the following Example.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-73" class="example"><strong>Example 6.2  </strong></span>Find
 <span class="math display">\[
-\int\frac{3x^2}{x^3-4}dx.
+\int\frac{3x^2}{x^3-4}\mathrm{d}x.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^3-4\)</span> so that <span class="math inline">\(du = 3x^2dx\)</span>. Then
+<p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^3-4\)</span> so that <span class="math inline">\(\mathrm{d}u = 3x^2\mathrm{d}x\)</span>. Then
 <span class="math display">\[
-\int\frac{3x^2}{x^3-4}dx = \int \frac{du}{u} = \ln|u|+c = \ln|x^3-4|+c.
+\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.
 \]</span></p>
 </div>
-<p>For integrals of this class, the result is always the natural log of the denominator.
+<p>(For integrals of this class of examples, the result is always the natural log of the denominator.)
 </p>
-<div id="trig-substitutions" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Trig substitutions<a href="week-six.html#trig-substitutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practise.</p>
+<div id="trigonometric-integrals-and-substitutions" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Trigonometric integrals and substitutions<a href="week-six.html#trigonometric-integrals-and-substitutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practice.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-75" class="example"><strong>Example 6.3  </strong></span>Find
 <span class="math display">\[
-\int\sin^2(x) dx.
+\int\sin^2(x) \mathrm{d}x.
 \]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span>Using the trig identity for <span class="math inline">\(\cos(2x)\)</span> we see that <span class="math inline">\(\sin^2(x) = (1-\cos(2x))/2\)</span>. So
 <span class="math display">\[
-\int\sin^2(x) dx = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
+\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
 \]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-77" class="example"><strong>Example 6.4  </strong></span>Find
 <span class="math display">\[
-\int\frac{dx}{\sqrt{a^2-x^2}}.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.
 \]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-78" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a\sin(\theta)\)</span> then <span class="math inline">\(dx = a\cos(\theta)d\theta\)</span>. So <span class="math inline">\(x^2 = a^2\sin^2(\theta)\)</span> and <span class="math inline">\(\theta = \sin^{-1}(x/a)\)</span>. Hence
+<p><span id="unlabeled-div-78" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a\sin(\theta)\)</span> then <span class="math inline">\(\mathrm{d}x = a\cos(\theta)d\theta\)</span>. So <span class="math inline">\(x^2 = a^2\sin^2(\theta)\)</span> and <span class="math inline">\(\theta = \sin^{-1}(x/a)\)</span>. Hence
 <span class="math display">\[
-\int\frac{dx}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
 \]</span>
 Hence
 <span class="math display">\[
-\int\frac{dx}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
+\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
 \]</span></p>
 </div>
 </div>
 </div>
 <div id="integration-by-parts" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Integration by Parts<a href="week-six.html#integration-by-parts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To integrate a product of two terms where one half is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product</p>
+<p>To integrate a product of two terms where one part is the derivative of the other, we have seen that integration by substitution may be used. When we have a product where one half is not the derivative of the other, integration by parts may be useful. The rule for integration by parts is derived from the rule for differentiating a product.</p>
 <p>If <span class="math inline">\(y = uv\)</span>, where <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are both functions of <span class="math inline">\(x\)</span> then,
-<span class="math display">\[
-\frac{dy}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}\tag{1}
-\]</span>
-If we integrate both sides of equation (1) with respect to <span class="math inline">\(x\)</span> then we have
-<span class="math display">\[
-\int\frac{dy}{dx}dx = \int u\frac{dv}{dx}dx + \int v\frac{du}{dx}dx\tag{2}
-\]</span>
+<span class="math display" id="eq:6-4">\[\begin{equation}
+\frac{\mathrm{d}y}{\mathrm{d}x} = u\cdot\frac{\mathrm{d}v}{\mathrm{d}x} + v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}
+\tag{6.4}
+\end{equation}\]</span>
+If we integrate both sides of equation <a href="week-six.html#eq:6-4">(6.4)</a> with respect to <span class="math inline">\(x\)</span> then we have
+<span class="math display" id="eq:6-5">\[\begin{equation}
+\int\frac{\mathrm{d}y}{\mathrm{d}x}\,\mathrm{d}x = \int u\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x + \int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\tag{6.5}
+\end{equation}\]</span>
 Now the integral of the left-hand side is given by
-<span class="math display">\[
-\int\frac{dy}{dx}dx = \int dy = y
-\]</span>
+<span class="math display" id="eq:6-6">\[\begin{equation}
+\int\frac{\mathrm{d}y}{\mathrm{d}x}\,\mathrm{d}x = y
+\tag{6.6}
+\end{equation}\]</span>
 and <span class="math inline">\(y = uv\)</span> so
-<span class="math display">\[
-uv =\int u\frac{dv}{dx}dx +\int v\frac{du}{dx}dx\tag{3}
-\]</span>
+<span class="math display" id="eq:6-7">\[\begin{equation}
+uv =\int u\cdot\frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x +\int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\tag{6.7}
+\end{equation}\]</span>
 and therefore, rearranging gives us
-<span class="math display">\[
-\int u\frac{dv}{dx}dx = uv -\int v\frac{du}{dx}dx\tag{4}
-\]</span>
-Equation (4) is the formula for <a name='#integration-by-parts'></a><span style="color: red;">integration by parts</span> and can be used to integrate some types of
+<span class="math display" id="eq:6-8">\[\begin{equation}
+\int u\cdot \frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x = uv -\int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
+\tag{6.8}
+\end{equation}\]</span>
+Equation <a href="week-six.html#eq:6-8">(6.8)</a> is the formula for <a name='#integration-by-parts'></a><span style="color: red;">integration by parts</span> and can be used to integrate some types of
 product.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 6.5  </strong></span>Find <span class="math inline">\(\displaystyle\int x^3\ln(x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 6.5  </strong></span>Find <span class="math inline">\(\displaystyle\int x^3\ln(x)\mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>This is a product but one half is not the derivative of the other, so integration by parts must be used.</p>
-<p>First choose one part of the product and let it be <span class="math inline">\(u\)</span>, then the other half is <span class="math inline">\(dv/dx\)</span>.</p>
-<p>So, let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(dv/dx = x^3\)</span>. Then <span class="math inline">\(du/dx = 1/x\)</span> and <span class="math inline">\(v=\displaystyle\int x^3dx = x^4/4\)</span>.</p>
-<p>Then substituting for <span class="math inline">\(u, du/dx, v\)</span> and <span class="math inline">\(dv/dx\)</span> in equation (4) we get
+<p>First choose one part of the product and let it be <span class="math inline">\(u\)</span>, then the other half is <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span>.</p>
+<p>So, let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = x^3\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1/x\)</span> and <span class="math inline">\(v=\displaystyle\int x^3\mathrm{d}x = x^4/4\)</span>.</p>
+<p>Then substituting for <span class="math inline">\(u, \mathrm{d}u/\mathrm{d}x, v\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span> in equation (4) we get
 <span class="math display">\[\begin{align*}
-\int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
-\int x^3\ln(x)dx&amp; = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)dx\\
-&amp;=\left(\frac{x^4}{4}\ln(x)\right)-\int\frac{x^3}{4}dx = \left(\frac{x^4}{4}\ln(x)\right) - \left(\frac{x^4}{16}\right)+c\\
-\int x^3\ln(x)dx&amp; = \frac{x^4}{4}\left(\ln(x)-\frac14\right)+c.
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int x^3\ln(x)\mathrm{d}x&amp; = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)\mathrm{d}x\\
+&amp;=\left(\frac{x^4}{4}\ln(x)\right)-\int\frac{x^3}{4}\mathrm{d}x = \left(\frac{x^4}{4}\ln(x)\right) - \left(\frac{x^4}{16}\right)+c\\
+\int x^3\ln(x)\mathrm{d}x&amp; = \frac{x^4}{4}\left(\ln(x)-\frac14\right)+c.
 \end{align*}\]</span></p>
 </div>
-<p>By choosing the terms we did for <span class="math inline">\(u\)</span> and <span class="math inline">\(dv/dx\)</span>, the formula helped us simplify what had to be integrated. We could have chosen <span class="math inline">\(u\)</span> as <span class="math inline">\(x^3\)</span> and <span class="math inline">\(dv/dx\)</span> as <span class="math inline">\(\ln(x)\)</span>, but if we had, we would have found that after substituting our terms into the formula, the integral was no more simple that before.</p>
+<p>By choosing the terms we did for <span class="math inline">\(u\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span>, the formula helped us simplify what had to be integrated. We could have chosen <span class="math inline">\(u\)</span> as <span class="math inline">\(x^3\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span> as <span class="math inline">\(\ln(x)\)</span>, but if we had, we would have found that after substituting our terms into the formula, the integral was no more simple that before.</p>
 <p>Knowing which term to choose for which part of the formula is on the whole a question of practice.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 6.6  </strong></span>Find <span class="math inline">\(\displaystyle\int xe^{-x}dx\)</span></p>
+<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 6.6  </strong></span>Find <span class="math inline">\(\displaystyle\int xe^{-x}\mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-82" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x\)</span> and <span class="math inline">\(dv/dx=e^{-x}\)</span> so that <span class="math inline">\(du/dx = 1\)</span> and <span class="math inline">\(v=\displaystyle\int e^{-x}dx = -e^{-x}\)</span>. So using integration by parts
+<p><span id="unlabeled-div-82" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x=e^{-x}\)</span> so that <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1\)</span> and <span class="math inline">\(v=\displaystyle\int e^{-x}\mathrm{d}x = -e^{-x}\)</span>. So using integration by parts
 <span class="math display">\[\begin{align*}
-\int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
-\int xe^{-x}dx&amp;=x(-e^{-x})-\int-e^{-x}dx\\
-&amp;=-xe^{-x}+\int e^{-x}dx\\
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int xe^{-x}\mathrm{d}x&amp;=x(-e^{-x})-\int-e^{-x}\mathrm{d}x\\
+&amp;=-xe^{-x}+\int e^{-x}\mathrm{d}x\\
 &amp;=-xe^{-x}-e^{-x}+c.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 6.7  </strong></span>Find <span class="math inline">\(\displaystyle\int \ln(x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 6.7  </strong></span>Find <span class="math inline">\(\displaystyle\int \ln(x)\mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-84" class="solution"><em>Solution</em>. </span>At first sight this doesn’t look as if integration by parts will be useful as it doesn’t seem to involve a product. However we can think of it as <span class="math inline">\(\displaystyle\int 1\times\ln(x)dx\)</span>.</p>
-<p>Let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(dv/dx = 1\)</span> then <span class="math inline">\(du/dx = 1/x\)</span> and <span class="math inline">\(v = x\)</span>. hence using integration by parts we see that
+<p><span id="unlabeled-div-84" class="solution"><em>Solution</em>. </span>At first sight this doesn’t look as if integration by parts will be useful as it doesn’t seem to involve a product. However we can think of it as <span class="math inline">\(\displaystyle\int 1\times\ln(x)\mathrm{d}x\)</span>.</p>
+<p>Let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = 1\)</span> then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1/x\)</span> and <span class="math inline">\(v = x\)</span>. hence using integration by parts we see that
 <span class="math display">\[\begin{align*}
-\int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
-\int\ln(x)dx&amp;=x\ln(x)-\int x\times\frac 1x dx\\
-&amp;=x\ln(x)-\int 1dx\\
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int\ln(x)\mathrm{d}x&amp;=x\ln(x)-\int x\times\frac 1x \mathrm{d}x\\
+&amp;=x\ln(x)-\int 1\mathrm{d}x\\
 &amp;=x\ln(x)-x + c.
 \end{align*}\]</span></p>
 </div>
 <p>Sometimes it is necessary to apply the formula twice (or more).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 6.8  </strong></span>Find <span class="math inline">\(\displaystyle\int x^2\sin(2x)dx\)</span></p>
+<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 6.8  </strong></span>Find <span class="math inline">\(\displaystyle\int x^2\sin(2x)\mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-86" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^2\)</span> and let <span class="math inline">\(dv/dx = \sin(2x)\)</span>. Then <span class="math inline">\(du/dx = 2x\)</span> and <span class="math inline">\(v = \displaystyle\int \sin(2x)dx = -\cos(2x)/2\)</span>.</p>
+<p><span id="unlabeled-div-86" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^2\)</span> and let <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = \sin(2x)\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 2x\)</span> and <span class="math inline">\(v = \displaystyle\int \sin(2x)\mathrm{d}x = -\cos(2x)/2\)</span>.</p>
 <p>Using integration by parts.
 <span class="math display">\[\begin{align*}
-\int u\frac{dv}{dx}dx&amp; = uv-\int v\frac{du}{dx}dx\\
-\int x^2\sin(2x)dx&amp;=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)dx\\
-&amp;=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)dx\tag{5}
+\int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
+\int x^2\sin(2x)\mathrm{d}x&amp;=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)\mathrm{d}x\\
+&amp;=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x\tag{5}
 \end{align*}\]</span></p>
 <p>We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-</p>
-<p>We have <span class="math inline">\(\displaystyle\int x\cos(2x)dx\)</span>. Let <span class="math inline">\(u=x\)</span> and <span class="math inline">\(dv/dx = \cos(2x)\)</span>. Then <span class="math inline">\(du/dx = 1\)</span> and <span class="math inline">\(v=\sin(2x)/2\)</span>.
+<p>We have <span class="math inline">\(\displaystyle\int x\cos(2x)\mathrm{d}x\)</span>. Let <span class="math inline">\(u=x\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = \cos(2x)\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1\)</span> and <span class="math inline">\(v=\sin(2x)/2\)</span>.
 <span class="math display">\[
-\int x\cos(2x)dx = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1dx = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
+\int x\cos(2x)\mathrm{d}x = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
 \]</span>
 Now substituting (6) into (5) we can obtain the answer to the original integral
 <span class="math display">\[
-\int x^2\sin(2x)dx = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
+\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
 \]</span></p>
 </div>
 

@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,7 +212,7 @@
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-six.html"><a href="week-six.html#integration-by-substitution"><i class="fa fa-check"></i><b>6.1</b> Integration by Substitution</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trig-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trig substitutions</a></li>
+<li class="chapter" data-level="6.1.1" data-path="week-six.html"><a href="week-six.html#trigonometric-integrals-and-substitutions"><i class="fa fa-check"></i><b>6.1.1</b> Trigonometric integrals and substitutions</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="week-six.html"><a href="week-six.html#integration-by-parts"><i class="fa fa-check"></i><b>6.2</b> Integration by Parts</a></li>
 </ul></li>
@@ -229,15 +229,13 @@
 <li class="chapter" data-level="7.2.1" data-path="week-seven.html"><a href="week-seven.html#area-under-a-curve"><i class="fa fa-check"></i><b>7.2.1</b> Area under a curve</a></li>
 <li class="chapter" data-level="7.2.2" data-path="week-seven.html"><a href="week-seven.html#negative-areas"><i class="fa fa-check"></i><b>7.2.2</b> Negative Areas</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves-and-parametric-integration"><i class="fa fa-check"></i><b>7.3</b> Area between two curves and Parametric Integration</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.3.1</b> Parametric Integration</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="week-seven.html"><a href="week-seven.html#area-between-two-curves"><i class="fa fa-check"></i><b>7.3</b> Area between two curves</a></li>
+<li class="chapter" data-level="7.4" data-path="week-seven.html"><a href="week-seven.html#parametric-integration"><i class="fa fa-check"></i><b>7.4</b> Parametric Integration</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html"><i class="fa fa-check"></i>Week 7 Exercises</a>
 <ul>
-<li class="chapter" data-level="7.4" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.4</b> Sheet 15 - Integration using Partial Fractions</a></li>
-<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.5</b> Sheet 16 - Definite Integration</a>
+<li class="chapter" data-level="7.5" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-15---integration-using-partial-fractions"><i class="fa fa-check"></i><b>7.5</b> Sheet 15 - Integration using Partial Fractions</a></li>
+<li class="chapter" data-level="7.6" data-path="week-7-exercises.html"><a href="week-7-exercises.html#sheet-16---definite-integration"><i class="fa fa-check"></i><b>7.6</b> Sheet 16 - Definite Integration</a>
 <ul>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-1-6"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="week-7-exercises.html"><a href="week-7-exercises.html#exercise-2-6"><i class="fa fa-check"></i>Exercise 2</a></li>
@@ -409,16 +407,16 @@
             <section class="normal" id="section-">
 <div id="week-eight" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">8</span> Week 8<a href="week-eight.html#week-eight" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Some function can’t be, or are difficult to, integrate analytically. In these cases we need to rely on numerical techniques to approximate the value of a definite integral. We shall consider three common methods during this week.</p>
+<p>Some function can’t be, or are difficult to, integrate analytically. However for definite integrals we can use numerical methods to approximate the result. We will learn three methods.</p>
+<p>We defined <span class="math inline">\(\displaystyle\int_a^bf(x)\,\mathrm{d}x\)</span> using an antiderivative of <span class="math inline">\(f\)</span>; but <span class="math inline">\(\displaystyle\int_a^bf(x)\,\mathrm{d}x\)</span> also represents the area between the curve and the <span class="math inline">\(x\)</span>-axis, and we can approximate that to any given degree of accuracy (for reasonable functions <span class="math inline">\(f\)</span>).</p>
+<p>All three methods here start the same way: we chop the area under the curve into a number of vertical strips. Where they differ are the shapes of the regions used to approximate the area(s) of the individual strips.</p>
+<ul>
+<li>Mid-ordinate rule: rectangles (“degree 0 top”)</li>
+<li>Trapezium rule: trapeziums (“degree 1 top”)</li>
+<li>Simpson’s rule: “with a parabola on top” (“degree 2 top”)</li>
+</ul>
 <div id="mid-ordinate-rule" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Mid-ordinate Rule<a href="week-eight.html#mid-ordinate-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To evaluate a definite integral <span class="math inline">\(\displaystyle\int_a^bf(x)dx\)</span> we must find an antiderivative of the function <span class="math inline">\(f(x)\)</span>. If such a function cannot be found then we must use numerical methods to approximate the integral to a desired degree of accuracy. To do this, we make use of the fact that the integral <span class="math inline">\(\displaystyle\int_a^bf(x)dx\)</span> represents the area beneath the curve and the <span class="math inline">\(x-\)</span>axis.</p>
-<p>We shall consider three methods</p>
-<ol style="list-style-type: decimal">
-<li>Mid-ordinate rule;</li>
-<li>Trapezium rule;</li>
-<li>Simpson’s rule.</li>
-</ol>
 <p>With the <a name='#mid-ordinate-rule'></a><span style="color: red;">mid-ordinate rule</span>, the curve for which we want to know the area is divided into strips of equal width <span class="math inline">\(s\)</span>, see Figure <a href="week-eight.html#fig:28-graph-vertical-strips">8.1</a>.</p>
 <!--insfig
 
@@ -429,8 +427,7 @@
 Figure 8.1: <span class="math inline">\(f(x)\)</span>
 </p>
 </div>
-<p>Considering each strip in turn, we measure the height of the strip, <span class="math inline">\(h\)</span>, along the centre line or mid-ordinate, see Figure <a href="week-eight.html#fig:29-mid-ordinate-rule">8.2</a>. The area of the strip is then taken to be the area of a rectangle with height <span class="math inline">\(h\)</span> and width <span class="math inline">\(s\)</span>.
-</p>
+<p>Considering each strip in turn, we measure the height of the strip, <span class="math inline">\(h\)</span>, along the centre line or mid-ordinate, see Figure <a href="week-eight.html#fig:29-mid-ordinate-rule">8.2</a>. The area of the strip is then taken to be the area of a rectangle with height <span class="math inline">\(h\)</span> and width <span class="math inline">\(s\)</span>.</p>
 <!--insfig
 
 -->
@@ -440,33 +437,38 @@ Figure 8.1: <span class="math inline">\(f(x)\)</span>
 Figure 8.2: mid-ordinate rule
 </p>
 </div>
-<p>The area is <span class="math inline">\(h \times s\)</span>, the area of the shaded rectangle. Note that the approximate area slightly over estimates the area to the right of the mid-ordinate, but slightly under estimates it by an approximately similar amount on the left of the mid-ordinate. As a result, the shaded area is a good approximation to the total area.</p>
+<p>The area of the shaded rectangle <span class="math inline">\(h \times s\)</span>. Depending on the shape of the curve <span class="math inline">\(f\)</span> in that strip, this area of the rectangle can be smaller or greater than the actual area of the strip under the curve. But if the function <span class="math inline">\(f\)</span> does not “wiggle” too much and the width is small, the approximation is plausible.</p>
 <p>The approximate total area under the curve is the sum of the approximate areas of all the strips so
 <span class="math display">\[
 \text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h
 \]</span>
-where <span class="math inline">\(\sum h\)</span> is shorthand for the sum of all the values of <span class="math inline">\(h\)</span>. So the total area = width of strip <span class="math inline">\(\times\)</span> sum of the mid-ordinates.</p>
+where <span class="math inline">\(\sum h\)</span> is shorthand for the sum of all the values of <span class="math inline">\(h\)</span>.</p>
+<p>In words, the total area equals [the width of strip] times [the sum of the mid-ordinates].</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-108" class="example"><strong>Example 8.1  </strong></span>Use the mid-ordinate approximation to calculate the integral
+<p><span id="exm:unlabeled-div-109" class="example"><strong>Example 8.1  </strong></span>Use the mid-ordinate rule to approximate the value of the integral
 <span class="math display">\[
-\int_1^4x^2dx
+\int_1^4x^2\,\mathrm{d}x
 \]</span>
 by taking 1, 2 or 3 strips. Compare the values with the correct value.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-109" class="solution"><em>Solution</em>. </span>First we know that <span class="math inline">\(\displaystyle\int_1^4 x^2 dx = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\)</span>.</p>
+<p><span id="unlabeled-div-110" class="solution"><em>Solution</em>. </span>First we know that <span class="math inline">\(\displaystyle\int_1^4 x^2\,\mathrm{d}x = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\)</span>.</p>
 <p>Using one strip, <span class="math inline">\(s=3\)</span>, the mid-point is <span class="math inline">\(x=2.5\)</span> and <span class="math inline">\(h=2.5^2 = 6.25\)</span>. Hence the mid-ordinate approximation gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim 3\times 6.25 = 18.75.
+\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.
 \]</span>
 Using two strips, <span class="math inline">\(s=1.5\)</span>, the two mid-points are <span class="math inline">\(x_1=1.75\)</span> and <span class="math inline">\(x_2=3.25\)</span> with heights <span class="math inline">\(h_1=1.75^2=3.0625, h_2=3.25^2=10.5625\)</span>. Hence the mid-ordinate approximation gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
+\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
 \]</span>
 Using three strips, <span class="math inline">\(s=1\)</span>, the three mid-points are <span class="math inline">\(x_1=1.5, x_2=2.5\)</span> and <span class="math inline">\(x_3=3.5\)</span> with heights <span class="math inline">\(h_1=1.5^2=2.25, h_2=2.5^2=6.25, h_3=3.5^2=12.25\)</span>. Hence the mid-ordinate approximation gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
+\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
 \]</span></p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 </div>
 <div id="trapezium-rule" class="section level2 hasAnchor" number="8.2">
@@ -483,38 +485,42 @@ Figure 8.3: trapezium rule
 </div>
 <p>For a trapezium, the area is given by
 <span class="math display">\[
-A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{ perpendicular distance between parallel sides})
+A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})
 \]</span>
-So for each strip <span class="math inline">\(\delta A =s(y_1+y_2)/2\)</span>. The total area is then, for <span class="math inline">\(n\)</span> strips
+So for each strip <span class="math inline">\(\delta A =s(y_1+y_2)/2\)</span>. With <span class="math inline">\(n\)</span> strips, the total area (of the trapeziums) is
 <span class="math display">\[\begin{align*}
 A&amp; = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
 &amp;= \frac s2\left(y_1+2y_2+2y_3+\ldots 2y_{n}+y_{n+1}\right).
 \end{align*}\]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-110" class="example"><strong>Example 8.2  </strong></span>Use the trapezium rule to approximate the integral
+<p><span id="exm:unlabeled-div-111" class="example"><strong>Example 8.2  </strong></span>Use the trapezium rule to approximate the integral
 <span class="math display">\[
-\int_1^4x^2dx
+\int_1^4x^2\,\mathrm{d}x
 \]</span>
 by taking 1, 2 or 3 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-111" class="solution"><em>Solution</em>. </span>If there is one strip then <span class="math inline">\(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\)</span>. Hence the trapezium rule gives
+<p><span id="unlabeled-div-112" class="solution"><em>Solution</em>. </span>If there is one strip then <span class="math inline">\(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\)</span>. Hence the trapezium rule gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
 \]</span>
 With two strips then <span class="math inline">\(s=1.5,x_1=1, x_2=2.5, x_3=4, y_1=1^2=1, y_2=2.5^2=6.25, y_3=4^2=16\)</span>. Hence the trapezium rule gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
 \]</span>
 With three strips then <span class="math inline">\(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4, y_3=3^2=9, y_4=4^2=16\)</span>. Hence the trapezium rule gives
 <span class="math display">\[
-\int_1^4 x^2 dx \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
+\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
 \]</span></p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 </div>
 <div id="simpsons-rule" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Simpson’s Rule<a href="week-eight.html#simpsons-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-The idea behind <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span> is that instead of approximating the curve using a series of trapeziums, we approximate by using a series of quadratic polynomials, see Figure <a href="week-eight.html#fig:31-simpsons-rule">8.4</a>.
+For <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span>, we approximate the function in each strip by a quadratic polynomial (i.e. a piece of a parabola), rather than a line as in the previous two rules — see Figure <a href="week-eight.html#fig:31-simpsons-rule">8.4</a>.
 <!--insfig
 
 -->
@@ -524,7 +530,8 @@ The idea behind <a name='#simpsons-rule'></a><span style="color: red;">Simpson�
 Figure 8.4: Simpson’s rule
 </p>
 </div>
-Given 3 equally spaced points on the curve <span class="math inline">\((x_1,y_1), (x_2, y_2)\)</span> and <span class="math inline">\((x_3,y_3)\)</span>, we construct a quadratic polynomial <span class="math inline">\(y=ax^2+bx+c\)</span> which passes through all three points. In order to simplify the calculations, we can ‘move’ the curve so that the point <span class="math inline">\(x_2\)</span> coincides with the origin, see Figure <a href="week-eight.html#fig:32-simpsons-rule2">8.5</a>. In other words assume that <span class="math inline">\(x_2=0\)</span>. We also let <span class="math inline">\(x_3-x_2=x_2-x_1=s\)</span> and so <span class="math inline">\(x_3=s, x_1=-s\)</span>.
+<p>Given 3 equally spaced points on the curve <span class="math inline">\((x_1,y_1), (x_2, y_2)\)</span> and <span class="math inline">\((x_3,y_3)\)</span>, we construct a quadratic polynomial <span class="math inline">\(y=ax^2+bx+c\)</span> which passes through all three points.</p>
+In order to simplify the calculations, we can ‘move’ the curve so that the point <span class="math inline">\(x_2\)</span> coincides with the origin, see Figure <a href="week-eight.html#fig:32-simpsons-rule2">8.5</a>. In other words assume that <span class="math inline">\(x_2=0\)</span>. We also let <span class="math inline">\(x_3-x_2=x_2-x_1=s\)</span> and so <span class="math inline">\(x_3=s\)</span> and <span class="math inline">\(x_1=-s\)</span>.
 <!--insfig
 
 -->
@@ -534,7 +541,7 @@ Given 3 equally spaced points on the curve <span class="math inline">\((x_1,y_1)
 Figure 8.5: Simpson’s rule: move to arrange <span class="math inline">\(x_2=0\)</span>
 </p>
 </div>
-<p>for this to be the case we then need
+<p>For the parabola <span class="math inline">\(y=ax^2+bx+c\)</span> to go through the points <span class="math inline">\((-s,y_1),(0,y_2),(s,y_3)\)</span> it needs to satisfy
 <span class="math display">\[\begin{align*}
 y_1&amp;=a(-s)^2+b(-s)+c\\
 y_2&amp;=a0^2+b0+c\\
@@ -547,48 +554,74 @@ b&amp;=\frac{y_3-y_1}{2s}\\
 c&amp;=y_2.
 \end{align*}\]</span>
 The area under that quadratic will then be
-<span class="math display">\[
-\int_{-s}^{s}(ax^2+bx+c)dx = \left[a\frac{x^3}3+b\frac{x^2}2+cx\right]_{-s}^{s}=\frac{s}{3}\left[y_1+4y_2+y_3\right].
-\]</span>
-Notice that the answer is not dependent on the values of <span class="math inline">\(x_1, x_2\)</span> or <span class="math inline">\(x_3\)</span>. Notice also that we are using 2 intervals of length <span class="math inline">\(s\)</span> to construct the quadratic.</p>
-<p>If we now split out interval over which we are integrating into an even number, say <span class="math inline">\(2n\)</span>, of intervals of length <span class="math inline">\(s\)</span>, we can then construct a quadratic using <span class="math inline">\(x_1, x_2, x_3\)</span> then another quadratic using <span class="math inline">\(x_3, x_4, x_5\)</span>, and so on until we get a final quadratic using <span class="math inline">\(x_{2n-1},x_{2n},x_{2n+1}\)</span> and the sum of the areas under those quadratic will be an approximation to the area under the curve. This gives us
 <span class="math display">\[\begin{align*}
-\int_{x_1}^{x_{2n+1}}y\ dx&amp; = \frac s3\left[y_1+4y_2+y_3\right] + \frac s3\left[y_3+4y_4+y_5\right] + \ldots + \frac s3\left[y_{2n-1}+4y_{2n}+y_{2n+1}\right]\\
-&amp;=\frac s3\left[y_1+4y_2+2y_3+4y_4+2y_5+\ldots +2y_{2n-1}+4y_{2n}+y_{2n+1}\right].
+\int_{-s}^{s}(ax^2+bx+c)\,\mathrm{d}x &amp;= \left[a\frac{x^3}3+b\frac{x^2}2+cx\right]_{-s}^{s}\\
+&amp;=\frac{s}{3}\left(y_1+4y_2+y_3\right).
 \end{align*}\]</span>
-This is known as <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span>.
-</p>
+Notes:</p>
+<ul>
+<li>The formula does not depend on <span class="math inline">\(x_1,x_2,x_3\)</span> (we’ve arranged this).</li>
+<li>This approximates <em>two</em> strips of width <span class="math inline">\(s\)</span> rather than one — so we will want an <em>even</em> number of strips.</li>
+</ul>
+<p>For approximate integration:</p>
+<ul>
+<li>We split the interval <span class="math inline">\([a,b]\)</span> over which we are integrating into an even number, say <span class="math inline">\(2n\)</span>, of intervals of length <span class="math inline">\(s\)</span>. Denote the <span class="math inline">\(x\)</span>-coordinates of the points where we split by <span class="math inline">\(a=x_1, x_1,\dots,x_{2n+1}=b\)</span>.</li>
+<li>We use the above to approximate the area of two consecutive strips: using <span class="math inline">\(x_1,x_2,x_3\)</span>, then <span class="math inline">\(x_3,x_4,x_5\)</span>, etc, until <span class="math inline">\(x_{2n-1},x_{2n},x_{2n+1}\)</span>.</li>
+<li>The sum of the areas gives
+<span class="math display">\[\begin{align*}
+\int_{a}^{b}y\,\mathrm{d}x&amp; \approx \frac s3\left(y_1+4y_2+y_3\right) + \frac s3\left(y_3+4y_4+y_5\right) + \dots + \frac s3\left(y_{2n-1}+4y_{2n}+y_{2n+1}\right)\\
+&amp;=\frac s3\left(y_1+4y_2+2y_3+4y_4+2y_5+\dots +2y_{2n-1}+4y_{2n}+y_{2n+1}\right).
+\end{align*}\]</span></li>
+<li>This is known as <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span>.</li>
+</ul>
+<div style="display:none">
+<ul>
+<li>We split the interval <span class="math inline">\([a,b]\)</span> over which we are integrating into an even number, say <span class="math inline">\(2n\)</span>, of intervals of length <span class="math inline">\(s\)</span>. Denote the the points where we split by <span class="math inline">\(a=x_1, x_1,\dots,x_{2n+1}=b\)</span>.</li>
+<li>We use the above to approximate the area of two consecutive strips: using <span class="math inline">\(x_1,x_2,x_3\)</span>, then <span class="math inline">\(x_3,x_4,x_5\)</span>, etc, until <span class="math inline">\(x_{2n-1},x_{2n},x_{2n+1}\)</span>. So altogether
+<span class="math display">\[\begin{align*}
+\int_{a}^{b}y\,\mathrm{d}x&amp; \approx \frac s3\left(y_1+4y_2+y_3\right) + \frac s3\left(y_3+4y_4+y_5\right) + \dots\\
+&amp; \qquad\qquad \dots + \frac s3\left(y_{2n-1}+4y_{2n}+y_{2n+1}\right)\\
+&amp;=\frac s3(y_1+4y_2+2y_3+4y_4+2y_5+\dots\\
+&amp; \qquad\qquad \dots +2y_{2n-1}+4y_{2n}+y_{2n+1}).
+\end{align*}\]</span></li>
+<li>This is known as <a name='#simpsons-rule'></a><span style="color: red;">Simpson’s rule</span>.</li>
+</ul>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-112" class="example"><strong>Example 8.3  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-113" class="example"><strong>Example 8.3  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
-\int_1^4x^3dx
+\int_1^4x^3\,\mathrm{d}x
 \]</span>
 by taking 2 and 4 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-113" class="solution"><em>Solution</em>. </span>First notice that
-<span class="math display">\[
-\int_1^4x^3dx = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75
-\]</span>
-In our above formula we let <span class="math inline">\(n=1\)</span> and then <span class="math inline">\(2\)</span>.</p>
+<p><span id="unlabeled-div-114" class="solution"><em>Solution</em>. </span>In our above formula we let <span class="math inline">\(n=1\)</span> and then <span class="math inline">\(2\)</span>.</p>
 <p>For <span class="math inline">\(n=1\)</span> we have <span class="math inline">\(s=3/2, x_1=1, x_2=2.5, x_3=4\)</span> with <span class="math inline">\(y_1=1, y_2=15.625, y_3=64\)</span>.
 <span class="math display">\[
-\int_1^4x^3dx\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
+\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
 \]</span>
 For <span class="math inline">\(n=2\)</span> we have <span class="math inline">\(s=0.75, x_1=1, x_2=1.75, x_3=2.5, x_4=3.25, x_5=4\)</span> with <span class="math inline">\(y_1=1, y_2=1.75^3=5.36, y_3 = 2.5^3=15.625, y_4=3.25^3=34.33, y_5=64\)</span>.
 <span class="math display">\[
-\int_1^4x^3dx\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
+\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
+\]</span></p>
+<p>Note that this is actually the exact value:
+<span class="math display">\[
+\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.
 \]</span></p>
 </div>
+<div style="display:none">
+<p>
+</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-114" class="example"><strong>Example 8.4  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-115" class="example"><strong>Example 8.4  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
-\int_{-1}^1e^{-x^2}dx
+\int_{-1}^1e^{-x^2}\,\mathrm{d}x
 \]</span>
 by taking 6 strips.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-115" class="solution"><em>Solution</em>. </span>This is an example of a function that does not have a suitable antiderivative, so we need to use numerical techniques.</p>
+<p><span id="unlabeled-div-116" class="solution"><em>Solution</em>. </span>This is an example of a function that does not have a suitable antiderivative, so we need to use numerical techniques.</p>
 <p>With 6 strips, <span class="math inline">\(s=1/3\)</span> so we have</p>
 <table>
 <thead>
@@ -630,7 +663,7 @@ by taking 6 strips.</p>
 </table>
 Hence using Simpson’s rule (Figure <a href="week-eight.html#fig:33-graph-ex2">8.6</a>):
 <span class="math display">\[
-\int_{-1}^1e^{-x^2}dx \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
+\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
 \]</span>
 <!--insfig
 
@@ -642,15 +675,19 @@ Figure 8.6: <span class="math inline">\(e^{-x^2}\)</span>
 </p>
 </div>
 </div>
+<div style="display:none">
+<p>
+</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-116" class="example"><strong>Example 8.5  </strong></span>Use Simpson’s rule to approximate the integral
+<p><span id="exm:unlabeled-div-117" class="example"><strong>Example 8.5  </strong></span>Use Simpson’s rule to approximate the integral
 <span class="math display">\[
-\int_0^2\frac1{1+x^2}dx
+\int_0^2\frac1{1+x^2}\,\mathrm{d}x
 \]</span>
 by taking 10 strips and calculate the error involved.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-117" class="solution"><em>Solution</em>. </span>With 10 strips, <span class="math inline">\(s=2/10=0.2\)</span> so we have</p>
+<p><span id="unlabeled-div-118" class="solution"><em>Solution</em>. </span>With 10 strips, <span class="math inline">\(s=2/10=0.2\)</span> so we have</p>
 <table>
 <thead>
 <tr class="header">
@@ -707,16 +744,20 @@ by taking 10 strips and calculate the error involved.</p>
 </table>
 <p>Hence using Simpson’s rule
 <span class="math display">\[\begin{align*}
-\int_0^2\frac{dx}{1+x^2} \sim&amp; \frac{0.2}3\left[1 + 0.2\right] +\\
+\int_0^2\frac{\mathrm{d}x}{1+x^2} \sim&amp; \frac{0.2}3\left[1 + 0.2\right] +\\
 &amp;\frac{0.2}3\times 4\left[0.96154+0.73529+0.5+0.33784+0.23585\right]+\\
 &amp;\frac{0.2}3\times 2\left[0.86207+0.60976+0.40984+0.28090\right]\\
 &amp;= 1.10715.
 \end{align*}\]</span>
 The actual value of the integral is
 <span class="math display">\[
-\int_0^2\frac{dx}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
+\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
 \]</span>
 and so the error is 0.000563.</p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 
 </div>
