@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-03-01" />
+<meta name="date" content="2024-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -542,7 +542,7 @@ product.</p>
 <p><span id="unlabeled-div-80" class="solution"><em>Solution</em>. </span>This is a product but one half is not the derivative of the other, so integration by parts must be used.</p>
 <p>First choose one part of the product and let it be <span class="math inline">\(u\)</span>, then the other half is <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span>.</p>
 <p>So, let <span class="math inline">\(u = \ln(x)\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = x^3\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1/x\)</span> and <span class="math inline">\(v=\displaystyle\int x^3\mathrm{d}x = x^4/4\)</span>.</p>
-<p>Then substituting for <span class="math inline">\(u, \mathrm{d}u/\mathrm{d}x, v\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span> in equation (4) we get
+<p>Then substituting for <span class="math inline">\(u, \mathrm{d}u/\mathrm{d}x, v\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x\)</span> in equation <a href="week-six.html#eq:6-8">(6.8)</a> we get
 <span class="math display">\[\begin{align*}
 \int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
 \int x^3\ln(x)\mathrm{d}x&amp; = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)\mathrm{d}x\\
@@ -584,17 +584,20 @@ product.</p>
 <div class="solution">
 <p><span id="unlabeled-div-86" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^2\)</span> and let <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = \sin(2x)\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 2x\)</span> and <span class="math inline">\(v = \displaystyle\int \sin(2x)\mathrm{d}x = -\cos(2x)/2\)</span>.</p>
 <p>Using integration by parts.
-<span class="math display">\[\begin{align*}
+<span class="math display" id="eq:6-9">\[\begin{align}
 \int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x&amp; = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
 \int x^2\sin(2x)\mathrm{d}x&amp;=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)\mathrm{d}x\\
-&amp;=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x\tag{5}
-\end{align*}\]</span></p>
+&amp;=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x
+\tag{6.9}
+\end{align}\]</span></p>
 <p>We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-</p>
 <p>We have <span class="math inline">\(\displaystyle\int x\cos(2x)\mathrm{d}x\)</span>. Let <span class="math inline">\(u=x\)</span> and <span class="math inline">\(\mathrm{d}v/\mathrm{d}x = \cos(2x)\)</span>. Then <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = 1\)</span> and <span class="math inline">\(v=\sin(2x)/2\)</span>.
-<span class="math display">\[
-\int x\cos(2x)\mathrm{d}x = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
-\]</span>
-Now substituting (6) into (5) we can obtain the answer to the original integral
+<span class="math display" id="eq:6-10">\[\begin{align}
+\int x\cos(2x)\mathrm{d}x &amp;= \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x\\
+&amp;= \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right).
+\tag{6.10}
+\end{align}\]</span>
+Now substituting <a href="week-six.html#eq:6-10">(6.10)</a> into <a href="week-six.html#eq:6-9">(6.9)</a> we can obtain the answer to the original integral
 <span class="math display">\[
 \int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
 \]</span></p>

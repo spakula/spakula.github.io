@@ -116,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-03-01}
+\date{2024-03-07}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -3804,7 +3804,7 @@ First choose one part of the product and let it be \(u\), then the other half is
 
 So, let \(u = \ln(x)\) and \(\mathrm{d}v/\mathrm{d}x = x^3\). Then \(\mathrm{d}u/\mathrm{d}x = 1/x\) and \(v=\displaystyle\int x^3\mathrm{d}x = x^4/4\).
 
-Then substituting for \(u, \mathrm{d}u/\mathrm{d}x, v\) and \(\mathrm{d}v/\mathrm{d}x\) in equation (4) we get
+Then substituting for \(u, \mathrm{d}u/\mathrm{d}x, v\) and \(\mathrm{d}v/\mathrm{d}x\) in equation \eqref{eq:6-8} we get
 \begin{align*}
 \int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
 \int x^3\ln(x)\mathrm{d}x& = \ln(x)\times \frac{x^4}{4} - \int\left(\frac{x^4}{4}\times\frac{1}{x}\right)\mathrm{d}x\\
@@ -3865,21 +3865,24 @@ Find \(\displaystyle\int x^2\sin(2x)\mathrm{d}x\)
 Let \(u = x^2\) and let \(\mathrm{d}v/\mathrm{d}x = \sin(2x)\). Then \(\mathrm{d}u/\mathrm{d}x = 2x\) and \(v = \displaystyle\int \sin(2x)\mathrm{d}x = -\cos(2x)/2\).
 
 Using integration by parts.
-\begin{align*}
+\begin{align}
 \int u\frac{\mathrm{d}v}{\mathrm{d}x}\mathrm{d}x& = uv-\int v\frac{\mathrm{d}u}{\mathrm{d}x}\mathrm{d}x\\
 \int x^2\sin(2x)\mathrm{d}x&=\left(x^2\times\frac{-\cos(2x)}{2}\right)-\int\left(\frac{-\cos(2x)}{2}\times2x\right)\mathrm{d}x\\
-&=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x\tag{5}
-\end{align*}
+&=\left(\frac{-x^2\cos(2x)}{2}\right)+\int x\cos(2x)\mathrm{d}x
+\label{eq:6-9}
+\end{align}
 
 We still have to integrate the term under the integral sign on the right-hand side to get the answer, and that term is a product with neither part being the derivative of the other, so integration by parts should help again. Considering just that term:-
 
 \slide
 
 We have \(\displaystyle\int x\cos(2x)\mathrm{d}x\). Let \(u=x\) and \(\mathrm{d}v/\mathrm{d}x = \cos(2x)\). Then \(\mathrm{d}u/\mathrm{d}x = 1\) and \(v=\sin(2x)/2\).
-\[
-\int x\cos(2x)\mathrm{d}x = \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x = \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right)\tag{6}.
-\]
-Now substituting (6) into (5) we can obtain the answer to the original integral
+\begin{align}
+\int x\cos(2x)\mathrm{d}x &= \left(x\times\frac{\sin(2x)}{2}\right) - \int\frac{\sin(2x)}{2}\times1\mathrm{d}x\\
+&= \left(\frac{x\sin(2x)}2\right)+\left(\frac{\cos(2x)}4\right).
+\label{eq:6-10}
+\end{align}
+Now substituting \eqref{eq:6-10} into \eqref{eq:6-9} we can obtain the answer to the original integral
 \[
 \int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
 \]
