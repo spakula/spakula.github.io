@@ -2,6 +2,10 @@ body {
 	top:0;
 }
 
+.proof_content {
+    font-size: 10em;
+}
+
 .intro-container {
 	margin-top: 3rem!important;
 	margin-bottom: 3rem!important;
