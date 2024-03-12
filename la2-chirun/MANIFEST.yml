@@ -1,20 +1,32 @@
 author: "J\xE1n \u0160pakula"
 build_pdf: true
+build_zip: true
 format_version: 2
+locale: en
 mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 num_pdf_runs: 1
 root_url: /{base}/
 structure:
 - build_pdf: true
   content: []
-  pdf_url: pdf/la2lectnotes.pdf
+  formats:
+  - filetype: html
+    format: default
+    url: index.html
+  - filetype: pdf
+    format: default
+    url: pdf/la2_lectnotes.pdf
+  is_hidden: false
+  pdf_url: pdf/la2_lectnotes.pdf
   slug: math1049_linear_alge
   source: la2-lectnotes.tex
   splitlevel: -2
   title: MATH1049 Linear Algebra II lecture notes
   type: standalone
+  url: index.html
 themes:
-- path: default
+- path: .
   source: default
   title: Default
-year: 2022
+year: 2024
+zipfile: chirun.zip

@@ -1,70 +1,160 @@
-.slides-smaller{font-size:50% !important;}
-.slides-small{font-size:70% !important;}
-.slides-bold{font-weight:800 !important;}
-.slides-large{font-size: 100% !important;}
-.slides-larger{font-size: 125% !important;}
-
-.reveal section figure img {
-	border: none !important;
-	box-shadow: none !important;
+:root {
+    --base-font-size: min(3vw, 4vh);
+    --slide-padding: 2rem;
+    --slide-width: calc(100vw - 2 * var(--slide-padding));
+    --code-font-size: 0.9rem;
 }
 
-.reveal .header-l {
-    position: absolute;
-    color: #333;
-    max-width: 50%;
-    top: 1em;
-    left: 1em;
-    font-size: 0.7em;
+aside { 
+    display: none;
 }
 
-.reveal .header-r {
-    position: absolute;
-    color: #333;
-    max-width: 50%;
-    top: 1em;
-    right: 1em;
-    font-size: 0.7em;
-    text-align: right;
+html {
+    font-size: 4vmin;
+    font-family: sans-serif;
 }
 
-h2{
-  text-transform: none !important;
+body {
+    margin: 0;
+    overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 calc(0.5 * var(--spacing)) 0;
+    justify-self: center;
+}
+h2 {
+    font-size: 1.2em;
 }
 
-.reveal p.author {
-	text-align: center;
-}
-.reveal p {
-	text-align: left;
-}
-.reveal ul {
-  display: block;
-}
-.reveal ol {
-  display: block;
+h3 {
+    font-size: 1.1em;
 }
 
-.tabular{
-  width:100%;
+h4, h5, h6 {
+    font-size: 1em;
 }
 
-.reveal {
-  font-size: 30px !important;
+p {
+    max-width: var(--readable-width);
 }
 
-.reveal table p {
-  margin:0;
+button.icon-button svg.icon {
+  height: 1em;
 }
 
-.reveal blockquote {
-  margin: 1.5em 0.75em;
-  padding: 0.5em 1.0em;
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
+body > main {
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    padding: 0 var(--slide-padding);
 }
 
-.reveal blockquote > p {
-  margin: 0 !important;
+
+body > main > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 1em;
+    margin: var(--spacing) 0;
+    scroll-snap-align: start;
+}
+
+main > section {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    scroll-snap-align: center;
+    grid-auto-rows: max-content;
+    align-content: center;
+    overflow-y: hidden;
+}
+
+@media (orientation: portrait) {
+    body > main {
+        height: auto;
+    }
+    main > section {
+        height: auto;
+        scroll-snap-align: none;
+    }
+    main > section + section {
+        margin-top: calc(2 * var(--spacing));
+        padding-top: calc(2 * var(--spacing));
+        border-top: 0.5vh dashed var(--text-colour);
+    }
+}
+
+main > section:focus {
+    outline: none;
+}
+main > section > p {
+    line-height: var(--line-height);
+    margin: calc(0.5 * var(--spacing)) 0;
+}
+main > section > :is(h1, h2) {
+    align-self: start;
+}
+main > section > ul {
+    text-align: left;
+}
+main > section > ul > li ~ li {
+    margin-top: calc(0.5 * var(--spacing));
+}
+
+main > section :is(img, svg, video) {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    margin: var(--spacing) 0;
+    border-radius: 0.3em;
+}
+
+main > section figure {
+    margin: 0;
+}
+
+
+main > section .full-height {
+    max-height: 90vh;
+}
+
+main > section blockquote {
+    line-height: 1.8em;
+}
+main > section > iframe {
+  width: 80%;
+  height: 75vh;
+  border: none;
+  border-radius: 1em;
+}
+
+main > section mjx-container {
+    max-width: var(--slide-width);
+    margin: calc(0.25 * var(--spacing)) 0 !important;
+}
+
+@media print {
+    button[aria-controls="display-options"] {
+        display: none;
+    }
+    main > section {
+        page-break-after: always;
+        page-break-inside: always;
+    }
+    
+    body > main {
+        height: auto;
+        overflow: none;
+    }
+    
+    body > main > header {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+    }
 }
