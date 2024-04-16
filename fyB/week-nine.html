@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-04-01" />
+<meta name="date" content="2024-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -435,7 +435,7 @@ and since <span class="math inline">\(n\delta x = b - a\)</span> we have
 \]</span>
 When the number of strips increases indefinitely such that <span class="math inline">\(\delta x \to 0\)</span>
 <span class="math display">\[
-\overline y = \frac{1}{b-a}\int_a^b y\ dx.
+\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.
 \]</span>
 That is, the mean value of a function between two limits is the area under the curve between those limits divided by the range of <span class="math inline">\(x\)</span> between those limits.</p>
 <div class="example">
@@ -443,7 +443,7 @@ That is, the mean value of a function between two limits is the area under the c
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-120" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
-\text{Mean velocity}&amp; = \frac{1}{6-2}\int_2^6(4t+3)\ dt = \frac 14\left[2t^2+3t\right]_2^6\\
+\text{Mean velocity}&amp; = \frac{1}{6-2}\int_2^6(4t+3)\ \mathrm{d}t = \frac 14\left[2t^2+3t\right]_2^6\\
 &amp;= \frac 14\left[(2\times36+3\times6) -(2\times4+3\times2)\right] = \frac{76}{4}=19\ m/s.
 \end{align*}\]</span></p>
 </div>
@@ -451,21 +451,21 @@ That is, the mean value of a function between two limits is the area under the c
 <h3><span class="header-section-number">9.1.1</span> RMS Value<a href="week-nine.html#rms-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <a name='#rms'></a><span style="color: red;">RMS</span> (or <a name='#root-mean-square'></a><span style="color: red;">root mean square</span>) value is obtained by taking <span class="math inline">\(f(x)\)</span>, squaring it, finding the mean value and then taking the square root.</p>
 <p>Its importance in engineering is demonstrated when a sinusoidal function is investigated, for example when the average value of the current or voltage in a circuit is to be found. For all sine or cosine functions, the mean value over a complete cycle is zero because the curve is equally distributed above and below the <span class="math inline">\(x-\)</span>axis. However, if the ordinates are squared first, there are then no negative ordinates and an average may be found. Ammeters and voltmeters for a.c. circuits are usually calibrated to find the RMS value.</p>
-<p>The RMS value is obtained from
+<p>To summarise, the RMS value is defined to be the number
 <span class="math display">\[
-\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ dx}\ .
+\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-121" class="example"><strong>Example 9.2  </strong></span>Determine the RMS value of the current in an a.c. circuit given by <span class="math inline">\(i=20+100\sin(100\pi t)\)</span> between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=0.02\)</span>s.</p>
+<p><span id="exm:unlabeled-div-121" class="example"><strong>Example 9.2  </strong></span>Determine the RMS value of the current in an a.c. circuit given by <span class="math inline">\(i=20+100\sin(100\pi t)\)</span> between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=0.02\)</span> s.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-122" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
-\text{RMS}&amp;= \sqrt{\frac{1}{b-a}\int_a^b i^2\ dt}\\
+\text{RMS}&amp;= \sqrt{\frac{1}{b-a}\int_a^b i^2\ \mathrm{d}t}\\
 i&amp;=20+100\sin(100\pi t)\\
 i^2&amp;=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\
 &amp;=400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t))\\
-\text{RMS}^2&amp;=\frac1{0.02-0}\int_0^{0.02}(400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ dt\\
+\text{RMS}^2&amp;=\frac1{0.02-0}\int_0^{0.02}(400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ \mathrm{d}t\\
 &amp;=\frac1{0.02}\left[400t-\frac{40000\cos(100\pi t)}{100\pi}+5000t-\frac{5000\sin(200\pi t)}{200\pi}\right]_0^{0.02}\\
 &amp;=\frac1{0.02}\left[(8-12.732+100-0)-(0-12.732+0-0)\right] = \frac1{0.02}\times108\\
 \text{RMS}&amp;=\sqrt{\frac{108}{0.02}}=73.5\text{ A}

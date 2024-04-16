@@ -116,7 +116,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-04-01}
+\date{2024-04-16}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -5433,7 +5433,7 @@ and since \(n\delta x = b - a\) we have
 \]
 When the number of strips increases indefinitely such that \(\delta x \to 0\)
 \[
-\overline y = \frac{1}{b-a}\int_a^b y\ dx.
+\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.
 \]
 That is, the mean value of a function between two limits is the area under the curve between those limits divided by the range of \(x\) between those limits.
 
@@ -5445,7 +5445,7 @@ If the velocity \(v\) in \(m/s\) of a body is given by \(v=4t+3\) where \(t\) is
 
 \begin{solution}
 \begin{align*}
-\text{Mean velocity}& = \frac{1}{6-2}\int_2^6(4t+3)\ dt = \frac 14\left[2t^2+3t\right]_2^6\\
+\text{Mean velocity}& = \frac{1}{6-2}\int_2^6(4t+3)\ \mathrm{d}t = \frac 14\left[2t^2+3t\right]_2^6\\
 &= \frac 14\left[(2\times36+3\times6) -(2\times4+3\times2)\right] = \frac{76}{4}=19\ m/s.
 \end{align*}
 \end{solution}
@@ -5458,23 +5458,23 @@ The \textcolor{red}{\em RMS}\index{RMS} (or \textcolor{red}{\em root mean square
 
 Its importance in engineering is demonstrated when a sinusoidal function is investigated, for example when the average value of the current or voltage in a circuit is to be found. For all sine or cosine functions, the mean value over a complete cycle is zero because the curve is equally distributed above and below the \(x-\)axis. However, if the ordinates are squared first, there are then no negative ordinates and an average may be found. Ammeters and voltmeters for a.c. circuits are usually calibrated to find the RMS value.
 
-The RMS value is obtained from
+To summarise, the RMS value is defined to be the number
 \[
-\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ dx}\ .
+\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.
 \]
 \slide
 
 \begin{example}
-Determine the RMS value of the current in an a.c. circuit given by \(i=20+100\sin(100\pi t)\) between \(t=0\) and \(t=0.02\)s.
+Determine the RMS value of the current in an a.c. circuit given by \(i=20+100\sin(100\pi t)\) between \(t=0\) and \(t=0.02\) s.
 \end{example}
 
 \begin{solution}
 \begin{align*}
-\text{RMS}&= \sqrt{\frac{1}{b-a}\int_a^b i^2\ dt}\\
+\text{RMS}&= \sqrt{\frac{1}{b-a}\int_a^b i^2\ \mathrm{d}t}\\
 i&=20+100\sin(100\pi t)\\
 i^2&=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\
 &=400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t))\\
-\text{RMS}^2&=\frac1{0.02-0}\int_0^{0.02}(400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ dt\\
+\text{RMS}^2&=\frac1{0.02-0}\int_0^{0.02}(400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ \mathrm{d}t\\
 &=\frac1{0.02}\left[400t-\frac{40000\cos(100\pi t)}{100\pi}+5000t-\frac{5000\sin(200\pi t)}{200\pi}\right]_0^{0.02}\\
 &=\frac1{0.02}\left[(8-12.732+100-0)-(0-12.732+0-0)\right] = \frac1{0.02}\times108\\
 \text{RMS}&=\sqrt{\frac{108}{0.02}}=73.5\text{ A}
@@ -5628,7 +5628,7 @@ We look at the important topics of centroids and centers of gravity, before a br
 
 \section{Centre of Gravity and Centroids}\label{centre-of-gravity-and-centroids}
 
-Many structures and mechanical systems act as if their masses were concentrated at a single point called the \textcolor{red}{\em center of mass}\index{center of mass} or \textcolor{red}{\em centre of gravity}\index{centre of gravity}. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then move to consider it in 2-dimensions.
+Many structures and mechanical systems act as if their masses were concentrated at a single point called the \textcolor{red}{\em center of mass}\index{center of mass} or \textcolor{red}{\em centre of gravity}\index{centre of gravity}. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.
 
 \slide
 
@@ -5643,7 +5643,9 @@ Many structures and mechanical systems act as if their masses were concentrated 
 \caption{mass along a line}\label{fig:35-mass-along-a-line}
 \end{figure}
 
-Suppose that the \(x-\)axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{red}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\). The \textcolor{red}{\em principle of moments}\index{principle of moments} says that the system will balance providing
+Suppose that the \(x-\)axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{red}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\).
+
+The \textcolor{red}{\em principle of moments}\index{principle of moments} says that the system will balance providing
 \[
 m_1x_1 + m_2x_2 = 0.
 \]
@@ -5663,7 +5665,7 @@ If we are given a system with more than 2 masses (see Figure \ref{fig:36-mass-al
 
 the principle says that the system will balance providing
 \[
-\sum m_ix_i = 0.
+\sum_i m_ix_i = 0.
 \]
 In principle, we should use the force acting on the body, which is \(m_ig\) where \(g\) is the gravitational acceleration. However the constant \(g\) will cancel out.
 \slide
@@ -5689,9 +5691,9 @@ This would require that
 The point \(\overline x\) is called the \textcolor{red}{\em center of mass}\index{center of mass} or \textcolor{red}{\em center of gravity}\index{center of gravity}.
 \slide
 
-In order to generalise this situation to 2-dimensions and to consider an `infinite number of points', we need to use integration, rather than a finite sum.
+In order to generalise to an `infinite number of points', we need to use integration, rather than a finite sum.
 
-Consider the 2-dimensional strip on Figure \ref{fig:38-2d-rod}, and suppose that the \textcolor{red}{\em density}\index{density} at the point \(x\) is given by \(\rho(x)\).
+Consider a rod on Figure \ref{fig:38-2d-rod}: we assume that its \textcolor{red}{\em density}\index{density} varies with \(x\), i.e.~it is given by a function \(\rho(x)\).
 
 \begin{figure}
 
@@ -5699,26 +5701,35 @@ Consider the 2-dimensional strip on Figure \ref{fig:38-2d-rod}, and suppose that
 
 }
 
-\caption{2-dimensional rod}\label{fig:38-2d-rod}
+\caption{rod with variable density}\label{fig:38-2d-rod}
 \end{figure}
 \slide
 
-The density is defined as being
+The density (in general) is
 \[
-\text{density} = \frac{\text{mass}}{\text{volume}}.
+\text{density} = \frac{\text{mass}}{\text{volume}},
 \]
-In our case, as we are working in 2-dimensions, the volume becomes the `surface area'. The mass of the shaded region, of area \(\delta A\) (where the width \(\delta x\) is small), is then
+Where `volume' needs to be the appropriate one for the number of dimensions we work with: `length' in 1 dimension, `surface area' in 2 dimensions, and `volume' in 3 dimensions.
+
+\slide
+
+If we imagine the rod in Figure \ref{fig:38-2d-rod} to be 2-dimensional, then
+the mass of the shaded region, of area \(\delta A\) (where the width \(\delta x\) is small), is
 \[
 \rho(x)\delta A
 \]
 Summing over all these `small areas' gives
 \[
-\text{mass} = \int\rho(x)\ dA.
+\text{mass} = \int\rho(x)\ \mathrm{d}A.
+\]
+If we further suppose that the `height' of the rod is constant `h', then \(\mathrm{d}A=h\cdot\mathrm{d}x\) and
+\[
+\text{mass} = h\cdot \int\rho(x)\ \mathrm{d}x.
 \]
 \slide
 
 \begin{example}
-Suppose that the rod above is 5 m long with mass per unit length at the point \(x\) given by \(2+x^2/2\ Kg/m\). Find the total mass of the rod.
+Suppose that the rod above (Figure \ref{fig:38-2d-rod}) is 5 m long with mass per unit length at the point \(x\) given by \(2+x^2/2\ Kg/m\). Find the total mass of the rod.
 \end{example}
 
 \begin{solution}
@@ -5740,24 +5751,39 @@ Take a small rectangular strip of width \(\delta x\) at the point \(x\) so that 
 
 Now sum over all such rectangles and allow \(\delta x \to 0\) (in other words compute the integral) to get the mass
 \[
-\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ dx = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
+\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ \mathrm{d}x = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
 \]
 
 \end{solution}
 
 \slide
 
-Suppose we wish to find the centre of mass of the rod on Figure \ref{fig:39-2d-rod2}. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is \(x(2+x^2/2)\delta x\). So
+\begin{notslides}
+
+Suppose we wish to find the centre of mass of the rod in the previous Example. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is \(x(2+x^2/2)\delta x\). So
 \[
-\overline x = \frac{\text{moment}}{\text{mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ dx = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
+\overline x = \frac{\text{total moment}}{\text{total mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ \mathrm{d}x = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
 \]
+
+\end{notslides}
+
+\begin{slidesonly}
+
+Suppose we wish to find the centre of mass of the rod in the previous Example. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is:
+
+So
+
+\(\overline x = \displaystyle\frac{\text{total moment}}{\text{total mass}} =\)
+
+\end{slidesonly}
+
 \slide
 
 \subsection{Centroid of a uniform lamina}\label{centroid-of-a-uniform-lamina}
 
 A \textcolor{red}{\em lamina}\index{lamina} is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the \(m\) values replaced by \(a\) values where \(a\) represents the area of an element and \(A\) is the total area of the lamina. So
 \[
-\overline x = \frac{\displaystyle\int xa\ dx}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ dy}{A}
+\overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}
 \]
 Then \(\overline x\) and \(\overline y\) are the coordinates of the \textcolor{red}{\em centroid of the area}\index{centroid of the area} or the \textcolor{red}{\em centroid}\index{centroid}.
 
@@ -5780,11 +5806,11 @@ Consider a narrow strip of width \(\delta x\) (see Figure \ref{fig:40-lamina}). 
 
 Taking moments about the \(y-\)axis
 \[
-\overline x = \frac{\displaystyle\int_a^bxy\ dx}{\displaystyle\int_a^b y\ dx}.
+\overline x = \frac{\displaystyle\int_a^bxy\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
 \]
 Similarly taking moments about the \(x-\)axis
 \[
-\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ dx}{\displaystyle\int_a^b y\ dx}.
+\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
 \]
 \slide
 
@@ -5794,10 +5820,10 @@ Determine the centroid of area under the curve \(y=x^2\) between the coordinates
 
 \begin{solution}
 \[
-\overline x = \frac{\displaystyle\int_1^3xy\ dx}{\displaystyle\int_1^3 y\ dx} = \frac{\displaystyle\int_1^3x^3\ dx}{\displaystyle\int_1^3x^2\ dx} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31
+\overline x = \frac{\displaystyle\int_1^3xy\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3x^3\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31
 \]
 \[
-\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ dx}{\displaystyle\int_1^3 y\ dx} = \frac{\displaystyle\int_1^3\frac{x^4}2\ dx}{\displaystyle\int_1^3x^2\ dx} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78
+\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3\frac{x^4}2\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78
 \]
 The centroid therefore has coordinates \((2.31,2.78)\).
 \end{solution}
@@ -5836,7 +5862,7 @@ If the shaded strip in Figure \ref{fig:41-volume-of-revolution} is rotated about
 We may sum the volumes generated by all the strips between \(x = a\) and \(x = b\) to obtained the volume of the solid of revolution for the section of curve about the x axis.
 Thus the total volume \(V\) is given by
 \[
-V = \int_a^b\pi y^2\ dx
+V = \int_a^b\pi y^2\ \mathrm{d}x
 \]
 \slide
 
@@ -5844,15 +5870,19 @@ V = \int_a^b\pi y^2\ dx
 
 By a similar method it can be shown that for a rotation about the \(y-\)axis, the volume the solid of revolution will be
 \[
-V = 2\pi\int_a^bxy\ dx.
+V = 2\pi\int_a^bxy\ \mathrm{d}x.
 \]
 \slide
 
 \subsection{Surface area of revolution}\label{surface-area-of-revolution}
 
-The surface area of revolution is the surface area of the body generated by rotating a curve about the \(x\) or \(y\) axes. For a strip as shown in the figure above, the length of arc is approximately \(\delta x\). If the strip is rotated about the \(x\) axis, the surface area generated will be approximately \(\delta S = 2\pi y\delta x\). The surface area of the whole solid generated by rotating the curve around the \(x\) axis between \(x = a\) and \(x = b\) is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
+The surface area of revolution is the surface area of the body generated by rotating a curve about the \(x\) or \(y\) axes. For a strip as shown in the figure above, we approximate the `arc' (a part of the graph of the function) by a straight line. This yields a right triangle, from which we get an approximation for the length of arc to be \(\delta l=\sqrt{1+(\mathrm{d}y/\mathrm{d}x)^2}\cdot\delta x\).
+
+\slide
+
+If the strip is rotated about the \(x\) axis, the surface area generated will be approximately \(\delta S = 2\pi y\delta l\). The surface area of the whole solid generated by rotating the curve around the \(x\) axis between \(x = a\) and \(x = b\) is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
 \[
-S = 2\pi\int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\ dx.
+S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
 \]
 \slide
 
@@ -5877,7 +5907,7 @@ See Figure \ref{fig:43-right-circ-cone}.
 
 The volume of the solid of revolution for \(y = mx\) is given by
 \[
-V = \pi\int_0^hy^2\ dx = \pi\int_0^h (mx)^2\ dx = m^2\pi\int_0^hx^2\ dx = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
+V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
 \]
 Now \(m = R/h\) and so
 \[
@@ -5885,14 +5915,21 @@ V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
 \]
 The surface area is given by
 \begin{align*}
-S&= 2\pi\int_0^hy\sqrt{1+\left(\frac{dy}{dx}\right)^2}\ dx = 2\pi\int_0^h mx\sqrt{1+m^2}\ dx\\
+S&= 2\pi\int_0^hy\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x = 2\pi\int_0^h mx\sqrt{1+m^2}\ \mathrm{d}x\\
 &= 2m\sqrt{1+m^2}\pi\left[\frac{x^2}2\right]_0^h = m\sqrt{1+m^2}\pi h^2 = \pi R h\sqrt{1+m^2}\\
 &= \pi Rl.
 \end{align*}
 where \(l\) is the length of the inclined line.
 \end{solution}
 
+\begin{slidesonly}
+
 \slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \begin{example}
 A curve is given parametrically as \(x=4t^2, y = 6t-t^2\). Determine the volume generated when the figure bounded by the curve, the \(x-\)axis and the ordinates corresponding to \(t=0\) and \(t=2\) is rotated about the \(x-\)axis.
@@ -5900,15 +5937,24 @@ A curve is given parametrically as \(x=4t^2, y = 6t-t^2\). Determine the volume 
 
 \begin{solution}
 \[
-V = \pi\int_a^b y^2\ dx.
+V = \pi\int_a^b y^2\ \mathrm{d}x.
 \]
-Since \(x=4t^2\) then \(dx/dt = 8t\) and so we can write \(dx = 8t\ dt\). Hence
+Since \(x=4t^2\) then \(\mathrm{d}x/\mathrm{d}t = 8t\) and so we can write \(\mathrm{d}x = 8t\ \mathrm{d}t\). Hence
 \begin{align*}
-V& = \pi\int_0^t(6t-t^2)^28t\ dt = 8\pi\int_0^2(36t^3-12t^4+t^5)\ dt\\
+V& = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
 & = 8\pi\left[9t^4-\frac{12t^5}5+\frac{t^6}6\right]_0^2\\
 &= 8\pi\times77.87 = 1957 \text{ units}^3.
 \end{align*}
 \end{solution}
+
+\begin{slidesonly}
+
+\slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \chapter*{Week 10 Exercises}\label{week-10-exercises}
 \addcontentsline{toc}{chapter}{Week 10 Exercises}
@@ -6033,23 +6079,35 @@ The parametric equations of a curve are given as \(x = 6t^2, y = 2t - t^2\).Dete
 
 \section{Vectors I}\label{vectors-i}
 
-A \textcolor{red}{\em scalar}\index{scalar} quantity has only size or magnitude. Examples of scalars are mass, time, speed \(\ldots\)
+A \textcolor{red}{\em scalar}\index{scalar} quantity has only size or magnitude (i.e.~all the information is just a single number). For example: mass, time, speed \(\dots\)
 
-A \textcolor{red}{\em vector}\index{vector} quantity has magnitude and direction, examples are force, velocity acceleration, moment, \(\ldots\)
+A \textcolor{red}{\em vector}\index{vector} quantity has magnitude and direction. For example: force, velocity, acceleration, moment, \(\dots\)
 
 A vector is represented graphically by a straight line with an arrowhead showing its direction. Often the line is drawn to scale so that the magnitude of the vector may be determined by measuring its length.
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/44-vectors-1-1} \end{center}
+\slide
 
-The diagram above shows two ways that vectors are often drawn. To refer to the vector we give it a name. There are many different methods used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as \(\underline{OP}\) or \(\underline p\) or \(\vec{p}\). The point at which a vector starts is called the initial point. The point at which it ends is called the final point.
+To refer to a vector we give it a name. There are several different conventions used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as \(\underline{OP}\), or \(\overrightarrow{OP}\), or \(\underline p\), or \(\vec{p}\). The point at which a vector starts is called the initial point. The point at which it ends is called the final point.
 
-Sometimes we are only interested in the magnitude of the vector. In this case we show that we are considering the magnitude only by writing, for example \(|\underline{OP}|\). The vertical lines are called modulus lines and can be used with any of the ways of the different ways of writing a vector. So the vector \(\underline{OP}\) has a length (or magnitude) \(|\underline{OP}|\).
+\slide
 
-We can multiply a vector by a positive scalar (or ordinary number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors \(\underline a\) and \(3\underline a\). Note that \(3\underline a\) is parallel to \(\underline a\) (has the same direction) but is \(3\) times as long.
+The \textcolor{red}{\em magnitude of a vector}\index{magnitude of a vector}, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (``modulus lines''; it is the same notation as used for the absolute value of a number): for example \(|\underline{OP}|\) or \(|\underline{p}|\). It is a non-negative number.
+
+\slide
+
+We can multiply a vector by a non-negative scalar (i.e.~a non-negative number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors \(\underline a\) and \(3\underline a\). Note that \(3\underline a\) is parallel to \(\underline a\) (has the same direction) but is \(3\) times as long. (At this point it may be helpful to also imagine that they have the same initial point, but for the sake of the picture they are drawn separately.)
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/45-vectors-2-1} \end{center}
+\slide
 
-Multiplication by a negative scalar turns the vector around through \(180^\circ\). A position vector indicates the distance and direction that we have to travel from the origin to get to a point. In the diagram below, if \(O\) is the origin then \(\underline{OP}\) is the position vector of the point called \(P\). \(\underline{PQ}\) is called a displacement vector. It shows the distance and direction that we have to travel from \(P\) to get to \(Q\). \(\underline{OQ}\) is the position vector of the point \(Q\). Position vectors always refer to the position of a point relative to the origin. Displacement vectors refer to the position of any point relative to any other.
+Multiplying a vector (say \(\underline{p}\)) by a negative scalar (say \(a<0\)) changes the direction of the vector to the opposite (i.e.~it stays on the same line, the same initial point, but opposite direction). The magnitude of \(a\cdot\underline{p}\) is \(|a|\cdot |\underline{p}|\).
+
+\slide
+
+A \emph{position vector} indicates the distance and direction that we have to travel from the origin to get to a point. We use the term \emph{displacement vector} to refer to the same concept, but relative to any other point than origin.
+
+In the diagram below, if \(O\) is the origin then \(\underline{OP}\) is the position vector of the point called \(P\). \(\underline{PQ}\) is a displacement vector from \(P\) to \(Q\). It shows the distance and direction that we have to travel from \(P\) to get to \(Q\). \(\underline{OQ}\) is the position vector of the point \(Q\).
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/46-vectors-3-1} \end{center}
 
@@ -6057,13 +6115,28 @@ Multiplication by a negative scalar turns the vector around through \(180^\circ\
 
 \subsection{Vector Algebra}\label{vector-algebra}
 
-We have already seen that a vector may be \textcolor{red}{\em multiplied by a scalar}\index{multiplied by a scalar}. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned around through \(180^\circ\) and the magnitude is changed.
+\begin{notslides}
 
-Two vectors \(a\) and \(b\) are equal if they have the same magnitude and the same direction. They do not actually have to start and finish at the same point.
+We have already seen that a vector may be \textcolor{red}{\em multiplied by a scalar}\index{multiplied by a scalar}. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.
+
+\end{notslides}
+
+\begin{slidesonly}
+
+We've seen that a vector may be \textcolor{red}{\em multiplied by a scalar}\index{multiplied by a scalar}.
+If the scalar is positive this changes only the magnitude.
+If it is negative, the direction is changed to the
+opposite, and the magnitude is changed.
+
+\end{slidesonly}
+
+We declare two vectors \(\underline{a}\) and \(\underline{b}\) to be equal, if they have the same magnitude and the same direction. They do not actually have to start and finish at the same point.
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/47-vectors-4-1} \end{center}
 
 In the above diagram, \(\underline a= \underline b = \underline c\).
+
+\slide
 
 If a vector \(\underline b\) has the same magnitude as vector \(\underline a\), but points in the opposite direction then \(\underline b = -\underline a\).
 
@@ -6071,11 +6144,15 @@ If a vector \(\underline b\) has the same magnitude as vector \(\underline a\), 
 
 Again it doesn't matter whether they start and finish at the same point or not.
 
+\slide
+
 The \textcolor{red}{\em sum}\index{sum} (or \textcolor{red}{\em resultant}\index{resultant}) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e.~runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/49-vectors-6-1} \end{center}
 
-The difference of two vectors is given by \(\underline a + (-\underline b)\), where \(-\underline b\) points in the opposite direction to \(\underline b\). The sum of \(\underline a + (-\underline b)\) is then found from the triangle law above. Hence we write \(\underline a-\underline b = \underline a + (-\underline b)\).
+The difference of two vectors is given by \(\underline a + (-\underline b)\), where \(-\underline b\) points in the opposite direction to \(\underline b\). The sum of \(\underline a + (-\underline b)\) is then found from the triangle law above. Equivalently, we define \(\underline a-\underline b = \underline a + (-\underline b)\).
+
+\slide
 
 The sum of a set of vectors that form a closed loop is always zero.
 
@@ -6097,7 +6174,9 @@ For the diagram below, state the magnitude of the sum of the vectors \(\underlin
 The sum of all the vectors starts at the initial point of the first vector and ends at the final point of the last vector. This is the vector \(\underline{AE}\). Its magnitude may be written \(|\underline{AE}|\).
 \end{solution}
 
-If a vector joins two points \(A\) and \(B\), then it is equivalent to any other system of vectors that form a path from \(A\) to \(B\). For example the vector \(\underline{AB}\) shown as a solid line below, is equivalent to the sum of the vectors shown dotted.
+\slide
+
+If a vector joins two points \(A\) and \(B\), then it is equal to the sum of any system of vectors that form a path from \(A\) to \(B\). For example the vector \(\underline{AB}\) shown as a solid line below, is equivalent to the sum of the vectors shown dotted.
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/52-vectors-9-1} \end{center}
 
@@ -6108,9 +6187,10 @@ This fact may be used to solve geometric problems using vectors.
 \begin{example}
 
 For the triangle \(ABC\), if \(D\) is the mid-point of \(AB\) show that
-\[
-2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.\tag{1}
-\]
+\begin{equation}
+2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.
+\label{eq:11-1}
+\end{equation}
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/53-vectors-10-1} \end{center}
 
@@ -6118,22 +6198,26 @@ For the triangle \(ABC\), if \(D\) is the mid-point of \(AB\) show that
 
 \begin{solution}
 From the triangle
-\begin{align*}
-\underline{AB}&=2\underline{AD}\tag{2}\\
-\underline{BC}&=\underline{BD}+\underline{DC}\tag{3}\\
-\underline{CA}&=\underline{CD}+\underline{DA}\tag{4}\\
-\end{align*}
-Substituting the equations (2), (3) and (4) for the left-hand side of (1) gives
-\[
-2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}+3\underline{BD}+3\underline{DC}+\underline{CD}+\underline{DA}.\tag{5}
-\]
+\begin{align}
+\underline{AB}&=2\underline{AD}
+\label{eq:11-2}\\
+\underline{BC}&=\underline{BD}+\underline{DC}
+\label{eq:11-3}\\
+\underline{CA}&=\underline{CD}+\underline{DA}
+\label{eq:11-4}\\
+\end{align}
+Substituting the equations \eqref{eq:11-2}, \eqref{eq:11-3}, and \eqref{eq:11-4} for the left-hand side of \eqref{eq:11-1} gives
+\begin{equation}
+2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}+3\underline{BD}+3\underline{DC}+\underline{CD}+\underline{DA}.
+\label{eq:11-5}
+\end{equation}
 Now
 \begin{align*}
-\underline{BD}&=-\underline{AD}\tag{6}\\
-\underline{CD}&=-\underline{DC}\tag{7}\\
-\underline{DA}&=-\underline{AD}\tag{8}\\
+\underline{BD}&=-\underline{AD}\\
+\underline{CD}&=-\underline{DC}\\
+\underline{DA}&=-\underline{AD}\\
 \end{align*}
-Substituting these into the right-hand side of equation (5) gives
+Substituting these into the right-hand side of equation \eqref{eq:11-5} gives
 \[
 2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}-3\underline{AD}+3\underline{DC}-\underline{DC}-\underline{AD}.
 \]
@@ -6145,23 +6229,43 @@ So
 
 \slide
 
+\begin{slidesonly}
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \section{Vectors II}\label{vectors-ii}
 
 \subsection{Unit Vectors}\label{unit-vectors}
 
 A \textcolor{red}{\em unit vector}\index{unit vector} is a vector with magnitude of 1.
 
-If \(\underline a\) is a vector with magnitude \(|\underline a|\), then a unit vector with the same direction is written \(\hat{\underline a}\) where \(|\hat{\underline a}| = 1\). Notice that
+If \(\underline a\) is a vector with magnitude \(|\underline a|\), then a unit vector with the same direction is written \(\hat{\underline a}\). So \(|\hat{\underline a}| = 1\) and
 \[
 \hat{\underline a} = \frac1{|\underline a|}{\underline a}.
 \]
-For vector systems, there are three special unit vectors \(\underline i\), \(\underline j\) and \(\underline k\). These vectors for a set of axes for a vector system and are perpendicular to each other (like \(x\), \(y\) and \(z\) in Cartesian notation). Strictly, they should be written \(\hat{\underline i}, \hat{\underline j}\) and \(\hat{\underline k}\) to indicate that they are unit vectors, but they are used so often that the circumflex, \(\hat{}\), tends to get left off. The axis vectors are arranged as a righthand system. This means that a screw turned from \(\underline i\) to \(\underline j\) should travel up the \(\underline k\) axis.
+
+\slide
+
+For (3-dimensional) vector systems, there are three special unit vectors \(\underline i\), \(\underline j\) and \(\underline k\).
+These vectors for a set of axes for a vector system and are perpendicular to each other (and usually correspond to \(x\), \(y\) and \(z\) in Cartesian notation).
+Strictly speaking, they should be written \(\hat{\underline i}, \hat{\underline j}\) and \(\hat{\underline k}\) to indicate that they are unit vectors, but they are used so often that the circumflex \(\hat{}\) tends to get left off.
+
+The axis vectors are arranged as a righthand system. This means that a screw turned from \(\underline i\) to \(\underline j\) should travel up the \(\underline k\) axis.
 
 \begin{center}\includegraphics[width=0.85\linewidth]{fy-B-lectnotes_files/figure-latex/54-vectors-11-1} \end{center}
 
-A vector may be resolved in terms of its components in the direction of the unit axis vectors. We shall start by considering a two dimensional vector. For this we need only the \(\underline i\) and \(\underline j\) axes.
+\slide
+
+Any vector \(\underline{r}\) may be `resolved' in terms of its components in the direction of the unit axis vectors, i.e.~written as a sum of some multiples of the axis vectors.
+
+We shall start by considering a two dimensional vector. For this we need only the \(\underline i\) and \(\underline j\) axes.
 
 \begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/55-vectors-12-1} \end{center}
+
+\slide
 
 The vector \(\underline r\) makes an angle \(\theta\) with the \(\underline i\) axis and has magnitude \(|\underline r| = r\). We may say that to get to the point \(R\), we have to start at the \(\underline i\) axis, turn through an angle \(\theta\) and then travel a distance \(r\) from the origin. Alternatively, we may get to \(R\), by travelling a distance along the \(\underline i\) axis and then a distance up in the direction of the \(\underline j\) axis. The distance to be travelled along the \(\underline i\) axis is \(r\cos(\theta)\) and the distance to be travelled up in the direction of the \(\underline j\) axis is \(r\sin(\theta)\). The vector \(\underline r\) may thus be written as \(\underline r = r\cos(\theta) \underline i + r\sin(\theta)\underline j\).
 
@@ -6189,32 +6293,60 @@ The vector \(\underline r\) projects a length \(a\) onto the \(\underline i\) ax
 
 \subsection{Vector algebra with component vectors}\label{vector-algebra-with-component-vectors}
 
-When a vector is written in terms of its components, then the sum of two vectors is the sum of the components for each direction. e.g.
-\[
-\underline a = 6\underline i + 2\underline j, \underline b = 5\underline i - \underline j\;\text{ so }\;\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.
-\]
-Note that \(1\underline i, 1\underline j\), or \(1\underline k\) are usually written as just \(i\underline , \underline j\) or \(\underline k\).
+When a vector is written in terms of its components, then the sum of two vectors is the sum of the components for each direction.
 
-Similarly
-\[
-\underline a = 5\underline i + 4\underline j - \underline k, \underline b = 3\underline i - 7\underline j + 8\underline k\;\text{ so }\; \underline a + \underline b = (5+3)\underline i + (4 - 7)\underline j + (-1 + 8)\underline k = 8\underline i -3\underline j + 7\underline k.
-\]
+\begin{example}
+If \(\underline a = 6\underline i + 2\underline j\) and \(\underline b = 5\underline i - \underline j\), calculate \(\underline{a}+\underline{b}\).
+\end{example}
 
-When a vector is written in terms of components, the difference of the two vectors is the difference of the components for each direction. e.g.
+\begin{solution}
 \[
-\underline a = 5\underline i + 4\underline j - \underline k, \underline b = 3\underline i - 7\underline j + 8\underline k\;\text{ so }\; \underline a - \underline b = (5 - 3)\underline i + (4 - (-7))\underline j + ((-1) - 8)\underline k = 2\underline i + 11\underline j -9\underline k.
+\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.
 \]
-When a vector written in terms of components is multiplied by a scalar, each component is multiplied by that scalar e.g.
+\end{solution}
+
+Note that \(1\underline i\), \(1\underline j\), \(1\underline k\) are usually written as just \(\underline i\), \(\underline j\), \(\underline k\).
+
+\slide
+
+When a vector is written in terms of components, the difference of the two vectors is the difference of the components for each direction.
+
+\begin{example}
+If \(\underline a = 5\underline i + 4\underline j - \underline k\) and \(\underline b = 3\underline i - 7\underline j + 8\underline k\), calculate \(\underline{a}+\underline{b}\) and \(\underline{a}-\underline{b}\).
+\end{example}
+
+\begin{solution}
+\begin{align*}
+\underline a + \underline b &= (5+3)\underline i + (4 - 7)\underline j + (-1 + 8)\underline k = 8\underline i -3\underline j + 7\underline k,\\
+\underline a - \underline b &= (5 - 3)\underline i + (4 - (-7))\underline j + ((-1) - 8)\underline k = 2\underline i + 11\underline j -9\underline k.
+\end{align*}
+\end{solution}
+
+\slide
+
+When a vector written in terms of components is multiplied by a scalar, each component is multiplied by that scalar.
+
+\begin{example}
+If \(\underline a = 5\underline i + 4\underline j - \underline k\), calculate \(3\underline{a}\).
+\end{example}
+
+\begin{solution}
 \[
-\underline a = 5\underline i + 4\underline j - \underline k\;\text{ so }\;3\underline a = 15\underline i + 12\underline j - 3\underline k.
+3\underline a = (3\times 5)\underline{i} + (3\times 4)\underline{j} + (3\times(-1))\underline{k} = 15\underline i + 12\underline j - 3\underline k.
 \]
+\end{solution}
+
 \slide
 
 \subsection{The magnitude of a vector}\label{the-magnitude-of-a-vector}
 
 \begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/58-vectors-15-1} \end{center}
 
-The vector \(\underline r = a\underline i + b\underline j\). From Pythagoras' theorem, the magnitude of vector \(|\underline r| = \sqrt{a^2+b^2}\). In three dimensions, if \(\underline r = a\underline i + b\underline j + c\underline k\), then \(|\underline r| = \sqrt{a^2+b^2+c^2}\).
+Suppose \(\underline r = a\underline i + b\underline j\). From Pythagoras' theorem, the magnitude of vector \(|\underline r| = \sqrt{a^2+b^2}\).
+
+\slide
+
+In three dimensions, if \(\underline r = a\underline i + b\underline j + c\underline k\), then \(|\underline r| = \sqrt{a^2+b^2+c^2}\).
 
 \begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/59-vectors-16-1} \end{center}
 
@@ -6222,17 +6354,17 @@ The vector \(\underline r = a\underline i + b\underline j\). From Pythagoras' th
 
 \subsection{Finding a unit vector}\label{finding-a-unit-vector}
 
-If \(\underline r = a\underline i + b\underline j + c\underline k\), then its magnitude is \(|r| = \sqrt{a^2+b^2+c^2}\). That is the length of the vector is \(\sqrt{a^2+b^2+c^2}\). If we want to find a vector that has the same direction as \(\underline r\), but has length of 1, i.e.~the unit vector \(\underline{\hat r}\), then we must divide \(\underline r\) by its own magnitude. So if \(\underline r = a\underline i + b\underline j + c\underline k\), then
+If \(\underline r = a\underline i + b\underline j + c\underline k\), then its magnitude (= length) is \(|r| = \sqrt{a^2+b^2+c^2}\). If we want to find a vector that has the same direction as \(\underline r\), but has length of 1, i.e.~the unit vector \(\underline{\hat r}\), then we must divide \(\underline r\) by its own magnitude. So
 \[
 \underline{\hat r} = \frac{1}{\sqrt{a^2+b^2+c^2}}(a\underline i+b\underline j+c\underline k)
 \]
-which can be written
+which can be also written as
 \[
 \underline{\hat r} = \frac{a}{\sqrt{a^2+b^2+c^2}}\underline i+\frac{b}{\sqrt{a^2+b^2+c^2}}\underline j+\frac{c}{\sqrt{a^2+b^2+c^2}}\underline k
 \]
 or
 \[
-\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k
+\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k.
 \]
 \slide
 
@@ -6283,7 +6415,7 @@ the three axes. The angles are marked \(\alpha, \beta\) and \(\gamma\) in the fi
 
 The direction cosines are
 \[
-l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}
+l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}.
 \]
 \slide
 
@@ -6341,7 +6473,14 @@ Hence the angle is \(\theta = \cos^{-1}(7/29) = 76^\circ\).
 
 \subsection{Multiplication of vectors}\label{multiplication-of-vectors}
 
-We know from studying mechanical systems that there are two possible situations when two vectors are multiplied together. A vector multiplied by a vector can result in a scalar quantity, for example, a force (vector) multiplied by the distance (vector) an object moves as a result of that force gives the amount of work (scalar) done by that force. A vector multiplied by a vector can also result in a vector quantity, for example a force (vector) multiplied by the perpendicular distance (vector) of that force from a given point, gives the moment (vector) of that force about the point. Since there may be two different forms multiplying vectors together, we can deduce that there are two different types of vector multiplication; one that results in a scalar quantity and one that results in a vector quantity.
+In three dimensions, there are two `sensible' ways to `multiply' two vectors.
+
+\begin{itemize}
+\item
+  ``scalar'' or ``dot'' product: The result is a number (scalar). For example, if a force (vector) is applied to an object and it moves along a displacement vector, the dot product of the two involved vectors gives the amount of work done (scalar).
+\item
+  ``vector'' or ``cross'' product: The result is a vector. If a force (vector) is applied at a point whose position vector is perpendicular to it, the cross product of the two involved vectors is a moment of the force about that point (a vector).
+\end{itemize}
 
 \slide
 
@@ -6349,21 +6488,7 @@ We know from studying mechanical systems that there are two possible situations 
 
 The scalar product of two vectors has a scalar quantity as its result.
 
-The scalar product of two vectors \(\underline a\) and \(\underline b\) is defined as
-\[
-\underline a \cdot\underline b = |\underline a||\underline b|\cos(\theta)
-\]
-where \(\theta\) is the angle between the two vectors as shown below
-
-\begin{center}\includegraphics[width=0.3\linewidth]{fy-B-lectnotes_files/figure-latex/62-vectors-19-1} \end{center}
-
-If \(\underline a\) and \(\underline b\) are parallel then \(\theta = 0^\circ\) and \(\cos(\theta) = 1\), so \(\underline a \cdot\underline b = |\underline a||\underline b|\).
-
-If \(\underline a\) and \(\underline b\) are perpendicular then \(\theta = 90^\circ\) and \(\cos(\theta) = 0\) so \(\underline a \cdot\underline b = 0\).
-
-\slide
-
-If \(\underline a\) and \(\underline b\) are given in terms of component vectors as \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then
+If \(\underline a\) and \(\underline b\) are given in terms of component vectors as \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then the \textcolor{red}{\em dot product}\index{dot product} \(\underline{a}\cdot \underline{b}\) is defined to be
 \[
 \underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.
 \]
@@ -6380,87 +6505,150 @@ Find the scalar product of \(\underline a = 3\underline i + 2\underline j - 6\un
 The scalar product of the vectors is 13.
 \end{solution}
 
-Now since the scalar product is defined as
+\slide
+
+If we look back at the formula for the angle between two vectors, we arrive at an alternative formula for the dot product of two vectors \(\underline a\) and \(\underline b\):
 \[
-\underline a \cdot\underline b = |\underline a||\underline b| \cos(\theta)\tag{1}
+\underline a \cdot\underline b = |\underline a||\underline b|\cos(\theta)
 \]
-it gives us another way of finding the angle \(\theta\) between two vectors. We can re-arrange equation (1) to give
-\[
-\cos(\theta) = \frac{\underline a\cdot\underline b}{|\underline a||\underline b|}.\tag{2}
-\]
+where \(\theta\) is the angle between the two vectors as shown below
+
+\begin{center}\includegraphics[width=0.3\linewidth]{fy-B-lectnotes_files/figure-latex/62-vectors-19-1} \end{center}
+\slide
+
+Useful observations:
+
+\begin{itemize}
+\item
+  If \(\underline a\) and \(\underline b\) are parallel, then \(\theta = 0^\circ\) and \(\cos(\theta) = 1\), so \(\underline a \cdot\underline b = |\underline a||\underline b|\).
+\item
+  If \(\underline a\) and \(\underline b\) are perpendicular, then \(\theta = 90^\circ\) and \(\cos(\theta) = 0\) so \(\underline a \cdot\underline b = 0\).
+\item
+  Having two formulas for \(\underline{a}\cdot\underline{b}\) means that we have an alternative way for finding an angle between two vectors given in terms of component vectors:
+  \begin{equation}
+  \cos(\theta) = \frac{\underline a\cdot\underline b}{|\underline a||\underline b|}.
+  \label{eq:11-10}
+  \end{equation}
+\end{itemize}
+
+\slide
+
 \slide
 
 \begin{example}
-Using the vectors from the previous example, \(\underline a = 3\underline i + 2\underline j - 6\underline k\) and \(\underline b = -\underline i + 5\underline j - \underline k\), we found that \(\underline a\cdot\underline b = 13\).
-Also, \(|\underline a| = \sqrt{3^2+2^2+(-6)^2}=\sqrt{49}=7\) and \(|\underline b| = \sqrt{(-1)^2+5^2+(-1)^2} = \sqrt{27}\) so from equation (2)
-\[
-\cos(\theta) = \frac{13}{7\sqrt{27}} = 0.3574
-\]
-and thus \(\theta = \cos^{-1}(0.3574) = 69^\circ\).
+Using the vectors from the previous example, \(\underline a = 3\underline i + 2\underline j - 6\underline k\) and \(\underline b = -\underline i + 5\underline j - \underline k\), calculate the angle between them.
 \end{example}
 
+\begin{solution}
+We already calculated that \(\underline a\cdot\underline b = 13\).
+
+Also, \(|\underline a| = \sqrt{3^2+2^2+(-6)^2}=\sqrt{49}=7\) and \(|\underline b| = \sqrt{(-1)^2+5^2+(-1)^2} = \sqrt{27}\) so from equation \eqref{eq:11-10}
+\[
+\cos(\theta) = \frac{13}{7\sqrt{27}} \approx 0.3574 \text{ (4 d.p.)}
+\]
+and thus \(\theta \approx \cos^{-1}(0.3574) \approx 69^\circ\).
+\end{solution}
+
 \slide
 
 \begin{example}
-Find the unit vector perpendicular to the vector \(4\underline i+4\underline j-7\underline k\) and to the vector \(3\underline i - 2\underline j+\underline k\)
+Find the unit vector perpendicular to the vector \(4\underline i+4\underline j-7\underline k\) and to the vector \(3\underline i - 2\underline j+\underline k\).
 \end{example}
 
 \begin{solution}
 Let the vector which is perpendicular to the two given vectors be \(p\underline i + q\underline j + r\underline k\).
 
-If the vectors are perpendicular then the scalar product is zero since the angle between them is \(90^\circ\) so
-\[
-(4\underline i + 4\underline j - 7\underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0\tag{1}
-\]
+If the vectors are perpendicular, then the scalar product is zero (since the angle between them is \(90^\circ\)). So
+\begin{equation}
+(4\underline i + 4\underline j - 7\underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0
+\label{eq:11-20}
+\end{equation}
 and
-\[
-(3\underline i - 2\underline j + \underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0.\tag{2}
-\]
-Evaluating the scalar products (1) and (2) gives
+\begin{equation}
+(3\underline i - 2\underline j + \underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0.
+\label{eq:11-21}
+\end{equation}
+Evaluating the scalar products \eqref{eq:11-20} and \eqref{eq:11-21} gives
+\begin{align}
+4p + 4q -7r& = 0
+\label{eq:11-22}\\
+3p - 2q + r& = 0.
+\label{eq:11-23}
+\end{align}
+We now solve equations \eqref{eq:11-22} and \eqref{eq:11-23} simultaneously: multiplying both sides of \eqref{eq:11-23} by \(2\) we obtain
 \begin{align*}
-4p + 4q -7r& = 0\tag{3}\\
-3p - 2q + r& = 0\tag{4}
+4p + 4q - 7r& = 0\\
+6p - 4q + 2r& = 0,\\
 \end{align*}
-We now solve equations (3) and (4) simultaneously
-\begin{align*}
-4p + 4q - 7r& = 0&(3)\\
-6p - 4q + 2r& = 0 &(4 \times 2)\\
-\end{align*}
-therefore by adding \(10p - 5r = 0\) so
-\[
-r = 2p.\tag{5}
-\]
-Substituting into (4) gives \(3p - 2q + 2p = 0\) so
-\[
-q = \frac52p.\tag{6}
-\]
-We may choose any value for \(p\) and, provided \(q\) and \(r\) have the relationships (5) and (6) with our chosen value, the vector will be perpendicular to the given vectors. We will choose \(p = 2\), then \(r= 4\) and \(q = 5\) so
+and then by adding the two equations, we get \(10p - 5r = 0\). Thus
+\begin{equation}
+r = 2p.
+\label{eq:11-24}
+\end{equation}
+Substituting into \eqref{eq:11-23} gives \(3p - 2q + 2p = 0\), so
+\begin{equation}
+q = \frac52p.
+\label{eq:11-25}
+\end{equation}
+We may choose any value for \(p\) and if \(q\) and \(r\) are related by \eqref{eq:11-24} and \eqref{eq:11-25} with our chosen value, the resulting vector will be perpendicular to the given vectors. This is because there are infinitely many vectors that are perpendicular to any given two (non--parallel) vectors: they will all be scalar multiples of each other.
+
+We will choose \(p = 2\). Then \(r= 4\) and \(q = 5\) so
 \[
 p\underline i + q\underline j + r\underline k = 2\underline i + 5\underline j + 4\underline k.
 \]
-We were asked to find the unit vector. The magnitude of \(2\underline i + 5\underline j + 4\underline k = \sqrt{45} = 3\sqrt{5}\) so the unit vector perpendicular to the given vectors is
+We are supposed to find a \emph{unit} vector, and the one we have found so far may not be such. The magnitude of \(2\underline i + 5\underline j + 4\underline k = \sqrt{45} = 3\sqrt{5}\), so a unit vector perpendicular to the given vectors is
 \[
 \frac{2}{3\sqrt{5}}\underline i+\frac{5}{3\sqrt{5}}\underline j+\frac{4}{3\sqrt{5}}\underline k.
 \]
+(Note that there is another solution, namely the opposite vector to the one we found,
+\(-\frac{2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k\).)
 \end{solution}
+
+\begin{slidesonly}
 
 \slide
 
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \subsection{The vector or cross product}\label{the-vector-or-cross-product}
 
-The vector product of two vectors has as its result a vector.
+The result of a ``vector product'' of two vectors is a vector.
 
-The vector product is defined as \(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\).
+The \textcolor{red}{\em vector product}\index{vector product} is defined as \(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\), where \(\theta\) is the angle between \(\underline{a}\) and \(\underline{b}\), and \(\underline{\hat{n}}\) is a unit vector perpendicular to both \(\underline{a}\) and \(\underline{b}\) chosen according to the right--hand rule (explained below).
 
-That is to say that the magnitude of \(\underline a\times\underline b\) is \(|\underline a||\underline b|\sin(\theta)\) where \(\theta\) is the angle between \(\underline a\) and \(\underline b\) and, since it is a vector, it must also have a direction so \(\underline{\hat n}\) indicates the direction. For a vector product, \(\underline {\hat n}\) is always perpendicular to both \(\underline a\) and \(\underline b\). For \(\underline {\hat n}\) to be perpendicular to \(\underline a\) and \(\underline b\), it could either point in the direction shown below, or in the opposite direction, however for a vector product, \(\underline {\hat n}\) always forms a right-hand set of axes (like \(\underline i, \underline j\) and \(\underline k\)). The vector in the opposite direction (shown dotted) would be obtained from \(\underline b\times\underline a\).
+\slide
+
+\begin{slidesonly}
+
+(From previous slide: \(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\))
+
+\end{slidesonly}
+
+Unwrapping:
+
+\begin{itemize}
+\tightlist
+\item
+  The magnitude of \(\underline a\times\underline b\) is \(|\underline a||\underline b|\sin(\theta)\).
+\item
+  If \(\underline{a}\) and \(\underline{b}\) are parallel, then \(\theta=0\), and so \(\underline{a}\times\underline{b} = \underline{0}\) (regardless of \(\underline{\hat{n}}\)).
+\item
+  If \(\underline{a}\) and \(\underline{b}\) are not parallel, then there are two potential choices for \(\underline{\hat{n}}\). In the figure below, it is either ``up'' or ``down''. The choice is made so that \(\underline{a}, \underline{b}, \underline{a}\times\underline{b}\) forms a right--hand system (like \(\underline{i},\underline{j},\underline{k}\)).
+\item
+  It follows that \(\underline{b}\times \underline{a} = - \underline{a}\times\underline{b}\).
+\item
+  If \(\underline a\) and \(\underline b\) are perpendicular (i.e.~\(\theta = 90^\circ\)) then \(\sin(\theta)= 1\), and so \(\underline a \times\underline b = |\underline a||\underline b|\underline {\hat n}\).
+\end{itemize}
 
 \begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/63-vectors-20-1} \end{center}
 
-If \(\underline a\) and \(\underline b\) are parallel (i.e.~\(\theta = 0\)), then since \(\sin(\theta) = 0, \underline a \times\underline b = {\underline 0}\).
+\slide
 
-If \(\underline a\) and \(\underline b\) are perpendicular (i.e.~\(\theta = 90^\circ\)) then since \(\sin(90^\circ)= 1, \underline a \times\underline b = |\underline a||\underline b|\underline {\hat n}\)
-
-If \(\underline a\) and \(\underline b\) are specified in terms of their component vectors, so that \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then
+There is also an ``algebraic'' formula for the cross product, when
+\(\underline a\) and \(\underline b\) are specified in terms of their component vectors. Supposing that \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\), the formula can be remembered symbolically as
 \[
 \underline a \times\underline b = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\a_1&a_2&a_3\\b_1&b_2&b_3\\\end{array}\right|.
 \]
@@ -6493,28 +6681,35 @@ From the definition of the vector product, a vector perpendicular to both these 
 &\phantom{= }+\underline k((4)(-2)-(4)(3))\\
 &=-10\underline i-25\underline j-20\underline k.
 \end{align*}
-So a \textbf{\emph{unit vector}} perpendicular to both given vectors is
+We need to find a \emph{unit vector} parallel to this one; its magnitude is \(15\sqrt{5}\), and so a unit vector perpendicular to the two given ones is
 \[
 \frac{-10}{15\sqrt{5}}\underline i-\frac{25}{15\sqrt{5}}\underline j-\frac{20}{15\sqrt{5}}\underline k = \frac{-2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k.
 \]
 \end{solution}
 
+\begin{slidesonly}
+
 \slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \subsection{The scalar triple product}\label{the-scalar-triple-product}
 
-If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the scalar triple product of those vectors is defined as \(\underline a \cdot(\underline b\times\underline c)\).
+If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{red}{\em scalar triple product}\index{scalar triple product} of those vectors is defined to be \(\underline a \cdot(\underline b\times\underline c)\).
 
 Note that the vector product must be evaluated first, then the scalar product.
 
-The scalar triple product gives the volume of a parallelepiped with edges defined by the vectors \(\underline a, \underline b\) and \(\underline c\).
+The scalar triple product gives the (signed) volume of a parallelepiped with edges defined by the vectors \(\underline a, \underline b\) and \(\underline c\).
 
 \begin{center}\includegraphics[width=0.45\linewidth]{fy-B-lectnotes_files/figure-latex/64-vectors-21-1} \end{center}
 
 \slide
 
 \begin{example}
-Find the volume of a parallelepiped with edges \(\underline a = 2\underline i - 3\underline j + 4\underline k, \underline b = \underline i + 2\underline j - \underline k\) and \(\underline c = 3\underline i - \underline j + \underline 2\).
+Find the volume of a parallelepiped with edges \(\underline a = 2\underline i - 3\underline j + 4\underline k\), \(\underline b = \underline i + 2\underline j - \underline k\) and \(\underline c = 3\underline i - \underline j + \underline 2\).
 \end{example}
 
 \begin{solution}
@@ -6533,13 +6728,13 @@ The volume is therefore \(7\) units (and the -ve sign tells us that the system w
 
 \subsection{The vector triple product}\label{the-vector-triple-product}
 
-If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the vector triple product of those vectors is defined as
+If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{red}{\em vector triple product}\index{vector triple product} of those vectors is defined as
 \[
 \underline a \times (\underline b \times\underline c)
 \]
 
 \begin{example}
-Find the vector triple product \(\underline a \times (\underline b \times\underline c)\) where \(\underline a = 2\underline i - 3\underline j + 4\underline k, \underline b = \underline i + 2\underline j - \underline k\) and \(\underline c = 3\underline i - \underline j + \underline 2\).
+Find the vector triple product \(\underline a \times (\underline b \times\underline c)\) where \(\underline a = 2\underline i - 3\underline j + 4\underline k\), \(\underline b = \underline i + 2\underline j - \underline k\) and \(\underline c = 3\underline i - \underline j + \underline 2\).
 \end{example}
 
 \begin{solution}
@@ -6548,6 +6743,15 @@ From the previous example, \(\underline b \times\underline c = 3\underline i-5\u
 \underline a \times (\underline b \times\underline c) = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\2&-3&4\\3&-5&7\end{array}\right| = 41\underline i+26\underline j-\underline k
 \]
 \end{solution}
+
+\begin{slidesonly}
+
+\slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
 
 \chapter*{Week 11 Exercises}\label{week-11-exercises}
 \addcontentsline{toc}{chapter}{Week 11 Exercises}

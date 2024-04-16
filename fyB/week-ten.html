@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-04-01" />
+<meta name="date" content="2024-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -410,7 +410,7 @@
 <p>We look at the important topics of centroids and centers of gravity, before a brief look at volumes and surfaces of revolution.</p>
 <div id="centre-of-gravity-and-centroids" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Centre of Gravity and Centroids<a href="week-ten.html#centre-of-gravity-and-centroids" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Many structures and mechanical systems act as if their masses were concentrated at a single point called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#centre-of-gravity'></a><span style="color: red;">centre of gravity</span>. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then move to consider it in 2-dimensions.</p>
+<p>Many structures and mechanical systems act as if their masses were concentrated at a single point called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#centre-of-gravity'></a><span style="color: red;">centre of gravity</span>. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.</p>
 <div id="masses-along-a-line" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Masses along a line<a href="week-ten.html#masses-along-a-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!--insfig
@@ -422,7 +422,8 @@
 Figure 10.1: mass along a line
 </p>
 </div>
-<p>Suppose that the <span class="math inline">\(x-\)</span>axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin, see Figure <a href="week-ten.html#fig:35-mass-along-a-line">10.1</a>. This is similar to a `see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: red;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>. The <a name='#principle-of-moments'></a><span style="color: red;">principle of moments</span> says that the system will balance providing
+<p>Suppose that the <span class="math inline">\(x-\)</span>axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin, see Figure <a href="week-ten.html#fig:35-mass-along-a-line">10.1</a>. This is similar to a ‘see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: red;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>.</p>
+<p>The <a name='#principle-of-moments'></a><span style="color: red;">principle of moments</span> says that the system will balance providing
 <span class="math display">\[
 m_1x_1 + m_2x_2 = 0.
 \]</span></p>
@@ -438,7 +439,7 @@ Figure 10.2: mass along a line – many bodies
 </div>
 <p>the principle says that the system will balance providing
 <span class="math display">\[
-\sum m_ix_i = 0.
+\sum_i m_ix_i = 0.
 \]</span>
 In principle, we should use the force acting on the body, which is <span class="math inline">\(m_ig\)</span> where <span class="math inline">\(g\)</span> is the gravitational acceleration. However the constant <span class="math inline">\(g\)</span> will cancel out.
 Suppose however, the system does not balance. Can we find a point <span class="math inline">\(\overline x\)</span> such that if we were to move the fulcrum to that position, the system would balance (see Figure <a href="week-ten.html#fig:37-centre-of-mass">10.3</a>)?</p>
@@ -460,32 +461,38 @@ Figure 10.3: centre of mass
 \end{align*}\]</span></p>
 <p>The point <span class="math inline">\(\overline x\)</span> is called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#center-of-gravity'></a><span style="color: red;">center of gravity</span>.
 </p>
-<p>In order to generalise this situation to 2-dimensions and to consider an ‘infinite number of points’, we need to use integration, rather than a finite sum.</p>
-Consider the 2-dimensional strip on Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>, and suppose that the <a name='#density'></a><span style="color: red;">density</span> at the point <span class="math inline">\(x\)</span> is given by <span class="math inline">\(\rho(x)\)</span>.
+<p>In order to generalise to an ‘infinite number of points’, we need to use integration, rather than a finite sum.</p>
+Consider a rod on Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>: we assume that its <a name='#density'></a><span style="color: red;">density</span> varies with <span class="math inline">\(x\)</span>, i.e. it is given by a function <span class="math inline">\(\rho(x)\)</span>.
 <!--insfig
 
 -->
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:38-2d-rod"></span>
-<img src="fy-B-lectnotes_files/figure-html/38-2d-rod-1.svg" alt="2-dimensional rod" width="60%" />
+<img src="fy-B-lectnotes_files/figure-html/38-2d-rod-1.svg" alt="rod with variable density" width="60%" />
 <p class="caption">
-Figure 10.4: 2-dimensional rod
+Figure 10.4: rod with variable density
 </p>
 </div>
-<p>The density is defined as being
+<p>The density (in general) is
 <span class="math display">\[
-\text{density} = \frac{\text{mass}}{\text{volume}}.
+\text{density} = \frac{\text{mass}}{\text{volume}},
 \]</span>
-In our case, as we are working in 2-dimensions, the volume becomes the ‘surface area’. The mass of the shaded region, of area <span class="math inline">\(\delta A\)</span> (where the width <span class="math inline">\(\delta x\)</span> is small), is then
+Where ‘volume’ needs to be the appropriate one for the number of dimensions we work with: ‘length’ in 1 dimension, ‘surface area’ in 2 dimensions, and ‘volume’ in 3 dimensions.</p>
+<p>If we imagine the rod in Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a> to be 2-dimensional, then
+the mass of the shaded region, of area <span class="math inline">\(\delta A\)</span> (where the width <span class="math inline">\(\delta x\)</span> is small), is
 <span class="math display">\[
 \rho(x)\delta A
 \]</span>
 Summing over all these ‘small areas’ gives
 <span class="math display">\[
-\text{mass} = \int\rho(x)\ dA.
+\text{mass} = \int\rho(x)\ \mathrm{d}A.
+\]</span>
+If we further suppose that the ‘height’ of the rod is constant ‘h’, then <span class="math inline">\(\mathrm{d}A=h\cdot\mathrm{d}x\)</span> and
+<span class="math display">\[
+\text{mass} = h\cdot \int\rho(x)\ \mathrm{d}x.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-123" class="example"><strong>Example 10.1  </strong></span>Suppose that the rod above is 5 m long with mass per unit length at the point <span class="math inline">\(x\)</span> given by <span class="math inline">\(2+x^2/2\ Kg/m\)</span>. Find the total mass of the rod.</p>
+<p><span id="exm:unlabeled-div-123" class="example"><strong>Example 10.1  </strong></span>Suppose that the rod above (Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>) is 5 m long with mass per unit length at the point <span class="math inline">\(x\)</span> given by <span class="math inline">\(2+x^2/2\ Kg/m\)</span>. Find the total mass of the rod.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-124" class="solution"><em>Solution</em>. </span></p>
@@ -504,20 +511,24 @@ Figure 10.5: 2-dimensional rod
 </div>
 <p>Now sum over all such rectangles and allow <span class="math inline">\(\delta x \to 0\)</span> (in other words compute the integral) to get the mass
 <span class="math display">\[
-\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ dx = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
+\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ \mathrm{d}x = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
 \]</span></p>
 </div>
-<p>Suppose we wish to find the centre of mass of the rod on Figure <a href="week-ten.html#fig:39-2d-rod2">10.5</a>. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width <span class="math inline">\(\delta x\)</span> is <span class="math inline">\(x(2+x^2/2)\delta x\)</span>. So
+<p>Suppose we wish to find the centre of mass of the rod in the previous Example. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width <span class="math inline">\(\delta x\)</span> is <span class="math inline">\(x(2+x^2/2)\delta x\)</span>. So
 <span class="math display">\[
-\overline x = \frac{\text{moment}}{\text{mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ dx = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
-\]</span>
-</p>
+\overline x = \frac{\text{total moment}}{\text{total mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ \mathrm{d}x = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
+\]</span></p>
+<div style="display:none">
+<p>Suppose we wish to find the centre of mass of the rod in the previous Example. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width <span class="math inline">\(\delta x\)</span> is:</p>
+<p>So</p>
+<p><span class="math inline">\(\overline x = \displaystyle\frac{\text{total moment}}{\text{total mass}} =\)</span></p>
+</div>
 </div>
 <div id="centroid-of-a-uniform-lamina" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Centroid of a uniform lamina<a href="week-ten.html#centroid-of-a-uniform-lamina" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A <a name='#lamina'></a><span style="color: red;">lamina</span> is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the <span class="math inline">\(m\)</span> values replaced by <span class="math inline">\(a\)</span> values where <span class="math inline">\(a\)</span> represents the area of an element and <span class="math inline">\(A\)</span> is the total area of the lamina. So
 <span class="math display">\[
-\overline x = \frac{\displaystyle\int xa\ dx}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ dy}{A}
+\overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}
 \]</span>
 Then <span class="math inline">\(\overline x\)</span> and <span class="math inline">\(\overline y\)</span> are the coordinates of the <a name='#centroid-of-the-area'></a><span style="color: red;">centroid of the area</span> or the <a name='#centroid'></a><span style="color: red;">centroid</span>.</p>
 Suppose that the centroid of the area bounded by the curve <span class="math inline">\(y=f(x)\)</span>, the <span class="math inline">\(x-\)</span>axis and the lines <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> is required.
@@ -533,11 +544,11 @@ Figure 10.6: lamina
 <p>Consider a narrow strip of width <span class="math inline">\(\delta x\)</span> (see Figure <a href="week-ten.html#fig:40-lamina">10.6</a>). The strip can be considered as approximately a rectangle with height <span class="math inline">\(y\)</span> and area <span class="math inline">\(y\delta x\)</span>. The centre of the area is at the midpoint with coordinate <span class="math inline">\((x,y/2)\)</span>. By summing the moments of the centre of area for each strip we can find the centroid.</p>
 <p>Taking moments about the <span class="math inline">\(y-\)</span>axis
 <span class="math display">\[
-\overline x = \frac{\displaystyle\int_a^bxy\ dx}{\displaystyle\int_a^b y\ dx}.
+\overline x = \frac{\displaystyle\int_a^bxy\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
 \]</span>
 Similarly taking moments about the <span class="math inline">\(x-\)</span>axis
 <span class="math display">\[
-\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ dx}{\displaystyle\int_a^b y\ dx}.
+\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
 \]</span>
 </p>
 <div class="example">
@@ -545,10 +556,10 @@ Similarly taking moments about the <span class="math inline">\(x-\)</span>axis
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-126" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\overline x = \frac{\displaystyle\int_1^3xy\ dx}{\displaystyle\int_1^3 y\ dx} = \frac{\displaystyle\int_1^3x^3\ dx}{\displaystyle\int_1^3x^2\ dx} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31
+\overline x = \frac{\displaystyle\int_1^3xy\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3x^3\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31
 \]</span>
 <span class="math display">\[
-\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ dx}{\displaystyle\int_1^3 y\ dx} = \frac{\displaystyle\int_1^3\frac{x^4}2\ dx}{\displaystyle\int_1^3x^2\ dx} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78
+\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3\frac{x^4}2\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78
 \]</span>
 The centroid therefore has coordinates <span class="math inline">\((2.31,2.78)\)</span>.</p>
 </div>
@@ -582,7 +593,7 @@ Figure 10.8: volume of revolution
 <p>We may sum the volumes generated by all the strips between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> to obtained the volume of the solid of revolution for the section of curve about the x axis.
 Thus the total volume <span class="math inline">\(V\)</span> is given by
 <span class="math display">\[
-V = \int_a^b\pi y^2\ dx
+V = \int_a^b\pi y^2\ \mathrm{d}x
 \]</span>
 </p>
 </div>
@@ -590,15 +601,16 @@ V = \int_a^b\pi y^2\ dx
 <h3><span class="header-section-number">10.2.2</span> Rotation about the <span class="math inline">\(y-\)</span>axis<a href="week-ten.html#rotation-about-the-y-axis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>By a similar method it can be shown that for a rotation about the <span class="math inline">\(y-\)</span>axis, the volume the solid of revolution will be
 <span class="math display">\[
-V = 2\pi\int_a^bxy\ dx.
+V = 2\pi\int_a^bxy\ \mathrm{d}x.
 \]</span>
 </p>
 </div>
 <div id="surface-area-of-revolution" class="section level3 hasAnchor" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> Surface area of revolution<a href="week-ten.html#surface-area-of-revolution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The surface area of revolution is the surface area of the body generated by rotating a curve about the <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> axes. For a strip as shown in the figure above, the length of arc is approximately <span class="math inline">\(\delta x\)</span>. If the strip is rotated about the <span class="math inline">\(x\)</span> axis, the surface area generated will be approximately <span class="math inline">\(\delta S = 2\pi y\delta x\)</span>. The surface area of the whole solid generated by rotating the curve around the <span class="math inline">\(x\)</span> axis between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
+<p>The surface area of revolution is the surface area of the body generated by rotating a curve about the <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> axes. For a strip as shown in the figure above, we approximate the ‘arc’ (a part of the graph of the function) by a straight line. This yields a right triangle, from which we get an approximation for the length of arc to be <span class="math inline">\(\delta l=\sqrt{1+(\mathrm{d}y/\mathrm{d}x)^2}\cdot\delta x\)</span>.</p>
+<p>If the strip is rotated about the <span class="math inline">\(x\)</span> axis, the surface area generated will be approximately <span class="math inline">\(\delta S = 2\pi y\delta l\)</span>. The surface area of the whole solid generated by rotating the curve around the <span class="math inline">\(x\)</span> axis between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
 <span class="math display">\[
-S = 2\pi\int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\ dx.
+S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
 \]</span>
 </p>
 <div class="example">
@@ -618,7 +630,7 @@ Figure 10.9: right-circular-cone
 <p><span id="unlabeled-div-128" class="solution"><em>Solution</em>. </span>See Figure <a href="week-ten.html#fig:43-right-circ-cone">10.9</a>.</p>
 <p>The volume of the solid of revolution for <span class="math inline">\(y = mx\)</span> is given by
 <span class="math display">\[
-V = \pi\int_0^hy^2\ dx = \pi\int_0^h (mx)^2\ dx = m^2\pi\int_0^hx^2\ dx = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
+V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
 \]</span>
 Now <span class="math inline">\(m = R/h\)</span> and so
 <span class="math display">\[
@@ -626,25 +638,33 @@ V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
 \]</span>
 The surface area is given by
 <span class="math display">\[\begin{align*}
-S&amp;= 2\pi\int_0^hy\sqrt{1+\left(\frac{dy}{dx}\right)^2}\ dx = 2\pi\int_0^h mx\sqrt{1+m^2}\ dx\\
+S&amp;= 2\pi\int_0^hy\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x = 2\pi\int_0^h mx\sqrt{1+m^2}\ \mathrm{d}x\\
 &amp;= 2m\sqrt{1+m^2}\pi\left[\frac{x^2}2\right]_0^h = m\sqrt{1+m^2}\pi h^2 = \pi R h\sqrt{1+m^2}\\
 &amp;= \pi Rl.
 \end{align*}\]</span>
 where <span class="math inline">\(l\)</span> is the length of the inclined line.</p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-129" class="example"><strong>Example 10.4  </strong></span>A curve is given parametrically as <span class="math inline">\(x=4t^2, y = 6t-t^2\)</span>. Determine the volume generated when the figure bounded by the curve, the <span class="math inline">\(x-\)</span>axis and the ordinates corresponding to <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=2\)</span> is rotated about the <span class="math inline">\(x-\)</span>axis.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-130" class="solution"><em>Solution</em>. </span><span class="math display">\[
-V = \pi\int_a^b y^2\ dx.
+V = \pi\int_a^b y^2\ \mathrm{d}x.
 \]</span>
-Since <span class="math inline">\(x=4t^2\)</span> then <span class="math inline">\(dx/dt = 8t\)</span> and so we can write <span class="math inline">\(dx = 8t\ dt\)</span>. Hence
+Since <span class="math inline">\(x=4t^2\)</span> then <span class="math inline">\(\mathrm{d}x/\mathrm{d}t = 8t\)</span> and so we can write <span class="math inline">\(\mathrm{d}x = 8t\ \mathrm{d}t\)</span>. Hence
 <span class="math display">\[\begin{align*}
-V&amp; = \pi\int_0^t(6t-t^2)^28t\ dt = 8\pi\int_0^2(36t^3-12t^4+t^5)\ dt\\
+V&amp; = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
 &amp; = 8\pi\left[9t^4-\frac{12t^5}5+\frac{t^6}6\right]_0^2\\
 &amp;= 8\pi\times77.87 = 1957 \text{ units}^3.
 \end{align*}\]</span></p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 
 </div>

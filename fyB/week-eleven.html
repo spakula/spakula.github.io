@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-04-01" />
+<meta name="date" content="2024-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -409,29 +409,37 @@
 <h1><span class="header-section-number">11</span> Week 11<a href="week-eleven.html#week-eleven" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="vectors-i" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> Vectors I<a href="week-eleven.html#vectors-i" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A <a name='#scalar'></a><span style="color: red;">scalar</span> quantity has only size or magnitude. Examples of scalars are mass, time, speed <span class="math inline">\(\ldots\)</span></p>
-<p>A <a name='#vector'></a><span style="color: red;">vector</span> quantity has magnitude and direction, examples are force, velocity acceleration, moment, <span class="math inline">\(\ldots\)</span></p>
+<p>A <a name='#scalar'></a><span style="color: red;">scalar</span> quantity has only size or magnitude (i.e. all the information is just a single number). For example: mass, time, speed <span class="math inline">\(\dots\)</span></p>
+<p>A <a name='#vector'></a><span style="color: red;">vector</span> quantity has magnitude and direction. For example: force, velocity, acceleration, moment, <span class="math inline">\(\dots\)</span></p>
 <p>A vector is represented graphically by a straight line with an arrowhead showing its direction. Often the line is drawn to scale so that the magnitude of the vector may be determined by measuring its length.
 <!--insfig
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/44-vectors-1-1.svg" width="40%" style="display: block; margin: auto;" />
-The diagram above shows two ways that vectors are often drawn. To refer to the vector we give it a name. There are many different methods used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as <span class="math inline">\(\underline{OP}\)</span> or <span class="math inline">\(\underline p\)</span> or <span class="math inline">\(\vec{p}\)</span>. The point at which a vector starts is called the initial point. The point at which it ends is called the final point.</p>
-<p>Sometimes we are only interested in the magnitude of the vector. In this case we show that we are considering the magnitude only by writing, for example <span class="math inline">\(|\underline{OP}|\)</span>. The vertical lines are called modulus lines and can be used with any of the ways of the different ways of writing a vector. So the vector <span class="math inline">\(\underline{OP}\)</span> has a length (or magnitude) <span class="math inline">\(|\underline{OP}|\)</span>.</p>
-<p>We can multiply a vector by a positive scalar (or ordinary number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(3\underline a\)</span>. Note that <span class="math inline">\(3\underline a\)</span> is parallel to <span class="math inline">\(\underline a\)</span> (has the same direction) but is <span class="math inline">\(3\)</span> times as long.
+To refer to a vector we give it a name. There are several different conventions used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as <span class="math inline">\(\underline{OP}\)</span>, or <span class="math inline">\(\overrightarrow{OP}\)</span>, or <span class="math inline">\(\underline p\)</span>, or <span class="math inline">\(\vec{p}\)</span>. The point at which a vector starts is called the initial point. The point at which it ends is called the final point.</p>
+<p>The <a name='#magnitude-of-a-vector'></a><span style="color: red;">magnitude of a vector</span>, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (“modulus lines”; it is the same notation as used for the absolute value of a number): for example <span class="math inline">\(|\underline{OP}|\)</span> or <span class="math inline">\(|\underline{p}|\)</span>. It is a non-negative number.</p>
+<p>We can multiply a vector by a non-negative scalar (i.e. a non-negative number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(3\underline a\)</span>. Note that <span class="math inline">\(3\underline a\)</span> is parallel to <span class="math inline">\(\underline a\)</span> (has the same direction) but is <span class="math inline">\(3\)</span> times as long. (At this point it may be helpful to also imagine that they have the same initial point, but for the sake of the picture they are drawn separately.)
 <!--insfig
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/45-vectors-2-1.svg" width="40%" style="display: block; margin: auto;" />
-Multiplication by a negative scalar turns the vector around through <span class="math inline">\(180^\circ\)</span>. A position vector indicates the distance and direction that we have to travel from the origin to get to a point. In the diagram below, if <span class="math inline">\(O\)</span> is the origin then <span class="math inline">\(\underline{OP}\)</span> is the position vector of the point called <span class="math inline">\(P\)</span>. <span class="math inline">\(\underline{PQ}\)</span> is called a displacement vector. It shows the distance and direction that we have to travel from <span class="math inline">\(P\)</span> to get to <span class="math inline">\(Q\)</span>. <span class="math inline">\(\underline{OQ}\)</span> is the position vector of the point <span class="math inline">\(Q\)</span>. Position vectors always refer to the position of a point relative to the origin. Displacement vectors refer to the position of any point relative to any other.
+Multiplying a vector (say <span class="math inline">\(\underline{p}\)</span>) by a negative scalar (say <span class="math inline">\(a&lt;0\)</span>) changes the direction of the vector to the opposite (i.e. it stays on the same line, the same initial point, but opposite direction). The magnitude of <span class="math inline">\(a\cdot\underline{p}\)</span> is <span class="math inline">\(|a|\cdot |\underline{p}|\)</span>.</p>
+<p>A <em>position vector</em> indicates the distance and direction that we have to travel from the origin to get to a point. We use the term <em>displacement vector</em> to refer to the same concept, but relative to any other point than origin.</p>
+<p>In the diagram below, if <span class="math inline">\(O\)</span> is the origin then <span class="math inline">\(\underline{OP}\)</span> is the position vector of the point called <span class="math inline">\(P\)</span>. <span class="math inline">\(\underline{PQ}\)</span> is a displacement vector from <span class="math inline">\(P\)</span> to <span class="math inline">\(Q\)</span>. It shows the distance and direction that we have to travel from <span class="math inline">\(P\)</span> to get to <span class="math inline">\(Q\)</span>. <span class="math inline">\(\underline{OQ}\)</span> is the position vector of the point <span class="math inline">\(Q\)</span>.
 <!--insfig
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/46-vectors-3-1.svg" width="40%" style="display: block; margin: auto;" /></p>
 <div id="vector-algebra" class="section level3 hasAnchor" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> Vector Algebra<a href="week-eleven.html#vector-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We have already seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: red;">multiplied by a scalar</span>. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned around through <span class="math inline">\(180^\circ\)</span> and the magnitude is changed.</p>
-<p>Two vectors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are equal if they have the same magnitude and the same direction. They do not actually have to start and finish at the same point.
+<p>We have already seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: red;">multiplied by a scalar</span>. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.</p>
+<div style="display:none">
+<p>We’ve seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: red;">multiplied by a scalar</span>.
+If the scalar is positive this changes only the magnitude.
+If it is negative, the direction is changed to the
+opposite, and the magnitude is changed.</p>
+</div>
+<p>We declare two vectors <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span> to be equal, if they have the same magnitude and the same direction. They do not actually have to start and finish at the same point.
 <!--insfig
 
 -->
@@ -448,7 +456,7 @@ Again it doesn’t matter whether they start and finish at the same point or not
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/49-vectors-6-1.svg" width="40%" style="display: block; margin: auto;" /></p>
-<p>The difference of two vectors is given by <span class="math inline">\(\underline a + (-\underline b)\)</span>, where <span class="math inline">\(-\underline b\)</span> points in the opposite direction to <span class="math inline">\(\underline b\)</span>. The sum of <span class="math inline">\(\underline a + (-\underline b)\)</span> is then found from the triangle law above. Hence we write <span class="math inline">\(\underline a-\underline b = \underline a + (-\underline b)\)</span>.</p>
+<p>The difference of two vectors is given by <span class="math inline">\(\underline a + (-\underline b)\)</span>, where <span class="math inline">\(-\underline b\)</span> points in the opposite direction to <span class="math inline">\(\underline b\)</span>. The sum of <span class="math inline">\(\underline a + (-\underline b)\)</span> is then found from the triangle law above. Equivalently, we define <span class="math inline">\(\underline a-\underline b = \underline a + (-\underline b)\)</span>.</p>
 <p>The sum of a set of vectors that form a closed loop is always zero.
 <!--insfig
 
@@ -465,7 +473,7 @@ Again it doesn’t matter whether they start and finish at the same point or not
 <div class="solution">
 <p><span id="unlabeled-div-132" class="solution"><em>Solution</em>. </span>The sum of all the vectors starts at the initial point of the first vector and ends at the final point of the last vector. This is the vector <span class="math inline">\(\underline{AE}\)</span>. Its magnitude may be written <span class="math inline">\(|\underline{AE}|\)</span>.</p>
 </div>
-<p>If a vector joins two points <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then it is equivalent to any other system of vectors that form a path from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. For example the vector <span class="math inline">\(\underline{AB}\)</span> shown as a solid line below, is equivalent to the sum of the vectors shown dotted.
+<p>If a vector joins two points <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then it is equal to the sum of any system of vectors that form a path from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. For example the vector <span class="math inline">\(\underline{AB}\)</span> shown as a solid line below, is equivalent to the sum of the vectors shown dotted.
 <!--insfig
 
 -->
@@ -473,9 +481,10 @@ Again it doesn’t matter whether they start and finish at the same point or not
 This fact may be used to solve geometric problems using vectors.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-133" class="example"><strong>Example 11.2  </strong></span>For the triangle <span class="math inline">\(ABC\)</span>, if <span class="math inline">\(D\)</span> is the mid-point of <span class="math inline">\(AB\)</span> show that
-<span class="math display">\[
-2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.\tag{1}
-\]</span>
+<span class="math display" id="eq:11-1">\[\begin{equation}
+2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.
+\tag{11.1}
+\end{equation}\]</span>
 <!--insfig
 
 -->
@@ -483,22 +492,26 @@ This fact may be used to solve geometric problems using vectors.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-134" class="solution"><em>Solution</em>. </span>From the triangle
-<span class="math display">\[\begin{align*}
-\underline{AB}&amp;=2\underline{AD}\tag{2}\\
-\underline{BC}&amp;=\underline{BD}+\underline{DC}\tag{3}\\
-\underline{CA}&amp;=\underline{CD}+\underline{DA}\tag{4}\\
-\end{align*}\]</span>
-Substituting the equations (2), (3) and (4) for the left-hand side of (1) gives
-<span class="math display">\[
-2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}+3\underline{BD}+3\underline{DC}+\underline{CD}+\underline{DA}.\tag{5}
-\]</span>
+<span class="math display" id="eq:11-4" id="eq:11-3" id="eq:11-2">\[\begin{align}
+\underline{AB}&amp;=2\underline{AD}
+\tag{11.2}\\
+\underline{BC}&amp;=\underline{BD}+\underline{DC}
+\tag{11.3}\\
+\underline{CA}&amp;=\underline{CD}+\underline{DA}
+\tag{11.4}\\
+\end{align}\]</span>
+Substituting the equations <a href="week-eleven.html#eq:11-2">(11.2)</a>, <a href="week-eleven.html#eq:11-3">(11.3)</a>, and <a href="week-eleven.html#eq:11-4">(11.4)</a> for the left-hand side of <a href="week-eleven.html#eq:11-1">(11.1)</a> gives
+<span class="math display" id="eq:11-5">\[\begin{equation}
+2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}+3\underline{BD}+3\underline{DC}+\underline{CD}+\underline{DA}.
+\tag{11.5}
+\end{equation}\]</span>
 Now
 <span class="math display">\[\begin{align*}
-\underline{BD}&amp;=-\underline{AD}\tag{6}\\
-\underline{CD}&amp;=-\underline{DC}\tag{7}\\
-\underline{DA}&amp;=-\underline{AD}\tag{8}\\
+\underline{BD}&amp;=-\underline{AD}\\
+\underline{CD}&amp;=-\underline{DC}\\
+\underline{DA}&amp;=-\underline{AD}\\
 \end{align*}\]</span>
-Substituting these into the right-hand side of equation (5) gives
+Substituting these into the right-hand side of equation <a href="week-eleven.html#eq:11-5">(11.5)</a> gives
 <span class="math display">\[
 2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}-3\underline{AD}+3\underline{DC}-\underline{DC}-\underline{AD}.
 \]</span>
@@ -507,6 +520,10 @@ So
 2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.
 \]</span></p>
 </div>
+<div style="display:none">
+<p>
+</p>
+</div>
 </div>
 </div>
 <div id="vectors-ii" class="section level2 hasAnchor" number="11.2">
@@ -514,16 +531,20 @@ So
 <div id="unit-vectors" class="section level3 hasAnchor" number="11.2.1">
 <h3><span class="header-section-number">11.2.1</span> Unit Vectors<a href="week-eleven.html#unit-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A <a name='#unit-vector'></a><span style="color: red;">unit vector</span> is a vector with magnitude of 1.</p>
-<p>If <span class="math inline">\(\underline a\)</span> is a vector with magnitude <span class="math inline">\(|\underline a|\)</span>, then a unit vector with the same direction is written <span class="math inline">\(\hat{\underline a}\)</span> where <span class="math inline">\(|\hat{\underline a}| = 1\)</span>. Notice that
+<p>If <span class="math inline">\(\underline a\)</span> is a vector with magnitude <span class="math inline">\(|\underline a|\)</span>, then a unit vector with the same direction is written <span class="math inline">\(\hat{\underline a}\)</span>. So <span class="math inline">\(|\hat{\underline a}| = 1\)</span> and
 <span class="math display">\[
 \hat{\underline a} = \frac1{|\underline a|}{\underline a}.
-\]</span>
-For vector systems, there are three special unit vectors <span class="math inline">\(\underline i\)</span>, <span class="math inline">\(\underline j\)</span> and <span class="math inline">\(\underline k\)</span>. These vectors for a set of axes for a vector system and are perpendicular to each other (like <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> in Cartesian notation). Strictly, they should be written <span class="math inline">\(\hat{\underline i}, \hat{\underline j}\)</span> and <span class="math inline">\(\hat{\underline k}\)</span> to indicate that they are unit vectors, but they are used so often that the circumflex, <span class="math inline">\(\hat{}\)</span>, tends to get left off. The axis vectors are arranged as a righthand system. This means that a screw turned from <span class="math inline">\(\underline i\)</span> to <span class="math inline">\(\underline j\)</span> should travel up the <span class="math inline">\(\underline k\)</span> axis.</p>
+\]</span></p>
+<p>For (3-dimensional) vector systems, there are three special unit vectors <span class="math inline">\(\underline i\)</span>, <span class="math inline">\(\underline j\)</span> and <span class="math inline">\(\underline k\)</span>.
+These vectors for a set of axes for a vector system and are perpendicular to each other (and usually correspond to <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> in Cartesian notation).
+Strictly speaking, they should be written <span class="math inline">\(\hat{\underline i}, \hat{\underline j}\)</span> and <span class="math inline">\(\hat{\underline k}\)</span> to indicate that they are unit vectors, but they are used so often that the circumflex <span class="math inline">\(\hat{}\)</span> tends to get left off.</p>
+<p>The axis vectors are arranged as a righthand system. This means that a screw turned from <span class="math inline">\(\underline i\)</span> to <span class="math inline">\(\underline j\)</span> should travel up the <span class="math inline">\(\underline k\)</span> axis.</p>
 <!--insfig
 
 -->
 <p><img src="fy-B-lectnotes_files/figure-html/54-vectors-11-1.svg" width="85%" style="display: block; margin: auto;" /></p>
-<p>A vector may be resolved in terms of its components in the direction of the unit axis vectors. We shall start by considering a two dimensional vector. For this we need only the <span class="math inline">\(\underline i\)</span> and <span class="math inline">\(\underline j\)</span> axes.</p>
+<p>Any vector <span class="math inline">\(\underline{r}\)</span> may be ‘resolved’ in terms of its components in the direction of the unit axis vectors, i.e. written as a sum of some multiples of the axis vectors.</p>
+<p>We shall start by considering a two dimensional vector. For this we need only the <span class="math inline">\(\underline i\)</span> and <span class="math inline">\(\underline j\)</span> axes.</p>
 <!--insfig
 
 -->
@@ -546,24 +567,35 @@ The vector <span class="math inline">\(\underline r\)</span> projects a length <
 </div>
 <div id="vector-algebra-with-component-vectors" class="section level3 hasAnchor" number="11.2.2">
 <h3><span class="header-section-number">11.2.2</span> Vector algebra with component vectors<a href="week-eleven.html#vector-algebra-with-component-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When a vector is written in terms of its components, then the sum of two vectors is the sum of the components for each direction. e.g.
-<span class="math display">\[
-\underline a = 6\underline i + 2\underline j, \underline b = 5\underline i - \underline j\;\text{ so }\;\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.
-\]</span>
-Note that <span class="math inline">\(1\underline i, 1\underline j\)</span>, or <span class="math inline">\(1\underline k\)</span> are usually written as just <span class="math inline">\(i\underline , \underline j\)</span> or <span class="math inline">\(\underline k\)</span>.</p>
-<p>Similarly
-<span class="math display">\[
-\underline a = 5\underline i + 4\underline j - \underline k, \underline b = 3\underline i - 7\underline j + 8\underline k\;\text{ so }\; \underline a + \underline b = (5+3)\underline i + (4 - 7)\underline j + (-1 + 8)\underline k = 8\underline i -3\underline j + 7\underline k.
+<p>When a vector is written in terms of its components, then the sum of two vectors is the sum of the components for each direction.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-135" class="example"><strong>Example 11.3  </strong></span>If <span class="math inline">\(\underline a = 6\underline i + 2\underline j\)</span> and <span class="math inline">\(\underline b = 5\underline i - \underline j\)</span>, calculate <span class="math inline">\(\underline{a}+\underline{b}\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-136" class="solution"><em>Solution</em>. </span><span class="math display">\[
+\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.
 \]</span></p>
-<p>When a vector is written in terms of components, the difference of the two vectors is the difference of the components for each direction. e.g.
-<span class="math display">\[
-\underline a = 5\underline i + 4\underline j - \underline k, \underline b = 3\underline i - 7\underline j + 8\underline k\;\text{ so }\; \underline a - \underline b = (5 - 3)\underline i + (4 - (-7))\underline j + ((-1) - 8)\underline k = 2\underline i + 11\underline j -9\underline k.
-\]</span>
-When a vector written in terms of components is multiplied by a scalar, each component is multiplied by that scalar e.g.
-<span class="math display">\[
-\underline a = 5\underline i + 4\underline j - \underline k\;\text{ so }\;3\underline a = 15\underline i + 12\underline j - 3\underline k.
-\]</span>
-</p>
+</div>
+<p>Note that <span class="math inline">\(1\underline i\)</span>, <span class="math inline">\(1\underline j\)</span>, <span class="math inline">\(1\underline k\)</span> are usually written as just <span class="math inline">\(\underline i\)</span>, <span class="math inline">\(\underline j\)</span>, <span class="math inline">\(\underline k\)</span>.</p>
+<p>When a vector is written in terms of components, the difference of the two vectors is the difference of the components for each direction.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-137" class="example"><strong>Example 11.4  </strong></span>If <span class="math inline">\(\underline a = 5\underline i + 4\underline j - \underline k\)</span> and <span class="math inline">\(\underline b = 3\underline i - 7\underline j + 8\underline k\)</span>, calculate <span class="math inline">\(\underline{a}+\underline{b}\)</span> and <span class="math inline">\(\underline{a}-\underline{b}\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-138" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+\underline a + \underline b &amp;= (5+3)\underline i + (4 - 7)\underline j + (-1 + 8)\underline k = 8\underline i -3\underline j + 7\underline k,\\
+\underline a - \underline b &amp;= (5 - 3)\underline i + (4 - (-7))\underline j + ((-1) - 8)\underline k = 2\underline i + 11\underline j -9\underline k.
+\end{align*}\]</span></p>
+</div>
+<p>When a vector written in terms of components is multiplied by a scalar, each component is multiplied by that scalar.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-139" class="example"><strong>Example 11.5  </strong></span>If <span class="math inline">\(\underline a = 5\underline i + 4\underline j - \underline k\)</span>, calculate <span class="math inline">\(3\underline{a}\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-140" class="solution"><em>Solution</em>. </span><span class="math display">\[
+3\underline a = (3\times 5)\underline{i} + (3\times 4)\underline{j} + (3\times(-1))\underline{k} = 15\underline i + 12\underline j - 3\underline k.
+\]</span></p>
+</div>
 </div>
 <div id="the-magnitude-of-a-vector" class="section level3 hasAnchor" number="11.2.3">
 <h3><span class="header-section-number">11.2.3</span> The magnitude of a vector<a href="week-eleven.html#the-magnitude-of-a-vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -571,7 +603,8 @@ When a vector written in terms of components is multiplied by a scalar, each com
 
 -->
 <p><img src="fy-B-lectnotes_files/figure-html/58-vectors-15-1.svg" width="33%" style="display: block; margin: auto;" /></p>
-<p>The vector <span class="math inline">\(\underline r = a\underline i + b\underline j\)</span>. From Pythagoras’ theorem, the magnitude of vector <span class="math inline">\(|\underline r| = \sqrt{a^2+b^2}\)</span>. In three dimensions, if <span class="math inline">\(\underline r = a\underline i + b\underline j + c\underline k\)</span>, then <span class="math inline">\(|\underline r| = \sqrt{a^2+b^2+c^2}\)</span>.</p>
+<p>Suppose <span class="math inline">\(\underline r = a\underline i + b\underline j\)</span>. From Pythagoras’ theorem, the magnitude of vector <span class="math inline">\(|\underline r| = \sqrt{a^2+b^2}\)</span>.</p>
+<p>In three dimensions, if <span class="math inline">\(\underline r = a\underline i + b\underline j + c\underline k\)</span>, then <span class="math inline">\(|\underline r| = \sqrt{a^2+b^2+c^2}\)</span>.</p>
 <!--insfig
 
 -->
@@ -579,28 +612,28 @@ When a vector written in terms of components is multiplied by a scalar, each com
 </div>
 <div id="finding-a-unit-vector" class="section level3 hasAnchor" number="11.2.4">
 <h3><span class="header-section-number">11.2.4</span> Finding a unit vector<a href="week-eleven.html#finding-a-unit-vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If <span class="math inline">\(\underline r = a\underline i + b\underline j + c\underline k\)</span>, then its magnitude is <span class="math inline">\(|r| = \sqrt{a^2+b^2+c^2}\)</span>. That is the length of the vector is <span class="math inline">\(\sqrt{a^2+b^2+c^2}\)</span>. If we want to find a vector that has the same direction as <span class="math inline">\(\underline r\)</span>, but has length of 1, i.e. the unit vector <span class="math inline">\(\underline{\hat r}\)</span>, then we must divide <span class="math inline">\(\underline r\)</span> by its own magnitude. So if <span class="math inline">\(\underline r = a\underline i + b\underline j + c\underline k\)</span>, then
+<p>If <span class="math inline">\(\underline r = a\underline i + b\underline j + c\underline k\)</span>, then its magnitude (= length) is <span class="math inline">\(|r| = \sqrt{a^2+b^2+c^2}\)</span>. If we want to find a vector that has the same direction as <span class="math inline">\(\underline r\)</span>, but has length of 1, i.e. the unit vector <span class="math inline">\(\underline{\hat r}\)</span>, then we must divide <span class="math inline">\(\underline r\)</span> by its own magnitude. So
 <span class="math display">\[
 \underline{\hat r} = \frac{1}{\sqrt{a^2+b^2+c^2}}(a\underline i+b\underline j+c\underline k)
 \]</span>
-which can be written
+which can be also written as
 <span class="math display">\[
 \underline{\hat r} = \frac{a}{\sqrt{a^2+b^2+c^2}}\underline i+\frac{b}{\sqrt{a^2+b^2+c^2}}\underline j+\frac{c}{\sqrt{a^2+b^2+c^2}}\underline k
 \]</span>
 or
 <span class="math display">\[
-\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k
+\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-135" class="example"><strong>Example 11.3  </strong></span>If <span class="math inline">\(\underline r = 5\underline i+2\underline j-\underline k\)</span>, find a unit vector that is</p>
+<p><span id="exm:unlabeled-div-141" class="example"><strong>Example 11.6  </strong></span>If <span class="math inline">\(\underline r = 5\underline i+2\underline j-\underline k\)</span>, find a unit vector that is</p>
 <ol style="list-style-type: lower-alpha">
 <li>parallel to <span class="math inline">\(\underline r\)</span>,</li>
 <li>has the opposite direction to <span class="math inline">\(\underline r\)</span>.</li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-136" class="solution"><em>Solution</em>. </span><span class="math inline">\(|\underline r| = \sqrt{5^2+2^2+1^2} = \sqrt{25+4+1} = \sqrt{30}\)</span>.</p>
+<p><span id="unlabeled-div-142" class="solution"><em>Solution</em>. </span><span class="math inline">\(|\underline r| = \sqrt{5^2+2^2+1^2} = \sqrt{25+4+1} = \sqrt{30}\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>The unit vector in the direction of <span class="math inline">\(\underline r\)</span> is
 <span class="math display">\[
@@ -623,14 +656,14 @@ the three axes. The angles are marked <span class="math inline">\(\alpha, \beta\
 <img src="fy-B-lectnotes_files/figure-html/60-vectors-17-1.svg" width="55%" style="display: block; margin: auto;" />
 The direction cosines are
 <span class="math display">\[
-l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}
+l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-137" class="example"><strong>Example 11.4  </strong></span>Find the direction cosines of the vector <span class="math inline">\(\underline r = 3\underline i + 4\underline j - 5\underline k\)</span>.</p>
+<p><span id="exm:unlabeled-div-143" class="example"><strong>Example 11.7  </strong></span>Find the direction cosines of the vector <span class="math inline">\(\underline r = 3\underline i + 4\underline j - 5\underline k\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-138" class="solution"><em>Solution</em>. </span>The magnitude of <span class="math inline">\(\underline r\)</span> is <span class="math inline">\(|\underline r| = \sqrt{3^2+4^2+5^2} = \sqrt{9+16+25} = \sqrt{50}\)</span>.</p>
+<p><span id="unlabeled-div-144" class="solution"><em>Solution</em>. </span>The magnitude of <span class="math inline">\(\underline r\)</span> is <span class="math inline">\(|\underline r| = \sqrt{3^2+4^2+5^2} = \sqrt{9+16+25} = \sqrt{50}\)</span>.</p>
 <p>The direction cosines of <span class="math inline">\(\underline r\)</span> are then
 <span class="math display">\[
 l = \frac{3}{\sqrt{50}},\;\;m = \frac{4}{\sqrt{50}},\;\;n = \frac{-5}{\sqrt{50}}
@@ -649,10 +682,10 @@ If we have two vectors <span class="math inline">\(\underline a\)</span> and <sp
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-139" class="example"><strong>Example 11.5  </strong></span>Determine the angle between the two vectors and <span class="math inline">\(\underline a = 2\underline i + 3\underline j + 4\underline k\)</span> and <span class="math inline">\(\underline b = 4\underline i - 3\underline j + 2\underline k\)</span>.</p>
+<p><span id="exm:unlabeled-div-145" class="example"><strong>Example 11.8  </strong></span>Determine the angle between the two vectors and <span class="math inline">\(\underline a = 2\underline i + 3\underline j + 4\underline k\)</span> and <span class="math inline">\(\underline b = 4\underline i - 3\underline j + 2\underline k\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-140" class="solution"><em>Solution</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-146" class="solution"><em>Solution</em>. </span><span class="math display">\[
 |\underline a| = \sqrt{2^2+3^2+4^2} = \sqrt{29},\;\;|\underline b| = \sqrt{4^2+3^2+2^2} = \sqrt{29}.
 \]</span>
 So <span class="math inline">\(\underline a\)</span> has direction cosines
@@ -675,12 +708,33 @@ Hence the angle is <span class="math inline">\(\theta = \cos^{-1}(7/29) = 76^\ci
 <h2><span class="header-section-number">11.3</span> Vectors III<a href="week-eleven.html#vectors-iii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="multiplication-of-vectors" class="section level3 hasAnchor" number="11.3.1">
 <h3><span class="header-section-number">11.3.1</span> Multiplication of vectors<a href="week-eleven.html#multiplication-of-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We know from studying mechanical systems that there are two possible situations when two vectors are multiplied together. A vector multiplied by a vector can result in a scalar quantity, for example, a force (vector) multiplied by the distance (vector) an object moves as a result of that force gives the amount of work (scalar) done by that force. A vector multiplied by a vector can also result in a vector quantity, for example a force (vector) multiplied by the perpendicular distance (vector) of that force from a given point, gives the moment (vector) of that force about the point. Since there may be two different forms multiplying vectors together, we can deduce that there are two different types of vector multiplication; one that results in a scalar quantity and one that results in a vector quantity.</p>
+<!--
+We know from studying mechanical systems that there are two possible situations when two vectors are multiplied together. A vector multiplied by a vector can result in a scalar quantity, for example, a force (vector) multiplied by the distance (vector) an object moves as a result of that force gives the amount of work (scalar) done by that force. A vector multiplied by a vector can also result in a vector quantity, for example a force (vector) multiplied by the perpendicular distance (vector) of that force from a given point, gives the moment (vector) of that force about the point. Since there may be two different forms multiplying vectors together, we can deduce that there are two different types of vector multiplication; one that results in a scalar quantity and one that results in a vector quantity.
+-->
+<p>In three dimensions, there are two ‘sensible’ ways to ‘multiply’ two vectors.</p>
+<ul>
+<li><p>“scalar” or “dot” product: The result is a number (scalar). For example, if a force (vector) is applied to an object and it moves along a displacement vector, the dot product of the two involved vectors gives the amount of work done (scalar).</p></li>
+<li><p>“vector” or “cross” product: The result is a vector. If a force (vector) is applied at a point whose position vector is perpendicular to it, the cross product of the two involved vectors is a moment of the force about that point (a vector).</p></li>
+</ul>
 </div>
 <div id="the-scalar-or-dot-product" class="section level3 hasAnchor" number="11.3.2">
 <h3><span class="header-section-number">11.3.2</span> The scalar or dot product<a href="week-eleven.html#the-scalar-or-dot-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The scalar product of two vectors has a scalar quantity as its result.</p>
-<p>The scalar product of two vectors <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> is defined as
+<p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are given in terms of component vectors as <span class="math inline">\(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\)</span> and <span class="math inline">\(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\)</span> then the <a name='#dot-product'></a><span style="color: red;">dot product</span> <span class="math inline">\(\underline{a}\cdot \underline{b}\)</span> is defined to be
+<span class="math display">\[
+\underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.
+\]</span>
+</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-147" class="example"><strong>Example 11.9  </strong></span>Find the scalar product of <span class="math inline">\(\underline a = 3\underline i + 2\underline j - 6\underline k\)</span> and <span class="math inline">\(\underline b = -\underline i + 5\underline j - \underline k\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-148" class="solution"><em>Solution</em>. </span><span class="math display">\[
+\underline a\cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3 = (3)(-1)+(2)(5)+(-6)(-1) = -3+10+6=13.
+\]</span>
+The scalar product of the vectors is 13.</p>
+</div>
+<p>If we look back at the formula for the angle between two vectors, we arrive at an alternative formula for the dot product of two vectors <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span>:
 <span class="math display">\[
 \underline a \cdot\underline b = |\underline a||\underline b|\cos(\theta)
 \]</span>
@@ -689,111 +743,122 @@ where <span class="math inline">\(\theta\)</span> is the angle between the two v
 
 -->
 <p><img src="fy-B-lectnotes_files/figure-html/62-vectors-19-1.svg" width="30%" style="display: block; margin: auto;" />
-If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are parallel then <span class="math inline">\(\theta = 0^\circ\)</span> and <span class="math inline">\(\cos(\theta) = 1\)</span>, so <span class="math inline">\(\underline a \cdot\underline b = |\underline a||\underline b|\)</span>.</p>
-<p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are perpendicular then <span class="math inline">\(\theta = 90^\circ\)</span> and <span class="math inline">\(\cos(\theta) = 0\)</span> so <span class="math inline">\(\underline a \cdot\underline b = 0\)</span>.</p>
-<p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are given in terms of component vectors as <span class="math inline">\(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\)</span> and <span class="math inline">\(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\)</span> then
-<span class="math display">\[
-\underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.
-\]</span>
 </p>
+<p>Useful observations:</p>
+<ul>
+<li><p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are parallel, then <span class="math inline">\(\theta = 0^\circ\)</span> and <span class="math inline">\(\cos(\theta) = 1\)</span>, so <span class="math inline">\(\underline a \cdot\underline b = |\underline a||\underline b|\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are perpendicular, then <span class="math inline">\(\theta = 90^\circ\)</span> and <span class="math inline">\(\cos(\theta) = 0\)</span> so <span class="math inline">\(\underline a \cdot\underline b = 0\)</span>.</p></li>
+<li><p>Having two formulas for <span class="math inline">\(\underline{a}\cdot\underline{b}\)</span> means that we have an alternative way for finding an angle between two vectors given in terms of component vectors:
+<span class="math display" id="eq:11-10">\[\begin{equation}
+\cos(\theta) = \frac{\underline a\cdot\underline b}{|\underline a||\underline b|}.
+\tag{11.6}
+\end{equation}\]</span></p></li>
+</ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-141" class="example"><strong>Example 11.6  </strong></span>Find the scalar product of <span class="math inline">\(\underline a = 3\underline i + 2\underline j - 6\underline k\)</span> and <span class="math inline">\(\underline b = -\underline i + 5\underline j - \underline k\)</span>.</p>
+<p><span id="exm:unlabeled-div-149" class="example"><strong>Example 11.10  </strong></span>Using the vectors from the previous example, <span class="math inline">\(\underline a = 3\underline i + 2\underline j - 6\underline k\)</span> and <span class="math inline">\(\underline b = -\underline i + 5\underline j - \underline k\)</span>, calculate the angle between them.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-142" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\underline a\cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3 = (3)(-1)+(2)(5)+(-6)(-1) = -3+10+6=13.
-\]</span>
-The scalar product of the vectors is 13.</p>
-</div>
-<p>Now since the scalar product is defined as
+<p><span id="unlabeled-div-150" class="solution"><em>Solution</em>. </span>We already calculated that <span class="math inline">\(\underline a\cdot\underline b = 13\)</span>.</p>
+<p>Also, <span class="math inline">\(|\underline a| = \sqrt{3^2+2^2+(-6)^2}=\sqrt{49}=7\)</span> and <span class="math inline">\(|\underline b| = \sqrt{(-1)^2+5^2+(-1)^2} = \sqrt{27}\)</span> so from equation <a href="week-eleven.html#eq:11-10">(11.6)</a>
 <span class="math display">\[
-\underline a \cdot\underline b = |\underline a||\underline b| \cos(\theta)\tag{1}
+\cos(\theta) = \frac{13}{7\sqrt{27}} \approx 0.3574 \text{ (4 d.p.)}
 \]</span>
-it gives us another way of finding the angle <span class="math inline">\(\theta\)</span> between two vectors. We can re-arrange equation (1) to give
-<span class="math display">\[
-\cos(\theta) = \frac{\underline a\cdot\underline b}{|\underline a||\underline b|}.\tag{2}
-\]</span>
-</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-143" class="example"><strong>Example 11.7  </strong></span>Using the vectors from the previous example, <span class="math inline">\(\underline a = 3\underline i + 2\underline j - 6\underline k\)</span> and <span class="math inline">\(\underline b = -\underline i + 5\underline j - \underline k\)</span>, we found that <span class="math inline">\(\underline a\cdot\underline b = 13\)</span>.
-Also, <span class="math inline">\(|\underline a| = \sqrt{3^2+2^2+(-6)^2}=\sqrt{49}=7\)</span> and <span class="math inline">\(|\underline b| = \sqrt{(-1)^2+5^2+(-1)^2} = \sqrt{27}\)</span> so from equation (2)
-<span class="math display">\[
-\cos(\theta) = \frac{13}{7\sqrt{27}} = 0.3574
-\]</span>
-and thus <span class="math inline">\(\theta = \cos^{-1}(0.3574) = 69^\circ\)</span>.</p>
+and thus <span class="math inline">\(\theta \approx \cos^{-1}(0.3574) \approx 69^\circ\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-144" class="example"><strong>Example 11.8  </strong></span>Find the unit vector perpendicular to the vector <span class="math inline">\(4\underline i+4\underline j-7\underline k\)</span> and to the vector <span class="math inline">\(3\underline i - 2\underline j+\underline k\)</span></p>
+<p><span id="exm:unlabeled-div-151" class="example"><strong>Example 11.11  </strong></span>Find the unit vector perpendicular to the vector <span class="math inline">\(4\underline i+4\underline j-7\underline k\)</span> and to the vector <span class="math inline">\(3\underline i - 2\underline j+\underline k\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-145" class="solution"><em>Solution</em>. </span>Let the vector which is perpendicular to the two given vectors be <span class="math inline">\(p\underline i + q\underline j + r\underline k\)</span>.</p>
-<p>If the vectors are perpendicular then the scalar product is zero since the angle between them is <span class="math inline">\(90^\circ\)</span> so
-<span class="math display">\[
-(4\underline i + 4\underline j - 7\underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0\tag{1}
-\]</span>
+<p><span id="unlabeled-div-152" class="solution"><em>Solution</em>. </span>Let the vector which is perpendicular to the two given vectors be <span class="math inline">\(p\underline i + q\underline j + r\underline k\)</span>.</p>
+<p>If the vectors are perpendicular, then the scalar product is zero (since the angle between them is <span class="math inline">\(90^\circ\)</span>). So
+<span class="math display" id="eq:11-20">\[\begin{equation}
+(4\underline i + 4\underline j - 7\underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0
+\tag{11.7}
+\end{equation}\]</span>
 and
-<span class="math display">\[
-(3\underline i - 2\underline j + \underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0.\tag{2}
-\]</span>
-Evaluating the scalar products (1) and (2) gives
+<span class="math display" id="eq:11-21">\[\begin{equation}
+(3\underline i - 2\underline j + \underline k) \cdot (p\underline i + q\underline j + r\underline k) = 0.
+\tag{11.8}
+\end{equation}\]</span>
+Evaluating the scalar products <a href="week-eleven.html#eq:11-20">(11.7)</a> and <a href="week-eleven.html#eq:11-21">(11.8)</a> gives
+<span class="math display" id="eq:11-23" id="eq:11-22">\[\begin{align}
+4p + 4q -7r&amp; = 0
+\tag{11.9}\\
+3p - 2q + r&amp; = 0.
+\tag{11.10}
+\end{align}\]</span>
+We now solve equations <a href="week-eleven.html#eq:11-22">(11.9)</a> and <a href="week-eleven.html#eq:11-23">(11.10)</a> simultaneously: multiplying both sides of <a href="week-eleven.html#eq:11-23">(11.10)</a> by <span class="math inline">\(2\)</span> we obtain
 <span class="math display">\[\begin{align*}
-4p + 4q -7r&amp; = 0\tag{3}\\
-3p - 2q + r&amp; = 0\tag{4}
+4p + 4q - 7r&amp; = 0\\
+6p - 4q + 2r&amp; = 0,\\
 \end{align*}\]</span>
-We now solve equations (3) and (4) simultaneously
-<span class="math display">\[\begin{align*}
-4p + 4q - 7r&amp; = 0&amp;(3)\\
-6p - 4q + 2r&amp; = 0 &amp;(4 \times 2)\\
-\end{align*}\]</span>
-therefore by adding <span class="math inline">\(10p - 5r = 0\)</span> so
-<span class="math display">\[
-r = 2p.\tag{5}
-\]</span>
-Substituting into (4) gives <span class="math inline">\(3p - 2q + 2p = 0\)</span> so
-<span class="math display">\[
-q = \frac52p.\tag{6}
-\]</span>
-We may choose any value for <span class="math inline">\(p\)</span> and, provided <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> have the relationships (5) and (6) with our chosen value, the vector will be perpendicular to the given vectors. We will choose <span class="math inline">\(p = 2\)</span>, then <span class="math inline">\(r= 4\)</span> and <span class="math inline">\(q = 5\)</span> so
+and then by adding the two equations, we get <span class="math inline">\(10p - 5r = 0\)</span>. Thus
+<span class="math display" id="eq:11-24">\[\begin{equation}
+r = 2p.
+\tag{11.11}
+\end{equation}\]</span>
+Substituting into <a href="week-eleven.html#eq:11-23">(11.10)</a> gives <span class="math inline">\(3p - 2q + 2p = 0\)</span>, so
+<span class="math display" id="eq:11-25">\[\begin{equation}
+q = \frac52p.
+\tag{11.12}
+\end{equation}\]</span>
+We may choose any value for <span class="math inline">\(p\)</span> and if <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> are related by <a href="week-eleven.html#eq:11-24">(11.11)</a> and <a href="week-eleven.html#eq:11-25">(11.12)</a> with our chosen value, the resulting vector will be perpendicular to the given vectors. This is because there are infinitely many vectors that are perpendicular to any given two (non–parallel) vectors: they will all be scalar multiples of each other.</p>
+<p>We will choose <span class="math inline">\(p = 2\)</span>. Then <span class="math inline">\(r= 4\)</span> and <span class="math inline">\(q = 5\)</span> so
 <span class="math display">\[
 p\underline i + q\underline j + r\underline k = 2\underline i + 5\underline j + 4\underline k.
 \]</span>
-We were asked to find the unit vector. The magnitude of <span class="math inline">\(2\underline i + 5\underline j + 4\underline k = \sqrt{45} = 3\sqrt{5}\)</span> so the unit vector perpendicular to the given vectors is
+We are supposed to find a <em>unit</em> vector, and the one we have found so far may not be such. The magnitude of <span class="math inline">\(2\underline i + 5\underline j + 4\underline k = \sqrt{45} = 3\sqrt{5}\)</span>, so a unit vector perpendicular to the given vectors is
 <span class="math display">\[
 \frac{2}{3\sqrt{5}}\underline i+\frac{5}{3\sqrt{5}}\underline j+\frac{4}{3\sqrt{5}}\underline k.
-\]</span></p>
+\]</span>
+(Note that there is another solution, namely the opposite vector to the one we found,
+<span class="math inline">\(-\frac{2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k\)</span>.)</p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 </div>
 <div id="the-vector-or-cross-product" class="section level3 hasAnchor" number="11.3.3">
 <h3><span class="header-section-number">11.3.3</span> The vector or cross product<a href="week-eleven.html#the-vector-or-cross-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The vector product of two vectors has as its result a vector.</p>
-<p>The vector product is defined as <span class="math inline">\(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\)</span>.</p>
-<p>That is to say that the magnitude of <span class="math inline">\(\underline a\times\underline b\)</span> is <span class="math inline">\(|\underline a||\underline b|\sin(\theta)\)</span> where <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> and, since it is a vector, it must also have a direction so <span class="math inline">\(\underline{\hat n}\)</span> indicates the direction. For a vector product, <span class="math inline">\(\underline {\hat n}\)</span> is always perpendicular to both <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span>. For <span class="math inline">\(\underline {\hat n}\)</span> to be perpendicular to <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span>, it could either point in the direction shown below, or in the opposite direction, however for a vector product, <span class="math inline">\(\underline {\hat n}\)</span> always forms a right-hand set of axes (like <span class="math inline">\(\underline i, \underline j\)</span> and <span class="math inline">\(\underline k\)</span>). The vector in the opposite direction (shown dotted) would be obtained from <span class="math inline">\(\underline b\times\underline a\)</span>.</p>
+<p>The result of a “vector product” of two vectors is a vector.</p>
+<p>The <a name='#vector-product'></a><span style="color: red;">vector product</span> is defined as <span class="math inline">\(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\)</span>, where <span class="math inline">\(\theta\)</span> is the angle between <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span>, and <span class="math inline">\(\underline{\hat{n}}\)</span> is a unit vector perpendicular to both <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span> chosen according to the right–hand rule (explained below).</p>
+<div style="display:none">
+<p>(From previous slide: <span class="math inline">\(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\)</span>)</p>
+</div>
+<p>Unwrapping:</p>
+<ul>
+<li>The magnitude of <span class="math inline">\(\underline a\times\underline b\)</span> is <span class="math inline">\(|\underline a||\underline b|\sin(\theta)\)</span>.</li>
+<li>If <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span> are parallel, then <span class="math inline">\(\theta=0\)</span>, and so <span class="math inline">\(\underline{a}\times\underline{b} = \underline{0}\)</span> (regardless of <span class="math inline">\(\underline{\hat{n}}\)</span>).</li>
+<li>If <span class="math inline">\(\underline{a}\)</span> and <span class="math inline">\(\underline{b}\)</span> are not parallel, then there are two potential choices for <span class="math inline">\(\underline{\hat{n}}\)</span>. In the figure below, it is either “up” or “down”. The choice is made so that <span class="math inline">\(\underline{a}, \underline{b}, \underline{a}\times\underline{b}\)</span> forms a right–hand system (like <span class="math inline">\(\underline{i},\underline{j},\underline{k}\)</span>).</li>
+<li>It follows that <span class="math inline">\(\underline{b}\times \underline{a} = - \underline{a}\times\underline{b}\)</span>.</li>
+<li>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are perpendicular (i.e. <span class="math inline">\(\theta = 90^\circ\)</span>) then <span class="math inline">\(\sin(\theta)= 1\)</span>, and so <span class="math inline">\(\underline a \times\underline b = |\underline a||\underline b|\underline {\hat n}\)</span>.</li>
+</ul>
 <!--insfig
 
 -->
-<p><img src="fy-B-lectnotes_files/figure-html/63-vectors-20-1.svg" width="45%" style="display: block; margin: auto;" />
-If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are parallel (i.e. <span class="math inline">\(\theta = 0\)</span>), then since <span class="math inline">\(\sin(\theta) = 0, \underline a \times\underline b = {\underline 0}\)</span>.</p>
-<p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are perpendicular (i.e. <span class="math inline">\(\theta = 90^\circ\)</span>) then since <span class="math inline">\(\sin(90^\circ)= 1, \underline a \times\underline b = |\underline a||\underline b|\underline {\hat n}\)</span></p>
-<p>If <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are specified in terms of their component vectors, so that <span class="math inline">\(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\)</span> and <span class="math inline">\(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\)</span> then
+<p><img src="fy-B-lectnotes_files/figure-html/63-vectors-20-1.svg" width="45%" style="display: block; margin: auto;" /></p>
+<p>There is also an “algebraic” formula for the cross product, when
+<span class="math inline">\(\underline a\)</span> and <span class="math inline">\(\underline b\)</span> are specified in terms of their component vectors. Supposing that <span class="math inline">\(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\)</span> and <span class="math inline">\(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\)</span>, the formula can be remembered symbolically as
 <span class="math display">\[
 \underline a \times\underline b = \left|\begin{array}{ccc}\underline i&amp;\underline j&amp;\underline k\\a_1&amp;a_2&amp;a_3\\b_1&amp;b_2&amp;b_3\\\end{array}\right|.
 \]</span>
 </p>
 <div class="example">
-<p><span id="exm:unlabeled-div-146" class="example"><strong>Example 11.9  </strong></span>Find the vector product of <span class="math inline">\(\underline a=3\underline i+2\underline j-6\underline k\)</span> and <span class="math inline">\(\underline b=-\underline i + 5\underline j-\underline k\)</span>.</p>
+<p><span id="exm:unlabeled-div-153" class="example"><strong>Example 11.12  </strong></span>Find the vector product of <span class="math inline">\(\underline a=3\underline i+2\underline j-6\underline k\)</span> and <span class="math inline">\(\underline b=-\underline i + 5\underline j-\underline k\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-147" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-154" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
 \underline a \times\underline b&amp; = \left|\begin{array}{ccc}\underline i&amp;\underline j&amp;\underline k\\3&amp;2&amp;-6\\-1&amp;5&amp;-1\\\end{array}\right|\\
 &amp;= \underline i((2)(-1)-(-6)(5))-\underline j((3)(-1)-(-6)(-1))+\underline k((3)(5)-(2)(-1))\\
 &amp;=28\underline i+9\underline j+17\underline k.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-148" class="example"><strong>Example 11.10  </strong></span>Find a unit vector which is perpendicular to the vector <span class="math inline">\(4\underline i+4\underline j-7\underline k\)</span> and to the vector <span class="math inline">\(3\underline i - 2\underline j+\underline k\)</span>.</p>
+<p><span id="exm:unlabeled-div-155" class="example"><strong>Example 11.13  </strong></span>Find a unit vector which is perpendicular to the vector <span class="math inline">\(4\underline i+4\underline j-7\underline k\)</span> and to the vector <span class="math inline">\(3\underline i - 2\underline j+\underline k\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-149" class="solution"><em>Solution</em>. </span>From the definition of the vector product, a vector perpendicular to both these vectors is given by
+<p><span id="unlabeled-div-156" class="solution"><em>Solution</em>. </span>From the definition of the vector product, a vector perpendicular to both these vectors is given by
 <span class="math display">\[\begin{align*}
 (4\underline i+4\underline j-7\underline k) \times(3\underline i - 2\underline j+\underline k)&amp; = \left|\begin{array}{ccc}\underline i&amp;\underline j&amp;\underline k\\4&amp;4&amp;-7\\3&amp;-2&amp;1\\\end{array}\right|\\
 &amp;= \underline i((4)(1)-(-7)(-2))\\
@@ -801,26 +866,30 @@ If <span class="math inline">\(\underline a\)</span> and <span class="math inlin
 &amp;\phantom{= }+\underline k((4)(-2)-(4)(3))\\
 &amp;=-10\underline i-25\underline j-20\underline k.
 \end{align*}\]</span>
-So a <strong><em>unit vector</em></strong> perpendicular to both given vectors is
+We need to find a <em>unit vector</em> parallel to this one; its magnitude is <span class="math inline">\(15\sqrt{5}\)</span>, and so a unit vector perpendicular to the two given ones is
 <span class="math display">\[
 \frac{-10}{15\sqrt{5}}\underline i-\frac{25}{15\sqrt{5}}\underline j-\frac{20}{15\sqrt{5}}\underline k = \frac{-2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k.
 \]</span></p>
 </div>
+<div style="display:none">
+<p>
+</p>
+</div>
 </div>
 <div id="the-scalar-triple-product" class="section level3 hasAnchor" number="11.3.4">
 <h3><span class="header-section-number">11.3.4</span> The scalar triple product<a href="week-eleven.html#the-scalar-triple-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If we have three vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span> then the scalar triple product of those vectors is defined as <span class="math inline">\(\underline a \cdot(\underline b\times\underline c)\)</span>.</p>
+<p>If we have three vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span> then the <a name='#scalar-triple-product'></a><span style="color: red;">scalar triple product</span> of those vectors is defined to be <span class="math inline">\(\underline a \cdot(\underline b\times\underline c)\)</span>.</p>
 <p>Note that the vector product must be evaluated first, then the scalar product.</p>
-<p>The scalar triple product gives the volume of a parallelepiped with edges defined by the vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span>.</p>
+<p>The scalar triple product gives the (signed) volume of a parallelepiped with edges defined by the vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span>.</p>
 <!--insfig
 
 -->
 <p><img src="fy-B-lectnotes_files/figure-html/64-vectors-21-1.svg" width="45%" style="display: block; margin: auto;" /></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-150" class="example"><strong>Example 11.11  </strong></span>Find the volume of a parallelepiped with edges <span class="math inline">\(\underline a = 2\underline i - 3\underline j + 4\underline k, \underline b = \underline i + 2\underline j - \underline k\)</span> and <span class="math inline">\(\underline c = 3\underline i - \underline j + \underline 2\)</span>.</p>
+<p><span id="exm:unlabeled-div-157" class="example"><strong>Example 11.14  </strong></span>Find the volume of a parallelepiped with edges <span class="math inline">\(\underline a = 2\underline i - 3\underline j + 4\underline k\)</span>, <span class="math inline">\(\underline b = \underline i + 2\underline j - \underline k\)</span> and <span class="math inline">\(\underline c = 3\underline i - \underline j + \underline 2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-151" class="solution"><em>Solution</em>. </span>The volume is given by <span class="math inline">\(\underline a \cdot(\underline b\times\underline c)\)</span>. First we calculate the vector product
+<p><span id="unlabeled-div-158" class="solution"><em>Solution</em>. </span>The volume is given by <span class="math inline">\(\underline a \cdot(\underline b\times\underline c)\)</span>. First we calculate the vector product
 <span class="math display">\[
 \underline b \times\underline c = \left|\begin{array}{ccc}\underline i&amp;\underline j&amp;\underline k\\2&amp;-3&amp;4\\3&amp;-1&amp;2\\\end{array}\right| = 3\underline i-5\underline j-7\underline k.
 \]</span>
@@ -833,18 +902,22 @@ The volume is therefore <span class="math inline">\(7\)</span> units (and the -v
 </div>
 <div id="the-vector-triple-product" class="section level3 hasAnchor" number="11.3.5">
 <h3><span class="header-section-number">11.3.5</span> The vector triple product<a href="week-eleven.html#the-vector-triple-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If we have three vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span> then the vector triple product of those vectors is defined as
+<p>If we have three vectors <span class="math inline">\(\underline a, \underline b\)</span> and <span class="math inline">\(\underline c\)</span> then the <a name='#vector-triple-product'></a><span style="color: red;">vector triple product</span> of those vectors is defined as
 <span class="math display">\[
 \underline a \times (\underline b \times\underline c)
 \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-152" class="example"><strong>Example 11.12  </strong></span>Find the vector triple product <span class="math inline">\(\underline a \times (\underline b \times\underline c)\)</span> where <span class="math inline">\(\underline a = 2\underline i - 3\underline j + 4\underline k, \underline b = \underline i + 2\underline j - \underline k\)</span> and <span class="math inline">\(\underline c = 3\underline i - \underline j + \underline 2\)</span>.</p>
+<p><span id="exm:unlabeled-div-159" class="example"><strong>Example 11.15  </strong></span>Find the vector triple product <span class="math inline">\(\underline a \times (\underline b \times\underline c)\)</span> where <span class="math inline">\(\underline a = 2\underline i - 3\underline j + 4\underline k\)</span>, <span class="math inline">\(\underline b = \underline i + 2\underline j - \underline k\)</span> and <span class="math inline">\(\underline c = 3\underline i - \underline j + \underline 2\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-153" class="solution"><em>Solution</em>. </span>From the previous example, <span class="math inline">\(\underline b \times\underline c = 3\underline i-5\underline j-7\underline k\)</span>.
+<p><span id="unlabeled-div-160" class="solution"><em>Solution</em>. </span>From the previous example, <span class="math inline">\(\underline b \times\underline c = 3\underline i-5\underline j-7\underline k\)</span>.
 <span class="math display">\[
 \underline a \times (\underline b \times\underline c) = \left|\begin{array}{ccc}\underline i&amp;\underline j&amp;\underline k\\2&amp;-3&amp;4\\3&amp;-5&amp;7\end{array}\right| = 41\underline i+26\underline j-\underline k
 \]</span></p>
+</div>
+<div style="display:none">
+<p>
+</p>
 </div>
 
 </div>
