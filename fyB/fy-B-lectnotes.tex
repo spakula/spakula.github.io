@@ -64,6 +64,15 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \usepackage{version}
 \excludeversion{htmlonly}
 \excludeversion{slidesonly}
@@ -111,12 +120,13 @@
 \hypersetup{
   pdftitle={GENG0002 Mathematics B lecture notes},
   pdfauthor={Ján Špakula},
+  pdflang={en},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-05-16}
+\date{2024-06-03}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
