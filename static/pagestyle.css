@@ -77,16 +77,16 @@ h4 {
 .rights {
   float: right;
   font-size: smaller;
-  color: #777777;
+  color: #666666;
   margin: 10px; }
   .rights a {
-    color: #777777; }
+    color: #666666; }
 
 .status {
   font-size: smaller;
-  color: #777777; }
+  color: #666666; }
   .status a {
-    color: #777777; }
+    color: #666666; }
 
 /* specific portions of the page */
 .navigation-list {
