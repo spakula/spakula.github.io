@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>js :: LaTeX/accessibility notes</title>
+<meta name="author" content="Ján Špakula" />
+<link rel="stylesheet" href="static/pagestyle.css" media="screen and (min-width: 481px)" type="text/css" />
+<link rel="stylesheet" href="static/android.css" media="only screen and (max-width: 480px)" type="text/css">
+</head>
+<body>
+<div id="content">
+<h1 class="title">LaTeX/accessibility notes</h1>
+<div class="cath">
+<p><img src="static/the-cat-0.png" alt="pixelart of a cat" />
+</p>
+</div>
+
+<p>
+We are <a href="https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps">required by law</a> to make the materials that we produce "accessible". The standards are either <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> or <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag">WCAG 2.2</a> (depending on when do you read this).
+</p>
+
+<p>
+The pdfs we produce from LaTeX sources are generally not accessible at all.
+</p>
+
+<p>
+A couple of ways to produce accessible materials are listed on <a href="https://heogden.github.io/accessibility-guide/">Helen's pages</a>; at the moment (2024-07-11T10:33:05) they're aimed at getting a html output from either LaTeX or other (e.g. quarto / markdown / etc) sources.
+</p>
+
+<p>
+There does exist such a thing as "an accessible pdf", it's referred to as a "tagged pdf". This means it's a pdf with extra <em>semantic</em> information embedded, in addition to the traditional <em>positional</em> information.
+</p>
+
+<p>
+Software like Adobe Acrobat can take any pdf, and with a click of a button turn it into a tagged one, but the result isn't always "practical", meaning the tagging it produces will be actually worthless for a person trying to use it.
+</p>
+
+<p>
+An example of a badly tagged pdf (right: rendered pdf, left: a html version of the same pdf based on the tags in the pdf)<br />
+
+<img src="static/badly-tagged-pdf.png" width="800px" alt="a screenshot of a badly tagged pdf; with rendered pdf on the right, and a corresponding html version on the left" />
+</p>
+
+<p>
+An example of a well tagged pdf:<br />
+
+<img src="static/better-tagged-pdf.png" width="800px" alt="a screenshot of a well tagged pdf; with rendered pdf on the right, and a corresponding html version on the left" />
+</p>
+
+<p>
+These screenshots above were produced with <a href="https://ngpdf.com">ngpdf.com</a>. As of now (2024-07-11T11:11:47) it's possible to inspect a pdf for free, clicking 'Try the demo', upload a pdf, and then click "go to editor".
+</p>
+
+
+
+<h2>Can we get a (well) tagged pdf from LaTeX sources?</h2>
+
+<p>
+By default LaTeX compilers produce untagged pdfs, with no semantic information at all.
+</p>
+
+<p>
+As of 2024-07-11T10:44:50, we indeed can, to a certain extent.
+</p>
+
+<p>
+There's a <a href="https://www.reddit.com/r/LaTeX/comments/y0ib2t/comment/jwvyzsy/">reddit post from mid-2023</a>, which says that LaTeX packages like <code>accessibility</code> and <code>axessibility</code> are obsolete (as in, unmaintaned and not really working). However it does suggest a solution, based on recent work of Ulrike Franke, on the LaTeX compiler.
+</p>
+
+<p>
+To let the compiler know that we want tagging, put this as the first line in your LaTeX source:
+</p>
+<pre>\DocumentMetadata{pdfversion=2.0,lang=en-UK,testphase=phase-III,testphase=math}</pre>
+<p>
+(If you leave out <code>testphase=math</code>, the text will be tagged, but the formulas won't. The <code>testphase</code> parameters tell the compiler which components of the tagging engine should be used.)
+</p>
+
+<p>
+You will also need to use as recent compiler as you can (to give you an example, the formula tagging support has visibly improved in the last four months before writing this text on 2024-07-11T10:51:37). So update your installs! If you can, use the <code>-dev</code> version of the compiler(s).
+</p>
+
+<p>
+I personally recommend using <code>lualatex-dev</code> (I think that's the one they're doing the development on), but as of now (2024-07-11T10:52:39), <code>pdflatex-dev</code> or <code>pdflatex</code> may also work.
+</p>
+
+<p>
+That's it.
+</p>
+
+
+<h2>Caveats</h2>
+
+<p>
+Do expect that <b>a lot</b> of packages will break. So your mileage may vary, and a fair amount of work will be required, depending on how dirty are the tricks that you're using in your LaTeX sources.
+</p>
+
+<h2>A list of ... remarks</h2>
+
+<p>(This is actually the reason for the existence of this page.)</p>
+
+<ul>
+    <li>
+        Things that I find don't work very well (yet):
+        <ul>
+            <li>
+                <code>exam</code> class (numbering and spacing is sometimes off?).
+            </li>
+            <li>
+                Various itemize/enumerate enhancements e.g. <code>enumitem</code> and <code>paralist</code> (will probably run, but spacing and numbering may not work as expected) -- so I reverted to using the default ones, and messing with the spacing manually: using <code>\vspace{-1ex}</code> before an <code>itemize</code>, and
+                <pre>
+\def\compactitemize{\setlength{\itemsep}{0pt}\setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}%
+\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}}
+\def\romanenumerate{\def\theenumi{\roman{enumi}}\def\labelenumi{(\theenumi)}}</pre>
+                then manually using <code>\begin{itemize}\compactitemize ...</code> and <code>\begin{enumerate}\romanenumerate ...</code>.
+            </li>
+            <li><code>empheq</code> package. Just use <code>\boxed{...}</code> with <code>\begin{aligned} ...\end{aligned}</code> if needed.
+            </li>
+            <li><code>array</code> package and using <code>\newcolumntype</code> to get automatic maths wrapping in tables. Just use the standard ones (r,c,l) and wrap the material into dollars.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Check your spacing and item/enum numbering. For me there are changes to this (compared with the untagged pdf) relatively often.
+    </li>
+    <li>
+        Do <em>not</em> start a paragraph with displayed math. (Seems to throw off the paragraph tagging engine.)
+    </li>
+    <li>
+        Don't use double-dollars for displayed math. Use at least <code>\[...\]</code>, or better <code>\begin{equation*}...\end{equation*}</code>. (You can replace all d-dollar pairs with the above in every decent text editor using regular expressions. E.g. in <code>vim</code>, it's <code>:%s/\$\$\(\_.\{-}\)\$\$/\\begin{equation*}\1\\end{equation*}/g</code>)
+    </li>
+    <li>
+        One should use <code>hyperref</code> and set some doc metadata:
+        <pre>\usepackage[pdfauthor="JŠ", pdfusetitle, colorlinks=true]{hyperref}</pre>
+        Setting the title explicitly later: <code>\hypersetup{ pdftitle = {Test 1}, }</code>
+    </li>
+    <li>
+        One can inject "custom tags" like this: <code>\tagstructbegin{tag=H1}Test 1\tagmcend</code>. This is useful for short-ish documents that don't use the traditional structure with <code>\section{..}</code> (and then Ally complains that the doc doesn't have structure).
+    </li>
+    <li>
+        Not accessibility related, just recording my lualatex setup. (NB: lualatex uses system-wide ttf/otf fonts, rather than postscript or metafont ones.)
+        <pre>
+\usepackage{polyglossia}
+\setmainlanguage[variant=british]{english} % change to your favorite language
+\usepackage[babel]{microtype}
+
+% lua/xe-latex
+% fonts can be customized here
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont{TeX Gyre Pagella}
+% \setsansfont{Linux Biolinum O}[Scale=MatchLowercase]
+% \setmonofont{Cascadia Mono}[Scale=MatchLowercase]
+% \setmathfont{TeX Gyre Pagella Math}[Scale=MatchLowercase]
+
+\usepackage{amsmath, amssymb, mathtools, mathrsfs}</pre>
+    </li>
+    <li>
+        Not accessibility related: how do I include/exclude solutions.
+        <pre>
+\newenvironment{solution}{\medskip\noindent\textbf{Solution. }}{\smallskip\hrule\medskip}
+\usepackage{versions}
+\excludeversion{solution} % comment this out to include solutions
+        </pre>
+    </li>
+    <li><a href="https://elearn.soton.ac.uk/knowledge-base/blackboard-request-a-sandbox-course/">Blackboard Ultra Sandbox module request</a></li>
+</ul>
+
+
+
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ján Špakula</p>
+<p class="date">Last modified: 07 Jul 2024, 12:30, BST</p>
+</div>
+</body>
+</html>
