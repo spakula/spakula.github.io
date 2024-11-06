@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MATH3092: AES project outline</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em;
+  vertical-align: middle;
+}
+</style>
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<section id="advanced-encryption-standard-aes-project-outline" class="level4">
+<h4 class="anchored" data-anchor-id="advanced-encryption-standard-aes-project-outline">Advanced Encryption Standard (AES) project outline</h4>
+<section id="part-1-introduction-to-cryptography-and-public-key-cryptosystems" class="level5">
+<h5 class="anchored" data-anchor-id="part-1-introduction-to-cryptography-and-public-key-cryptosystems">part 1: Introduction to cryptography, and public key cryptosystems</h5>
+<ol type="1">
+<li>Define and explain basic cryptography terminology: general aim of a cipher / cryptosystem; encryption key, plaintext, ciphertext, encoding schemes (including ASCII), symmetric and asymmetric ciphers, public key cryptography.</li>
+<li>Compare the advantages and disadvantages of the known symmetric and asymmetric cryptosystems that are currently in use. Explain the role of the AES algorithm in a secure encryption system, discuss the problem of key exchange. Give a brief outline of how this can be solved by pairing AES with a secure public key encryption system, e.g.&nbsp;Diffie-Hellman (DH) key exchange.</li>
+<li>Explain the Rivest-Shamir-Adleman (RSA) cryptosystem, and work through an example of its operation. (Optional: Give a proof of correctness of the algorithm.) Explain how does its security depend on efficiency of factorising integers.</li>
+<li>Briefly explain the most common factorisation algorithms, and give details of the Pollard’s rho algorithm. Roughly estimate how much time would the listed algorithms take to break the current standard of 2048 bit RSA keys.</li>
+</ol>
+</section>
+<section id="part-2-aes-mathematical-description-and-implementation" class="level5">
+<h5 class="anchored" data-anchor-id="part-2-aes-mathematical-description-and-implementation">part 2: AES: mathematical description and implementation</h5>
+<ol type="1">
+<li>Give the definition of a field, describe the classification of finite fields, and explain how the Rijndael field fits into this classification.</li>
+<li>Describe how to construct a finite field of specified order as a quotient of a ring of polynomials, illustrating this by showing how to construct the Rijndael field.</li>
+<li>Explain how to add and multiply elements of the Rijndael field as represented by polynomials of degree at most 7 over the field of 2 elements, illustrating this with examples.</li>
+<li>Give a method to represent a text message as a string of hexadecimal numbers and show how to convert the string to a string of elements of the Rijndael field.</li>
+<li>Give a detailed explanation of the steps in one full round of the Rijndael algorithm, showing how the data is represented in each step, taking care to use mathematical language (“we now represent the data as a vector with entries in ….; we multiply the vector by the following matrix and this has the effect of ….”, etc.</li>
+<li>Explain when and why real world implementations of the algorithm use lookup tables rather than live computation.</li>
+<li>Choose a short text and illustrate your encoding method and one round of the AES cipher algorithm.</li>
+<li>Implement the AES algorithm in python or another programming or scripting language, commenting your code to make it human readable.</li>
+<li>Encrypt your chosen text using your programme, and compare the results with a standard online implementation of AES. Show that the two results agree.</li>
+</ol>
+</section>
+</section>
+<section id="initial-reading" class="level4">
+<h4 class="anchored" data-anchor-id="initial-reading">Suggestions for initial reading</h4>
+<ul>
+    <li>For part 1: Jeffrey Hoffstein, Jill Catherine Pipher & Joseph H. Silverman, An introduction to mathematical cryptography, Springer 2014 - Chapters 1 and 3 only (<a href="https://southampton.on.worldcat.org/oclc/890693282">ebook in the library</a>)</li>
+    <li>For part 1: Chapter 7 of Jim Renshaw's older <a href="https://www.personal.soton.ac.uk/jhr/math1001/chapter-cryptography.html">MATH1001 Number Theory lecture notes</a></li>
+</ul>
+</section>
+
+</main>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
