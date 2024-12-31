@@ -1,11 +1,12 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
   11pt,
   oneside]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -36,7 +37,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -49,21 +49,19 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -73,6 +71,14 @@
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[english]{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
 \usepackage{version}
 \excludeversion{htmlonly}
 \excludeversion{slidesonly}
@@ -109,11 +115,6 @@
 % \NewEnviron{blanksol}{\emph{Solution:}\vfill}
 % \let\solution\blanksol
 % \let\endsolution\endblanksol
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -126,7 +127,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-06-03}
+\date{2024-12-30}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1744,10 +1745,10 @@ We can substitute an \(x\) value just smaller than the value at the turning poin
 Then the type of turning point can be established according to the following table:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2353}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2941}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2941}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 slope before turning pt
@@ -3390,8 +3391,8 @@ For differentiation we had some standard derivatives which are used without expl
 \slide
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 derivative
@@ -5491,6 +5492,133 @@ i^2&=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\
 \end{align*}
 \end{solution}
 
+\section{Volume and Surface of Revolution}\label{volume-and-surface-of-revolution}
+
+Consider a curve \(y = f(x)\) between the ordinates \(x = a\) and \(x = b\). The volume of revolution is the volume of the equivalent solid body obtained by rotating the curve around the \(x\) or \(y\) axes.
+
+\slide
+
+\subsection{\texorpdfstring{Rotation about the \(x\)-axis}{Rotation about the x-axis}}\label{rotation-about-the-x-axis}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/41-volume-of-revolution-1} 
+
+}
+
+\caption{volume of revolution}\label{fig:41-volume-of-revolution}
+\end{figure}
+
+If the shaded strip in Figure \ref{fig:41-volume-of-revolution} is rotated about the \(x\)-axis then, provided \(\delta x\) is small, it will trace out a disc with thickness \(\delta x\) and volume \(\delta V = \pi y^2\delta x\), where \(y\) is the radius of the disc, see Figure \ref{fig:42-volume-of-revolution2}.
+\slide
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/42-volume-of-revolution2-1} 
+
+}
+
+\caption{volume of revolution}\label{fig:42-volume-of-revolution2}
+\end{figure}
+
+We may sum the volumes generated by all the strips between \(x = a\) and \(x = b\) to obtained the volume of the solid of revolution for the section of curve about the \(x\)-axis.
+Thus the total volume \(V\) is given by
+\[
+V = \int_a^b\pi y^2\ \mathrm{d}x
+\]
+\slide
+
+\subsection{\texorpdfstring{Rotation about the \(y\)-axis}{Rotation about the y-axis}}\label{rotation-about-the-y-axis}
+
+By a similar method it can be shown that for a rotation about the \(y\)-axis, the volume the solid of revolution will be
+\[
+V = 2\pi\int_a^bxy\ \mathrm{d}x.
+\]
+This is for the volume of the solid created by rotating (about the \(y\)-axis) the \emph{same} region as before (i.e.~bounded by two vertical lines \(x=a\) and \(x=b\) on the sides, and the \(x\)-axis and the graph of a function \(y(x)\) from the bottom and the top) is rotated about the \(y\)-axis.
+\slide
+
+\subsection{Surface area of revolution}\label{surface-area-of-revolution}
+
+The surface area of revolution is the surface area of the body generated by rotating a curve about the \(x\) or \(y\) axes. For a strip as shown in the figure above, we approximate the `arc' (a part of the graph of the function) by a straight line. This yields a right triangle, from which we get an approximation for the length of arc to be \(\delta l=\sqrt{1+(\mathrm{d}y/\mathrm{d}x)^2}\cdot\delta x\).
+
+\slide
+
+If the strip is rotated about the \(x\)-axis, the surface area generated will be approximately \(\delta S = 2\pi y\delta l\). The surface area of the whole solid generated by rotating the curve around the \(x\)-axis between \(x = a\) and \(x = b\) is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
+\[
+S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
+\]
+\slide
+
+\begin{example}
+\leavevmode
+
+The straight line \(y=mx\) between \(x=0\) and \(x=h\) is rotated about the \(x\)-axis thus generating a right circular cone. Calculate its volume in terms of \(h\) and \(R\) where \(R\) is the \(y\) value at \(x=h\). Find also the surface area of the resultant cone.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/43-right-circ-cone-1} 
+
+}
+
+\caption{right-circular-cone}\label{fig:43-right-circ-cone}
+\end{figure}
+
+\end{example}
+
+\begin{solution}
+See Figure \ref{fig:43-right-circ-cone}.
+
+The volume of the solid of revolution for \(y = mx\) is given by
+\[
+V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
+\]
+Now \(m = R/h\) and so
+\[
+V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
+\]
+The surface area is given by
+\begin{align*}
+S&= 2\pi\int_0^hy\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x = 2\pi\int_0^h mx\sqrt{1+m^2}\ \mathrm{d}x\\
+&= 2m\sqrt{1+m^2}\pi\left[\frac{x^2}2\right]_0^h = m\sqrt{1+m^2}\pi h^2 = \pi R h\sqrt{1+m^2}\\
+&= \pi Rl.
+\end{align*}
+where \(l\) is the length of the inclined line.
+\end{solution}
+
+\begin{slidesonly}
+
+\slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
+\begin{example}
+A curve is given parametrically as \(x=4t^2, y = 6t-t^2\). Determine the volume generated when the figure bounded by the curve, the \(x\)-axis and the ordinates corresponding to \(t=0\) and \(t=2\) is rotated about the \(x\)-axis.
+\end{example}
+
+\begin{solution}
+\[
+V = \pi\int_a^b y^2\ \mathrm{d}x.
+\]
+Since \(x=4t^2\) then \(\mathrm{d}x/\mathrm{d}t = 8t\) and so we can write \(\mathrm{d}x = 8t\ \mathrm{d}t\). Hence
+\begin{align*}
+V& = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
+& = 8\pi\left[9t^4-\frac{12t^5}5+\frac{t^6}6\right]_0^2\\
+&= 8\pi\times77.87 = 1957 \text{ units}^3.
+\end{align*}
+\end{solution}
+
+\begin{slidesonly}
+
+\slide
+
+\hbox{}
+\slide
+
+\end{slidesonly}
+
 \chapter*{Week 9 Exercises}\label{week-9-exercises}
 \addcontentsline{toc}{chapter}{Week 9 Exercises}
 
@@ -5629,6 +5757,68 @@ An alternating current is given by \(i = a\sin(\theta)\). Determine the RMS valu
 4. (i) \(\overline{y}_{\text{RMS}}=0.73\); (ii) \(\overline{y}_{\text{RMS}}=1.22\); (iii) \(\overline{y}_{\text{RMS}}=\sqrt{11}\); (iv) \(\overline{y}_{\text{RMS}}=82.5\);
 5. \(\overline{v}_{\text{RMS}}=8.2\);
 6. \(\overline{i}=2a/\pi\), \(\overline{i}_{\text{RMS}}=a/\sqrt{2}\), ratio \(=1.11\);{]}
+
+\section{Sheet 20 Volumes of Revolution}\label{sheet-20-volumes-of-revolution}
+
+\slide
+
+\subsection*{Exercise 1}\label{exercise-1-10}
+\addcontentsline{toc}{subsection}{Exercise 1}
+
+Determine the volume of the solid of revolution obtained by rotating the curve \(y = x^2\) about
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\tightlist
+\item
+  The \(x-\)axis between the limits \(x = 1\) and \(x = 3\);
+\item
+  The \(y-\)axis between the same limits.
+\end{enumerate}
+
+\slide
+
+\subsection*{Exercise 2}\label{exercise-2-10}
+\addcontentsline{toc}{subsection}{Exercise 2}
+
+A cone is generated by rotating the line \(y = x/2\) about the \(x-\)axis from \(x = 0\) to \(x = 10\). Determine the volume of the cone.
+
+\slide
+
+\subsection*{Exercise 3}\label{exercise-3-8}
+\addcontentsline{toc}{subsection}{Exercise 3}
+
+Determine the volumes of revolution formed by rotating about the \(x-\)axis the areas between the curves of
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\tightlist
+\item
+  \(y = x^2 - 2x\) and the \(x-\)axis;
+\item
+  \(y = 3x - x^2\) and the \(x-\) axis.
+\end{enumerate}
+
+\slide
+
+\subsection*{Exercise 4}\label{exercise-4-6}
+\addcontentsline{toc}{subsection}{Exercise 4}
+
+Determine the volume generated when the plane figure bounded by \(y = 5\cos(2x)\), the \(x-\)axis and the ordinates at values \(x = 0\) and \(x = \pi/4\) rotates about the \(x-\)axis for a complete revolution.
+
+\slide
+
+\subsection*{Exercise 5}\label{exercise-5-5}
+\addcontentsline{toc}{subsection}{Exercise 5}
+
+The parametric equations of a curve are given as \(x = 6t^2, y = 2t - t^2\).Determine the volume generated when the plane figure bounded by the curve, the \(x-\)axis and the ordinates corresponding to \(t = 0\) and \(t = 2\) rotates about the \(x-\)axis
+
+{[}Solutions:
+1. \(152\);
+2. \(126\);
+3. (i) \(3.35\), (ii) \(25.4\);
+4. \(30.8\);
+5. \(40.2\);{]}
 
 \chapter{Week 10}\label{week-ten}
 
@@ -5840,254 +6030,6 @@ The centroid therefore has coordinates \((2.31,2.78)\).
 
 \slide
 
-\section{Volume and Surface of Revolution}\label{volume-and-surface-of-revolution}
-
-Consider a curve \(y = f(x)\) between the ordinates \(x = a\) and \(x = b\). The volume of revolution is the volume of the equivalent solid body obtained by rotating the curve around the \(x\) or \(y\) axes.
-
-\slide
-
-\subsection{\texorpdfstring{Rotation about the \(x\)-axis}{Rotation about the x-axis}}\label{rotation-about-the-x-axis}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/41-volume-of-revolution-1} 
-
-}
-
-\caption{volume of revolution}\label{fig:41-volume-of-revolution}
-\end{figure}
-
-If the shaded strip in Figure \ref{fig:41-volume-of-revolution} is rotated about the \(x\)-axis then, provided \(\delta x\) is small, it will trace out a disc with thickness \(\delta x\) and volume \(\delta V = \pi y^2\delta x\), where \(y\) is the radius of the disc, see Figure \ref{fig:42-volume-of-revolution2}.
-\slide
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/42-volume-of-revolution2-1} 
-
-}
-
-\caption{volume of revolution}\label{fig:42-volume-of-revolution2}
-\end{figure}
-
-We may sum the volumes generated by all the strips between \(x = a\) and \(x = b\) to obtained the volume of the solid of revolution for the section of curve about the \(x\)-axis.
-Thus the total volume \(V\) is given by
-\[
-V = \int_a^b\pi y^2\ \mathrm{d}x
-\]
-\slide
-
-\subsection{\texorpdfstring{Rotation about the \(y\)-axis}{Rotation about the y-axis}}\label{rotation-about-the-y-axis}
-
-By a similar method it can be shown that for a rotation about the \(y\)-axis, the volume the solid of revolution will be
-\[
-V = 2\pi\int_a^bxy\ \mathrm{d}x.
-\]
-This is for the volume of the solid created by rotating (about the \(y\)-axis) the \emph{same} region as before (i.e.~bounded by two vertical lines \(x=a\) and \(x=b\) on the sides, and the \(x\)-axis and the graph of a function \(y(x)\) from the bottom and the top) is rotated about the \(y\)-axis.
-\slide
-
-\subsection{Surface area of revolution}\label{surface-area-of-revolution}
-
-The surface area of revolution is the surface area of the body generated by rotating a curve about the \(x\) or \(y\) axes. For a strip as shown in the figure above, we approximate the `arc' (a part of the graph of the function) by a straight line. This yields a right triangle, from which we get an approximation for the length of arc to be \(\delta l=\sqrt{1+(\mathrm{d}y/\mathrm{d}x)^2}\cdot\delta x\).
-
-\slide
-
-If the strip is rotated about the \(x\)-axis, the surface area generated will be approximately \(\delta S = 2\pi y\delta l\). The surface area of the whole solid generated by rotating the curve around the \(x\)-axis between \(x = a\) and \(x = b\) is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
-\[
-S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
-\]
-\slide
-
-\begin{example}
-\leavevmode
-
-The straight line \(y=mx\) between \(x=0\) and \(x=h\) is rotated about the \(x\)-axis thus generating a right circular cone. Calculate its volume in terms of \(h\) and \(R\) where \(R\) is the \(y\) value at \(x=h\). Find also the surface area of the resultant cone.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.6\linewidth]{fy-B-lectnotes_files/figure-latex/43-right-circ-cone-1} 
-
-}
-
-\caption{right-circular-cone}\label{fig:43-right-circ-cone}
-\end{figure}
-
-\end{example}
-
-\begin{solution}
-See Figure \ref{fig:43-right-circ-cone}.
-
-The volume of the solid of revolution for \(y = mx\) is given by
-\[
-V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
-\]
-Now \(m = R/h\) and so
-\[
-V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
-\]
-The surface area is given by
-\begin{align*}
-S&= 2\pi\int_0^hy\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x = 2\pi\int_0^h mx\sqrt{1+m^2}\ \mathrm{d}x\\
-&= 2m\sqrt{1+m^2}\pi\left[\frac{x^2}2\right]_0^h = m\sqrt{1+m^2}\pi h^2 = \pi R h\sqrt{1+m^2}\\
-&= \pi Rl.
-\end{align*}
-where \(l\) is the length of the inclined line.
-\end{solution}
-
-\begin{slidesonly}
-
-\slide
-
-\hbox{}
-\slide
-
-\end{slidesonly}
-
-\begin{example}
-A curve is given parametrically as \(x=4t^2, y = 6t-t^2\). Determine the volume generated when the figure bounded by the curve, the \(x\)-axis and the ordinates corresponding to \(t=0\) and \(t=2\) is rotated about the \(x\)-axis.
-\end{example}
-
-\begin{solution}
-\[
-V = \pi\int_a^b y^2\ \mathrm{d}x.
-\]
-Since \(x=4t^2\) then \(\mathrm{d}x/\mathrm{d}t = 8t\) and so we can write \(\mathrm{d}x = 8t\ \mathrm{d}t\). Hence
-\begin{align*}
-V& = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
-& = 8\pi\left[9t^4-\frac{12t^5}5+\frac{t^6}6\right]_0^2\\
-&= 8\pi\times77.87 = 1957 \text{ units}^3.
-\end{align*}
-\end{solution}
-
-\begin{slidesonly}
-
-\slide
-
-\hbox{}
-\slide
-
-\end{slidesonly}
-
-\chapter*{Week 10 Exercises}\label{week-10-exercises}
-\addcontentsline{toc}{chapter}{Week 10 Exercises}
-
-\section{Sheet 19 Centroids of area}\label{sheet-19-centroids-of-area}
-
-\slide
-
-\subsection*{Exercise 1}\label{exercise-1-10}
-\addcontentsline{toc}{subsection}{Exercise 1}
-
-Determine the positionns of the centroids of the uniform laminae represented by the following curves and indicated boundaries.
-
-\begin{enumerate}
-\def\labelenumi{\roman{enumi}.}
-\tightlist
-\item
-  \(y=x^2\), the \(x\)-axis and \(x=0, x=2\);
-\item
-  \(y=2x^3\), the \(x\)-axis and \(x=1, x=2\);
-\item
-  The portion of \(y=2x-x^2\) above the \(x\)-axis.
-\end{enumerate}
-
-\slide
-
-\subsection*{Exercise 2}\label{exercise-2-10}
-\addcontentsline{toc}{subsection}{Exercise 2}
-
-Determine the position of the centroid of the figure bounded by \(y = e^{2x}\), the \(x-\)axis, the \(y-\)axis and the ordinate at \(x = 2\).
-
-\slide
-
-\subsection*{Exercise 3}\label{exercise-3-8}
-\addcontentsline{toc}{subsection}{Exercise 3}
-
-Determine the position of the centroid of the figure bounded by the curve \(y = 5\sin(2x)\), the \(x-\)axis and the ordinates at \(x = 0\) and \(x = \pi/6\).
-
-\slide
-
-\subsection*{Exercise 4}\label{exercise-4-6}
-\addcontentsline{toc}{subsection}{Exercise 4}
-
-A curve is given parametrically as \(x = at^2, y = 2at\) where \(t\) is a parameter and \(a\) is a constant. Determine the position of the centroid about the for figure bounded by the values \(t = 1\) and \(t = 2\).
-
-{[}Solutions:
-1.
-(i) \(\overline{x}=1.5\), \(\overline{y}=1.2\),
-(ii) \(\overline{x}=1.65\), \(\overline{y}=4.8\),
-(iii) \(\overline{x}=1\), \(\overline{y}=0.4\);
-2. \(\overline{x}=1.5\), \(\overline{y}=13.6\);
-3. \(\overline{x}=0.3\), \(\overline{y}=1.5\);
-4. \(\overline{x}=2.66\), \(\overline{y}=1.61\);{]}
-
-\slide
-
-\section{Sheet 20 Volumes of Revolution}\label{sheet-20-volumes-of-revolution}
-
-\slide
-
-\subsection*{Exercise 1}\label{exercise-1-11}
-\addcontentsline{toc}{subsection}{Exercise 1}
-
-Determine the volume of the solid of revolution obtained by rotating the curve \(y = x^2\) about
-
-\begin{enumerate}
-\def\labelenumi{\roman{enumi}.}
-\tightlist
-\item
-  The \(x-\)axis between the limits \(x = 1\) and \(x = 3\);
-\item
-  The \(y-\)axis between the same limits.
-\end{enumerate}
-
-\slide
-
-\subsection*{Exercise 2}\label{exercise-2-11}
-\addcontentsline{toc}{subsection}{Exercise 2}
-
-A cone is generated by rotating the line \(y = x/2\) about the \(x-\)axis from \(x = 0\) to \(x = 10\). Determine the volume of the cone.
-
-\slide
-
-\subsection*{Exercise 3}\label{exercise-3-9}
-\addcontentsline{toc}{subsection}{Exercise 3}
-
-Determine the volumes of revolution formed by rotating about the \(x-\)axis the areas between the curves of
-
-\begin{enumerate}
-\def\labelenumi{\roman{enumi}.}
-\tightlist
-\item
-  \(y = x^2 - 2x\) and the \(x-\)axis;
-\item
-  \(y = 3x - x^2\) and the \(x-\) axis.
-\end{enumerate}
-
-\slide
-
-\subsection*{Exercise 4}\label{exercise-4-7}
-\addcontentsline{toc}{subsection}{Exercise 4}
-
-Determine the volume generated when the plane figure bounded by \(y = 5\cos(2x)\), the \(x-\)axis and the ordinates at values \(x = 0\) and \(x = \pi/4\) rotates about the \(x-\)axis for a complete revolution.
-
-\slide
-
-\subsection*{Exercise 5}\label{exercise-5-5}
-\addcontentsline{toc}{subsection}{Exercise 5}
-
-The parametric equations of a curve are given as \(x = 6t^2, y = 2t - t^2\).Determine the volume generated when the plane figure bounded by the curve, the \(x-\)axis and the ordinates corresponding to \(t = 0\) and \(t = 2\) rotates about the \(x-\)axis
-
-{[}Solutions:
-1. \(152\);
-2. \(126\);
-3. (i) \(3.35\), (ii) \(25.4\);
-4. \(30.8\);
-5. \(40.2\);{]}
-
-\chapter{Week 11}\label{week-eleven}
-
-\slide
-
 \section{Vectors I}\label{vectors-i}
 
 A \textcolor{red}{\em scalar}\index{scalar} quantity has only size or magnitude (i.e.~all the information is just a single number). For example: mass, time, speed \(\dots\)
@@ -6246,6 +6188,142 @@ So
 \slide
 
 \end{slidesonly}
+
+\chapter*{Week 10 Exercises}\label{week-10-exercises}
+\addcontentsline{toc}{chapter}{Week 10 Exercises}
+
+\section{Sheet 19 Centroids of area}\label{sheet-19-centroids-of-area}
+
+\slide
+
+\subsection*{Exercise 1}\label{exercise-1-11}
+\addcontentsline{toc}{subsection}{Exercise 1}
+
+Determine the positionns of the centroids of the uniform laminae represented by the following curves and indicated boundaries.
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\tightlist
+\item
+  \(y=x^2\), the \(x\)-axis and \(x=0, x=2\);
+\item
+  \(y=2x^3\), the \(x\)-axis and \(x=1, x=2\);
+\item
+  The portion of \(y=2x-x^2\) above the \(x\)-axis.
+\end{enumerate}
+
+\slide
+
+\subsection*{Exercise 2}\label{exercise-2-11}
+\addcontentsline{toc}{subsection}{Exercise 2}
+
+Determine the position of the centroid of the figure bounded by \(y = e^{2x}\), the \(x-\)axis, the \(y-\)axis and the ordinate at \(x = 2\).
+
+\slide
+
+\subsection*{Exercise 3}\label{exercise-3-9}
+\addcontentsline{toc}{subsection}{Exercise 3}
+
+Determine the position of the centroid of the figure bounded by the curve \(y = 5\sin(2x)\), the \(x-\)axis and the ordinates at \(x = 0\) and \(x = \pi/6\).
+
+\slide
+
+\subsection*{Exercise 4}\label{exercise-4-7}
+\addcontentsline{toc}{subsection}{Exercise 4}
+
+A curve is given parametrically as \(x = at^2, y = 2at\) where \(t\) is a parameter and \(a\) is a constant. Determine the position of the centroid about the for figure bounded by the values \(t = 1\) and \(t = 2\).
+
+{[}Solutions:
+1.
+(i) \(\overline{x}=1.5\), \(\overline{y}=1.2\),
+(ii) \(\overline{x}=1.65\), \(\overline{y}=4.8\),
+(iii) \(\overline{x}=1\), \(\overline{y}=0.4\);
+2. \(\overline{x}=1.5\), \(\overline{y}=13.6\);
+3. \(\overline{x}=0.3\), \(\overline{y}=1.5\);
+4. \(\overline{x}=2.66\), \(\overline{y}=1.61\);{]}
+
+\slide
+
+\section{Sheet 21 Vectors I}\label{sheet-21-vectors-i}
+
+\subsection*{Exercise 1}\label{exercise-1-12}
+\addcontentsline{toc}{subsection}{Exercise 1}
+
+Two vectors \(\underline A\) and \(\underline B\) are at right angles. Find
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\tightlist
+\item
+  the magnitude of the vector \(\underline A+\underline B\) if \(|\underline A| = 1\) and \(|\underline B| = 2\).
+\item
+  the magnitude of the vector \(\underline A+\underline B\) if \(|\underline A|=20\) and \(|\underline B| = 21\).
+\end{enumerate}
+
+\slide
+
+\subsection*{Exercise 2}\label{exercise-2-12}
+\addcontentsline{toc}{subsection}{Exercise 2}
+
+Determine the resultant of the vectors \(\underline A, \underline B, \underline C\) and \(\underline D\) given that \(\underline A = 20\) km \(3o^\circ\) S of E, \(\underline B = 50\) km due W, \(\underline C = 40\) km NE and \(\underline D=30\) km SW.
+
+\slide
+
+\subsection*{Exercise 3}\label{exercise-3-10}
+\addcontentsline{toc}{subsection}{Exercise 3}
+
+An object \(P\) is acted on by three forces as shown on Figure \ref{fig:65-res-force}. All forces lie in the same plane (are \emph{co-planar}). Determine the required force and its direction so as to prevent \(P\) from moving.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/65-res-force-1} 
+
+}
+
+\caption{resultant force}\label{fig:65-res-force}
+\end{figure}
+\slide
+
+\subsection*{Exercise 4}\label{exercise-4-8}
+\addcontentsline{toc}{subsection}{Exercise 4}
+
+For the triangle on Figure \ref{fig:66-triangles}, prove by vectors that the line \(DE\), where \(D\) and \(E\) are the mid-points of \(AB\) and \(AC\) respectively, is half the length of the side \(BC\).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/66-triangles-1} 
+
+}
+
+\caption{triangles}\label{fig:66-triangles}
+\end{figure}
+
+\slide
+
+\subsection*{Exercise 5}\label{exercise-5-6}
+\addcontentsline{toc}{subsection}{Exercise 5}
+
+The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mid-points of the diagonals as \(P\) and \(Q\). Show that \(\underline{AB}+\underline{AD}+\underline{CB}+\underline{CD} = 4\underline{PQ}\)
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/67-quadrilateral-1} 
+
+}
+
+\caption{quadrilateral}\label{fig:67-quadrilateral}
+\end{figure}
+
+{[}Solutions:
+1. (i) \(\sqrt{5}\), (ii) \(29\);
+2. \([25.7 \angle -173^{\circ}]\);
+3. \(-323\underline{i}\,N\);{]}
+
+\slide
+
+\chapter{Week 11}\label{week-eleven}
+
+\slide
 
 \section{Vectors II}\label{vectors-ii}
 
@@ -6766,83 +6844,6 @@ From the previous example, \(\underline b \times\underline c = 3\underline i-5\u
 
 \chapter*{Week 11 Exercises}\label{week-11-exercises}
 \addcontentsline{toc}{chapter}{Week 11 Exercises}
-
-\section{Sheet 21 Vectors I}\label{sheet-21-vectors-i}
-
-\subsection*{Exercise 1}\label{exercise-1-12}
-\addcontentsline{toc}{subsection}{Exercise 1}
-
-Two vectors \(\underline A\) and \(\underline B\) are at right angles. Find
-
-\begin{enumerate}
-\def\labelenumi{\roman{enumi}.}
-\tightlist
-\item
-  the magnitude of the vector \(\underline A+\underline B\) if \(|\underline A| = 1\) and \(|\underline B| = 2\).
-\item
-  the magnitude of the vector \(\underline A+\underline B\) if \(|\underline A|=20\) and \(|\underline B| = 21\).
-\end{enumerate}
-
-\slide
-
-\subsection*{Exercise 2}\label{exercise-2-12}
-\addcontentsline{toc}{subsection}{Exercise 2}
-
-Determine the resultant of the vectors \(\underline A, \underline B, \underline C\) and \(\underline D\) given that \(\underline A = 20\) km \(3o^\circ\) S of E, \(\underline B = 50\) km due W, \(\underline C = 40\) km NE and \(\underline D=30\) km SW.
-
-\slide
-
-\subsection*{Exercise 3}\label{exercise-3-10}
-\addcontentsline{toc}{subsection}{Exercise 3}
-
-An object \(P\) is acted on by three forces as shown on Figure \ref{fig:65-res-force}. All forces lie in the same plane (are \emph{co-planar}). Determine the required force and its direction so as to prevent \(P\) from moving.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/65-res-force-1} 
-
-}
-
-\caption{resultant force}\label{fig:65-res-force}
-\end{figure}
-\slide
-
-\subsection*{Exercise 4}\label{exercise-4-8}
-\addcontentsline{toc}{subsection}{Exercise 4}
-
-For the triangle on Figure \ref{fig:66-triangles}, prove by vectors that the line \(DE\), where \(D\) and \(E\) are the mid-points of \(AB\) and \(AC\) respectively, is half the length of the side \(BC\).
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/66-triangles-1} 
-
-}
-
-\caption{triangles}\label{fig:66-triangles}
-\end{figure}
-
-\slide
-
-\subsection*{Exercise 5}\label{exercise-5-6}
-\addcontentsline{toc}{subsection}{Exercise 5}
-
-The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mid-points of the diagonals as \(P\) and \(Q\). Show that \(\underline{AB}+\underline{AD}+\underline{CB}+\underline{CD} = 4\underline{PQ}\)
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{fy-B-lectnotes_files/figure-latex/67-quadrilateral-1} 
-
-}
-
-\caption{quadrilateral}\label{fig:67-quadrilateral}
-\end{figure}
-
-{[}Solutions:
-1. (i) \(\sqrt{5}\), (ii) \(29\);
-2. \([25.7 \angle -173^{\circ}]\);
-3. \(-323\underline{i}\,N\);{]}
-
-\slide
 
 \section{Sheet 22 Vectors II}\label{sheet-22-vectors-ii}
 
