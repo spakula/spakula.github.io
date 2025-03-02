@@ -2,6 +2,7 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
+  english,
   11pt,
   oneside]{book}
 \usepackage{xcolor}
@@ -67,7 +68,6 @@
 \else
 \usepackage[bidi=default]{babel}
 \fi
-\babelprovide[main,import]{english}
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
@@ -119,7 +119,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={GENG0002 Mathematics B lecture notes},
+  pdftitle={Week 11},
   pdfauthor={Ján Špakula},
   pdflang={en},
   hidelinks,
@@ -127,7 +127,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2024-12-30}
+\date{2025-03-02}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -173,7 +173,7 @@ f(x) = \frac{x^2-9}{x-3}\tag{1}
 \]
 has the value \(\frac00\) for \(f(3)\), which is undetermined. However the function may still ``behave well'' around that point. In such cases it is convenient to introduce the idea of a limit or a limiting value.
 
-Informally, a \textcolor{red}{\em limit}\index{limit} is a value which \(f(x)\) gets closer and closer to, but may never actually reach.
+Informally, a \textcolor{purple}{\em limit}\index{limit} is a value which \(f(x)\) gets closer and closer to, but may never actually reach.
 
 \slide
 
@@ -220,7 +220,7 @@ Now we can observe, that \(a\) gets closer to \(0\) if and only if \(x\) gets cl
 
 Note that the limit is not the same thing as substituting the value of \(x=3\) into the function \(f(x)\), as \(f(x)\) is not defined at the value \(x=3\). We say that \(f\) is ``\emph{discontinuous}'' at \(x=3\).
 
-A function \(f\) of \(x\) is said to be \textcolor{red}{\em continuous}\index{continuous} at the value \(x=a\) if:
+A function \(f\) of \(x\) is said to be \textcolor{purple}{\em continuous}\index{continuous} at the value \(x=a\) if:
 
 \begin{itemize}
 \tightlist
@@ -235,7 +235,7 @@ In other words
 \lim\limits_{x\to a}f(x) = f(a).
 \]
 
-Formally, a function \(f\) of \(x\) is said to be \textcolor{red}{\em discontinuous}\index{discontinuous} at \(x=a\) if it is not continuous at \(x=a\).
+Formally, a function \(f\) of \(x\) is said to be \textcolor{purple}{\em discontinuous}\index{discontinuous} at \(x=a\) if it is not continuous at \(x=a\).
 \slide
 
 \begin{example}
@@ -265,7 +265,7 @@ Alternatively, you may spot that \(2x^2-5x-3 = (x-3)(2x+1)\) so that
 
 \section{Differentiation from 1st Principles}\label{lecture-two}
 
-For a straight line we can consider the \textcolor{red}{\em slope}\index{slope} or \textcolor{red}{\em gradient}\index{gradient}. This is a measure of how steep the line is, see Figure \ref{fig:02-gradient-line}.
+For a straight line we can consider the \textcolor{purple}{\em slope}\index{slope} or \textcolor{purple}{\em gradient}\index{gradient}. This is a measure of how steep the line is, see Figure \ref{fig:02-gradient-line}.
 
 \begin{figure}
 
@@ -278,7 +278,7 @@ For a straight line we can consider the \textcolor{red}{\em slope}\index{slope} 
 
 \slide
 
-The \textcolor{red}{\em gradient}\index{gradient} is defined to be the number
+The \textcolor{purple}{\em gradient}\index{gradient} is defined to be the number
 \[
 \frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.
 \]
@@ -319,7 +319,7 @@ Press the button and see what happens to the line segment as \(h\to0\).
 
 \end{htmlonly}
 
-With some thought, it should be clear that the line segment tends to a line that just meets the curve at the point \((x,f(x))\), and we call this line the \textcolor{red}{\em tangent}\index{tangent} to the curve at the point \((x,f(x))\).
+With some thought, it should be clear that the line segment tends to a line that just meets the curve at the point \((x,f(x))\), and we call this line the \textcolor{purple}{\em tangent}\index{tangent} to the curve at the point \((x,f(x))\).
 
 \begin{figure}
 
@@ -332,11 +332,11 @@ With some thought, it should be clear that the line segment tends to a line that
 
 \slide
 
-We call the slope of the tangent line the \textcolor{red}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
+We call the slope of the tangent line the \textcolor{purple}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
 \[
 \frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
 \]
-and we refer to the process of calculating this limit as \textcolor{red}{\em differentiation by 1st principles}\index{differentiation by 1st principles}.
+and we refer to the process of calculating this limit as \textcolor{purple}{\em differentiation by 1st principles}\index{differentiation by 1st principles}.
 
 \slide
 
@@ -525,7 +525,7 @@ The derivatives in the following table are well-known and may be quoted without 
 \(\tan(x)\) & \(\sec^2(x)\) \\
 \(\csc(x)\) & \(-\csc(x)\cot(x)\) \\
 \(\sec(x)\) & \(\sec(x)\tan(x)\) \\
-\(\cot(x)\) & \(-\csc(x)\) \\
+\(\cot(x)\) & \(-\csc^2(x)\) \\
 \end{longtable}
 
 \chapter*{Week 1 Exercises}\label{week-1-exercises}
@@ -692,7 +692,7 @@ This week we will consider the equations of tangents and normals and then comple
 
 \section{Tangents and Normals}\label{lecture-four}
 
-Two lines are \textcolor{red}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(2\) and hence are all parallel (Figure \ref{fig:05-parallel-lines}).
+Two lines are \textcolor{purple}{\em parallel}\index{parallel} if their gradients are identical. For example \(y=2x\), \(y=2x-2\) and \(y=2x+3\) all have gradient of \(2\) and hence are all parallel (Figure \ref{fig:05-parallel-lines}).
 
 \begin{figure}
 
@@ -741,7 +741,7 @@ Now consider Figure \ref{fig:07-tangent-and-normal}.
 \end{figure}
 \slide
 
-The \textcolor{red}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line \(PT\) and the normal is the line \(PN\). We already know that the gradient of the tangent is given by
+The \textcolor{purple}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line \(PT\) and the normal is the line \(PN\). We already know that the gradient of the tangent is given by
 \[
 m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,
 \]
@@ -753,11 +753,11 @@ Now, the equation of the line with gradient \(m\), passing through the point \(P
 \[
 y-y_1 = m(x-x_1).
 \]
-So the \textcolor{red}{\em equation of the tangent}\index{equation of the tangent} is
+So the \textcolor{purple}{\em equation of the tangent}\index{equation of the tangent} is
 \[
 y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),
 \]
-while the \textcolor{red}{\em equation of the normal}\index{equation of the normal} to the curve is
+while the \textcolor{purple}{\em equation of the normal}\index{equation of the normal} to the curve is
 \[
 y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
 \]
@@ -829,7 +829,7 @@ We shall consider the second case. Recall:
 u &= g(x) = x^2+ 4\\
 y &= h(u) = u^3.
 \end{align*}
-By substituting for \(u\) we can write \(y = h(g(x))\) which means: to get \(y\) from \(x\), first apply the rule \(g\) (get \(x\), square it and add \(4\)) and then apply the rule \(h\) (cube the answer to operation \(g\)). When \(y\) is written in this form it is called a \textcolor{red}{\em function of a function}\index{function of a function} or a \textcolor{red}{\em composite functon}\index{composite functon}.
+By substituting for \(u\) we can write \(y = h(g(x))\) which means: to get \(y\) from \(x\), first apply the rule \(g\) (get \(x\), square it and add \(4\)) and then apply the rule \(h\) (cube the answer to operation \(g\)). When \(y\) is written in this form it is called a \textcolor{purple}{\em function of a function}\index{function of a function} or a \textcolor{purple}{\em composite functon}\index{composite functon}.
 \slide
 
 \subsection{The Chain Rule: Differentiating composite functions}\label{the-chain-rule-differentiating-composite-functions}
@@ -852,7 +852,7 @@ However, we want to find
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x}.
 \]
-The \textcolor{red}{\em chain rule}\index{chain rule} says that
+The \textcolor{purple}{\em chain rule}\index{chain rule} says that
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
@@ -982,7 +982,7 @@ Equivalently,
 \[ 
 \frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
 \]
-This is called the \textcolor{red}{\em product rule}\index{product rule}.
+This is called the \textcolor{purple}{\em product rule}\index{product rule}.
 \slide
 
 \begin{example}
@@ -1043,7 +1043,7 @@ Thus in the limit as \(h\) tends to zero
 \[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}
 \]
 
-This is the formula for the \textcolor{red}{\em differentiation of a quotient}\index{differentiation of a quotient}.
+This is the formula for the \textcolor{purple}{\em differentiation of a quotient}\index{differentiation of a quotient}.
 
 Note that for the product formula it is up to you which part of the product you call \(u\) and which \(v\), but that for the quotient formula, the denominator of the quotient must be \(v\) and the numerator must be \(u\).
 \slide
@@ -1297,7 +1297,7 @@ So in this case \(\mathrm{d}^{2}y/\mathrm{d} x^2 =\)
 
 \end{slidesonly}
 
-This is called the \textcolor{red}{\em second derivative of $y$}\index{second derivative of $y$}.
+This is called the \textcolor{purple}{\em second derivative of $y$}\index{second derivative of $y$}.
 
 \slide
 
@@ -1305,11 +1305,11 @@ We can repeat, and differentiate \(\mathrm{d}^{2}y/\mathrm{d} x^2\). This gives
 \[
 \frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6
 \]
-and is called the \textcolor{red}{\em third derivative of $y$}\index{third derivative of $y$}. Taking the derivative of \(\mathrm{d}^{3}y/\mathrm{d} x^{3}\) yields
+and is called the \textcolor{purple}{\em third derivative of $y$}\index{third derivative of $y$}. Taking the derivative of \(\mathrm{d}^{3}y/\mathrm{d} x^{3}\) yields
 \[
 \frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,
 \]
-the \textcolor{red}{\em fourth derivative of $y$}\index{fourth derivative of $y$}.
+the \textcolor{purple}{\em fourth derivative of $y$}\index{fourth derivative of $y$}.
 
 We can continue, but as the derivative of \(0\) is \(0\), all further derivatives of \(y\) will just be \(0\).
 \slide
@@ -1383,13 +1383,13 @@ The slope of \(s\) against \(t\) is not constant but varies with \(t\). So:
 
 \slide
 
-\(\mathrm{d} s/\mathrm{d} t\) is the rate at which \(s\) changes for a change in \(t\), or the rate at which distance changes with time, so \(\mathrm{d} s/\mathrm{d} t\) is the \textcolor{red}{\em velocity}\index{velocity}, \(v\), of the particle in \(\text{m}\text{s}^{-1}\).
+\(\mathrm{d} s/\mathrm{d} t\) is the rate at which \(s\) changes for a change in \(t\), or the rate at which distance changes with time, so \(\mathrm{d} s/\mathrm{d} t\) is the \textcolor{purple}{\em velocity}\index{velocity}, \(v\), of the particle in \(\text{m}\text{s}^{-1}\).
 
 If we differentiate the velocity \(v\), we get \(\mathrm{d} v/\mathrm{d} t = 18t\). Also, since the derivative of the velocity is the second derivative of the distance, we have
 \[
 \frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.
 \]
-\(\mathrm{d} v/\mathrm{d} t\) is the rate of change of velocity with time or the \textcolor{red}{\em acceleration}\index{acceleration} of the particle.
+\(\mathrm{d} v/\mathrm{d} t\) is the rate of change of velocity with time or the \textcolor{purple}{\em acceleration}\index{acceleration} of the particle.
 
 Note that \(\mathrm{d}^{3}s/\mathrm{d} t^{3}\) is not zero for \(s = 3t^3 + 2t\), so we could find it. The rate of change of acceleration is called ``jerk''; higher derivatives are even less common to be considered (``snap'', ``crackle'', ``pop'').
 \slide
@@ -1481,11 +1481,11 @@ For the graph above:
 
 \end{notslides}
 
-As \(x\) increases from just before \(B\) to just after, the slope of the graph changes from positive to negative. A point such as \(B\) is called a \textcolor{red}{\em maximum}\index{maximum} or \textcolor{red}{\em local maximum}\index{local maximum}. The word ``local'' means that this is not the ``global'' maximum \(y\) value of the whole curve, but is the maximum value in the region ``near \(B\)'', e.g.~between \(A\) and \(C\).
+As \(x\) increases from just before \(B\) to just after, the slope of the graph changes from positive to negative. A point such as \(B\) is called a \textcolor{purple}{\em maximum}\index{maximum} or \textcolor{purple}{\em local maximum}\index{local maximum}. The word ``local'' means that this is not the ``global'' maximum \(y\) value of the whole curve, but is the maximum value in the region ``near \(B\)'', e.g.~between \(A\) and \(C\).
 
-As \(x\) increases from just before \(C\) to just after, the slope of the graph changes from negative to positive. A point such as \(C\) is known as a \textcolor{red}{\em minimum}\index{minimum} or \textcolor{red}{\em local minimum}\index{local minimum}.
+As \(x\) increases from just before \(C\) to just after, the slope of the graph changes from negative to positive. A point such as \(C\) is known as a \textcolor{purple}{\em minimum}\index{minimum} or \textcolor{purple}{\em local minimum}\index{local minimum}.
 
-Points such as \(B\) and \(C\) are also sometimes called \textcolor{red}{\em critical points}\index{critical points} or \textcolor{red}{\em stationary points}\index{stationary points} or \textcolor{red}{\em turning points}\index{turning points}. A function can have more than one maximum or minimum along its range of \(x\) values.
+Points such as \(B\) and \(C\) are also sometimes called \textcolor{purple}{\em critical points}\index{critical points} or \textcolor{purple}{\em stationary points}\index{stationary points} or \textcolor{purple}{\em turning points}\index{turning points}. A function can have more than one maximum or minimum along its range of \(x\) values.
 \slide
 
 \subsection{Points of inflection}\label{points-of-inflection}
@@ -1494,7 +1494,7 @@ At any point on a graph where a maximum or minimum occurs, the gradient or rate 
 \[
 \frac{\mathrm{d} y}{\mathrm{d} x}=0.
 \]
-However, the converse is not necessarily true: the gradient may be zero, but the sign of the slope of the graph may not change. Such a point is called a \textcolor{red}{\em point of inflection}\index{point of inflection}.
+However, the converse is not necessarily true: the gradient may be zero, but the sign of the slope of the graph may not change. Such a point is called a \textcolor{purple}{\em point of inflection}\index{point of inflection}.
 
 \slide
 
@@ -1645,7 +1645,7 @@ Similarly with Figure \ref{fig:11-minimum-turning-point}.
 
 \vfill
 
-We get the other part of the criterion (called \textcolor{red}{\em second derivative criterion}\index{second derivative criterion}):
+We get the other part of the criterion (called \textcolor{purple}{\em second derivative criterion}\index{second derivative criterion}):
 
 If \(\mathrm{d}^{2}y/\mathrm{d} x^2\) \phantom{aaaaaaa} at a stationary point, then the stationary point is a local
 
@@ -2023,9 +2023,9 @@ For each of the functions given below determine the \(x\) and \(y\) coordinates 
 \item
   \(y=x^3+2x^2-1\),
 \item
-  \(y=x^3+6x^2-15x+3\),
+  \(y=2x^3−13x^2+24x−9\),
 \item
-  \(y=x^3-9x^2+24x-7\),
+  \(y=x^3-3x-18\),
 \item
   \(y=x^4-8x^2\).
 \end{enumerate}
@@ -2034,11 +2034,11 @@ For each of the functions given below determine the \(x\) and \(y\) coordinates 
 \textbf{1.} minimum at \((2,0)\);
 \textbf{2.} maximum at \((1,-3)\), passes through \((0,-5)\);
 \textbf{3.} minimum at \((0.5,-12.25)\), passes through \((0,-12), (-3,0), (4,0)\);
-\textbf{4.} maximum at \((1,9)\), minimum at \((2,8)\), point of inflection at \((1.5,8.5)\), passes through \((0,4), (-0.274,0)\);
-\textbf{5.} minimum at \((0,-1)\), maximum at \((-4/3,5/27)\), point of inflection at \((-2/3,-11/27)\), passes through \((0,-1), (-1.618,0), (-1,0), (0.618,0)\);
-\textbf{6.} local maximum at \((-5,103)\), minimum at \((1,-5)\), point of inflection at \((-2,49)\), passes through \((0,3), (-7.937,0), (0.22,0), (1.717,0)\);
-\textbf{7.} maximum at \((2,13)\), minimum at \((4,9)\), point of inflection at \((3,11)\), passes through \((0,-7), (0.331,0)\);
-\textbf{8.} maximum at \((0,0)\), minimum at \((-2,-16)\), minimum at \((2,-16)\), points of inflection at \((-\sqrt{4/3},-80/9)\) and \((\sqrt{4/3},-80/9)\), passes through \((0,0), (-2\sqrt{2},0), (2\sqrt{2},0)\);{]}
+\textbf{4.} local maximum at \((1,9)\), local minimum at \((2,8)\), point of inflection at \((1.5,8.5)\), passes through \((0,4), (-0.274,0)\);
+\textbf{5.} local minimum at \((0,-1)\), local maximum at \((-4/3,5/27)\), point of inflection at \((-2/3,-11/27)\), passes through \((0,-1), (-1.618,0), (-1,0), (0.618,0)\);
+\textbf{6.} local maximum at \((4/3, )\), local minimum at \((3,0)\), point of inflection at \((13/6,)\), passes through \((0,-9), (0.5,0), (3,0)\);
+\textbf{7.} local maximum at \((-1,-16)\), local minimum at \((1,-20)\), point of inflection at \((0,-18)\), passes through \((0,-18), (3,0)\);
+\textbf{8.} local maximum at \((0,0)\), minimum at \((-2,-16)\), minimum at \((2,-16)\), points of inflection at \((-\sqrt{4/3},-80/9)\) and \((\sqrt{4/3},-80/9)\), passes through \((0,0), (-2\sqrt{2},0), (2\sqrt{2},0)\);{]}
 
 \chapter{Week 4}\label{week-four}
 
@@ -2334,7 +2334,7 @@ This also has no solutions and so there are no points of inflection. Notice howe
 
 \textbf{\emph{asymptotes}}
 
-An \textcolor{red}{\em asymptote}\index{asymptote} of a curve is a line such that the distance between the curve and the line approaches zero as one or both of the \(x\) or \(y\) coordinates tends to infinity.
+An \textcolor{purple}{\em asymptote}\index{asymptote} of a curve is a line such that the distance between the curve and the line approaches zero as one or both of the \(x\) or \(y\) coordinates tends to infinity.
 
 \slide
 
@@ -2342,11 +2342,11 @@ An \textcolor{red}{\em asymptote}\index{asymptote} of a curve is a line such tha
 
 Notice that the given function is not actually defined at the point \(x=-1\) but that as \(x\to-1\) then \(y\to\pm\infty\). In fact if we approach the value of \(x=-1\) ``\textbf{from above}'' (i.e.~we start with \(x > -1\) and reduce its value to approach \(-1\)) then it is always the case that \(y>0\) and so \(y\to+\infty\) in this case. On the other hand if we approach \(x=-1\) ``\textbf{from below}'' (i.e.~start with \(x<-1\) and increase its value to approach \(-1\)) then it is always the case that \(y<0\) and so \(y\to-\infty\) in this case.
 
-So the line \(x=-1\) is a \textcolor{red}{\em vertical asymptote}\index{vertical asymptote}.
+So the line \(x=-1\) is a \textcolor{purple}{\em vertical asymptote}\index{vertical asymptote}.
 
 \slide
 
-There is also a \textcolor{red}{\em horizontal asymptote}\index{horizontal asymptote}. Notice that as \(x\to+\infty\) then \(y\to 0\) (from above), and as \(x\to-\infty\) then \(y\to0\) (from below). So the line \(y=0\) is a horizontal asymptote.
+There is also a \textcolor{purple}{\em horizontal asymptote}\index{horizontal asymptote}. Notice that as \(x\to+\infty\) then \(y\to 0\) (from above), and as \(x\to-\infty\) then \(y\to0\) (from below). So the line \(y=0\) is a horizontal asymptote.
 
 \begin{slidesonly}
 
@@ -2630,7 +2630,7 @@ and thus we have found a
 
 \subsection{Differentiation of implicit functions}\label{differentiation-of-implicit-functions}
 
-An \textcolor{red}{\em implicit function}\index{implicit function} is one given by an equation (like the one below), rather than in a direct form \(y=\)(some expression with \(x\)). Here we consider \(y\) to depend on \(x\), and \(x\) to be an ``independent'' variable:
+An \textcolor{purple}{\em implicit function}\index{implicit function} is one given by an equation (like the one below), rather than in a direct form \(y=\)(some expression with \(x\)). Here we consider \(y\) to depend on \(x\), and \(x\) to be an ``independent'' variable:
 \[
 y^2 + x^2 + 2xy + 2x = 0.
 \]
@@ -3113,7 +3113,7 @@ We use the symbol \(\partial\) in the derivatives above to indicate that there i
 
 The first type of derivative tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second type of derivative tells us how the volume would vary as the height varied for a cylinder of constant radius.
 
-When a function of more than one variable is differentiated with respect to one variable only, this process is called \textcolor{red}{\em partial differentiation}\index{partial differentiation}.
+When a function of more than one variable is differentiated with respect to one variable only, this process is called \textcolor{purple}{\em partial differentiation}\index{partial differentiation}.
 
 \slide
 
@@ -3338,10 +3338,10 @@ Integrate the functions
 
 \section{Indefinite Integration}\label{indefinite-integration}
 
-The result of an integration which has the arbitrary constant (we used letter \(c\) in the examples above) is called an \textcolor{red}{\em indefinite integration}\index{indefinite integration}, because it does not tell us which of an infinite number of possible functions is the ``correct'' one -- they are all ``correct'' answers to the question
+The result of an integration which has the arbitrary constant (we used letter \(c\) in the examples above) is called an \textcolor{purple}{\em indefinite integration}\index{indefinite integration}, because it does not tell us which of an infinite number of possible functions is the ``correct'' one -- they are all ``correct'' answers to the question
 of finding a function which differentiates to the given one.
 
-To determine the value of \(c\), we need more information, such as a pair of co-ordinates through which our particular solution (curve) passes. Such additional information is called a \textcolor{red}{\em boundary condition}\index{boundary condition}.
+To determine the value of \(c\), we need more information, such as a pair of co-ordinates through which our particular solution (curve) passes. Such additional information is called a \textcolor{purple}{\em boundary condition}\index{boundary condition}.
 
 \slide
 
@@ -3600,7 +3600,7 @@ Integrate the following functions with respect to the variable
 6. \({\frac{x^2}{2}}+\frac{4x^{\frac{3}{2}}}{3}+x+C\);
 7. \({\frac{5x^6}{6}}-\frac{2x^{\frac{3}{2}}}{3}+C\);
 8. \(5.0e^{0.2x}+\frac{x^2}{2}+C\);
-9. \(\frac{1}{5}sin(5x)+C\);
+9. \(\frac{1}{5}\sin(5x)+C\);
 10. \((t^3+6t^2+9t)/3+C\);
 11. \(\frac{\sin(bx)}{b}-\frac{\cos(ax)}{a}+C\);
 12. \((6r^{5/2}+10r^{3/2})/15+C\);
@@ -3630,7 +3630,7 @@ We continue our study of integration by looking at two very important techniques
 
 \section{Integration by Substitution}\label{integration-by-substitution}
 
-So far we have learnt to integrate ``sums of powers'' functions such as \(x^2 + 2x + 3\) and standard integrals such as \(\sin(x), e^x\) etc. A useful method for more complicated functions is \textcolor{red}{\em integration by substitution}\index{integration by substitution}. Consider
+So far we have learnt to integrate ``sums of powers'' functions such as \(x^2 + 2x + 3\) and standard integrals such as \(\sin(x), e^x\) etc. A useful method for more complicated functions is \textcolor{purple}{\em integration by substitution}\index{integration by substitution}. Consider
 \begin{equation}
 \int x\sqrt{x^2+1} \,\mathrm{d}x.
 \label{eq:6-1}
@@ -3799,7 +3799,7 @@ and therefore, rearranging gives us
 \int u\cdot \frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x = uv -\int v\cdot\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x
 \label{eq:6-8}
 \end{equation}
-Equation \eqref{eq:6-8} is the formula for \textcolor{red}{\em integration by parts}\index{integration by parts} and can be used to integrate some types of
+Equation \eqref{eq:6-8} is the formula for \textcolor{purple}{\em integration by parts}\index{integration by parts} and can be used to integrate some types of
 product.
 
 \slide
@@ -4251,7 +4251,7 @@ Define
 \int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
 \]
 
-(If the definite integral would be defined as in most textbooks, this statement would be called the \textcolor{red}{\em First Fundamental Theorem of Calculus}\index{First Fundamental Theorem of Calculus}.)
+(If the definite integral would be defined as in most textbooks, this statement would be called the \textcolor{purple}{\em First Fundamental Theorem of Calculus}\index{First Fundamental Theorem of Calculus}.)
 
 \begin{notslides}
 
@@ -4821,7 +4821,7 @@ All three methods here start the same way: we chop the area under the curve into
 
 \section{Mid-ordinate Rule}\label{mid-ordinate-rule}
 
-With the \textcolor{red}{\em mid-ordinate rule}\index{mid-ordinate rule}, the curve for which we want to know the area is divided into strips of equal width \(s\), see Figure \ref{fig:28-graph-vertical-strips}.
+With the \textcolor{purple}{\em mid-ordinate rule}\index{mid-ordinate rule}, the curve for which we want to know the area is divided into strips of equal width \(s\), see Figure \ref{fig:28-graph-vertical-strips}.
 
 \begin{figure}
 
@@ -4896,7 +4896,7 @@ Using three strips, \(s=1\), the three mid-points are \(x_1=1.5, x_2=2.5\) and \
 
 \section{Trapezium rule}\label{trapezium-rule}
 
-For the \textcolor{red}{\em trapezium rule}\index{trapezium rule}, the curve is again divided into strips of equal width \(s\), but this time, the area of each strip is approximated by a trapezium instead of a rectangle, see Figure \ref{fig:30-trapezium-rule}.
+For the \textcolor{purple}{\em trapezium rule}\index{trapezium rule}, the curve is again divided into strips of equal width \(s\), but this time, the area of each strip is approximated by a trapezium instead of a rectangle, see Figure \ref{fig:30-trapezium-rule}.
 
 \begin{figure}
 
@@ -4953,7 +4953,7 @@ With three strips then \(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4,
 
 \section{Simpson's Rule}\label{simpsons-rule}
 
-For \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}, we approximate the function in each strip by a quadratic polynomial (i.e.~a piece of a parabola), rather than a line as in the previous two rules --- see Figure \ref{fig:31-simpsons-rule}.
+For \textcolor{purple}{\em Simpson's rule}\index{Simpson's rule}, we approximate the function in each strip by a quadratic polynomial (i.e.~a piece of a parabola), rather than a line as in the previous two rules --- see Figure \ref{fig:31-simpsons-rule}.
 
 \begin{figure}
 
@@ -5028,7 +5028,7 @@ For approximate integration:
   &=\frac s3\left(y_1+4y_2+2y_3+4y_4+2y_5+\dots +2y_{2n-1}+4y_{2n}+y_{2n+1}\right).
   \end{align*}
 \item
-  This is known as \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}.
+  This is known as \textcolor{purple}{\em Simpson's rule}\index{Simpson's rule}.
 \end{itemize}
 
 \end{notslides}
@@ -5048,7 +5048,7 @@ For approximate integration:
   & \qquad\qquad \dots +2y_{2n-1}+4y_{2n}+y_{2n+1}).
   \end{align*}
 \item
-  This is known as \textcolor{red}{\em Simpson's rule}\index{Simpson's rule}.
+  This is known as \textcolor{purple}{\em Simpson's rule}\index{Simpson's rule}.
 \end{itemize}
 
 \end{slidesonly}
@@ -5417,7 +5417,7 @@ In this section, we consider the mean and root mean square values of a function,
 
 \section{Mean and RMS Values}\label{mean-and-rms-values}
 
-The \textcolor{red}{\em mean}\index{mean} value for a function \(y = f(x)\) for the range \(a\) to \(b\) is the mean value of all the ordinates in that range. Consider a function \(y = f(x)\) for the values \(x = a\) to \(x = b\), divided into a number of strips of equal width \(\delta x\). Let the mid-ordinate for each strip be \(y_1, y_2, y_3,\ldots,y_n\), see Figure \ref{fig:34-striped-graph}.
+The \textcolor{purple}{\em mean}\index{mean} value for a function \(y = f(x)\) for the range \(a\) to \(b\) is the mean value of all the ordinates in that range. Consider a function \(y = f(x)\) for the values \(x = a\) to \(x = b\), divided into a number of strips of equal width \(\delta x\). Let the mid-ordinate for each strip be \(y_1, y_2, y_3,\ldots,y_n\), see Figure \ref{fig:34-striped-graph}.
 
 \begin{figure}
 
@@ -5465,7 +5465,7 @@ If the velocity \(v\) in \(m/s\) of a body is given by \(v=4t+3\) where \(t\) is
 
 \subsection{RMS Value}\label{rms-value}
 
-The \textcolor{red}{\em RMS}\index{RMS} (or \textcolor{red}{\em root mean square}\index{root mean square}) value is obtained by taking \(f(x)\), squaring it, finding the mean value and then taking the square root.
+The \textcolor{purple}{\em RMS}\index{RMS} (or \textcolor{purple}{\em root mean square}\index{root mean square}) value is obtained by taking \(f(x)\), squaring it, finding the mean value and then taking the square root.
 
 Its importance in engineering is demonstrated when a sinusoidal function is investigated, for example when the average value of the current or voltage in a circuit is to be found. For all sine or cosine functions, the mean value over a complete cycle is zero because the curve is equally distributed above and below the \(x-\)axis. However, if the ordinates are squared first, there are then no negative ordinates and an average may be found. Ammeters and voltmeters for a.c. circuits are usually calibrated to find the RMS value.
 
@@ -5828,7 +5828,7 @@ We look at the important topics of centroids and centers of gravity, before a br
 
 \section{Centre of Gravity and Centroids}\label{centre-of-gravity-and-centroids}
 
-Many structures and mechanical systems act as if their masses were concentrated at a single point called the \textcolor{red}{\em center of mass}\index{center of mass} or \textcolor{red}{\em centre of gravity}\index{centre of gravity}. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.
+Many structures and mechanical systems act as if their masses were concentrated at a single point called the \textcolor{purple}{\em center of mass}\index{center of mass} or \textcolor{purple}{\em centre of gravity}\index{centre of gravity}. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.
 
 \slide
 
@@ -5843,9 +5843,9 @@ Many structures and mechanical systems act as if their masses were concentrated 
 \caption{mass along a line}\label{fig:35-mass-along-a-line}
 \end{figure}
 
-Suppose that the \(x\)-axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{red}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\).
+Suppose that the \(x\)-axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{purple}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\).
 
-The \textcolor{red}{\em principle of moments}\index{principle of moments} says that the system will balance providing
+The \textcolor{purple}{\em principle of moments}\index{principle of moments} says that the system will balance providing
 \[
 m_1x_1 + m_2x_2 = 0.
 \]
@@ -5888,12 +5888,12 @@ This would require that
 \overline x&=\frac{\sum m_ix_i}{\sum m_i}=\frac{\text{system moment about $O$}}{\text{system mass}}.
 \end{align*}
 
-The point \(\overline x\) is called the \textcolor{red}{\em center of mass}\index{center of mass} or \textcolor{red}{\em center of gravity}\index{center of gravity}.
+The point \(\overline x\) is called the \textcolor{purple}{\em center of mass}\index{center of mass} or \textcolor{purple}{\em center of gravity}\index{center of gravity}.
 \slide
 
 In order to generalise to an `infinite number of points', we need to use integration, rather than a finite sum.
 
-Consider a rod on Figure \ref{fig:38-2d-rod}: we assume that its \textcolor{red}{\em density}\index{density} varies with \(x\), i.e.~it is given by a function \(\rho(x)\).
+Consider a rod on Figure \ref{fig:38-2d-rod}: we assume that its \textcolor{purple}{\em density}\index{density} varies with \(x\), i.e.~it is given by a function \(\rho(x)\).
 
 \begin{figure}
 
@@ -5981,11 +5981,11 @@ So
 
 \subsection{Centroid of a uniform lamina}\label{centroid-of-a-uniform-lamina}
 
-A \textcolor{red}{\em lamina}\index{lamina} is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the \(m\) values replaced by \(a\) values where \(a\) represents the area of an element and \(A\) is the total area of the lamina. So
+A \textcolor{purple}{\em lamina}\index{lamina} is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the \(m\) values replaced by \(a\) values where \(a\) represents the area of an element and \(A\) is the total area of the lamina. So
 \[
 \overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}
 \]
-Then \(\overline x\) and \(\overline y\) are the coordinates of the \textcolor{red}{\em centroid of the area}\index{centroid of the area} or the \textcolor{red}{\em centroid}\index{centroid}.
+Then \(\overline x\) and \(\overline y\) are the coordinates of the \textcolor{purple}{\em centroid of the area}\index{centroid of the area} or the \textcolor{purple}{\em centroid}\index{centroid}.
 
 \slide
 
@@ -6032,9 +6032,9 @@ The centroid therefore has coordinates \((2.31,2.78)\).
 
 \section{Vectors I}\label{vectors-i}
 
-A \textcolor{red}{\em scalar}\index{scalar} quantity has only size or magnitude (i.e.~all the information is just a single number). For example: mass, time, speed \(\dots\)
+A \textcolor{purple}{\em scalar}\index{scalar} quantity has only size or magnitude (i.e.~all the information is just a single number). For example: mass, time, speed \(\dots\)
 
-A \textcolor{red}{\em vector}\index{vector} quantity has magnitude and direction. For example: force, velocity, acceleration, moment, \(\dots\)
+A \textcolor{purple}{\em vector}\index{vector} quantity has magnitude and direction. For example: force, velocity, acceleration, moment, \(\dots\)
 
 A vector is represented graphically by a straight line with an arrowhead showing its direction. Often the line is drawn to scale so that the magnitude of the vector may be determined by measuring its length.
 
@@ -6045,7 +6045,7 @@ To refer to a vector we give it a name. There are several different conventions 
 
 \slide
 
-The \textcolor{red}{\em magnitude of a vector}\index{magnitude of a vector}, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (``modulus lines''; it is the same notation as used for the absolute value of a number): for example \(|\underline{OP}|\) or \(|\underline{p}|\). It is a non-negative number.
+The \textcolor{purple}{\em magnitude of a vector}\index{magnitude of a vector}, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (``modulus lines''; it is the same notation as used for the absolute value of a number): for example \(|\underline{OP}|\) or \(|\underline{p}|\). It is a non-negative number.
 
 \slide
 
@@ -6058,7 +6058,7 @@ Multiplying a vector (say \(\underline{p}\)) by a negative scalar (say \(a<0\)) 
 
 \slide
 
-A \textcolor{red}{\em position vector}\index{position vector} indicates the distance and direction that we have to travel from the origin to get to a point. We use the term \textcolor{red}{\em displacement vector}\index{displacement vector} to refer to the same concept, but relative to any other point than origin.
+A \textcolor{purple}{\em position vector}\index{position vector} indicates the distance and direction that we have to travel from the origin to get to a point. We use the term \textcolor{purple}{\em displacement vector}\index{displacement vector} to refer to the same concept, but relative to any other point than origin.
 
 In the diagram below, if \(O\) is the origin then \(\underline{OP}\) is the position vector of the point called \(P\). \(\underline{PQ}\) is a displacement vector from \(P\) to \(Q\). It shows the distance and direction that we have to travel from \(P\) to get to \(Q\). \(\underline{OQ}\) is the position vector of the point \(Q\).
 
@@ -6070,13 +6070,13 @@ In the diagram below, if \(O\) is the origin then \(\underline{OP}\) is the posi
 
 \begin{notslides}
 
-We have already seen that a vector may be \textcolor{red}{\em multiplied by a scalar}\index{multiplied by a scalar}. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.
+We have already seen that a vector may be \textcolor{purple}{\em multiplied by a scalar}\index{multiplied by a scalar}. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.
 
 \end{notslides}
 
 \begin{slidesonly}
 
-We've seen that a vector may be \textcolor{red}{\em multiplied by a scalar}\index{multiplied by a scalar}.
+We've seen that a vector may be \textcolor{purple}{\em multiplied by a scalar}\index{multiplied by a scalar}.
 If the scalar is positive this changes only the magnitude.
 If it is negative, the direction is changed to the
 opposite, and the magnitude is changed.
@@ -6099,7 +6099,7 @@ Again it doesn't matter whether they start and finish at the same point or not.
 
 \slide
 
-The \textcolor{red}{\em sum}\index{sum} (or \textcolor{red}{\em resultant}\index{resultant}) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e.~runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
+The \textcolor{purple}{\em sum}\index{sum} (or \textcolor{purple}{\em resultant}\index{resultant}) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e.~runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
 
 \begin{center}\includegraphics[width=0.4\linewidth]{fy-B-lectnotes_files/figure-latex/49-vectors-6-1} \end{center}
 
@@ -6329,7 +6329,7 @@ The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mi
 
 \subsection{Unit Vectors}\label{unit-vectors}
 
-A \textcolor{red}{\em unit vector}\index{unit vector} is a vector with magnitude of 1.
+A \textcolor{purple}{\em unit vector}\index{unit vector} is a vector with magnitude of 1.
 
 If \(\underline a\) is a vector with magnitude \(|\underline a|\), then a unit vector with the same direction is written \(\hat{\underline a}\). So \(|\hat{\underline a}| = 1\) and
 \[
@@ -6358,7 +6358,7 @@ We shall start by considering a two dimensional vector. For this we need only th
 
 The vector \(\underline r\) makes an angle \(\theta\) with the \(\underline i\) axis and has magnitude \(|\underline r| = r\). We may say that to get to the point \(R\), we have to start at the \(\underline i\) axis, turn through an angle \(\theta\) and then travel a distance \(r\) from the origin. Alternatively, we may get to \(R\), by travelling a distance along the \(\underline i\) axis and then a distance up in the direction of the \(\underline j\) axis. The distance to be travelled along the \(\underline i\) axis is \(r\cos(\theta)\) and the distance to be travelled up in the direction of the \(\underline j\) axis is \(r\sin(\theta)\). The vector \(\underline r\) may thus be written as \(\underline r = r\cos(\theta) \underline i + r\sin(\theta)\underline j\).
 
-When written in this form \(\underline r\) is said to be resolved into its \textcolor{red}{\em component vectors}\index{component vectors}.
+When written in this form \(\underline r\) is said to be resolved into its \textcolor{purple}{\em component vectors}\index{component vectors}.
 
 \slide
 
@@ -6497,7 +6497,7 @@ If \(\underline r = 5\underline i+2\underline j-\underline k\), find a unit vect
 
 \subsection{Direction Cosines}\label{direction-cosines}
 
-The \textcolor{red}{\em direction cosines}\index{direction cosines} of a vector are the cosines of the angles that that vector makes with each of
+The \textcolor{purple}{\em direction cosines}\index{direction cosines} of a vector are the cosines of the angles that that vector makes with each of
 the three axes. The angles are marked \(\alpha, \beta\) and \(\gamma\) in the figure below
 
 \begin{center}\includegraphics[width=0.55\linewidth]{fy-B-lectnotes_files/figure-latex/60-vectors-17-1} \end{center}
@@ -6577,7 +6577,7 @@ In three dimensions, there are two `sensible' ways to `multiply' two vectors.
 
 The scalar product of two vectors has a scalar quantity as its result.
 
-If \(\underline a\) and \(\underline b\) are given in terms of component vectors as \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then the \textcolor{red}{\em dot product}\index{dot product} \(\underline{a}\cdot \underline{b}\) is defined to be
+If \(\underline a\) and \(\underline b\) are given in terms of component vectors as \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then the \textcolor{purple}{\em dot product}\index{dot product} \(\underline{a}\cdot \underline{b}\) is defined to be
 \[
 \underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.
 \]
@@ -6706,7 +6706,7 @@ We are supposed to find a \emph{unit} vector, and the one we have found so far m
 
 The result of a ``vector product'' of two vectors is a vector.
 
-The \textcolor{red}{\em vector product}\index{vector product} is defined as \(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\), where \(\theta\) is the angle between \(\underline{a}\) and \(\underline{b}\), and \(\underline{\hat{n}}\) is a unit vector perpendicular to both \(\underline{a}\) and \(\underline{b}\) chosen according to the right--hand rule (explained below).
+The \textcolor{purple}{\em vector product}\index{vector product} is defined as \(\underline a \times\underline b = |\underline a||\underline b|\sin(\theta)\underline{\hat n}\), where \(\theta\) is the angle between \(\underline{a}\) and \(\underline{b}\), and \(\underline{\hat{n}}\) is a unit vector perpendicular to both \(\underline{a}\) and \(\underline{b}\) chosen according to the right--hand rule (explained below).
 
 \slide
 
@@ -6787,7 +6787,7 @@ We need to find a \emph{unit vector} parallel to this one; its magnitude is \(15
 
 \subsection{The scalar triple product}\label{the-scalar-triple-product}
 
-If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{red}{\em scalar triple product}\index{scalar triple product} of those vectors is defined to be \(\underline a \cdot(\underline b\times\underline c)\).
+If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{purple}{\em scalar triple product}\index{scalar triple product} of those vectors is defined to be \(\underline a \cdot(\underline b\times\underline c)\).
 
 Note that the vector product must be evaluated first, then the scalar product.
 
@@ -6817,7 +6817,7 @@ The volume is therefore \(7\) units (and the -ve sign tells us that the system w
 
 \subsection{The vector triple product}\label{the-vector-triple-product}
 
-If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{red}{\em vector triple product}\index{vector triple product} of those vectors is defined as
+If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{purple}{\em vector triple product}\index{vector triple product} of those vectors is defined as
 \[
 \underline a \times (\underline b \times\underline c)
 \]

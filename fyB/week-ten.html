@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Week 10 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Week 10 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-12-30" />
+<meta name="date" content="2025-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -410,7 +410,7 @@
 <p>We look at the important topics of centroids and centers of gravity, before a brief look at volumes and surfaces of revolution.</p>
 <div id="centre-of-gravity-and-centroids" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Centre of Gravity and Centroids<a href="week-ten.html#centre-of-gravity-and-centroids" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Many structures and mechanical systems act as if their masses were concentrated at a single point called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#centre-of-gravity'></a><span style="color: red;">centre of gravity</span>. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.</p>
+<p>Many structures and mechanical systems act as if their masses were concentrated at a single point called the <a name='#center-of-mass'></a><span style="color: purple;">center of mass</span> or <a name='#centre-of-gravity'></a><span style="color: purple;">centre of gravity</span>. We wish to find out how to locate this point. First let us consider the situation in 1-dimension and then in 2-dimensions.</p>
 <div id="masses-along-a-line" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Masses along a line<a href="week-ten.html#masses-along-a-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!--insfig
@@ -422,8 +422,8 @@
 Figure 10.1: mass along a line
 </p>
 </div>
-<p>Suppose that the <span class="math inline">\(x\)</span>-axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin, see Figure <a href="week-ten.html#fig:35-mass-along-a-line">10.1</a>. This is similar to a ‘see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: red;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>.</p>
-<p>The <a name='#principle-of-moments'></a><span style="color: red;">principle of moments</span> says that the system will balance providing
+<p>Suppose that the <span class="math inline">\(x\)</span>-axis is supported by a fulcrum at the origin and we have 2 masses, <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span>, situated at positions <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> from the origin, see Figure <a href="week-ten.html#fig:35-mass-along-a-line">10.1</a>. This is similar to a ‘see-saw’. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity <span class="math inline">\(m_1x_1\)</span> is referred to as the <a name='#moment'></a><span style="color: purple;">moment</span> of the mass <span class="math inline">\(m_1\)</span> about the origin. Notice that in our figure, <span class="math inline">\(m_1x_1&lt;0\)</span> and <span class="math inline">\(m_2x_2&gt;0\)</span>.</p>
+<p>The <a name='#principle-of-moments'></a><span style="color: purple;">principle of moments</span> says that the system will balance providing
 <span class="math display">\[
 m_1x_1 + m_2x_2 = 0.
 \]</span></p>
@@ -459,10 +459,10 @@ Figure 10.3: centre of mass
 \sum m_ix_i&amp;=\overline x\sum m_i\\
 \overline x&amp;=\frac{\sum m_ix_i}{\sum m_i}=\frac{\text{system moment about $O$}}{\text{system mass}}.
 \end{align*}\]</span></p>
-<p>The point <span class="math inline">\(\overline x\)</span> is called the <a name='#center-of-mass'></a><span style="color: red;">center of mass</span> or <a name='#center-of-gravity'></a><span style="color: red;">center of gravity</span>.
+<p>The point <span class="math inline">\(\overline x\)</span> is called the <a name='#center-of-mass'></a><span style="color: purple;">center of mass</span> or <a name='#center-of-gravity'></a><span style="color: purple;">center of gravity</span>.
 </p>
 <p>In order to generalise to an ‘infinite number of points’, we need to use integration, rather than a finite sum.</p>
-Consider a rod on Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>: we assume that its <a name='#density'></a><span style="color: red;">density</span> varies with <span class="math inline">\(x\)</span>, i.e. it is given by a function <span class="math inline">\(\rho(x)\)</span>.
+Consider a rod on Figure <a href="week-ten.html#fig:38-2d-rod">10.4</a>: we assume that its <a name='#density'></a><span style="color: purple;">density</span> varies with <span class="math inline">\(x\)</span>, i.e. it is given by a function <span class="math inline">\(\rho(x)\)</span>.
 <!--insfig
 
 -->
@@ -526,11 +526,11 @@ Figure 10.5: 2-dimensional rod
 </div>
 <div id="centroid-of-a-uniform-lamina" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Centroid of a uniform lamina<a href="week-ten.html#centroid-of-a-uniform-lamina" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A <a name='#lamina'></a><span style="color: red;">lamina</span> is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the <span class="math inline">\(m\)</span> values replaced by <span class="math inline">\(a\)</span> values where <span class="math inline">\(a\)</span> represents the area of an element and <span class="math inline">\(A\)</span> is the total area of the lamina. So
+<p>A <a name='#lamina'></a><span style="color: purple;">lamina</span> is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the <span class="math inline">\(m\)</span> values replaced by <span class="math inline">\(a\)</span> values where <span class="math inline">\(a\)</span> represents the area of an element and <span class="math inline">\(A\)</span> is the total area of the lamina. So
 <span class="math display">\[
 \overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}
 \]</span>
-Then <span class="math inline">\(\overline x\)</span> and <span class="math inline">\(\overline y\)</span> are the coordinates of the <a name='#centroid-of-the-area'></a><span style="color: red;">centroid of the area</span> or the <a name='#centroid'></a><span style="color: red;">centroid</span>.</p>
+Then <span class="math inline">\(\overline x\)</span> and <span class="math inline">\(\overline y\)</span> are the coordinates of the <a name='#centroid-of-the-area'></a><span style="color: purple;">centroid of the area</span> or the <a name='#centroid'></a><span style="color: purple;">centroid</span>.</p>
 Suppose that the centroid of the area bounded by the curve <span class="math inline">\(y=f(x)\)</span>, the <span class="math inline">\(x\)</span>-axis and the lines <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> is required.
 <!--insfig
 
@@ -567,22 +567,22 @@ The centroid therefore has coordinates <span class="math inline">\((2.31,2.78)\)
 </div>
 <div id="vectors-i" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Vectors I<a href="week-ten.html#vectors-i" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A <a name='#scalar'></a><span style="color: red;">scalar</span> quantity has only size or magnitude (i.e. all the information is just a single number). For example: mass, time, speed <span class="math inline">\(\dots\)</span></p>
-<p>A <a name='#vector'></a><span style="color: red;">vector</span> quantity has magnitude and direction. For example: force, velocity, acceleration, moment, <span class="math inline">\(\dots\)</span></p>
+<p>A <a name='#scalar'></a><span style="color: purple;">scalar</span> quantity has only size or magnitude (i.e. all the information is just a single number). For example: mass, time, speed <span class="math inline">\(\dots\)</span></p>
+<p>A <a name='#vector'></a><span style="color: purple;">vector</span> quantity has magnitude and direction. For example: force, velocity, acceleration, moment, <span class="math inline">\(\dots\)</span></p>
 <p>A vector is represented graphically by a straight line with an arrowhead showing its direction. Often the line is drawn to scale so that the magnitude of the vector may be determined by measuring its length.
 <!--insfig
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/44-vectors-1-1.svg" width="40%" style="display: block; margin: auto;" />
 To refer to a vector we give it a name. There are several different conventions used to indicate that we are referring to a vector quantity. The vector above will often be referred to in books as <span class="math inline">\(\underline{OP}\)</span>, or <span class="math inline">\(\overrightarrow{OP}\)</span>, or <span class="math inline">\(\underline p\)</span>, or <span class="math inline">\(\vec{p}\)</span>. The point at which a vector starts is called the initial point. The point at which it ends is called the final point.</p>
-<p>The <a name='#magnitude-of-a-vector'></a><span style="color: red;">magnitude of a vector</span>, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (“modulus lines”; it is the same notation as used for the absolute value of a number): for example <span class="math inline">\(|\underline{OP}|\)</span> or <span class="math inline">\(|\underline{p}|\)</span>. It is a non-negative number.</p>
+<p>The <a name='#magnitude-of-a-vector'></a><span style="color: purple;">magnitude of a vector</span>, also sometimes called the length of a vector, is denoted by enclosing the name (any name) of a vector by vertical lines (“modulus lines”; it is the same notation as used for the absolute value of a number): for example <span class="math inline">\(|\underline{OP}|\)</span> or <span class="math inline">\(|\underline{p}|\)</span>. It is a non-negative number.</p>
 <p>We can multiply a vector by a non-negative scalar (i.e. a non-negative number). This has the effect of leaving the direction the same, but changing the magnitude. For example, below we have the vectors <span class="math inline">\(\underline a\)</span> and <span class="math inline">\(3\underline a\)</span>. Note that <span class="math inline">\(3\underline a\)</span> is parallel to <span class="math inline">\(\underline a\)</span> (has the same direction) but is <span class="math inline">\(3\)</span> times as long. (At this point it may be helpful to also imagine that they have the same initial point, but for the sake of the picture they are drawn separately.)
 <!--insfig
 
 -->
 <img src="fy-B-lectnotes_files/figure-html/45-vectors-2-1.svg" width="40%" style="display: block; margin: auto;" />
 Multiplying a vector (say <span class="math inline">\(\underline{p}\)</span>) by a negative scalar (say <span class="math inline">\(a&lt;0\)</span>) changes the direction of the vector to the opposite (imagine that it stays on the same line, the same initial point, but opposite direction). The magnitude of <span class="math inline">\(a\cdot\underline{p}\)</span> is <span class="math inline">\(|a|\cdot |\underline{p}|\)</span>.</p>
-<p>A <a name='#position-vector'></a><span style="color: red;">position vector</span> indicates the distance and direction that we have to travel from the origin to get to a point. We use the term <a name='#displacement-vector'></a><span style="color: red;">displacement vector</span> to refer to the same concept, but relative to any other point than origin.</p>
+<p>A <a name='#position-vector'></a><span style="color: purple;">position vector</span> indicates the distance and direction that we have to travel from the origin to get to a point. We use the term <a name='#displacement-vector'></a><span style="color: purple;">displacement vector</span> to refer to the same concept, but relative to any other point than origin.</p>
 <p>In the diagram below, if <span class="math inline">\(O\)</span> is the origin then <span class="math inline">\(\underline{OP}\)</span> is the position vector of the point called <span class="math inline">\(P\)</span>. <span class="math inline">\(\underline{PQ}\)</span> is a displacement vector from <span class="math inline">\(P\)</span> to <span class="math inline">\(Q\)</span>. It shows the distance and direction that we have to travel from <span class="math inline">\(P\)</span> to get to <span class="math inline">\(Q\)</span>. <span class="math inline">\(\underline{OQ}\)</span> is the position vector of the point <span class="math inline">\(Q\)</span>.
 <!--insfig
 
@@ -590,9 +590,9 @@ Multiplying a vector (say <span class="math inline">\(\underline{p}\)</span>) by
 <img src="fy-B-lectnotes_files/figure-html/46-vectors-3-1.svg" width="40%" style="display: block; margin: auto;" /></p>
 <div id="vector-algebra" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Vector Algebra<a href="week-ten.html#vector-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We have already seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: red;">multiplied by a scalar</span>. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.</p>
+<p>We have already seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: purple;">multiplied by a scalar</span>. If the scalar is positive this changes the magnitude but not the direction of the vector. If the scalar is negative the vector is turned to the opposite direction, and the magnitude is changed.</p>
 <div style="display:none">
-<p>We’ve seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: red;">multiplied by a scalar</span>.
+<p>We’ve seen that a vector may be <a name='#multiplied-by-a-scalar'></a><span style="color: purple;">multiplied by a scalar</span>.
 If the scalar is positive this changes only the magnitude.
 If it is negative, the direction is changed to the
 opposite, and the magnitude is changed.</p>
@@ -609,7 +609,7 @@ In the above diagram, <span class="math inline">\(\underline a= \underline b = \
 -->
 <img src="fy-B-lectnotes_files/figure-html/48-vectors-5-1.svg" width="15%" style="display: block; margin: auto;" />
 Again it doesn’t matter whether they start and finish at the same point or not.</p>
-<p>The <a name='#sum'></a><span style="color: red;">sum</span> (or <a name='#resultant'></a><span style="color: red;">resultant</span>) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e. runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
+<p>The <a name='#sum'></a><span style="color: purple;">sum</span> (or <a name='#resultant'></a><span style="color: purple;">resultant</span>) of two vectors is obtained by placing the initial point of the second vector in the sum at the final point of the first vector in the sum. The sum is then the vector that completes the triangle (i.e. runs from the initial point of the first to the final point of the second). This is called the triangle law of vector addition.
 <!--insfig
 
 -->
@@ -706,46 +706,46 @@ So
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": "github"
-},
-"fontsettings": {
-"theme": "sepia",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["fy-B-lectnotes.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"toolbar": {
-"position": "fixed",
-"search": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": "github"
+  },
+  "fontsettings": {
+    "theme": "sepia",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["fy-B-lectnotes.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "toolbar": {
+    "position": "fixed",
+    "search": true
+  }
 });
 });
 </script>

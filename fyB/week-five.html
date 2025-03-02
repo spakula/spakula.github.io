@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Week 5 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Week 5 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-12-30" />
+<meta name="date" content="2025-03-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -484,7 +484,7 @@ Figure 5.1: cylinder
 </div>
 <p>We use the symbol <span class="math inline">\(\partial\)</span> in the derivatives above to indicate that there is more than one variable by which the expression may be differentiated and that we have chosen to treat any other variables as constants while differentiating.</p>
 <p>The first type of derivative tells us how the volume would vary as the radius was varied for a cylinder of constant height. The second type of derivative tells us how the volume would vary as the height varied for a cylinder of constant radius.</p>
-<p>When a function of more than one variable is differentiated with respect to one variable only, this process is called <a name='#partial-differentiation'></a><span style="color: red;">partial differentiation</span>.</p>
+<p>When a function of more than one variable is differentiated with respect to one variable only, this process is called <a name='#partial-differentiation'></a><span style="color: purple;">partial differentiation</span>.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.1  </strong></span>From the function <span class="math inline">\(z=x^3y^2\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
 </div>
@@ -630,9 +630,9 @@ where “<span class="math inline">\(c\)</span>” represents an arbitrary const
 </div>
 <div id="indefinite-integration" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Indefinite Integration<a href="week-five.html#indefinite-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The result of an integration which has the arbitrary constant (we used letter <span class="math inline">\(c\)</span> in the examples above) is called an <a name='#indefinite-integration'></a><span style="color: red;">indefinite integration</span>, because it does not tell us which of an infinite number of possible functions is the “correct” one – they are all “correct” answers to the question
+<p>The result of an integration which has the arbitrary constant (we used letter <span class="math inline">\(c\)</span> in the examples above) is called an <a name='#indefinite-integration'></a><span style="color: purple;">indefinite integration</span>, because it does not tell us which of an infinite number of possible functions is the “correct” one – they are all “correct” answers to the question
 of finding a function which differentiates to the given one.</p>
-<p>To determine the value of <span class="math inline">\(c\)</span>, we need more information, such as a pair of co-ordinates through which our particular solution (curve) passes. Such additional information is called a <a name='#boundary-condition'></a><span style="color: red;">boundary condition</span>.</p>
+<p>To determine the value of <span class="math inline">\(c\)</span>, we need more information, such as a pair of co-ordinates through which our particular solution (curve) passes. Such additional information is called a <a name='#boundary-condition'></a><span style="color: purple;">boundary condition</span>.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-62" class="example"><strong>Example 5.6  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(4x + 5\)</span>, with the correct constant, given that the boundary condition is:
 When <span class="math inline">\(x = 1, y = 3\)</span>.</p>
@@ -673,41 +673,41 @@ y = 2x^{3/2}+\frac 2x.
 <col width="50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>derivative</th>
 <th>integral</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(x^n)=nx^{n-1}\)</span></td>
 <td><span class="math inline">\(\displaystyle\int x^n\,\mathrm{d}x = \frac{x^{n+1}}{n+1}+c, n\ne -1\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\ln(x)) = \frac 1x\)</span></td>
 <td><span class="math inline">\(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln(                     | x | )+c, x\neq0\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^x)\,\mathrm{d}x = e^x\)</span></td>
 <td><span class="math inline">\(\displaystyle\int e^x \,\mathrm{d}x = e^x + c\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^{kx})\,\mathrm{d}x = ke^{kx}\)</span></td>
 <td><span class="math inline">\(\displaystyle\int e^{kx} \,\mathrm{d}x = \frac{e^{kx}}{k} + c\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(a^x)\,\mathrm{d}x = a^x\ln(a)\)</span></td>
 <td><span class="math inline">\(\displaystyle\int a^x \,\mathrm{d}x = \frac{a^x}{\ln(a)} + c\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\sin(x))\,\mathrm{d}x=\cos(x)\)</span></td>
 <td><span class="math inline">\(\displaystyle\int \sin(x)\,\mathrm{d}x=-\cos(x)+c\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\cos(x))\,\mathrm{d}x=-\sin(x)\)</span></td>
 <td><span class="math inline">\(\displaystyle\int \cos(x)\,\mathrm{d}x=\sin(x)+c\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\tan(x))\,\mathrm{d}x=\sec^2(x)\)</span></td>
 <td><span class="math inline">\(\displaystyle\int \sec^2(x)\,\mathrm{d}x=\tan(x)+c\)</span></td>
 </tr>
@@ -797,46 +797,46 @@ Note that we can check we are correct by differentiation:
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": "github"
-},
-"fontsettings": {
-"theme": "sepia",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["fy-B-lectnotes.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"toolbar": {
-"position": "fixed",
-"search": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": "github"
+  },
+  "fontsettings": {
+    "theme": "sepia",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["fy-B-lectnotes.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "toolbar": {
+    "position": "fixed",
+    "search": true
+  }
 });
 });
 </script>
