@@ -127,7 +127,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2025-03-03}
+\date{2025-03-25}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -5484,13 +5484,15 @@ Determine the RMS value of the current in an a.c. circuit given by \(i=20+100\si
 \text{RMS}&= \sqrt{\frac{1}{b-a}\int_a^b i^2\ \mathrm{d}t}\\
 i&=20+100\sin(100\pi t)\\
 i^2&=400+4000\sin(100\pi t)+10000\sin^2(100\pi t)\\
-&=400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t))\\
-\text{RMS}^2&=\frac1{0.02-0}\int_0^{0.02}(400+40000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ \mathrm{d}t\\
-&=\frac1{0.02}\left[400t-\frac{40000\cos(100\pi t)}{100\pi}+5000t-\frac{5000\sin(200\pi t)}{200\pi}\right]_0^{0.02}\\
+&=400+4000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t))\\
+\text{RMS}^2&=\frac1{0.02-0}\int_0^{0.02}(400+4000\sin(100\pi t)+10000\times\frac 12(1-\cos(200\pi t)))\ \mathrm{d}t\\
+&=\frac1{0.02}\left[400t-\frac{4000\cos(100\pi t)}{100\pi}+5000t-\frac{5000\sin(200\pi t)}{200\pi}\right]_0^{0.02}\\
 &=\frac1{0.02}\left[(8-12.732+100-0)-(0-12.732+0-0)\right] = \frac1{0.02}\times108\\
 \text{RMS}&=\sqrt{\frac{108}{0.02}}=73.5\text{ A}
 \end{align*}
 \end{solution}
+
+\slide
 
 \section{Volume and Surface of Revolution}\label{volume-and-surface-of-revolution}
 
