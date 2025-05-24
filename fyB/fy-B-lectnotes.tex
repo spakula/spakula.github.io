@@ -64,15 +64,12 @@
 \def\fps@figure{htbp}
 \makeatother
 \ifLuaTeX
-\usepackage[bidi=basic]{babel}
+\usepackage[bidi=basic,shorthands=off,]{babel}
 \else
-\usepackage[bidi=default]{babel}
+\usepackage[bidi=default,shorthands=off,]{babel}
 \fi
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
 \ifLuaTeX
-  \usepackage[english]{selnolig} % disable illegal ligatures
+  \usepackage{selnolig} % disable illegal ligatures
 \fi
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
@@ -127,7 +124,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2025-03-25}
+\date{2025-05-24}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -310,10 +307,10 @@ Notice that when \(h=0\) then this would have the indeterminate value of \(0/0\)
 
 \begin{htmlonly}
 
-\phantomsection\label{div_head}
+\protect\phantomsection\label{div_head}
 Let \(h\to 0\)
 
-\phantomsection\label{div_body}
+\protect\phantomsection\label{div_body}
 
 Press the button and see what happens to the line segment as \(h\to0\).
 
@@ -3312,7 +3309,8 @@ Integrate the functions
   \(y=(8x^2-4x+5)/x^4 = 8/x^2-4/x^3+5/x^4 = 8x^{-2}-4x^{-3}+5x^{-4}\) and so
   \begin{align*}
   \int y \,\mathrm{d}x& = \int 8x^{-2}\,\mathrm{d}x\int -4x^{-3}\,\mathrm{d}x+\int5x^{-4}\,\mathrm{d}x = \frac{8x^{-1}}{-1}-\frac{4x^{-2}}{-2}+\frac{5x^{-3}}{-3}+C\\
-  &=\frac{-1}{8x}+\frac{2}{x^2}-\frac{5}{3x^3} = \frac{-3x^2+48x-40}{24x^3} + C,
+  &=\frac{-8}{x}+\frac{2}{x^2}-\frac{5}{3x^3}
+  = \frac{-24x^2+6x-5}{3x^3} + C,
   \end{align*}
 \item
   \(y = x^{3/5}(2x-\sqrt{x}) = 2x^{8/5}-x^{11/10}\) and so
