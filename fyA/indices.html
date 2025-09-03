@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Topic 6 Indices | GENG0001 Mathematics A lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0001 - Mathematics A module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Topic 6 Indices | GENG0001 Mathematics A lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2024-12-13" />
+<meta name="date" content="2025-09-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,8 +226,8 @@
 <p>In general, we <strong>define</strong>:</p>
 <ul>
 <li><span class="math inline">\(x^n := \underbrace{x\cdot x\cdots x}_{n\text{ times}}\)</span>, when <span class="math inline">\(n&gt;0\)</span>,</li>
-<li><span class="math inline">\(x^0 := 1\)</span>,</li>
-<li><span class="math inline">\(x^{-n} := \dfrac{1}{\underbrace{x\cdot x\cdots x}_{n\text{ times}}}\)</span>, when <span class="math inline">\(n&gt;0\)</span>.</li>
+<li><span class="math inline">\(x^0 := 1\)</span>, (when <span class="math inline">\(x\not=0\)</span>),</li>
+<li><span class="math inline">\(x^{-n} := \dfrac{1}{\underbrace{x\cdot x\cdots x}_{n\text{ times}}}\)</span>, when <span class="math inline">\(n&gt;0\)</span> (and <span class="math inline">\(x\not=0\)</span>).</li>
 </ul>
 <p><strong>Further examples:</strong></p>
 <ul>
@@ -238,22 +238,23 @@
 <ul>
 <li><span class="math inline">\(x^{\frac{1}{n}} := \sqrt[n]{x}\)</span>    for <span class="math inline">\(x\geq0\)</span> and <span class="math inline">\(n&gt;0\)</span>,</li>
 <li><span class="math inline">\(x^{\frac{m}{n}} := \sqrt[n]{x^m}\)</span>    for <span class="math inline">\(x\geq0\)</span> and <span class="math inline">\(m,n&gt;0\)</span>,</li>
-<li><span class="math inline">\(x^{-\frac{m}{n}} := \dfrac{1}{\sqrt[n]{x^m}}\)</span>    for <span class="math inline">\(x\geq0\)</span> and <span class="math inline">\(m,n&gt;0\)</span>.</li>
+<li><span class="math inline">\(x^{-\frac{m}{n}} := \dfrac{1}{\sqrt[n]{x^m}}\)</span>    for <span class="math inline">\(x&gt;0\)</span> and <span class="math inline">\(m,n&gt;0\)</span>.</li>
 </ul>
 </div>
 <div id="laws-of-exponents" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Laws of exponents<a href="indices.html#laws-of-exponents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The basic ones are:</p>
+<p>The basic ones are (for <span class="math inline">\(a&gt;0\)</span>):</p>
 <ol style="list-style-type: decimal">
 <li><span style="background-color: #ddd;"><span class="math inline">\(a^r\cdot a^s = a^{r+s}\)</span></span></li>
 <li><span style="background-color: #ddd;"><span class="math inline">\((a\cdot b)^r = a^{r}\cdot b^{r}\)</span></span></li>
 <li><span style="background-color: #ddd;"><span class="math inline">\(\left(a^r\right)^s = a^{r\cdot s}\)</span></span></li>
 </ol>
-<p>From these, one can derive the following two:</p>
+<p>From these, one can derive the following two (for <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(n\not=0\)</span>):</p>
 <ol start="4" style="list-style-type: decimal">
 <li><span style="background-color: #ddd;"><span class="math inline">\(\frac{a^r}{a^s} = a^{r-s}\)</span></span></li>
 <li><span style="background-color: #ddd;"><span class="math inline">\(\left(\sqrt[n]{a}\right)^m = a^{\frac{m}{n}}\)</span></span></li>
 </ol>
+<p>Going forward, conditions like `<span class="math inline">\(a&gt;0\)</span>’ may not be explicitly specified: we assume that we are dealing with `values for which the expression(s) are valid’.</p>
 <p>Deriving 4: <span class="math inline">\(\frac{a^r}{a^s} = a^r\cdot \frac{1}{a^s} = a^r\cdot a^{-s} \stackrel{1.}{=} a^{r-s}\)</span>.</p>
 <p>Deriving 5: <span class="math inline">\(\left(\sqrt[n]{a}\right)^m = \left(a^{\frac{1}{n}}\right)^m \stackrel{3.}{=} a^{\frac{1}{n}\cdot m} = a^\frac{m}{n}\)</span>.</p>
 <div class="example">
@@ -280,7 +281,7 @@
 </ul>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 6.3  </strong></span>Simplify the expression <span class="math inline">\(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}\div\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\)</span> so that it uses only positive indices.</p>
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 6.3  </strong></span>Simplify the expression <span class="math inline">\(A=\dfrac{x^{-6}y^{3/2}w^2}{x^{-3}w^3}/\dfrac{x^\frac12\sqrt[3]{y}}{(xy)^3(\sqrt[4]{w})^{-2}}\)</span> so that it uses only positive indices.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-44" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
@@ -310,34 +311,34 @@ A&amp;= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^
 <col width="31%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th align="center">Decimal expansion</th>
 <th align="center">Standard notation</th>
 <th align="center">Engineering notation</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td align="center"><span class="math inline">\(17\)</span></td>
 <td align="center"><span class="math inline">\(1.7\cdot 10^1\)</span></td>
 <td align="center"><span class="math inline">\(17\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(620\)</span></td>
 <td align="center"><span class="math inline">\(6.2\cdot 10^2\)</span></td>
 <td align="center"><span class="math inline">\(620\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="center"><span class="math inline">\(342567\)</span></td>
 <td align="center"><span class="math inline">\(3.42567\cdot 10^5\)</span></td>
 <td align="center"><span class="math inline">\(342.567\cdot 10^3\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td align="center"><span class="math inline">\(0.0001\)</span></td>
 <td align="center"><span class="math inline">\(1\cdot 10^{-4}\)</span></td>
 <td align="center"><span class="math inline">\(100\cdot 10^{-6}\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td align="center"><span class="math inline">\(0.00005\)</span></td>
 <td align="center"><span class="math inline">\(5\cdot 10^{-5}\)</span></td>
 <td align="center"><span class="math inline">\(50\cdot 10^{-6}\)</span></td>
@@ -367,46 +368,46 @@ A&amp;= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": "github"
-},
-"fontsettings": {
-"theme": "sepia",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["fy-A-lectnotes.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-},
-"toolbar": {
-"position": "fixed",
-"search": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": "github"
+  },
+  "fontsettings": {
+    "theme": "sepia",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["fy-A-lectnotes.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  },
+  "toolbar": {
+    "position": "fixed",
+    "search": true
+  }
 });
 });
 </script>
