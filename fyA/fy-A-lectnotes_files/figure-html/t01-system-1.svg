@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -47,8 +52,8 @@
 <text x='74.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>-5</text>
 <text x='170.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='266.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='6.67px' lengthAdjust='spacingAndGlyphs'>5</text>
-<text x='362.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>10</text>
-<text x='458.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>15</text>
+<text x='362.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.34px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='458.40' y='124.99' text-anchor='middle' style='font-size: 12.00px; font-family: "Arimo";' textLength='13.34px' lengthAdjust='spacingAndGlyphs'>15</text>
 <line x1='170.40' y1='267.60' x2='170.40' y2='99.07' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='267.60' x2='163.20' y2='267.60' style='stroke-width: 0.75;' />
 <line x1='170.40' y1='225.47' x2='163.20' y2='225.47' style='stroke-width: 0.75;' />
@@ -63,10 +68,11 @@
 </g>
 <g clip-path='url(#cpNTkuMDR8NDczLjc2fDU5LjA0fDI4Ni41Ng==)'>
 <text x='84.00' y='92.26' text-anchor='middle' style='font-size: 14.40px; font-weight: bold;fill: #CD0BBC; font-family: "Arimo";' textLength='19.98px' lengthAdjust='spacingAndGlyphs'>(A)</text>
-<text x='170.40' y='81.72' text-anchor='middle' style='font-size: 14.40px; font-weight: bold;fill: #61D04F; font-family: "Arimo";' textLength='19.99px' lengthAdjust='spacingAndGlyphs'>(B)</text>
+<text x='170.40' y='81.72' text-anchor='middle' style='font-size: 14.40px; font-weight: bold;fill: #61D04F; font-family: "Arimo";' textLength='19.98px' lengthAdjust='spacingAndGlyphs'>(B)</text>
 <line x1='59.04' y1='204.40' x2='473.76' y2='204.40' style='stroke-width: 0.52; stroke-dasharray: 4.00,4.00;' />
 <line x1='324.00' y1='286.56' x2='324.00' y2='59.04' style='stroke-width: 0.52; stroke-dasharray: 4.00,4.00;' />
-<text x='331.20' y='196.62' style='font-size: 12.00px; font-family: "Arimo";' textLength='122.04px' lengthAdjust='spacingAndGlyphs'>The solution: x=8, y=-5</text>
+<text x='331.20' y='196.62' style='font-size: 12.00px; font-family: "Arimo";' textLength='122.05px' lengthAdjust='spacingAndGlyphs'>The solution: x=8, y=-5</text>
 <circle cx='324.00' cy='204.40' r='2.70' style='stroke-width: 0.75; fill: #000000;' />
+</g>
 </g>
 </svg>

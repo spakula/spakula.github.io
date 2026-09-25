@@ -40,6 +40,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
 \usepackage{multirow}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -66,9 +69,9 @@
 \def\fps@figure{htbp}
 \makeatother
 \ifLuaTeX
-\usepackage[bidi=basic,shorthands=off,]{babel}
+\usepackage[bidi=basic,shorthands=off]{babel}
 \else
-\usepackage[bidi=default,shorthands=off,]{babel}
+\usepackage[bidi=default,shorthands=off]{babel}
 \fi
 \ifLuaTeX
   \usepackage{selnolig} % disable illegal ligatures
@@ -83,6 +86,10 @@
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   pdftitle={GENG0001 Mathematics A lecture notes},
   pdfauthor={Ján Špakula},
@@ -92,7 +99,7 @@
 
 \title{GENG0001 Mathematics A lecture notes}
 \author{Ján Špakula}
-\date{2025-09-03}
+\date{2026-09-25}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -180,7 +187,7 @@ Graphing these values (Figure \ref{fig:t01-eqex-graph}) we see that they appear 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t01-eqex-graph}Graphing some solutions of 4x-3y=2.}]{fy-A-lectnotes_files/figure-latex/t01-eqex-graph-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t01-eqex-graph}Graphing some solutions of 4x-3y=2.}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t01-eqex-graph-1.pdf}}
 \caption{\label{fig:t01-eqex-graph}Graphing some solutions of \(4x-3y=2\).}
 \end{figure}
 
@@ -201,6 +208,7 @@ x+2y &= -2
 
 \subsection{By substitution}\label{by-substitution}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0694}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3750}}
@@ -216,9 +224,11 @@ x+2y &= -2
 5 & Substitute back into (A): & \(x + 2(-5)=-2\) \\
 6 & Rearrange: & \(x=8\) \\
 \end{longtable}
+}
 
 \subsection{By elimination}\label{by-elimination}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0575}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3793}}
@@ -233,6 +243,7 @@ x+2y &= -2
 3 & Rearrange: & \(y=-5\) & \\
 4 & Substitute into (A) (as above) & \(x=8\) & \\
 \end{longtable}
+}
 
 \emph{Extra Note (non-examinable)}: For ``2-by-2'' systems like these, the two methods are about the same complexity. However for larger systems of linear equations, the latter leads to a quite effective method called \emph{Gaussian elimination}, which is also amenable to be implemented as a computer algorithm.
 
@@ -242,7 +253,7 @@ The solutions of the equation (A) \emph{alone} lie on some straight line. Likewi
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t01-system}Solutions of (A) and (B) graphically}]{fy-A-lectnotes_files/figure-latex/t01-system-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t01-system}Solutions of (A) and (B) graphically}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t01-system-1.pdf}}
 \caption{\label{fig:t01-system}Solutions of (A) and (B) graphically}
 \end{figure}
 
@@ -452,7 +463,7 @@ t (s) & v (m/s)\\
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t16-vtgraph}Plotted v against t}]{fy-A-lectnotes_files/figure-latex/t16-vtgraph-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t16-vtgraph}Plotted v against t}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t16-vtgraph-1.pdf}}
 \caption{\label{fig:t16-vtgraph}Plotted v against t}
 \end{figure}
 
@@ -471,6 +482,7 @@ to learn to ``recognise'' at least quadratics, exponentials and sine/cosine.
   The strain \(\varepsilon\) induced in a wire when subjected to a series of stress \(\sigma\) values produced the following results:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3980}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1122}}
@@ -485,6 +497,7 @@ to learn to ``recognise'' at least quadratics, exponentials and sine/cosine.
 \(\sigma\) (M Pa) & \(10.8\) & \(21.6\) & \(33.3\) & \(37.8\) & \(45.9\) \\
 \(\varepsilon\) (\(\times 10^{-5}\)) & \(12\) & \(24\) & \(37\) & \(42\) & \(51\) \\
 \end{longtable}
+}
 
 Show that the stress is related to the strain by a law of the form \(\sigma=E\varepsilon\), where \(E\) is a constant.
 Determine the law for the wire under test.
@@ -498,6 +511,7 @@ Determine the law for the wire under test.
   applied force, \(F\), for the load, \(L\), lifted:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1579}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1184}}
@@ -513,6 +527,7 @@ Determine the law for the wire under test.
 \(F\) (N) & \(19\) & \(37\) & \(50\) & \(93\) & \(125\) & \(149\) \\
 \(L\) (N) & \(40\) & \(120\) & \(230\) & \(410\) & \(540\) & \(680\) \\
 \end{longtable}
+}
 
 It is thought that the equation relating \(F\) and \(L\) is of the form \(F = kL + c\) where both \(k\) and \(c\) are constants. Assuming that the law holds true, find the force necessary to lift a load of \(1\,\mathrm{kN}\).
 
@@ -524,6 +539,7 @@ It is thought that the equation relating \(F\) and \(L\) is of the form \(F = kL
   The variation in pressure, \(p\), within a vessel at a temperature, \(T\), follows a law of the form \(p = aT + b\). Verify that the data below relates the data by this law and determine the law.
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1772}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}
@@ -539,6 +555,7 @@ It is thought that the equation relating \(F\) and \(L\) is of the form \(F = kL
 \(p\) (kPa) & \(248\) & \(253\) & \(257\) & \(262\) & \(266\) & \(270\) \\
 \(T\) (K) & \(273\) & \(278\) & \(283\) & \(288\) & \(293\) & \(298\) \\
 \end{longtable}
+}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -827,13 +844,13 @@ Any value of \(x\) that makes the equation \(ax^2+bx+c=0\) hold true is called a
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-quadratic-1}Examples of graphs of quadratic functions 1}]{fy-A-lectnotes_files/figure-latex/t03-quadratic-1-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-quadratic-1}Examples of graphs of quadratic functions 1}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t03-quadratic-1-1.pdf}}
 \caption{\label{fig:t03-quadratic-1}Examples of graphs of quadratic functions 1}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-quadratic-2}Examples of graphs of quadratic functions 2}]{fy-A-lectnotes_files/figure-latex/t03-quadratic-2-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-quadratic-2}Examples of graphs of quadratic functions 2}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t03-quadratic-2-1.pdf}}
 \caption{\label{fig:t03-quadratic-2}Examples of graphs of quadratic functions 2}
 \end{figure}
 
@@ -932,7 +949,7 @@ Substitute back into (B): ~ \(x_1=0\), ~~ \(x_2=3\).
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-linquad-system}Graphical illustration of the solutions of simultaneous linear+quadratic system}]{fy-A-lectnotes_files/figure-latex/t03-linquad-system-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t03-linquad-system}Graphical illustration of the solutions of simultaneous linear+quadratic system}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t03-linquad-system-1.pdf}}
 \caption{\label{fig:t03-linquad-system}Graphical illustration of the solutions of simultaneous linear+quadratic system}
 \end{figure}
 
@@ -1198,7 +1215,7 @@ Solve \(\dfrac{x-1}{x-2}<0\).
 
 \begin{solution}
 \(\frac{x-1}{x-2}<0\)\\
-\(\iff\) \((x-1)(x-2)<0\) \hfill~{(multiply by \((x-1)^2\geq 0\))}\\
+\(\iff\) \((x-1)(x-2)<0\) \hfill~{(multiply by \((x-2)^2\geq 0\))}\\
 \(\iff\) \(\big( x<1\) and \(x>2\big)\) or \(\big(x>1\) and \(x<2\big)\)\\
 \(\iff\) \(1<x<2\)
 \end{solution}
@@ -1413,6 +1430,7 @@ A&= \frac{x^{-6}y^{\frac{3}{2}}w^2\,(xy)^3(\sqrt[4]{w})^{-2}}{x^{-3}w^3\, x^{\fr
 
 The ``\(a\)'' is called \textbf{mantissa}, the ``\(n\)'' is called \textbf{exponent}.
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2778}}
   >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
@@ -1435,6 +1453,7 @@ Engineering notation
 \(0.0001\) & \(1\cdot 10^{-4}\) & \(100\cdot 10^{-6}\) \\
 \(0.00005\) & \(5\cdot 10^{-5}\) & \(50\cdot 10^{-6}\) \\
 \end{longtable}
+}
 
 \chapter*{Exercises 6 (Indices)}\label{exercises-6-indices}
 \addcontentsline{toc}{chapter}{Exercises 6 (Indices)}
@@ -1691,7 +1710,7 @@ Notation for two most commonly used bases:
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t06-log-graph}Graph of the natural logarithm function}]{fy-A-lectnotes_files/figure-latex/t06-log-graph-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t06-log-graph}Graph of the natural logarithm function}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t06-log-graph-1.pdf}}
 \caption{\label{fig:t06-log-graph}Graph of the natural logarithm function}
 \end{figure}
 
@@ -1896,7 +1915,7 @@ The notation for the most often encountered exponential function is \(\exp(x):= 
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t07-exp-graph}Graph of the natural logarithm function}]{fy-A-lectnotes_files/figure-latex/t07-exp-graph-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t07-exp-graph}Graph of the natural logarithm function}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t07-exp-graph-1.pdf}}
 \caption{\label{fig:t07-exp-graph}Graph of the natural logarithm function}
 \end{figure}
 
@@ -2015,6 +2034,7 @@ where \(a_0,\dots,a_n\) are constants, also called \textbf{coefficients}. Its \t
 
 The low--degree polynomials have special names:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2917}}
   >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1806}}
@@ -2036,6 +2056,7 @@ also called
 \(4x^3+5x^2-3x\) & 3 & cubic polynomial \\
 \(-x^4+x^2-2\) & 4 & quartic polynomial \\
 \end{longtable}
+}
 
 Recall long division of numbers:
 \[
@@ -2402,6 +2423,7 @@ The aim of ``partial fractions'': simplify \(\dfrac{r(x)}{p_2(x)}\) further.
 \textbf{Then}, every rational function of the type as in the left--hand column can be split
 into \textbf{partial fractions} as given in the right--hand column:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0932}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3644}}
@@ -2416,6 +2438,7 @@ Type II & \(\dfrac{Px+Q}{(ax+b)^2}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}
 Type III & \(\dfrac{Px^2+Qx+R}{(ax+b)^2(cx+d)}\) & = & \(\dfrac{A}{ax+b}+\dfrac{B}{(ax+b)^2}+\dfrac{C}{cx+d}\) \\
 Type IV & \(\dfrac{Px^2+Qx+R}{(ax^2+bx+c)(dx+e)}\) & = & \(\dfrac{Ax+B}{ax^2+bx+c}+\dfrac{C}{dx+e}\) \\
 \end{longtable}
+}
 
 Note: It is a Theorem that the above actually works --- these are equations which work for all values of \(x\) simultaneously! It is not proved here though.
 
@@ -3637,6 +3660,7 @@ Angles are normally measured in \textbf{degrees}, e.g.~a right angle has \(90^\c
 \caption{Unit circle and radians}\label{fig:unnamed-chunk-60}
 \end{figure}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0800}}
   >{\centering\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0880}}
@@ -3653,6 +3677,7 @@ Angles are normally measured in \textbf{degrees}, e.g.~a right angle has \(90^\c
 degrees & \(360\) & \(180\) & \(90\) & \(60\) & \(45\) & \(30\) & \(0\) \\
 radians & \(2\pi\) & \(\pi\) & \(\frac{\pi}{2}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{6}\) & \(0\) \\
 \end{longtable}
+}
 
 \subsection{Converting degrees to radians}\label{converting-degrees-to-radians}
 
@@ -3865,6 +3890,7 @@ Prove that \(\sqrt{\dfrac{1-\cos\theta}{1+\cos\theta}} = \mathrm{cosec}\,\theta-
 
 A table of very commonly used values:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1545}}
   >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0727}}
@@ -3893,6 +3919,7 @@ A table of very commonly used values:
 \(\cos\theta\) & \(1\) & \(\frac{\sqrt3}2\) & \(\frac1{\sqrt2}\) & \(\frac12\) & \(0\) \\
 \(\tan\theta\) & \(0\) & \(\frac1{\sqrt3}\) & \(1\) & \(\sqrt3\) & not defined \\
 \end{longtable}
+}
 
 How to derive some of these?
 
@@ -3932,19 +3959,19 @@ With this, we get \textbf{basic trigonometric identities}:
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-sine}Graph of sine}]{fy-A-lectnotes_files/figure-latex/t15-sine-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-sine}Graph of sine}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-sine-1.pdf}}
 \caption{\label{fig:t15-sine}Graph of sine}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-cosine}Graph of cosine}]{fy-A-lectnotes_files/figure-latex/t15-cosine-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-cosine}Graph of cosine}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-cosine-1.pdf}}
 \caption{\label{fig:t15-cosine}Graph of cosine}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-tangent}Graph of tangent}]{fy-A-lectnotes_files/figure-latex/t15-tangent-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-tangent}Graph of tangent}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-tangent-1.pdf}}
 \caption{\label{fig:t15-tangent}Graph of tangent}
 \end{figure}
 
@@ -3974,19 +4001,19 @@ Given any \(x\), we let \(\arctan x\) \(= \theta\), such that \(\tan\theta=x\) a
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arcsin}Graph of arcsin}]{fy-A-lectnotes_files/figure-latex/t15-arcsin-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arcsin}Graph of arcsin}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-arcsin-1.pdf}}
 \caption{\label{fig:t15-arcsin}Graph of arcsin}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arccos}Graph of arccos}]{fy-A-lectnotes_files/figure-latex/t15-arccos-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arccos}Graph of arccos}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-arccos-1.pdf}}
 \caption{\label{fig:t15-arccos}Graph of arccos}
 \end{figure}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arctan}Graph of arctan}]{fy-A-lectnotes_files/figure-latex/t15-arctan-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t15-arctan}Graph of arctan}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t15-arctan-1.pdf}}
 \caption{\label{fig:t15-arctan}Graph of arctan}
 \end{figure}
 
@@ -4158,7 +4185,7 @@ We square both equations and add them: \(x^2=a^2\sin^2\theta\), ~ \(y^2=a^2\cos^
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t17-circle}Graph of ±√(4-x²)}]{fy-A-lectnotes_files/figure-latex/t17-circle-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t17-circle}Graph of ±√(4-x²)}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t17-circle-1.pdf}}
 \caption{\label{fig:t17-circle}Graph of ±√(4-x²)}
 \end{figure}
 
@@ -4183,7 +4210,7 @@ Putting 1. and 2. together, we get \(x=\frac{y^2}{4}\) \(\iff\) \(y=\pm2\sqrt{x}
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t17-sqrt}Graph of ±2√x}]{fy-A-lectnotes_files/figure-latex/t17-sqrt-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:t17-sqrt}Graph of ±2√x}]{fy-A-lectnotes_files/fy-A-lectnotes_files/figure-latex/t17-sqrt-1.pdf}}
 \caption{\label{fig:t17-sqrt}Graph of ±2√x}
 \end{figure}
 
@@ -4435,6 +4462,7 @@ Hole 6 & \(150\angle -150^\circ\) & \((-129.9,-75)\) \\
   Six holes are marked out in polar coordinates as:
 \end{enumerate}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1250}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3889}}@{}}
@@ -4449,6 +4477,7 @@ Hole 4 & \(80 \angle 55^\circ\) \\
 Hole 5 & \(160 \angle -170^\circ\) \\
 Hole 6 & \(95 \angle -80^\circ\) \\
 \end{longtable}
+}
 
 Sketch the system and determine the position of Hole 1 relative to Hole 6 in rectangular coordinates. The coordinates for each hole are given relative to the previous hole.
 
@@ -4603,6 +4632,7 @@ Consequently,
 
 To find all the sides and angles of a triangle, you may want to use the following approach:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5972}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1944}}@{}}
@@ -4621,6 +4651,7 @@ two sides and an angle (not between them) & sine rule \\
 two sides and the angle between them & cosine rule \\
 three sides & cosine rule \\
 \end{longtable}
+}
 
 \begin{example}
 Calculate the angles of a triangle with sides of length \(a=80\,\mathrm{mm}\), \(b=70\,\mathrm{mm}\), \(c=50\,\mathrm{mm}\).
