@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-09-25" />
+<meta name="date" content="2026-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,9 +216,7 @@
 <p>A <strong>rational function</strong> is a quotient of two polynomials, i.e. an expression of the form <span class="math inline">\(\dfrac{p_1(x)}{p_2(x)}\)</span>, where both <span class="math inline">\(p_1(x)\)</span> and <span class="math inline">\(p_2(x)\)</span> are polynomials, and <span class="math inline">\(p_2(x)\neq0\)</span>.</p>
 <p>For example: <span class="math inline">\(\dfrac{5x+7}{3x^2+5}\)</span>, <span class="math inline">\(\dfrac{5x^2-4x+3}{x-7}\)</span>, …</p>
 <p>Long division of polynomials allows us to write <span class="math inline">\(\dfrac{p_1(x)}{p_2(x)}\)</span> in the form
-<span class="math display">\[
-\frac{p_1(x)}{p_2(x)} = q(x) + \frac{r(x)}{p_2(x)},
-\]</span>
+<span class="math display">\[\frac{p_1(x)}{p_2(x)} = q(x) + \frac{r(x)}{p_2(x)},\]</span>
 where <span class="math inline">\(q(x)\)</span> and <span class="math inline">\(r(x)\)</span> are polynomials and the degree of <span class="math inline">\(r(x)\)</span> is less than
 the degree of <span class="math inline">\(p_2(x)\)</span>.</p>
 <p>The aim of “partial fractions”: simplify <span class="math inline">\(\dfrac{r(x)}{p_2(x)}\)</span> further.</p>
@@ -266,9 +264,7 @@ into <strong>partial fractions</strong> as given in the right–hand column:</p>
 <div class="solution">
 <p><span id="unlabeled-div-63" class="solution"><em>Solution</em>. </span>First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.</p>
 <p>Second, the denominator is already factored as much as possible (into linear factors). We see that it is “Type I”, so we want to find <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that
-<span class="math display">\[
-\frac{-4x+15}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}
-\]</span>
+<span class="math display">\[\frac{-4x+15}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}\]</span>
 Multiplying both sides by <span class="math inline">\((x+2)(x-1)\)</span>, we arrive at<br />
 <span class="math inline">\(-4x+15 = A(x-1)+B(x+2)\)</span>.<br />
 Let <span class="math inline">\(x=1\)</span>. Then <span class="math inline">\(-4+15 = A\cdot 0+B\cdot 3\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(B=\frac{11}{3}\)</span>.<br />
@@ -281,9 +277,7 @@ Let <span class="math inline">\(x=-2\)</span>. Then <span class="math inline">\(
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-65" class="solution"><em>Solution</em>. </span>(Type III.) We want to find <span class="math inline">\(A,B,C\)</span> such that
-<span class="math display">\[
-\frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.
-\]</span>
+<span class="math display">\[\frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.\]</span>
 <span class="math inline">\(\iff\)</span> <span class="math inline">\(5x^2-3x+2 = A(x-3)(x+2)+B(x+2)+C(x-3)^2\)</span>.<br />
 Let <span class="math inline">\(x=-2\)</span>. Then <span class="math inline">\(5\cdot 4-3(-2)+2 = C\cdot(-5)^2\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(C=\frac{28}{25}\)</span>.<br />
 Let <span class="math inline">\(x=3\)</span>. Then <span class="math inline">\(5\cdot 9-3\cdot 3+2 = B\cdot 5\)</span> <span class="math inline">\(\implies\)</span> <span class="math inline">\(B=\frac{38}{5}\)</span>.<br />

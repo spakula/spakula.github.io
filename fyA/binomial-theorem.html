@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-09-25" />
+<meta name="date" content="2026-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,9 +223,7 @@ First few:</p>
 <li><span class="math inline">\((a+b)^4 = \dots = a^4+4a^3b+6a^2b^2 + 4ab^3 + b^4\)</span></li>
 </ul>
 <p>In general:
-<span class="math display">\[
-(a+b)^n = C_{n,0}\cdot a^n + C_{n,1}\cdot a^{n-1}b + C_{n,2}\cdot a^{n-2}b^2 + \dots + C_{n,n-1}\cdot ab^{n-1} + C_{n,n}\cdot b^n
-\]</span>
+<span class="math display">\[(a+b)^n = C_{n,0}\cdot a^n + C_{n,1}\cdot a^{n-1}b + C_{n,2}\cdot a^{n-2}b^2 + \dots + C_{n,n-1}\cdot ab^{n-1} + C_{n,n}\cdot b^n\]</span>
 for some coefficients <span class="math inline">\(C_{n,0},C_{n,1},\dots,C_{n,n}\)</span>. “Extrapolating” from the examples above, we can “guess”:
 <span class="math display">\[\begin{align*}
     C_{n,0} &amp;= C_{n,n} = 1\\
@@ -233,8 +231,7 @@ for some coefficients <span class="math inline">\(C_{n,0},C_{n,1},\dots,C_{n,n}\
     C_{n,k} &amp;= C_{n-1,k-1}+C_{n-1,k}
 \end{align*}\]</span></p>
 <p>The two rules: <span class="math inline">\(C_{n,0}=C_{n,n}=1\)</span> and <span class="math inline">\(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\)</span> are the building laws for <strong>Pascal’s triangle</strong>:
-<span class="math display">\[
-\begin{array}{cccccccccccccc}
+<span class="math display">\[\begin{array}{cccccccccccccc}
     &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;1 &amp;  &amp;  &amp;  &amp;  &amp;  &amp;   \\
     &amp;  &amp;  &amp;  &amp;  &amp;  &amp;1 &amp;  &amp;1 &amp;  &amp;  &amp;  &amp;  &amp;   \\
     &amp;  &amp;  &amp;  &amp;  &amp;1 &amp;  &amp;2 &amp;  &amp;1 &amp;  &amp;  &amp;  &amp;   \\
@@ -243,8 +240,7 @@ for some coefficients <span class="math inline">\(C_{n,0},C_{n,1},\dots,C_{n,n}\
     &amp;  &amp;1 &amp;  &amp;5 &amp;  &amp;10&amp;  &amp;10&amp;  &amp;5 &amp;  &amp;1 &amp;   \\
     &amp;1 &amp;  &amp;6 &amp;  &amp;15&amp;  &amp;20&amp;  &amp;15&amp;  &amp;6 &amp;  &amp;1  \\
     &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;\vdots&amp;  &amp;  &amp;  &amp;  &amp;  &amp;   \\
-\end{array}
-\]</span>
+\end{array}\]</span>
 ::: {.example}
 <span class="math inline">\((a+b)^6 = a^6 + 6 a^5b + 15 a^4b^2 + 20 a^3b^3 + 15 a^2b^4 + 6 ab^5 + b^6\)</span>.
 :::
@@ -277,13 +273,11 @@ and declare that <span class="math inline">\(0!=1\)</span>.</p>
 <p><em>Proof (non–examinable):</em> To argue that the formula “works correctly”, it suffices to check that the number above satisfies the laws defining Pascal’s triangle.</p>
 <p>That <span class="math inline">\(C_{n,0}=C_{n,n}=1\)</span> is clear.</p>
 <p>Now checking that <span class="math inline">\(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\)</span>:
-<span class="math display">\[
-\begin{matrix}
+<span class="math display">\[\begin{matrix}
     \dfrac{n!}{k!(n-k)!} &amp;\stackrel{?}{=} &amp; \dfrac{(n-1)!}{(k-1)!(n-k)!} &amp; + &amp; \dfrac{(n-1)!}{k!(n-1-k)!}\\
                         &amp; &amp; = &amp; &amp; = \\
                         &amp; &amp; \dfrac{k}{n}\cdot\dfrac{n!}{k!(n-k)!} &amp; + &amp; \dfrac{n-k}{n}\cdot \dfrac{n!}{k!(n-k)!}
-\end{matrix}
-\]</span>
+\end{matrix}\]</span>
 This finishes the proof.</p>
 <p>Let us analyse the formula: observe that <span class="math inline">\(C_{n,k} = \dfrac{n(n-1)(n-2)\cdots(n-k+1)}{1\cdot 2\cdot 3 \cdots
 k}\)</span>.</p>

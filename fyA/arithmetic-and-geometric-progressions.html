@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-09-25" />
+<meta name="date" content="2026-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,13 +216,9 @@
 <div id="arithmetic-progressions" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> Arithmetic progressions<a href="arithmetic-and-geometric-progressions.html#arithmetic-progressions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An <strong>arithmetic progression (AP)</strong> is a (finite or infinite) sequence of numbers
-<span class="math display">\[
-a_1,a_2,a_3,\dots
-\]</span>
+<span class="math display">\[a_1,a_2,a_3,\dots\]</span>
 such that the difference between consecutive terms is a constant (also called the <strong>common difference</strong>) <span class="math inline">\(d\)</span>. In other words,
-<span class="math display">\[
-d=a_2-a_1=a_3-a_2=a_4-a_3=\dots.
-\]</span>
+<span class="math display">\[d=a_2-a_1=a_3-a_2=a_4-a_3=\dots.\]</span>
 For example:</p>
 <ul>
 <li><span class="math inline">\(1,3,5,7,\dots\)</span> (<span class="math inline">\(d=2\)</span>)</li>
@@ -237,20 +233,16 @@ For example:</p>
 In general: <span style="background-color: #ddd;"><span class="math inline">\(a_n = a+(n-1)d\)</span></span> where <span class="math inline">\(a=a_1\)</span>.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-68" class="theorem"><strong>Theorem 11.1  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of an AP with the first term <span class="math inline">\(a\)</span> and the common difference <span class="math inline">\(d\)</span> is given by
-<span class="math display">\[
-\boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}
-\]</span></p>
+<span class="math display">\[\boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}\]</span></p>
 </div>
 <p><em>Proof (non-examinable):</em>
-<span class="math display">\[
-\begin{array}{ccccccccc}
+<span class="math display">\[\begin{array}{ccccccccc}
 S_n &amp;=&amp; a &amp; + &amp; (a+d) &amp; + &amp; \dots &amp; + &amp; (a+(n-1)d) \\
 S_n &amp;=&amp; (a+(n-1)d) &amp; + &amp; (a+(n-2)d) &amp; + &amp;  \dots &amp; + &amp; a\\
 \implies \\
 2S_n &amp; = &amp; (2a+(n-1)d) &amp; + &amp; (2a+(n-1)d) &amp; + &amp; \dots &amp; + &amp; (2a+(n-1)d)\\
 &amp; = &amp; n(2a+(n-1)d)
-\end{array}
-\]</span>
+\end{array}\]</span>
 The “<span class="math inline">\(\implies\)</span>” step is by summing the two previous equations “vertically”. The last step holds as there are <span class="math inline">\(n\)</span> summands, each of them equal to <span class="math inline">\(2a+(n-1)d\)</span>).</p>
 <p>Hence <span class="math inline">\(S_n = \frac{n}{2}(2a+(n-1)d)\)</span>.</p>
 <div class="example">
@@ -284,13 +276,9 @@ The “<span class="math inline">\(\implies\)</span>” step is by summing the t
 <div id="geometric-progressions" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> Geometric progressions<a href="arithmetic-and-geometric-progressions.html#geometric-progressions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A <strong>geometric progression (GP)</strong> is a (finite or infinite) sequence of numbers
-<span class="math display">\[
-a_1,a_2,a_3,\dots
-\]</span>
+<span class="math display">\[a_1,a_2,a_3,\dots\]</span>
 such that the quotient of the consecutive terms is a constant (also called the <strong>common ratio</strong>) <span class="math inline">\(r\)</span>. In other words,
-<span class="math display">\[
-r = \frac{a_2}{a_1} = \frac{a_3}{a_2} = \frac{a_4}{a_3} = \dots
-\]</span>
+<span class="math display">\[r = \frac{a_2}{a_1} = \frac{a_3}{a_2} = \frac{a_4}{a_3} = \dots\]</span>
 For example:</p>
 <ul>
 <li><span class="math inline">\(1,\frac12,\frac14,\frac18,\dots\)</span> (<span class="math inline">\(r=\frac12\)</span>)</li>
@@ -301,9 +289,7 @@ For example:</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-75" class="theorem"><strong>Theorem 11.2  </strong></span>The sum <span class="math inline">\(S_n\)</span> of the first <span class="math inline">\(n\)</span> terms of a GP with the first
 term <span class="math inline">\(a\)</span> and the common ratio <span class="math inline">\(r\)</span> is given by
-<span class="math display">\[
-\boxed{S_n = a\cdot \frac{1-r^n}{1-r}}
-\]</span>
+<span class="math display">\[\boxed{S_n = a\cdot \frac{1-r^n}{1-r}}\]</span>
 In particular, if <span class="math inline">\(-1&lt;r&lt;1\)</span>, then the sum <span class="math inline">\(S_\infty\)</span> of all (infinitely many) terms is <span class="math inline">\(S_\infty = a\cdot\dfrac{1}{1-r}\)</span>. (The sum of an infinite GP is also called <strong>geometric series</strong>.)</p>
 </div>
 <p><em>Proof (non–examinable):</em>

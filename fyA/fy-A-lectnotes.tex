@@ -50,9 +50,6 @@
 \makeatletter
 \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
 \makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \newsavebox\pandoc@box
@@ -99,7 +96,7 @@
 
 \title{GENG0001 Mathematics A lecture notes}
 \author{Ján Špakula}
-\date{2026-09-25}
+\date{2026-10-15}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -974,9 +971,7 @@ x+\tfrac{b}{2a} &= \frac{\pm\sqrt{b^2-4ac}}{2a}\\ %\quad\text{(when $b^2-4ac\geq
 \end{align*}
 The last step is only valid when \(b^2-4ac\geq 0\)!\\
 One should be careful when taking square roots on both sides of an equation --- which is why there is ``\(\pm\)''.
-\[
-x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}.
-\]
+\[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}.\]
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -2010,7 +2005,7 @@ t&=-10\,\mathrm{k}\Omega\cdot 20\,\mu\mathrm{F}\cdot \ln\left(1-\frac{100\,\math
 
 \begin{center}\includegraphics{t07-circuit} \end{center}
 
-The switch is moved from contact A to contact B with the result that the current \(i\) decreases according to the equation \(i=I\left(1-e^{-\frac{Rt}{L}}\right)\). Draw the graph for this decrease plotting \(i\) against \(t\) for a time of \(300\,\mathrm{ms}\) after the switch is moved. From the plot estimate the current flowing \(158\,\mathrm{ms}\) after switching.
+Suppose that the inductor is fully charged. The switch is then moved from contact A to contact B, with the result that the current \(i\) decreases according to the equation \(i=I\cdot e^{-\frac{Rt}{L}}\). Draw the graph for this decrease plotting \(i\) against \(t\) for a time of \(300\,\mathrm{ms}\) after the switch is moved. From the plot estimate the current flowing \(158\,\mathrm{ms}\) after switching.
 
 \emph{Solutions:}
 \textbf{1.} (i) \(1151\); (ii) \(48.2\); (iii) \(442\); (iv) \(33.97\); (v) \(58.7\);
@@ -2029,7 +2024,7 @@ The switch is moved from contact A to contact B with the result that the current
 \section{Polynomials and long division}\label{polynomials-and-long-division}
 
 A \textbf{polynomial} is an expression of the form
-\[p(x) = a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1 x+a_0, \]
+\[p(x) = a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1 x+a_0,\]
 where \(a_0,\dots,a_n\) are constants, also called \textbf{coefficients}. Its \textbf{degree} (or \textbf{order}) is the highest occurring power of \(x\); in other words if \(a_n\neq 0\), then the degree of \(p(x)\) above is \(n\).
 
 The low--degree polynomials have special names:
@@ -2059,8 +2054,7 @@ also called
 }
 
 Recall long division of numbers:
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
       205&\text{ r. }18 \\[-3pt]
    21 \overline{){4323}}\kern-.2ex \\[-3pt]
       \underline{-42}\phantom{m}\\[-3pt]
@@ -2075,24 +2069,16 @@ Recall long division of numbers:
       123 \\[-3pt]
       \underline{-105}\\[-3pt]
       18
-    \end{array}
-\]
+    \end{array}\]
 We can write this as
-\[
-\frac{4323}{21} = 205+\frac{18}{21}\quad\quad\text{or}\quad\quad
-4323 = 205\cdot 21 + 18.
-\]
+\[\frac{4323}{21} = 205+\frac{18}{21}\quad\quad\text{or}\quad\quad
+4323 = 205\cdot 21 + 18.\]
 In general:
-\[
-\frac{\text{dividend}}{\text{divisor}} = \text{quotient} + \frac{\text{remainder}}{\text{divisor}}
-\]
+\[\frac{\text{dividend}}{\text{divisor}} = \text{quotient} + \frac{\text{remainder}}{\text{divisor}}\]
 or
-\[
-\text{dividend} = \text{quotient}\cdot\text{divisor} + \text{remainder}.
-\]
+\[\text{dividend} = \text{quotient}\cdot\text{divisor} + \text{remainder}.\]
 Long division of polynomials works very similarly:
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 (x^4-x^3+x^2-3x+5)& / \,\,\, (x-1) = x^3+x-2\quad\text{r. }3\\
 \underline{-(x^4 -x^3)}\phantom{+x^2-3x+5)}&\\
 0+x^2-3x\phantom{+5x)}\\
@@ -2100,12 +2086,9 @@ Long division of polynomials works very similarly:
 -2x+5\phantom{m}\\
 \underline{-(-2x+2)}\phantom{)}\\
 3\phantom{m}
-\end{array}
-\]
+\end{array}\]
 If we write \(p(x):=x^4-x^3+x^2-3x+5\) (for the dividend) and \(q(x):=x^3+x-2\) (for the quotient), we can write
-\[
-p(x) = q(x)\cdot(x-1) + 3.
-\]
+\[p(x) = q(x)\cdot(x-1) + 3.\]
 This holds for any \(x\), so in particular for \(x=1\) we get \(p(1) = q(1)\cdot0+3=3\).
 
 \begin{theorem}[Remainder Theorem]
@@ -2122,8 +2105,7 @@ The remainder is \(p(2) = 5\cdot8+2\cdot4-6=42\).
 
 \begin{example}
 Divide \(3x^3-16x^2+15x+18\) by \(x-3\):
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 (3x^3-16x^2+15x+18) & / \,\,\,(x-3) = 3x^2-7x-6\\
 \underline{-(3x^3-9x^2)}\phantom{+15x+18x}\\
 -7x^2 + 15x\phantom{+18x)}\\
@@ -2131,8 +2113,7 @@ Divide \(3x^3-16x^2+15x+18\) by \(x-3\):
 -6x+18\phantom{x}\\
 \underline{-(-6x+18)}\\
 0\phantom{x}
-\end{array}
-\]
+\end{array}\]
 Thus \(3x^3-16x^2+15x+18 = (3x^2-7x-6)(x-3)\).\\
 Using a quadratic formula or by inspection, we can further factorise the quadratic as \(3x^2-7x-6 = (x-3)(3x+2)\).\\
 Altogether, we obtain complete factorisation
@@ -2163,8 +2144,7 @@ Factorise \(p(x)=x^4-x^3+x^2-3x+2\).
 
 \begin{solution}
 \(p(1)=1-1+1-3+2=0\) \(\implies\) \(x-1\) is a factor of \(p(x)\). Next, we perform long division:
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 (x^4-x^3+x^2-3x+2) & / \,\,\,(x-1) = x^3+x-2 =: q(x)\\
 \underline{-(x^4-x^3)}\phantom{+x^2-3x+2x}\\
 0 + x^2-3x\phantom{+2m}\\
@@ -2172,12 +2152,10 @@ Factorise \(p(x)=x^4-x^3+x^2-3x+2\).
 -2x+2\phantom{x}\\
 \underline{-(-2x+2)}\\
 0\phantom{x}
-\end{array}
-\]
+\end{array}\]
 Next, we now look for a root of \(q(x)\).\\
 \(q(1) = 1+1-2=0\) \(\implies\) \(x-1\) is a factor of \(q(x)\). We continue by performing long division:
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 (x^3\phantom{-xm}+x-2) & / \,\,\,(x-1) = x^2+x+1\\
 \underline{-(x^3-x^2)}\phantom{x+2xx}\\
 0 + x^2+x\phantom{+2m}\\
@@ -2185,22 +2163,19 @@ Next, we now look for a root of \(q(x)\).\\
  2x-2\phantom{x}\\
 \underline{-(2x-2)}\\
 0\phantom{x}
-\end{array}
-\]
+\end{array}\]
 We now try to continue by further factorising \(x^2+x+1\). However the discriminant of this quadratic is \(1-4\cdot2=-7<0\), so it can not be further factorised.\\
 \emph{Answer:} \(p(x)=(x-1)^2(x^2+x+1)\).
 \end{solution}
 
 \begin{example}
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 (x^3+5x^2-7x+3) & / \,\,\,(x^2+2x+1) = x+3\quad\text{ rem. }-14x\\
 \underline{-(x^3+2x^2+\phantom{7}x)}\phantom{+3)}\\
 3x^2-8x+3\phantom{)}\\
 \underline{-(3x^2+6x+3)}\\
 -14x\phantom{+3m}
-\end{array}
-\]
+\end{array}\]
 \end{example}
 
 \begin{example}
@@ -2254,8 +2229,7 @@ The polynomial \(p(x)=6x^3-23x^2+ax+b\) leaves remainder \(11\) when divided by 
   \(p(2)=6\cdot8 - 23\cdot 4+12\cdot2+20=48-92+24+20=0\), so \(x-2\) is a factor of \(p(x)\) by Remainder Theorem.
 \item
   We start by long division by the factor we already know from (iii).
-  \[
-  \begin{array}{rl}
+  \[\begin{array}{rl}
   (6x^3-23x^2+12x+20) & / \,\,\,(x-2) = 6x^2-11x-10\\
   \underline{-(6x^3-12x^2)}\phantom{+12x+20)}\\
   -11x^2+12x\phantom{+20m}\\
@@ -2263,8 +2237,7 @@ The polynomial \(p(x)=6x^3-23x^2+ax+b\) leaves remainder \(11\) when divided by 
   -10x+20\phantom{)}\\
   \underline{-(-10x+20)}\\
   0\phantom{)}
-  \end{array}
-  \]
+  \end{array}\]
   By inspection: \(6x^2-11x-10=(2x-5)(3x+2)\).
   So altogether \(p(x)=(x-2)(2x-5)(3x+2)\).
 \item
@@ -2410,9 +2383,7 @@ A \textbf{rational function} is a quotient of two polynomials, i.e.~an expressio
 For example: \(\dfrac{5x+7}{3x^2+5}\), \(\dfrac{5x^2-4x+3}{x-7}\), \ldots{}
 
 Long division of polynomials allows us to write \(\dfrac{p_1(x)}{p_2(x)}\) in the form
-\[
-\frac{p_1(x)}{p_2(x)} = q(x) + \frac{r(x)}{p_2(x)},
-\]
+\[\frac{p_1(x)}{p_2(x)} = q(x) + \frac{r(x)}{p_2(x)},\]
 where \(q(x)\) and \(r(x)\) are polynomials and the degree of \(r(x)\) is less than
 the degree of \(p_2(x)\).
 
@@ -2450,9 +2421,7 @@ Split \(\dfrac{-4x+15}{(x+2)(x-1)}\) into partial fractions.
 First, note that the degree of the numerator is less than the degree of the denominator, so we do not need to perform any long division.
 
 Second, the denominator is already factored as much as possible (into linear factors). We see that it is ``Type I'', so we want to find \(A\) and \(B\) such that
-\[
-\frac{-4x+15}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}
-\]
+\[\frac{-4x+15}{(x+2)(x-1)} = \frac{A}{x+2}+\frac{B}{x-1}\]
 Multiplying both sides by \((x+2)(x-1)\), we arrive at\\
 \(-4x+15 = A(x-1)+B(x+2)\).\\
 Let \(x=1\). Then \(-4+15 = A\cdot 0+B\cdot 3\) \(\implies\) \(B=\frac{11}{3}\).\\
@@ -2467,9 +2436,7 @@ Split \(\dfrac{5x^2-3x+2}{(x-3)^2(x+2)}\) into partial fractions.
 
 \begin{solution}
 (Type III.) We want to find \(A,B,C\) such that
-\[
-\frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.
-\]
+\[\frac{5x^2-3x+2}{(x-3)^2(x+2)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{C}{x+2}.\]
 \(\iff\) \(5x^2-3x+2 = A(x-3)(x+2)+B(x+2)+C(x-3)^2\).\\
 Let \(x=-2\). Then \(5\cdot 4-3(-2)+2 = C\cdot(-5)^2\) \(\implies\) \(C=\frac{28}{25}\).\\
 Let \(x=3\). Then \(5\cdot 9-3\cdot 3+2 = B\cdot 5\) \(\implies\) \(B=\frac{38}{5}\).\\
@@ -2555,13 +2522,9 @@ Express the following fractions in terms of partial fractions:
 \section{Arithmetic progressions}\label{arithmetic-progressions}
 
 An \textbf{arithmetic progression (AP)} is a (finite or infinite) sequence of numbers
-\[
-a_1,a_2,a_3,\dots
-\]
+\[a_1,a_2,a_3,\dots\]
 such that the difference between consecutive terms is a constant (also called the \textbf{common difference}) \(d\). In other words,
-\[
-d=a_2-a_1=a_3-a_2=a_4-a_3=\dots.
-\]
+\[d=a_2-a_1=a_3-a_2=a_4-a_3=\dots.\]
 For example:
 
 \begin{itemize}
@@ -2582,21 +2545,17 @@ In general: \fbox{\(a_n = a+(n-1)d\)} where \(a=a_1\).
 
 \begin{theorem}
 The sum \(S_n\) of the first \(n\) terms of an AP with the first term \(a\) and the common difference \(d\) is given by
-\[
-\boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}
-\]
+\[\boxed{S_n=\frac{n}2\left(2a+(n-1)d\right)}\]
 \end{theorem}
 
 \emph{Proof (non-examinable):}
-\[
-\begin{array}{ccccccccc}
+\[\begin{array}{ccccccccc}
 S_n &=& a & + & (a+d) & + & \dots & + & (a+(n-1)d) \\
 S_n &=& (a+(n-1)d) & + & (a+(n-2)d) & + &  \dots & + & a\\
 \implies \\
 2S_n & = & (2a+(n-1)d) & + & (2a+(n-1)d) & + & \dots & + & (2a+(n-1)d)\\
 & = & n(2a+(n-1)d)
-\end{array}
-\]
+\end{array}\]
 The ``\(\implies\)'' step is by summing the two previous equations ``vertically''. The last step holds as there are \(n\) summands, each of them equal to \(2a+(n-1)d\)).
 
 Hence \(S_n = \frac{n}{2}(2a+(n-1)d)\).
@@ -2637,13 +2596,9 @@ How many terms of the AP \(3,6,9,\dots\) must be taken so that their sum is \(13
 \section{Geometric progressions}\label{geometric-progressions}
 
 A \textbf{geometric progression (GP)} is a (finite or infinite) sequence of numbers
-\[
-a_1,a_2,a_3,\dots
-\]
+\[a_1,a_2,a_3,\dots\]
 such that the quotient of the consecutive terms is a constant (also called the \textbf{common ratio}) \(r\). In other words,
-\[
-r = \frac{a_2}{a_1} = \frac{a_3}{a_2} = \frac{a_4}{a_3} = \dots
-\]
+\[r = \frac{a_2}{a_1} = \frac{a_3}{a_2} = \frac{a_4}{a_3} = \dots\]
 For example:
 
 \begin{itemize}
@@ -2661,9 +2616,7 @@ In general: \fbox{\(a_n=a\cdot r^{n-1}\)} where \(a=a_1\).
 \begin{theorem}
 The sum \(S_n\) of the first \(n\) terms of a GP with the first
 term \(a\) and the common ratio \(r\) is given by
-\[
-\boxed{S_n = a\cdot \frac{1-r^n}{1-r}}
-\]
+\[\boxed{S_n = a\cdot \frac{1-r^n}{1-r}}\]
 In particular, if \(-1<r<1\), then the sum \(S_\infty\) of all (infinitely many) terms is \(S_\infty = a\cdot\dfrac{1}{1-r}\). (The sum of an infinite GP is also called \textbf{geometric series}.)
 \end{theorem}
 
@@ -2763,9 +2716,7 @@ First few:
 \end{itemize}
 
 In general:
-\[
-(a+b)^n = C_{n,0}\cdot a^n + C_{n,1}\cdot a^{n-1}b + C_{n,2}\cdot a^{n-2}b^2 + \dots + C_{n,n-1}\cdot ab^{n-1} + C_{n,n}\cdot b^n
-\]
+\[(a+b)^n = C_{n,0}\cdot a^n + C_{n,1}\cdot a^{n-1}b + C_{n,2}\cdot a^{n-2}b^2 + \dots + C_{n,n-1}\cdot ab^{n-1} + C_{n,n}\cdot b^n\]
 for some coefficients \(C_{n,0},C_{n,1},\dots,C_{n,n}\). ``Extrapolating'' from the examples above, we can ``guess'':
 \begin{align*}
     C_{n,0} &= C_{n,n} = 1\\
@@ -2774,8 +2725,7 @@ for some coefficients \(C_{n,0},C_{n,1},\dots,C_{n,n}\). ``Extrapolating'' from 
 \end{align*}
 
 The two rules: \(C_{n,0}=C_{n,n}=1\) and \(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\) are the building laws for \textbf{Pascal's triangle}:
-\[
-\begin{array}{cccccccccccccc}
+\[\begin{array}{cccccccccccccc}
     &  &  &  &  &  &  &1 &  &  &  &  &  &   \\
     &  &  &  &  &  &1 &  &1 &  &  &  &  &   \\
     &  &  &  &  &1 &  &2 &  &1 &  &  &  &   \\
@@ -2784,8 +2734,7 @@ The two rules: \(C_{n,0}=C_{n,n}=1\) and \(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\) are t
     &  &1 &  &5 &  &10&  &10&  &5 &  &1 &   \\
     &1 &  &6 &  &15&  &20&  &15&  &6 &  &1  \\
     &  &  &  &  &  &  &\vdots&  &  &  &  &  &   \\
-\end{array}
-\]
+\end{array}\]
 ::: \{.example\}
 \((a+b)^6 = a^6 + 6 a^5b + 15 a^4b^2 + 20 a^3b^3 + 15 a^2b^4 + 6 ab^5 + b^6\).
 :::
@@ -2825,13 +2774,11 @@ and declare that \(0!=1\).
 That \(C_{n,0}=C_{n,n}=1\) is clear.
 
 Now checking that \(C_{n,k}=C_{n-1,k-1}+C_{n-1,k}\):
-\[
-\begin{matrix}
+\[\begin{matrix}
     \dfrac{n!}{k!(n-k)!} &\stackrel{?}{=} & \dfrac{(n-1)!}{(k-1)!(n-k)!} & + & \dfrac{(n-1)!}{k!(n-1-k)!}\\
                         & & = & & = \\
                         & & \dfrac{k}{n}\cdot\dfrac{n!}{k!(n-k)!} & + & \dfrac{n-k}{n}\cdot \dfrac{n!}{k!(n-k)!}
-\end{matrix}
-\]
+\end{matrix}\]
 This finishes the proof.
 
 Let us analyse the formula: observe that \(C_{n,k} = \dfrac{n(n-1)(n-2)\cdots(n-k+1)}{1\cdot 2\cdot 3 \cdots
@@ -3023,31 +2970,25 @@ Approximate \(\sqrt{1.05}\).
 
 Matrices and determinants provide a convenient way to solve systems of linear
 equations (in any number of variables). Consider the system
-\[
-\begin{matrix}
+\[\begin{matrix}
     4x & + & y  &   &    & = & 1\\
     x  & + & 2y & + & z  & = & 2\\
     3x & - & y  & + & 2z & = & -1
-\end{matrix}
-\]
+\end{matrix}\]
 Lined up like this, we can record the coefficients on the LHS into a ``matrix'':
-\[
-\begin{pmatrix}
+\[\begin{pmatrix}
     4 & 1 & 0\\ 1 & 2 & 1 \\ 3 & -1 & 2
-\end{pmatrix}.
-\]
+\end{pmatrix}.\]
 
 \section{Terminology}\label{terminology}
 
 More precisely, an \(m\times n\) (read ``\(m\) by \(n\)'') \textbf{matrix} \(A\) is a rectangular array of numbers, with \(m\) rows and \(n\) columns:
-\[
-A = \begin{pmatrix}
+\[A = \begin{pmatrix}
     a_{11} & a_{12} & \cdots & a_{1n}\\
     a_{21} & a_{22} & \cdots & a_{2n}\\
     \vdots & \vdots & \ddots & \vdots \\
     a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{pmatrix}.
-\]
+\end{pmatrix}.\]
 Shorthand notation: \(A=(a_{ij})_{i=1,\dots,m; j=1,\dots,n}\), or just \(A=(a_{ij})\).
 
 The number \(a_{ij}\) is called the \textbf{entry} (or \textbf{element}) of \(A\) in the \(i^\text{th}\) row and \(j^\text{th}\) column. This can be also referred to as \textbf{\((i,j)\)-entry}.
@@ -3065,14 +3006,12 @@ If every entry of a matrix is \(0\), we call that matrix a \textbf{zero matrix}.
 \end{example}
 
 The \textbf{identity} or \textbf{unit matrix}, denoted \(I_n\), is the \(n\times n\) square matrix
-\[
-I_n = \begin{pmatrix} 1 & 0 & 0 & \cdots & 0\\
+\[I_n = \begin{pmatrix} 1 & 0 & 0 & \cdots & 0\\
     0 & 1 & 0 & \cdots & 0\\
     0 & 0 & 1 & \cdots & 0\\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     0 & 0 & 0 & \cdots & 1
-\end{pmatrix}
-\]
+\end{pmatrix}\]
 
 Two matrices \(A=(a_{ij})\) and \(B=(b_{ij})\) are said to be equal, if:
 
@@ -3117,9 +3056,7 @@ The \textbf{product} \(\lambda A\) of a number \(\lambda\) with a matrix \(A=(a_
 \subsection{Multiplying matrices}\label{multiplying-matrices}
 
 First, the product of a \(1\times n\) matrix (also called a \textbf{row vector}) with an \(n\times 1\) matrix (also called a \textbf{column vector}) is the following number (or a \(1\times 1\) matrix):
-\[
-(a_1,a_2,\dots,a_n)\cdot\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} := a_1b_1 + a_2b_2 + \dots + a_nb_n.
-\]
+\[(a_1,a_2,\dots,a_n)\cdot\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} := a_1b_1 + a_2b_2 + \dots + a_nb_n.\]
 
 \begin{example}
 \protect\hypertarget{exm:unnamed-chunk-45}{}\label{exm:unnamed-chunk-45}\((2,3)\cdot\begin{pmatrix}1\\-1\end{pmatrix}=2\cdot1+3\cdot(-1)=2-3=-1\).\\
@@ -3158,8 +3095,7 @@ First, the product of a \(1\times n\) matrix (also called a \textbf{row vector})
 The determinant of a \emph{square} matrix \(A=(a_{ij})\) is a certain number that will be explained in the following subsections --- first special cases for small matrices, and subsequently in general.
 
 We will write
-\[
-\det(A) = \det
+\[\det(A) = \det
 \begin{pmatrix}
     a_{11} & a_{12} & \cdots & a_{1n}\\
     a_{21} & a_{22} & \cdots & a_{2n}\\
@@ -3172,8 +3108,7 @@ We will write
     a_{21} & a_{22} & \cdots & a_{2n}\\
     \vdots & \vdots & \ddots & \vdots \\
     a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{vmatrix}
-\]
+\end{vmatrix}\]
 for that number.
 
 \subsection{Determinants: formulas for small sizes}\label{determinants-formulas-for-small-sizes}
@@ -3205,13 +3140,11 @@ for that number.
 
 We associate a \textbf{sign} to positions in a matrix: the
 \((i,j)\)-position gets \((-1)^{i+j}\). Schematically:
-\[
-\begin{pmatrix} + & - & + & \cdots \\
+\[\begin{pmatrix} + & - & + & \cdots \\
     - & + & - & \cdots\\
     + & - & + & \cdots\\
 \vdots & \vdots & \vdots & \ddots\end{pmatrix}
-\qquad\text{(chessboard pattern)}
-\]
+\qquad\text{(chessboard pattern)}\]
 Next, the \textbf{\((i,j)\)-minor} of a square matrix \(A=(a_{ij})\) is the determinant of the square matrix that is left when we remove the \(i^\text{th}\) row and \(j^\text{th}\) column of \(A\).
 
 \begin{example}
@@ -3236,9 +3169,7 @@ The \textbf{\((i,j)\)-cofactor} of a square matrix \(A=(a_{ij})\), denoted
 \subsection{Determinants: general definition}\label{determinants-general-definition}
 
 The \textbf{determinant} of the square matrix \(A=(a_{ij})\) is
-\[
-\det(A) = a_{11}A_{11} + a_{12}A_{12} + \dots + a_{1n}A_{1n}.
-\]
+\[\det(A) = a_{11}A_{11} + a_{12}A_{12} + \dots + a_{1n}A_{1n}.\]
 
 \begin{example}
 \protect\hypertarget{exm:unnamed-chunk-53}{}\label{exm:unnamed-chunk-53}\(\det\begin{pmatrix}a&b\\c&d\end{pmatrix} = ad + b(-c)=ad-bc\).
@@ -3349,19 +3280,14 @@ A note about \(I_n\): we use this in place of ``\(1\)'', because it is \emph{the
 
 \begin{definition}
 A square \(n\times n\) matrix \(A\) is called \textbf{invertible} if there exists an \(n\times n\) matrix \(B\) such that \(AB=BA=I_n\). (If such a matrix \(B\) exists, then it is automatically unique.) We denote this \(B\) by \(A^{-1}\). So:
-\[
-AA^{-1}=I_n=A^{-1}A.
-\]
+\[AA^{-1}=I_n=A^{-1}A.\]
 \end{definition}
 
 \begin{theorem}
 A square \(n\times n\) matrix \(A\) is invertible if and only if \(\det(A)\not=0\). In this case
-\[
-\boxed{A^{-1} = \frac{1}{\det(A)}\mathrm{adj}(A)},
-\]
+\[\boxed{A^{-1} = \frac{1}{\det(A)}\mathrm{adj}(A)},\]
 where \(\mathrm{adj}(A)\) is called the \textbf{adjoint matrix} (the transpose of the matrix of cofactors):
-\[
-\mathrm{adj}(A) = \begin{pmatrix}
+\[\mathrm{adj}(A) = \begin{pmatrix}
     A_{11} & A_{12} & \cdots & A_{1n}\\
     A_{21} & A_{22} & \cdots & A_{2n}\\
     \vdots & \vdots & \ddots & \vdots\\
@@ -3371,8 +3297,7 @@ where \(\mathrm{adj}(A)\) is called the \textbf{adjoint matrix} (the transpose o
     A_{12} & A_{22} & \cdots & A_{n2}\\
     \vdots & \vdots & \ddots & \vdots\\
     A_{1n} & A_{n2} & \cdots & A_{nn}
-\end{pmatrix}.
-\]
+\end{pmatrix}.\]
 \end{theorem}
 
 This Theorem is somewhat tricky to prove; you can learn the proof in MATH1048 Linear Algebra I module.
@@ -3384,17 +3309,13 @@ Is \(A=\begin{pmatrix}5&-3\\2&1\end{pmatrix}\) invertible? If so, determine \(A^
 \begin{solution}
 \(\det(A)=\begin{vmatrix}5&-3\\2&1\end{vmatrix}=5\cdot1+3\cdot2=11\neq0\)\\
 \(A\) is invertible, and
-\[
-A^{-1} = \frac{1}{11}\begin{pmatrix}1&-2\\3&5\end{pmatrix}^T
-= \begin{pmatrix}\frac{1}{11}&\frac{3}{11}\\\frac{-2}{11}&\frac{5}{11}\end{pmatrix}.
-\]
+\[A^{-1} = \frac{1}{11}\begin{pmatrix}1&-2\\3&5\end{pmatrix}^T
+= \begin{pmatrix}\frac{1}{11}&\frac{3}{11}\\\frac{-2}{11}&\frac{5}{11}\end{pmatrix}.\]
 \end{solution}
 
 We can write the general formula for \(2\times 2\) matrices, which you may want to remember:
-\[
-\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1} = \frac{1}{ad-bc} \begin{pmatrix}d&-b\\-c&a\end{pmatrix}\quad\quad
-\text{if}\quad ad-bc\neq0.
-\]
+\[\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1} = \frac{1}{ad-bc} \begin{pmatrix}d&-b\\-c&a\end{pmatrix}\quad\quad
+\text{if}\quad ad-bc\neq0.\]
 
 \begin{example}
 Determine the matrix \(A^{-1}\) of the matrix \(A=\begin{pmatrix}1&1&1\\1&2&1\\3&-1&2\end{pmatrix}\) if it exists.
@@ -3437,49 +3358,39 @@ Given a system of linear equations
 \end{matrix},\tag{\(\ast\)}
 \end{equation}
 let
-\[
-A =
+\[A =
 \begin{pmatrix}
     a_{11} & a_{12} & \cdots & a_{1n}\\
     \vdots & \vdots & \ddots & \vdots\\
     a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{pmatrix}
-\]
+\end{pmatrix}\]
 Then (*) is equivalent to the following matrix equation:
-\[
-A\cdot
+\[A\cdot
 \begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
 =
-\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
-\]
+\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.\]
 
 \begin{theorem}
 Consider a system of linear equations
-\[
-  A\cdot
+\[A\cdot
 \begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
 =
-\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
-\]
+\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.\]
 If \(\det(A)\not=0\), then it has exactly one solution given by:
-\[
-\begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
+\[\begin{pmatrix}x_1\\\vdots\\ x_n\end{pmatrix}
 =
 A^{-1}\cdot
-\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.
-\]
+\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}.\]
 \end{theorem}
 
 \emph{Sketch of Proof (non--examinable):}
-\[
-A\cdot A^{-1}\cdot
+\[A\cdot A^{-1}\cdot
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}
 =
 I_n
 \begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}
 =
-\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}
-\]
+\begin{pmatrix}b_1\\\vdots\\ b_n\end{pmatrix}\]
 
 \begin{example}
 Solve ~ ~ \(\begin{matrix}4x+2y &=& 17\\ 5x-y &=& 7.25\end{matrix}\) ~ ~ using the inverse matrix method.
@@ -3501,13 +3412,11 @@ Let \(A=\begin{pmatrix}4&2\\5&-1
 
 \begin{example}
 Using the inverse matrix method, solve the following system of equations for \(a,b,c\):
-\[
-\begin{matrix}
+\[\begin{matrix}
     4a&+&2b&+&c&=&12\\
      a&-& b&+&c&=&-6\\
      a&+& b&+&c&=&4.
-\end{matrix}
-\]
+\end{matrix}\]
 \end{example}
 
 \begin{solution}
@@ -4041,9 +3950,7 @@ Given any \(x\), we let \(\arctan x\) \(= \theta\), such that \(\tan\theta=x\) a
   \end{enumerate}
 \item
   Evaluate to 4 significant figures:
-  \[
-  \sec 286.08^\circ – 3.26 \,\mathrm{cosec}\, 146.72^\circ + 9 \cot 312.25^\circ.
-  \]
+  \[\sec 286.08^\circ – 3.26 \,\mathrm{cosec}\, 146.72^\circ + 9 \cot 312.25^\circ.\]
 \item
   Evaluate the following:
 
@@ -4591,21 +4498,15 @@ Given an arbitrary triangle (marked as on Figure \ref{fig:t19-basictriangle}), w
   a^2+b^2 &= c^2+2bx
   \end{align*}
   From the definition of cosine for the triangle \(CHB\), we have \(x=a\cos C\), which leads to
-  \[
-  a^2+b^2=c^2-2ab\cos C.
-  \]
+  \[a^2+b^2=c^2-2ab\cos C.\]
 \item
   (Area of the triangle)
 \end{enumerate}
 
 The area of the triangle \(ABC\) is the sum of the areas of the two right triangles \(CHB\) and \(HAB\), each of which is a half of the area of a rectangle. Thus
-\[
-\mathrm{Area} = \frac12xh + \frac12(b-x)h = \frac12bh.
-\]
+\[\mathrm{Area} = \frac12xh + \frac12(b-x)h = \frac12bh.\]
 Using the definition of sine for the triangle \(CHB\), we get \(h=a\sin C\), hence we get further
-\[
-\mathrm{Area} = \frac12ab\sin C.
-\]
+\[\mathrm{Area} = \frac12ab\sin C.\]
 Deriving Heron's formula is a little more algebraically involved. Recall from above that
 \begin{align*}
 a^2+b^2&=c^2+2bx\\
@@ -4709,9 +4610,7 @@ Second, we use sine rule to calculate \(\angle B\):
 \end{align*}
 
 Third, we calculate
-\[
-\angle C = 180^\circ - \angle A-\angle B = 180^\circ- 120^\circ - 40.9^\circ = 19.1^\circ.
-\]
+\[\angle C = 180^\circ - \angle A-\angle B = 180^\circ- 120^\circ - 40.9^\circ = 19.1^\circ.\]
 
 Finally, we can use (for example) Heron's formula to obtain the area:
 \begin{align*}
@@ -4776,8 +4675,7 @@ s &= \frac{a+b+c}{2} = \frac{10+5+5\sqrt{7}}{2}\,\mathrm{m} \approx 14.12\,\math
 \chapter{Compound and multiple angles}\label{compound-and-multiple-angles}
 
 \begin{theorem}[Compound angle formulas for sine and cosine]
-\protect\hypertarget{thm:t20-compsin}{}\label{thm:t20-compsin}\[
-\boxed{
+\protect\hypertarget{thm:t20-compsin}{}\label{thm:t20-compsin}\[\boxed{
 \begin{array}{rcl}
 \sin(\alpha+\beta) &=& \sin\alpha\cos\beta + \cos\alpha\sin\beta\\
 \cos(\alpha+\beta) &=& \cos\alpha\cos\beta - \sin\alpha\sin\beta
@@ -4940,10 +4838,8 @@ Without a calculator, evaluate \(16\cdot\sin75^\circ\cdot \cos15^\circ\).
 
 \begin{solution}
 First, we want to find \(\alpha\) and \(\beta\) so that
-\[
-75^\circ=\frac{\alpha+\beta}{2}, \quad\quad\quad
-15^\circ=\frac{\alpha-\beta}{2}.
-\]
+\[75^\circ=\frac{\alpha+\beta}{2}, \quad\quad\quad
+15^\circ=\frac{\alpha-\beta}{2}.\]
 Solving the equations, we get \(\alpha=90^\circ\) and \(\beta=60^\circ\). Hence
 \begin{align*}
 16\sin 75^\circ\cos15^\circ &= 16\sin\frac{90^\circ+60^\circ}{2}\cos\frac{90^\circ-60^\circ}{2}\\

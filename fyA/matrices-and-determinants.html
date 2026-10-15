@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-09-25" />
+<meta name="date" content="2026-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,30 +215,24 @@
 <h1><span class="header-section-number">Topic 13</span> Matrices and Determinants<a href="matrices-and-determinants.html#matrices-and-determinants" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Matrices and determinants provide a convenient way to solve systems of linear
 equations (in any number of variables). Consider the system
-<span class="math display">\[
-\begin{matrix}
+<span class="math display">\[\begin{matrix}
     4x &amp; + &amp; y  &amp;   &amp;    &amp; = &amp; 1\\
     x  &amp; + &amp; 2y &amp; + &amp; z  &amp; = &amp; 2\\
     3x &amp; - &amp; y  &amp; + &amp; 2z &amp; = &amp; -1
-\end{matrix}
-\]</span>
+\end{matrix}\]</span>
 Lined up like this, we can record the coefficients on the LHS into a “matrix”:
-<span class="math display">\[
-\begin{pmatrix}
+<span class="math display">\[\begin{pmatrix}
     4 &amp; 1 &amp; 0\\ 1 &amp; 2 &amp; 1 \\ 3 &amp; -1 &amp; 2
-\end{pmatrix}.
-\]</span></p>
+\end{pmatrix}.\]</span></p>
 <div id="terminology" class="section level2 hasAnchor" number="13.1">
 <h2><span class="header-section-number">13.1</span> Terminology<a href="matrices-and-determinants.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>More precisely, an <span class="math inline">\(m\times n\)</span> (read “<span class="math inline">\(m\)</span> by <span class="math inline">\(n\)</span>”) <strong>matrix</strong> <span class="math inline">\(A\)</span> is a rectangular array of numbers, with <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns:
-<span class="math display">\[
-A = \begin{pmatrix}
+<span class="math display">\[A = \begin{pmatrix}
     a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
     a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
     a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{pmatrix}.
-\]</span>
+\end{pmatrix}.\]</span>
 Shorthand notation: <span class="math inline">\(A=(a_{ij})_{i=1,\dots,m; j=1,\dots,n}\)</span>, or just <span class="math inline">\(A=(a_{ij})\)</span>.</p>
 <p>The number <span class="math inline">\(a_{ij}\)</span> is called the <strong>entry</strong> (or <strong>element</strong>) of <span class="math inline">\(A\)</span> in the <span class="math inline">\(i^\text{th}\)</span> row and <span class="math inline">\(j^\text{th}\)</span> column. This can be also referred to as <strong><span class="math inline">\((i,j)\)</span>-entry</strong>.</p>
 <p><em>Note:</em> in <span class="math inline">\(m\times n\)</span>, the first number (<span class="math inline">\(m\)</span>) refers to <em>rows</em>, and the second (<span class="math inline">\(n\)</span>) to <em>columns</em>.</p>
@@ -249,14 +243,12 @@ Shorthand notation: <span class="math inline">\(A=(a_{ij})_{i=1,\dots,m; j=1,\do
 <p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 13.1  </strong></span><span class="math inline">\(\begin{pmatrix} 0 &amp; 0\\ 0 &amp; 0\end{pmatrix}\)</span>, <span class="math inline">\(\begin{pmatrix} 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0\end{pmatrix}\)</span>.</p>
 </div>
 <p>The <strong>identity</strong> or <strong>unit matrix</strong>, denoted <span class="math inline">\(I_n\)</span>, is the <span class="math inline">\(n\times n\)</span> square matrix
-<span class="math display">\[
-I_n = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
+<span class="math display">\[I_n = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0\\
     0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
     0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
     \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
     0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1
-\end{pmatrix}
-\]</span></p>
+\end{pmatrix}\]</span></p>
 <p>Two matrices <span class="math inline">\(A=(a_{ij})\)</span> and <span class="math inline">\(B=(b_{ij})\)</span> are said to be equal, if:</p>
 <ol style="list-style-type: lower-alpha">
 <li>they have the same size, and</li>
@@ -287,9 +279,7 @@ In other words, transposing turns rows into columns and vice versa.</p>
 <div id="multiplying-matrices" class="section level3 hasAnchor" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> Multiplying matrices<a href="matrices-and-determinants.html#multiplying-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First, the product of a <span class="math inline">\(1\times n\)</span> matrix (also called a <strong>row vector</strong>) with an <span class="math inline">\(n\times 1\)</span> matrix (also called a <strong>column vector</strong>) is the following number (or a <span class="math inline">\(1\times 1\)</span> matrix):
-<span class="math display">\[
-(a_1,a_2,\dots,a_n)\cdot\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} := a_1b_1 + a_2b_2 + \dots + a_nb_n.
-\]</span></p>
+<span class="math display">\[(a_1,a_2,\dots,a_n)\cdot\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix} := a_1b_1 + a_2b_2 + \dots + a_nb_n.\]</span></p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 13.5  </strong></span><span class="math inline">\((2,3)\cdot\begin{pmatrix}1\\-1\end{pmatrix}=2\cdot1+3\cdot(-1)=2-3=-1\)</span>.<br />
 <span class="math inline">\((2,4,-1)\cdot \begin{pmatrix} 0\\ 2 \\ -4\end{pmatrix}\)</span>
@@ -319,8 +309,7 @@ In other words, transposing turns rows into columns and vice versa.</p>
 <h2><span class="header-section-number">13.2</span> Determinants<a href="matrices-and-determinants.html#determinants" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The determinant of a <em>square</em> matrix <span class="math inline">\(A=(a_{ij})\)</span> is a certain number that will be explained in the following subsections — first special cases for small matrices, and subsequently in general.</p>
 <p>We will write
-<span class="math display">\[
-\det(A) = \det
+<span class="math display">\[\det(A) = \det
 \begin{pmatrix}
     a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\\
     a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
@@ -333,8 +322,7 @@ In other words, transposing turns rows into columns and vice versa.</p>
     a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
     a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
-\end{vmatrix}
-\]</span>
+\end{vmatrix}\]</span>
 for that number.</p>
 <div id="determinants-formulas-for-small-sizes" class="section level3 hasAnchor" number="13.2.1">
 <h3><span class="header-section-number">13.2.1</span> Determinants: formulas for small sizes<a href="matrices-and-determinants.html#determinants-formulas-for-small-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -360,13 +348,11 @@ for that number.</p>
 <h3><span class="header-section-number">13.2.2</span> Determinants: terminology required for the general formula<a href="matrices-and-determinants.html#determinants-terminology-required-for-the-general-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We associate a <strong>sign</strong> to positions in a matrix: the
 <span class="math inline">\((i,j)\)</span>-position gets <span class="math inline">\((-1)^{i+j}\)</span>. Schematically:
-<span class="math display">\[
-\begin{pmatrix} + &amp; - &amp; + &amp; \cdots \\
+<span class="math display">\[\begin{pmatrix} + &amp; - &amp; + &amp; \cdots \\
     - &amp; + &amp; - &amp; \cdots\\
     + &amp; - &amp; + &amp; \cdots\\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots\end{pmatrix}
-\qquad\text{(chessboard pattern)}
-\]</span>
+\qquad\text{(chessboard pattern)}\]</span>
 Next, the <strong><span class="math inline">\((i,j)\)</span>-minor</strong> of a square matrix <span class="math inline">\(A=(a_{ij})\)</span> is the determinant of the square matrix that is left when we remove the <span class="math inline">\(i^\text{th}\)</span> row and <span class="math inline">\(j^\text{th}\)</span> column of <span class="math inline">\(A\)</span>.</p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 13.9  </strong></span>The <span class="math inline">\((2,2)\)</span>-minor of <span class="math inline">\(\begin{pmatrix}3&amp;4\\5&amp;6\end{pmatrix}\)</span> is <span class="math inline">\(3\)</span>.</p>
@@ -386,9 +372,7 @@ Next, the <strong><span class="math inline">\((i,j)\)</span>-minor</strong> of a
 <div id="determinants-general-definition" class="section level3 hasAnchor" number="13.2.3">
 <h3><span class="header-section-number">13.2.3</span> Determinants: general definition<a href="matrices-and-determinants.html#determinants-general-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>determinant</strong> of the square matrix <span class="math inline">\(A=(a_{ij})\)</span> is
-<span class="math display">\[
-\det(A) = a_{11}A_{11} + a_{12}A_{12} + \dots + a_{1n}A_{1n}.
-\]</span></p>
+<span class="math display">\[\det(A) = a_{11}A_{11} + a_{12}A_{12} + \dots + a_{1n}A_{1n}.\]</span></p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-53" class="example"><strong>Example 13.13  </strong></span><span class="math inline">\(\det\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix} = ad + b(-c)=ad-bc\)</span>.</p>
 </div>
