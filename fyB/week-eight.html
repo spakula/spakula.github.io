@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Week 8 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Week 8 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -439,32 +440,22 @@ Figure 8.2: mid-ordinate rule
 </div>
 <p>The area of the shaded rectangle <span class="math inline">\(h \times s\)</span>. Depending on the shape of the curve <span class="math inline">\(f\)</span> in that strip, this area of the rectangle can be smaller or greater than the actual area of the strip under the curve. But if the function <span class="math inline">\(f\)</span> does not “wiggle” too much and the width is small, the approximation is plausible.</p>
 <p>The approximate total area under the curve is the sum of the approximate areas of all the strips so
-<span class="math display">\[
-\text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h
-\]</span>
+<span class="math display">\[\text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h\]</span>
 where <span class="math inline">\(\sum h\)</span> is shorthand for the sum of all the values of <span class="math inline">\(h\)</span>.</p>
 <p>In words, the total area equals [the width of strip] times [the sum of the mid-ordinates].</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-109" class="example"><strong>Example 8.1  </strong></span>Use the mid-ordinate rule to approximate the value of the integral
-<span class="math display">\[
-\int_1^4x^2\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int_1^4x^2\,\mathrm{d}x\]</span>
 by taking 1, 2 or 3 strips. Compare the values with the correct value.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-110" class="solution"><em>Solution</em>. </span>First we know that <span class="math inline">\(\displaystyle\int_1^4 x^2\,\mathrm{d}x = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\)</span>.</p>
 <p>Using one strip, <span class="math inline">\(s=3\)</span>, the mid-point is <span class="math inline">\(x=2.5\)</span> and <span class="math inline">\(h=2.5^2 = 6.25\)</span>. Hence the mid-ordinate approximation gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.
-\]</span>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.\]</span>
 Using two strips, <span class="math inline">\(s=1.5\)</span>, the two mid-points are <span class="math inline">\(x_1=1.75\)</span> and <span class="math inline">\(x_2=3.25\)</span> with heights <span class="math inline">\(h_1=1.75^2=3.0625, h_2=3.25^2=10.5625\)</span>. Hence the mid-ordinate approximation gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
-\]</span>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.\]</span>
 Using three strips, <span class="math inline">\(s=1\)</span>, the three mid-points are <span class="math inline">\(x_1=1.5, x_2=2.5\)</span> and <span class="math inline">\(x_3=3.5\)</span> with heights <span class="math inline">\(h_1=1.5^2=2.25, h_2=2.5^2=6.25, h_3=3.5^2=12.25\)</span>. Hence the mid-ordinate approximation gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
-\]</span></p>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -484,9 +475,7 @@ Figure 8.3: trapezium rule
 </p>
 </div>
 <p>For a trapezium, the area is given by
-<span class="math display">\[
-A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})
-\]</span>
+<span class="math display">\[A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})\]</span>
 So for each strip <span class="math inline">\(\delta A =s(y_1+y_2)/2\)</span>. With <span class="math inline">\(n\)</span> strips, the total area (of the trapeziums) is
 <span class="math display">\[\begin{align*}
 A&amp; = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
@@ -494,24 +483,16 @@ A&amp; = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1}
 \end{align*}\]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-111" class="example"><strong>Example 8.2  </strong></span>Use the trapezium rule to approximate the integral
-<span class="math display">\[
-\int_1^4x^2\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int_1^4x^2\,\mathrm{d}x\]</span>
 by taking 1, 2 or 3 strips.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-112" class="solution"><em>Solution</em>. </span>If there is one strip then <span class="math inline">\(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\)</span>. Hence the trapezium rule gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
-\]</span>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5\]</span>
 With two strips then <span class="math inline">\(s=1.5,x_1=1, x_2=2.5, x_3=4, y_1=1^2=1, y_2=2.5^2=6.25, y_3=4^2=16\)</span>. Hence the trapezium rule gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
-\]</span>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125\]</span>
 With three strips then <span class="math inline">\(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4, y_3=3^2=9, y_4=4^2=16\)</span>. Hence the trapezium rule gives
-<span class="math display">\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
-\]</span></p>
+<span class="math display">\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -589,25 +570,17 @@ Notes:</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-113" class="example"><strong>Example 8.3  </strong></span>Use Simpson’s rule to approximate the integral
-<span class="math display">\[
-\int_1^4x^3\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int_1^4x^3\,\mathrm{d}x\]</span>
 by taking 2 and 4 strips.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-114" class="solution"><em>Solution</em>. </span>In our above formula we let <span class="math inline">\(n=1\)</span> and then <span class="math inline">\(2\)</span>.</p>
 <p>For <span class="math inline">\(n=1\)</span> we have <span class="math inline">\(s=3/2, x_1=1, x_2=2.5, x_3=4\)</span> with <span class="math inline">\(y_1=1, y_2=15.625, y_3=64\)</span>.
-<span class="math display">\[
-\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
-\]</span>
+<span class="math display">\[\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.\]</span>
 For <span class="math inline">\(n=2\)</span> we have <span class="math inline">\(s=0.75, x_1=1, x_2=1.75, x_3=2.5, x_4=3.25, x_5=4\)</span> with <span class="math inline">\(y_1=1, y_2=1.75^3=5.36, y_3 = 2.5^3=15.625, y_4=3.25^3=34.33, y_5=64\)</span>.
-<span class="math display">\[
-\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
-\]</span></p>
+<span class="math display">\[\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.\]</span></p>
 <p>Note that this is actually the exact value:
-<span class="math display">\[
-\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.
-\]</span></p>
+<span class="math display">\[\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -615,9 +588,7 @@ For <span class="math inline">\(n=2\)</span> we have <span class="math inline">\
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-115" class="example"><strong>Example 8.4  </strong></span>Use Simpson’s rule to approximate the integral
-<span class="math display">\[
-\int_{-1}^1e^{-x^2}\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int_{-1}^1e^{-x^2}\,\mathrm{d}x\]</span>
 by taking 6 strips.</p>
 </div>
 <div class="solution">
@@ -662,9 +633,7 @@ by taking 6 strips.</p>
 </tbody>
 </table>
 Hence using Simpson’s rule (Figure <a href="week-eight.html#fig:33-graph-ex2">8.6</a>):
-<span class="math display">\[
-\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
-\]</span>
+<span class="math display">\[\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.\]</span>
 <!--insfig
 
 -->
@@ -681,9 +650,7 @@ Figure 8.6: <span class="math inline">\(e^{-x^2}\)</span>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-117" class="example"><strong>Example 8.5  </strong></span>Use Simpson’s rule to approximate the integral
-<span class="math display">\[
-\int_0^2\frac1{1+x^2}\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int_0^2\frac1{1+x^2}\,\mathrm{d}x\]</span>
 by taking 10 strips and calculate the error involved.</p>
 </div>
 <div class="solution">
@@ -742,7 +709,7 @@ by taking 10 strips and calculate the error involved.</p>
 </tr>
 </tbody>
 </table>
-<p>Hence using Simpson’s rule
+<p>Hence using Simpson’s rule (working to 5 decimal places)
 <span class="math display">\[\begin{align*}
 \int_0^2\frac{\mathrm{d}x}{1+x^2} \sim&amp; \frac{0.2}3\left[1 + 0.2\right] +\\
 &amp;\frac{0.2}3\times 4\left[0.96154+0.73529+0.5+0.33784+0.23585\right]+\\
@@ -750,10 +717,8 @@ by taking 10 strips and calculate the error involved.</p>
 &amp;= 1.10715.
 \end{align*}\]</span>
 The actual value of the integral is
-<span class="math display">\[
-\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
-\]</span>
-and so the error is 0.000563.</p>
+<span class="math display">\[\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 \approx 1.10715 \text{ (6 s.f.)}\]</span>
+and so the calculation is exact to 5 decimal places, the error is 0. (Re-doing the calculation with more precision would show that the valued differ on 6th decimal place.)</p>
 </div>
 <div style="display:none">
 <p>

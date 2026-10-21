@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Week 6 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Week 6 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -431,44 +432,30 @@ If <span class="math inline">\(u = x^2+ 1\)</span>, then <span class="math inlin
 \end{equation}\]</span>
 (Note: It is convenient to work with <span class="math inline">\(\mathrm{d}u\)</span> and <span class="math inline">\(\mathrm{d}x\)</span> like above, and you should continue to do so; however the fact that <a href="week-six.html#eq:6-3">(6.3)</a> works is really a Theorem.)</p>
 <p>Now our function is expressed entirely in terms of <span class="math inline">\(u\)</span> and we can integrate with respect to <span class="math inline">\(u\)</span> to give</p>
-<p><span class="math display">\[
-\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.
-\]</span></p>
+<p><span class="math display">\[\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.\]</span></p>
 <div style="display:none">
-<p><span class="math display">\[
-\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}
-\]</span></p>
+<p><span class="math display">\[\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}\]</span></p>
 </div>
 <p>Finally we can substitute for <span class="math inline">\(u\)</span> to give the answer in terms of <span class="math inline">\(x\)</span></p>
-<p><span class="math display">\[
-\frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.
-\]</span></p>
+<p><span class="math display">\[\frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.\]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-71" class="example"><strong>Example 6.1  </strong></span>Evaluate <span class="math inline">\(\displaystyle\int\sin^2(x)\cos(x)\mathrm{d}x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-72" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sin(x)\)</span> so that <span class="math inline">\(\mathrm{d}u/\mathrm{d}x = \cos(x)\)</span>. Then <span class="math inline">\(\mathrm{d}x = \mathrm{d}u/\cos(x)\)</span> and so
-<span class="math display">\[
-\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.
-\]</span>
+<span class="math display">\[\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.\]</span>
 Hence
-<span class="math display">\[
-\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.
-\]</span></p>
+<span class="math display">\[\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.\]</span></p>
 </div>
 <p>This “by substitution” method is helpful in many cases. The “pattern” is this: usually we are looking for a part of the integrated expression such that the derivative of this part of the expression appears as a factor in the expression.</p>
 <p>One way this can happen is that the numerator in a fraction is the derivative of the denominator, as in the following Example.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-73" class="example"><strong>Example 6.2  </strong></span>Find
-<span class="math display">\[
-\int\frac{3x^2}{x^3-4}\mathrm{d}x.
-\]</span></p>
+<span class="math display">\[\int\frac{3x^2}{x^3-4}\mathrm{d}x.\]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-74" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = x^3-4\)</span> so that <span class="math inline">\(\mathrm{d}u = 3x^2\mathrm{d}x\)</span>. Then
-<span class="math display">\[
-\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.
-\]</span></p>
+<span class="math display">\[\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.\]</span></p>
 </div>
 <p>(For integrals of this class of examples, the result is always the natural log of the denominator.)
 </p>
@@ -477,31 +464,21 @@ Hence
 <p>Often a difficult integral may be made simpler by the use of trig identities. Knowing which identities will help when is a matter of practice.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-75" class="example"><strong>Example 6.3  </strong></span>Find
-<span class="math display">\[
-\int\sin^2(x) \mathrm{d}x.
-\]</span></p>
+<span class="math display">\[\int\sin^2(x) \mathrm{d}x.\]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-76" class="solution"><em>Solution</em>. </span>Using the trig identity for <span class="math inline">\(\cos(2x)\)</span> we see that <span class="math inline">\(\sin^2(x) = (1-\cos(2x))/2\)</span>. So
-<span class="math display">\[
-\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
-\]</span></p>
+<span class="math display">\[\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-77" class="example"><strong>Example 6.4  </strong></span>Find
-<span class="math display">\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.
-\]</span></p>
+<span class="math display">\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.\]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-78" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(x = a\sin(\theta)\)</span> then <span class="math inline">\(\mathrm{d}x = a\cos(\theta)d\theta\)</span>. So <span class="math inline">\(x^2 = a^2\sin^2(\theta)\)</span> and <span class="math inline">\(\theta = \sin^{-1}(x/a)\)</span>. Hence
-<span class="math display">\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
-\]</span>
+<span class="math display">\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.\]</span>
 Hence
-<span class="math display">\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
-\]</span></p>
+<span class="math display">\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.\]</span></p>
 </div>
 </div>
 </div>
@@ -598,9 +575,7 @@ product.</p>
 \tag{6.10}
 \end{align}\]</span>
 Now substituting <a href="week-six.html#eq:6-10">(6.10)</a> into <a href="week-six.html#eq:6-9">(6.9)</a> we can obtain the answer to the original integral
-<span class="math display">\[
-\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
-\]</span></p>
+<span class="math display">\[\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.\]</span></p>
 </div>
 
 </div>

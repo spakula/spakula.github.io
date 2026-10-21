@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Week 9 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Week 9 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -421,22 +422,14 @@ Figure 9.1: <span class="math inline">\(f(x)\)</span>
 </p>
 </div>
 <p>The mean or average value of the mid-ordinates is
-<span class="math display">\[
-\overline y=\frac{y_1+\ldots+y_n}{n}
-\]</span>
+<span class="math display">\[\overline y=\frac{y_1+\ldots+y_n}{n}\]</span>
 </p>
 <p>Multiplying the numerator and denominator by <span class="math inline">\(\delta x\)</span> gives
-<span class="math display">\[
-\overline y=\frac{y_1\delta x+\ldots+y_n\delta x}{n\delta x}
-\]</span>
+<span class="math display">\[\overline y=\frac{y_1\delta x+\ldots+y_n\delta x}{n\delta x}\]</span>
 and since <span class="math inline">\(n\delta x = b - a\)</span> we have
-<span class="math display">\[
-\overline y = \frac{\sum y\delta x}{b-a}.
-\]</span>
+<span class="math display">\[\overline y = \frac{\sum y\delta x}{b-a}.\]</span>
 When the number of strips increases indefinitely such that <span class="math inline">\(\delta x \to 0\)</span>
-<span class="math display">\[
-\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.
-\]</span>
+<span class="math display">\[\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.\]</span>
 That is, the mean value of a function between two limits is the area under the curve between those limits divided by the range of <span class="math inline">\(x\)</span> between those limits.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-119" class="example"><strong>Example 9.1  </strong></span>If the velocity <span class="math inline">\(v\)</span> in <span class="math inline">\(m/s\)</span> of a body is given by <span class="math inline">\(v=4t+3\)</span> where <span class="math inline">\(t\)</span> is in seconds, determine the mean velocity of the body from <span class="math inline">\(t=2\ \)</span>s to <span class="math inline">\(t=6\ \)</span>s.</p>
@@ -452,9 +445,7 @@ That is, the mean value of a function between two limits is the area under the c
 <p>The <a name='#rms'></a><span style="color: purple;">RMS</span> (or <a name='#root-mean-square'></a><span style="color: purple;">root mean square</span>) value is obtained by taking <span class="math inline">\(f(x)\)</span>, squaring it, finding the mean value and then taking the square root.</p>
 <p>Its importance in engineering is demonstrated when a sinusoidal function is investigated, for example when the average value of the current or voltage in a circuit is to be found. For all sine or cosine functions, the mean value over a complete cycle is zero because the curve is equally distributed above and below the <span class="math inline">\(x-\)</span>axis. However, if the ordinates are squared first, there are then no negative ordinates and an average may be found. Ammeters and voltmeters for a.c. circuits are usually calibrated to find the RMS value.</p>
 <p>To summarise, the RMS value is defined to be the number
-<span class="math display">\[
-\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.
-\]</span>
+<span class="math display">\[\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.\]</span>
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-121" class="example"><strong>Example 9.2  </strong></span>Determine the RMS value of the current in an a.c. circuit given by <span class="math inline">\(i=20+100\sin(100\pi t)\)</span> between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=0.02\)</span> s.</p>
@@ -500,9 +491,7 @@ Figure 9.3: volume of revolution
 </div>
 <p>We may sum the volumes generated by all the strips between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> to obtained the volume of the solid of revolution for the section of curve about the <span class="math inline">\(x\)</span>-axis.
 Thus the total volume <span class="math inline">\(V\)</span> is given by
-<span class="math display">\[
-V = \int_a^b\pi y^2\ \mathrm{d}x
-\]</span>
+<span class="math display">\[V = \int_a^b\pi y^2\ \mathrm{d}x\]</span>
 </p>
 <div class="example">
 <p><span id="exm:cone-example" class="example"><strong>Example 9.3  </strong></span></p>
@@ -520,13 +509,9 @@ Figure 9.4: right-circular-cone
 <div class="solution">
 <p><span id="unlabeled-div-123" class="solution"><em>Solution</em>. </span>See Figure <a href="week-nine.html#fig:43-right-circ-cone">9.4</a>.</p>
 <p>The volume of the solid of revolution for <span class="math inline">\(y = mx\)</span> is given by
-<span class="math display">\[
-V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
-\]</span>
+<span class="math display">\[V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.\]</span>
 Now <span class="math inline">\(m = R/h\)</span> and so
-<span class="math display">\[
-V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
-\]</span></p>
+<span class="math display">\[V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -536,9 +521,7 @@ V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
 <p><span id="exm:unlabeled-div-124" class="example"><strong>Example 9.4  </strong></span>A curve is given parametrically as <span class="math inline">\(x=4t^2, y = 6t-t^2\)</span>. Determine the volume generated when the figure bounded by the curve, the <span class="math inline">\(x\)</span>-axis and the ordinates corresponding to <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=2\)</span> is rotated about the <span class="math inline">\(x\)</span>-axis.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-125" class="solution"><em>Solution</em>. </span><span class="math display">\[
-V = \pi\int_a^b y^2\ \mathrm{d}x.
-\]</span>
+<p><span id="unlabeled-div-125" class="solution"><em>Solution</em>. </span><span class="math display">\[V = \pi\int_a^b y^2\ \mathrm{d}x.\]</span>
 Since <span class="math inline">\(x=4t^2\)</span> then <span class="math inline">\(\mathrm{d}x/\mathrm{d}t = 8t\)</span> and so we can write <span class="math inline">\(\mathrm{d}x = 8t\ \mathrm{d}t\)</span>. Hence
 <span class="math display">\[\begin{align*}
 V&amp; = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
@@ -550,9 +533,7 @@ V&amp; = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \
 <div id="rotation-about-the-y-axis" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Rotation about the <span class="math inline">\(y\)</span>-axis<a href="week-nine.html#rotation-about-the-y-axis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>By a similar method it can be shown that for a rotation about the <span class="math inline">\(y\)</span>-axis, the volume the solid of revolution will be
-<span class="math display">\[
-V = 2\pi\int_a^bxy\ \mathrm{d}x.
-\]</span>
+<span class="math display">\[V = 2\pi\int_a^bxy\ \mathrm{d}x.\]</span>
 This is for the volume of the solid created by rotating (about the <span class="math inline">\(y\)</span>-axis) the <em>same</em> region as before (i.e. bounded by two vertical lines <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> on the sides, and the <span class="math inline">\(x\)</span>-axis and the graph of a function <span class="math inline">\(y(x)\)</span> from the bottom and the top) is rotated about the <span class="math inline">\(y\)</span>-axis.
 </p>
 <div class="example">
@@ -569,7 +550,7 @@ V &amp;=
 &amp;= \left\{\text{by parts: }\begin{array}{ll} u=x &amp;  \mathrm{d}v=\sin(x)\,\mathrm{d}x \\ \mathrm{d}u=\ \mathrm{d}x &amp; v=-\cos(x)\end{array}\right\}\\
 &amp;=2\pi\cdot\frac{\pi^2}{9}\cdot\frac{\sqrt{3}}{2}-4\pi\left(\left[-x\cos(x)\right]_{0}^{\pi/3} - \int_{0}^{\pi/3} -\cos(x)\,\mathrm{d}x \right)\\
 &amp;=\frac{\sqrt{3}\pi^3}{9}-4\pi\cdot\left(-\frac{\pi}{3}\right)\cdot\frac{1}{2} - 4\pi\left[\sin(x)\right]_{0}^{\pi/3}\\
-&amp;=\frac{\sqrt{3}\pi^3}{9}+\frac{2\pi^2}{3}-2\sqrt{3}\pi \approx 1.664 \,\text{units}^3\text{ (3 d.p.)}
+&amp;=\frac{\sqrt{3}\pi^3}{9}+\frac{2\pi^2}{3}-2\sqrt{3}\pi \approx 1.664 \,\text{units}^3\text{ (3 s.f.)}
 \end{align*}\]</span></p>
 </div>
 </div>
@@ -577,9 +558,7 @@ V &amp;=
 <h3><span class="header-section-number">9.2.3</span> Surface area of revolution<a href="week-nine.html#surface-area-of-revolution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The surface area of revolution is the surface area of the body generated by rotating a curve about the <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> axes. For a strip as shown in the figure above, we approximate the ‘arc’ (a part of the graph of the function) by a straight line. This yields a right triangle, from which we get an approximation for the length of arc to be <span class="math inline">\(\delta l=\sqrt{1+(\mathrm{d}y/\mathrm{d}x)^2}\cdot\delta x\)</span>.</p>
 <p>If the strip is rotated about the <span class="math inline">\(x\)</span>-axis, the surface area generated will be approximately <span class="math inline">\(\delta S = 2\pi y\delta l\)</span>. The surface area of the whole solid generated by rotating the curve around the <span class="math inline">\(x\)</span>-axis between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span> is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
-<span class="math display">\[
-S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
-\]</span>
+<span class="math display">\[S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.\]</span>
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-128" class="example"><strong>Example 9.6  </strong></span>Consider the cone from Example <a href="week-nine.html#exm:cone-example">9.3</a>.
@@ -595,7 +574,7 @@ S&amp;= 2\pi\int_0^hy\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \m
 where <span class="math inline">\(l\)</span> is the length of the inclined line.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-130" class="example"><strong>Example 9.7  </strong></span>Let <span class="math inline">\(f(x)=\sqrt{x}\)</span> over the interval <span class="math inline">\([1,4]\)</span>. Find the surface area of the surface generated by revolving the graph of <span class="math inline">\(f\)</span> around the <span class="math inline">\(x\)</span>-axis. Round the answer to three decimal places.</p>
+<p><span id="exm:unlabeled-div-130" class="example"><strong>Example 9.7  </strong></span>Let <span class="math inline">\(f(x)=\sqrt{x}\)</span> over the interval <span class="math inline">\([1,4]\)</span>. Find the surface area of the surface generated by revolving the graph of <span class="math inline">\(f\)</span> around the <span class="math inline">\(x\)</span>-axis. Round the answer to five significant figures.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-131" class="solution"><em>Solution</em>. </span>As <span class="math inline">\(y=\sqrt{x}\)</span>, we have <span class="math inline">\(\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{2\sqrt{x}}\)</span>. Thus
@@ -606,7 +585,7 @@ S&amp;=2\pi\int_{1}^{4} y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}
 = 2\pi\int_{1}^{4} \left(x+\frac{1}{4}\right)^{1/2}\,\mathrm{d}x\\
 &amp;= 2\pi \left[\frac{2}{3}\cdot\left(x+\frac{1}{4}\right)^{3/2} \right]_{1}^{4}
 = \frac{\pi}{6}\left(17\sqrt{17} - 5\sqrt{5}\right)
-\approx 30.846 \text{ (3 d.p.)}
+\approx 30.846 \text{ (5 s.f.)}
 \end{align*}\]</span></p>
 </div>
 <div style="display:none">

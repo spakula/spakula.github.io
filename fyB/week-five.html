@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Week 5 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Week 5 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -413,51 +414,33 @@
 <h2><span class="header-section-number">5.1</span> Partial Differentiation<a href="week-five.html#partial-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If an expression is a function of two variables then it can be differentiated with respect to either of the variables.</p>
 <p>For example, suppose
-<span class="math display">\[
-z(x,y) = x^2+xy+y^2.
-\]</span>
+<span class="math display">\[z(x,y) = x^2+xy+y^2.\]</span>
 If we fix the value of the variable <span class="math inline">\(y\)</span> and consider this as a function of the variable <span class="math inline">\(x\)</span> only.</p>
 <p>For example, if <span class="math inline">\(y=2\)</span>, then
-<span class="math display">\[
-z(x,2) = x^2 + 2x + 4.
-\]</span>
+<span class="math display">\[z(x,2) = x^2 + 2x + 4.\]</span>
 We can differentiate this function with respect to <span class="math inline">\(x\)</span> to get <span class="math inline">\(\mathrm{d}z(x,2)/\mathrm{d}x = 2x+2\)</span>.</p>
 Similarly, we can fix the value of the variable <span class="math inline">\(x\)</span> and consider it as a function of <span class="math inline">\(y\)</span> only. For example if <span class="math inline">\(x=-1\)</span>, then
-<span class="math display">\[
-z(-1,y) = 1-y+y^2.
-\]</span>
+<span class="math display">\[z(-1,y) = 1-y+y^2.\]</span>
 T
 <div style="display:none">
 <p>For example, if <span class="math inline">\(y=2\)</span>, then
-<span class="math display">\[
-z(x,2) = \phantom{x^2 + 2x + 4.}
-\]</span>
+<span class="math display">\[z(x,2) = \phantom{x^2 + 2x + 4.}\]</span>
 We can differentiate this function with respect to <span class="math inline">\(x\)</span> to get <span class="math inline">\(\mathrm{d}z(x,2)/\mathrm{d}x =\)</span></p>
 <p>(Recall: <span class="math inline">\(z(x,y) = x^2+xy+y^2\)</span>.)</p>
 <p>Similarly, we can fix the value of the variable <span class="math inline">\(x\)</span> and consider it as a function of <span class="math inline">\(y\)</span> only. For example if <span class="math inline">\(x=-1\)</span>, then
-<span class="math display">\[
-z(-1,y) =
-\]</span>
+<span class="math display">\[z(-1,y) =\]</span>
 The derivative of this with respect to <span class="math inline">\(y\)</span> is then <span class="math inline">\(\mathrm{d}z(-1,y)/\mathrm{d}y =\)</span></p>
 </div>
 <p>In general, if we think of <span class="math inline">\(y\)</span> as being a fixed constant (not worrying about the actual value), then we can differentiate <span class="math inline">\(z\)</span> with respect to <span class="math inline">\(x\)</span>. We use the following notation
-<span class="math display">\[
-\frac{\partial z}{\partial x} = 2x+y.
-\]</span>
+<span class="math display">\[\frac{\partial z}{\partial x} = 2x+y.\]</span>
 In the same way, thinking of <span class="math inline">\(x\)</span> as being a fixed constant and differentiating with respect to <span class="math inline">\(y\)</span> we write
-<span class="math display">\[
-\frac{\partial z}{\partial y} = x + 2y.
-\]</span></p>
+<span class="math display">\[\frac{\partial z}{\partial y} = x + 2y.\]</span></p>
 <div style="display:none">
 <p>(Recall: <span class="math inline">\(z(x,y) = x^2+xy+y^2\)</span>.)</p>
 <p>In general, if we think of <span class="math inline">\(y\)</span> as being a fixed constant (not worrying about the actual value), then we can differentiate <span class="math inline">\(z\)</span> with respect to <span class="math inline">\(x\)</span>. We use the following notation
-<span class="math display">\[
-\frac{\partial z}{\partial x} = \phantom{2x+y.}
-\]</span>
+<span class="math display">\[\frac{\partial z}{\partial x} = \phantom{2x+y.}\]</span>
 In the same way, thinking of <span class="math inline">\(x\)</span> as being a fixed constant and differentiating with respect to <span class="math inline">\(y\)</span> we write
-<span class="math display">\[
-\frac{\partial z}{\partial y} = \phantom{x + 2y.}
-\]</span></p>
+<span class="math display">\[\frac{\partial z}{\partial y} = \phantom{x + 2y.}\]</span></p>
 </div>
 <p>Consider the expression for the volume of a cylinder, <span class="math inline">\(V = \pi r^2h\)</span> where <span class="math inline">\(r\)</span> is the radius of the cylinder and <span class="math inline">\(h\)</span> is its height. (Figure <a href="week-five.html#fig:21-cylinder">5.1</a>)</p>
 <!--insfig
@@ -489,44 +472,28 @@ Figure 5.1: cylinder
 <p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.1  </strong></span>From the function <span class="math inline">\(z=x^3y^2\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-53" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{\partial z}{\partial x} = 3x^2y^2,\;\frac{\partial z}{\partial y} = 2yx^3.
-\]</span></p>
+<p><span id="unlabeled-div-53" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{\partial z}{\partial x} = 3x^2y^2,\;\frac{\partial z}{\partial y} = 2yx^3.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-54" class="example"><strong>Example 5.2  </strong></span>From the function <span class="math inline">\(z=3x^5-5y^3+6\)</span>, determine <span class="math inline">\(\partial z/\partial x\)</span> and <span class="math inline">\(\partial z/\partial y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-55" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{\partial z}{\partial x} = 15x^4,\;\frac{\partial z}{\partial y} = -15y^2.
-\]</span></p>
+<p><span id="unlabeled-div-55" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{\partial z}{\partial x} = 15x^4,\;\frac{\partial z}{\partial y} = -15y^2.\]</span></p>
 </div>
 <div id="successive-partial-derivatives" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Successive partial derivatives<a href="week-five.html#successive-partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If a second partial derivative is required and there are, say, two variables, then a second derivative may be made with each of these variables.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-56" class="example"><strong>Example 5.3  </strong></span>Calculate all possible “second partial derivatives” of
-<span class="math display">\[
-z=3x^2+2x^2y^2+3y^2.
-\]</span></p>
+<span class="math display">\[z=3x^2+2x^2y^2+3y^2.\]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-57" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{\partial z}{\partial x} = 6x+4xy^2,\;\frac{\partial z}{\partial y} = 4x^2y+6y.
-\]</span>
+<p><span id="unlabeled-div-57" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{\partial z}{\partial x} = 6x+4xy^2,\;\frac{\partial z}{\partial y} = 4x^2y+6y.\]</span>
 So
-<span class="math display">\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = 6+4y^2
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = 6+4x^2
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = 8xy
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = 8xy
-\]</span></p>
+<span class="math display">\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = 6+4y^2\]</span>
+<span class="math display">\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = 6+4x^2\]</span>
+<span class="math display">\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = 8xy\]</span>
+<span class="math display">\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = 8xy\]</span></p>
 </div>
 <div style="display:none">
 <p>(Recall: <span class="math inline">\(z=3x^2+2x^2y^2+3y^2\)</span>.)
@@ -534,27 +501,15 @@ So
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-58" class="example"><strong>Example 5.4  </strong></span>Calculate all possible “second partial derivatives” of
-<span class="math display">\[
-z = x\cos(y)-y\cos(x)
-\]</span></p>
+<span class="math display">\[z = x\cos(y)-y\cos(x)\]</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-59" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{\partial z}{\partial x} = \cos(y)+y\sin(x),\;\frac{\partial z}{\partial y} = -x\sin(y)-\cos(x).
-\]</span>
+<p><span id="unlabeled-div-59" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{\partial z}{\partial x} = \cos(y)+y\sin(x),\;\frac{\partial z}{\partial y} = -x\sin(y)-\cos(x).\]</span>
 So
-<span class="math display">\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = y\cos(x)
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = -x\cos(y)
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = -\sin(y)+\sin(x)
-\]</span>
-<span class="math display">\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = -\sin(y)+\sin(x)
-\]</span></p>
+<span class="math display">\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = y\cos(x)\]</span>
+<span class="math display">\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = -x\cos(y)\]</span>
+<span class="math display">\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = -\sin(y)+\sin(x)\]</span>
+<span class="math display">\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = -\sin(y)+\sin(x)\]</span></p>
 </div>
 </div>
 </div>
@@ -566,13 +521,9 @@ So
 <div id="integration-by-rule" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Integration by rule<a href="week-five.html#integration-by-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 2x\)</span>. Then the instruction “integrate this function with respect to <span class="math inline">\(x\)</span>” is written
-<span class="math display">\[
-\int 2x \,\mathrm{d}x
-\]</span>
+<span class="math display">\[\int 2x \,\mathrm{d}x\]</span>
 We know that to get
-<span class="math display">\[
-\frac{\mathrm{d}y}{\mathrm{d}x} = 2x
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}y}{\mathrm{d}x} = 2x\]</span>
 we could have started with <span class="math inline">\(y = x^2\)</span> so this is one possible solution.</p>
 <p>However, we could also have started with <span class="math inline">\(y = x^2 + 5\)</span> or <span class="math inline">\(y = x^2 + 1\)</span> or <span class="math inline">\(y = x^2 + 25\)</span> or <span class="math inline">\(y = x^2 + 1245\)</span>.</p>
 <div style="display:none">
@@ -580,9 +531,7 @@ we could have started with <span class="math inline">\(y = x^2\)</span> so this 
 </p>
 </div>
 <p>We can’t tell which because all information about the any constant value is lost when we differentiate. To make this clear we write
-<span class="math display">\[
-\int 2x \,\mathrm{d}x = x^2 + c
-\]</span>
+<span class="math display">\[\int 2x \,\mathrm{d}x = x^2 + c\]</span>
 where “<span class="math inline">\(c\)</span>” represents an arbitrary constant.</p>
 <p>General rules for simple functions follow from the differentiation rules:</p>
 <p>For differentiation, we had that if <span class="math inline">\(y = x^n\)</span>, then <span class="math inline">\(\mathrm{d}y/\mathrm{d} x= nx^{n-1}\)</span>.</p>
@@ -617,9 +566,7 @@ where “<span class="math inline">\(c\)</span>” represents an arbitrary const
 = \frac{-24x^2+6x-5}{3x^3} + C,
 \end{align*}\]</span></li>
 <li><span class="math inline">\(y = x^{3/5}(2x-\sqrt{x}) = 2x^{8/5}-x^{11/10}\)</span> and so
-<span class="math display">\[
-\int y \,\mathrm{d}x = \int 2x^{8/5}\,\mathrm{d}x-\int x^{11/10}\,\mathrm{d}x = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.
-\]</span></li>
+<span class="math display">\[\int y \,\mathrm{d}x = \int 2x^{8/5}\,\mathrm{d}x-\int x^{11/10}\,\mathrm{d}x = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.\]</span></li>
 </ol>
 </div>
 <div style="display:none">
@@ -639,17 +586,11 @@ of finding a function which differentiates to the given one.</p>
 When <span class="math inline">\(x = 1, y = 3\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-63" class="solution"><em>Solution</em>. </span><span class="math display">\[
-y = \int(4x+5)\,\mathrm{d}x = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c
-\]</span>
+<p><span id="unlabeled-div-63" class="solution"><em>Solution</em>. </span><span class="math display">\[y = \int(4x+5)\,\mathrm{d}x = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c\]</span>
 Now we use the condition that when <span class="math inline">\(x=1\)</span> then <span class="math inline">\(y=3\)</span> so that
-<span class="math display">\[
-3 = 2\times 1^2 + 5\times1 + c = 7+c.
-\]</span>
+<span class="math display">\[3 = 2\times 1^2 + 5\times1 + c = 7+c.\]</span>
 Hence <span class="math inline">\(c = 3-7=-4\)</span> and therefore
-<span class="math display">\[
-y = 2x^2+5x-4.
-\]</span></p>
+<span class="math display">\[y = 2x^2+5x-4.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-64" class="example"><strong>Example 5.7  </strong></span>Find <span class="math inline">\(y\)</span>, the integral of <span class="math inline">\(3\sqrt{x} - 2/x^2\)</span>, with the correct constant, given thatthe boundary condition is:
@@ -661,9 +602,7 @@ y&amp; = \int(3\sqrt{x}-2/x^2)\,\mathrm{d}x = 3\int x^{1/2}\,\mathrm{d}x - 2\int
 &amp;= \frac{3x^{3/2}}{3/2} - \frac{2x^{-1}}{-1}+C = 2x^{3/2}+\frac2x+C.
 \end{align*}\]</span>
 Now the boundary condition tells us that when <span class="math inline">\(x=1, y = 4\)</span> and so <span class="math inline">\(4=2\times1^{3/2}+2/1+C = 2+2+C\)</span>. Hence <span class="math inline">\(C=0\)</span> and so
-<span class="math display">\[
-y = 2x^{3/2}+\frac 2x.
-\]</span></p>
+<span class="math display">\[y = 2x^{3/2}+\frac 2x.\]</span></p>
 </div>
 <div id="standard-integrals" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Standard integrals<a href="week-five.html#standard-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -686,7 +625,7 @@ y = 2x^{3/2}+\frac 2x.
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\ln(x)) = \frac 1x\)</span></td>
-<td><span class="math inline">\(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln(                     | x | )+c, x\neq0\)</span></td>
+<td><span class="math inline">\(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln( | x | )+c, x\neq0\)</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^x)\,\mathrm{d}x = e^x\)</span></td>
@@ -719,23 +658,15 @@ y = 2x^{3/2}+\frac 2x.
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-66" class="solution"><em>Solution</em>. </span>Notice that
-<span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d}x}\sin(2x) = 2\cos(2x)
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}x}\sin(2x) = 2\cos(2x)\]</span>
 and so
-<span class="math display">\[
-\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+c.
-\]</span></p>
+<span class="math display">\[\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+c.\]</span></p>
 </div>
 <p>This works in general: if
-<span class="math display">\[
-\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \frac1kg(kx) + c.
-\]</span></p>
+<span class="math display">\[\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \frac1kg(kx) + c.\]</span></p>
 <div style="display:none">
 <p>This works in general: if
-<span class="math display">\[
-\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \phantom{\frac1kg(kx) + c.}
-\]</span>
+<span class="math display">\[\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \phantom{\frac1kg(kx) + c.}\]</span>
 </p>
 </div>
 <div class="example">
@@ -748,32 +679,29 @@ y&amp; = \int(2\sin(x) - \sec^2(x)+\frac1{\pi})\,\mathrm{d}x = 2\int \sin(x)\,\m
 &amp;= -2\cos(x)-\tan(x)+\frac{x}{\pi}+C
 \end{align*}\]</span>
 Now the boundary condition tells us that when <span class="math inline">\(x=\pi/4, y = 0\)</span> and so <span class="math inline">\(0=-2\cos(\pi/4)-\tan(\pi/4)+\pi/(4\pi)+C = -\sqrt{2}-1+1/4+C\)</span>. Hence <span class="math inline">\(C=\sqrt{2}+3/4\)</span> and so
-<span class="math display">\[
-y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.
-\]</span></p>
+<span class="math display">\[y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-69" class="example"><strong>Example 5.10  </strong></span>Calculate <span class="math inline">\(\displaystyle\int\sin^2(x)\,\mathrm{d}x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-70" class="solution"><em>Solution</em>. </span>This is not one of our standard integrals so at first sight it would appear we cannot integrate this function (as yet). However, recall that
-<span class="math display">\[
-\cos(2x) = \cos^2(x)-\sin^2(x) = 1-2\sin^2(x).
-\]</span>
+<span class="math display">\[\cos(2x) = \cos^2(x)-\sin^2(x) = 1-2\sin^2(x).\]</span>
 Hence
-<span class="math display">\[
-\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x
-\]</span>
+<span class="math display">\[\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x\]</span>
 Now by Example <a href="week-five.html#exm:cos-example">5.8</a> we know that <span class="math inline">\(\displaystyle\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+C\)</span>.
 Hence
-<span class="math display">\[
-\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.
-\]</span>
+<span class="math display">\[\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.\]</span>
 Note that we can check we are correct by differentiation:
-<span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).\]</span></p>
 </div>
+</div>
+<div id="more-standard-integrals" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> More ‘standard’ integrals<a href="week-five.html#more-standard-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><span class="math inline">\(\int \frac{1}{1+x^2}\,\mathrm{d}x = \arctan(x) + C\)</span></li>
+<li><span class="math inline">\(\int \frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x = \arcsin(x) + C\)</span></li>
+</ul>
 
 </div>
 </div>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Week 2 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Week 2 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -436,17 +437,11 @@ Figure 2.2: perpendicular lines
 </p>
 </div>
 <p>The gradient of the line <span class="math inline">\(l_1\)</span> is given by the ratio
-<span class="math display">\[
-\frac{m}{1},
-\]</span>
+<span class="math display">\[\frac{m}{1},\]</span>
 while the gradient of the line <span class="math inline">\(l_2\)</span> is given by the ratio
-<span class="math display">\[
-\frac{1}{-m}.
-\]</span>
+<span class="math display">\[\frac{1}{-m}.\]</span>
 So if a line has gradient <span class="math inline">\(m\)</span> then the gradient of the line perpendicular to it has gradient <span class="math inline">\(-1/m\)</span>, and so
-<span class="math display">\[
-\text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.
-\]</span>
+<span class="math display">\[\text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.\]</span>
 Now consider Figure <a href="week-two.html#fig:07-tangent-and-normal">2.3</a>.</p>
 <!--insfig
 
@@ -458,25 +453,15 @@ Figure 2.3: tangent and normal
 </p>
 </div>
 <p>The <a name='#normal'></a><span style="color: purple;">normal</span> is the line at <span class="math inline">\(90^\circ\)</span> to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line <span class="math inline">\(PT\)</span> and the normal is the line <span class="math inline">\(PN\)</span>. We already know that the gradient of the tangent is given by
-<span class="math display">\[
-m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,
-\]</span>
+<span class="math display">\[m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,\]</span>
 and so from the argument above, the gradient of the normal to the tangent is given by
-<span class="math display">\[
-\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.
-\]</span>
+<span class="math display">\[\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.\]</span>
 Now, the equation of the line with gradient <span class="math inline">\(m\)</span>, passing through the point <span class="math inline">\(P=(x_1,y_1)\)</span> is given by
-<span class="math display">\[
-y-y_1 = m(x-x_1).
-\]</span>
+<span class="math display">\[y-y_1 = m(x-x_1).\]</span>
 So the <a name='#equation-of-the-tangent'></a><span style="color: purple;">equation of the tangent</span> is
-<span class="math display">\[
-y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),
-\]</span>
+<span class="math display">\[y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),\]</span>
 while the <a name='#equation-of-the-normal'></a><span style="color: purple;">equation of the normal</span> to the curve is
-<span class="math display">\[
-y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
-\]</span>
+<span class="math display">\[y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).\]</span>
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-15" class="example"><strong>Example 2.1  </strong></span>Find the equation of the tangent and the normal to the curve <span class="math inline">\(y = x^2+5x\)</span> at the point <span class="math inline">\(x=2\)</span>.</p>
@@ -485,13 +470,9 @@ y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
 <p><span id="unlabeled-div-16" class="solution"><em>Solution</em>. </span>If <span class="math inline">\(y=x^2+5\)</span> then <span class="math inline">\({\mathrm{d} y/\mathrm{d} x} = 2x+5\)</span>.</p>
 <p>At <span class="math inline">\(x_1=2\)</span>, <span class="math inline">\(y_1 = 2^2 + 5\times2 = 14\)</span> and <span class="math inline">\({\mathrm{d} y/\mathrm{d} x} = 2\times2+5=9\)</span>.
 The equation of the tangent is therefore
-<span class="math display">\[
-y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.
-\]</span>
+<span class="math display">\[y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.\]</span>
 The equation of the normal is
-<span class="math display">\[
-y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x + \frac{2}{9}\text{ and so }y = -\frac{x}{9}+\frac{128}{9}.
-\]</span></p>
+<span class="math display">\[y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x + \frac{2}{9}\text{ and so }y = -\frac{x}{9}+\frac{128}{9}.\]</span></p>
 </div>
 </div>
 <div id="lecture-five" class="section level2 hasAnchor" number="2.2">
@@ -506,9 +487,7 @@ y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x + \frac{2}{9}\text{ and so }y = -\frac{x}
 <li>cube the preceding result.</li>
 </ol>
 <p>So we can write
-<span class="math display">\[
-y = f(x) = (x^2+ 4)^3,
-\]</span>
+<span class="math display">\[y = f(x) = (x^2+ 4)^3,\]</span>
 or we can think of <span class="math inline">\(f\)</span> as (a composition of) two functions:
 <span class="math display">\[\begin{align*}
 u &amp;= g(x) = x^2 + 4\\
@@ -534,84 +513,54 @@ By substituting for <span class="math inline">\(u\)</span> we can write <span cl
 <p>The chain rule allows us to differentiate functions of functions without having to multiply out all the brackets.</p>
 <p>Recall that we “decompose” <span class="math inline">\(y=(x^2+4)^3\)</span> as <span class="math inline">\(u = g(x) = x^2+4\)</span>, <span class="math inline">\(y = h(u) = u^3\)</span>.
 Thus
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x\]</span>
 (using ordinary differentiation by rule).</p>
 <p>However, we want to find
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x}.\]</span>
 The <a name='#chain-rule'></a><span style="color: purple;">chain rule</span> says that
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.\]</span>
 (This can be proved from first principles, but we won’t.)
 So
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.\]</span>
 But since <span class="math inline">\(u = x^2+4\)</span>, we have
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.\]</span></p>
 <div class="remark">
 <p><span id="unlabeled-div-17" class="remark"><em>Remark</em>. </span>The chain rule can be extended for any number of functions, for example
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-18" class="example"><strong>Example 2.2  </strong></span>Differentiate <span class="math inline">\(s = (2t^2- 4t)^5\)</span> with respect to <span class="math inline">\(t\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-19" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2t^2-4t\)</span> and <span class="math inline">\(s = u^5\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4\]</span>
 So
-<span class="math display">\[
-\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).\]</span>
 But since <span class="math inline">\(u = 2t^2-4t\)</span> then
-<span class="math display">\[
-\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.3  </strong></span>Differentiate <span class="math inline">\(y=5\cos(5\theta)\)</span> with respect to <span class="math inline">\(\theta\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-21" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 5\theta\)</span> and <span class="math inline">\(y = 5\cos(u)\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)\]</span>
 So
-<span class="math display">\[
-\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.\]</span>
 But since <span class="math inline">\(u = 5\theta\)</span> then
-<span class="math display">\[
-\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-22" class="example"><strong>Example 2.4  </strong></span>Differentiate <span class="math inline">\(y=e^{2x+3}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-23" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 2x+3\)</span> and <span class="math inline">\(y = e^u\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u\]</span>
 So
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.\]</span>
 But since <span class="math inline">\(u = e^u\)</span> then
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.\]</span></p>
 </div>
 </div>
 </div>
@@ -625,9 +574,7 @@ y = 4x^2(3x^3 - 6x) = 12x^5 - 24x^3\\
 \frac{\mathrm{d} y}{\mathrm{d} x} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
 \end{gather*}\]</span>
 For some products, multiplying terms out still doesn’t help to differentiate them e.g.
-<span class="math display">\[
-y = \sqrt{x^2 - 2x} \sin(x).
-\]</span>
+<span class="math display">\[y = \sqrt{x^2 - 2x} \sin(x).\]</span>
 (We could use binomial expansion for the first factor, but we still don’t have tools to turn <span class="math inline">\(\sin(x)\)</span> into a power series.)
 </p>
 <p>We’d like a general rule for differentiating a product.</p>
@@ -647,13 +594,9 @@ Further, dividing both sides of equation by <span class="math inline">\(h\)</spa
 &amp;\phantom{=} + v(x)\frac{u(x+h ) - u(x)}{h}.
 \end{align*}\]</span>
 In the limit as <span class="math inline">\(h\)</span> tends to <span class="math inline">\(0\)</span>, we have <span class="math inline">\(u(x+h)\to u(x)\)</span>, and so
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.\]</span>
 Equivalently,
-<span class="math display">\[
-\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.\]</span>
 This is called the <a name='#product-rule'></a><span style="color: purple;">product rule</span>.
 </p>
 <div class="example">
@@ -661,9 +604,7 @@ This is called the <a name='#product-rule'></a><span style="color: purple;">prod
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-25" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 4x^2\)</span> and <span class="math inline">\(v = 3x^3-6x\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.\]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
 \frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
@@ -675,9 +616,7 @@ Hence the product rule gives
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-27" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\)</span> and <span class="math inline">\(v = \sin(x)\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).\]</span>
 Hence the product rule gives
 <span class="math display">\[\begin{gather*}
 \frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
@@ -688,9 +627,7 @@ Hence the product rule gives
 <div id="differentiation-of-a-quotient" class="section level3 hasAnchor" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Differentiation of a quotient<a href="week-two.html#differentiation-of-a-quotient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose that
-<span class="math display">\[
-y = \frac{u(x)}{v(x)} = \frac{u}{v}.
-\]</span>
+<span class="math display">\[y = \frac{u(x)}{v(x)} = \frac{u}{v}.\]</span>
 Considering a small <span class="math inline">\(h\)</span>, we have <span class="math inline">\(y(x+h) = \dfrac{u(x+h)}{v(x+h)}\)</span>.
 Hence
 <span class="math display">\[\begin{align*}
@@ -699,19 +636,14 @@ y(x+h)-y(x) &amp;= \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
 &amp;=\tfrac{v(x)u(x+h)-v(x)u(x)+v(x)u(x)-u(x)v(x+h)}{v(x+h)v(x)}.
 \end{align*}\]</span>
 Dividing by <span class="math inline">\(h\)</span> and rearranging, we get
-<span class="math display">\[
-\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.
-\]</span>
+<span class="math display">\[\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.\]</span>
 Thus in the limit as <span class="math inline">\(h\)</span> tends to zero
-<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}\]</span></p>
 <p>This is the formula for the <a name='#differentiation-of-a-quotient'></a><span style="color: purple;">differentiation of a quotient</span>.</p>
 <p>Note that for the product formula it is up to you which part of the product you call <span class="math inline">\(u\)</span> and which <span class="math inline">\(v\)</span>, but that for the quotient formula, the denominator of the quotient must be <span class="math inline">\(v\)</span> and the numerator must be <span class="math inline">\(u\)</span>.
 </p>
 <p>There is an alternative way to derive this formula. Since
-<span class="math display">\[
-y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
-\]</span>
+<span class="math display">\[y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}\]</span>
 and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the function <span class="math inline">\(v(x)\)</span> and the function <span class="math inline">\(x^{-1}\)</span>, we can use a combination of the product rule and the chain rule. So
 <span class="math display">\[\begin{align*}
 \frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} &amp;= u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{\mathrm{d} v}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
@@ -724,13 +656,9 @@ and since <span class="math inline">\(v(x)^{-1}\)</span> is a composite of the f
 <div class="solution">
 <p><span id="unlabeled-div-29" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 3x^2+2\)</span> and <span class="math inline">\(v = (4x^2-4)^2\)</span>.
 Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)\]</span>
 and so
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-30" class="example"><strong>Example 2.8  </strong></span>Differentiate <span class="math inline">\(y=\frac{1-\sin(x)}{1+\sin(x)}\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
@@ -738,13 +666,9 @@ and so
 <div class="solution">
 <p><span id="unlabeled-div-31" class="solution"><em>Solution</em>. </span>Let <span class="math inline">\(u = 1-\sin(x)\)</span> and <span class="math inline">\(v = 1+\sin(x)\)</span>.
 Then
-<span class="math display">\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x)
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x)\]</span>
 and so
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.\]</span></p>
 </div>
 
 </div>

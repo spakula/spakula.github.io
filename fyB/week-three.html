@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Week 3 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Week 3 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -413,31 +414,21 @@
 <h2><span class="header-section-number">3.1</span> Successive Differentiation<a href="week-three.html#lecture-seven" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The result of differentiating a function (i.e. taking the derivative of a function) is again a function. So we can differentiate again.</p>
 Suppose <span class="math inline">\(y = x^3 + 2x^2\)</span>. Then
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.\]</span>
 <div style="display:none">
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} =
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} =\]</span>
 </div>
 <p>We may then differentiate <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> as well. This is written as
-<span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.\]</span>
 So in this case <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 = 6x+4\)</span>.</p>
 <div style="display:none">
 <p>So in this case <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 =\)</span></p>
 </div>
 <p>This is called the <a name='#second-derivative-of-$y$'></a><span style="color: purple;">second derivative of <span class="math inline">\(y\)</span></span>.</p>
 <p>We can repeat, and differentiate <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>. This gives
-<span class="math display">\[
-\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6\]</span>
 and is called the <a name='#third-derivative-of-$y$'></a><span style="color: purple;">third derivative of <span class="math inline">\(y\)</span></span>. Taking the derivative of <span class="math inline">\(\mathrm{d}^{3}y/\mathrm{d} x^{3}\)</span> yields
-<span class="math display">\[
-\frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,\]</span>
 the <a name='#fourth-derivative-of-$y$'></a><span style="color: purple;">fourth derivative of <span class="math inline">\(y\)</span></span>.</p>
 <p>We can continue, but as the derivative of <span class="math inline">\(0\)</span> is <span class="math inline">\(0\)</span>, all further derivatives of <span class="math inline">\(y\)</span> will just be <span class="math inline">\(0\)</span>.
 </p>
@@ -446,17 +437,11 @@ the <a name='#fourth-derivative-of-$y$'></a><span style="color: purple;">fourth 
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-33" class="solution"><em>Solution</em>. </span>We use the product rule. If
-<span class="math display">\[
-y=e^x\sin(x)\text{ then }\frac{\mathrm{d} y}{\mathrm{d} x} = e^x\cos(x) + e^x\sin(x).
-\]</span>
+<span class="math display">\[y=e^x\sin(x)\text{ then }\frac{\mathrm{d} y}{\mathrm{d} x} = e^x\cos(x) + e^x\sin(x).\]</span>
 Now
-<span class="math display">\[
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),\]</span>
 and finally
-<span class="math display">\[
-\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).
-\]</span></p>
+<span class="math display">\[\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).\]</span></p>
 </div>
 <div id="rates-of-change" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Rates of Change<a href="week-three.html#rates-of-change" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -482,17 +467,13 @@ and finally
 </div>
 <p><span class="math inline">\(\mathrm{d} s/\mathrm{d} t\)</span> is the rate at which <span class="math inline">\(s\)</span> changes for a change in <span class="math inline">\(t\)</span>, or the rate at which distance changes with time, so <span class="math inline">\(\mathrm{d} s/\mathrm{d} t\)</span> is the <a name='#velocity'></a><span style="color: purple;">velocity</span>, <span class="math inline">\(v\)</span>, of the particle in <span class="math inline">\(\text{m}\text{s}^{-1}\)</span>.</p>
 <p>If we differentiate the velocity <span class="math inline">\(v\)</span>, we get <span class="math inline">\(\mathrm{d} v/\mathrm{d} t = 18t\)</span>. Also, since the derivative of the velocity is the second derivative of the distance, we have
-<span class="math display">\[
-\frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.\]</span>
 <span class="math inline">\(\mathrm{d} v/\mathrm{d} t\)</span> is the rate of change of velocity with time or the <a name='#acceleration'></a><span style="color: purple;">acceleration</span> of the particle.</p>
 <p>Note that <span class="math inline">\(\mathrm{d}^{3}s/\mathrm{d} t^{3}\)</span> is not zero for <span class="math inline">\(s = 3t^3 + 2t\)</span>, so we could find it. The rate of change of acceleration is called “jerk”; higher derivatives are even less common to be considered (“snap”, “crackle”, “pop”).
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-34" class="example"><strong>Example 3.2  </strong></span>A body moves such that its displacement <span class="math inline">\(s\)</span>, in metres, for any instant of time <span class="math inline">\(t\)</span> seconds is given by
-<span class="math display">\[
-s(t) = 0.4t-0.2t^2.
-\]</span></p>
+<span class="math display">\[s(t) = 0.4t-0.2t^2.\]</span></p>
 <ol style="list-style-type: decimal">
 <li>Show that its acceleration is constant;</li>
 <li>Determine its velocity after <span class="math inline">\(3\)</span> seconds and its position after <span class="math inline">\(2\)</span> seconds.</li>
@@ -544,9 +525,7 @@ Figure 3.1: turning points
 <div id="points-of-inflection" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Points of inflection<a href="week-three.html#points-of-inflection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>At any point on a graph where a maximum or minimum occurs, the gradient or rate of change of the curve is zero i.e.
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x}=0.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x}=0.\]</span>
 However, the converse is not necessarily true: the gradient may be zero, but the sign of the slope of the graph may not change. Such a point is called a <a name='#point-of-inflection'></a><span style="color: purple;">point of inflection</span>.</p>
 <!--insfig
 
@@ -571,9 +550,7 @@ the slope is negative between <span class="math inline">\(D\)</span> and <span c
 <p>The points <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> are both points of inflection.</p>
 <p>We would like to be able to find out how many maxima, minima and points of inflection a curve has without having to plot the graph. We can do this by examining the derivatives of the function.</p>
 <p>Consider the curve of the function with the equation
-<span class="math display">\[
-y = x^3-\frac 32x^2-18x+10.
-\]</span>
+<span class="math display">\[y = x^3-\frac 32x^2-18x+10.\]</span>
 We know that at a stationary point, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x=0\)</span>. So by finding <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> and setting it equal to zero, we can determine the <span class="math inline">\(x\)</span> values of the stationary points as follows:
 <span class="math display" id="eq:3-1">\[\begin{equation}
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18
@@ -586,9 +563,7 @@ Finding when <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 0\)</span> l
 \end{equation}\]</span></p>
 <div style="display:none">
 <p>Consider the curve of the function with the equation
-<span class="math display">\[
-y = x^3-\frac 32x^2-18x+10.
-\]</span>
+<span class="math display">\[y = x^3-\frac 32x^2-18x+10.\]</span>
 We know that at a stationary point, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x=0\)</span>. So by finding <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span> and setting it equal to zero, we can determine the <span class="math inline">\(x\)</span> values of the stationary points as follows:
 <span class="math display" id="eq:3-1">\[\begin{equation}
 \frac{\mathrm{d} y}{\mathrm{d} x} =\hbox to 5cm{}
@@ -640,15 +615,11 @@ Figure 3.4: minimum turning point
 </p>
 </div>
 <p>Previously, we established that the curve <span class="math inline">\(y = x^3-\frac32 x^2-18x+10\)</span> had turning points at <span class="math inline">\(x=3\)</span> and <span class="math inline">\(x=-2\)</span>. We are now in a position to find out what kind of turning points each of these is.</p>
-<p><span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.
-\]</span>
+<p><span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.\]</span>
 When <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=15 &gt; 0\)</span>. So we deduce that the turning point at <span class="math inline">\(x=3\)</span> is therefore a local minimum.</p>
 <p>When <span class="math inline">\(x = -2\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 &lt; 0\)</span> and so we deuce that the turning point at <span class="math inline">\(x = -2\)</span> is therefore a local maximum.</p>
 <div style="display:none">
-<p><span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} =
-\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} =\]</span></p>
 <ul>
 <li><p>When <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=\)</span><br />
 So the turning point at <span class="math inline">\(x=3\)</span> is a local</p></li>
@@ -657,22 +628,14 @@ So the turning point at <span class="math inline">\(x=-2\)</span> is a local</p>
 </ul>
 </div>
 <p>Note that the statement
-<span class="math display">\[
-\text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15
-\]</span>
+<span class="math display">\[\text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15\]</span>
 is often written as
-<span class="math display">\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.
-\]</span>
+<span class="math display">\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.\]</span>
 Sometimes you can also see the notation
-<span class="math display">\[
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.\]</span>
 Similarly we can write for the other statement that
-<span class="math display">\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.
-\]</span>
+<span class="math display">\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.\]</span>
 </p>
 <p>There is a third possibility for the value of <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2\)</span>. It may be zero.</p>
 <p>When <span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=0\)</span>, we may have a maximum, a minimum or a point of inflection at our turning point. We will need a further test to find out which.</p>
@@ -732,9 +695,7 @@ Similarly we can write for the other statement that
 <div class="solution">
 <p><span id="unlabeled-div-37" class="solution"><em>Solution</em>. </span>For <span class="math inline">\(y=x^3, \mathrm{d}y/\mathrm{d} x = 3x^2\)</span>. At a turning point <span class="math inline">\(\mathrm{d}y/\mathrm{d} x=0\)</span> and so <span class="math inline">\(3x^2=0\)</span> and so there is a turning point of some kind at <span class="math inline">\(x=0\)</span>.</p>
 <p><span class="math inline">\(\mathrm{d}^{2}y/\mathrm{d} x^2=6x\)</span> and so
-<span class="math display">\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=0} = 0.
-\]</span>
+<span class="math display">\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=0} = 0.\]</span>
 Thus we cannot identify the type of turning point from the second derivative.
 However, we can consider the first derivative.</p>
 <p>For <span class="math inline">\(x=-0.1\)</span> (just less than <span class="math inline">\(0\)</span>) <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 3(-0.1)^2 = 0.03&gt;0\)</span>.</p>
@@ -763,9 +724,7 @@ Figure 3.5: points of inflection
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-38" class="example"><strong>Example 3.4  </strong></span>Find the <span class="math inline">\(x\)</span> coordinates of all the maxima, minima and points of inflection for the curve
-<span class="math display">\[
-y = 2x^3-9x^2+12x.
-\]</span></p>
+<span class="math display">\[y = 2x^3-9x^2+12x.\]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-39" class="solution"><em>Solution</em>. </span>For <span class="math inline">\(y = 2x^3-9x^2+12x\)</span>, <span class="math inline">\(\mathrm{d}y/\mathrm{d} x = 6x^2-18x+12\)</span>. When <span class="math inline">\(\mathrm{d}y/\mathrm{d} x=0\)</span> then <span class="math inline">\(6x^2-18x+12=0\)</span> and so <span class="math inline">\(x=2\)</span> or <span class="math inline">\(x=1\)</span>.</p>

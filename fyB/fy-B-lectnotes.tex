@@ -39,6 +39,8 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
 \newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -46,9 +48,6 @@
 \makeatletter
 \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
 \makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \newsavebox\pandoc@box
@@ -116,6 +115,10 @@
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   pdftitle={Week 11},
   pdfauthor={Ján Špakula},
@@ -125,7 +128,7 @@
 
 \title{GENG0002 Mathematics B lecture notes}
 \author{Ján Špakula}
-\date{2026-02-03}
+\date{2026-10-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -166,9 +169,7 @@ To start our exploration of the calculus, we start in lecture 1 with a look at t
 \section{Limits}\label{lecture-one}
 
 In some cases, the value of a function at a point is undefined or cannot be determined. For example
-\[
-f(x) = \frac{x^2-9}{x-3}\tag{1}
-\]
+\[f(x) = \frac{x^2-9}{x-3}\tag{1}\]
 has the value \(\frac00\) for \(f(3)\), which is undetermined. However the function may still ``behave well'' around that point. In such cases it is convenient to introduce the idea of a limit or a limiting value.
 
 Informally, a \textcolor{purple}{\em limit}\index{limit} is a value which \(f(x)\) gets closer and closer to, but may never actually reach.
@@ -189,15 +190,11 @@ For example, the function \(f(x) = e^{-x}\) as it approaches the \(x-\)axis (Fig
 \slide
 
 In function (1) above, we can try to determine the limit \(f(x)\) as \(x\) gets closer to \(3\).
-\[
-f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.
-\]
+\[f(x) = \frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3} = x+3.\]
 (However, the last ``\(=\)'' is only valid for \(x\not=3\)!)
 
 Now if \(x\) gets closer to \(3\), then \(x+3\) gets closer to \(6\). Formally we write
-\[
-\lim\limits_{x\to3} f(x) = 6
-\]
+\[\lim\limits_{x\to3} f(x) = 6\]
 and we say ``in the limit, if \(x\) tends to \(3\) then \(f(x)\) tends to 6''.
 
 \slide
@@ -208,9 +205,7 @@ f(x) &= f(a+3) = \frac{(a+3)^2-9}{(a+3)-3} = \frac{a^2+6a + 9 - 9}{a} =\\
 &= \frac{a^2+6a}{a} = a+6.
 \end{align*}
 Now we can observe, that \(a\) gets closer to \(0\) if and only if \(x\) gets closer to \(3\). As \(a\) approaches \(0\) then \(f(a+3)\) approaches \(6\). So
-\[
-\lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = 6.
-\]
+\[\lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = 6.\]
 
 (Why would we do this?)
 
@@ -229,34 +224,24 @@ A function \(f\) of \(x\) is said to be \textcolor{purple}{\em continuous}\index
 \end{itemize}
 
 In other words
-\[
-\lim\limits_{x\to a}f(x) = f(a).
-\]
+\[\lim\limits_{x\to a}f(x) = f(a).\]
 
 Formally, a function \(f\) of \(x\) is said to be \textcolor{purple}{\em discontinuous}\index{discontinuous} at \(x=a\) if it is not continuous at \(x=a\).
 \slide
 
 \begin{example}
 Determine the limit of
-\[
-\frac{2x^2-5x-3}{x-3}
-\]
+\[\frac{2x^2-5x-3}{x-3}\]
 as \(x\) tends to \(3\).
 \end{example}
 
 \begin{solution}
 Let \(x = a+3\) so that as \(a\) tends to \(0\) then \(x\) tends to \(3\). Then
-\[
-f(a+3) = \frac{2(a+3)^2-5(a+3)-3}{(a+3)-3}=\frac{2a^2+12a+18-5a-15-3}{a}=\frac{2a^2+7a}{a} = a+7.
-\]
+\[f(a+3) = \frac{2(a+3)^2-5(a+3)-3}{(a+3)-3}=\frac{2a^2+12a+18-5a-15-3}{a}=\frac{2a^2+7a}{a} = a+7.\]
 So
-\[
-\lim\limits_{x\to3}\frac{2x^2-5x-3}{x-3} = \lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = \lim\limits_{a\to0}2a+7 = 7.
-\]
+\[\lim\limits_{x\to3}\frac{2x^2-5x-3}{x-3} = \lim\limits_{x\to3}f(x) = \lim\limits_{a\to0}f(a+3) = \lim\limits_{a\to0}2a+7 = 7.\]
 Alternatively, you may spot that \(2x^2-5x-3 = (x-3)(2x+1)\) so that
-\[
-\lim\limits_{x\to 3}f(x) = \lim\limits_{x\to3}\frac{(x-3)(2x+1)}{x-3} = \lim\limits_{x\to3}2x+1 = 7.
-\]
+\[\lim\limits_{x\to 3}f(x) = \lim\limits_{x\to3}\frac{(x-3)(2x+1)}{x-3} = \lim\limits_{x\to3}2x+1 = 7.\]
 \end{solution}
 
 \slide
@@ -277,9 +262,7 @@ For a straight line we can consider the \textcolor{purple}{\em slope}\index{slop
 \slide
 
 The \textcolor{purple}{\em gradient}\index{gradient} is defined to be the number
-\[
-\frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.
-\]
+\[\frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}.\]
 For the line above, which has equation \(y = 2x-1\) then
 \begin{align*}
 \frac{\Delta y}{\Delta x} &= \frac{(2x_2-1)-(2x_1-1)}{x_2-x_1} = \frac{2(x_2-x_1)-1+1}{x_2-x_1}\\ &= \frac{2(x_2-x_1)}{x_2-x_1} = 2.
@@ -299,9 +282,7 @@ Suppose now we are given a curve with equation \(y=f(x)\) and want to find the g
 \end{figure}
 
 The gradient of this line segment is given by
-\[
-\frac{\Delta y}{\Delta x} = \frac{f(x+h)-f(x)}{h}.
-\]
+\[\frac{\Delta y}{\Delta x} = \frac{f(x+h)-f(x)}{h}.\]
 \slide
 
 Notice that when \(h=0\) then this would have the indeterminate value of \(0/0\), and so the gradient is undefined when the two points on the line coincide. However, the limit of this expression, as \(h\to0\), may exist and it is instructive to imagine what the limit would represent geometrically (Figure \ref{fig:04-line-seg-curve2}):
@@ -331,9 +312,7 @@ With some thought, it should be clear that the line segment tends to a line that
 \slide
 
 We call the slope of the tangent line the \textcolor{purple}{\em derivative}\index{derivative} of the function \(y=f(x)\) at the point \(x\) and write
-\[
-\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}
-\]
+\[\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\]
 and we refer to the process of calculating this limit as \textcolor{purple}{\em differentiation by 1st principles}\index{differentiation by 1st principles}.
 
 \slide
@@ -388,13 +367,9 @@ To summarise: we can differentiate a function by calculating a certain limit.
 Can we do ``better'' so that we don't have to do this every time?
 
 If we denote \(y = f(x)\), there are a few ways to \emph{denote} the derivative:
-\[
-\frac{\mathrm{d} f}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} x} = f'(x).
-\]
+\[\frac{\mathrm{d} f}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} x} = f'(x).\]
 These all mean the same thing, namely the derivative of \(y=f(x)\) at the point \(x\), which is defined to be (recall)
-\[
-\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.
-\]
+\[\frac{\mathrm{d} f}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}.\]
 
 \slide
 
@@ -403,26 +378,16 @@ These all mean the same thing, namely the derivative of \(y=f(x)\) at the point 
 Consider the differentiation of \(y = x^n\) from first principles. We have \(f(x+h) = (x + h)^n\).
 
 Expanding the right-hand side using the binomial theorem gives
-\[
-f(x+h) = x^n + nx^{(n-1)}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots+h^n
-\]
+\[f(x+h) = x^n + nx^{(n-1)}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots+h^n\]
 So that
-\[
-f(x+h)-f(x) = nx^{n-1}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots + h^n,
-\]
+\[f(x+h)-f(x) = nx^{n-1}h+\frac{n(n-1)}{2!}x^{n-2}h^2+\ldots + h^n,\]
 and thus
-\[
-\frac{f(x+h)-f(x)}{h} = nx^{n-1}+\frac{n(n-1)}{2!}x^{n-2}h+\ldots + h^{n-1},
-\]
+\[\frac{f(x+h)-f(x)}{h} = nx^{n-1}+\frac{n(n-1)}{2!}x^{n-2}h+\ldots + h^{n-1},\]
 \slide
 Now, taking limit we have
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h} = nx^{n-1}.\]
 Therefore, in general, we can differentiate \(x^n\) for all values of \(n\) using the rule
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} (x^n)}{\mathrm{d} x} = nx^{n-1}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} (x^n)}{\mathrm{d} x} = nx^{n-1}.\]
 This is known as the rule for differentiation (well, one of the rules, there is a number of them for various types of functions).
 \slide
 
@@ -445,9 +410,7 @@ In fact this rule is also true for any real number in the exponent, not just whe
 \subsection{\texorpdfstring{Differentiation of \(ax^n\).}{Differentiation of ax\^{}n.}}\label{differentiation-of-axn.}
 
 Where a power of \(x\) is multiplied by a constant, that constant remains unchanged by the process of differentiation. For example
-\[
-y = ax^n \Rightarrow \frac{\mathrm{d} y}{\mathrm{d} x} = nax^{n-1}.
-\]
+\[y = ax^n \Rightarrow \frac{\mathrm{d} y}{\mathrm{d} x} = nax^{n-1}.\]
 
 \begin{example}
 Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
@@ -462,13 +425,9 @@ Find the derivative by rule for the function \(y = 3x^4\) at the point \(x\).
 \slide
 
 Note that the derivative of \(ax\) and of \(a\) also follow the rule. For \(ax\) we may write \(ax = ax^1\). So differentiating by rule
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = a\times1x^0 = a.\]
 For \(a\) we may write \(a = ax^0\) and hence differentiating by rule we have
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = a\times0x^{-1} = 0.\]
 That is to say, the derivative of a constant value is always zero.
 
 \slide
@@ -717,17 +676,11 @@ If two lines are perpendicular, there is also a certain relationship between the
 \slide
 
 The gradient of the line \(l_1\) is given by the ratio
-\[
-\frac{m}{1},
-\]
+\[\frac{m}{1},\]
 while the gradient of the line \(l_2\) is given by the ratio
-\[
-\frac{1}{-m}.
-\]
+\[\frac{1}{-m}.\]
 So if a line has gradient \(m\) then the gradient of the line perpendicular to it has gradient \(-1/m\), and so
-\[
-\text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.
-\]
+\[\text{gradient of }(l_1) \times \text{ gradient of }(l_2) = -1.\]
 \slide
 Now consider Figure \ref{fig:07-tangent-and-normal}.
 
@@ -742,25 +695,15 @@ Now consider Figure \ref{fig:07-tangent-and-normal}.
 \slide
 
 The \textcolor{purple}{\em normal}\index{normal} is the line at \(90^\circ\) to the tangent, passing through the point where the tangent touches the curve. Thus in the figure, the tangent is the line \(PT\) and the normal is the line \(PN\). We already know that the gradient of the tangent is given by
-\[
-m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,
-\]
+\[m = \frac{\mathrm{d} y}{\mathrm{d} x}\text{ at the point }P,\]
 and so from the argument above, the gradient of the normal to the tangent is given by
-\[
-\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.
-\]
+\[\frac{-1}{m} = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}.\]
 Now, the equation of the line with gradient \(m\), passing through the point \(P=(x_1,y_1)\) is given by
-\[
-y-y_1 = m(x-x_1).
-\]
+\[y-y_1 = m(x-x_1).\]
 So the \textcolor{purple}{\em equation of the tangent}\index{equation of the tangent} is
-\[
-y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),
-\]
+\[y - y_1 = \frac{\mathrm{d} y}{\mathrm{d} x}(x-x_1),\]
 while the \textcolor{purple}{\em equation of the normal}\index{equation of the normal} to the curve is
-\[
-y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).
-\]
+\[y - y_1 = \frac{-1}{{\mathrm{d} y/\mathrm{d} x}}(x-x_1).\]
 \slide
 
 \begin{example}
@@ -772,13 +715,9 @@ If \(y=x^2+5\) then \({\mathrm{d} y/\mathrm{d} x} = 2x+5\).
 
 At \(x_1=2\), \(y_1 = 2^2 + 5\times2 = 14\) and \({\mathrm{d} y/\mathrm{d} x} = 2\times2+5=9\).
 The equation of the tangent is therefore
-\[
-y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.
-\]
+\[y-14=9(x-2) = 9x - 18\text{ and so }y = 9x-4.\]
 The equation of the normal is
-\[
-y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x + \frac{2}{9}\text{ and so }y = -\frac{x}{9}+\frac{128}{9}.
-\]
+\[y-14=\frac{-1}{9}(x-2) = \frac{-1}{9}x + \frac{2}{9}\text{ and so }y = -\frac{x}{9}+\frac{128}{9}.\]
 \end{solution}
 
 \slide
@@ -807,9 +746,7 @@ If we now look at \((x^2 + 4)^3\) then we can consider this as one function desc
 \slide
 
 So we can write
-\[
-y = f(x) = (x^2+ 4)^3,
-\]
+\[y = f(x) = (x^2+ 4)^3,\]
 or we can think of \(f\) as (a composition of) two functions:
 \begin{align*}
 u &= g(x) = x^2 + 4\\
@@ -842,35 +779,23 @@ The chain rule allows us to differentiate functions of functions without having 
 
 Recall that we ``decompose'' \(y=(x^2+4)^3\) as \(u = g(x) = x^2+4\), \(y = h(u) = u^3\).
 Thus
-\[
-\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2x
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} u} = 3u^2 \quad\text{ and }\quad
+\frac{\mathrm{d} u}{\mathrm{d} x} = 2x\]
 (using ordinary differentiation by rule).
 
 However, we want to find
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x}.\]
 The \textcolor{purple}{\em chain rule}\index{chain rule} says that
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x}.\]
 (This can be proved from first principles, but we won't.)
 So
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times \frac{\mathrm{d} u}{\mathrm{d} x} = 3u^2\times 2x = 6xu^2.\]
 But since \(u = x^2+4\), we have
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 6x(x^2 +4)^2.\]
 
 \begin{remark}
 The chain rule can be extended for any number of functions, for example
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} a}\times \frac{\mathrm{d} a}{\mathrm{d} b}\times \frac{\mathrm{d} b}{\mathrm{d} c}\times \frac{\mathrm{d} c}{\mathrm{d} e}\times\frac{\mathrm{d} e}{\mathrm{d} f}\times\frac{\mathrm{d} f}{\mathrm{d} x}.\]
 \end{remark}
 
 \slide
@@ -881,17 +806,11 @@ Differentiate \(s = (2t^2- 4t)^5\) with respect to \(t\).
 
 \begin{solution}
 Let \(u = 2t^2-4t\) and \(s = u^5\). Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} t} = 4t-4\text{ and }\frac{\mathrm{d} s}{\mathrm{d} u} = 5u^4\]
 So
-\[
-\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).
-\]
+\[\frac{\mathrm{d} s}{\mathrm{d} t} = \frac{\mathrm{d} s}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} t} = 5u^4(4t-4).\]
 But since \(u = 2t^2-4t\) then
-\[
-\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).
-\]
+\[\frac{\mathrm{d} s}{\mathrm{d} t} = 5(2t^2-4t)^4(4t-4).\]
 \end{solution}
 
 \slide
@@ -902,17 +821,11 @@ Differentiate \(y=5\cos(5\theta)\) with respect to \(\theta\).
 
 \begin{solution}
 Let \(u = 5\theta\) and \(y = 5\cos(u)\). Then
-\[
-\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)
-\]
+\[\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = 5\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = -5\sin(u)\]
 So
-\[
-\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.
-\]
+\[\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{{\mathrm{d} \theta}} = -5\sin(u)\times5.\]
 But since \(u = 5\theta\) then
-\[
-\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).
-\]
+\[\frac{\mathrm{d} y}{{\mathrm{d} \theta}} = -25\sin(5\theta).\]
 \end{solution}
 
 \slide
@@ -923,17 +836,11 @@ Differentiate \(y=e^{2x+3}\) with respect to \(x\).
 
 \begin{solution}
 Let \(u = 2x+3\) and \(y = e^u\). Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} x} = 2\text{ and }\frac{\mathrm{d} y}{\mathrm{d} u} = e^u\]
 So
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u}\times\frac{\mathrm{d} u}{\mathrm{d} x} = e^u\times2.\]
 But since \(u = e^u\) then
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 2e^{2x+3}.\]
 \end{solution}
 
 \slide
@@ -948,9 +855,7 @@ y = 4x^2(3x^3 - 6x) = 12x^5 - 24x^3\\
 \frac{\mathrm{d} y}{\mathrm{d} x} = 60x^4 - 72x^2 = 12x^2(5x^2 - 6)
 \end{gather*}
 For some products, multiplying terms out still doesn't help to differentiate them e.g.
-\[
-y = \sqrt{x^2 - 2x} \sin(x).
-\]
+\[y = \sqrt{x^2 - 2x} \sin(x).\]
 (We could use binomial expansion for the first factor, but we still don't have tools to turn \(\sin(x)\) into a power series.)
 \slide
 
@@ -975,13 +880,9 @@ Further, dividing both sides of equation by \(h\) gives
  &\phantom{=} + v(x)\frac{u(x+h ) - u(x)}{h}.
 \end{align*}
 In the limit as \(h\) tends to \(0\), we have \(u(x+h)\to u(x)\), and so
-\[ 
-\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.\]
 Equivalently,
-\[ 
-\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d}(uv)}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x}.\]
 This is called the \textcolor{purple}{\em product rule}\index{product rule}.
 \slide
 
@@ -991,9 +892,7 @@ Differentiate \(y=4x^2(3x^3-6x)\) with respect to \(x\).
 
 \begin{solution}
 Let \(u = 4x^2\) and \(v = 3x^3-6x\). Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} x} = 8x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 9x^2-6.\]
 Hence the product rule gives
 \begin{gather*}
 \frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (3x^3-6x)\times 8x + 4x^2\times(9x^2-6)\\
@@ -1009,9 +908,7 @@ Differentiate \(y=\sqrt{x^2-2x}\sin(x)\) with respect to \(x\).
 
 \begin{solution}
 Let \(u = \sqrt{x^2-2x} = (x^2-2x)^{1/2}\) and \(v = \sin(x)\). Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} x} = \frac12(x^2-2x)^{-1/2}(2x-2)=(x^2-2x)^{-1/2}(x-1)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x).\]
 Hence the product rule gives
 \begin{gather*}
 \frac{\mathrm{d} y}{\mathrm{d} x} = u\frac{\mathrm{d} v}{\mathrm{d} x} + v\frac{\mathrm{d} u}{\mathrm{d} x} = (x^2-2x)^{1/2}\cos(x) + \sin(x)(x^2-2x)^{-1/2}(x-1)\\
@@ -1024,9 +921,7 @@ Hence the product rule gives
 \subsection{Differentiation of a quotient}\label{differentiation-of-a-quotient}
 
 Suppose that
-\[
-y = \frac{u(x)}{v(x)} = \frac{u}{v}.
-\]
+\[y = \frac{u(x)}{v(x)} = \frac{u}{v}.\]
 Considering a small \(h\), we have \(y(x+h) = \dfrac{u(x+h)}{v(x+h)}\).
 Hence
 \begin{align*}
@@ -1036,12 +931,9 @@ y(x+h)-y(x) &= \frac{u(x+h)}{v(x+h)} - \frac{u(x)}{v(x)}\\
 \end{align*}
 \slide
 Dividing by \(h\) and rearranging, we get
-\[
-\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.
-\]
+\[\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{u(x+h)-u(x)}{h}+u(x)\frac{v(x)-v(x+h)}{h}}{v(x+h)v(x)}.\]
 Thus in the limit as \(h\) tends to zero
-\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \lim\limits_{h\to0}\frac{y(x+h)-y(x)}{h} = \frac{v(x)\frac{\mathrm{d} u}{\mathrm{d} x} - u(x)\frac{\mathrm{d} v}{\mathrm{d} x}}{v(x)^2}\]
 
 This is the formula for the \textcolor{purple}{\em differentiation of a quotient}\index{differentiation of a quotient}.
 
@@ -1049,9 +941,7 @@ Note that for the product formula it is up to you which part of the product you 
 \slide
 
 There is an alternative way to derive this formula. Since
-\[
-y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}
-\]
+\[y = \frac{u(x)}{v(x)} = u(x)v(x)^{-1}\]
 and since \(v(x)^{-1}\) is a composite of the function \(v(x)\) and the function \(x^{-1}\), we can use a combination of the product rule and the chain rule. So
 \begin{align*}
 \frac{\mathrm{d}(uv^{-1})}{\mathrm{d} x} &= u\frac{\mathrm{d}(v^{-1})}{\mathrm{d} x}+v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x} = u\left(-1\times v^{-2}\frac{\mathrm{d} v}{\mathrm{d} x}\right) + v^{-1}\frac{\mathrm{d} u}{\mathrm{d} x}\\
@@ -1066,13 +956,9 @@ Differentiate \(y=\frac{3x^2+2}{(4x^2-4)^2}\) with respect to \(x\).
 \begin{solution}
 Let \(u = 3x^2+2\) and \(v = (4x^2-4)^2\).
 Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} x} = 6x\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = 2(4x^2-4)\times8x = 16x(4x^2-4)\]
 and so
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(4x^2-4)^26x - (3x^2+2)16x(4x^2-4)}{((4x^2-4)^2)^2} = \frac{6x(4x-4)-16x(3x^2+2)}{(4x^2-4)^3}.\]
 \end{solution}
 
 \slide
@@ -1084,13 +970,9 @@ Differentiate \(y=\frac{1-\sin(x)}{1+\sin(x)}\) with respect to \(x\).
 \begin{solution}
 Let \(u = 1-\sin(x)\) and \(v = 1+\sin(x)\).
 Then
-\[
-\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x) 
-\]
+\[\frac{\mathrm{d} u}{\mathrm{d} x} = -\cos(x)\text{ and }\frac{\mathrm{d} v}{\mathrm{d} x} = \cos(x)\]
 and so
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{v\frac{\mathrm{d} u}{\mathrm{d} x}-u\frac{\mathrm{d} v}{\mathrm{d} x}}{v^2} = \frac{(1+\sin(x)(-\cos(x))-(1-\sin(x))(\cos(x))}{(1+\sin(x))^2} = \frac{-2\cos(x)}{(1+\sin(x))^2}.\]
 \end{solution}
 
 \chapter*{Week 2 Exercises}\label{week-2-exercises}
@@ -1181,9 +1063,7 @@ Differentiate each of the following functions using the chain rule.
 
 \section{Sheet 6 The Product Rule}\label{sheet-6-the-product-rule}
 
-\[
-\text{if }y(x)=u(x)v(x)\text{ then }dy/dx=udv/dx+vdu/dx
-\]
+\[\text{if }y(x)=u(x)v(x)\text{ then }dy/dx=udv/dx+vdu/dx\]
 Differentiate the following functions
 
 \begin{enumerate}
@@ -1266,24 +1146,18 @@ Suppose \(y = x^3 + 2x^2\). Then
 
 \begin{notslides}
 
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2 + 4x.\]
 
 \end{notslides}
 
 \begin{slidesonly}
 
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} =\]
 
 \end{slidesonly}
 
 We may then differentiate \(\mathrm{d}y/\mathrm{d} x\) as well. This is written as
-\[
-\frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.
-\]
+\[\frac{\mathrm{d}}{\mathrm{d} x}\frac{\mathrm{d} y}{\mathrm{d} x}\text{ or more usually }\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}.\]
 
 \begin{notslides}
 
@@ -1302,13 +1176,9 @@ This is called the \textcolor{purple}{\em second derivative of $y$}\index{second
 \slide
 
 We can repeat, and differentiate \(\mathrm{d}^{2}y/\mathrm{d} x^2\). This gives
-\[
-\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6
-\]
+\[\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 6\]
 and is called the \textcolor{purple}{\em third derivative of $y$}\index{third derivative of $y$}. Taking the derivative of \(\mathrm{d}^{3}y/\mathrm{d} x^{3}\) yields
-\[
-\frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,
-\]
+\[\frac{\mathrm{d}^{4}y}{\mathrm{d} x^{4}} = 0,\]
 the \textcolor{purple}{\em fourth derivative of $y$}\index{fourth derivative of $y$}.
 
 We can continue, but as the derivative of \(0\) is \(0\), all further derivatives of \(y\) will just be \(0\).
@@ -1320,17 +1190,11 @@ Find \(\mathrm{d}y/\mathrm{d} x, \mathrm{d}^{2}y/\mathrm{d} x^2, \mathrm{d}^{3}y
 
 \begin{solution}
 We use the product rule. If
-\[
-y=e^x\sin(x)\text{ then }\frac{\mathrm{d} y}{\mathrm{d} x} = e^x\cos(x) + e^x\sin(x).
-\]
+\[y=e^x\sin(x)\text{ then }\frac{\mathrm{d} y}{\mathrm{d} x} = e^x\cos(x) + e^x\sin(x).\]
 Now
-\[
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),
-\]
+\[\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = e^x(-\sin(x)) + e^x\cos(x) + e^x\cos(x)+e^x\sin(x) = 2e^x\cos(x),\]
 and finally
-\[
-\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).
-\]
+\[\frac{\mathrm{d}^{3}y}{\mathrm{d} x^{3}} = 2(-e^x\sin(x)+e^x\cos(x)) = 2e^x(\cos(x)-\sin(x)).\]
 \end{solution}
 
 \slide
@@ -1386,9 +1250,7 @@ The slope of \(s\) against \(t\) is not constant but varies with \(t\). So:
 \(\mathrm{d} s/\mathrm{d} t\) is the rate at which \(s\) changes for a change in \(t\), or the rate at which distance changes with time, so \(\mathrm{d} s/\mathrm{d} t\) is the \textcolor{purple}{\em velocity}\index{velocity}, \(v\), of the particle in \(\text{m}\text{s}^{-1}\).
 
 If we differentiate the velocity \(v\), we get \(\mathrm{d} v/\mathrm{d} t = 18t\). Also, since the derivative of the velocity is the second derivative of the distance, we have
-\[
-\frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.
-\]
+\[\frac{\mathrm{d} v}{\mathrm{d} t}= \frac{\mathrm{d}^{2}s}{\mathrm{d}t^2}.\]
 \(\mathrm{d} v/\mathrm{d} t\) is the rate of change of velocity with time or the \textcolor{purple}{\em acceleration}\index{acceleration} of the particle.
 
 Note that \(\mathrm{d}^{3}s/\mathrm{d} t^{3}\) is not zero for \(s = 3t^3 + 2t\), so we could find it. The rate of change of acceleration is called ``jerk''; higher derivatives are even less common to be considered (``snap'', ``crackle'', ``pop'').
@@ -1397,9 +1259,7 @@ Note that \(\mathrm{d}^{3}s/\mathrm{d} t^{3}\) is not zero for \(s = 3t^3 + 2t\)
 \begin{example}
 
 A body moves such that its displacement \(s\), in metres, for any instant of time \(t\) seconds is given by
-\[
-s(t) = 0.4t-0.2t^2.
-\]
+\[s(t) = 0.4t-0.2t^2.\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1491,9 +1351,7 @@ Points such as \(B\) and \(C\) are also sometimes called \textcolor{purple}{\em 
 \subsection{Points of inflection}\label{points-of-inflection}
 
 At any point on a graph where a maximum or minimum occurs, the gradient or rate of change of the curve is zero i.e.
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x}=0.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x}=0.\]
 However, the converse is not necessarily true: the gradient may be zero, but the sign of the slope of the graph may not change. Such a point is called a \textcolor{purple}{\em point of inflection}\index{point of inflection}.
 
 \slide
@@ -1541,9 +1399,7 @@ We would like to be able to find out how many maxima, minima and points of infle
 \begin{notslides}
 
 Consider the curve of the function with the equation
-\[
-y = x^3-\frac 32x^2-18x+10.
-\]
+\[y = x^3-\frac 32x^2-18x+10.\]
 We know that at a stationary point, \(\mathrm{d}y/\mathrm{d} x=0\). So by finding \(\mathrm{d}y/\mathrm{d} x\) and setting it equal to zero, we can determine the \(x\) values of the stationary points as follows:
 \begin{equation}
 \frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18
@@ -1560,9 +1416,7 @@ Finding when \(\mathrm{d}y/\mathrm{d} x = 0\) leads to the (quadratic) equation
 \begin{slidesonly}
 
 Consider the curve of the function with the equation
-\[
-y = x^3-\frac 32x^2-18x+10.
-\]
+\[y = x^3-\frac 32x^2-18x+10.\]
 We know that at a stationary point, \(\mathrm{d}y/\mathrm{d} x=0\). So by finding \(\mathrm{d}y/\mathrm{d} x\) and setting it equal to zero, we can determine the \(x\) values of the stationary points as follows:
 \begin{equation}
 \frac{\mathrm{d} y}{\mathrm{d} x} =\hbox to 5cm{}
@@ -1665,9 +1519,7 @@ Previously, we established that the curve \(y = x^3-\frac32 x^2-18x+10\) had tur
 
 \begin{notslides}
 
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 6x-3.\]
 When \(x = 3\), \(\mathrm{d}^{2}y/\mathrm{d} x^2=15 > 0\). So we deduce that the turning point at \(x=3\) is therefore a local minimum.
 
 When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 < 0\) and so we deuce that the turning point at \(x = -2\) is therefore a local maximum.
@@ -1676,9 +1528,7 @@ When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 < 0\) and so we deuce th
 
 \begin{slidesonly}
 
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2-3x-18\text{ therefore } \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} =\]
 
 \begin{itemize}
 \item
@@ -1694,22 +1544,14 @@ When \(x = -2\), \(\mathrm{d}^{2}y/\mathrm{d} x^2 = -15 < 0\) and so we deuce th
 \slide
 
 Note that the statement
-\[
-\text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15
-\]
+\[\text{When }x = 3, \frac{\mathrm{d}^{2}y}{\mathrm{d} x^2} = 15\]
 is often written as
-\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.
-\]
+\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=3} = 15.\]
 Sometimes you can also see the notation
-\[
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.
-\]
+\[\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(3) = 15.\]
 Similarly we can write for the other statement that
-\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
-\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.
-\]
+\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=-2} =
+\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}(-2) = -15.\]
 \slide
 
 There is a third possibility for the value of \(\mathrm{d}^{2}y/\mathrm{d} x^2\). It may be zero.
@@ -1781,9 +1623,7 @@ Find and identify the critical or turning points of the function \(y=x^3\).
 For \(y=x^3, \mathrm{d}y/\mathrm{d} x = 3x^2\). At a turning point \(\mathrm{d}y/\mathrm{d} x=0\) and so \(3x^2=0\) and so there is a turning point of some kind at \(x=0\).
 
 \(\mathrm{d}^{2}y/\mathrm{d} x^2=6x\) and so
-\[
-\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=0} = 0.
-\]
+\[\left.\frac{\mathrm{d}^{2}y}{\mathrm{d} x^2}\right\vert_{x=0} = 0.\]
 Thus we cannot identify the type of turning point from the second derivative.
 However, we can consider the first derivative.
 
@@ -1825,9 +1665,7 @@ For points such as these \(\mathrm{d}y/\mathrm{d} x\) is not zero, but \(\mathrm
 
 \begin{example}
 Find the \(x\) coordinates of all the maxima, minima and points of inflection for the curve
-\[
-y = 2x^3-9x^2+12x.
-\]
+\[y = 2x^3-9x^2+12x.\]
 \end{example}
 
 \begin{solution}
@@ -1862,18 +1700,14 @@ From examining the value of \(\mathrm{d}y/\mathrm{d} x\) just before and just af
 \addcontentsline{toc}{subsection}{Exercise 1}
 
 Determine the first four derivatives of the function
-\[
-y=x^3-4x^{3/2}.
-\]
+\[y=x^3-4x^{3/2}.\]
 \slide
 
 \subsection*{Exercise 2}\label{exercise-2-2}
 \addcontentsline{toc}{subsection}{Exercise 2}
 
 Show that \(y=4x\) is a solution to the differential equation
-\[
-2x^2\frac{d^2y}{dx^2}-x\frac{dy}{dx}+y=0.
-\]
+\[2x^2\frac{d^2y}{dx^2}-x\frac{dy}{dx}+y=0.\]
 
 \slide
 
@@ -1881,9 +1715,7 @@ Show that \(y=4x\) is a solution to the differential equation
 \addcontentsline{toc}{subsection}{Exercise 3}
 
 The displacement in metres for a particle moving along a line at time \(t\) seconds is given by the equation
-\[
-s=2t^2-10t+4.
-\]
+\[s=2t^2-10t+4.\]
 Determine the velocity at times of \(1.5\) and \(10\) seconds.
 
 \slide
@@ -1892,9 +1724,7 @@ Determine the velocity at times of \(1.5\) and \(10\) seconds.
 \addcontentsline{toc}{subsection}{Exercise 4}
 
 The velocity \(v\) of a particle moving along a line is given by
-\[
-v=-3t^2+18t+3
-\]
+\[v=-3t^2+18t+3\]
 where \(t\) is measured in seconds and \(v\) in metres per second. Determine the acceleration after \(2s\) and \(4s\).
 \slide
 
@@ -1902,9 +1732,7 @@ where \(t\) is measured in seconds and \(v\) in metres per second. Determine the
 \addcontentsline{toc}{subsection}{Exercise 5}
 
 The displacement of a body, measured in meters, from a reference point after time \(t\) seconds is given by
-\[
-s=4t^2-3t+2.
-\]
+\[s=4t^2-3t+2.\]
 Show that the acceleration of the body is constant at \(8ms^{-2}\) and that the velocity is zero after \(375ms\) (i.e.~after \(375\) milliseconds have elapsed).
 \slide
 
@@ -1912,9 +1740,7 @@ Show that the acceleration of the body is constant at \(8ms^{-2}\) and that the 
 \addcontentsline{toc}{subsection}{Exercise 6}
 
 The equation of motion of a particle is given by
-\[
-s=3+5t-6t^2
-\]
+\[s=3+5t-6t^2\]
 where \(s\) is the displacement in metres and \(t\) is the time in seconds.
 
 \begin{enumerate}
@@ -1962,9 +1788,7 @@ If a body moves according to the law \(s = 12 - 4.5t + 6.2t^2\), find its veloci
 \addcontentsline{toc}{subsection}{Exercise 4}
 
 The angle \(\theta\) in radians turned through by a revolving wheel is connected by the time \(t\) (in seconds) that has elapsed since starting by the law
-\[
-\theta = 2.1 - 3.2t + 4.8t^2.
-\]
+\[\theta = 2.1 - 3.2t + 4.8t^2.\]
 Find the angular velocity (in radians per second) of that wheel when \(1.5\) seconds have elapsed. Find also its angular acceleration.
 
 \slide
@@ -1973,9 +1797,7 @@ Find the angular velocity (in radians per second) of that wheel when \(1.5\) sec
 \addcontentsline{toc}{subsection}{Exercise 5}
 
 A slider moves so that, during the first part of its motion, its distance \(s\) (in metres) from its starting point is given by the expression
-\[
-s = 6.8t^3 - 10.8t
-\]
+\[s = 6.8t^3 - 10.8t\]
 \(t\) being in seconds. Find the expression for the velocity and acceleration at any time; and hence find the velocity and acceleration after \(3\) seconds.
 
 \slide
@@ -1984,9 +1806,7 @@ s = 6.8t^3 - 10.8t
 \addcontentsline{toc}{subsection}{Exercise 6}
 
 The motion of a rising balloon is such that its height \(h\) in miles is given at any instant by the expression
-\[
-h = 05+ \frac1{10}\sqrt[3]{t-125}
-\]
+\[h = 05+ \frac1{10}\sqrt[3]{t-125}\]
 \(t\) being in seconds. Find an expression for the velocity and acceleration at any time. Draw curves to show the variation of height, velocity and acceleration during the first ten minutes of the ascent.
 
 \slide
@@ -2054,9 +1874,7 @@ Given a function \(y=f(x)\) representing a curve in the plane, we wish to examin
 
 \begin{example}
 Sketch the graph of the function
-\[
-y = x^2+3x-2.
-\]
+\[y = x^2+3x-2.\]
 \end{example}
 
 We collect the following information
@@ -2188,9 +2006,7 @@ Sketch on Figure \ref{fig:14-graph-x2-3x-2}.
 
 \begin{example}
 Sketch the graph of the function
-\[
-y = x^3+2x+3.
-\]
+\[y = x^3+2x+3.\]
 \end{example}
 
 \textbf{\emph{\(x\)-intercepts (of \(y = x^3+2x+3\))}}
@@ -2198,17 +2014,11 @@ y = x^3+2x+3.
 \begin{notslides}
 
 Put \(y=0\) and solve for \(x\).
-\[
-x^3+2x+3 = 0.
-\]
+\[x^3+2x+3 = 0.\]
 Notice that when \(x=-1\) then \(y=0\) and so \(x+1\) is a factor of \(y\). We can then find the other factor and see that
-\[
-y = (x+1)(x^2-x+3).
-\]
+\[y = (x+1)(x^2-x+3).\]
 The second factor \(x^2-x+3\) then has roots
-\[
-x = \frac{1\pm\sqrt{1-4\times3}}{2}
-\]
+\[x = \frac{1\pm\sqrt{1-4\times3}}{2}\]
 which is not real and so there are no other \(x\)-intercepts, except \(x=-1\).
 
 Hence the curve passes through \((-1,0)\).
@@ -2237,9 +2047,7 @@ So the curve passes through the point \((0,3)\).
 
 \begin{notslides}
 
-\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2+2 = 0 \Rightarrow x^2 = -\frac{2}{3}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2+2 = 0 \Rightarrow x^2 = -\frac{2}{3}.\]
 This has no real solutions and so there are no critical points.
 
 \end{notslides}
@@ -2278,9 +2086,7 @@ Sketch on Figure \ref{fig:15-graph-x3-2x-3}.
 
 \begin{example}
 Sketch the graph of the curve
-\[
-y = \frac{1}{x+1}.
-\]
+\[y = \frac{1}{x+1}.\]
 \end{example}
 
 \textbf{\emph{\(x\)-intercepts (of \(1/(x+1)\))}}
@@ -2319,9 +2125,7 @@ This has no real solutions and so there are no critical points.
 
 \begin{notslides}
 
-\[
-\frac{d^2y}{\mathrm{d} x^2} = -(-2)(x+1)^{-3} = \frac2{(x+1)^3}.
-\]
+\[\frac{d^2y}{\mathrm{d} x^2} = -(-2)(x+1)^{-3} = \frac2{(x+1)^3}.\]
 This also has no solutions and so there are no points of inflection. Notice however that for \(x < -1\), \(\mathrm{d}^2y/\mathrm{d} x^2<0\) and so the function is concave down, while if \(x>-1\) then \(\mathrm{d}^2y/\mathrm{d} x^2 >0\) and so the function is concave up.
 
 \end{notslides}
@@ -2395,32 +2199,22 @@ It is usually helpful to begin by drawing a diagram (Figure \ref{fig:17-maximum-
 Let \(x\) be the length in metres of side of the square to be cut.
 
 The volume of the box
-\[
-V = \text{length}\times\text{breadth}\times\text{depth}\tag{1}
-\]
+\[V = \text{length}\times\text{breadth}\times\text{depth}\tag{1}\]
 Equation (1) is the equation we want to maximise, but we need to put the equation in terms of a single variable before we can differentiate.
 
 \begin{notslides}
 
 In terms of \(x\),
-\[
-\text{length} = 0.8 - 2x,\; \text{breadth} = 0.4 - 2x,\;\text{depth} = x
-\]
+\[\text{length} = 0.8 - 2x,\; \text{breadth} = 0.4 - 2x,\;\text{depth} = x\]
 So
-\[
-V = (0.8 - 2x)(0.4 - 2x)x = (0.32 - 2.4x + 4x^2)x = 4x^3 - 2.4x^2 + 0.32x
-\]
+\[V = (0.8 - 2x)(0.4 - 2x)x = (0.32 - 2.4x + 4x^2)x = 4x^3 - 2.4x^2 + 0.32x\]
 Then
-\[
-\frac{\mathrm{d}V}{\mathrm{d} x} = 12x^2 - 4.8x + 0.32
-\]
+\[\frac{\mathrm{d}V}{\mathrm{d} x} = 12x^2 - 4.8x + 0.32\]
 Maximum and minimum values occur when \(\mathrm{d}V/\mathrm{d}x  = 0\).
 That is, when \(12x^2 - 4.8x + 0.32= 0\).
 
 Solving \(12x^2 - 4.8x + 0.32= 0\) for \(x\) using the quadratic formula gives:
-\[
- x \approx 0.316\text{ and }x \approx 0.085\,\,(3\text{ d.p.}).
-\]
+\[x \approx 0.316\text{ and }x \approx 0.085\,\,(3\text{ s.f.}).\]
 Now we need to find which value of \(x\) gives the maximum volume.
 \begin{align*}
 \frac{\mathrm{d}^2 V}{\mathrm{d} x^2} &= 24x - 4.8\\
@@ -2477,9 +2271,7 @@ For maximum volume, the square to be cut out must have sides of:
 
 \begin{example}
 A beam which is built into a wall at one end is simply supported by a force of 75 kN at the other end. The beam is loaded as shown below and the mass of the beam produces a force of 30kN/m. The beam is 4 m long, and the bending moment \(M\) at any distance \(x\) from the simply supported end is given by
-\[
-M = 75x-20(x-1.25)-30x\frac{x}{2}.
-\]
+\[M = 75x-20(x-1.25)-30x\frac{x}{2}.\]
 Determine the position of the maximum bending moment and its magnitude. (Figure \ref{fig:18-maximum-bending-moment})
 \end{example}
 
@@ -2504,9 +2296,7 @@ For a turning point, \(\mathrm{d}M/\mathrm{d}x=0\), so \(55 - 30x = 0\) and \(x 
 \(\mathrm{d}^2M/\mathrm{d}x^2 = -30\), which is always negative, so the turning point is a maximum.
 
 The bending moment \(M\) when \(x = 1.83\) is
-\[
-M = 75\times1.83 - 20(1.83 - 1.25) - \frac{30\times1.83^2}{2},
-\]
+\[M = 75\times1.83 - 20(1.83 - 1.25) - \frac{30\times1.83^2}{2},\]
 or \(M = 75\ kNm\).
 
 The maximum bending moment occurs at \(1.83 m\) from the simply supported end and has a value of \(75\ kNm\).
@@ -2570,26 +2360,16 @@ Given a cylindical can with surface area \(S=100\ m^2\), height \(h\) and radius
 Let \(A=\pi r^2\) be the surface area of the top of the can.
 
 Notice that \(V = Ah = \pi r^2h\). So
-\[
-\begin{array}{rl}
+\[\begin{array}{rl}
 S&=2A + \text{area of sides}\\
 &=2\pi r^2 + 2\pi rh = 100\\
-\end{array}
-\]
-\[
-h=\frac{100-2\pi r^2}{2\pi r}=\frac{50-\pi r^2}{\pi r}
-\]
-\[
-V=\pi r^2\left(\frac{50-\pi r^2}{\pi r}\right) = 50r -\pi r^3
-\]
+\end{array}\]
+\[h=\frac{100-2\pi r^2}{2\pi r}=\frac{50-\pi r^2}{\pi r}\]
+\[V=\pi r^2\left(\frac{50-\pi r^2}{\pi r}\right) = 50r -\pi r^3\]
 We need to find the critical points and so we find \(\mathrm{d}V/\mathrm{d} r\) and equate to 0.
-\[
-\frac{\mathrm{d} V}{\mathrm{d} r} = 50-3\pi r^2 = 0\text{ giving }r = \sqrt{\frac{50}{3\pi}}.
-\]
+\[\frac{\mathrm{d} V}{\mathrm{d} r} = 50-3\pi r^2 = 0\text{ giving }r = \sqrt{\frac{50}{3\pi}}.\]
 Now
-\[
-\frac{\mathrm{d}^2 V}{\mathrm{d}r^2} = -6\pi r\;\text{ and so }\;\left.\frac{\mathrm{d}^2 V}{\mathrm{d}r^2}\right\vert_{r=\sqrt{50/3\pi}} = -6\pi\sqrt{\frac{50}{3\pi}}<0.
-\]
+\[\frac{\mathrm{d}^2 V}{\mathrm{d}r^2} = -6\pi r\;\text{ and so }\;\left.\frac{\mathrm{d}^2 V}{\mathrm{d}r^2}\right\vert_{r=\sqrt{50/3\pi}} = -6\pi\sqrt{\frac{50}{3\pi}}<0.\]
 By the 2nd derivative test we see that \(r=\sqrt{50/3\pi}\) is a local maximum.
 
 \end{notslides}
@@ -2633,9 +2413,7 @@ and thus we have found a
 \subsection{Differentiation of implicit functions}\label{differentiation-of-implicit-functions}
 
 An \textcolor{purple}{\em implicit function}\index{implicit function} is one given by an equation (like the one below), rather than in a direct form \(y=\)(some expression with \(x\)). Here we consider \(y\) to depend on \(x\), and \(x\) to be an ``independent'' variable:
-\[
-y^2 + x^2 + 2xy + 2x = 0.
-\]
+\[y^2 + x^2 + 2xy + 2x = 0.\]
 Thus the whole expression is a function of \(x\) even though we don't have a formula for \(y\) in terms of \(x\).
 
 We can still think of \(y=f(x)\), although we don't have a formula for \(f\). We do not need to ``solve the equation for \(y\)'' in order to differentiate, we can use the chain rule!
@@ -2643,26 +2421,18 @@ We can still think of \(y=f(x)\), although we don't have a formula for \(f\). We
 \slide
 
 For example, to differentiate \(y^2\) with respect to \(x\) we write
-\[
-\frac{\mathrm{d}}{\mathrm{d} x}(y^2) = \frac{\mathrm{d}}{\mathrm{d} y}(y^2)\times\frac{\mathrm{d} y}{\mathrm{d} x}= 2y\frac{\mathrm{d} y}{\mathrm{d} x}.
-\]
+\[\frac{\mathrm{d}}{\mathrm{d} x}(y^2) = \frac{\mathrm{d}}{\mathrm{d} y}(y^2)\times\frac{\mathrm{d} y}{\mathrm{d} x}= 2y\frac{\mathrm{d} y}{\mathrm{d} x}.\]
 \slide
 To differentiate \(2xy\) we note that if \(y=f(x)\) was known, this would be a product of two functions of \(x\), so using the product rule
-\[
-\frac{\mathrm{d}}{\mathrm{d} x}(2xy) = 2x\frac{\mathrm{d}}{\mathrm{d} x}(y)+2y\frac{\mathrm{d}}{\mathrm{d} x}(x) = 2x\frac{\mathrm{d} y}{\mathrm{d} x} + 2y.
-\]
+\[\frac{\mathrm{d}}{\mathrm{d} x}(2xy) = 2x\frac{\mathrm{d}}{\mathrm{d} x}(y)+2y\frac{\mathrm{d}}{\mathrm{d} x}(x) = 2x\frac{\mathrm{d} y}{\mathrm{d} x} + 2y.\]
 \slide
 Hence if
-\[
-y^2 + x^2 + 2xy + 2x = 0
-\]
+\[y^2 + x^2 + 2xy + 2x = 0\]
 then the derivative with respect to \(x\) is
 
 \begin{notslides}
 
-\[
-2y\frac{\mathrm{d} y}{\mathrm{d} x} + 2x+2x\frac{\mathrm{d} y}{\mathrm{d} x} +2y+2 = 0.
-\]
+\[2y\frac{\mathrm{d} y}{\mathrm{d} x} + 2x+2x\frac{\mathrm{d} y}{\mathrm{d} x} +2y+2 = 0.\]
 This may be rearranged so that
 \begin{align*}
 2y\frac{\mathrm{d} y}{\mathrm{d} x}+2x\frac{\mathrm{d} y}{\mathrm{d} x} &= -2x-2y-2\\
@@ -2705,17 +2475,11 @@ This is actually the equation of an ellipse (Figure \ref{fig:20-ellipse}).
 \end{align*}
 
 When \(x=0.2\) then
-\[
-10y^2+\frac{12}5y-\frac35=0\text{ and so }y = \frac{-\frac{12}5\pm\sqrt{\left(\frac{12}5\right)^2+4\times10\times\frac35}}{20} = 0.153\text{ and }-0.393
-\]
+\[10y^2+\frac{12}5y-\frac35=0\text{ and so }y = \frac{-\frac{12}5\pm\sqrt{\left(\frac{12}5\right)^2+4\times10\times\frac35}}{20} = 0.153\text{ and }-0.393\]
 So
-\[
-\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069
-\]
+\[\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069\]
 and
-\[
-\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=-0.393} = -\frac{5\times0.2-3\times 0.393}{3\times0.2-5\times0.393} = -0.091
-\]
+\[\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=-0.393} = -\frac{5\times0.2-3\times 0.393}{3\times0.2-5\times0.393} = -0.091\]
 \end{solution}
 
 \slide
@@ -2732,15 +2496,11 @@ and
 If a function is expressed in parametric form it is convenient to be able to differentiate it in this form rather than having to convert to Cartesian form first.
 
 A function expressed in parametric form has a third variable e.g.
-\[
-y = f(t),\; x = g(t)
-\]
+\[y = f(t),\; x = g(t)\]
 where \(t\) is a parameter.
 
 Now using the chain rule again
-\[
-\frac{\mathrm{d} y}{\mathrm{d} t} = \frac{\mathrm{d} y}{\mathrm{d} x}\times\frac{\mathrm{d} x}{\mathrm{d} t}\text{ and so }\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} t}/\frac{\mathrm{d} x}{\mathrm{d} t}.
-\]
+\[\frac{\mathrm{d} y}{\mathrm{d} t} = \frac{\mathrm{d} y}{\mathrm{d} x}\times\frac{\mathrm{d} x}{\mathrm{d} t}\text{ and so }\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} t}/\frac{\mathrm{d} x}{\mathrm{d} t}.\]
 Thus if we can find \(\mathrm{d}y/\mathrm{d} t\) and \(\mathrm{d}x/\mathrm{d} t\) we can establish \(\mathrm{d}y/\mathrm{d} x\).
 
 \slide
@@ -2764,16 +2524,12 @@ A function is expressed in parametric form as \(y = 2t + t^2, x = t^2 - 1\), whe
 This is a convenient way to deal with the derivative of a product of quotient with more than two terms.
 
 Consider
-\[
-y = \frac{(x-4)(x+5)}{(x+3)(x-2)}
-\]
+\[y = \frac{(x-4)(x+5)}{(x+3)(x-2)}\]
 Taking logs of both sides gives
 
 \begin{notslides}
 
-\[
-\ln(y) = \ln(x-4)+\ln(x+5)-\ln(x+3)-\ln(x-2)
-\]
+\[\ln(y) = \ln(x-4)+\ln(x+5)-\ln(x+3)-\ln(x-2)\]
 
 \end{notslides}
 
@@ -2863,9 +2619,7 @@ and points of inflection. Sketch the graph of the function clearly indicating th
 \addcontentsline{toc}{subsection}{Exercise 1}
 
 A beam 3 m long whose weight is 2 kN, is simply supported at both ends and the bending moment at a distance \(x\ m\) from one end is given by
-\[
-m = 2(3x - x^2)\ kNm
-\]
+\[m = 2(3x - x^2)\ kNm\]
 Prove that the bending moment is a maximum in the middle of the beam and calculate its value.
 
 \slide
@@ -3006,23 +2760,17 @@ We then move on to look at the opposite process to differentiation, called integ
 If an expression is a function of two variables then it can be differentiated with respect to either of the variables.
 
 For example, suppose
-\[
-z(x,y) = x^2+xy+y^2.
-\]
+\[z(x,y) = x^2+xy+y^2.\]
 If we fix the value of the variable \(y\) and consider this as a function of the variable \(x\) only.
 
 \begin{notslides}
 
 For example, if \(y=2\), then
-\[
-z(x,2) = x^2 + 2x + 4.
-\]
+\[z(x,2) = x^2 + 2x + 4.\]
 We can differentiate this function with respect to \(x\) to get \(\mathrm{d}z(x,2)/\mathrm{d}x = 2x+2\).
 
 Similarly, we can fix the value of the variable \(x\) and consider it as a function of \(y\) only. For example if \(x=-1\), then
-\[
-z(-1,y) = 1-y+y^2.
-\]
+\[z(-1,y) = 1-y+y^2.\]
 T
 
 \end{notslides}
@@ -3030,9 +2778,7 @@ T
 \begin{slidesonly}
 
 For example, if \(y=2\), then
-\[
-z(x,2) = \phantom{x^2 + 2x + 4.}
-\]
+\[z(x,2) = \phantom{x^2 + 2x + 4.}\]
 We can differentiate this function with respect to \(x\) to get \(\mathrm{d}z(x,2)/\mathrm{d}x =\)
 
 \slide
@@ -3040,9 +2786,7 @@ We can differentiate this function with respect to \(x\) to get \(\mathrm{d}z(x,
 (Recall: \(z(x,y) = x^2+xy+y^2\).)
 
 Similarly, we can fix the value of the variable \(x\) and consider it as a function of \(y\) only. For example if \(x=-1\), then
-\[
-z(-1,y) =
-\]
+\[z(-1,y) =\]
 The derivative of this with respect to \(y\) is then \(\mathrm{d}z(-1,y)/\mathrm{d}y =\)
 
 \slide
@@ -3052,13 +2796,9 @@ The derivative of this with respect to \(y\) is then \(\mathrm{d}z(-1,y)/\mathrm
 \begin{notslides}
 
 In general, if we think of \(y\) as being a fixed constant (not worrying about the actual value), then we can differentiate \(z\) with respect to \(x\). We use the following notation
-\[
-\frac{\partial z}{\partial x} = 2x+y.
-\]
+\[\frac{\partial z}{\partial x} = 2x+y.\]
 In the same way, thinking of \(x\) as being a fixed constant and differentiating with respect to \(y\) we write
-\[
-\frac{\partial z}{\partial y} = x + 2y.
-\]
+\[\frac{\partial z}{\partial y} = x + 2y.\]
 
 \end{notslides}
 
@@ -3067,13 +2807,9 @@ In the same way, thinking of \(x\) as being a fixed constant and differentiating
 (Recall: \(z(x,y) = x^2+xy+y^2\).)
 
 In general, if we think of \(y\) as being a fixed constant (not worrying about the actual value), then we can differentiate \(z\) with respect to \(x\). We use the following notation
-\[
-\frac{\partial z}{\partial x} = \phantom{2x+y.}
-\]
+\[\frac{\partial z}{\partial x} = \phantom{2x+y.}\]
 In the same way, thinking of \(x\) as being a fixed constant and differentiating with respect to \(y\) we write
-\[
-\frac{\partial z}{\partial y} = \phantom{x + 2y.}
-\]
+\[\frac{\partial z}{\partial y} = \phantom{x + 2y.}\]
 
 \slide
 
@@ -3124,9 +2860,7 @@ From the function \(z=x^3y^2\), determine \(\partial z/\partial x\) and \(\parti
 \end{example}
 
 \begin{solution}
-\[
-\frac{\partial z}{\partial x} = 3x^2y^2,\;\frac{\partial z}{\partial y} = 2yx^3.
-\]
+\[\frac{\partial z}{\partial x} = 3x^2y^2,\;\frac{\partial z}{\partial y} = 2yx^3.\]
 \end{solution}
 
 \slide
@@ -3136,9 +2870,7 @@ From the function \(z=3x^5-5y^3+6\), determine \(\partial z/\partial x\) and \(\
 \end{example}
 
 \begin{solution}
-\[
-\frac{\partial z}{\partial x} = 15x^4,\;\frac{\partial z}{\partial y} = -15y^2.
-\]
+\[\frac{\partial z}{\partial x} = 15x^4,\;\frac{\partial z}{\partial y} = -15y^2.\]
 \end{solution}
 
 \slide
@@ -3149,28 +2881,16 @@ If a second partial derivative is required and there are, say, two variables, th
 
 \begin{example}
 Calculate all possible ``second partial derivatives'' of
-\[
-z=3x^2+2x^2y^2+3y^2.
-\]
+\[z=3x^2+2x^2y^2+3y^2.\]
 \end{example}
 
 \begin{solution}
-\[
-\frac{\partial z}{\partial x} = 6x+4xy^2,\;\frac{\partial z}{\partial y} = 4x^2y+6y.
-\]
+\[\frac{\partial z}{\partial x} = 6x+4xy^2,\;\frac{\partial z}{\partial y} = 4x^2y+6y.\]
 So
-\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = 6+4y^2
-\]
-\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = 6+4x^2
-\]
-\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = 8xy
-\]
-\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = 8xy
-\]
+\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = 6+4y^2\]
+\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = 6+4x^2\]
+\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = 8xy\]
+\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = 8xy\]
 \end{solution}
 
 \begin{slidesonly}
@@ -3184,28 +2904,16 @@ So
 
 \begin{example}
 Calculate all possible ``second partial derivatives'' of
-\[
-z = x\cos(y)-y\cos(x)
-\]
+\[z = x\cos(y)-y\cos(x)\]
 \end{example}
 
 \begin{solution}
-\[
-\frac{\partial z}{\partial x} = \cos(y)+y\sin(x),\;\frac{\partial z}{\partial y} = -x\sin(y)-\cos(x).
-\]
+\[\frac{\partial z}{\partial x} = \cos(y)+y\sin(x),\;\frac{\partial z}{\partial y} = -x\sin(y)-\cos(x).\]
 So
-\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = y\cos(x)
-\]
-\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = -x\cos(y)
-\]
-\[
-\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = -\sin(y)+\sin(x)
-\]
-\[
-\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = -\sin(y)+\sin(x)
-\]
+\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = y\cos(x)\]
+\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = -x\cos(y)\]
+\[\frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial x\partial y} = -\sin(y)+\sin(x)\]
+\[\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial y\partial x} = -\sin(y)+\sin(x)\]
 \end{solution}
 
 \slide
@@ -3223,13 +2931,9 @@ The symbol for integration is \(\displaystyle\int\), which is the Old English sy
 \subsection{Integration by rule}\label{integration-by-rule}
 
 Suppose \(\mathrm{d}y/\mathrm{d} x = 2x\). Then the instruction ``integrate this function with respect to \(x\)'' is written
-\[
-\int 2x \,\mathrm{d}x
-\]
+\[\int 2x \,\mathrm{d}x\]
 We know that to get
-\[
-\frac{\mathrm{d}y}{\mathrm{d}x} = 2x
-\]
+\[\frac{\mathrm{d}y}{\mathrm{d}x} = 2x\]
 we could have started with \(y = x^2\) so this is one possible solution.
 
 \begin{notslides}
@@ -3246,9 +2950,7 @@ However, we could also have started with \(y =\)
 \end{slidesonly}
 
 We can't tell which because all information about the any constant value is lost when we differentiate. To make this clear we write
-\[
-\int 2x \,\mathrm{d}x = x^2 + c
-\]
+\[\int 2x \,\mathrm{d}x = x^2 + c\]
 where ``\(c\)'' represents an arbitrary constant.
 
 \slide
@@ -3319,9 +3021,7 @@ Integrate the functions
   \end{align*}
 \item
   \(y = x^{3/5}(2x-\sqrt{x}) = 2x^{8/5}-x^{11/10}\) and so
-  \[
-  \int y \,\mathrm{d}x = \int 2x^{8/5}\,\mathrm{d}x-\int x^{11/10}\,\mathrm{d}x = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.
-  \]
+  \[\int y \,\mathrm{d}x = \int 2x^{8/5}\,\mathrm{d}x-\int x^{11/10}\,\mathrm{d}x = \frac{2x^{13/5}}{13/5} - \frac{x^{21/10}}{21/10}+C = \frac{10}{13}x^{13/5}-\frac{10}{21}x^{21/10} + C.\]
 \end{enumerate}
 
 \end{solution}
@@ -3354,17 +3054,11 @@ When \(x = 1, y = 3\).
 \end{example}
 
 \begin{solution}
-\[
-y = \int(4x+5)\,\mathrm{d}x = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c
-\]
+\[y = \int(4x+5)\,\mathrm{d}x = \frac{4x^2}{2} + 5x+c = 2x^2+5x+c\]
 Now we use the condition that when \(x=1\) then \(y=3\) so that
-\[
-3 = 2\times 1^2 + 5\times1 + c = 7+c.
-\]
+\[3 = 2\times 1^2 + 5\times1 + c = 7+c.\]
 Hence \(c = 3-7=-4\) and therefore
-\[
-y = 2x^2+5x-4.
-\]
+\[y = 2x^2+5x-4.\]
 \end{solution}
 
 \slide
@@ -3380,9 +3074,7 @@ y& = \int(3\sqrt{x}-2/x^2)\,\mathrm{d}x = 3\int x^{1/2}\,\mathrm{d}x - 2\int x^{
 &= \frac{3x^{3/2}}{3/2} - \frac{2x^{-1}}{-1}+C = 2x^{3/2}+\frac2x+C.
 \end{align*}
 Now the boundary condition tells us that when \(x=1, y = 4\) and so \(4=2\times1^{3/2}+2/1+C = 2+2+C\). Hence \(C=0\) and so
-\[
-y = 2x^{3/2}+\frac 2x.
-\]
+\[y = 2x^{3/2}+\frac 2x.\]
 \end{solution}
 
 \slide
@@ -3408,7 +3100,7 @@ integral
 \bottomrule\noalign{}
 \endlastfoot
 \(\frac{\mathrm{d}}{\,\mathrm{d}x}(x^n)=nx^{n-1}\) & \(\displaystyle\int x^n\,\mathrm{d}x = \frac{x^{n+1}}{n+1}+c, n\ne -1\) \\
-\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\ln(x)) = \frac 1x\) & \(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln(                     | x | )+c, x\neq0\) \\
+\(\frac{\mathrm{d}}{\,\mathrm{d}x}(\ln(x)) = \frac 1x\) & \(\displaystyle\int\frac{1}{x}\,\mathrm{d}x = \ln( | x | )+c, x\neq0\) \\
 \(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^x)\,\mathrm{d}x = e^x\) & \(\displaystyle\int e^x \,\mathrm{d}x = e^x + c\) \\
 \(\frac{\mathrm{d}}{\,\mathrm{d}x}(e^{kx})\,\mathrm{d}x = ke^{kx}\) & \(\displaystyle\int e^{kx} \,\mathrm{d}x = \frac{e^{kx}}{k} + c\) \\
 \(\frac{\mathrm{d}}{\,\mathrm{d}x}(a^x)\,\mathrm{d}x = a^x\ln(a)\) & \(\displaystyle\int a^x \,\mathrm{d}x = \frac{a^x}{\ln(a)} + c\) \\
@@ -3426,30 +3118,22 @@ integral
 
 \begin{solution}
 Notice that
-\[
-\frac{\mathrm{d}}{\mathrm{d}x}\sin(2x) = 2\cos(2x)
-\]
+\[\frac{\mathrm{d}}{\mathrm{d}x}\sin(2x) = 2\cos(2x)\]
 and so
-\[
-\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+c.
-\]
+\[\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+c.\]
 \end{solution}
 
 \begin{notslides}
 
 This works in general: if
-\[
-\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \frac1kg(kx) + c.
-\]
+\[\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \frac1kg(kx) + c.\]
 
 \end{notslides}
 
 \begin{slidesonly}
 
 This works in general: if
-\[
-\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \phantom{\frac1kg(kx) + c.}
-\]
+\[\int f(x)\,\mathrm{d}x = g(x) + c\text{ then }\int f(kx)\,\mathrm{d}x = \phantom{\frac1kg(kx) + c.}\]
 \slide
 
 \end{slidesonly}
@@ -3465,9 +3149,7 @@ y& = \int(2\sin(x) - \sec^2(x)+\frac1{\pi})\,\mathrm{d}x = 2\int \sin(x)\,\mathr
 &= -2\cos(x)-\tan(x)+\frac{x}{\pi}+C
 \end{align*}
 Now the boundary condition tells us that when \(x=\pi/4, y = 0\) and so \(0=-2\cos(\pi/4)-\tan(\pi/4)+\pi/(4\pi)+C = -\sqrt{2}-1+1/4+C\). Hence \(C=\sqrt{2}+3/4\) and so
-\[
-y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.
-\]
+\[y = -2\cos(x)-\tan(x)+\frac{x}{\pi}+\sqrt{2}+\frac34.\]
 \end{solution}
 
 \slide
@@ -3478,23 +3160,27 @@ Calculate \(\displaystyle\int\sin^2(x)\,\mathrm{d}x\).
 
 \begin{solution}
 This is not one of our standard integrals so at first sight it would appear we cannot integrate this function (as yet). However, recall that
-\[
-\cos(2x) = \cos^2(x)-\sin^2(x) = 1-2\sin^2(x).
-\]
+\[\cos(2x) = \cos^2(x)-\sin^2(x) = 1-2\sin^2(x).\]
 Hence
-\[
-\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x
-\]
+\[\sin^2(x) = \frac{1-\cos(2x)}{2}\text{ and so }\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x\]
 Now by Example \ref{exm:cos-example} we know that \(\displaystyle\int\cos(2x)\,\mathrm{d}x = \frac12\sin(2x)+C\).
 Hence
-\[
-\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.
-\]
+\[\int\sin^2(x)\,\mathrm{d}x = \frac12\int(1-\cos(2x))\,\mathrm{d}x = \frac12\left(x-\frac12\sin(2x)\right)+C = \frac{2x-\sin(2x)}{4}+C.\]
 Note that we can check we are correct by differentiation:
-\[
-\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).
-\]
+\[\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{2x-\sin(2x)}{4}\right)=\frac14\left(2-2\cos(2x)\right)=\frac12\left(1-\cos(2x)\right)=\sin^2(x).\]
 \end{solution}
+
+\slide
+
+\subsection{More `standard' integrals}\label{more-standard-integrals}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\int \frac{1}{1+x^2}\,\mathrm{d}x = \arctan(x) + C\)
+\item
+  \(\int \frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x = \arcsin(x) + C\)
+\end{itemize}
 
 \chapter*{Week 5 Exercises}\label{week-5-exercises}
 \addcontentsline{toc}{chapter}{Week 5 Exercises}
@@ -3502,9 +3188,7 @@ Note that we can check we are correct by differentiation:
 \section{Sheet 12 - Partial Differentiation}\label{sheet-12---partial-differentiation}
 
 For each of the functions below, obtain where possible
-\[
-\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, \frac{\partial^2 z}{\partial x^2}, \frac{\partial^2 z}{\partial y^2}, \frac{\partial^2 z}{\partial y\partial x}, \frac{\partial^2 z}{\partial x\partial y}
-\]
+\[\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, \frac{\partial^2 z}{\partial x^2}, \frac{\partial^2 z}{\partial y^2}, \frac{\partial^2 z}{\partial y\partial x}, \frac{\partial^2 z}{\partial x\partial y}\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3667,17 +3351,13 @@ Now our function is expressed entirely in terms of \(u\) and we can integrate wi
 
 \begin{notslides}
 
-\[
-\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.
-\]
+\[\int\frac12u^{1/2}\mathrm{d}u = \frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.\]
 
 \end{notslides}
 
 \begin{slidesonly}
 
-\[
-\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}
-\]
+\[\int\frac12u^{1/2}\mathrm{d}u = \phantom{\frac 12\cdot\frac23u^{3/2}+c = \frac13u^{3/2}+c.}\]
 
 \end{slidesonly}
 
@@ -3685,9 +3365,7 @@ Finally we can substitute for \(u\) to give the answer in terms of \(x\)
 
 \begin{notslides}
 
-\[
-\frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.
-\]
+\[\frac 13u^{3/2}+c = \frac13(x^2+1)^{3/2}+c.\]
 
 \end{notslides}
 
@@ -3699,13 +3377,9 @@ Evaluate \(\displaystyle\int\sin^2(x)\cos(x)\mathrm{d}x\).
 
 \begin{solution}
 Let \(u = \sin(x)\) so that \(\mathrm{d}u/\mathrm{d}x = \cos(x)\). Then \(\mathrm{d}x = \mathrm{d}u/\cos(x)\) and so
-\[
-\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.
-\]
+\[\int\sin^2(x)\cos(x)\mathrm{d}x = \int u^2\mathrm{d}u = \frac 13u^3+c.\]
 Hence
-\[
-\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.
-\]
+\[\int\sin^2(x)\cos(x)\mathrm{d}x = \frac 13\sin^3(x) + c.\]
 \end{solution}
 
 \slide
@@ -3718,18 +3392,14 @@ One way this can happen is that the numerator in a fraction is the derivative of
 
 \begin{example}
 Find
-\[
-\int\frac{3x^2}{x^3-4}\mathrm{d}x.
-\]
+\[\int\frac{3x^2}{x^3-4}\mathrm{d}x.\]
 \end{example}
 
 \ecpybx\slide\copy\copybox
 
 \begin{solution}
 Let \(u = x^3-4\) so that \(\mathrm{d}u = 3x^2\mathrm{d}x\). Then
-\[
-\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.
-\]
+\[\int\frac{3x^2}{x^3-4}\mathrm{d}x = \int \frac{\mathrm{d}u}{u} = \ln|u|+c = \ln|x^3-4|+c.\]
 \end{solution}
 
 (For integrals of this class of examples, the result is always the natural log of the denominator.)
@@ -3741,36 +3411,26 @@ Often a difficult integral may be made simpler by the use of trig identities. Kn
 
 \begin{example}
 Find
-\[
-\int\sin^2(x) \mathrm{d}x.
-\]
+\[\int\sin^2(x) \mathrm{d}x.\]
 \end{example}
 
 \begin{solution}
 Using the trig identity for \(\cos(2x)\) we see that \(\sin^2(x) = (1-\cos(2x))/2\). So
-\[
-\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.
-\]
+\[\int\sin^2(x) \mathrm{d}x = \int\frac 12-\int\frac{\cos(2x)}{2} = \frac x2-\frac{\sin(2x)}{4}+c.\]
 \end{solution}
 
 \slide
 
 \begin{example}
 Find
-\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.
-\]
+\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}}.\]
 \end{example}
 
 \begin{solution}
 Let \(x = a\sin(\theta)\) then \(\mathrm{d}x = a\cos(\theta)d\theta\). So \(x^2 = a^2\sin^2(\theta)\) and \(\theta = \sin^{-1}(x/a)\). Hence
-\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.
-\]
+\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \int\frac{a\cos(\theta)d\theta}{\sqrt{a^2-a^2\sin^2(\theta)}} = \int\frac{a\cos(\theta)d\theta}{a\sqrt{1-\sin^2(\theta)}} = \int\frac{\cos(\theta)d\theta}{\cos(\theta)} = \int d\theta = \theta + c.\]
 Hence
-\[
-\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.
-\]
+\[\int\frac{\mathrm{d}x}{\sqrt{a^2-x^2}} = \sin^{-1}\left(\frac xa\right) + c.\]
 \end{solution}
 
 \slide
@@ -3899,9 +3559,7 @@ We have \(\displaystyle\int x\cos(2x)\mathrm{d}x\). Let \(u=x\) and \(\mathrm{d}
 \label{eq:6-10}
 \end{align}
 Now substituting \eqref{eq:6-10} into \eqref{eq:6-9} we can obtain the answer to the original integral
-\[
-\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.
-\]
+\[\int x^2\sin(2x)\mathrm{d}x = -\frac{x^2\cos(2x)}2+\frac{x\sin(2x)}2+\frac{\cos(2x)}4 + c.\]
 \end{solution}
 
 \chapter*{Week 6 Exercises}\label{week-6-exercises}
@@ -4088,9 +3746,7 @@ We our study of indefinite integrals by looking at integration by converting fun
 \section{Integration using partial fractions}\label{integration-using-partial-fractions}
 
 Consider the integral
-\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x
-\]
+\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x\]
 This is not a ``standard'' integral. Also, if we multiply out the denominator we get \(x^2 - 3x + 2\). The derivative of this denominator is \(2x - 3\). The numerator is thus not the derivative of the denominator, and so making a substitution won't help us to integrate.
 
 The method to apply is to split the fraction into partial fractions.
@@ -4099,38 +3755,26 @@ From semester 1, we know we can do this:
 
 \begin{notslides}
 
-\[
-\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.
-\]
+\[\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.\]
 We calculate:
-\[
-x = A(x-2)+B(x-1)
-\]
+\[x = A(x-2)+B(x-1)\]
 
 Let \(x=2\), so that \(2=A\times0+B\times1\) i.e.~\(B=2\).
 
 Let \(x=1\), so that \(1=A\times-1+B\times0\) i.e.~\(A=-1\).
 
 So
-\[
-\frac{x}{(x-1)(x-2)} = \frac {-1}{x-1}+\frac 2{x-2}
-\]
+\[\frac{x}{(x-1)(x-2)} = \frac {-1}{x-1}+\frac 2{x-2}\]
 and thus
-\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x
-\]
+\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x\]
 which we can finish with the methods we already know:
-\[
-\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
-\]
+\[\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.\]
 
 \end{notslides}
 
 \begin{slidesonly}
 
-\[
-\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}
-\]
+\[\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}\]
 \slide
 
 We calculate:
@@ -4138,18 +3782,12 @@ We calculate:
 \vfill
 
 So
-\[
-\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}
-\]
+\[\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}\]
 and thus
-\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}
-\]
+\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}\]
 \slide
 We can finish using known methods:
-\[
-\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}
-\]
+\[\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}\]
 \slide
 
 \end{slidesonly}
@@ -4160,24 +3798,18 @@ Evaluate \(\displaystyle\int\frac{x^2+2}{x-2}\mathrm{d}x\).
 
 \begin{solution}
 This is an improper fraction so we must make a long division first
-\[
-\begin{array}{r}
+\[\begin{array}{r}
 x+2\phantom{)}   \\
 x-2{\overline{\smash{\big)}\,x^2\phantom{+2x}+2\phantom{)}}}\\
 \underline{-~\phantom{(}(x^2-2x)\phantom{-b)}}\\
 \phantom{0+}2x+2\phantom{)}\\ 
 \underline{-~\phantom{()}(2x-4)}\\ 
 \phantom{0+}6\phantom{)}
-\end{array}
-\]
+\end{array}\]
 So
-\[
-\frac{x^2+2}{x-2} = x+2+\frac6{x-2}
-\]
+\[\frac{x^2+2}{x-2} = x+2+\frac6{x-2}\]
 and hence
-\[
-\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c
-\]
+\[\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c\]
 \end{solution}
 
 \slide
@@ -4187,13 +3819,9 @@ Evaluate \(I = \displaystyle\int\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} \mathrm{d}x\)
 \end{example}
 
 \begin{solution}
-\[
-\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
-\]
+\[\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}\]
 and so
-\[
-x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
-\]
+\[x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)\]
 Let \(x=1\) so that \(1=2A\) or \(A=1/2\).
 
 Let \(x=2\) so that \(1=-B\) or \(B=-1\).
@@ -4220,13 +3848,9 @@ Evaluate \(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\)
 \end{example}
 
 \begin{solution}
-\[
-\frac{5x+2}{x^2-4x+4} = \frac{5x+2}{(x-2)^2} = \frac A{x-2}+\frac{B}{(x-2)^2}
-\]
+\[\frac{5x+2}{x^2-4x+4} = \frac{5x+2}{(x-2)^2} = \frac A{x-2}+\frac{B}{(x-2)^2}\]
 and so
-\[
-5x+2 = A(x-2)+B
-\]
+\[5x+2 = A(x-2)+B\]
 Let \(x=2\) so that \(12=B\).
 
 \(A(x-2)+12 = 5x+2\) and so \(Ax+10-2A=5x\), so that \(A=5\).
@@ -4252,9 +3876,7 @@ I&= \int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\\
 Let \(F(x) = \displaystyle\int f(x)\mathrm{d}x\). For example, \(F(x)=\displaystyle\int x\mathrm{d}x = \frac{x^2}{2} + C\).
 
 Define
-\[
-\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
-\]
+\[\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).\]
 
 (If the definite integral would be defined as in most textbooks, this statement would be called the \textcolor{purple}{\em First Fundamental Theorem of Calculus}\index{First Fundamental Theorem of Calculus}.)
 
@@ -4291,9 +3913,7 @@ Note that during the subtraction process the arbitrary constant disappears. This
 
 \begin{example}
 Determine the value of
-\[
-\int_0^{\pi/2}\cos(x)\mathrm{d}x.
-\]
+\[\int_0^{\pi/2}\cos(x)\mathrm{d}x.\]
 \end{example}
 
 \begin{solution}
@@ -4357,9 +3977,7 @@ Consider now the area \(A\) under the curve between \(a\) and \(b\).
   Denote the \(x\)-coordinates of the vertical ``chopping lines'' by \(x_0=a, x_1, \dots, x_k=b\).
 \item
   An approximation of \(A\) is the sum of the areas of all the rectangles as above, and may be written as
-  \[
-  A\approx\sum_{i=0}^{k-1}f(x_i)\delta x
-  \]
+  \[A\approx\sum_{i=0}^{k-1}f(x_i)\delta x\]
 \end{itemize}
 
 \begin{notslides}
@@ -4373,9 +3991,7 @@ where the sign \(\Sigma\) (sigma) means, work out the area of each rectangle in 
 \item
   As \(\delta x \to 0\), the approximation gets precise. We replace \(\Sigma\) by \(\int\)
   (1st Fundamental Theorem of Calculus in reverse):
-  \[
-  A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.
-  \]
+  \[A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.\]
   \slide
 \end{itemize}
 
@@ -4387,9 +4003,7 @@ Determine the area between the curve \(y=2x^2+3x+1\) and the \(x-\)axis between 
 \leavevmode
 
 (See Figure \ref{fig:23-area-under-2x23x1}.)
-\[
-A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
-\]
+\[A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.\]
 
 \begin{figure}
 
@@ -4430,17 +4044,13 @@ The definite integral over this range is
 
 \begin{notslides}
 
-\[
-\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
-\]
+\[\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.\]
 
 \end{notslides}
 
 \begin{slidesonly}
 
-\[
-\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}
-\]
+\[\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}\]
 \vfill
 
 \end{slidesonly}
@@ -4496,15 +4106,11 @@ First sketch the curve: Figure \ref{fig:25-graph-x3}.
 \end{figure}
 
 We might expect the area to be given by
-\[
-\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
-\]
+\[\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.\]
 This is clearly not the case. The area to the left of the \(y-\)axis clearly has a negative area while the area to the right has a positive area and these are cancelling one another out.
 
 We actually need
-\[
-\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
-\]
+\[\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.\]
 \end{solution}
 
 \slide
@@ -4541,9 +4147,7 @@ In this example we are not told the limits of integration. We must work them out
 We want to find the shaded area. The limits of integration will be the points of intersection of the two curves.
 
 First we need to solve the equations simultaneously to find the \(x-\)co-ordinates of the points of intersection.
-\[
-7-x=x^2+1\Rightarrow x^2+x-6=0\Rightarrow (x-2)(x+3)=0
-\]
+\[7-x=x^2+1\Rightarrow x^2+x-6=0\Rightarrow (x-2)(x+3)=0\]
 Hence we see that the curves intersect at \(x=-3\) and \(x=2\). These are the limits of integration.
 
 From the sketch, the shaded area will be given by
@@ -4588,9 +4192,7 @@ A quick sketch of the curves is on Figure \ref{fig:27-graph-exex}.
 \caption{$y=e^x$ and $y=e^{-x}$}\label{fig:27-graph-exex}
 \end{figure}
 
-\[
-A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
-\]
+\[A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.\]
 
 \end{solution}
 
@@ -4606,13 +4208,9 @@ A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})
 \section{Parametric Integration}\label{parametric-integration}
 
 If a curve is defined parametrically such that \(x = f(t)\) and \(y = g(t)\) it can be integrated parametrically as follows
-\[
-\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f'(t)\,\mathrm{d}t.
-\]
+\[\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f'(t)\,\mathrm{d}t.\]
 Since \(\mathrm{d}x/\mathrm{d}t = f'(t)\), we may imagine that \(\mathrm{d}x = f'(t)\,\mathrm{d}t\), which happens to be correct. It is normally best to convert the limits of integration into values of \(t\) rather than \(x\). So we find \(a', b'\) such that \(a=f(a'), b = f(b')\) and then the integral becomes
-\[
-\int_{a'}^{b'}g(t)f'(t)\,\mathrm{d}t.
-\]
+\[\int_{a'}^{b'}g(t)f'(t)\,\mathrm{d}t.\]
 \slide
 
 \begin{example}
@@ -4747,17 +4345,17 @@ Determine the values of the following definite integrals
 3. \(16\);
 4. \(41/6\);
 5. \(4\);
-6. \(\sin(2)+\cos(2)-\sin(1)-\cos(1) \approx -0.889\) (\(3\) d.p.);
+6. \(\sin(2)+\cos(2)-\sin(1)-\cos(1) \approx -0.889\) (\(3\) s.f.);
 7. \(4\);
-8. \(15/4 - \ln(2) \approx 3.057\) (\(3\) d.p.);
-9. \(\ln(3/2) \approx 0.405\) (\(3\) d.p.);
+8. \(15/4 - \ln(2) \approx 3.057\) (\(4\) s.f.);
+9. \(\ln(3/2) \approx 0.405\) (\(3\) s.f.);
 10. \(10/3\);
-11. \(3\ln4 \approx 4.159\) (\(3\) d.p.);
-12. \(\approx 0.654\) (\(3\) d.p.);
-13. \(6904/105 \approx 65.75\) (\(2\) d.p.);
-14. \(\frac{1}{3}(\sin(3/2)-\sin(3/5)) \approx 0.1443\) (\(4\) d.p.);
-15. \(-41/6 \approx -6.833\) (\(3\) d.p.);
-16. \(1-1/\sqrt{3} \approx 0.423\) (\(3\) d.p.);
+11. \(3\ln4 \approx 4.159\) (\(4\) s.f.);
+12. \(\approx 0.654\) (\(3\) s.f.);
+13. \(6904/105 \approx 65.75\) (\(4\) s.f.);
+14. \(\frac{1}{3}(\sin(3/2)-\sin(3/5)) \approx 0.1443\) (\(4\) s.f.);
+15. \(-41/6 \approx -6.833\) (\(4\) s.f.);
+16. \(1-1/\sqrt{3} \approx 0.423\) (\(3\) s.f.);
 \}
 
 \slide
@@ -4791,14 +4389,14 @@ Evaluate the area bounded by the curve, the x axis and the given ordinates for t
 \end{enumerate}
 
 \{Solutions:
-1. \(\approx 1.33\) (\(2\) d.p.);
-2. \(\approx 20.67\) (\(2\) d.p.);
+1. \(\approx 1.33\) (\(3\) s.f.);
+2. \(\approx 20.67\) (\(4\) s.f.);
 3. \(0.5\);
 4. \(1\);
-5. \(\approx 2.77\) (\(2\) d.p.);
-6. \(\approx 0.667\) (\(3\) d.p.);
-7. \(\approx 0.491\) (\(3\) d.p.);
-8. \(\approx 2.76\) (\(2\) d.p.);
+5. \(\approx 2.77\) (\(3\) s.f.);
+6. \(\approx 0.667\) (\(3\) s.f.);
+7. \(\approx 0.491\) (\(3\) s.f.);
+8. \(\approx 2.76\) (\(3\) s.f.);
 9. \(8a^2\);
 \}
 
@@ -4856,9 +4454,7 @@ The area of the shaded rectangle \(h \times s\). Depending on the shape of the c
 \slide
 
 The approximate total area under the curve is the sum of the approximate areas of all the strips so
-\[
-\text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h
-\]
+\[\text{Total area} = sh_1 + sh_2 + \ldots + sh_n = s(h_1 + h_2 + \ldots + h_n) = s\sum h\]
 where \(\sum h\) is shorthand for the sum of all the values of \(h\).
 
 In words, the total area equals {[}the width of strip{]} times {[}the sum of the mid-ordinates{]}.
@@ -4867,9 +4463,7 @@ In words, the total area equals {[}the width of strip{]} times {[}the sum of the
 
 \begin{example}
 Use the mid-ordinate rule to approximate the value of the integral
-\[
-\int_1^4x^2\,\mathrm{d}x
-\]
+\[\int_1^4x^2\,\mathrm{d}x\]
 by taking 1, 2 or 3 strips. Compare the values with the correct value.
 \end{example}
 
@@ -4877,17 +4471,11 @@ by taking 1, 2 or 3 strips. Compare the values with the correct value.
 First we know that \(\displaystyle\int_1^4 x^2\,\mathrm{d}x = [x^3/3]_1^4 = 4^3/3-1/3 = 63/3 = 21\).
 
 Using one strip, \(s=3\), the mid-point is \(x=2.5\) and \(h=2.5^2 = 6.25\). Hence the mid-ordinate approximation gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim 3\times 6.25 = 18.75.\]
 Using two strips, \(s=1.5\), the two mid-points are \(x_1=1.75\) and \(x_2=3.25\) with heights \(h_1=1.75^2=3.0625, h_2=3.25^2=10.5625\). Hence the mid-ordinate approximation gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim 1.5(3.0625+10.5625)=1.5\times13.625 = 20.4375.\]
 Using three strips, \(s=1\), the three mid-points are \(x_1=1.5, x_2=2.5\) and \(x_3=3.5\) with heights \(h_1=1.5^2=2.25, h_2=2.5^2=6.25, h_3=3.5^2=12.25\). Hence the mid-ordinate approximation gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim 1\times(2.25+6.25+12.25)=1\times20.75 = 20.75.\]
 \end{solution}
 
 \slide
@@ -4913,9 +4501,7 @@ For the \textcolor{purple}{\em trapezium rule}\index{trapezium rule}, the curve 
 \end{figure}
 
 For a trapezium, the area is given by
-\[
-A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})
-\]
+\[A =\frac12(\text{sum of lengths of parallel sides}) \times(\text{distance between parallel sides})\]
 So for each strip \(\delta A =s(y_1+y_2)/2\). With \(n\) strips, the total area (of the trapeziums) is
 \begin{align*}
 A& = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
@@ -4926,25 +4512,17 @@ A& = \frac s2(y_1+y_2) + \frac s2(y_2+y_3) + \ldots + \frac s2(y_{n}+y_{n+1})\\
 
 \begin{example}
 Use the trapezium rule to approximate the integral
-\[
-\int_1^4x^2\,\mathrm{d}x
-\]
+\[\int_1^4x^2\,\mathrm{d}x\]
 by taking 1, 2 or 3 strips.
 \end{example}
 
 \begin{solution}
 If there is one strip then \(s=3, x_1=1, x_2 = 4, y_1=1^2=1, y_2=4^2=16\). Hence the trapezium rule gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac32\left(1+16\right) = \frac{51}{2} = 25.5\]
 With two strips then \(s=1.5,x_1=1, x_2=2.5, x_3=4, y_1=1^2=1, y_2=2.5^2=6.25, y_3=4^2=16\). Hence the trapezium rule gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1.5}2\left(1+2\times6.25+16\right) = \frac{354}{16} = 22.125\]
 With three strips then \(s=1,x_1=1, x_2=2, x_3 = 3, x_4=4, y_1=1^2=1, y_2=2^2=4, y_3=3^2=9, y_4=4^2=16\). Hence the trapezium rule gives
-\[
-\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5
-\]
+\[\int_1^4 x^2 \,\mathrm{d}x \sim \frac{1}2\left(1+2\times(4+9)+16\right) = \frac{43}{2} = 21.5\]
 \end{solution}
 
 \slide
@@ -5062,9 +4640,7 @@ For approximate integration:
 
 \begin{example}
 Use Simpson's rule to approximate the integral
-\[
-\int_1^4x^3\,\mathrm{d}x
-\]
+\[\int_1^4x^3\,\mathrm{d}x\]
 by taking 2 and 4 strips.
 \end{example}
 
@@ -5072,18 +4648,12 @@ by taking 2 and 4 strips.
 In our above formula we let \(n=1\) and then \(2\).
 
 For \(n=1\) we have \(s=3/2, x_1=1, x_2=2.5, x_3=4\) with \(y_1=1, y_2=15.625, y_3=64\).
-\[
-\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.
-\]
+\[\int_1^4x^3\,\mathrm{d}x\sim\frac32\frac13\left[1+4\times15.625+64\right] = 63.75.\]
 For \(n=2\) we have \(s=0.75, x_1=1, x_2=1.75, x_3=2.5, x_4=3.25, x_5=4\) with \(y_1=1, y_2=1.75^3=5.36, y_3 = 2.5^3=15.625, y_4=3.25^3=34.33, y_5=64\).
-\[
-\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.
-\]
+\[\int_1^4x^3\,\mathrm{d}x\sim\frac34\frac13\left[1+4\times5.36+2\times15.625+4\times34.33+64\right] = 63.75.\]
 
 Note that this is actually the exact value:
-\[
-\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.
-\]
+\[\int_1^4x^3\,\mathrm{d}x = \left[\frac{x^4}4\right]_1^4 = \frac{4^4}4-\frac14 = \frac{255}4=63.75.\]
 \end{solution}
 
 \slide
@@ -5099,9 +4669,7 @@ Note that this is actually the exact value:
 
 \begin{example}
 Use Simpson's rule to approximate the integral
-\[
-\int_{-1}^1e^{-x^2}\,\mathrm{d}x
-\]
+\[\int_{-1}^1e^{-x^2}\,\mathrm{d}x\]
 by taking 6 strips.
 \end{example}
 
@@ -5132,9 +4700,7 @@ $x_1$ & $y_1$\\
 \end{tabular}
 
 Hence using Simpson's rule (Figure \ref{fig:33-graph-ex2}):
-\[
-\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.
-\]
+\[\int_{-1}^1e^{-x^2}\,\mathrm{d}x \sim \frac19\left[0.368 + 4\times0.641+2\times0.895+4\times1+2\times0.895+4\times0.641+0.368\right] = 1.494.\]
 
 \begin{figure}
 
@@ -5160,9 +4726,7 @@ Hence using Simpson's rule (Figure \ref{fig:33-graph-ex2}):
 
 \begin{example}
 Use Simpson's rule to approximate the integral
-\[
-\int_0^2\frac1{1+x^2}\,\mathrm{d}x
-\]
+\[\int_0^2\frac1{1+x^2}\,\mathrm{d}x\]
 by taking 10 strips and calculate the error involved.
 \end{example}
 
@@ -5197,7 +4761,7 @@ $x_1$ & $y_1$\\
 \hline
 \end{tabular}
 
-Hence using Simpson's rule
+Hence using Simpson's rule (working to 5 decimal places)
 \begin{align*}
 \int_0^2\frac{\mathrm{d}x}{1+x^2} \sim& \frac{0.2}3\left[1 + 0.2\right] +\\
 &\frac{0.2}3\times 4\left[0.96154+0.73529+0.5+0.33784+0.23585\right]+\\
@@ -5205,10 +4769,8 @@ Hence using Simpson's rule
 &= 1.10715.
 \end{align*}
 The actual value of the integral is
-\[
-\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 = 1.106587
-\]
-and so the error is 0.000563.
+\[\int_0^2\frac{\mathrm{d}x}{1+x^2} = \left[\tan^{-1}(x)\right]_0^2 \approx 1.10715 \text{ (6 s.f.)}\]
+and so the calculation is exact to 5 decimal places, the error is 0. (Re-doing the calculation with more precision would show that the valued differ on 6th decimal place.)
 \end{solution}
 
 \begin{slidesonly}
@@ -5240,9 +4802,7 @@ An irregular area has a horizontal base of length 84 mm. The vertical heights me
 \addcontentsline{toc}{subsection}{Exercise 2}
 
 An indicator diagram for a steam engine is 90 mm long. Seven evenly spaced ordinates, including the end ordinates are measured with the following results:-
-\[
-5.10, 4.60, 3.20, 2.70, 2.32, 2.18, 2.06, \text{ mm}
-\]
+\[5.10, 4.60, 3.20, 2.70, 2.32, 2.18, 2.06, \text{ mm}\]
 Determine the mean pressure in the engine cylinder using the trapezium rule. The pressure scale is 10 kPa to 1 mm. The mean pressure is given by the ratio of the diagram area to the base length.
 
 \slide
@@ -5288,9 +4848,7 @@ Simpson's rule.
 \addcontentsline{toc}{subsection}{Exercise 5}
 
 Evaluate by Simpson's rule using 10 strips:
-\[
-\int_0^2\frac{dx}{4+x^2}
-\]
+\[\int_0^2\frac{dx}{4+x^2}\]
 
 \slide
 
@@ -5387,9 +4945,7 @@ Evaluate correct to three decimal places
 \addcontentsline{toc}{subsection}{Exercise 10}
 
 By using Simpson's rule with six intervals, determine the approximate value of
-\[
-\int_0^{\pi/2}\sqrt{(2.5-1.5\cos(2\theta))}\ d\theta.
-\]
+\[\int_0^{\pi/2}\sqrt{(2.5-1.5\cos(2\theta))}\ d\theta.\]
 
 \slide
 
@@ -5397,9 +4953,7 @@ By using Simpson's rule with six intervals, determine the approximate value of
 \addcontentsline{toc}{subsection}{Exercise 11}
 
 By using Simpson's rule with 8 intervals, establish the approximate value of
-\[
-\int_0^1\sqrt{4+x^4}\ dx
-\]
+\[\int_0^1\sqrt{4+x^4}\ dx\]
 
 {[}Solutions:
 1. \(1620\);
@@ -5434,23 +4988,15 @@ The \textcolor{purple}{\em mean}\index{mean} value for a function \(y = f(x)\) f
 \end{figure}
 
 The mean or average value of the mid-ordinates is
-\[
-\overline y=\frac{y_1+\ldots+y_n}{n}
-\]
+\[\overline y=\frac{y_1+\ldots+y_n}{n}\]
 \slide
 
 Multiplying the numerator and denominator by \(\delta x\) gives
-\[
-\overline y=\frac{y_1\delta x+\ldots+y_n\delta x}{n\delta x}
-\]
+\[\overline y=\frac{y_1\delta x+\ldots+y_n\delta x}{n\delta x}\]
 and since \(n\delta x = b - a\) we have
-\[
-\overline y = \frac{\sum y\delta x}{b-a}.
-\]
+\[\overline y = \frac{\sum y\delta x}{b-a}.\]
 When the number of strips increases indefinitely such that \(\delta x \to 0\)
-\[
-\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.
-\]
+\[\overline y = \frac{1}{b-a}\int_a^b y\ \mathrm{d}x.\]
 That is, the mean value of a function between two limits is the area under the curve between those limits divided by the range of \(x\) between those limits.
 
 \slide
@@ -5475,9 +5021,7 @@ The \textcolor{purple}{\em RMS}\index{RMS} (or \textcolor{purple}{\em root mean 
 Its importance in engineering is demonstrated when a sinusoidal function is investigated, for example when the average value of the current or voltage in a circuit is to be found. For all sine or cosine functions, the mean value over a complete cycle is zero because the curve is equally distributed above and below the \(x-\)axis. However, if the ordinates are squared first, there are then no negative ordinates and an average may be found. Ammeters and voltmeters for a.c. circuits are usually calibrated to find the RMS value.
 
 To summarise, the RMS value is defined to be the number
-\[
-\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.
-\]
+\[\text{RMS} = \sqrt{\frac{1}{b-a}\int_a^b y^2\ \mathrm{d}x}.\]
 \slide
 
 \begin{example}
@@ -5530,9 +5074,7 @@ If the shaded strip in Figure \ref{fig:41-volume-of-revolution} is rotated about
 
 We may sum the volumes generated by all the strips between \(x = a\) and \(x = b\) to obtained the volume of the solid of revolution for the section of curve about the \(x\)-axis.
 Thus the total volume \(V\) is given by
-\[
-V = \int_a^b\pi y^2\ \mathrm{d}x
-\]
+\[V = \int_a^b\pi y^2\ \mathrm{d}x\]
 \slide
 
 \begin{example}
@@ -5555,13 +5097,9 @@ The straight line \(y=mx\) between \(x=0\) and \(x=h\) is rotated about the \(x\
 See Figure \ref{fig:43-right-circ-cone}.
 
 The volume of the solid of revolution for \(y = mx\) is given by
-\[
-V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.
-\]
+\[V = \pi\int_0^hy^2\ \mathrm{d}x = \pi\int_0^h (mx)^2\ \mathrm{d}x = m^2\pi\int_0^hx^2\ \mathrm{d}x = m^2\pi\left[\frac{x^3}3\right]_0^h = m^2\pi\frac{h^3}3.\]
 Now \(m = R/h\) and so
-\[
-V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.
-\]
+\[V = \frac13\frac{R^2}{h^2}h^3 = \frac13\pi R^2h.\]
 \end{solution}
 
 \begin{slidesonly}
@@ -5578,9 +5116,7 @@ A curve is given parametrically as \(x=4t^2, y = 6t-t^2\). Determine the volume 
 \end{example}
 
 \begin{solution}
-\[
-V = \pi\int_a^b y^2\ \mathrm{d}x.
-\]
+\[V = \pi\int_a^b y^2\ \mathrm{d}x.\]
 Since \(x=4t^2\) then \(\mathrm{d}x/\mathrm{d}t = 8t\) and so we can write \(\mathrm{d}x = 8t\ \mathrm{d}t\). Hence
 \begin{align*}
 V& = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \mathrm{d}t\\
@@ -5592,9 +5128,7 @@ V& = \pi\int_0^2(6t-t^2)^28t\ \mathrm{d}t = 8\pi\int_0^2(36t^3-12t^4+t^5)\ \math
 \subsection{\texorpdfstring{Rotation about the \(y\)-axis}{Rotation about the y-axis}}\label{rotation-about-the-y-axis}
 
 By a similar method it can be shown that for a rotation about the \(y\)-axis, the volume the solid of revolution will be
-\[
-V = 2\pi\int_a^bxy\ \mathrm{d}x.
-\]
+\[V = 2\pi\int_a^bxy\ \mathrm{d}x.\]
 This is for the volume of the solid created by rotating (about the \(y\)-axis) the \emph{same} region as before (i.e.~bounded by two vertical lines \(x=a\) and \(x=b\) on the sides, and the \(x\)-axis and the graph of a function \(y(x)\) from the bottom and the top) is rotated about the \(y\)-axis.
 \slide
 
@@ -5613,7 +5147,7 @@ V &=
 &= \left\{\text{by parts: }\begin{array}{ll} u=x &  \mathrm{d}v=\sin(x)\,\mathrm{d}x \\ \mathrm{d}u=\ \mathrm{d}x & v=-\cos(x)\end{array}\right\}\\
 &=2\pi\cdot\frac{\pi^2}{9}\cdot\frac{\sqrt{3}}{2}-4\pi\left(\left[-x\cos(x)\right]_{0}^{\pi/3} - \int_{0}^{\pi/3} -\cos(x)\,\mathrm{d}x \right)\\
 &=\frac{\sqrt{3}\pi^3}{9}-4\pi\cdot\left(-\frac{\pi}{3}\right)\cdot\frac{1}{2} - 4\pi\left[\sin(x)\right]_{0}^{\pi/3}\\
-&=\frac{\sqrt{3}\pi^3}{9}+\frac{2\pi^2}{3}-2\sqrt{3}\pi \approx 1.664 \,\text{units}^3\text{ (3 d.p.)}
+&=\frac{\sqrt{3}\pi^3}{9}+\frac{2\pi^2}{3}-2\sqrt{3}\pi \approx 1.664 \,\text{units}^3\text{ (3 s.f.)}
 \end{align*}
 \end{solution}
 
@@ -5626,9 +5160,7 @@ The surface area of revolution is the surface area of the body generated by rota
 \slide
 
 If the strip is rotated about the \(x\)-axis, the surface area generated will be approximately \(\delta S = 2\pi y\delta l\). The surface area of the whole solid generated by rotating the curve around the \(x\)-axis between \(x = a\) and \(x = b\) is obtained by summing the contributions to the surface area from each of the elementary strips and we can eventually deduce that
-\[
-S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.
-\]
+\[S = 2\pi\int_a^b y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \mathrm{d}x.\]
 \slide
 
 \begin{example}
@@ -5649,7 +5181,7 @@ where \(l\) is the length of the inclined line.
 \slide
 
 \begin{example}
-Let \(f(x)=\sqrt{x}\) over the interval \([1,4]\). Find the surface area of the surface generated by revolving the graph of \(f\) around the \(x\)-axis. Round the answer to three decimal places.
+Let \(f(x)=\sqrt{x}\) over the interval \([1,4]\). Find the surface area of the surface generated by revolving the graph of \(f\) around the \(x\)-axis. Round the answer to five significant figures.
 \end{example}
 
 \begin{solution}
@@ -5661,7 +5193,7 @@ S&=2\pi\int_{1}^{4} y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \m
 = 2\pi\int_{1}^{4} \left(x+\frac{1}{4}\right)^{1/2}\,\mathrm{d}x\\
 &= 2\pi \left[\frac{2}{3}\cdot\left(x+\frac{1}{4}\right)^{3/2} \right]_{1}^{4}
 = \frac{\pi}{6}\left(17\sqrt{17} - 5\sqrt{5}\right)
-\approx 30.846 \text{ (3 d.p.)}
+\approx 30.846 \text{ (5 s.f.)}
 \end{align*}
 \end{solution}
 
@@ -5685,10 +5217,8 @@ S&=2\pi\int_{1}^{4} y\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\ \m
 \addcontentsline{toc}{subsection}{Exercise 1}
 
 Use the Simpson's rule with six strips to find an approximate value for
-\[
-\int_0^{\pi/4}x^2\sin(2x)\ dx,
-\]
-giving your answer correct to four decimal places.
+\[\int_0^{\pi/4}x^2\sin(2x)\ dx,\]
+giving your answer correct to four significant figures.
 
 \slide
 
@@ -5696,9 +5226,7 @@ giving your answer correct to four decimal places.
 \addcontentsline{toc}{subsection}{Exercise 2}
 
 By using the Simpson's rule with 8 equal intervals, determine
-\[
-\int_0^4\frac{x+3}{x^2+3x+2}\ dx,
-\]
+\[\int_0^4\frac{x+3}{x^2+3x+2}\ dx,\]
 stating the answer to four decimal places.
 
 \slide
@@ -5707,9 +5235,7 @@ stating the answer to four decimal places.
 \addcontentsline{toc}{subsection}{Exercise 3}
 
 Using the Simpson's rule with 6 strips, find an approximate value for
-\[
-\int_4^6\frac{12}{(x-3)(x+1)}\ dx,
-\]
+\[\int_4^6\frac{12}{(x-3)(x+1)}\ dx,\]
 giving your answer correct to four decimal places.
 
 {[}Solutions:
@@ -5901,9 +5427,7 @@ Many structures and mechanical systems act as if their masses were concentrated 
 Suppose that the \(x\)-axis is supported by a fulcrum at the origin and we have 2 masses, \(m_1\) and \(m_2\), situated at positions \(x_1\) and \(x_2\) from the origin, see Figure \ref{fig:35-mass-along-a-line}. This is similar to a `see-saw'. Does the system balance, or not? The answer, from experience, depends on both the values of the masses and the positions of the objects. The quantity \(m_1x_1\) is referred to as the \textcolor{purple}{\em moment}\index{moment} of the mass \(m_1\) about the origin. Notice that in our figure, \(m_1x_1<0\) and \(m_2x_2>0\).
 
 The \textcolor{purple}{\em principle of moments}\index{principle of moments} says that the system will balance providing
-\[
-m_1x_1 + m_2x_2 = 0.
-\]
+\[m_1x_1 + m_2x_2 = 0.\]
 
 \slide
 
@@ -5919,9 +5443,7 @@ If we are given a system with more than 2 masses (see Figure \ref{fig:36-mass-al
 \end{figure}
 
 the principle says that the system will balance providing
-\[
-\sum_i m_ix_i = 0.
-\]
+\[\sum_i m_ix_i = 0.\]
 In principle, we should use the force acting on the body, which is \(m_ig\) where \(g\) is the gravitational acceleration. However the constant \(g\) will cancel out.
 \slide
 Suppose however, the system does not balance. Can we find a point \(\overline x\) such that if we were to move the fulcrum to that position, the system would balance (see Figure \ref{fig:37-centre-of-mass})?
@@ -5961,26 +5483,18 @@ Consider a rod on Figure \ref{fig:38-2d-rod}: we assume that its \textcolor{purp
 \slide
 
 The density (in general) is
-\[
-\text{density} = \frac{\text{mass}}{\text{volume}},
-\]
+\[\text{density} = \frac{\text{mass}}{\text{volume}},\]
 Where `volume' needs to be the appropriate one for the number of dimensions we work with: `length' in 1 dimension, `surface area' in 2 dimensions, and `volume' in 3 dimensions.
 
 \slide
 
 If we imagine the rod in Figure \ref{fig:38-2d-rod} to be 2-dimensional, then
 the mass of the shaded region, of area \(\delta A\) (where the width \(\delta x\) is small), is
-\[
-\rho(x)\delta A
-\]
+\[\rho(x)\delta A\]
 Summing over all these `small areas' gives
-\[
-\text{mass} = \int\rho(x)\ \mathrm{d}A.
-\]
+\[\text{mass} = \int\rho(x)\ \mathrm{d}A.\]
 If we further suppose that the `height' of the rod is constant `h', then \(\mathrm{d}A=h\cdot\mathrm{d}x\) and
-\[
-\text{mass} = h\cdot \int\rho(x)\ \mathrm{d}x.
-\]
+\[\text{mass} = h\cdot \int\rho(x)\ \mathrm{d}x.\]
 \slide
 
 \begin{example}
@@ -5991,9 +5505,7 @@ Suppose that the rod above (Figure \ref{fig:38-2d-rod}) is 5 m long with mass pe
 \leavevmode
 
 Take a small rectangular strip of width \(\delta x\) at the point \(x\) so that the mass of this rectangle is
-\[
-\left(2+\frac{x^2}2\right)\delta x.
-\]
+\[\left(2+\frac{x^2}2\right)\delta x.\]
 
 \begin{figure}
 
@@ -6005,9 +5517,7 @@ Take a small rectangular strip of width \(\delta x\) at the point \(x\) so that 
 \end{figure}
 
 Now sum over all such rectangles and allow \(\delta x \to 0\) (in other words compute the integral) to get the mass
-\[
-\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ \mathrm{d}x = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.
-\]
+\[\text{mass} = \int_0^5\left(2+\frac{x^2}{2}\right)\ \mathrm{d}x = \left[2x+\frac{x^3}{6}\right]_0^5 = 30.8\text{ Kg}.\]
 
 \end{solution}
 
@@ -6016,9 +5526,7 @@ Now sum over all such rectangles and allow \(\delta x \to 0\) (in other words co
 \begin{notslides}
 
 Suppose we wish to find the centre of mass of the rod in the previous Example. We use the same principle as in the discrete case when considering a finite number of points except we use an integral rather then a sum. The moment of the small rectangle of width \(\delta x\) is \(x(2+x^2/2)\delta x\). So
-\[
-\overline x = \frac{\text{total moment}}{\text{total mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ \mathrm{d}x = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.
-\]
+\[\overline x = \frac{\text{total moment}}{\text{total mass}} = \frac{1}{30.8}\int_0^5 x(2+\frac{x^2}{2})\ \mathrm{d}x = \frac{1}{30.8}\left[x^2+\frac{x^4}{8}\right]_0^5 = 3.35.\]
 
 \end{notslides}
 
@@ -6037,9 +5545,7 @@ So
 \subsection{Centroid of a uniform lamina}\label{centroid-of-a-uniform-lamina}
 
 A \textcolor{purple}{\em lamina}\index{lamina} is a solid body in the form of a thin sheet of uniform thickness, with uniform density. As a result, the weight is proportional to the area and the formula for the centre of gravity can have the \(m\) values replaced by \(a\) values where \(a\) represents the area of an element and \(A\) is the total area of the lamina. So
-\[
-\overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}
-\]
+\[\overline x = \frac{\displaystyle\int xa\ \mathrm{d}x}{A},\;\;\; \overline y = \frac{\displaystyle\int ya\ \mathrm{d}y}{A}\]
 Then \(\overline x\) and \(\overline y\) are the coordinates of the \textcolor{purple}{\em centroid of the area}\index{centroid of the area} or the \textcolor{purple}{\em centroid}\index{centroid}.
 
 \slide
@@ -6060,13 +5566,9 @@ Consider a narrow strip of width \(\delta x\) (see Figure \ref{fig:40-lamina}). 
 \slide
 
 Taking moments about the \(y\)-axis
-\[
-\overline x = \frac{\displaystyle\int_a^bxy\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
-\]
+\[\overline x = \frac{\displaystyle\int_a^bxy\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.\]
 Similarly taking moments about the \(x\)-axis
-\[
-\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.
-\]
+\[\overline y = \frac{\displaystyle\int_a^b \frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_a^b y\ \mathrm{d}x}.\]
 \slide
 
 \begin{example}
@@ -6074,12 +5576,8 @@ Determine the centroid of area under the curve \(y=x^2\) between the coordinates
 \end{example}
 
 \begin{solution}
-\[
-\overline x = \frac{\displaystyle\int_1^3xy\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3x^3\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31
-\]
-\[
-\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3\frac{x^4}2\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78
-\]
+\[\overline x = \frac{\displaystyle\int_1^3xy\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3x^3\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^4}{4}\right]_1^3}{\left[\frac{x^3}{3}\right]_1^3} = \frac{20}{8.67} = 2.31\]
+\[\overline y = \frac{\displaystyle\int_1^3\frac{y^2}2\ \mathrm{d}x}{\displaystyle\int_1^3 y\ \mathrm{d}x} = \frac{\displaystyle\int_1^3\frac{x^4}2\ \mathrm{d}x}{\displaystyle\int_1^3x^2\ \mathrm{d}x} = \frac{\left[\frac{x^5}{10}\right]_1^3}{8.67} = \frac{24.1}{8.67} = 2.78\]
 The centroid therefore has coordinates \((2.31,2.78)\).
 \end{solution}
 
@@ -6226,13 +5724,9 @@ Now
 \underline{DA}&=-\underline{AD}\\
 \end{align*}
 Substituting these into the right-hand side of equation \eqref{eq:11-5} gives
-\[
-2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}-3\underline{AD}+3\underline{DC}-\underline{DC}-\underline{AD}.
-\]
+\[2\underline{AB}+3\underline{BC}+\underline{CA}=4\underline{AD}-3\underline{AD}+3\underline{DC}-\underline{DC}-\underline{AD}.\]
 So
-\[
-2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.
-\]
+\[2\underline{AB}+3\underline{BC}+\underline{CA} = 2\underline{DC}.\]
 \end{solution}
 
 \slide
@@ -6387,9 +5881,7 @@ The quadrilateral \(ABCD\) shown on Figure \ref{fig:67-quadrilateral} has the mi
 A \textcolor{purple}{\em unit vector}\index{unit vector} is a vector with magnitude of 1.
 
 If \(\underline a\) is a vector with magnitude \(|\underline a|\), then a unit vector with the same direction is written \(\hat{\underline a}\). So \(|\hat{\underline a}| = 1\) and
-\[
-\hat{\underline a} = \frac1{|\underline a|}{\underline a}.
-\]
+\[\hat{\underline a} = \frac1{|\underline a|}{\underline a}.\]
 
 \slide
 
@@ -6444,9 +5936,7 @@ If \(\underline a = 6\underline i + 2\underline j\) and \(\underline b = 5\under
 \end{example}
 
 \begin{solution}
-\[
-\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.
-\]
+\[\underline a + \underline b = (6 + 5)\underline i + (2 + (-1))\underline j = 11\underline i + \underline j.\]
 \end{solution}
 
 Note that \(1\underline i\), \(1\underline j\), \(1\underline k\) are usually written as just \(\underline i\), \(\underline j\), \(\underline k\).
@@ -6475,9 +5965,7 @@ If \(\underline a = 5\underline i + 4\underline j - \underline k\), calculate \(
 \end{example}
 
 \begin{solution}
-\[
-3\underline a = (3\times 5)\underline{i} + (3\times 4)\underline{j} + (3\times(-1))\underline{k} = 15\underline i + 12\underline j - 3\underline k.
-\]
+\[3\underline a = (3\times 5)\underline{i} + (3\times 4)\underline{j} + (3\times(-1))\underline{k} = 15\underline i + 12\underline j - 3\underline k.\]
 \end{solution}
 
 \slide
@@ -6499,17 +5987,11 @@ In three dimensions, if \(\underline r = a\underline i + b\underline j + c\under
 \subsection{Finding a unit vector}\label{finding-a-unit-vector}
 
 If \(\underline r = a\underline i + b\underline j + c\underline k\), then its magnitude (= length) is \(|r| = \sqrt{a^2+b^2+c^2}\). If we want to find a vector that has the same direction as \(\underline r\), but has length of 1, i.e.~the unit vector \(\underline{\hat r}\), then we must divide \(\underline r\) by its own magnitude. So
-\[
-\underline{\hat r} = \frac{1}{\sqrt{a^2+b^2+c^2}}(a\underline i+b\underline j+c\underline k)
-\]
+\[\underline{\hat r} = \frac{1}{\sqrt{a^2+b^2+c^2}}(a\underline i+b\underline j+c\underline k)\]
 which can be also written as
-\[
-\underline{\hat r} = \frac{a}{\sqrt{a^2+b^2+c^2}}\underline i+\frac{b}{\sqrt{a^2+b^2+c^2}}\underline j+\frac{c}{\sqrt{a^2+b^2+c^2}}\underline k
-\]
+\[\underline{\hat r} = \frac{a}{\sqrt{a^2+b^2+c^2}}\underline i+\frac{b}{\sqrt{a^2+b^2+c^2}}\underline j+\frac{c}{\sqrt{a^2+b^2+c^2}}\underline k\]
 or
-\[
-\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k.
-\]
+\[\underline{\hat r} = \frac{a}{|\underline r|}\underline i+\frac{b}{|\underline r|}\underline j+\frac{c}{|\underline r|}\underline k.\]
 \slide
 
 \begin{example}
@@ -6536,14 +6018,10 @@ If \(\underline r = 5\underline i+2\underline j-\underline k\), find a unit vect
 \tightlist
 \item
   The unit vector in the direction of \(\underline r\) is
-  \[
-  \underline{\hat r} = \frac5{\sqrt{30}}\underline i+\frac2{\sqrt{30}}\underline j-\frac1{\sqrt{30}}\underline k.
-  \]
+  \[\underline{\hat r} = \frac5{\sqrt{30}}\underline i+\frac2{\sqrt{30}}\underline j-\frac1{\sqrt{30}}\underline k.\]
 \item
   The unit vector in the opposite direction is
-  \[
-  -\underline{\hat r} = -\left(\frac{5}{\sqrt{30}}\underline i+\frac{2}{\sqrt{30}}\underline j-\frac{1}{\sqrt{30}}\underline k\right) = -\frac{5}{\sqrt{30}}\underline i-\frac{2}{\sqrt{30}}\underline j+\frac{1}{\sqrt{30}}\underline k
-  \]
+  \[-\underline{\hat r} = -\left(\frac{5}{\sqrt{30}}\underline i+\frac{2}{\sqrt{30}}\underline j-\frac{1}{\sqrt{30}}\underline k\right) = -\frac{5}{\sqrt{30}}\underline i-\frac{2}{\sqrt{30}}\underline j+\frac{1}{\sqrt{30}}\underline k\]
 \end{enumerate}
 
 \end{solution}
@@ -6558,9 +6036,7 @@ the three axes. The angles are marked \(\alpha, \beta\) and \(\gamma\) in the fi
 \begin{center}\includegraphics[width=0.55\linewidth]{fy-B-lectnotes_files/figure-latex/60-vectors-17-1} \end{center}
 
 The direction cosines are
-\[
-l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}.
-\]
+\[l = \cos(\alpha) = \frac{a}{|\underline r|},\;\;m = \cos(\beta) = \frac{b}{|\underline r|},\;\;n = \cos(\gamma) = \frac{c}{|\underline r|}.\]
 \slide
 
 \begin{example}
@@ -6571,9 +6047,7 @@ Find the direction cosines of the vector \(\underline r = 3\underline i + 4\unde
 The magnitude of \(\underline r\) is \(|\underline r| = \sqrt{3^2+4^2+5^2} = \sqrt{9+16+25} = \sqrt{50}\).
 
 The direction cosines of \(\underline r\) are then
-\[
-l = \frac{3}{\sqrt{50}},\;\;m = \frac{4}{\sqrt{50}},\;\;n = \frac{-5}{\sqrt{50}}
-\]
+\[l = \frac{3}{\sqrt{50}},\;\;m = \frac{4}{\sqrt{50}},\;\;n = \frac{-5}{\sqrt{50}}\]
 \end{solution}
 
 \slide
@@ -6583,9 +6057,7 @@ l = \frac{3}{\sqrt{50}},\;\;m = \frac{4}{\sqrt{50}},\;\;n = \frac{-5}{\sqrt{50}}
 \begin{center}\includegraphics[width=0.33\linewidth]{fy-B-lectnotes_files/figure-latex/61-vectors-18-1} \end{center}
 
 If we have two vectors \(\underline a\) and \(\underline b\) where \(\underline a\) has direction cosines \(l_a, m_a, n_a\) and \(\underline b\) has direction cosines \(l_b, m_b, n_b\), then the cosine of the angle \(\theta\) between the vectors is given by:
-\[
-\cos(\theta) = l_al_b + m_am_b + n_an_b.
-\]
+\[\cos(\theta) = l_al_b + m_am_b + n_an_b.\]
 \slide
 
 \begin{example}
@@ -6593,21 +6065,13 @@ Determine the angle between the two vectors and \(\underline a = 2\underline i +
 \end{example}
 
 \begin{solution}
-\[
-|\underline a| = \sqrt{2^2+3^2+4^2} = \sqrt{29},\;\;|\underline b| = \sqrt{4^2+3^2+2^2} = \sqrt{29}.
-\]
+\[|\underline a| = \sqrt{2^2+3^2+4^2} = \sqrt{29},\;\;|\underline b| = \sqrt{4^2+3^2+2^2} = \sqrt{29}.\]
 So \(\underline a\) has direction cosines
-\[
-l_a = \frac{2}{\sqrt{29}},\;\;m_a = \frac{3}{\sqrt{29}},\;\;n_a = \frac{4}{\sqrt{29}}
-\]
+\[l_a = \frac{2}{\sqrt{29}},\;\;m_a = \frac{3}{\sqrt{29}},\;\;n_a = \frac{4}{\sqrt{29}}\]
 and \(\underline b\) has direction cosines
-\[
-l_b = \frac{4}{\sqrt{29}},\;\;m_b = \frac{-3}{\sqrt{29}},\;\;n_b = \frac{2}{\sqrt{29}}
-\]
+\[l_b = \frac{4}{\sqrt{29}},\;\;m_b = \frac{-3}{\sqrt{29}},\;\;n_b = \frac{2}{\sqrt{29}}\]
 The cosine of the angle \(\theta\) between the two vectors is given by
-\[
-\cos(\theta) = \frac{2}{\sqrt{29}}\frac{4}{\sqrt{29}}+\frac{3}{\sqrt{29}}\frac{-3}{\sqrt{29}}+\frac{4}{\sqrt{29}}\frac{2}{\sqrt{29}} = \frac{8}{29}-\frac{9}{29}+\frac{8}{29} = \frac{7}{29}.
-\]
+\[\cos(\theta) = \frac{2}{\sqrt{29}}\frac{4}{\sqrt{29}}+\frac{3}{\sqrt{29}}\frac{-3}{\sqrt{29}}+\frac{4}{\sqrt{29}}\frac{2}{\sqrt{29}} = \frac{8}{29}-\frac{9}{29}+\frac{8}{29} = \frac{7}{29}.\]
 Hence the angle is \(\theta = \cos^{-1}(7/29) = 76^\circ\).
 \end{solution}
 
@@ -6633,9 +6097,7 @@ In three dimensions, there are two `sensible' ways to `multiply' two vectors.
 The scalar product of two vectors has a scalar quantity as its result.
 
 If \(\underline a\) and \(\underline b\) are given in terms of component vectors as \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\) then the \textcolor{purple}{\em dot product}\index{dot product} \(\underline{a}\cdot \underline{b}\) is defined to be
-\[
-\underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.
-\]
+\[\underline a \cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3.\]
 \slide
 
 \begin{example}
@@ -6643,18 +6105,14 @@ Find the scalar product of \(\underline a = 3\underline i + 2\underline j - 6\un
 \end{example}
 
 \begin{solution}
-\[
-\underline a\cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3 = (3)(-1)+(2)(5)+(-6)(-1) = -3+10+6=13.
-\]
+\[\underline a\cdot\underline b = a_1b_1 + a_2b_2 + a_3b_3 = (3)(-1)+(2)(5)+(-6)(-1) = -3+10+6=13.\]
 The scalar product of the vectors is 13.
 \end{solution}
 
 \slide
 
 If we look back at the formula for the angle between two vectors, we arrive at an alternative formula for the dot product of two vectors \(\underline a\) and \(\underline b\):
-\[
-\underline a \cdot\underline b = |\underline a||\underline b|\cos(\theta)
-\]
+\[\underline a \cdot\underline b = |\underline a||\underline b|\cos(\theta)\]
 where \(\theta\) is the angle between the two vectors as shown below
 
 \begin{center}\includegraphics[width=0.3\linewidth]{fy-B-lectnotes_files/figure-latex/62-vectors-19-1} \end{center}
@@ -6687,9 +6145,7 @@ Using the vectors from the previous example, \(\underline a = 3\underline i + 2\
 We already calculated that \(\underline a\cdot\underline b = 13\).
 
 Also, \(|\underline a| = \sqrt{3^2+2^2+(-6)^2}=\sqrt{49}=7\) and \(|\underline b| = \sqrt{(-1)^2+5^2+(-1)^2} = \sqrt{27}\) so from equation \eqref{eq:11-10}
-\[
-\cos(\theta) = \frac{13}{7\sqrt{27}} \approx 0.3574 \text{ (4 d.p.)}
-\]
+\[\cos(\theta) = \frac{13}{7\sqrt{27}} \approx 0.3574 \text{ (4 s.f.)}\]
 and thus \(\theta \approx \cos^{-1}(0.3574) \approx 69^\circ\).
 \end{solution}
 
@@ -6737,13 +6193,9 @@ q = \frac52p.
 We may choose any value for \(p\) and if \(q\) and \(r\) are related by \eqref{eq:11-24} and \eqref{eq:11-25} with our chosen value, the resulting vector will be perpendicular to the given vectors. This is because there are infinitely many vectors that are perpendicular to any given two (non--parallel) vectors: they will all be scalar multiples of each other.
 
 We will choose \(p = 2\). Then \(r= 4\) and \(q = 5\) so
-\[
-p\underline i + q\underline j + r\underline k = 2\underline i + 5\underline j + 4\underline k.
-\]
+\[p\underline i + q\underline j + r\underline k = 2\underline i + 5\underline j + 4\underline k.\]
 We are supposed to find a \emph{unit} vector, and the one we have found so far may not be such. The magnitude of \(2\underline i + 5\underline j + 4\underline k = \sqrt{45} = 3\sqrt{5}\), so a unit vector perpendicular to the given vectors is
-\[
-\frac{2}{3\sqrt{5}}\underline i+\frac{5}{3\sqrt{5}}\underline j+\frac{4}{3\sqrt{5}}\underline k.
-\]
+\[\frac{2}{3\sqrt{5}}\underline i+\frac{5}{3\sqrt{5}}\underline j+\frac{4}{3\sqrt{5}}\underline k.\]
 (Note that there is another solution, namely the opposite vector to the one we found,
 \(-\frac{2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k\).)
 \end{solution}
@@ -6793,9 +6245,7 @@ Unwrapping:
 
 There is also an ``algebraic'' formula for the cross product, when
 \(\underline a\) and \(\underline b\) are specified in terms of their component vectors. Supposing that \(\underline a = a_1\underline i + a_2\underline j + a_3\underline k\) and \(\underline b = b_1\underline i + b_2\underline j + b_3\underline k\), the formula can be remembered symbolically as
-\[
-\underline a \times\underline b = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\a_1&a_2&a_3\\b_1&b_2&b_3\\\end{array}\right|.
-\]
+\[\underline a \times\underline b = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\a_1&a_2&a_3\\b_1&b_2&b_3\\\end{array}\right|.\]
 \slide
 
 \begin{example}
@@ -6826,9 +6276,7 @@ From the definition of the vector product, a vector perpendicular to both these 
 &=-10\underline i-25\underline j-20\underline k.
 \end{align*}
 We need to find a \emph{unit vector} parallel to this one; its magnitude is \(15\sqrt{5}\), and so a unit vector perpendicular to the two given ones is
-\[
-\frac{-10}{15\sqrt{5}}\underline i-\frac{25}{15\sqrt{5}}\underline j-\frac{20}{15\sqrt{5}}\underline k = \frac{-2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k.
-\]
+\[\frac{-10}{15\sqrt{5}}\underline i-\frac{25}{15\sqrt{5}}\underline j-\frac{20}{15\sqrt{5}}\underline k = \frac{-2}{3\sqrt{5}}\underline i-\frac{5}{3\sqrt{5}}\underline j-\frac{4}{3\sqrt{5}}\underline k.\]
 \end{solution}
 
 \begin{slidesonly}
@@ -6858,13 +6306,9 @@ Find the volume of a parallelepiped with edges \(\underline a = 2\underline i - 
 
 \begin{solution}
 The volume is given by \(\underline a \cdot(\underline b\times\underline c)\). First we calculate the vector product
-\[
-\underline b \times\underline c = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\1&2&-1\\3&-1&2\\\end{array}\right| = 3\underline i-5\underline j-7\underline k.
-\]
+\[\underline b \times\underline c = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\1&2&-1\\3&-1&2\\\end{array}\right| = 3\underline i-5\underline j-7\underline k.\]
 and now
-\[
-\underline a \cdot(\underline b\times\underline c) = (2\underline i - 3\underline j + 4\underline k)\cdot(3\underline i-5\underline j-7\underline k) = -7.
-\]
+\[\underline a \cdot(\underline b\times\underline c) = (2\underline i - 3\underline j + 4\underline k)\cdot(3\underline i-5\underline j-7\underline k) = -7.\]
 The volume is therefore \(7\) units (and the -ve sign tells us that the system was not right handed).
 \end{solution}
 
@@ -6873,9 +6317,7 @@ The volume is therefore \(7\) units (and the -ve sign tells us that the system w
 \subsection{The vector triple product}\label{the-vector-triple-product}
 
 If we have three vectors \(\underline a, \underline b\) and \(\underline c\) then the \textcolor{purple}{\em vector triple product}\index{vector triple product} of those vectors is defined as
-\[
-\underline a \times (\underline b \times\underline c)
-\]
+\[\underline a \times (\underline b \times\underline c)\]
 
 \begin{example}
 Find the vector triple product \(\underline a \times (\underline b \times\underline c)\) where \(\underline a = 2\underline i - 3\underline j + 4\underline k\), \(\underline b = \underline i + 2\underline j - \underline k\) and \(\underline c = 3\underline i - \underline j + \underline 2\).
@@ -6883,9 +6325,7 @@ Find the vector triple product \(\underline a \times (\underline b \times\underl
 
 \begin{solution}
 From the previous example, \(\underline b \times\underline c = 3\underline i-5\underline j-7\underline k\).
-\[
-\underline a \times (\underline b \times\underline c) = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\2&-3&4\\3&-5&7\end{array}\right| = 41\underline i+26\underline j-\underline k
-\]
+\[\underline a \times (\underline b \times\underline c) = \left|\begin{array}{ccc}\underline i&\underline j&\underline k\\2&-3&4\\3&-5&7\end{array}\right| = 41\underline i+26\underline j-\underline k\]
 \end{solution}
 
 \begin{slidesonly}

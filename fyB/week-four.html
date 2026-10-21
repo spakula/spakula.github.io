@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Week 4 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Week 4 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -413,9 +414,7 @@
 <p>Given a function <span class="math inline">\(y=f(x)\)</span> representing a curve in the plane, we wish to examine the function and its derivative(s) so as to be able to (roughly) sketch the graph of the function.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-40" class="example"><strong>Example 4.1  </strong></span>Sketch the graph of the function
-<span class="math display">\[
-y = x^2+3x-2.
-\]</span></p>
+<span class="math display">\[y = x^2+3x-2.\]</span></p>
 </div>
 <p>We collect the following information</p>
 <ol style="list-style-type: decimal">
@@ -477,23 +476,15 @@ Figure 4.1: <span class="math inline">\(f(x)=x^2+3x-2\)</span>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-41" class="example"><strong>Example 4.2  </strong></span>Sketch the graph of the function
-<span class="math display">\[
-y = x^3+2x+3.
-\]</span></p>
+<span class="math display">\[y = x^3+2x+3.\]</span></p>
 </div>
 <p><strong><em><span class="math inline">\(x\)</span>-intercepts (of <span class="math inline">\(y = x^3+2x+3\)</span>)</em></strong></p>
 <p>Put <span class="math inline">\(y=0\)</span> and solve for <span class="math inline">\(x\)</span>.
-<span class="math display">\[
-x^3+2x+3 = 0.
-\]</span>
+<span class="math display">\[x^3+2x+3 = 0.\]</span>
 Notice that when <span class="math inline">\(x=-1\)</span> then <span class="math inline">\(y=0\)</span> and so <span class="math inline">\(x+1\)</span> is a factor of <span class="math inline">\(y\)</span>. We can then find the other factor and see that
-<span class="math display">\[
-y = (x+1)(x^2-x+3).
-\]</span>
+<span class="math display">\[y = (x+1)(x^2-x+3).\]</span>
 The second factor <span class="math inline">\(x^2-x+3\)</span> then has roots
-<span class="math display">\[
-x = \frac{1\pm\sqrt{1-4\times3}}{2}
-\]</span>
+<span class="math display">\[x = \frac{1\pm\sqrt{1-4\times3}}{2}\]</span>
 which is not real and so there are no other <span class="math inline">\(x\)</span>-intercepts, except <span class="math inline">\(x=-1\)</span>.</p>
 <p>Hence the curve passes through <span class="math inline">\((-1,0)\)</span>.</p>
 <p><strong><em><span class="math inline">\(y\)</span>-intercept (of <span class="math inline">\(y = x^3+2x+3\)</span>)</em></strong></p>
@@ -503,9 +494,7 @@ which is not real and so there are no other <span class="math inline">\(x\)</spa
 
 </div>
 <p><strong><em>critical points (of <span class="math inline">\(y = x^3+2x+3\)</span>)</em></strong></p>
-<p><span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2+2 = 0 \Rightarrow x^2 = -\frac{2}{3}.
-\]</span>
+<p><span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} x} = 3x^2+2 = 0 \Rightarrow x^2 = -\frac{2}{3}.\]</span>
 This has no real solutions and so there are no critical points.</p>
 <p><strong><em>points of inflection (of <span class="math inline">\(y = x^3+2x+3\)</span>)</em></strong></p>
 <p>Since <span class="math inline">\(\mathrm{d}^2y/\mathrm{d} x^2 = 6x\)</span> then <span class="math inline">\((0,3)\)</span> is a point of
@@ -528,9 +517,7 @@ Figure 4.2: <span class="math inline">\(f(x)=x^3+2x+3\)</span>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-42" class="example"><strong>Example 4.3  </strong></span>Sketch the graph of the curve
-<span class="math display">\[
-y = \frac{1}{x+1}.
-\]</span></p>
+<span class="math display">\[y = \frac{1}{x+1}.\]</span></p>
 </div>
 <p><strong><em><span class="math inline">\(x\)</span>-intercepts (of <span class="math inline">\(1/(x+1)\)</span>)</em></strong></p>
 <p>Put <span class="math inline">\(y=1/(x+1) = 0\)</span> we see that there are no solutions and so the curve does not cross the <span class="math inline">\(x\)</span>-axis.</p>
@@ -543,9 +530,7 @@ y&amp;=\frac1{x+1} = (x+1)^{-1}\\
 \end{align*}\]</span>
 This has no real solutions and so there are no critical points.</p>
 <p><strong><em>points of inflection (of <span class="math inline">\(1/(x+1)\)</span>)</em></strong></p>
-<p><span class="math display">\[
-\frac{d^2y}{\mathrm{d} x^2} = -(-2)(x+1)^{-3} = \frac2{(x+1)^3}.
-\]</span>
+<p><span class="math display">\[\frac{d^2y}{\mathrm{d} x^2} = -(-2)(x+1)^{-3} = \frac2{(x+1)^3}.\]</span>
 This also has no solutions and so there are no points of inflection. Notice however that for <span class="math inline">\(x &lt; -1\)</span>, <span class="math inline">\(\mathrm{d}^2y/\mathrm{d} x^2&lt;0\)</span> and so the function is concave down, while if <span class="math inline">\(x&gt;-1\)</span> then <span class="math inline">\(\mathrm{d}^2y/\mathrm{d} x^2 &gt;0\)</span> and so the function is concave up.</p>
 <div style="display:none">
 <p>(note: concave up/down)</p>
@@ -589,28 +574,18 @@ Figure 4.4: maximum-volume
 </div>
 <p>Let <span class="math inline">\(x\)</span> be the length in metres of side of the square to be cut.</p>
 <p>The volume of the box
-<span class="math display">\[
-V = \text{length}\times\text{breadth}\times\text{depth}\tag{1}
-\]</span>
+<span class="math display">\[V = \text{length}\times\text{breadth}\times\text{depth}\tag{1}\]</span>
 Equation (1) is the equation we want to maximise, but we need to put the equation in terms of a single variable before we can differentiate.</p>
 <p>In terms of <span class="math inline">\(x\)</span>,
-<span class="math display">\[
-\text{length} = 0.8 - 2x,\; \text{breadth} = 0.4 - 2x,\;\text{depth} = x
-\]</span>
+<span class="math display">\[\text{length} = 0.8 - 2x,\; \text{breadth} = 0.4 - 2x,\;\text{depth} = x\]</span>
 So
-<span class="math display">\[
-V = (0.8 - 2x)(0.4 - 2x)x = (0.32 - 2.4x + 4x^2)x = 4x^3 - 2.4x^2 + 0.32x
-\]</span>
+<span class="math display">\[V = (0.8 - 2x)(0.4 - 2x)x = (0.32 - 2.4x + 4x^2)x = 4x^3 - 2.4x^2 + 0.32x\]</span>
 Then
-<span class="math display">\[
-\frac{\mathrm{d}V}{\mathrm{d} x} = 12x^2 - 4.8x + 0.32
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}V}{\mathrm{d} x} = 12x^2 - 4.8x + 0.32\]</span>
 Maximum and minimum values occur when <span class="math inline">\(\mathrm{d}V/\mathrm{d}x  = 0\)</span>.
 That is, when <span class="math inline">\(12x^2 - 4.8x + 0.32= 0\)</span>.</p>
 <p>Solving <span class="math inline">\(12x^2 - 4.8x + 0.32= 0\)</span> for <span class="math inline">\(x\)</span> using the quadratic formula gives:
-<span class="math display">\[
-x \approx 0.316\text{ and }x \approx 0.085\,\,(3\text{ d.p.}).
-\]</span>
+<span class="math display">\[x \approx 0.316\text{ and }x \approx 0.085\,\,(3\text{ s.f.}).\]</span>
 Now we need to find which value of <span class="math inline">\(x\)</span> gives the maximum volume.
 <span class="math display">\[\begin{align*}
 \frac{\mathrm{d}^2 V}{\mathrm{d} x^2} &amp;= 24x - 4.8\\
@@ -644,9 +619,7 @@ So <span class="math inline">\(V=\)</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-44" class="example"><strong>Example 4.5  </strong></span>A beam which is built into a wall at one end is simply supported by a force of 75 kN at the other end. The beam is loaded as shown below and the mass of the beam produces a force of 30kN/m. The beam is 4 m long, and the bending moment <span class="math inline">\(M\)</span> at any distance <span class="math inline">\(x\)</span> from the simply supported end is given by
-<span class="math display">\[
-M = 75x-20(x-1.25)-30x\frac{x}{2}.
-\]</span>
+<span class="math display">\[M = 75x-20(x-1.25)-30x\frac{x}{2}.\]</span>
 Determine the position of the maximum bending moment and its magnitude. (Figure <a href="week-four.html#fig:18-maximum-bending-moment">4.5</a>)</p>
 </div>
 <!--insfig
@@ -665,9 +638,7 @@ M &amp;= 75x - 20(x-1.25) - 30x\frac{x}{2},\\
 For a turning point, <span class="math inline">\(\mathrm{d}M/\mathrm{d}x=0\)</span>, so <span class="math inline">\(55 - 30x = 0\)</span> and <span class="math inline">\(x = 1.83 m\)</span>.</p>
 <p><span class="math inline">\(\mathrm{d}^2M/\mathrm{d}x^2 = -30\)</span>, which is always negative, so the turning point is a maximum.</p>
 <p>The bending moment <span class="math inline">\(M\)</span> when <span class="math inline">\(x = 1.83\)</span> is
-<span class="math display">\[
-M = 75\times1.83 - 20(1.83 - 1.25) - \frac{30\times1.83^2}{2},
-\]</span>
+<span class="math display">\[M = 75\times1.83 - 20(1.83 - 1.25) - \frac{30\times1.83^2}{2},\]</span>
 or <span class="math inline">\(M = 75\ kNm\)</span>.</p>
 <p>The maximum bending moment occurs at <span class="math inline">\(1.83 m\)</span> from the simply supported end and has a value of <span class="math inline">\(75\ kNm\)</span>.</p>
 <div style="display:none">
@@ -701,26 +672,16 @@ Figure 4.6: maximum volume
 </div>
 <p>Let <span class="math inline">\(A=\pi r^2\)</span> be the surface area of the top of the can.</p>
 <p>Notice that <span class="math inline">\(V = Ah = \pi r^2h\)</span>. So
-<span class="math display">\[
-\begin{array}{rl}
+<span class="math display">\[\begin{array}{rl}
 S&amp;=2A + \text{area of sides}\\
 &amp;=2\pi r^2 + 2\pi rh = 100\\
-\end{array}
-\]</span>
-<span class="math display">\[
-h=\frac{100-2\pi r^2}{2\pi r}=\frac{50-\pi r^2}{\pi r}
-\]</span>
-<span class="math display">\[
-V=\pi r^2\left(\frac{50-\pi r^2}{\pi r}\right) = 50r -\pi r^3
-\]</span>
+\end{array}\]</span>
+<span class="math display">\[h=\frac{100-2\pi r^2}{2\pi r}=\frac{50-\pi r^2}{\pi r}\]</span>
+<span class="math display">\[V=\pi r^2\left(\frac{50-\pi r^2}{\pi r}\right) = 50r -\pi r^3\]</span>
 We need to find the critical points and so we find <span class="math inline">\(\mathrm{d}V/\mathrm{d} r\)</span> and equate to 0.
-<span class="math display">\[
-\frac{\mathrm{d} V}{\mathrm{d} r} = 50-3\pi r^2 = 0\text{ giving }r = \sqrt{\frac{50}{3\pi}}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} V}{\mathrm{d} r} = 50-3\pi r^2 = 0\text{ giving }r = \sqrt{\frac{50}{3\pi}}.\]</span>
 Now
-<span class="math display">\[
-\frac{\mathrm{d}^2 V}{\mathrm{d}r^2} = -6\pi r\;\text{ and so }\;\left.\frac{\mathrm{d}^2 V}{\mathrm{d}r^2}\right\vert_{r=\sqrt{50/3\pi}} = -6\pi\sqrt{\frac{50}{3\pi}}&lt;0.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}^2 V}{\mathrm{d}r^2} = -6\pi r\;\text{ and so }\;\left.\frac{\mathrm{d}^2 V}{\mathrm{d}r^2}\right\vert_{r=\sqrt{50/3\pi}} = -6\pi\sqrt{\frac{50}{3\pi}}&lt;0.\]</span>
 By the 2nd derivative test we see that <span class="math inline">\(r=\sqrt{50/3\pi}\)</span> is a local maximum.</p>
 <div style="display:none">
 <p>We have: <span class="math inline">\(A=\)</span>
@@ -742,27 +703,17 @@ Recall <span class="math inline">\(V=50r-\pi r^3\)</span>.</p>
 <div id="differentiation-of-implicit-functions" class="section level3 hasAnchor" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Differentiation of implicit functions<a href="week-four.html#differentiation-of-implicit-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An <a name='#implicit-function'></a><span style="color: purple;">implicit function</span> is one given by an equation (like the one below), rather than in a direct form <span class="math inline">\(y=\)</span>(some expression with <span class="math inline">\(x\)</span>). Here we consider <span class="math inline">\(y\)</span> to depend on <span class="math inline">\(x\)</span>, and <span class="math inline">\(x\)</span> to be an “independent” variable:
-<span class="math display">\[
-y^2 + x^2 + 2xy + 2x = 0.
-\]</span>
+<span class="math display">\[y^2 + x^2 + 2xy + 2x = 0.\]</span>
 Thus the whole expression is a function of <span class="math inline">\(x\)</span> even though we don’t have a formula for <span class="math inline">\(y\)</span> in terms of <span class="math inline">\(x\)</span>.</p>
 <p>We can still think of <span class="math inline">\(y=f(x)\)</span>, although we don’t have a formula for <span class="math inline">\(f\)</span>. We do not need to “solve the equation for <span class="math inline">\(y\)</span>” in order to differentiate, we can use the chain rule!</p>
 <p>For example, to differentiate <span class="math inline">\(y^2\)</span> with respect to <span class="math inline">\(x\)</span> we write
-<span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(y^2) = \frac{\mathrm{d}}{\mathrm{d} y}(y^2)\times\frac{\mathrm{d} y}{\mathrm{d} x}= 2y\frac{\mathrm{d} y}{\mathrm{d} x}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d} x}(y^2) = \frac{\mathrm{d}}{\mathrm{d} y}(y^2)\times\frac{\mathrm{d} y}{\mathrm{d} x}= 2y\frac{\mathrm{d} y}{\mathrm{d} x}.\]</span>
 To differentiate <span class="math inline">\(2xy\)</span> we note that if <span class="math inline">\(y=f(x)\)</span> was known, this would be a product of two functions of <span class="math inline">\(x\)</span>, so using the product rule
-<span class="math display">\[
-\frac{\mathrm{d}}{\mathrm{d} x}(2xy) = 2x\frac{\mathrm{d}}{\mathrm{d} x}(y)+2y\frac{\mathrm{d}}{\mathrm{d} x}(x) = 2x\frac{\mathrm{d} y}{\mathrm{d} x} + 2y.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d} x}(2xy) = 2x\frac{\mathrm{d}}{\mathrm{d} x}(y)+2y\frac{\mathrm{d}}{\mathrm{d} x}(x) = 2x\frac{\mathrm{d} y}{\mathrm{d} x} + 2y.\]</span>
 Hence if
-<span class="math display">\[
-y^2 + x^2 + 2xy + 2x = 0
-\]</span>
+<span class="math display">\[y^2 + x^2 + 2xy + 2x = 0\]</span>
 then the derivative with respect to <span class="math inline">\(x\)</span> is</p>
-<p><span class="math display">\[
-2y\frac{\mathrm{d} y}{\mathrm{d} x} + 2x+2x\frac{\mathrm{d} y}{\mathrm{d} x} +2y+2 = 0.
-\]</span>
+<p><span class="math display">\[2y\frac{\mathrm{d} y}{\mathrm{d} x} + 2x+2x\frac{\mathrm{d} y}{\mathrm{d} x} +2y+2 = 0.\]</span>
 This may be rearranged so that
 <span class="math display">\[\begin{align*}
 2y\frac{\mathrm{d} y}{\mathrm{d} x}+2x\frac{\mathrm{d} y}{\mathrm{d} x} &amp;= -2x-2y-2\\
@@ -792,17 +743,11 @@ Figure 4.7: ellipse <span class="math inline">\(10x^2 + 12xy + 10y^2 = 1\)</span
 \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{-20x-12y}{12x+20y} &amp;= -\frac{5x+3y}{3x+5y}.
 \end{align*}\]</span></p>
 <p>When <span class="math inline">\(x=0.2\)</span> then
-<span class="math display">\[
-10y^2+\frac{12}5y-\frac35=0\text{ and so }y = \frac{-\frac{12}5\pm\sqrt{\left(\frac{12}5\right)^2+4\times10\times\frac35}}{20} = 0.153\text{ and }-0.393
-\]</span>
+<span class="math display">\[10y^2+\frac{12}5y-\frac35=0\text{ and so }y = \frac{-\frac{12}5\pm\sqrt{\left(\frac{12}5\right)^2+4\times10\times\frac35}}{20} = 0.153\text{ and }-0.393\]</span>
 So
-<span class="math display">\[
-\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069
-\]</span>
+<span class="math display">\[\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=0.153} = -\frac{5\times0.2+3\times 0.153}{3\times0.2+5\times0.153} = -1.069\]</span>
 and
-<span class="math display">\[
-\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=-0.393} = -\frac{5\times0.2-3\times 0.393}{3\times0.2-5\times0.393} = -0.091
-\]</span></p>
+<span class="math display">\[\left.\frac{\mathrm{d} y}{\mathrm{d} x}\right|_{x=-0.393} = -\frac{5\times0.2-3\times 0.393}{3\times0.2-5\times0.393} = -0.091\]</span></p>
 </div>
 <div style="display:none">
 
@@ -812,14 +757,10 @@ and
 <h3><span class="header-section-number">4.3.2</span> Differentiation in parameters<a href="week-four.html#differentiation-in-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If a function is expressed in parametric form it is convenient to be able to differentiate it in this form rather than having to convert to Cartesian form first.</p>
 <p>A function expressed in parametric form has a third variable e.g.
-<span class="math display">\[
-y = f(t),\; x = g(t)
-\]</span>
+<span class="math display">\[y = f(t),\; x = g(t)\]</span>
 where <span class="math inline">\(t\)</span> is a parameter.</p>
 <p>Now using the chain rule again
-<span class="math display">\[
-\frac{\mathrm{d} y}{\mathrm{d} t} = \frac{\mathrm{d} y}{\mathrm{d} x}\times\frac{\mathrm{d} x}{\mathrm{d} t}\text{ and so }\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} t}/\frac{\mathrm{d} x}{\mathrm{d} t}.
-\]</span>
+<span class="math display">\[\frac{\mathrm{d} y}{\mathrm{d} t} = \frac{\mathrm{d} y}{\mathrm{d} x}\times\frac{\mathrm{d} x}{\mathrm{d} t}\text{ and so }\frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} t}/\frac{\mathrm{d} x}{\mathrm{d} t}.\]</span>
 Thus if we can find <span class="math inline">\(\mathrm{d}y/\mathrm{d} t\)</span> and <span class="math inline">\(\mathrm{d}x/\mathrm{d} t\)</span> we can establish <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span>.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-48" class="example"><strong>Example 4.8  </strong></span>A function is expressed in parametric form as <span class="math inline">\(y = 2t + t^2, x = t^2 - 1\)</span>, where <span class="math inline">\(t\)</span> is a parameter. Find <span class="math inline">\(\mathrm{d}y/\mathrm{d} x\)</span>.</p>
@@ -836,13 +777,9 @@ Thus if we can find <span class="math inline">\(\mathrm{d}y/\mathrm{d} t\)</span
 <h3><span class="header-section-number">4.3.3</span> Logarithmic differentiation<a href="week-four.html#logarithmic-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is a convenient way to deal with the derivative of a product of quotient with more than two terms.</p>
 <p>Consider
-<span class="math display">\[
-y = \frac{(x-4)(x+5)}{(x+3)(x-2)}
-\]</span>
+<span class="math display">\[y = \frac{(x-4)(x+5)}{(x+3)(x-2)}\]</span>
 Taking logs of both sides gives</p>
-<p><span class="math display">\[
-\ln(y) = \ln(x-4)+\ln(x+5)-\ln(x+3)-\ln(x-2)
-\]</span></p>
+<p><span class="math display">\[\ln(y) = \ln(x-4)+\ln(x+5)-\ln(x+3)-\ln(x-2)\]</span></p>
 <div style="display:none">
 <p><span class="math inline">\(\ln(y) =\)</span></p>
 </div>

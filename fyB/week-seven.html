@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Week 7 | GENG0002 Mathematics B lecture notes</title>
   <meta name="description" content="Lecture notes for GENG0002 - Mathematics B module at University of Southampton." />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Week 7 | GENG0002 Mathematics B lecture notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Ján Špakula" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,6 +201,7 @@
 <li class="chapter" data-level="5.3" data-path="week-five.html"><a href="week-five.html#indefinite-integration"><i class="fa fa-check"></i><b>5.3</b> Indefinite Integration</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="week-five.html"><a href="week-five.html#standard-integrals"><i class="fa fa-check"></i><b>5.3.1</b> Standard integrals</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-five.html"><a href="week-five.html#more-standard-integrals"><i class="fa fa-check"></i><b>5.3.2</b> More ‘standard’ integrals</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="week-5-exercises.html"><a href="week-5-exercises.html"><i class="fa fa-check"></i>Week 5 Exercises</a>
@@ -412,51 +413,31 @@
 <div id="integration-using-partial-fractions" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Integration using partial fractions<a href="week-seven.html#integration-using-partial-fractions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider the integral
-<span class="math display">\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x
-\]</span>
+<span class="math display">\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x\]</span>
 This is not a “standard” integral. Also, if we multiply out the denominator we get <span class="math inline">\(x^2 - 3x + 2\)</span>. The derivative of this denominator is <span class="math inline">\(2x - 3\)</span>. The numerator is thus not the derivative of the denominator, and so making a substitution won’t help us to integrate.</p>
 <p>The method to apply is to split the fraction into partial fractions.</p>
 <p>From semester 1, we know we can do this:</p>
-<p><span class="math display">\[
-\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.
-\]</span>
+<p><span class="math display">\[\frac{x}{(x-1)(x-2)} = \frac A{x-1}+\frac B{x-2}.\]</span>
 We calculate:
-<span class="math display">\[
-x = A(x-2)+B(x-1)
-\]</span></p>
+<span class="math display">\[x = A(x-2)+B(x-1)\]</span></p>
 <p>Let <span class="math inline">\(x=2\)</span>, so that <span class="math inline">\(2=A\times0+B\times1\)</span> i.e. <span class="math inline">\(B=2\)</span>.</p>
 <p>Let <span class="math inline">\(x=1\)</span>, so that <span class="math inline">\(1=A\times-1+B\times0\)</span> i.e. <span class="math inline">\(A=-1\)</span>.</p>
 <p>So
-<span class="math display">\[
-\frac{x}{(x-1)(x-2)} = \frac {-1}{x-1}+\frac 2{x-2}
-\]</span>
+<span class="math display">\[\frac{x}{(x-1)(x-2)} = \frac {-1}{x-1}+\frac 2{x-2}\]</span>
 and thus
-<span class="math display">\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x
-\]</span>
+<span class="math display">\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x\]</span>
 which we can finish with the methods we already know:
-<span class="math display">\[
-\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.
-\]</span></p>
+<span class="math display">\[\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = -\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.\]</span></p>
 <div style="display:none">
-<p><span class="math display">\[
-\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}
-\]</span>
+<p><span class="math display">\[\frac{x}{(x-1)(x-2)} = \phantom{\frac A{x-1}+\frac B{x-2}.}\]</span>
 </p>
 <p>We calculate:</p>
 <p>So
-<span class="math display">\[
-\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}
-\]</span>
+<span class="math display">\[\frac{x}{(x-1)(x-2)} = \phantom{\frac {-1}{x-1}+\frac 2{x-2}}\]</span>
 and thus
-<span class="math display">\[
-\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}
-\]</span>
+<span class="math display">\[\int\frac{x}{(x-1)(x-2)}\mathrm{d}x = \phantom{\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x}\]</span>
 We can finish using known methods:
-<span class="math display">\[
-\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}
-\]</span>
+<span class="math display">\[\int\frac {-1}{x-1}\mathrm{d}x+\int\frac 2{x-2}\mathrm{d}x = \phantom{-\ln|x-1|+2\ln|x-2|+c = \ln\left|\frac{(x-2)^2}{x-1}\right|+c.}\]</span>
 </p>
 </div>
 <div class="example">
@@ -464,36 +445,26 @@ We can finish using known methods:
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-88" class="solution"><em>Solution</em>. </span>This is an improper fraction so we must make a long division first
-<span class="math display">\[
-\begin{array}{r}
+<span class="math display">\[\begin{array}{r}
 x+2\phantom{)}   \\
 x-2{\overline{\smash{\big)}\,x^2\phantom{+2x}+2\phantom{)}}}\\
 \underline{-~\phantom{(}(x^2-2x)\phantom{-b)}}\\
 \phantom{0+}2x+2\phantom{)}\\
 \underline{-~\phantom{()}(2x-4)}\\
 \phantom{0+}6\phantom{)}
-\end{array}
-\]</span>
+\end{array}\]</span>
 So
-<span class="math display">\[
-\frac{x^2+2}{x-2} = x+2+\frac6{x-2}
-\]</span>
+<span class="math display">\[\frac{x^2+2}{x-2} = x+2+\frac6{x-2}\]</span>
 and hence
-<span class="math display">\[
-\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c
-\]</span></p>
+<span class="math display">\[\int\frac{x^2+2}{x-2}\mathrm{d}x = \int (x+2)\mathrm{d}x+\int\frac6{x-2}\mathrm{d}x = \frac{x^2}{2}+2x+6\ln|x-2|+c\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-89" class="example"><strong>Example 7.2  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} \mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-90" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}
-\]</span>
+<p><span id="unlabeled-div-90" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{x^2-3x+3}{(x-1)(x-2)(x-3)} = \frac A{x-1}+\frac B{x-2}+\frac C{x-3}\]</span>
 and so
-<span class="math display">\[
-x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)
-\]</span>
+<span class="math display">\[x^2-3x+3 = A(x-2)(x-3) + B(x-1)(x-3) + C(x-1)(x-2)\]</span>
 Let <span class="math inline">\(x=1\)</span> so that <span class="math inline">\(1=2A\)</span> or <span class="math inline">\(A=1/2\)</span>.</p>
 <p>Let <span class="math inline">\(x=2\)</span> so that <span class="math inline">\(1=-B\)</span> or <span class="math inline">\(B=-1\)</span>.</p>
 <p>Let <span class="math inline">\(x=3\)</span> so that <span class="math inline">\(3=2C\)</span> or <span class="math inline">\(C=3/2\)</span>.</p>
@@ -509,13 +480,9 @@ I&amp;= \int\frac 1{2(x-1)}\mathrm{d}x-\int\frac 1{x-2}\mathrm{d}x+\int\frac 3{2
 <p><span id="exm:unlabeled-div-91" class="example"><strong>Example 7.3  </strong></span>Evaluate <span class="math inline">\(I = \displaystyle\int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\)</span></p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-92" class="solution"><em>Solution</em>. </span><span class="math display">\[
-\frac{5x+2}{x^2-4x+4} = \frac{5x+2}{(x-2)^2} = \frac A{x-2}+\frac{B}{(x-2)^2}
-\]</span>
+<p><span id="unlabeled-div-92" class="solution"><em>Solution</em>. </span><span class="math display">\[\frac{5x+2}{x^2-4x+4} = \frac{5x+2}{(x-2)^2} = \frac A{x-2}+\frac{B}{(x-2)^2}\]</span>
 and so
-<span class="math display">\[
-5x+2 = A(x-2)+B
-\]</span>
+<span class="math display">\[5x+2 = A(x-2)+B\]</span>
 Let <span class="math inline">\(x=2\)</span> so that <span class="math inline">\(12=B\)</span>.</p>
 <p><span class="math inline">\(A(x-2)+12 = 5x+2\)</span> and so <span class="math inline">\(Ax+10-2A=5x\)</span>, so that <span class="math inline">\(A=5\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
@@ -532,9 +499,7 @@ I&amp;= \int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\\
 <h2><span class="header-section-number">7.2</span> Definite Integrals<a href="week-seven.html#definite-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let <span class="math inline">\(F(x) = \displaystyle\int f(x)\mathrm{d}x\)</span>. For example, <span class="math inline">\(F(x)=\displaystyle\int x\mathrm{d}x = \frac{x^2}{2} + C\)</span>.</p>
 <p>Define
-<span class="math display">\[
-\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).
-\]</span></p>
+<span class="math display">\[\int_a^b f(x)\,\mathrm{d}x = F(b)-F(a).\]</span></p>
 <p>(If the definite integral would be defined as in most textbooks, this statement would be called the <a name='#first-fundamental-theorem-of-calculus'></a><span style="color: purple;">First Fundamental Theorem of Calculus</span>.)</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-93" class="example"><strong>Example 7.4  </strong></span><span class="math display">\[\begin{align*}
@@ -554,9 +519,7 @@ I&amp;= \int\frac{5x+2}{x^2-4x+4} \mathrm{d}x\\
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-95" class="example"><strong>Example 7.6  </strong></span>Determine the value of
-<span class="math display">\[
-\int_0^{\pi/2}\cos(x)\mathrm{d}x.
-\]</span></p>
+<span class="math display">\[\int_0^{\pi/2}\cos(x)\mathrm{d}x.\]</span></p>
 </div>
 <div class="solution">
 <p><span id="unlabeled-div-96" class="solution"><em>Solution</em>. </span><span class="math display">\[\begin{align*}
@@ -591,17 +554,13 @@ Figure 7.1: <span class="math inline">\(f(x)\)</span>
 <li>We split it up into several vertical strips, each of width <span class="math inline">\(\delta x\)</span>.</li>
 <li>Denote the <span class="math inline">\(x\)</span>-coordinates of the vertical “chopping lines” by <span class="math inline">\(x_0=a, x_1, \dots, x_k=b\)</span>.</li>
 <li>An approximation of <span class="math inline">\(A\)</span> is the sum of the areas of all the rectangles as above, and may be written as
-<span class="math display">\[
-A\approx\sum_{i=0}^{k-1}f(x_i)\delta x
-\]</span></li>
+<span class="math display">\[A\approx\sum_{i=0}^{k-1}f(x_i)\delta x\]</span></li>
 </ul>
 <p>where the sign <span class="math inline">\(\Sigma\)</span> (sigma) means, work out the area of each rectangle in turn then add all the areas together.</p>
 <ul>
 <li>As <span class="math inline">\(\delta x \to 0\)</span>, the approximation gets precise. We replace <span class="math inline">\(\Sigma\)</span> by <span class="math inline">\(\int\)</span>
 (1st Fundamental Theorem of Calculus in reverse):
-<span class="math display">\[
-A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.
-\]</span>
+<span class="math display">\[A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\mathrm{d}x.\]</span>
 </li>
 </ul>
 <div class="example">
@@ -610,9 +569,7 @@ A =\lim\limits_{\delta x\to 0}\sum_{i=0}^{k-1}f(x_i) \delta x = \int_a^b f(x)\,\
 <div class="solution">
 <p><span id="unlabeled-div-98" class="solution"><em>Solution</em>. </span></p>
 (See Figure <a href="week-seven.html#fig:23-area-under-2x23x1">7.2</a>.)
-<span class="math display">\[
-A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.
-\]</span>
+<span class="math display">\[A=\int_1^2(2x^2+3x+1)\mathrm{d}x = \left[\frac{2x^3}{3}+\frac{3x^2}{2}+x\right]_1^2 = \left[\frac{16}{3}+\frac{12}{2}+2\right]-\left[\frac{2}{3}+\frac 32 + 1\right] = \frac{61}{6}.\]</span>
 <!--incfig
 
 -->
@@ -640,13 +597,9 @@ Figure 7.3: <span class="math inline">\(x^2-3x\)</span>
 </p>
 </div>
 <p>The definite integral over this range is</p>
-<p><span class="math display">\[
-\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.
-\]</span></p>
+<p><span class="math display">\[\int_{-1}^5(x^2-3x)\mathrm{d}x = \left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]-\left[\frac{-1}3-\frac{3}2\right]=6.\]</span></p>
 <div style="display:none">
-<p><span class="math display">\[
-\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}
-\]</span>
+<p><span class="math display">\[\int_{-1}^5(x^2-3x)\mathrm{d}x = \phantom{\left[\frac{x^3}3-\frac{3x^2}2\right]_{-1}^5 = \left[\frac{125}3-\frac{75}2\right]}\]</span>
 </p>
 </div>
 <p>However, this is not quite the area we may think. This is <span class="math inline">\(A_1 + A_2 + A_3\)</span> where <span class="math inline">\(A_2\)</span> is negative, so the value of the definite integral over this range is smaller than the actual area.</p>
@@ -681,14 +634,10 @@ Figure 7.4: <span class="math inline">\(y=x^3\)</span>
 </p>
 </div>
 <p>We might expect the area to be given by
-<span class="math display">\[
-\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.
-\]</span>
+<span class="math display">\[\int_{-2}^2x^3\mathrm{d}x = \left[\frac{x^4}4\right]_{-2}^2 = \frac{2^4}4-\frac{(-2)^4}4 = 4-4 = 0.\]</span>
 This is clearly not the case. The area to the left of the <span class="math inline">\(y-\)</span>axis clearly has a negative area while the area to the right has a positive area and these are cancelling one another out.</p>
 <p>We actually need
-<span class="math display">\[
-\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.
-\]</span></p>
+<span class="math display">\[\left|\int_{-2}^0x^3\mathrm{d}x\right|+\left|\int_0^2x^3\mathrm{d}x\right| = \left|\left[\frac{x^4}4\right]_{-2}^0\right|+\left|\left[\frac{x^4}4\right]_{0}^2\right| = \left|0-\frac{(-2)^4}4\right|+\left|\frac{2^4}4-0\right| = 4+4=8.\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -716,9 +665,7 @@ Figure 7.5: <span class="math inline">\(y=x^2+1\)</span> and <span class="math i
 </div>
 <p>We want to find the shaded area. The limits of integration will be the points of intersection of the two curves.</p>
 <p>First we need to solve the equations simultaneously to find the <span class="math inline">\(x-\)</span>co-ordinates of the points of intersection.
-<span class="math display">\[
-7-x=x^2+1\Rightarrow x^2+x-6=0\Rightarrow (x-2)(x+3)=0
-\]</span>
+<span class="math display">\[7-x=x^2+1\Rightarrow x^2+x-6=0\Rightarrow (x-2)(x+3)=0\]</span>
 Hence we see that the curves intersect at <span class="math inline">\(x=-3\)</span> and <span class="math inline">\(x=2\)</span>. These are the limits of integration.</p>
 <p>From the sketch, the shaded area will be given by</p>
 <p><span class="math display">\[\begin{align*}
@@ -747,9 +694,7 @@ A quick sketch of the curves is on Figure <a href="week-seven.html#fig:27-graph-
 Figure 7.6: <span class="math inline">\(y=e^x\)</span> and <span class="math inline">\(y=e^{-x}\)</span>
 </p>
 </div>
-<p><span class="math display">\[
-A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.
-\]</span></p>
+<p><span class="math display">\[A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})-(e^0+e^0) = e^2+e^{-2}-2=5.52.\]</span></p>
 </div>
 <div style="display:none">
 <p>
@@ -759,13 +704,9 @@ A = \int_0^2(e^x-e^{-x})\mathrm{d}x = \left[e^x+e^{-x}\right]_0^2 = (e^2+e^{-2})
 <div id="parametric-integration" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Parametric Integration<a href="week-seven.html#parametric-integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If a curve is defined parametrically such that <span class="math inline">\(x = f(t)\)</span> and <span class="math inline">\(y = g(t)\)</span> it can be integrated parametrically as follows
-<span class="math display">\[
-\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f&#39;(t)\,\mathrm{d}t.
-\]</span>
+<span class="math display">\[\int_a^b y\,\mathrm{d}x = \int_{x=a}^{x=b}g(t)f&#39;(t)\,\mathrm{d}t.\]</span>
 Since <span class="math inline">\(\mathrm{d}x/\mathrm{d}t = f&#39;(t)\)</span>, we may imagine that <span class="math inline">\(\mathrm{d}x = f&#39;(t)\,\mathrm{d}t\)</span>, which happens to be correct. It is normally best to convert the limits of integration into values of <span class="math inline">\(t\)</span> rather than <span class="math inline">\(x\)</span>. So we find <span class="math inline">\(a&#39;, b&#39;\)</span> such that <span class="math inline">\(a=f(a&#39;), b = f(b&#39;)\)</span> and then the integral becomes
-<span class="math display">\[
-\int_{a&#39;}^{b&#39;}g(t)f&#39;(t)\,\mathrm{d}t.
-\]</span>
+<span class="math display">\[\int_{a&#39;}^{b&#39;}g(t)f&#39;(t)\,\mathrm{d}t.\]</span>
 </p>
 <div class="example">
 <p><span id="exm:unlabeled-div-105" class="example"><strong>Example 7.11  </strong></span>A curve is described by the parametric equations <span class="math inline">\(x = at^2\)</span> and <span class="math inline">\(y = 2at\)</span> where <span class="math inline">\(t\)</span> is a parameter and <span class="math inline">\(a\)</span> is a constant. Determine the definite integral between <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(t = 2\)</span>.</p>
